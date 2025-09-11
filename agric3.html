@@ -1,0 +1,633 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Form 3: Physical Properties of Soil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'bounce-in': 'bounceIn 0.8s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .property-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .property-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .soil-particle {
+            animation: float 3s ease-in-out infinite;
+        }
+        .soil-particle:nth-child(2) { animation-delay: 0.5s; }
+        .soil-particle:nth-child(3) { animation-delay: 1s; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-green-50 to-emerald-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white py-10 shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <h1 class="text-2xl font-bold mb-4 animate-fade-in">Millennium E-learning Centre</h1>
+                <h1 class="text-xl font-bold mb-4 animate-fade-in">PHYSICAL PROPERTIES OF SOIL</h1>
+                <p class="text-xl opacity-90 mb-2">Agriculture Form 3 Complete Study Guide</p>
+                <div class="flex justify-center space-x-4 mt-6">
+                    <div class="soil-particle w-4 h-4 bg-amber-300 rounded-full"></div>
+                    <div class="soil-particle w-4 h-4 bg-orange-300 rounded-full"></div>
+                    <div class="soil-particle w-4 h-4 bg-red-300 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-10">
+        <!-- Introduction -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10 border-l-8 border-green-500">
+            <div class="flex items-center mb-6">
+                <div class="bg-green-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold text-gray-800">Understanding Soil Properties</h2>
+            </div>
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border border-green-200">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    The physical properties of soil play a critical role in determining its suitability for agricultural purposes. Understanding these properties allows farmers to make informed decisions about crop production and land management.
+                </p>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <p class="text-base text-gray-600 font-medium">
+                        🌱 <strong>Key Insight:</strong> Mastering soil physical properties is essential for optimizing crop production and ensuring sustainable agricultural practices.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Soil Texture -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">1. Soil Texture</h2>
+            </div>
+            
+            <div class="mb-8">
+                <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-400 mb-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        <strong>Definition:</strong> Soil texture refers to the relative proportions of different-sized soil particles and influences the soil's ability to retain moisture and nutrients. The fineness or coarseness of the soil is determined by the presence of aggregates such as gravel, silt, sand, and clay.
+                    </p>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-blue-800 mb-4">Main Soil Categories</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 p-6 rounded-xl shadow-md border border-yellow-300">
+                        <h4 class="font-bold text-yellow-800 text-xl mb-3">🏖️ SAND</h4>
+                        <p class="text-gray-700">Large particles, good drainage, poor water retention</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-100 to-red-200 p-6 rounded-xl shadow-md border border-red-300">
+                        <h4 class="font-bold text-red-800 text-xl mb-3">🧱 CLAY</h4>
+                        <p class="text-gray-700">Very fine particles, poor drainage, excellent water retention</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-100 to-green-200 p-6 rounded-xl shadow-md border border-green-300">
+                        <h4 class="font-bold text-green-800 text-xl mb-3">🌱 LOAM</h4>
+                        <p class="text-gray-700">Balanced mixture, ideal for most crops, good properties</p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-blue-800 mb-4">Methods of Determining Soil Texture</h3>
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 shadow-sm">
+                        <h4 class="font-bold text-purple-800 mb-3">🥤 Sedimentation Method</h4>
+                        <p class="text-gray-700 text-sm">Soil particles are separated based on their weight by allowing them to settle in water.</p>
+                    </div>
+                    <div class="bg-pink-50 p-6 rounded-xl border border-pink-200 shadow-sm">
+                        <h4 class="font-bold text-pink-800 mb-3">✋ Feel Method</h4>
+                        <p class="text-gray-700 text-sm">This involves rubbing the soil between fingers to gauge its smoothness or coarseness.</p>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-200 shadow-sm">
+                        <h4 class="font-bold text-indigo-800 mb-3">🕳️ Sieve Method</h4>
+                        <p class="text-gray-700 text-sm">Soil particles are passed through sieves of various sizes to separate them by particle size.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Soil Colour -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-pink-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">2. Soil Colour</h2>
+            </div>
+
+            <div class="bg-pink-50 p-6 rounded-xl border-l-4 border-pink-400 mb-6">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Soil colour is an easily observable property and can provide valuable insights into its composition and fertility. The appearance of the soil is primarily influenced by organic matter content, moisture content, and parent material.
+                </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-pink-800 mb-4">Common Soil Colours and Their Implications</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-gradient-to-br from-red-200 to-amber-200 p-5 rounded-xl shadow-md">
+                    <h4 class="font-bold text-red-800 mb-2">🟤 Red/Brown Soil</h4>
+                    <p class="text-gray-700 text-sm">Indicates well-drained soil</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-200 to-gray-300 p-5 rounded-xl shadow-md">
+                    <h4 class="font-bold text-gray-800 mb-2">⚫ Grey Soil</h4>
+                    <p class="text-gray-700 text-sm">Generally infertile</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-800 to-amber-900 text-white p-5 rounded-xl shadow-md">
+                    <h4 class="font-bold mb-2">⚫ Black/Dark Brown</h4>
+                    <p class="text-gray-200 text-sm">High in organic matter</p>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-100 to-gray-200 p-5 rounded-xl shadow-md">
+                    <h4 class="font-bold text-gray-800 mb-2">🟡 Yellow/White/Grey</h4>
+                    <p class="text-gray-700 text-sm">Specific mineral presence</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Soil Temperature -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-orange-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">3. Soil Temperature</h2>
+            </div>
+
+            <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-400 mb-6">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    <strong>Definition:</strong> Soil temperature refers to the degree of hotness or coldness of the soil. This property significantly influences various biological, physical, and chemical processes in the soil.
+                </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-orange-800 mb-4">Effects on Agricultural Processes</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="bg-red-50 p-5 rounded-xl border border-red-200">
+                        <h4 class="font-bold text-red-700 mb-2">🌱 Seed Germination</h4>
+                        <p class="text-gray-700 text-sm">Optimal temperatures required for seeds to sprout</p>
+                    </div>
+                    <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+                        <h4 class="font-bold text-green-700 mb-2">🦠 Microbial Activity</h4>
+                        <p class="text-gray-700 text-sm">Temperature affects beneficial soil organisms</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-5 rounded-xl border border-blue-200">
+                        <h4 class="font-bold text-blue-700 mb-2">🌸 Flowering & Root Growth</h4>
+                        <p class="text-gray-700 text-sm">Controls plant development stages</p>
+                    </div>
+                    <div class="bg-purple-50 p-5 rounded-xl border border-purple-200">
+                        <h4 class="font-bold text-purple-700 mb-2">⚡ Nutrient Uptake</h4>
+                        <p class="text-gray-700 text-sm">Rate of nutrient absorption by plants</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Soil Depth -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-teal-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">4. Soil Depth</h2>
+            </div>
+
+            <div class="bg-teal-50 p-6 rounded-xl border-l-4 border-teal-400 mb-6">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    <strong>Definition:</strong> Soil depth measures how thick the topsoil layer is, which is important for determining the types of crops that can be grown. Soil depth can vary from shallow to deep soils.
+                </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-teal-800 mb-4">Implications of Soil Depth</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl border border-green-300">
+                    <h4 class="font-bold text-green-800 text-xl mb-4">🌳 Deep Soils</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="w-3 h-3 bg-green-400 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                            Suitable for deep-rooted crops
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-3 h-3 bg-green-400 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                            Better water retention
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-3 h-3 bg-green-400 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                            More nutrient storage
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-amber-50 to-orange-100 p-6 rounded-xl border border-amber-300">
+                    <h4 class="font-bold text-amber-800 text-xl mb-4">🌿 Shallow Soils</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="w-3 h-3 bg-amber-400 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                            Better for shallow-rooted crops
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-3 h-3 bg-amber-400 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                            Quick drainage
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-3 h-3 bg-amber-400 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                            Temperature changes faster
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Soil Consistency -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">5. Soil Consistency</h2>
+            </div>
+
+            <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-400 mb-6">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    <strong>Definition:</strong> Soil consistency describes the ease with which soil particles can be broken down by finger pressure or by the use of cultivation tools. It is closely related to the soil's moisture content.
+                </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-indigo-800 mb-4">Methods for Determining Soil Consistency</h3>
+            <div class="space-y-6">
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                    <h4 class="font-bold text-blue-800 text-xl mb-4">💧 Moist Soil</h4>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-semibold text-blue-700 mb-2">Loose</h5>
+                            <p class="text-gray-600 text-sm">Does not hold together when moist</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-semibold text-blue-700 mb-2">Friable</h5>
+                            <p class="text-gray-600 text-sm">Easily broken apart</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-semibold text-blue-700 mb-2">Firm</h5>
+                            <p class="text-gray-600 text-sm">Requires moderate pressure to break</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-teal-50 p-6 rounded-xl border border-teal-200">
+                    <h4 class="font-bold text-teal-800 text-xl mb-4">🌊 Wet Soil</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-semibold text-teal-700 mb-3">Stickiness Levels:</h5>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Non-sticky</li>
+                                <li>• Slightly sticky</li>
+                                <li>• Sticky</li>
+                                <li>• Very sticky</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-teal-700 mb-3">Plasticity Range:</h5>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Non-plastic</li>
+                                <li>• Slightly plastic</li>
+                                <li>• Plastic</li>
+                                <li>• Very plastic</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
+                    <h4 class="font-bold text-yellow-800 text-xl mb-4">☀️ Dry Soil</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-semibold text-yellow-700 mb-2">Soft (Loose)</h5>
+                            <p class="text-gray-600 text-sm">Easily broken down</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-semibold text-yellow-700 mb-2">Hard</h5>
+                            <p class="text-gray-600 text-sm">Resistant to pressure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Soil Structure -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-purple-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">6. Soil Structure</h2>
+            </div>
+
+            <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-400 mb-6">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    <strong>Definition:</strong> Soil structure refers to the arrangement of soil particles into aggregates, or "peds." These peds allow for the movement of water and air within the soil, which is essential for root growth and nutrient uptake.
+                </p>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-purple-800 mb-6">Types of Soil Structure</h3>
+            <div class="grid lg:grid-cols-2 gap-6">
+                <!-- First Column -->
+                <div class="space-y-6">
+                    <div class="bg-red-50 p-5 rounded-xl border border-red-200 shadow-sm">
+                        <h4 class="font-bold text-red-800 mb-3">🧱 Blocky</h4>
+                        <p class="text-gray-700 text-sm mb-2">Found in dry soils, irregular and closely packed with little air space.</p>
+                        <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">Common in B-horizon</span>
+                    </div>
+
+                    <div class="bg-blue-50 p-5 rounded-xl border border-blue-200 shadow-sm">
+                        <h4 class="font-bold text-blue-800 mb-3">🎲 Cuboidal</h4>
+                        <p class="text-gray-700 text-sm">Aggregates equal in horizontal and vertical dimensions, includes granular, crumb, and blocky types.</p>
+                    </div>
+
+                    <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 shadow-sm">
+                        <h4 class="font-bold text-yellow-800 mb-3">🏛️ Columnar</h4>
+                        <p class="text-gray-700 text-sm mb-2">Vertical structures with salt caps at the top, found in arid areas.</p>
+                        <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Poor drainage</span>
+                    </div>
+
+                    <div class="bg-green-50 p-5 rounded-xl border border-green-200 shadow-sm">
+                        <h4 class="font-bold text-green-800 mb-3">📏 Prismatic</h4>
+                        <p class="text-gray-700 text-sm mb-2">Made up of vertical columns of soil, often found in B-horizon.</p>
+                        <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Poor water circulation</span>
+                    </div>
+                </div>
+
+                <!-- Second Column -->
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 shadow-sm">
+                        
+                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-3">📄 Platy</h4>
+                        <p class="text-gray-700 text-sm mb-2">Thin horizontal plates that overlap, common in clay soils.</p>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Poor aeration</span>
+                    </div>
+
+                    <div class="bg-emerald-50 p-5 rounded-xl border border-emerald-200 shadow-sm">
+                        <h4 class="font-bold text-emerald-800 mb-3">🌰 Granular</h4>
+                        <p class="text-gray-700 text-sm mb-2">Found at the topsoil, porous and allows air/water movement.</p>
+                        <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded">Ideal for crops</span>
+                    </div>
+
+                    <div class="bg-amber-50 p-5 rounded-xl border border-amber-200 shadow-sm">
+                        <h4 class="font-bold text-amber-800 mb-3">🍞 Crumb</h4>
+                        <p class="text-gray-700 text-sm">Humus and clay particles stick together, creating good pore space.</p>
+                    </div>
+
+                    <div class="bg-orange-50 p-5 rounded-xl border border-orange-200 shadow-sm">
+                        <h4 class="font-bold text-orange-800 mb-3">⚪ Single Grain</h4>
+                        <p class="text-gray-700 text-sm mb-2">Particles lie side by side with high air space.</p>
+                        <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Poor water retention</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Soil Porosity -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-cyan-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">7. Soil Porosity</h2>
+            </div>
+
+            <div class="bg-cyan-50 p-6 rounded-xl border-l-4 border-cyan-400 mb-6">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    <strong>Definition:</strong> Soil porosity refers to the number of pore spaces within the soil, which are occupied by air and water. Higher porosity allows for better drainage and root development.
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-100 to-cyan-100 p-6 rounded-xl border border-cyan-300 shadow-md">
+                <h3 class="text-xl font-bold text-cyan-800 mb-4">📊 Porosity Formula</h3>
+                <div class="bg-white p-4 rounded-lg shadow-inner">
+                    <p class="text-lg font-mono text-center text-gray-800">
+                        Porosity = <span class="text-blue-600">(Amount of water added to soil / Total volume of soil sample)</span> × 100%
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Factors that Destroy Soil Structure -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-red-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.268 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Factors That Destroy Soil Structure</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+                    <h3 class="font-bold text-red-800 text-xl mb-4">🌪️ Soil Erosion</h3>
+                    <p class="text-gray-700 mb-3">Wind and water erosion, along with human activities such as deforestation and poor farming methods, lead to land degradation.</p>
+                    <div class="bg-red-100 p-3 rounded-lg">
+                        <span class="text-red-700 font-medium">Result: Destruction of soil structure</span>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 p-6 rounded-xl border border-orange-200">
+                    <h3 class="font-bold text-orange-800 text-xl mb-4">💧 Poor Management</h3>
+                    <p class="text-gray-700 mb-3">Improper soil and water management practices reduce soil fertility and alter soil properties.</p>
+                    <div class="bg-orange-100 p-3 rounded-lg">
+                        <span class="text-orange-700 font-medium">Result: Reduced fertility and structure loss</span>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
+                    <h3 class="font-bold text-yellow-800 text-xl mb-4">🚜 Compaction</h3>
+                    <p class="text-gray-700 mb-3">Heavy machinery and repeated plowing compact the soil, reducing porosity.</p>
+                    <div class="bg-yellow-100 p-3 rounded-lg">
+                        <span class="text-yellow-700 font-medium">Result: Destroyed soil structure</span>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 p-6 rounded-xl border border-amber-200">
+                    <h3 class="font-bold text-amber-800 text-xl mb-4">🍂 Reduced Organic Matter</h3>
+                    <p class="text-gray-700 mb-3">Lack of organic matter decreases soil stability and leads to poor structure.</p>
+                    <div class="bg-amber-100 p-3 rounded-lg">
+                        <span class="text-amber-700 font-medium">Result: Poor structure and compaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ways to Maintain Soil Structure -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-green-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Ways to Maintain Soil Structure</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-green-50 p-6 rounded-xl border border-green-200 shadow-sm">
+                    <div class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">🔄</span>
+                    </div>
+                    <h3 class="font-bold text-green-800 mb-3">Crop Rotation</h3>
+                    <p class="text-gray-700 text-sm">Increases soil nutrients and organic matter, improving soil structure.</p>
+                </div>
+
+                <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-200 shadow-sm">
+                    <div class="bg-emerald-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">🌱</span>
+                    </div>
+                    <h3 class="font-bold text-emerald-800 mb-3">Adding Organic Matter</h3>
+                    <p class="text-gray-700 text-sm">Enhances microbial activity, reduces compaction, and improves moisture retention.</p>
+                </div>
+
+                <div class="bg-lime-50 p-6 rounded-xl border border-lime-200 shadow-sm">
+                    <div class="bg-lime-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">⚖️</span>
+                    </div>
+                    <h3 class="font-bold text-lime-800 mb-3">Liming</h3>
+                    <p class="text-gray-700 text-sm">Reduces soil acidity and improves biological activity, benefiting soil structure.</p>
+                </div>
+
+                <div class="bg-teal-50 p-6 rounded-xl border border-teal-200 shadow-sm">
+                    <div class="bg-teal-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">🛡️</span>
+                    </div>
+                    <h3 class="font-bold text-teal-800 mb-3">Preventing Soil Erosion</h3>
+                    <p class="text-gray-700 text-sm">Reforestation, conservation tillage, and cover crops protect soil structure.</p>
+                </div>
+
+                <div class="bg-cyan-50 p-6 rounded-xl border border-cyan-200 shadow-sm md:col-span-2 lg:col-span-1">
+                    <div class="bg-cyan-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">🌿</span>
+                    </div>
+                    <h3 class="font-bold text-cyan-800 mb-3">Ground Cover</h3>
+                    <p class="text-gray-700 text-sm">Cover crops improve organic matter, fertility, and reduce soil erosion.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Effects on Crop Production -->
+        <section class="property-card bg-white rounded-2xl shadow-lg p-8 mb-10">
+            <div class="flex items-center mb-6">
+                <div class="bg-violet-100 p-4 rounded-full mr-6">
+                    <svg class="w-8 h-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Effects of Physical Soil Properties on Crop Production</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200 shadow-md">
+                    <h3 class="font-bold text-blue-800 mb-3">🏖️ Soil Texture</h3>
+                    <p class="text-gray-700 text-sm">Affects nutrient availability, water holding capacity, and aeration.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl border border-pink-200 shadow-md">
+                    <h3 class="font-bold text-pink-800 mb-3">🎨 Soil Colour</h3>
+                    <p class="text-gray-700 text-sm">Indicates soil fertility levels and composition.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200 shadow-md">
+                    <h3 class="font-bold text-orange-800 mb-3">🌡️ Soil Temperature</h3>
+                    <p class="text-gray-700 text-sm">Influences microbial activity, seed germination, and plant growth.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200 shadow-md">
+                    <h3 class="font-bold text-purple-800 mb-3">🏗️ Soil Structure</h3>
+                    <p class="text-gray-700 text-sm">Determines suitability for crops based on fertility, drainage, and aeration.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl border border-teal-200 shadow-md">
+                    <h3 class="font-bold text-teal-800 mb-3">📏 Soil Depth</h3>
+                    <p class="text-gray-700 text-sm">Helps in selecting crops suitable for deep or shallow rooting.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl border border-indigo-200 shadow-md">
+                    <h3 class="font-bold text-indigo-800 mb-3">✋ Soil Consistency</h3>
+                    <p class="text-gray-700 text-sm">Affects cultivation practices and root penetration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="property-card bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-2xl shadow-2xl p-10">
+            <div class="text-center">
+                <div class="bg-white bg-opacity-20 p-6 rounded-full w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-4xl font-bold mb-6">Key Takeaway</h2>
+                <p class="text-xl leading-relaxed max-w-4xl mx-auto">
+                    Understanding the physical properties of soil is essential for optimizing crop production and ensuring sustainable agricultural practices. These properties work together to determine soil health, fertility, and suitability for different crops.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg mb-2">Agriculture Form 3: Complete Study Guide</p>
+            <p class="text-gray-400">Physical Properties of Soil - Essential Knowledge for Agricultural Success</p>
+              <p class="text-white">Email: millenniumpvtschool@gmail.com</p>
+        </div>
+    </footer>
+</body>
+</html>

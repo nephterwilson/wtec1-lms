@@ -1,0 +1,68 @@
+
+
+[
+  {
+    "id": 1,
+    "title": "Agriculture Form 4",
+    "description": "Read the study notes",
+    "dueDate": "2025-09-08",
+    "fileLink": "./agric4.html"
+  },
+  {
+    "id": 2,
+    "title": "Agriculture Form 3",
+    "description": "Read the study notes",
+    "dueDate": "2025-08-08",
+    "fileLink": "./agric3.html"
+  },
+  {
+    "id": 3,
+    "title": "Geography Form 1",
+    "description": "Answer questions 1–15",
+    "dueDate": "2025-08-15",
+    "fileLink": "https://docs.google.com/document/d/1N_vLu1iIZn4goOkctJ-H46d2Rfvedw_zq9lQ-yE80m8/edit?usp=sharing"
+  },
+  {
+    "id": 4,
+    "title": "Physics Form 1",
+    "description": "Answer questions 1–10",
+    "dueDate": "2025-08-15",
+    "fileLink": "https://docs.google.com/document/d/1u05U43iuZCPXkzsieeQP7R9fX-7GCUlrsCcpJBiQi48/edit?usp=sharing"
+  },
+  {
+    "id": 5,
+    "title": "Agriculture Form 1",
+    "description": "Answer questions 1–12",
+    "dueDate": "2025-08-15",
+    "fileLink": "https://docs.google.com/document/d/1ayiINTzZlwJrEqczGi41__VgNrg9-DElS9Ibh0HNV40/edit?usp=sharing"
+  },
+  {
+    "id": 6,
+    "title": "Biology Form 1",
+    "description": "Answer questions 1–10",
+    "dueDate": "2025-08-15",
+    "fileLink": "https://docs.google.com/document/d/1L94-QjpyhUaVrpGR_dL0qG19kPHcja8s6K3wHfsD_M0/edit?usp=sharing"
+  },
+   {
+    "id": 7,
+    "title": "Maths Form 1",
+    "description": "Answer questions as directed",
+    "dueDate": "2025-08-15",
+    "fileLink": "https://docs.google.com/document/d/17N2cda5YiFvqBqODxYQ_YGi4FKacEWD1kn9JDhY7R7k/edit?usp=sharing"
+  },
+   {
+    "id": 8,
+    "title": "MSCE ENGLISH",
+    "description": "PART 1: Answer questions 1–15",
+    "dueDate": "2025-08-18",
+    "fileLink": "https://docs.google.com/document/d/19xzNpf-KY9IPk3viXHGLKXKipJ1mQi7c31srjjIquWE/edit?usp=sharing"
+  },
+   {
+    "id": 9,
+    "title": "English Comprehension",
+    "description": "PART 1: Answer questions that follow",
+    "dueDate": "2025-08-18",
+    "fileLink": "https://docs.google.com/document/d/1rGgCGAvwHxx7QoN1ykYnXxFhiMgVbgSoLtGSk2NklVc/edit?usp=sharing"
+  }
+]
+
