@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Drainage - Live Lesson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-green-50 min-h-screen p-4">
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h1 class="text-3xl font-bold text-blue-800 text-center">Unit 3: Land Drainage</h1>
+            <p class="text-gray-600 text-center mt-2">Removing excess water for better farming</p>
+        </div>
+
+        <!-- Lesson Content -->
+        <div id="lessonContent" class="bg-white rounded-lg shadow-lg p-8 mb-6">
+            <!-- Slide 1: Definition -->
+            <div class="lesson-slide" id="lesson-0">
+                <div class="text-center mb-8">
+                    <div class="inline-block p-4 bg-blue-100 rounded-full mb-4">
+                        <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">What is Land Drainage?</h2>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200 text-center">
+                    <p class="text-lg text-gray-800">Systematic removal of excess water from soil to improve farming and prevent waterlogging</p>
+                </div>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-red-50 p-4 rounded-lg border-2 border-red-200">
+                        <p class="text-gray-700"><span class="font-bold">Problem:</span> Too much water = unhealthy crops</p>
+                    </div>
+                    <div class="mx-4 flex items-center">
+                        <span class="text-3xl">→</span>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border-2 border-green-200">
+                        <p class="text-gray-700"><span class="font-bold">Solution:</span> Drainage = healthy soil</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Importance -->
+            <div class="lesson-slide hidden" id="lesson-1">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800">Why is Drainage Important?</h2>
+                    <p class="text-gray-600 mt-2">7 Key Benefits</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <div class="font-bold text-gray-800 mb-1">🌬️ Better Soil Aeration</div>
+                        <p class="text-sm text-gray-700">Roots breathe easier and grow healthier</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <div class="font-bold text-gray-800 mb-1">🌡️ Raises Soil Temperature</div>
+                        <p class="text-sm text-gray-700">Soil warms faster for earlier planting</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                        <div class="font-bold text-gray-800 mb-1">🦠 More Microbial Activity</div>
+                        <p class="text-sm text-gray-700">Good bacteria thrive and help plants</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <div class="font-bold text-gray-800 mb-1">🛡️ Reduces Erosion</div>
+                        <p class="text-sm text-gray-700">Less soil washed away by runoff</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                        <div class="font-bold text-gray-800 mb-1">🧂 Reduces Salt Build-up</div>
+                        <p class="text-sm text-gray-700">Washes away harmful salts from roots</p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                        <div class="font-bold text-gray-800 mb-1">🏞️ Land Reclamation</div>
+                        <p class="text-sm text-gray-700">Turns wetlands into farmland</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500 md:col-span-2">
+                        <div class="font-bold text-gray-800 mb-1">🌊 Prevents Flooding</div>
+                        <p class="text-sm text-gray-700">Manages excess water to protect fields</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Methods Overview -->
+            <div class="lesson-slide hidden" id="lesson-2">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800">3 Main Drainage Methods</h2>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-blue-100 to-blue-200 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">1. Surface Drainage</h3>
+                        <p class="text-gray-700">Removing water from the soil surface</p>
+                        <div class="mt-3 text-sm text-gray-600">Examples: Open ditches, cambered fields, pumping</div>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-100 to-green-200 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">2. Subsurface Drainage</h3>
+                        <p class="text-gray-700">Using underground pipes to drain water below soil</p>
+                        <div class="mt-3 text-sm text-gray-600">More expensive but very effective</div>
+                    </div>
+                    <div class="bg-gradient-to-r from-purple-100 to-purple-200 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">3. Biodrainage</h3>
+                        <p class="text-gray-700">Using deep-rooted trees to absorb excess water</p>
+                        <div class="mt-3 text-sm text-gray-600">Natural and eco-friendly approach</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Surface Drainage - Open Ditches -->
+            <div class="lesson-slide hidden" id="lesson-3">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Surface Drainage: Open Ditches</h2>
+                <div class="mb-6 text-center">
+                    <p class="text-gray-700">Trenches dug alongside roads or fields to channel water away</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 p-5 rounded-lg border-2 border-green-300">
+                        <h3 class="font-bold text-green-800 mb-3 text-lg">✓ Advantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Cost-effective and simple</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Easy to implement</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Natural water flow</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Reduces erosion</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-5 rounded-lg border-2 border-red-300">
+                        <h3 class="font-bold text-red-800 mb-3 text-lg">✗ Disadvantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Needs regular maintenance</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Safety hazards possible</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Takes up farming space</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Can overflow in heavy rain</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Surface Drainage - Cambered Fields -->
+            <div class="lesson-slide hidden" id="lesson-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Surface Drainage: Cambered Fields</h2>
+                <div class="mb-6 text-center">
+                    <p class="text-gray-700">Raised soil heaps between crop fields for water runoff</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 p-5 rounded-lg border-2 border-green-300">
+                        <h3 class="font-bold text-green-800 mb-3 text-lg">✓ Advantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Prevents waterlogging</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Improves soil drainage</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Low-cost method</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Enhances crop growth</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-5 rounded-lg border-2 border-red-300">
+                        <h3 class="font-bold text-red-800 mb-3 text-lg">✗ Disadvantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Labor intensive to build</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Risk of erosion on heaps</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Uneven water distribution</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Reduces planting space</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Surface Drainage - Pumping -->
+            <div class="lesson-slide hidden" id="lesson-5">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Surface Drainage: Pumping</h2>
+                <div class="mb-6 text-center">
+                    <p class="text-gray-700">Using pumps to remove water mechanically</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 p-5 rounded-lg border-2 border-green-300">
+                        <h3 class="font-bold text-green-800 mb-3 text-lg">✓ Advantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Highly effective and fast</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Works in extreme conditions</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Controlled drainage process</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Versatile application</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-5 rounded-lg border-2 border-red-300">
+                        <h3 class="font-bold text-red-800 mb-3 text-lg">✗ Disadvantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Very expensive</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>High energy consumption</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Requires maintenance</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Can harm environment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Subsurface Drainage -->
+            <div class="lesson-slide hidden" id="lesson-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Subsurface Drainage</h2>
+                <div class="mb-6 bg-blue-50 p-4 rounded-lg text-center border-2 border-blue-200">
+                    <p class="text-gray-700">Underground pipes that remove water from root zone</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 p-5 rounded-lg border-2 border-green-300">
+                        <h3 class="font-bold text-green-800 mb-3 text-lg">✓ Advantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Prevents waterlogging effectively</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Improves soil aeration</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Increases crop yield</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Reduces soil salinity</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Long-term solution</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-5 rounded-lg border-2 border-red-300">
+                        <h3 class="font-bold text-red-800 mb-3 text-lg">✗ Disadvantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>High installation costs</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Complex installation process</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Needs occasional maintenance</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Can affect groundwater</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Difficult to modify later</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Biodrainage -->
+            <div class="lesson-slide hidden" id="lesson-7">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Biodrainage</h2>
+                <div class="mb-6 bg-green-50 p-4 rounded-lg text-center border-2 border-green-200">
+                    <p class="text-gray-700">Using deep-rooted trees to absorb excess water naturally</p>
+                </div>
+                <div class="mb-6 bg-purple-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-gray-800 mb-2">Suitable Trees:</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm">🌳 Eucalyptus</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm">🌳 Poplar</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm">🌳 Willow</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm">🌳 Casuarina</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm">🌳 Acacia</span>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-green-50 p-5 rounded-lg border-2 border-green-300">
+                        <h3 class="font-bold text-green-800 mb-3 text-lg">✓ Advantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Eco-friendly and natural</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Cost-effective long-term</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Improves soil structure</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Reduces salinity</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Captures carbon (climate benefit)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-5 rounded-lg border-2 border-red-300">
+                        <h3 class="font-bold text-red-800 mb-3 text-lg">✗ Disadvantages</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><span class="mr-2">•</span>Slow to become effective</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Requires large land areas</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Limited to certain tree species</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>May deplete groundwater</li>
+                            <li class="flex items-start"><span class="mr-2">•</span>Competes with crop space</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Comparison Summary -->
+            <div class="lesson-slide hidden" id="lesson-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Quick Comparison</h2>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="font-bold text-gray-800 mb-2">Surface Drainage</h3>
+                        <p class="text-sm text-gray-700"><span class="font-semibold">Best for:</span> Quick, simple solutions</p>
+                        <p class="text-sm text-gray-700"><span class="font-semibold">Cost:</span> Low to Medium</p>
+                    </div>
+                    <div class="bg-green-50 p-5 rounded-lg border-l-4 border-green-500">
+                        <h3 class="font-bold text-gray-800 mb-2">Subsurface Drainage</h3>
+                        <p class="text-sm text-gray-700"><span class="font-semibold">Best for:</span> Long-term, permanent solutions</p>
+                        <p class="text-sm text-gray-700"><span class="font-semibold">Cost:</span> High</p>
+                    </div>
+                    <div class="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
+                        <h3 class="font-bold text-gray-800 mb-2">Biodrainage</h3>
+                        <p class="text-sm text-gray-700"><span class="font-semibold">Best for:</span> Eco-friendly, sustainable projects</p>
+                        <p class="text-sm text-gray-700"><span class="font-semibold">Cost:</span> Low (but slow results)</p>
+                    </div>
+                </div>
+                <div class="mt-8 bg-yellow-50 p-5 rounded-lg border-2 border-yellow-300 text-center">
+                    <p class="font-bold text-gray-800 text-lg">Key Takeaway</p>
+                    <p class="text-gray-700 mt-2">Choose the drainage method based on your budget, land type, and time available!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="flex justify-between items-center mb-4">
+                <button onclick="prevLesson()" id="prevBtn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-lg transition">
+                    ← Previous
+                </button>
+                <div class="text-gray-700 font-semibold">
+                    <span id="currentSlide">1</span> / 9
+                </div>
+                <button onclick="nextLesson()" id="nextBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition">
+                    Next →
+                </button>
+            </div>
+            <div class="flex gap-1">
+                <div class="flex-1 h-2 bg-blue-500 rounded" id="progress-0"></div>
+                <div class="flex-1 h-2 bg-gray-200 rounded" id="progress-1"></div>
+                <div class="flex-1 h-2 bg-gray-200 rounded" id="progress-2"></div>
+                <div class="flex-1 h-2 bg-gray-200 rounded" id="progress-3"></div>
+                <div class="flex-1 h-2 bg-gray-200 rounded" id="progress-4"></div>
+                <div class="flex-1 h-2 bg-gray-200 rounded" id="progress-5"></div>
+                <div class="flex-1 h-2 bg-gray-200 rounded" id="progress-6"></div>
+                <div class="flex-1 h-2 bg-gray-200 rounded" id="progress-7"></div>
+                <div class="flex-1 h-2 bg-gray-200 rounded" id="progress-8"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLesson = 0;
+        const totalLessons = 9;
+
+        function showLesson(index) {
+            document.querySelectorAll('.lesson-slide').forEach((slide, i) => {
+                slide.classList.toggle('hidden', i !== index);
+            });
+
+            for (let i = 0; i < totalLessons; i++) {
+                const progressBar = document.getElementById(`progress-${i}`);
+                if (i <= index) {
+                    progressBar.classList.remove('bg-gray-200');
+                    progressBar.classList.add('bg-blue-500');
+                } else {
+                    progressBar.classList.remove('bg-blue-500');
+                    progressBar.classList.add('bg-gray-200');
+                }
+            }
+
+            document.getElementById('currentSlide').textContent = index + 1;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalLessons - 1;
+
+            if (index === 0) {
+                document.getElementById('prevBtn').classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                document.getElementById('prevBtn').classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+
+            if (index === totalLessons - 1) {
+                document.getElementById('nextBtn').classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                document.getElementById('nextBtn').classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        function nextLesson() {
+            if (currentLesson < totalLessons - 1) {
+                currentLesson++;
+                showLesson(currentLesson);
+            }
+        }
+
+        function prevLesson() {
+            if (currentLesson > 0) {
+                currentLesson--;
+                showLesson(currentLesson);
+            }
+        }
+
+        showLesson(0);
+    </script>
+</body>
+</html>

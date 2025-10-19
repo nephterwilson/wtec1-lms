@@ -1,0 +1,738 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris Peace Conference & Versailles Treaty 1919</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .leader-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .leader-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .leader-card:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4">🏛️</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                The Paris Peace Conference
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">& The Treaty of Versailles</p>
+            <p class="text-lg text-gray-400">1919 - Reshaping the World After WWI</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('background')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Background
+                </button>
+                <button onclick="showSection('agenda')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Conference Agenda
+                </button>
+                <button onclick="showSection('leaders')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    The Big Four
+                </button>
+                <button onclick="showSection('terms')" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 rounded-xl transition shadow-lg">
+                    Treaty Terms
+                </button>
+                <button onclick="showSection('analysis')" class="px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-xl transition shadow-lg">
+                    Analysis
+                </button>
+                <button onclick="showSection('quiz')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Quiz
+                </button>
+            </div>
+        </header>
+
+        <!-- Background Section -->
+        <section id="background" class="lesson-section">
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-700 card-hover">
+                    <div class="text-5xl mb-4 text-center">📅</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">When & Where</h3>
+                    <p class="text-gray-300">Held in Paris, 1919, following the armistice that ended the First World War on November 11, 1918.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-700 card-hover">
+                    <div class="text-5xl mb-4 text-center">🎯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-400">Main Objectives</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Establish peace terms</li>
+                        <li>• Prevent future wars</li>
+                        <li>• Punish Germany</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-700 card-hover">
+                    <div class="text-5xl mb-4 text-center">🌍</div>
+                    <h3 class="text-2xl font-bold mb-4 text-pink-400">Key Participants</h3>
+                    <p class="text-gray-300">The "Big Four" powers dominated: Britain, France, USA, and Italy.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-700">
+                <h3 class="text-3xl font-bold mb-6 text-center">Historical Context</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-3 text-yellow-400">Pre-Conference Situation</h4>
+                        <ul class="text-gray-300 space-y-2 text-sm">
+                            <li>✓ Europe devastated by four years of war</li>
+                            <li>✓ Millions of casualties and refugees</li>
+                            <li>✓ Empires collapsed (German, Austro-Hungarian, Ottoman, Russian)</li>
+                            <li>✓ Economic destruction across the continent</li>
+                            <li>✓ Revolutionary movements spreading</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-3 text-green-400">Conference Challenges</h4>
+                        <ul class="text-gray-300 space-y-2 text-sm">
+                            <li>✓ Conflicting national interests</li>
+                            <li>✓ Balancing punishment with stability</li>
+                            <li>✓ Redrawing international borders</li>
+                            <li>✓ Managing colonial territories</li>
+                            <li>✓ Creating lasting peace mechanisms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agenda Section -->
+        <section id="agenda" class="lesson-section hidden">
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-700 mb-8">
+                <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Conference Agenda
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-purple-500 border-opacity-30 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4 text-2xl">⚖️</div>
+                            <h3 class="text-xl font-bold">Germany's Punishment</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Determine penalties, reparations, and consequences for Germany's role in the war.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-blue-500 border-opacity-30 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-2xl">🗺️</div>
+                            <h3 class="text-xl font-bold">Border Redrawing</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Reshape European and global boundaries based on national self-determination.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-green-500 border-opacity-30 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4 text-2xl">🕊️</div>
+                            <h3 class="text-xl font-bold">Peace Mechanisms</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Establish international systems to maintain peace and prevent future conflicts.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-yellow-500 border-opacity-30 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-2xl">🌴</div>
+                            <h3 class="text-xl font-bold">Colonial Mandates</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Discuss administration of former German and Ottoman territories.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-purple-500 border-opacity-30 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-2xl">👑</div>
+                            <h3 class="text-xl font-bold">Empire Futures</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Decide the fate of Austria-Hungary and Ottoman Empire territories.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-pink-500 border-opacity-30 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-2xl">🛡️</div>
+                            <h3 class="text-xl font-bold">Disarmament</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Promote military reduction to prevent another global war.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-indigo-500 border-opacity-30 card-hover col-span-full">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mr-4 text-2xl">🏛️</div>
+                            <h3 class="text-xl font-bold">League of Nations</h3>
+                        </div>
+                        <p class="text-gray-400">Formulate an international organization to manage disputes and maintain collective security - a revolutionary concept in international relations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaders Section -->
+        <section id="leaders" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                The Big Four Leaders
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- France -->
+                <div class="leader-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🇫🇷</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-blue-300">Georges Clemenceau</h3>
+                            <p class="text-gray-400">France - "The Tiger"</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-3 text-red-400 text-lg">Position: HARSH PUNISHMENT</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>🔥 Wanted severe penalties for Germany</li>
+                            <li>🏆 Secure territorial gains (Alsace-Lorraine)</li>
+                            <li>🛡️ Ensure long-term security against German aggression</li>
+                            <li>💰 Maximum reparations to rebuild France</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-900 bg-opacity-20 p-4 rounded-lg border border-red-700">
+                        <p class="text-sm text-gray-300"><strong>Motivation:</strong> France suffered massive destruction and casualties on its soil. Clemenceau wanted Germany permanently weakened.</p>
+                    </div>
+                </div>
+
+                <!-- Britain -->
+                <div class="leader-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🇬🇧</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-red-300">David Lloyd George</h3>
+                            <p class="text-gray-400">Britain - "The Welsh Wizard"</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-3 text-yellow-400 text-lg">Position: MODERATE APPROACH</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>⚖️ Balanced punishment to maintain trade</li>
+                            <li>💼 Germany strong enough to prevent communism</li>
+                            <li>🌍 Focused on colonial gains</li>
+                            <li>⚓ Wanted naval supremacy maintained</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-900 bg-opacity-20 p-4 rounded-lg border border-yellow-700">
+                        <p class="text-sm text-gray-300"><strong>Motivation:</strong> Balance public demand for punishment with economic pragmatism. Germany was a major trading partner.</p>
+                    </div>
+                </div>
+
+                <!-- USA -->
+                <div class="leader-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🇺🇸</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-purple-300">Woodrow Wilson</h3>
+                            <p class="text-gray-400">USA - "The Idealist"</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-3 text-blue-400 text-lg">Position: FAIRNESS & IDEALISM</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>📜 Advocated "Fourteen Points" for fair peace</li>
+                            <li>🏛️ Emphasized League of Nations creation</li>
+                            <li>🤝 Preferred less harsh reparations</li>
+                            <li>🗳️ Promoted self-determination for nations</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-20 p-4 rounded-lg border border-blue-700">
+                        <p class="text-sm text-gray-300"><strong>Motivation:</strong> Create lasting peace through international cooperation and fairness, not revenge. Prevent future wars.</p>
+                    </div>
+                </div>
+
+                <!-- Italy -->
+                <div class="leader-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🇮🇹</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-green-300">Vittorio Orlando</h3>
+                            <p class="text-gray-400">Italy - "The Outsider"</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-3 text-green-400 text-lg">Position: TERRITORIAL GAINS</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>🗺️ Wanted promised territories (South Tyrol)</li>
+                            <li>🏖️ Sought Dalmatian coast control</li>
+                            <li>😔 Less influential than other three</li>
+                            <li>🚪 Eventually walked out in frustration</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-900 bg-opacity-20 p-4 rounded-lg border border-green-700">
+                        <p class="text-sm text-gray-300"><strong>Motivation:</strong> Secure territorial promises made when Italy joined the Allies. Felt Italy's sacrifices were being ignored.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Non-Western Countries -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                <h3 class="text-2xl font-bold mb-4 text-orange-400">Non-Western Representation</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <div class="text-3xl mb-2">🇯🇵</div>
+                        <h4 class="font-bold mb-2">Japan</h4>
+                        <p class="text-sm text-gray-400">Attended but received limited voice in major decisions</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <div class="text-3xl mb-2">🌍</div>
+                        <h4 class="font-bold mb-2">Other Nations</h4>
+                        <p class="text-sm text-gray-400">South Africa, India, and others were often excluded</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <div class="text-3xl mb-2">❌</div>
+                        <h4 class="font-bold mb-2">Colonial Issues</h4>
+                        <p class="text-sm text-gray-400">Mandates decided without input from affected populations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms Section -->
+        <section id="terms" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Terms of the Versailles Treaty
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⚔️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-red-300">Disarmament</h3>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Army limited to 100,000 soldiers</li>
+                            <li>• No air force permitted</li>
+                            <li>• Navy severely restricted</li>
+                            <li>• No submarines or tanks</li>
+                            <li>• Rhineland demilitarized</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">💰</div>
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-300">Reparations</h3>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• £6.6 billion in payments</li>
+                            <li>• Compensation for war damages</li>
+                            <li>• Coal deliveries to France</li>
+                            <li>• Livestock and resources</li>
+                            <li>• Payment over decades</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🗺️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-300">Territorial Losses</h3>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Alsace-Lorraine to France</li>
+                            <li>• Polish Corridor created</li>
+                            <li>• All colonies taken as mandates</li>
+                            <li>• Danzig made free city</li>
+                            <li>• Lost 13% of territory</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏛️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">League of Nations</h3>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• International peace organization</li>
+                            <li>• Collective security system</li>
+                            <li>• Germany initially excluded</li>
+                            <li>• US never joined (ironic!)</li>
+                            <li>• Dispute resolution body</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📜</div>
+                    <h3 class="text-2xl font-bold mb-4 text-orange-300">War Guilt (Article 231)</h3>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Germany accepted full blame</li>
+                            <li>• Basis for reparations</li>
+                            <li>• Most humiliating clause</li>
+                            <li>• Created lasting resentment</li>
+                            <li>• Moral condemnation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏭</div>
+                    <h3 class="text-2xl font-bold mb-4 text-pink-300">Industrial Restrictions</h3>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Limited military production</li>
+                            <li>• Saar coalfields to France</li>
+                            <li>• Industrial capacity reduced</li>
+                            <li>• Economic control measures</li>
+                            <li>• Allied supervision</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section id="analysis" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">
+                Treaty Analysis: Strengths & Weaknesses
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Strengths -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">✅</div>
+                        <h3 class="text-3xl font-bold text-green-300">Strengths</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Formally Ended WWI</h4>
+                            <p class="text-sm text-gray-300">Brought official conclusion to the deadliest conflict in history at that time.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">League of Nations</h4>
+                            <p class="text-sm text-gray-300">First attempt at global international cooperation and collective security.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Territory Restoration</h4>
+                            <p class="text-sm text-gray-300">Returned lands to victorious nations and recognized some national rights.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Disarmament Principles</h4>
+                            <p class="text-sm text-gray-300">Encouraged military reduction and established precedent for arms control.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weaknesses -->
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">❌</div>
+                        <h3 class="text-3xl font-bold text-red-300">Weaknesses</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Overly Harsh on Germany</h4>
+                            <p class="text-sm text-gray-300">Created resentment and nationalism, fueling extremist movements and Hitler's rise.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Punishment over Reconciliation</h4>
+                            <p class="text-sm text-gray-300">Focused on revenge rather than building stable, lasting peace in Europe.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Failed to Prevent WWII</h4>
+                            <p class="text-sm text-gray-300">The harsh terms directly contributed to conditions that led to World War II.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Excluded Non-Western Nations</h4>
+                            <p class="text-sm text-gray-300">Limited meaningful participation from non-Western countries despite their contributions.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Economic Devastation</h4>
+                            <p class="text-sm text-gray-300">Reparations crushed German economy, causing hyperinflation and mass unemployment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Analysis -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Long-Term Impact</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">🔥</div>
+                        <h4 class="font-bold text-lg mb-3 text-red-400">Seeds of WWII</h4>
+                        <p class="text-sm text-gray-300">The treaty's harsh terms created the perfect conditions for Hitler's rise and the outbreak of World War II just 21 years later.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">💔</div>
+                        <h4 class="font-bold text-lg mb-3 text-yellow-400">Economic Crisis</h4>
+                        <p class="text-sm text-gray-300">Reparations led to German hyperinflation (1923), economic collapse, and social instability across Europe.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">🌍</div>
+                        <h4 class="font-bold text-lg mb-3 text-blue-400">Global Reshaping</h4>
+                        <p class="text-sm text-gray-300">Created new nations, redrew borders, and established the principle of international cooperation through the League.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="lesson-section hidden">
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-700 max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+                    Test Your Knowledge
+                </h2>
+                
+                <div id="quiz-container" class="space-y-8">
+                    <!-- Question 1 -->
+                    <div class="quiz-question" id="q1">
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4 text-blue-300">1. Which leader wanted the harshest punishment for Germany?</h3>
+                            <div class="space-y-3">
+                                <button onclick="checkAnswer('q1', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    A) Woodrow Wilson
+                                </button>
+                                <button onclick="checkAnswer('q1', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    B) David Lloyd George
+                                </button>
+                                <button onclick="checkAnswer('q1', true)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    C) Georges Clemenceau
+                                </button>
+                                <button onclick="checkAnswer('q1', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    D) Vittorio Orlando
+                                </button>
+                            </div>
+                            <div id="q1-feedback" class="mt-4 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-question" id="q2">
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4 text-purple-300">2. What was the War Guilt Clause?</h3>
+                            <div class="space-y-3">
+                                <button onclick="checkAnswer('q2', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    A) A requirement for Germany to disarm completely
+                                </button>
+                                <button onclick="checkAnswer('q2', true)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    B) Article 231 forcing Germany to accept full blame for WWI
+                                </button>
+                                <button onclick="checkAnswer('q2', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    C) The creation of the League of Nations
+                                </button>
+                                <button onclick="checkAnswer('q2', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    D) Return of Alsace-Lorraine to France
+                                </button>
+                            </div>
+                            <div id="q2-feedback" class="mt-4 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-question" id="q3">
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4 text-pink-300">3. How much did Germany have to pay in reparations?</h3>
+                            <div class="space-y-3">
+                                <button onclick="checkAnswer('q3', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    A) £3.3 billion
+                                </button>
+                                <button onclick="checkAnswer('q3', true)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    B) £6.6 billion
+                                </button>
+                                <button onclick="checkAnswer('q3', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    C) £10 billion
+                                </button>
+                                <button onclick="checkAnswer('q3', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    D) £15 billion
+                                </button>
+                            </div>
+                            <div id="q3-feedback" class="mt-4 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="quiz-question" id="q4">
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4 text-green-300">4. Which US President promoted the "Fourteen Points"?</h3>
+                            <div class="space-y-3">
+                                <button onclick="checkAnswer('q4', true)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    A) Woodrow Wilson
+                                </button>
+                                <button onclick="checkAnswer('q4', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    B) Theodore Roosevelt
+                                </button>
+                                <button onclick="checkAnswer('q4', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    C) Warren Harding
+                                </button>
+                                <button onclick="checkAnswer('q4', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    D) Calvin Coolidge
+                                </button>
+                            </div>
+                            <div id="q4-feedback" class="mt-4 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="quiz-question" id="q5">
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4 text-yellow-300">5. What was a major weakness of the Versailles Treaty?</h3>
+                            <div class="space-y-3">
+                                <button onclick="checkAnswer('q5', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    A) It was too lenient on Germany
+                                </button>
+                                <button onclick="checkAnswer('q5', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    B) It created the League of Nations
+                                </button>
+                                <button onclick="checkAnswer('q5', true)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    C) It was too harsh and created resentment that led to WWII
+                                </button>
+                                <button onclick="checkAnswer('q5', false)" class="quiz-btn w-full text-left p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition border border-slate-600">
+                                    D) It returned too much territory to Germany
+                                </button>
+                            </div>
+                            <div id="q5-feedback" class="mt-4 hidden"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Results -->
+                <div id="quiz-results" class="mt-8 hidden">
+                    <div class="bg-gradient-to-r from-purple-900 to-pink-900 p-8 rounded-xl text-center">
+                        <h3 class="text-3xl font-bold mb-4">Quiz Complete!</h3>
+                        <div class="text-6xl font-bold mb-4" id="score-display">0/5</div>
+                        <p class="text-xl mb-6" id="score-message"></p>
+                        <button onclick="resetQuiz()" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl transition font-bold">
+                            Retake Quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let score = 0;
+        let questionsAnswered = 0;
+        const totalQuestions = 5;
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function checkAnswer(questionId, isCorrect) {
+            const question = document.getElementById(questionId);
+            const feedback = document.getElementById(questionId + '-feedback');
+            
+            if (question.dataset.answered === 'true') return;
+            
+            question.dataset.answered = 'true';
+            questionsAnswered++;
+            
+            const buttons = question.querySelectorAll('.quiz-btn');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+            });
+            
+            if (isCorrect) {
+                score++;
+                feedback.className = 'mt-4 p-4 bg-green-900 bg-opacity-70 border-2 border-green-500 rounded-lg';
+                feedback.innerHTML = '<div class="flex items-center"><span class="text-3xl mr-3">✓</span><span class="text-lg font-bold">Correct! Well done!</span></div>';
+                event.target.classList.add('bg-green-700', 'border-green-500');
+            } else {
+                feedback.className = 'mt-4 p-4 bg-red-900 bg-opacity-70 border-2 border-red-500 rounded-lg';
+                feedback.innerHTML = '<div class="flex items-center"><span class="text-3xl mr-3">✗</span><span class="text-lg font-bold">Incorrect. Review the lesson material.</span></div>';
+                event.target.classList.add('bg-red-700', 'border-red-500');
+            }
+            
+            feedback.classList.remove('hidden');
+            
+            if (questionsAnswered === totalQuestions) {
+                setTimeout(showResults, 1000);
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-results').classList.remove('hidden');
+            document.getElementById('score-display').textContent = score + '/' + totalQuestions;
+            
+            const percentage = (score / totalQuestions) * 100;
+            let message = '';
+            
+            if (percentage === 100) {
+                message = '🎉 Perfect! You have mastered this topic!';
+            } else if (percentage >= 80) {
+                message = '🌟 Excellent work! You have a strong understanding.';
+            } else if (percentage >= 60) {
+                message = '👍 Good job! Review the areas you missed.';
+            } else {
+                message = '📚 Keep studying! Review the lesson materials.';
+            }
+            
+            document.getElementById('score-message').textContent = message;
+            
+            document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function resetQuiz() {
+            score = 0;
+            questionsAnswered = 0;
+            
+            document.querySelectorAll('.quiz-question').forEach(q => {
+                q.dataset.answered = 'false';
+                const buttons = q.querySelectorAll('.quiz-btn');
+                buttons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-green-700', 'bg-red-700', 'border-green-500', 'border-red-500');
+                });
+                const feedback = q.querySelector('[id$="-feedback"]');
+                feedback.classList.add('hidden');
+            });
+            
+            document.getElementById('quiz-results').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('background');
+    </script>
+</body>
+</html>

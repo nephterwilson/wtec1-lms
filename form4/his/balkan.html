@@ -1,0 +1,825 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nationalism in the Balkan Region - WWI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .section-hidden { display: none; }
+        .section-visible { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 min-h-screen text-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 animate-fade-in">
+            <h1 class="text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-red-400">
+                Nationalism in the Balkans
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">The Powder Keg of Europe</p>
+            <p class="text-lg text-gray-400">How Balkan tensions ignited World War I</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="flex justify-center gap-3 mb-10 flex-wrap">
+            <button onclick="showSection('overview')" class="nav-btn bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                Overview
+            </button>
+            <button onclick="showSection('interests')" class="nav-btn bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                National Interests
+            </button>
+            <button onclick="showSection('crises')" class="nav-btn bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                Major Crises
+            </button>
+            <button onclick="showSection('wars')" class="nav-btn bg-orange-600 hover:bg-orange-700 text-white px-5 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                Balkan Wars
+            </button>
+            <button onclick="showSection('quiz')" class="nav-btn bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                Knowledge Check
+            </button>
+        </nav>
+
+        <!-- Section 1: Overview -->
+        <section id="overview" class="section-visible">
+            <div class="bg-slate-800 rounded-xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h2 class="text-4xl font-bold mb-6 text-purple-400 flex items-center gap-3">
+                    <span class="text-5xl">🗺️</span> Overview of Balkan Nationalism
+                </h2>
+
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-purple-900 to-slate-900 p-6 rounded-lg border-l-4 border-purple-400">
+                        <h3 class="text-2xl font-semibold mb-3 text-purple-300">What is Nationalism?</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Nationalism is the desire of people with a common culture, language, and heritage to gain 
+                            independence and self-rule. In the Balkans, this powerful force drove numerous ethnic groups 
+                            to seek freedom from imperial control.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg border-2 border-indigo-500">
+                        <h3 class="text-2xl font-semibold mb-4 text-indigo-300">Geographic Context: The Balkans</h3>
+                        <p class="text-gray-300 mb-4">
+                            Located in southeast Europe, the Balkan region was a complex patchwork of nations and empires:
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-lg mb-2 text-blue-300">Independent Nations</h4>
+                                <ul class="text-gray-400 space-y-1">
+                                    <li>• Greece</li>
+                                    <li>• Romania</li>
+                                    <li>• Albania</li>
+                                    <li>• Montenegro</li>
+                                    <li>• Serbia</li>
+                                    <li>• Bulgaria</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-lg mb-2 text-orange-300">Imperial Control</h4>
+                                <p class="text-gray-400">
+                                    Parts of the region remained under Ottoman Empire (Turkey) control, while 
+                                    Austria-Hungary controlled territories with large Slavic populations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-yellow-500">
+                        <h3 class="text-2xl font-semibold mb-4 text-yellow-300">Historical Background</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 bg-slate-800 p-4 rounded">
+                                <span class="text-3xl">📅</span>
+                                <div>
+                                    <p class="font-semibold text-gray-200">By 1878</p>
+                                    <p class="text-gray-400">Several Balkan countries had gained independence from the Ottoman Empire, 
+                                    dramatically increasing nationalistic sentiments throughout the region.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-slate-800 p-4 rounded">
+                                <span class="text-3xl">⚡</span>
+                                <div>
+                                    <p class="font-semibold text-gray-200">Rising Tensions</p>
+                                    <p class="text-gray-400">Nationalism fueled intense conflicts between Serbia and Austria-Hungary. 
+                                    Serbia supported Slavic nationalist groups, while Austria-Hungary feared Slavic uprisings within 
+                                    its own borders would tear the empire apart.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-900 bg-opacity-30 p-6 rounded-lg border-2 border-red-500">
+                        <h3 class="text-2xl font-semibold mb-3 text-red-300 flex items-center gap-2">
+                            <span>💣</span> Why "The Powder Keg of Europe"?
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            The Balkans earned this nickname because the region was filled with explosive tensions 
+                            waiting to ignite. Multiple empires competed for control, ethnic groups demanded independence, 
+                            and great powers backed different sides. One spark could—and eventually did—trigger a 
+                            devastating chain reaction that engulfed all of Europe in war.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: National Interests -->
+        <section id="interests" class="section-hidden">
+            <div class="bg-slate-800 rounded-xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <h2 class="text-4xl font-bold mb-6 text-pink-400 flex items-center gap-3">
+                    <span class="text-5xl">🎯</span> Competing National Interests
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- Serbia -->
+                    <div class="bg-gradient-to-r from-blue-900 to-slate-900 p-6 rounded-xl border-2 border-blue-500">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-5xl">🇷🇸</span>
+                            <h3 class="text-3xl font-bold text-blue-300">Serbia's Ambitions</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-blue-200 flex items-center gap-2">
+                                    <span>🤝</span> Pan-Slavism
+                                </h4>
+                                <p class="text-gray-300">
+                                    Serbia championed the unity of all Slavic peoples and their independence from 
+                                    Austro-Hungarian control. They dreamed of creating a unified South Slavic state.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-blue-200 flex items-center gap-2">
+                                    <span>📍</span> Claiming Bosnia-Herzegovina
+                                </h4>
+                                <p class="text-gray-300">
+                                    This territory had a majority Serb population, making Serbia believe it rightfully 
+                                    belonged to them. However, Austria-Hungary annexed it in 1908, creating bitter resentment.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-blue-200 flex items-center gap-2">
+                                    <span>🌊</span> Access to the Adriatic Sea
+                                </h4>
+                                <p class="text-gray-300">
+                                    Serbia desperately sought access to maritime trade routes through the Adriatic Sea, 
+                                    which would boost its economy and strategic position.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Austria-Hungary -->
+                    <div class="bg-gradient-to-r from-yellow-900 to-slate-900 p-6 rounded-xl border-2 border-yellow-500">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-5xl">🦅</span>
+                            <h3 class="text-3xl font-bold text-yellow-300">Austria-Hungary's Goals</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-yellow-200 flex items-center gap-2">
+                                    <span>👑</span> Balkan Dominance
+                                </h4>
+                                <p class="text-gray-300">
+                                    Austria-Hungary aimed to control territory stretching from the Adriatic Sea to the 
+                                    Aegean Sea, establishing itself as the dominant power in the region.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-yellow-200 flex items-center gap-2">
+                                    <span>🛡️</span> Prevent Ottoman Breakup
+                                </h4>
+                                <p class="text-gray-300">
+                                    They feared that the weakening Ottoman influence would trigger revolts within their 
+                                    own empire, as many ethnic groups sought independence.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-yellow-200 flex items-center gap-2">
+                                    <span>🚫</span> Counter Pan-Slavism
+                                </h4>
+                                <p class="text-gray-300">
+                                    Austria-Hungary viewed Pan-Slavism as an existential threat. Serbian influence could 
+                                    inspire the empire's Slavic populations to rebel, tearing the multi-ethnic empire apart.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Russia -->
+                    <div class="bg-gradient-to-r from-red-900 to-slate-900 p-6 rounded-xl border-2 border-red-500">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-5xl">🇷🇺</span>
+                            <h3 class="text-3xl font-bold text-red-300">Russia's Strategic Interests</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-red-200 flex items-center gap-2">
+                                    <span>🚢</span> Trade Routes
+                                </h4>
+                                <p class="text-gray-300">
+                                    After setbacks in the Far East, Russia desired access to the Mediterranean Sea for 
+                                    crucial trade opportunities and economic expansion.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-red-200 flex items-center gap-2">
+                                    <span>⚓</span> Naval Passage
+                                </h4>
+                                <p class="text-gray-300">
+                                    Russia needed an ice-free route for its ships through the Dardanelles and the Bosphorus 
+                                    straits, which were controlled by the Ottoman Empire.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-xl mb-2 text-red-200 flex items-center gap-2">
+                                    <span>🤝</span> Support for Slavic Independence
+                                </h4>
+                                <p class="text-gray-300">
+                                    As the largest Slavic nation, Russia positioned itself as the protector of Slavic peoples, 
+                                    backing their fight for autonomy from Ottoman and Austro-Hungarian rule.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Organizations -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-green-500">
+                            <h3 class="text-2xl font-semibold mb-4 text-green-300">The Balkan League (1912)</h3>
+                            <p class="text-gray-300 mb-3">
+                                <strong>Members:</strong> Serbia, Greece, Bulgaria, and Montenegro (supported by Russia)
+                            </p>
+                            <p class="text-gray-400 mb-2 font-semibold">Aims:</p>
+                            <ul class="text-gray-400 space-y-1 ml-4">
+                                <li>• Foster Balkan nationalism against Ottoman rule</li>
+                                <li>• Promote Pan-Slavism</li>
+                                <li>• Counter the Young Turks' influence</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-orange-500">
+                            <h3 class="text-2xl font-semibold mb-4 text-orange-300">The Young Turks Movement (1908)</h3>
+                            <p class="text-gray-300 mb-3">
+                                <strong>Leader:</strong> Enver Bey
+                            </p>
+                            <p class="text-gray-400 mb-2">
+                                Overthrew Sultan Abdul Hamid II and replaced him with his brother, Muhammed V
+                            </p>
+                            <p class="text-gray-400 mb-2 font-semibold">Aims:</p>
+                            <ul class="text-gray-400 space-y-1 ml-4">
+                                <li>• Establish a strong Turkish Empire</li>
+                                <li>• Prevent empire breakup</li>
+                                <li>• Stop the rise of Pan-Slavism</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Major Crises -->
+        <section id="crises" class="section-hidden">
+            <div class="bg-slate-800 rounded-xl p-8 shadow-2xl border border-red-500 mb-8">
+                <h2 class="text-4xl font-bold mb-6 text-red-400 flex items-center gap-3">
+                    <span class="text-5xl">⚠️</span> The Bosnia Crisis (1908)
+                </h2>
+
+                <div class="space-y-6">
+                    <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-red-500">
+                        <h3 class="text-2xl font-semibold mb-3 text-red-300">The Annexation</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            During a revolution in Turkey, Austria-Hungary seized the opportunity to annex Bosnia-Herzegovina. 
+                            This move infuriated Serbia, which believed the province rightfully belonged to them due to its 
+                            significant Serb population.
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 p-6 rounded-lg border-2 border-orange-500">
+                        <h3 class="text-2xl font-semibold mb-4 text-orange-300">Serbia's Response</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 bg-slate-800 p-4 rounded">
+                                <span class="text-2xl">📞</span>
+                                <div>
+                                    <p class="font-semibold text-gray-200">Appeal to Russia</p>
+                                    <p class="text-gray-400">Serbia immediately appealed to Russia for support and protection 
+                                    against Austria-Hungary's aggression.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-slate-800 p-4 rounded">
+                                <span class="text-2xl">🏛️</span>
+                                <div>
+                                    <p class="font-semibold text-gray-200">Call for Conference</p>
+                                    <p class="text-gray-400">Russia called for a European conference to address the crisis 
+                                    and challenge Austria's annexation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg border-2 border-purple-500">
+                        <h3 class="text-2xl font-semibold mb-4 text-purple-300">How European Powers Responded</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-gray-400">
+                                <p class="font-bold text-lg mb-2 text-gray-300">🇩🇪 Germany</p>
+                                <p class="text-gray-400 text-sm">Backed Austria-Hungary completely, strengthening their alliance 
+                                and leaving Serbia without support.</p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-blue-400">
+                                <p class="font-bold text-lg mb-2 text-gray-300">🇫🇷 France</p>
+                                <p class="text-gray-400 text-sm">Withdrew from the crisis to avoid conflict with Germany, 
+                                abandoning their Russian ally.</p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-red-400">
+                                <p class="font-bold text-lg mb-2 text-gray-300">🇬🇧 Britain</p>
+                                <p class="text-gray-400 text-sm">Remained passive to prevent war with Germany, offering no 
+                                support to Serbia.</p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg border-l-4 border-orange-400">
+                                <p class="font-bold text-lg mb-2 text-gray-300">🇷🇺 Russia</p>
+                                <p class="text-gray-400 text-sm">Remembering its recent defeat by Japan, refrained from 
+                                risking another war without allies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-green-900 to-slate-900 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-2xl font-semibold mb-3 text-green-300">Outcome</h3>
+                        <p class="text-gray-300 leading-relaxed mb-3">
+                            Austria-Hungary retained control of Bosnia-Herzegovina, solidifying the Austria-Germany alliance. 
+                            Serbia was left isolated and humiliated.
+                        </p>
+                    </div>
+
+                    <div class="bg-red-900 bg-opacity-40 p-6 rounded-lg border-2 border-red-400">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-300 flex items-center gap-2">
+                            <span>💥</span> Consequences of the Bosnia Crisis
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <p class="font-bold text-lg mb-2 text-red-200">Increased Serbian Hostility</p>
+                                <p class="text-gray-300">
+                                    Serbia's resentment toward Austria-Hungary intensified dramatically. This bitterness 
+                                    would directly contribute to the tensions that sparked World War I in 1914.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-lg">
+                                <p class="font-bold text-lg mb-2 text-red-200">Russian Military Buildup</p>
+                                <p class="text-gray-300">
+                                    Determined to avoid further humiliation, Russia began massive military preparations. 
+                                    They vowed to support Serbia fully in any future conflict, making war more likely.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Balkan Wars -->
+        <section id="wars" class="section-hidden">
+            <div class="bg-slate-800 rounded-xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <h2 class="text-4xl font-bold mb-6 text-orange-400 flex items-center gap-3">
+                    <span class="text-5xl">⚔️</span> The Balkan Wars
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- First Balkan War -->
+                    <div class="bg-gradient-to-r from-purple-900 to-slate-900 p-6 rounded-xl border-2 border-purple-500">
+                        <h3 class="text-3xl font-bold mb-4 text-purple-300">First Balkan War (1912)</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-slate-800 p-5 rounded-lg">
+                                <h4 class="font-semibold text-xl mb-3 text-purple-200">The Conflict</h4>
+                                <p class="text-gray-300 mb-2">
+                                    <strong>Participants:</strong> The Balkan League (Serbia, Greece, Montenegro, and Bulgaria) 
+                                    attacked the Ottoman Empire
+                                </p>
+                                <p class="text-gray-300">
+                                    <strong>Objective:</strong> Capture remaining Ottoman territories in Europe and weaken 
+                                    the Young Turks' influence
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-yellow-500">
+                                <h4 class="font-semibold text-xl mb-3 text-yellow-300">The London Treaty (May 1913)</h4>
+                                <p class="text-gray-400 mb-3">Conference of Ambassadors convened to negotiate peace</p>
+                                <p class="text-gray-300 font-semibold mb-2">Decisions:</p>
+                                <ul class="space-y-2 text-gray-300 ml-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-yellow-400">•</span>
+                                        <span>Division of Turkish territories among Balkan League members</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-yellow-400">•</span>
+                                        <span>Division of Macedonia among victors</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-yellow-400">•</span>
+                                        <span>Creation of Albania as an independent nation</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-yellow-400">•</span>
+                                        <span><strong>Austria-Hungary blocked Serbian access to Albania</strong>, limiting 
+                                        Serbia's power and denying them access to the Adriatic Sea</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                                <p class="text-red-200 font-semibold flex items-center gap-2">
+                                    <span>⚠️</span> The Treaty Quickly Fell Apart
+                                </p>
+                                <p class="text-gray-300 mt-2">
+                                    Rising tensions and dissatisfaction with the terms led directly to the Second Balkan War.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Balkan War -->
+                    <div class="bg-gradient-to-r from-red-900 to-slate-900 p-6 rounded-xl border-2 border-red-500">
+                        <h3 class="text-3xl font-bold mb-4 text-red-300">Second Balkan War (1913)</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-slate-800 p-5 rounded-lg">
+                                <h4 class="font-semibold text-xl mb-3 text-red-200">Causes</h4>
+                                <p class="text-gray-300">
+                                    Bulgaria was deeply dissatisfied with the London Treaty, particularly its loss of Macedonia 
+                                    to Serbia and Greece. Feeling cheated, Bulgaria decided to take action.
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-800 p-5 rounded-lg">
+                                <h4 class="font-semibold text-xl mb-3 text-red-200">The Conflict</h4>
+                                <div class="space-y-3">
+                                    <p class="text-gray-300">
+                                        <strong>Bulgaria attacked Serbia,</strong> hoping to seize the disputed territories
+                                    </p>
+                                    <div class="bg-slate-900 p-3 rounded">
+                                        <p class="text-gray-300 mb-2"><strong>Coalition Against Bulgaria:</strong></p>
+                                        <ul class="text-gray-400 space-y-1 ml-4">
+                                            <li>• Greece supported Serbia</li>
+                                            <li>• Romania joined against Bulgaria</li>
+                                            <li>• Even Turkey (Ottoman Empire) supported Serbia</li>
+                                        </ul>
+                                    </div>
+                                    <p class="text-gray-300">
+                                        <strong>Outcome:</strong> Bulgaria faced decisive defeat at the Battle of Stip
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-green-500">
+                                <h4 class="font-semibold text-xl mb-3 text-green-300">Treaty of Bucharest (August 1913)</h4>
+                                <p class="text-gray-300 mb-3 font-semibold">Territory Distribution:</p>
+                                <div class="grid md:grid-cols-2 gap-3">
+                                    <div class="bg-slate-900 p-3 rounded">
+                                        <p class="text-blue-300 font-semibold">🇬🇷 Greece</p>
+                                        <p class="text-gray-400 text-sm">Gained southern Macedonia</p>
+                                    </div>
+                                    <div class="bg-slate-900 p-3 rounded">
+                                        <p class="text-blue-300 font-semibold">🇷🇸 Serbia</p>
+                                        <p class="text-gray-400 text-sm">Received northern Macedonia</p>
+                                    </div>
+                                    <div class="bg-slate-900 p-3 rounded">
+                                        <p class="text-purple-300 font-semibold">🇷🇴 Romania</p>
+                                        <p class="text-gray-400 text-sm">Acquired south Dobruja along the Black Sea coast</p>
+                                    </div>
+                                    <div class="bg-slate-900 p-3 rounded">
+                                        <p class="text-orange-300 font-semibold">🇹🇷 Turkey</p>
+                                        <p class="text-gray-400 text-sm">Regained Adrianople from Bulgaria</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Impact on WWI -->
+                    <div class="bg-slate-900 p-6 rounded-lg border-2 border-yellow-500">
+                        <h3 class="text-2xl font-semibold mb-4 text-yellow-300 flex items-center gap-2">
+                            <span>🔥</span> How the Balkan Wars Led to World War I
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-gradient-to-r from-red-900 to-slate-800 p-5 rounded-lg">
+                                <h4 class="font-bold text-xl mb-3 text-red-300">1. Heightened Tensions</h4>
+                                <p class="text-gray-300 mb-2">
+                                    The wars dramatically increased animosity between Serbia and Austria-Hungary:
+                                </p>
+                                <ul class="space-y-2 text-gray-300 ml-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-400">•</span>
+                                        <span>Austria sought to crush Serbia's growing nationalistic aspirations, which 
+                                        threatened both the Ottoman and Austro-Hungarian empires</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-400">•</span>
+                                        <span>Serbia deeply resented Austria's annexation of Bosnia and its obstruction 
+                                        of Serbian access to the Adriatic Sea</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-purple-900 to-slate-800 p-5 rounded-lg">
+                                <h4 class="font-bold text-xl mb-3 text-purple-300">2. Involvement of Great Powers</h4>
+                                <p class="text-gray-300">
+                                    The Balkan conflicts drew in major European powers, with Russia supporting Serbia 
+                                    and Germany backing Austria-Hungary. Each crisis pushed Europe closer to a full-scale war 
+                                    between the great powers.
+                                </p>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-blue-900 to-slate-800 p-5 rounded-lg">
+                                <h4 class="font-bold text-xl mb-3 text-blue-300">3. Formation of Alliance Systems</h4>
+                                <p class="text-gray-300 mb-3">
+                                    The sides taken in the Balkan conflicts foreshadowed World War I alignments:
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-slate-800 p-4 rounded-lg border-2 border-green-500">
+                                        <p class="font-bold text-lg mb-2 text-green-300">Allied Powers</p>
+                                        <ul class="text-gray-400 space-y-1">
+                                            <li>• Russia</li>
+                                            <li>• Serbia</li>
+                                            <li>• Greece</li>
+                                            <li>• Romania</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-slate-800 p-4 rounded-lg border-2 border-red-500">
+                                        <p class="font-bold text-lg mb-2 text-red-300">Central Powers</p>
+                                        <ul class="text-gray-400 space-y-1">
+                                            <li>• Germany</li>
+                                            <li>• Austria-Hungary</li>
+                                            <li>• Bulgaria</li>
+                                            <li>• Turkey (Ottoman Empire)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Quiz -->
+        <section id="quiz" class="section-hidden">
+            <div class="bg-slate-800 rounded-xl p-8 shadow-2xl border border-green-500">
+                <h2 class="text-4xl font-bold mb-6 text-green-400 flex items-center gap-3">
+                    <span class="text-5xl">📝</span> Knowledge Check
+                </h2>
+
+                <div class="space-y-6">
+                    <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold mb-4 text-green-300">Question 1: Understanding Nationalism</h3>
+                        <p class="text-gray-300 mb-4">What is nationalism?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(1, 'a')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                A) The desire to expand an empire through military conquest
+                            </button>
+                            <button onclick="checkAnswer(1, 'b')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                B) The desire of people with a common culture to gain independence and self-rule
+                            </button>
+                            <button onclick="checkAnswer(1, 'c')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                C) The economic competition between nations
+                            </button>
+                        </div>
+                        <div id="answer-1" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold mb-4 text-green-300">Question 2: Serbian Ambitions</h3>
+                        <p class="text-gray-300 mb-4">What was Pan-Slavism?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(2, 'a')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                A) A trade agreement between Slavic nations
+                            </button>
+                            <button onclick="checkAnswer(2, 'b')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                B) The movement to promote unity among Slavic peoples and independence from imperial control
+                            </button>
+                            <button onclick="checkAnswer(2, 'c')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                C) A military alliance against the Ottoman Empire
+                            </button>
+                        </div>
+                        <div id="answer-2" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold mb-4 text-green-300">Question 3: The Bosnia Crisis</h3>
+                        <p class="text-gray-300 mb-4">What happened during the Bosnia Crisis of 1908?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(3, 'a')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                A) Serbia successfully gained control of Bosnia-Herzegovina
+                            </button>
+                            <button onclick="checkAnswer(3, 'b')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                B) Austria-Hungary annexed Bosnia-Herzegovina, angering Serbia and increasing tensions
+                            </button>
+                            <button onclick="checkAnswer(3, 'c')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                C) The Ottoman Empire regained control of Bosnia
+                            </button>
+                        </div>
+                        <div id="answer-3" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold mb-4 text-green-300">Question 4: The Balkan League</h3>
+                        <p class="text-gray-300 mb-4">Which countries formed the Balkan League in 1912?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(4, 'a')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                A) Germany, Austria-Hungary, and Turkey
+                            </button>
+                            <button onclick="checkAnswer(4, 'b')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                B) Serbia, Greece, Bulgaria, and Montenegro
+                            </button>
+                            <button onclick="checkAnswer(4, 'c')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                C) Britain, France, and Russia
+                            </button>
+                        </div>
+                        <div id="answer-4" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold mb-4 text-green-300">Question 5: Causes of Second Balkan War</h3>
+                        <p class="text-gray-300 mb-4">Why did the Second Balkan War begin in 1913?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(5, 'a')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                A) The Ottoman Empire attacked the Balkan League
+                            </button>
+                            <button onclick="checkAnswer(5, 'b')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                B) Bulgaria was dissatisfied with the London Treaty and attacked Serbia over Macedonia
+                            </button>
+                            <button onclick="checkAnswer(5, 'c')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                C) Austria-Hungary invaded Serbia
+                            </button>
+                        </div>
+                        <div id="answer-5" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold mb-4 text-green-300">Question 6: Critical Thinking</h3>
+                        <p class="text-gray-300 mb-4">How did Balkan nationalism contribute to the outbreak of World War I?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(6, 'a')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                A) It reduced tensions by creating independent nations
+                            </button>
+                            <button onclick="checkAnswer(6, 'b')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                B) It increased hostility, drew in great powers, and established the alliance systems that became WWI battle lines
+                            </button>
+                            <button onclick="checkAnswer(6, 'c')" class="quiz-btn w-full text-left p-3 bg-slate-800 hover:bg-slate-700 rounded text-gray-300 transition">
+                                C) It had no significant impact on World War I
+                            </button>
+                        </div>
+                        <div id="answer-6" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="mt-8 text-center">
+                        <div id="quiz-score" class="bg-gradient-to-r from-green-600 to-purple-600 p-6 rounded-lg text-white hidden">
+                            <h3 class="text-2xl font-bold mb-2">Quiz Complete!</h3>
+                            <p class="text-xl">Your Score: <span id="score-display">0/6</span></p>
+                            <p class="mt-2">Excellent work learning about Balkan nationalism and its role in WWI!</p>
+                            <button onclick="resetQuiz()" class="mt-4 bg-white text-purple-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-400 pb-8">
+            <p class="text-sm">Understanding the "Powder Keg of Europe" and the path to World War I</p>
+            <p class="text-xs mt-2">The complex interplay of nationalism, imperial ambitions, and alliance systems that led to global conflict</p>
+        </footer>
+    </div>
+
+    <script>
+        // Navigation between sections
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('section-visible');
+                section.classList.add('section-hidden');
+            });
+            
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.remove('section-hidden');
+            selectedSection.classList.add('section-visible');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Quiz functionality
+        const answers = {
+            1: 'b', // Nationalism definition
+            2: 'b', // Pan-Slavism
+            3: 'b', // Bosnia Crisis 1908
+            4: 'b', // Balkan League members
+            5: 'b', // Second Balkan War cause
+            6: 'b'  // Contribution to WWI
+        };
+
+        let score = 0;
+        let answeredQuestions = {};
+
+        function checkAnswer(questionNum, selectedAnswer) {
+            // Prevent multiple answers for same question
+            if (answeredQuestions[questionNum]) {
+                return;
+            }
+
+            const answerDiv = document.getElementById(`answer-${questionNum}`);
+            const correctAnswer = answers[questionNum];
+            const isCorrect = selectedAnswer === correctAnswer;
+
+            // Mark as answered
+            answeredQuestions[questionNum] = true;
+
+            // Update score
+            if (isCorrect) {
+                score++;
+            }
+
+            // Display feedback
+            answerDiv.classList.remove('hidden');
+            if (isCorrect) {
+                answerDiv.innerHTML = `
+                    <div class="bg-green-600 bg-opacity-20 border-2 border-green-500 p-4 rounded-lg">
+                        <p class="text-green-300 font-semibold flex items-center gap-2">
+                            <span class="text-2xl">✓</span> Correct! Excellent understanding!
+                        </p>
+                    </div>
+                `;
+            } else {
+                answerDiv.innerHTML = `
+                    <div class="bg-red-600 bg-opacity-20 border-2 border-red-500 p-4 rounded-lg">
+                        <p class="text-red-300 font-semibold flex items-center gap-2">
+                            <span class="text-2xl">✗</span> Not quite. Review the section and try again!
+                        </p>
+                    </div>
+                `;
+            }
+
+            // Disable all buttons for this question
+            const questionDiv = answerDiv.parentElement;
+            const buttons = questionDiv.querySelectorAll('.quiz-btn');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+            });
+
+            // Highlight the selected answer
+            buttons[selectedAnswer.charCodeAt(0) - 97].classList.add('ring-2', 'ring-yellow-400');
+
+            // Check if all questions answered
+            if (Object.keys(answeredQuestions).length === 6) {
+                setTimeout(() => {
+                    showQuizScore();
+                }, 500);
+            }
+        }
+
+        function showQuizScore() {
+            const scoreDiv = document.getElementById('quiz-score');
+            const scoreDisplay = document.getElementById('score-display');
+            scoreDisplay.textContent = `${score}/6`;
+            scoreDiv.classList.remove('hidden');
+            scoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function resetQuiz() {
+            // Reset score and answered questions
+            score = 0;
+            answeredQuestions = {};
+
+            // Hide score display
+            document.getElementById('quiz-score').classList.add('hidden');
+
+            // Reset all answer divs and buttons
+            for (let i = 1; i <= 6; i++) {
+                const answerDiv = document.getElementById(`answer-${i}`);
+                answerDiv.classList.add('hidden');
+                answerDiv.innerHTML = '';
+
+                // Re-enable buttons
+                const questionDiv = answerDiv.parentElement;
+                const buttons = questionDiv.querySelectorAll('.quiz-btn');
+                buttons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50', 'cursor-not-allowed', 'ring-2', 'ring-yellow-400');
+                });
+            }
+
+            // Scroll to top of quiz
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

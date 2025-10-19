@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World War I: The Great War</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 3px solid white;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                World War I: The Great War
+            </h1>
+            <p class="text-xl text-gray-300">Understanding the causes, events, and consequences</p>
+            <div class="mt-6 flex justify-center gap-4">
+                <button onclick="showSection('overview')" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">Overview</button>
+                <button onclick="showSection('timeline')" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition">Timeline</button>
+                <button onclick="showSection('versailles')" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition">Treaty of Versailles</button>
+                <button onclick="showSection('quiz')" class="px-6 py-2 bg-pink-600 hover:bg-pink-700 rounded-lg transition">Quiz</button>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="lesson-section">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Assassination Card -->
+                <div class="bg-slate-800 rounded-xl p-6 shadow-2xl border border-slate-700 hover:border-blue-500 transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">💥</span>
+                        </div>
+                        <h2 class="text-2xl font-bold">The Spark: Assassination</h2>
+                    </div>
+                    <p class="text-gray-300 mb-4">On June 28, 1914, Archduke Franz Ferdinand and his wife Sophie were assassinated in Sarajevo by Gavrilo Princip, a member of the Black Hand movement.</p>
+                    <div class="bg-slate-900 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-2 text-blue-400">Key Facts:</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Location: Sarajevo, Bosnia</li>
+                            <li>• Perpetrator: Gavrilo Princip (Black Hand member)</li>
+                            <li>• First attempt with grenade failed</li>
+                            <li>• Success came when driver took wrong turn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Black Hand Movement -->
+                <div class="bg-slate-800 rounded-xl p-6 shadow-2xl border border-slate-700 hover:border-purple-500 transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">✊</span>
+                        </div>
+                        <h2 class="text-2xl font-bold">The Black Hand</h2>
+                    </div>
+                    <p class="text-gray-300 mb-4">A Serbian nationalist group fighting for Slavic independence from Austria-Hungary, viewed as terrorists by the Austro-Hungarian Empire.</p>
+                    <div class="bg-slate-900 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-2 text-purple-400">Objectives:</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Achieve autonomy for Bosnia</li>
+                            <li>• Unite Slavic peoples</li>
+                            <li>• Resist Austro-Hungarian control</li>
+                            <li>• Support Serbian nationalism</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Austria-Hungary's Response -->
+                <div class="bg-slate-800 rounded-xl p-6 shadow-2xl border border-slate-700 hover:border-yellow-500 transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">📜</span>
+                        </div>
+                        <h2 class="text-2xl font-bold">The Ultimatum</h2>
+                    </div>
+                    <p class="text-gray-300 mb-4">July 23, 1914: Austria-Hungary issued harsh demands to Serbia, designed to be nearly impossible to accept.</p>
+                    <div class="bg-slate-900 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-2 text-yellow-400">Demands:</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Suppress anti-Austrian sentiments</li>
+                            <li>• Allow Austrian officials into Serbia</li>
+                            <li>• Punish Black Hand members</li>
+                            <li>• Prevent arms smuggling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Schlieffen Plan -->
+                <div class="bg-slate-800 rounded-xl p-6 shadow-2xl border border-slate-700 hover:border-green-500 transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">🗺️</span>
+                        </div>
+                        <h2 class="text-2xl font-bold">The Schlieffen Plan</h2>
+                    </div>
+                    <p class="text-gray-300 mb-4">Germany's strategy to quickly defeat France through Belgium before turning to fight Russia.</p>
+                    <div class="bg-slate-900 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-2 text-green-400">Why It Failed:</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Belgium and France resisted effectively</li>
+                            <li>• Belgian railway sabotage</li>
+                            <li>• Trench warfare stalemate</li>
+                            <li>• Russia mobilized faster than expected</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="lesson-section hidden">
+            <div class="bg-slate-800 rounded-xl p-8 shadow-2xl">
+                <h2 class="text-3xl font-bold mb-8 text-center">Key Events Timeline</h2>
+                <div class="relative border-l-2 border-blue-500 ml-4 space-y-8">
+                    <!-- Timeline Items -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">June 28, 1914</span>
+                            <h3 class="text-xl font-semibold mt-2">Assassination of Archduke Franz Ferdinand</h3>
+                            <p class="text-gray-400 mt-2">Gavrilo Princip kills the Archduke and his wife in Sarajevo</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">July 23, 1914</span>
+                            <h3 class="text-xl font-semibold mt-2">Austria Issues Ultimatum</h3>
+                            <p class="text-gray-400 mt-2">Austria-Hungary sends harsh demands to Serbia</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">July 28, 1914</span>
+                            <h3 class="text-xl font-semibold mt-2">Austria Attacks Serbia</h3>
+                            <p class="text-gray-400 mt-2">Austria-Hungary declares war and begins military action</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">July 29, 1914</span>
+                            <h3 class="text-xl font-semibold mt-2">Russia Mobilizes</h3>
+                            <p class="text-gray-400 mt-2">Russia orders general mobilization to support Serbia</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">August 1, 1914</span>
+                            <h3 class="text-xl font-semibold mt-2">Germany Declares War on Russia</h3>
+                            <p class="text-gray-400 mt-2">After Russia refuses to demobilize</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">August 3, 1914</span>
+                            <h3 class="text-xl font-semibold mt-2">Germany Declares War on Belgium & France</h3>
+                            <p class="text-gray-400 mt-2">Schlieffen Plan put into action</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">August 4, 1914</span>
+                            <h3 class="text-xl font-semibold mt-2">Britain Declares War on Germany</h3>
+                            <p class="text-gray-400 mt-2">In response to invasion of neutral Belgium</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">April 1917</span>
+                            <h3 class="text-xl font-semibold mt-2">USA Enters the War</h3>
+                            <p class="text-gray-400 mt-2">German submarine warfare and Lusitania sinking prompts US involvement</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">December 1917</span>
+                            <h3 class="text-xl font-semibold mt-2">Russia Exits the War</h3>
+                            <p class="text-gray-400 mt-2">Signs Brest-Litovsk Treaty due to internal revolution</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <span class="text-blue-400 font-bold">November 11, 1918</span>
+                            <h3 class="text-xl font-semibold mt-2">Armistice Signed</h3>
+                            <p class="text-gray-400 mt-2">Germany surrenders, marking the end of WWI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Versailles Section -->
+        <section id="versailles" class="lesson-section hidden">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Treaty Overview -->
+                <div class="bg-slate-800 rounded-xl p-6 shadow-2xl col-span-2">
+                    <h2 class="text-3xl font-bold mb-4">Treaty of Versailles (1919)</h2>
+                    <p class="text-gray-300 mb-6">The peace settlement that ended WWI, signed at Versailles Palace near Paris. The treaty imposed harsh penalties on Germany and reshaped Europe.</p>
+                    
+                    <div class="grid md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-slate-900 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2">🇫🇷</div>
+                            <h3 class="font-bold">Clemenceau</h3>
+                            <p class="text-sm text-gray-400">Sought severe punishment</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2">🇬🇧</div>
+                            <h3 class="font-bold">Lloyd George</h3>
+                            <p class="text-sm text-gray-400">Moderate approach</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2">🇮🇹</div>
+                            <h3 class="font-bold">Orlando</h3>
+                            <p class="text-sm text-gray-400">Territorial gains focus</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2">🇺🇸</div>
+                            <h3 class="font-bold">Wilson</h3>
+                            <p class="text-sm text-gray-400">14 Points for peace</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms -->
+                <div class="bg-slate-800 rounded-xl p-6 shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-4 text-red-400">Main Terms</h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">War Guilt Clause</h4>
+                            <p class="text-sm text-gray-400">Germany forced to accept full blame for the war</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Reparations</h4>
+                            <p class="text-sm text-gray-400">£6.6 billion in payments to Allied powers</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Disarmament</h4>
+                            <p class="text-sm text-gray-400">Army limited to 100,000 soldiers, no air force</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Territorial Losses</h4>
+                            <p class="text-sm text-gray-400">Significant land ceded to neighboring countries</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Germany's Reaction -->
+                <div class="bg-slate-800 rounded-xl p-6 shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-400">Germany's Reaction</h3>
+                    <div class="space-y-3">
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg border border-red-700">
+                            <p class="text-sm">😡 Denied sole responsibility for war</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg border border-red-700">
+                            <p class="text-sm">😡 Angry about military restrictions</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg border border-red-700">
+                            <p class="text-sm">😡 Resentful of territorial losses</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg border border-red-700">
+                            <p class="text-sm">😡 Excluded from League of Nations</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg border border-red-700">
+                            <p class="text-sm">😡 Economically crippled by reparations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consequences -->
+                <div class="bg-slate-800 rounded-xl p-6 shadow-2xl col-span-2">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-400">Long-Term Consequences</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <h4 class="font-bold text-green-400 mb-2">Strengths</h4>
+                            <ul class="text-sm text-gray-400 space-y-1">
+                                <li>• League of Nations formed</li>
+                                <li>• Self-determination policy</li>
+                                <li>• Peace temporarily restored</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg col-span-2">
+                            <h4 class="font-bold text-red-400 mb-2">Weaknesses</h4>
+                            <ul class="text-sm text-gray-400 space-y-1">
+                                <li>• Diktat (dictated peace)</li>
+                                <li>• Economic collapse in Germany</li>
+                                <li>• Power vacuum in Eastern Europe</li>
+                                <li>• Resentment led to rise of extremism</li>
+                                <li>• Created conditions for WWII</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="lesson-section hidden">
+            <div class="bg-slate-800 rounded-xl p-8 shadow-2xl max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Test Your Knowledge</h2>
+                
+                <div id="quiz-container">
+                    <div class="quiz-question mb-8" id="q1">
+                        <h3 class="text-xl font-bold mb-4">1. Who assassinated Archduke Franz Ferdinand?</h3>
+                        <div class="space-y-3">
+                            <button onclick="checkAnswer('q1', 'a', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                A) Cabrinovic
+                            </button>
+                            <button onclick="checkAnswer('q1', 'b', true)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                B) Gavrilo Princip
+                            </button>
+                            <button onclick="checkAnswer('q1', 'c', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                C) Kaiser Wilhelm
+                            </button>
+                            <button onclick="checkAnswer('q1', 'd', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                D) Vladimir Lenin
+                            </button>
+                        </div>
+                        <div id="q1-feedback" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="quiz-question mb-8" id="q2">
+                        <h3 class="text-xl font-bold mb-4">2. When was the armistice signed?</h3>
+                        <div class="space-y-3">
+                            <button onclick="checkAnswer('q2', 'a', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                A) June 28, 1914
+                            </button>
+                            <button onclick="checkAnswer('q2', 'b', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                B) August 1, 1914
+                            </button>
+                            <button onclick="checkAnswer('q2', 'c', true)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                C) November 11, 1918
+                            </button>
+                            <button onclick="checkAnswer('q2', 'd', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                D) June 28, 1919
+                            </button>
+                        </div>
+                        <div id="q2-feedback" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="quiz-question mb-8" id="q3">
+                        <h3 class="text-xl font-bold mb-4">3. What was the Schlieffen Plan?</h3>
+                        <div class="space-y-3">
+                            <button onclick="checkAnswer('q3', 'a', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                A) Russia's strategy to support Serbia
+                            </button>
+                            <button onclick="checkAnswer('q3', 'b', true)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                B) Germany's plan to quickly defeat France through Belgium
+                            </button>
+                            <button onclick="checkAnswer('q3', 'c', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                C) Austria's ultimatum to Serbia
+                            </button>
+                            <button onclick="checkAnswer('q3', 'd', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                D) Wilson's peace plan
+                            </button>
+                        </div>
+                        <div id="q3-feedback" class="mt-4 hidden"></div>
+                    </div>
+
+                    <div class="quiz-question mb-8" id="q4">
+                        <h3 class="text-xl font-bold mb-4">4. How much did Germany have to pay in reparations?</h3>
+                        <div class="space-y-3">
+                            <button onclick="checkAnswer('q4', 'a', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                A) £1 billion
+                            </button>
+                            <button onclick="checkAnswer('q4', 'b', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                B) £3.3 billion
+                            </button>
+                            <button onclick="checkAnswer('q4', 'c', true)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                C) £6.6 billion
+                            </button>
+                            <button onclick="checkAnswer('q4', 'd', false)" class="w-full text-left p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition">
+                                D) £10 billion
+                            </button>
+                        </div>
+                        <div id="q4-feedback" class="mt-4 hidden"></div>
+                    </div>
+                </div>
+
+                <div id="quiz-score" class="text-center mt-8 hidden">
+                    <h3 class="text-2xl font-bold mb-4">Your Score: <span id="score">0</span>/4</h3>
+                    <button onclick="resetQuiz()" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition">
+                        Retake Quiz
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let score = 0;
+        let questionsAnswered = 0;
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+            document.getElementById(sectionId).classList.add('fade-in');
+        }
+
+        function checkAnswer(questionId, answer, isCorrect) {
+            const feedback = document.getElementById(questionId + '-feedback');
+            const question = document.getElementById(questionId);
+            
+            if (question.dataset.answered) return;
+            
+            question.dataset.answered = 'true';
+            questionsAnswered++;
+            
+            if (isCorrect) {
+                score++;
+                feedback.className = 'mt-4 p-4 bg-green-900 bg-opacity-50 border border-green-500 rounded-lg';
+                feedback.innerHTML = '✓ Correct!';
+            } else {
+                feedback.className = 'mt-4 p-4 bg-red-900 bg-opacity-50 border border-red-500 rounded-lg';
+                feedback.innerHTML = '✗ Incorrect. Review the lesson material.';
+            }
+            
+            feedback.classList.remove('hidden');
+            
+            question.querySelectorAll('button').forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+            });
+            
+            if (questionsAnswered === 4) {
+                setTimeout(() => {
+                    document.getElementById('quiz-score').classList.remove('hidden');
+                    document.getElementById('score').textContent = score;
+                }, 500);
+            }
+        }
+
+        function resetQuiz() {
+            score = 0;
+            questionsAnswered = 0;
+            document.querySelectorAll('.quiz-question').forEach(q => {
+                q.dataset.answered = '';
+                q.querySelectorAll('button').forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                });
+                const feedback = q.querySelector('[id$="-feedback"]');
+                feedback.classList.add('hidden');
+            });
+            document.getElementById('quiz-score').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

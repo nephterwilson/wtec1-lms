@@ -1,0 +1,680 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Properties of Soil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-amber-700 via-orange-600 to-yellow-600 text-white rounded-2xl shadow-2xl p-8 mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">UNIT 2: Chemical Properties of Soil</h1>
+                    <p class="text-yellow-100 text-lg">Understanding Soil Fertility and Nutrient Dynamics</p>
+                </div>
+                <i class="fas fa-flask text-6xl opacity-80"></i>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-6 border-l-4 border-amber-600">
+            <h2 class="text-2xl font-bold text-amber-800 mb-4 flex items-center">
+                <i class="fas fa-info-circle mr-3 text-amber-600"></i>
+                Introduction
+            </h2>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                The chemical properties of soil are crucial in determining its fertility and suitability for crop production. These properties affect nutrient availability, pH balance, salinity, and the ability to retain essential elements for plant growth.
+            </p>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <div class="bg-white rounded-xl shadow-lg mb-6 overflow-hidden">
+            <div class="flex flex-wrap border-b border-gray-200">
+                <button onclick="showSection('nutrients')" class="tab-btn flex-1 px-4 py-4 font-semibold text-gray-600 hover:bg-amber-50 hover:text-amber-700 transition border-b-2 border-transparent text-sm" id="nutrients-tab">
+                    <i class="fas fa-seedling mr-2"></i>Nutrients
+                </button>
+                <button onclick="showSection('ph')" class="tab-btn flex-1 px-4 py-4 font-semibold text-gray-600 hover:bg-amber-50 hover:text-amber-700 transition border-b-2 border-transparent text-sm" id="ph-tab">
+                    <i class="fas fa-vial mr-2"></i>Soil pH
+                </button>
+                <button onclick="showSection('salinity')" class="tab-btn flex-1 px-4 py-4 font-semibold text-gray-600 hover:bg-amber-50 hover:text-amber-700 transition border-b-2 border-transparent text-sm" id="salinity-tab">
+                    <i class="fas fa-tint mr-2"></i>Salinity
+                </button>
+                <button onclick="showSection('cec')" class="tab-btn flex-1 px-4 py-4 font-semibold text-gray-600 hover:bg-amber-50 hover:text-amber-700 transition border-b-2 border-transparent text-sm" id="cec-tab">
+                    <i class="fas fa-exchange-alt mr-2"></i>CEC
+                </button>
+                <button onclick="showSection('effects')" class="tab-btn flex-1 px-4 py-4 font-semibold text-gray-600 hover:bg-amber-50 hover:text-amber-700 transition border-b-2 border-transparent text-sm" id="effects-tab">
+                    <i class="fas fa-chart-line mr-2"></i>Effects
+                </button>
+            </div>
+
+            <!-- Nutrients Section -->
+            <div id="nutrients" class="section-content p-6">
+                <h2 class="text-3xl font-bold text-amber-800 mb-6">1. Nutrient Status</h2>
+                <p class="text-gray-700 mb-6 text-lg">The nutrient status refers to the soil's ability to support fertility, which determines soil productivity. More nutrients result in higher fertility, while less nutrient content leads to lower fertility.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <!-- Macronutrients -->
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-6 shadow-md hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                            <i class="fas fa-leaf text-2xl mr-3"></i>
+                            Macronutrients
+                        </h3>
+                        <p class="text-gray-700 mb-4 text-sm">Essential nutrients required by plants in large quantities</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-bold text-green-900 mb-2 flex items-center">
+                                <i class="fas fa-star text-green-600 mr-2"></i>
+                                Primary Nutrients
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="bg-white rounded-lg p-3 flex items-center">
+                                    <span class="bg-green-600 text-white font-bold px-2 py-1 rounded mr-3 text-sm">N</span>
+                                    <span class="text-gray-700">Nitrogen</span>
+                                </div>
+                                <div class="bg-white rounded-lg p-3 flex items-center">
+                                    <span class="bg-green-600 text-white font-bold px-2 py-1 rounded mr-3 text-sm">P</span>
+                                    <span class="text-gray-700">Phosphorus</span>
+                                </div>
+                                <div class="bg-white rounded-lg p-3 flex items-center">
+                                    <span class="bg-green-600 text-white font-bold px-2 py-1 rounded mr-3 text-sm">K</span>
+                                    <span class="text-gray-700">Potassium</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-green-900 mb-2 flex items-center">
+                                <i class="fas fa-star-half-alt text-green-600 mr-2"></i>
+                                Secondary Nutrients
+                            </h4>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-white rounded-lg p-2 text-center">
+                                    <span class="block font-bold text-green-700">Ca</span>
+                                    <span class="text-xs text-gray-600">Calcium</span>
+                                </div>
+                                <div class="bg-white rounded-lg p-2 text-center">
+                                    <span class="block font-bold text-green-700">Mg</span>
+                                    <span class="text-xs text-gray-600">Magnesium</span>
+                                </div>
+                                <div class="bg-white rounded-lg p-2 text-center">
+                                    <span class="block font-bold text-green-700">S</span>
+                                    <span class="text-xs text-gray-600">Sulfur</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Micronutrients -->
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-xl p-6 shadow-md hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                            <i class="fas fa-atom text-2xl mr-3"></i>
+                            Micronutrients
+                        </h3>
+                        <p class="text-gray-700 mb-4 text-sm">Needed in smaller amounts but equally important for plant health</p>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-white rounded-lg p-3 text-center shadow-sm">
+                                <span class="block font-bold text-blue-700 text-lg">B</span>
+                                <span class="text-xs text-gray-600">Boron</span>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 text-center shadow-sm">
+                                <span class="block font-bold text-blue-700 text-lg">Cu</span>
+                                <span class="text-xs text-gray-600">Copper</span>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 text-center shadow-sm">
+                                <span class="block font-bold text-blue-700 text-lg">Fe</span>
+                                <span class="text-xs text-gray-600">Iron</span>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 text-center shadow-sm">
+                                <span class="block font-bold text-blue-700 text-lg">Cl</span>
+                                <span class="text-xs text-gray-600">Chloride</span>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 text-center shadow-sm">
+                                <span class="block font-bold text-blue-700 text-lg">Mn</span>
+                                <span class="text-xs text-gray-600">Manganese</span>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 text-center shadow-sm">
+                                <span class="block font-bold text-blue-700 text-lg">Zn</span>
+                                <span class="text-xs text-gray-600">Zinc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Factors Affecting Nutrient Status -->
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 shadow-md">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-4 flex items-center">
+                        <i class="fas fa-cogs mr-3"></i>
+                        Factors Affecting Nutrient Status
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                            <h4 class="font-bold text-purple-900 mb-2">Parent Material</h4>
+                            <p class="text-gray-700 text-sm">Soils from nutrient-poor rocks have fewer nutrients</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                            <h4 class="font-bold text-purple-900 mb-2">Soil pH</h4>
+                            <p class="text-gray-700 text-sm">pH influences nutrient solubility and availability</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                            <h4 class="font-bold text-purple-900 mb-2">Leaching</h4>
+                            <p class="text-gray-700 text-sm">Rainfall and irrigation can wash away nutrients</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                            <h4 class="font-bold text-purple-900 mb-2">Soil Erosion</h4>
+                            <p class="text-gray-700 text-sm">Removes nutrient-rich topsoil</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                            <h4 class="font-bold text-purple-900 mb-2">Crop Removal</h4>
+                            <p class="text-gray-700 text-sm">Harvesting and deforestation deplete nutrients</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                            <h4 class="font-bold text-purple-900 mb-2">Plant Uptake</h4>
+                            <p class="text-gray-700 text-sm">Roots absorb essential elements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pH Section -->
+            <div id="ph" class="section-content p-6 hidden">
+                <h2 class="text-3xl font-bold text-amber-800 mb-6">2. Soil pH</h2>
+                <p class="text-gray-700 mb-6 text-lg">Soil pH measures the acidity or alkalinity of soil. It significantly influences nutrient availability and crop growth.</p>
+
+                <!-- pH Scale Visual -->
+                <div class="bg-gradient-to-r from-red-100 via-green-100 to-blue-100 rounded-xl p-6 mb-6 shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">pH Scale</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-red-700 font-bold">0 (Acidic)</span>
+                        <span class="text-green-700 font-bold">7 (Neutral)</span>
+                        <span class="text-blue-700 font-bold">14 (Alkaline)</span>
+                    </div>
+                    <div class="h-8 bg-gradient-to-r from-red-500 via-green-500 to-blue-500 rounded-full"></div>
+                    <div class="flex justify-between mt-2 text-sm text-gray-600">
+                        <span>More H⁺ ions</span>
+                        <span>Balanced</span>
+                        <span>More OH⁻ ions</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <!-- Factors Increasing Acidity -->
+                    <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center">
+                            <i class="fas fa-arrow-down text-red-600 mr-3"></i>
+                            Factors Increasing Acidity
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded-lg p-3 border-l-4 border-red-500">
+                                <p class="text-gray-700 text-sm">CO₂ from microorganisms forms carbonic acid</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 border-l-4 border-red-500">
+                                <p class="text-gray-700 text-sm">Decomposition of organic matter</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 border-l-4 border-red-500">
+                                <p class="text-gray-700 text-sm">Excessive application of certain fertilizers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Factors Causing Alkalinity -->
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                            <i class="fas fa-arrow-up text-blue-600 mr-3"></i>
+                            Factors Causing Alkalinity
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded-lg p-3 border-l-4 border-blue-500">
+                                <p class="text-gray-700 text-sm">Application of lime</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 border-l-4 border-blue-500">
+                                <p class="text-gray-700 text-sm">Use of fertilizers like calcium ammonium nitrate (CAN)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Factors Affecting Soil pH -->
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-6 shadow-md mb-6">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-4 flex items-center">
+                        <i class="fas fa-sliders-h mr-3"></i>
+                        Factors Affecting Soil pH
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-bold text-indigo-900 mb-2 flex items-center">
+                                <i class="fas fa-mountain text-indigo-600 mr-2"></i>
+                                Parent Material
+                            </h4>
+                            <p class="text-gray-700 text-sm">Limestone (basic) or quartz-rich sandstone (acidic) influences pH</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-bold text-indigo-900 mb-2 flex items-center">
+                                <i class="fas fa-spray-can text-indigo-600 mr-2"></i>
+                                Fertilizer Use
+                            </h4>
+                            <p class="text-gray-700 text-sm">Certain fertilizers produce hydrogen ions altering pH</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-bold text-indigo-900 mb-2 flex items-center">
+                                <i class="fas fa-cloud-rain text-indigo-600 mr-2"></i>
+                                Leaching
+                            </h4>
+                            <p class="text-gray-700 text-sm">High rainfall leaches basic ions affecting pH</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-bold text-indigo-900 mb-2 flex items-center">
+                                <i class="fas fa-tree text-indigo-600 mr-2"></i>
+                                Vegetation
+                            </h4>
+                            <p class="text-gray-700 text-sm">Plants like conifers produce organic acids lowering pH</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ways to Modify pH -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 shadow-md">
+                    <h3 class="text-2xl font-bold text-green-800 mb-4 flex items-center">
+                        <i class="fas fa-tools mr-3"></i>
+                        Ways to Modify Soil pH
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-green-500 flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700">Application of agricultural lime to reduce acidity</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-green-500 flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700">Use of organic manure</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-green-500 flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700">Applying inorganic fertilizers such as urea or urea phosphate</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-green-500 flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700">Use of acidic fertilizers (e.g., ammonium sulfate) over multiple planting cycles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salinity Section -->
+            <div id="salinity" class="section-content p-6 hidden">
+                <h2 class="text-3xl font-bold text-amber-800 mb-6">3. Salinity</h2>
+                <p class="text-gray-700 mb-6 text-lg">Soil salinity refers to the salt content present in the soil. High salt accumulation can severely impact crop production.</p>
+
+                <!-- Effects of High Salinity -->
+                <div class="bg-gradient-to-br from-red-50 to-rose-100 rounded-xl p-6 mb-6 shadow-md">
+                    <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-3"></i>
+                        Effects of High Salinity
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-5 shadow-sm text-center">
+                            <i class="fas fa-exclamation-circle text-4xl text-red-600 mb-3"></i>
+                            <h4 class="font-bold text-red-900 mb-2">Soil Degradation</h4>
+                            <p class="text-gray-700 text-sm">Salt buildup damages soil structure</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-5 shadow-sm text-center">
+                            <i class="fas fa-chart-line-down text-4xl text-red-600 mb-3"></i>
+                            <h4 class="font-bold text-red-900 mb-2">Poor Crop Yields</h4>
+                            <p class="text-gray-700 text-sm">Reduced productivity and harvest</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-5 shadow-sm text-center">
+                            <i class="fas fa-skull-crossbones text-4xl text-red-600 mb-3"></i>
+                            <h4 class="font-bold text-red-900 mb-2">Plant Death</h4>
+                            <p class="text-gray-700 text-sm">Dehydration and wilting occur</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Causes of Salt Build-up -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-question-circle mr-3"></i>
+                        Causes of Salt Build-up
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-tint text-blue-600 text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-blue-900 mb-1">Irrigation</h4>
+                                    <p class="text-gray-700 text-sm">Improper water management</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-rock text-blue-600 text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-blue-900 mb-1">Parent Rock Material</h4>
+                                    <p class="text-gray-700 text-sm">Natural mineral composition</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-vial text-blue-600 text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-blue-900 mb-1">Certain Fertilizers</h4>
+                                    <p class="text-gray-700 text-sm">Excessive chemical application</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-seedling text-blue-600 text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-blue-900 mb-1">Compost and Manure</h4>
+                                    <p class="text-gray-700 text-sm">Organic matter with high salt content</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500 md:col-span-2">
+                            <div class="flex items-start">
+                                <i class="fas fa-water text-blue-600 text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-blue-900 mb-1">Slow or Excessive Water Application</h4>
+                                    <p class="text-gray-700 text-sm">Poor drainage and water management practices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CEC Section -->
+            <div id="cec" class="section-content p-6 hidden">
+                <h2 class="text-3xl font-bold text-amber-800 mb-6">4. Cation Exchange Capacity (CEC)</h2>
+                <p class="text-gray-700 mb-6 text-lg">CEC is the soil's ability to attract, retain, and exchange positively charged ions (cations). These ions play a vital role in nutrient storage and availability for plants.</p>
+
+                <!-- Definition Cards -->
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">+</div>
+                            <h3 class="text-xl font-bold text-green-800">Cations</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">Positively charged ions</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-700">Ca²⁺</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-700">Mg²⁺</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-700">K⁺</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-700">Fe²⁺</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-red-50 to-pink-100 rounded-xl p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">-</div>
+                            <h3 class="text-xl font-bold text-red-800">Anions</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">Negatively charged ions</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-red-700">Cl⁻</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Concept -->
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 border-l-4 border-yellow-600 rounded-xl p-6 mb-6 shadow-md">
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-3xl text-yellow-600 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-bold text-yellow-900 mb-2">Key Concept</h3>
+                            <p class="text-gray-800 text-lg">The higher the soil's CEC, the greater its ability to store and supply plant nutrients.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soil Types Comparison -->
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-6 shadow-md mb-6">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-4 flex items-center">
+                        <i class="fas fa-balance-scale mr-3"></i>
+                        CEC in Different Soil Types
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg p-5 border-t-4 border-green-500 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-arrow-up text-green-600 text-3xl mr-3"></i>
+                                <h4 class="text-lg font-bold text-green-900">High CEC - Loam Soils</h4>
+                            </div>
+                            <p class="text-gray-700 mb-2">Rich in organic matter</p>
+                            <p class="text-gray-700 mb-2">Greater nutrient storage capacity</p>
+                            <p class="text-gray-700">Better for crop production</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-5 border-t-4 border-red-500 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-arrow-down text-red-600 text-3xl mr-3"></i>
+                                <h4 class="text-lg font-bold text-red-900">Low CEC - Sandy Soils</h4>
+                            </div>
+                            <p class="text-gray-700 mb-2">Lack of organic matter</p>
+                            <p class="text-gray-700 mb-2">Poor nutrient retention</p>
+                            <p class="text-gray-700">Less suitable for crops</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Importance -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-star mr-3"></i>
+                        Importance of CEC
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-white rounded-lg p-4 flex items-start border-l-4 border-blue-500">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mr-3 mt-1"></i>
+                            <p class="text-gray-700">Crucial for maintaining soil fertility</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 flex items-start border-l-4 border-blue-500">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mr-3 mt-1"></i>
+                            <p class="text-gray-700">Supports healthy crop growth and development</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 flex items-start border-l-4 border-blue-500">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mr-3 mt-1"></i>
+                            <p class="text-gray-700">Determines soil's capacity to hold and release nutrients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects Section -->
+            <div id="effects" class="section-content p-6 hidden">
+                <h2 class="text-3xl font-bold text-amber-800 mb-6">Effects on Crop Production</h2>
+                <p class="text-gray-700 mb-6 text-lg">Understanding and managing chemical properties is essential for improving soil fertility and achieving optimal crop yields.</p>
+
+                <div class="space-y-6">
+                    <!-- Nutrient Status Effects -->
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-6 shadow-md">
+                        <h3 class="text-2xl font-bold text-green-800 mb-4 flex items-center">
+                            <i class="fas fa-seedling mr-3"></i>
+                            Nutrient Status
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-green-600">
+                                <div class="flex items-start">
+                                    <i class="fas fa-plus-circle text-green-600 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-green-900 mb-2">High Nutrient Levels</h4>
+                                        <p class="text-gray-700 text-sm">Promotes healthy crop growth and high yields</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-red-600">
+                                <div class="flex items-start">
+                                    <i class="fas fa-minus-circle text-red-600 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-red-900 mb-2">Nutrient Deficiency</h4>
+                                        <p class="text-gray-700 text-sm">Leads to poor yields and reduced soil fertility</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soil pH Effects -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-100 rounded-xl p-6 shadow-md">
+                        <h3 class="text-2xl font-bold text-purple-800 mb-4 flex items-center">
+                            <i class="fas fa-vial mr-3"></i>
+                            Soil pH
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-flask text-purple-600 text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-purple-900 mb-2">Nutrient Availability</h4>
+                                        <p class="text-gray-700 text-sm">pH affects nutrient solubility and accessibility to plants</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-bacteria text-purple-600 text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-purple-900 mb-2">Microbial Activity</h4>
+                                        <p class="text-gray-700 text-sm">pH influences beneficial soil microorganisms</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 border-2 border-red-300">
+                                <div class="flex items-start">
+                                    <i class="fas fa-skull text-red-600 text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-red-900 mb-2">Acidic Soil Warning</h4>
+                                        <p class="text-gray-700 text-sm">May increase toxicity of Iron (Fe), Aluminum (Al), and Manganese (Mn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Salinity Effects -->
+                    <div class="bg-gradient-to-br from-red-50 to-orange-100 rounded-xl p-6 shadow-md">
+                        <h3 class="text-2xl font-bold text-red-800 mb-4 flex items-center">
+                            <i class="fas fa-tint mr-3"></i>
+                            Salinity
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-water text-red-600 text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-red-900 mb-2">Water Uptake Disruption</h4>
+                                        <p class="text-gray-700 text-sm">High salinity prevents plants from absorbing water</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-chart-line-down text-red-600 text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-red-900 mb-2">Stunted Growth</h4>
+                                        <p class="text-gray-700 text-sm">Plants show reduced growth and development</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-droplet-slash text-red-600 text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-red-900 mb-2">Dehydration</h4>
+                                        <p class="text-gray-700 text-sm">Plants suffer from water stress leading to wilting</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-ban text-red-600 text-xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold text-red-900 mb-2">Nitrogen Uptake Issues</h4>
+                                        <p class="text-gray-700 text-sm">Affects nitrogen absorption, inhibiting growth</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEC Effects -->
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-xl p-6 shadow-md">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+                            <i class="fas fa-exchange-alt mr-3"></i>
+                            Cation Exchange Capacity (CEC)
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white rounded-lg p-5 border-t-4 border-green-500">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-thumbs-up text-green-600 text-3xl mr-3"></i>
+                                    <h4 class="text-lg font-bold text-green-900">High CEC Soils</h4>
+                                </div>
+                                <p class="text-gray-700 text-sm mb-2"><strong>Characteristics:</strong> Rich in clay and organic matter</p>
+                                <p class="text-gray-700 text-sm mb-2"><strong>Effect:</strong> More fertile with better nutrient retention</p>
+                                <p class="text-gray-700 text-sm"><strong>Result:</strong> Superior crop production</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-5 border-t-4 border-red-500">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-thumbs-down text-red-600 text-3xl mr-3"></i>
+                                    <h4 class="text-lg font-bold text-red-900">Low CEC Soils</h4>
+                                </div>
+                                <p class="text-gray-700 text-sm mb-2"><strong>Characteristics:</strong> Sandy soils with little organic matter</p>
+                                <p class="text-gray-700 text-sm mb-2"><strong>Effect:</strong> Poor nutrient storage capacity</p>
+                                <p class="text-gray-700 text-sm"><strong>Result:</strong> Negative impact on crop yields</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Card -->
+        <div class="bg-gradient-to-r from-amber-100 to-yellow-100 rounded-xl shadow-lg p-6 border-l-4 border-amber-600">
+            <h3 class="text-2xl font-bold text-amber-900 mb-4 flex items-center">
+                <i class="fas fa-clipboard-check mr-3"></i>
+                Key Takeaway
+            </h3>
+            <p class="text-gray-800 text-lg leading-relaxed">
+                Understanding and managing the chemical properties of soil—nutrient status, pH, salinity, and CEC—is essential for improving soil fertility and achieving optimal crop yields. Proper soil management ensures sustainable agricultural productivity.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-r from-amber-700 to-orange-700 text-white rounded-xl p-6 text-center shadow-lg mt-8">
+            <p class="text-lg font-semibold mb-2">🌱 Chemical Properties of Soil - Unit 2</p>
+            <p class="text-orange-200 text-sm">Interactive Learning Resource for Agricultural Studies</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section-content');
+            const tabs = document.querySelectorAll('.tab-btn');
+            
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            tabs.forEach(tab => {
+                tab.classList.remove('border-amber-600', 'text-amber-700', 'bg-amber-50');
+                tab.classList.add('border-transparent', 'text-gray-600');
+            });
+            
+            document.getElementById(sectionId).classList.remove('hidden');
+            const activeTab = document.getElementById(sectionId + '-tab');
+            activeTab.classList.remove('border-transparent', 'text-gray-600');
+            activeTab.classList.add('border-amber-600', 'text-amber-700', 'bg-amber-50');
+        }
+        
+        // Show first section by default
+        showSection('nutrients');
+    </script>
+</body>
+</html>
