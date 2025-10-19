@@ -1,0 +1,733 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Response & Sensitivity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .grow-animation {
+            animation: grow 2s ease-in-out infinite;
+        }
+        @keyframes grow {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.1); }
+        }
+        .rotate-slow {
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-green-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4">🌱</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Plant Response & Sensitivity
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">How Plants React to Their Environment</p>
+            <p class="text-lg text-gray-400">Understanding Tropisms, Nasties, and Plant Hormones</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('intro')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Introduction
+                </button>
+                <button onclick="showSection('tropisms')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Tropisms
+                </button>
+                <button onclick="showSection('nasties')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Nasties
+                </button>
+                <button onclick="showSection('experiments')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Experiments
+                </button>
+                <button onclick="showSection('auxins')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 rounded-xl transition shadow-lg">
+                    Auxins
+                </button>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="intro" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                What is Plant Response?
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🔍</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-green-300 mb-4">Definition</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            <strong>Plant response</strong> is how plants react to stimuli from their environment to survive and adapt. Although plants cannot move like animals, they exhibit remarkable responses to environmental changes through growth movements and physiological changes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⚡</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">Response</h3>
+                    <p class="text-sm text-gray-300">The reaction of an organism to a stimulus detected in its environment.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-emerald-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-emerald-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">👁️</div>
+                    <h3 class="text-xl font-bold mb-3 text-emerald-300">Sensitivity (Irritability)</h3>
+                    <p class="text-sm text-gray-300">The ability to detect and react to changes; plants have limited sensitivity related mainly to nutrition.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📡</div>
+                    <h3 class="text-xl font-bold mb-3 text-teal-300">Types of Stimuli</h3>
+                    <p class="text-sm text-gray-300">Light, temperature, humidity, gravity, chemicals, touch, and water.</p>
+                </div>
+            </div>
+
+            <!-- Response Types Overview -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">↗️</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Tropisms</h3>
+                    </div>
+                    <p class="text-gray-300 text-center mb-4">
+                        Directional growth responses towards or away from stimuli
+                    </p>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <p class="text-sm text-gray-400 italic">
+                            Example: A plant growing towards a light source (phototropism)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔄</div>
+                        <h3 class="text-3xl font-bold text-purple-300">Nasties</h3>
+                    </div>
+                    <p class="text-gray-300 text-center mb-4">
+                        Non-directional movement responses not influenced by stimulus direction
+                    </p>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl">
+                        <p class="text-sm text-gray-400 italic">
+                            Example: Mimosa pudica leaves folding when touched (thigmonasty)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tropisms Section -->
+        <section id="tropisms" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Tropisms: Directional Growth Responses
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 mb-8">
+                <p class="text-gray-300 text-lg text-center">
+                    <strong>Tropisms</strong> are controlled by plant hormones called <span class="text-yellow-400 font-bold">auxins</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Phototropism -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">☀️</div>
+                        <h3 class="text-2xl font-bold text-yellow-300">Phototropism</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Stimulus:</strong> Light</p>
+                        <p class="text-gray-300 mb-3"><strong>Response:</strong> Growth towards light</p>
+                        <p class="text-gray-300 mb-3"><strong>Example:</strong> Shoots and stems bend towards sunlight</p>
+                        <p class="text-sm text-gray-400"><strong>Significance:</strong> Maximizes photosynthesis for energy production</p>
+                    </div>
+                </div>
+
+                <!-- Geotropism -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">🌍</div>
+                        <h3 class="text-2xl font-bold text-orange-300">Geotropism</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Stimulus:</strong> Gravity</p>
+                        <p class="text-gray-300 mb-3"><strong>Response:</strong> Roots grow downward (positive), shoots grow upward (negative)</p>
+                        <p class="text-gray-300 mb-3"><strong>Example:</strong> Roots anchor in soil</p>
+                        <p class="text-sm text-gray-400"><strong>Significance:</strong> Roots absorb water/minerals; shoots reach light</p>
+                    </div>
+                </div>
+
+                <!-- Hydrotropism -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">💧</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Hydrotropism</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Stimulus:</strong> Water</p>
+                        <p class="text-gray-300 mb-3"><strong>Response:</strong> Growth towards water</p>
+                        <p class="text-gray-300 mb-3"><strong>Example:</strong> Roots grow towards moist soil</p>
+                        <p class="text-sm text-gray-400"><strong>Significance:</strong> Ensures water absorption and mineral uptake</p>
+                    </div>
+                </div>
+
+                <!-- Chemotropism -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">⚗️</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Chemotropism</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Stimulus:</strong> Chemicals</p>
+                        <p class="text-gray-300 mb-3"><strong>Response:</strong> Growth towards chemicals</p>
+                        <p class="text-gray-300 mb-3"><strong>Example:</strong> Pollen tube grows towards ovule</p>
+                        <p class="text-sm text-gray-400"><strong>Significance:</strong> Essential for fertilization and reproduction</p>
+                    </div>
+                </div>
+
+                <!-- Thigmotropism -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">✋</div>
+                        <h3 class="text-2xl font-bold text-pink-300">Thigmotropism</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Stimulus:</strong> Touch/Contact</p>
+                        <p class="text-gray-300 mb-3"><strong>Response:</strong> Growth around support</p>
+                        <p class="text-gray-300 mb-3"><strong>Example:</strong> Tendrils coiling around objects</p>
+                        <p class="text-sm text-gray-400"><strong>Significance:</strong> Provides support for climbing plants</p>
+                    </div>
+                </div>
+
+                <!-- Heliotropism -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3 rotate-slow">🌻</div>
+                        <h3 class="text-2xl font-bold text-red-300">Heliotropism</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Stimulus:</strong> Sun movement</p>
+                        <p class="text-gray-300 mb-3"><strong>Response:</strong> Gradual turning towards sun</p>
+                        <p class="text-gray-300 mb-3"><strong>Example:</strong> Sunflowers tracking the sun</p>
+                        <p class="text-sm text-gray-400"><strong>Significance:</strong> Maximizes light capture (leaf mosaic pattern)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taxes -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-cyan-400">Taxes in Unicellular Organisms</h3>
+                <p class="text-gray-300 text-lg mb-6 text-center">
+                    Locomotory responses in single-celled organisms - either positive (towards) or negative (away from) stimulus
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="text-xl font-bold mb-3 text-yellow-300">Phototaxis</h4>
+                        <p class="text-gray-300 mb-2"><strong>Movement towards light</strong></p>
+                        <p class="text-sm text-gray-400">Example: Chloroplast movement in palisade cells to maximize light absorption</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="text-xl font-bold mb-3 text-purple-300">Chemotaxis</h4>
+                        <p class="text-gray-300 mb-2"><strong>Movement towards/away from chemicals</strong></p>
+                        <p class="text-sm text-gray-400">Example: Motile gametes moving towards each other during fertilization</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nasties Section -->
+        <section id="nasties" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Nasties: Non-Directional Responses
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 mb-8">
+                <p class="text-gray-300 text-lg text-center">
+                    <strong>Nasties</strong> are rapid, non-directional movement responses that are <span class="text-purple-400 font-bold">not influenced by the direction</span> of the stimulus
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Photonasty -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-4 flex-shrink-0">🌅</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-300">Photonasty</h3>
+                            <p class="text-gray-400">Light Intensity Response</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-3">
+                        <p class="text-gray-300"><strong>Stimulus:</strong> Changes in light intensity</p>
+                        <p class="text-gray-300"><strong>Response:</strong> Rapid opening/closing</p>
+                        <p class="text-gray-300"><strong>Example:</strong> Morning glory flowers opening at dawn, closing at dusk</p>
+                        <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-sm text-gray-300"><strong>Purpose:</strong> Protects reproductive parts and optimizes pollination timing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thigmonasty -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-4 flex-shrink-0">🌿</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-pink-300">Thigmonasty</h3>
+                            <p class="text-gray-400">Touch/Vibration Response</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-3">
+                        <p class="text-gray-300"><strong>Stimulus:</strong> Touch or vibration</p>
+                        <p class="text-gray-300"><strong>Response:</strong> Rapid folding or closing</p>
+                        <p class="text-gray-300"><strong>Examples:</strong></p>
+                        <ul class="list-disc list-inside text-sm text-gray-400 ml-4 space-y-1">
+                            <li>Mimosa pudica (sensitive plant) - leaves fold when touched</li>
+                            <li>Venus flytrap - trap closes on insects</li>
+                        </ul>
+                        <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-sm text-gray-300"><strong>Purpose:</strong> Defense mechanism and prey capture (Venus flytrap digests insects)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chemonasty -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-4 flex-shrink-0">🧪</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300">Chemonasty</h3>
+                            <p class="text-gray-400">Chemical Response</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-3">
+                        <p class="text-gray-300"><strong>Stimulus:</strong> Chemical substances</p>
+                        <p class="text-gray-300"><strong>Response:</strong> Movement of plant parts</p>
+                        <p class="text-gray-300"><strong>Example:</strong> Sundew plant tentacles moving to trap insects</p>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-sm text-gray-300"><strong>Purpose:</strong> Carnivorous plants capture and digest prey for nutrients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hydronasty -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-4 flex-shrink-0">💦</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300">Hydronasty</h3>
+                            <p class="text-gray-400">Water/Humidity Response</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-3">
+                        <p class="text-gray-300"><strong>Stimulus:</strong> Changes in water availability or humidity</p>
+                        <p class="text-gray-300"><strong>Response:</strong> Opening or closing movements</p>
+                        <p class="text-gray-300"><strong>Example:</strong> Flowers opening/closing with humidity changes</p>
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-sm text-gray-300"><strong>Purpose:</strong> Prevents water loss and protects pollen in dry conditions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Responses -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🍂</div>
+                        <h3 class="text-2xl font-bold text-orange-300">Abscission</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Definition:</strong> Shedding of leaves, flowers, or fruits due to adverse conditions</p>
+                        <p class="text-gray-300 mb-3"><strong>Mechanism:</strong> Cells near the leaf base dry out, causing the leaf to fall</p>
+                        <p class="text-sm text-gray-400"><strong>Example:</strong> Deciduous trees losing leaves in winter to conserve water and energy</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">😴</div>
+                        <h3 class="text-2xl font-bold text-indigo-300">Dormancy</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Definition:</strong> Period of very low metabolic activity in seeds and buds</p>
+                        <p class="text-gray-300 mb-3"><strong>Characteristic:</strong> Growth stops temporarily until conditions improve</p>
+                        <p class="text-sm text-gray-400"><strong>Purpose:</strong> Survival strategy during unfavorable environmental conditions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiments Section -->
+        <section id="experiments" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Detailed Tropism Experiments
+            </h2>
+
+            <!-- Experiment 1: Phototropism -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6 flex-shrink-0">🔬</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-yellow-300">Experiment 1: Phototropism</h3>
+                        <p class="text-gray-400 text-lg">Investigating how seedlings grow towards light</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-green-400">🎯 AIM</h4>
+                        <p class="text-gray-300">To investigate phototropism in seedling growth</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-blue-400">🧰 MATERIALS</h4>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li>• 20 healthy soaked maize grains</li>
+                            <li>• Clinostat (rotating device)</li>
+                            <li>• 2 large cardboard boxes (similar size)</li>
+                            <li>• 2 small clay pots with slightly damp soil</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">📋 PROCEDURE</h4>
+                    <ol class="text-gray-300 space-y-2 ml-6 list-decimal">
+                        <li>Plant 10 maize grains in each clay pot with damp soil</li>
+                        <li>Place one pot in <strong>Box A</strong> - position fixed under light source (light from one side)</li>
+                        <li>Place the other pot in <strong>Box B</strong> - on a clinostat rotating to expose plants uniformly to light</li>
+                        <li>Observe and record seedling growth direction over several days</li>
+                    </ol>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-orange-400">👁️ OBSERVATION</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">📦</span>
+                                <div>
+                                    <p class="text-gray-300 font-semibold">Box A (Fixed Light):</p>
+                                    <p class="text-sm text-gray-400">Seedlings bend towards the light source - <strong class="text-yellow-400">positive phototropism</strong></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">🔄</span>
+                                <div>
+                                    <p class="text-gray-300 font-semibold">Box B (Clinostat):</p>
+                                    <p class="text-sm text-gray-400">Seedlings grow straight - rotation provides uniform light</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-red-400">✅ CONCLUSION</h4>
+                        <ul class="text-gray-300 space-y-2 text-sm">
+                            <li>• Seedlings exhibit phototropism by growing towards light</li>
+                            <li>• Clinostat removes directional light stimulus, preventing bending</li>
+                            <li>• Demonstrates light is the directional stimulus causing growth response</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-xl border-l-4 border-yellow-500">
+                    <p class="text-gray-300"><strong>Key Learning:</strong> This experiment demonstrates that plants actively respond to directional light stimuli through differential growth patterns controlled by auxins.</p>
+                </div>
+            </div>
+
+            <!-- Experiment 2: Geotropism -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6 flex-shrink-0">🧪</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-orange-300">Experiment 2: Geotropism</h3>
+                        <p class="text-gray-400 text-lg">Observing root and shoot growth direction relative to gravity</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-green-400">🎯 AIM</h4>
+                        <p class="text-gray-300">To demonstrate positive and negative geotropism</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-blue-400">🧰 MATERIALS</h4>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li>• 3-4 potted bean or radish plants</li>
+                            <li>• Transparent container/box</li>
+                            <li>• Soil and water</li>
+                            <li>• Small wedge or block to tilt container</li>
+                            <li>• Ruler</li>
+                            <li>• Light source</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">📋 PROCEDURE</h4>
+                    <ol class="text-gray-300 space-y-2 ml-6 list-decimal">
+                        <li>Plant seeds in pots with soil, water well, and allow seedlings to grow upright</li>
+                        <li>Place pots in container positioned upright (control)</li>
+                        <li>Tilt the container at about 30-45 degrees and secure it</li>
+                        <li>Keep under consistent light</li>
+                        <li>Observe root and shoot direction over several days, measuring growth changes</li>
+                    </ol>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-orange-400">👁️ OBSERVATION</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">⬇️</span>
+                                <div>
+                                    <p class="text-gray-300 font-semibold">Roots:</p>
+                                    <p class="text-sm text-gray-400">Grow downwards (towards gravity) - <strong class="text-orange-400">positive geotropism</strong></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">⬆️</span>
+                                <div>
+                                    <p class="text-gray-300 font-semibold">Shoots:</p>
+                                    <p class="text-sm text-gray-400">Grow upwards (away from gravity) - <strong class="text-green-400">negative geotropism</strong></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">📊</span>
+                                <div>
+                                    <p class="text-gray-300 font-semibold">Control:</p>
+                                    <p class="text-sm text-gray-400">Plants continue normal vertical growth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-red-400">✅ CONCLUSION</h4>
+                        <ul class="text-gray-300 space-y-2 text-sm">
+                            <li>• Roots respond positively to gravity for anchorage and nutrient absorption</li>
+                            <li>• Shoots respond negatively to gravity to maximize light exposure</li>
+                            <li>• Gravity is a key environmental stimulus directing plant growth</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-orange-900 bg-opacity-30 p-4 rounded-xl border-l-4 border-orange-500">
+                    <p class="text-gray-300"><strong>Key Learning:</strong> Different plant parts respond oppositely to the same stimulus (gravity), demonstrating specialized adaptations for survival.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Auxins Section -->
+        <section id="auxins" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Plant Hormones: Auxins
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🧬</div>
+                    <h3 class="text-3xl font-bold text-yellow-300">What are Auxins?</h3>
+                </div>
+                <p class="text-gray-300 text-lg text-center leading-relaxed">
+                    Auxins are plant hormones that control growth responses like tropisms and other plant activities. They are produced mainly at shoot and root tips and move throughout the plant to regulate various processes.
+                </p>
+            </div>
+
+            <h3 class="text-3xl font-bold mb-6 text-center text-yellow-300">Effects of Auxins on Different Plant Parts</h3>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Stems -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4 grow-animation">🌱</div>
+                        <h4 class="text-2xl font-bold text-green-300">Effects on Stems</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-2">
+                        <p class="text-gray-300">• <strong>Promote rapid growth</strong> just below the tip</p>
+                        <p class="text-gray-300">• Concentration <strong>decreases down the stem</strong></p>
+                        <p class="text-gray-300">• Cause <strong>cell elongation</strong> and division</p>
+                        <p class="text-gray-300">• Maintain <strong>apical dominance</strong> (inhibit side branch growth)</p>
+                    </div>
+                </div>
+
+                <!-- Leaves -->
+                <div class="shimmer-card bg-gradient-to-br from-emerald-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-emerald-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🍃</div>
+                        <h4 class="text-2xl font-bold text-emerald-300">Effects on Leaves</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-2">
+                        <p class="text-gray-300">• <strong>Prevent early leaf drop</strong> (abscission)</p>
+                        <p class="text-gray-300">• Maintain leaf attachment to stem</p>
+                        <p class="text-gray-300">• Help leaves stay functional longer</p>
+                        <p class="text-gray-300">• Regulate leaf development</p>
+                    </div>
+                </div>
+
+                <!-- Roots -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🌿</div>
+                        <h4 class="text-2xl font-bold text-orange-300">Effects on Roots</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-2">
+                        <p class="text-gray-300">• <strong>Stimulate root growth</strong> at low concentrations</p>
+                        <p class="text-gray-300">• <strong>Inhibit growth</strong> at high concentrations</p>
+                        <p class="text-gray-300">• Control root branching</p>
+                        <p class="text-gray-300">• Regulate root development</p>
+                    </div>
+                </div>
+
+                <!-- Fruits -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🍎</div>
+                        <h4 class="text-2xl font-bold text-red-300">Effects on Fruits</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-2">
+                        <p class="text-gray-300">• <strong>Promote fruit development</strong></p>
+                        <p class="text-gray-300">• Prevent premature fruit drop</p>
+                        <p class="text-gray-300">• Help fruits reach maturity</p>
+                        <p class="text-gray-300">• Control fruit size and shape</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Functions -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-yellow-300">Key Functions of Auxins</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">📈</div>
+                        <h4 class="text-xl font-bold mb-3 text-yellow-400">Cell Division</h4>
+                        <p class="text-sm text-gray-300">Promote cell division in meristematic tissues</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">↕️</div>
+                        <h4 class="text-xl font-bold mb-3 text-yellow-400">Cell Elongation</h4>
+                        <p class="text-sm text-gray-300">Cause cells to elongate and stretch</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">👑</div>
+                        <h4 class="text-xl font-bold mb-3 text-yellow-400">Apical Dominance</h4>
+                        <p class="text-sm text-gray-300">Inhibit side branch growth to maintain main stem dominance</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practical Applications -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-300">Practical Applications of Synthetic Auxins</h3>
+                <p class="text-gray-300 text-center mb-6">Humans use synthetic auxins in agriculture and horticulture for various purposes:</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-xl border border-red-500 card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">☠️</div>
+                            <h4 class="text-xl font-bold text-red-300">Weed Killers</h4>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-sm text-gray-300">High concentrations of synthetic auxins cause uncontrolled growth in weeds, leading to their death while leaving crops unaffected</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-xl border border-green-500 card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🌱</div>
+                            <h4 class="text-xl font-bold text-green-300">Root Growth Stimulation</h4>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-sm text-gray-300">Applied to stem cuttings to promote rapid root development, making plant propagation more successful</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-xl border border-purple-500 card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🍇</div>
+                            <h4 class="text-xl font-bold text-purple-300">Prevent Fruit Drop</h4>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-sm text-gray-300">Sprayed on fruit trees to prevent premature fruit drop, ensuring better harvests and fruit quality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 pb-8">
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-lg mb-2">🌱 Understanding Plant Responses 🌱</p>
+                <p class="text-sm">A comprehensive guide to plant sensitivity and environmental adaptations</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Show intro section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('intro');
+        });
+    </script>
+</body>
+</html>

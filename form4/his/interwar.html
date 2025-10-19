@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Developments in the Inter-War Period</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .stat-card:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4">💰</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                Economic Developments
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">in the Inter-War Period</p>
+            <p class="text-lg text-gray-400">1918-1939 - Navigating Economic Turmoil</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('conditions')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Post-War Europe
+                </button>
+                <button onclick="showSection('positions')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Allied Positions
+                </button>
+                <button onclick="showSection('germany')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 rounded-xl transition shadow-lg">
+                    Germany's Crisis
+                </button>
+                <button onclick="showSection('japan')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Japan's Economy
+                </button>
+                <button onclick="showSection('asia')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Asia for Asians
+                </button>
+            </div>
+        </header>
+
+        <!-- Post-War Conditions Section -->
+        <section id="conditions" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Economic Conditions in Europe After WWI
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="stat-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📦</div>
+                    <h3 class="text-xl font-bold mb-3 text-red-300">Import Dependence</h3>
+                    <p class="text-sm text-gray-300">Heavy reliance on imports limited economic self-sufficiency and made nations vulnerable to trade disruptions.</p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏭</div>
+                    <h3 class="text-xl font-bold mb-3 text-orange-300">Industrial Collapse</h3>
+                    <p class="text-sm text-gray-300">Low industrial production due to war destruction and severely damaged infrastructure across the continent.</p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">💵</div>
+                    <h3 class="text-xl font-bold mb-3 text-yellow-300">US Debt Crisis</h3>
+                    <p class="text-sm text-gray-300">Huge debts owed to the United States strained national budgets and limited government spending capacity.</p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">👷</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">Mass Unemployment</h3>
+                    <p class="text-sm text-gray-300">High joblessness among demobilized soldiers and war-affected workers created social instability.</p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🍞</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Food Shortages</h3>
+                    <p class="text-sm text-gray-300">Severe food scarcity and skyrocketing cost of living caused widespread hardship and malnutrition.</p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📈</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">Hyperinflation</h3>
+                    <p class="text-sm text-gray-300">Rampant inflation and currency devaluation eroded savings and destabilized economies across Europe.</p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⚠️</div>
+                    <h3 class="text-xl font-bold mb-3 text-pink-300">Social Unrest</h3>
+                    <p class="text-sm text-gray-300">Poor living conditions and unemployment fueled protests, strikes, and revolutionary movements.</p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🚢</div>
+                    <h3 class="text-xl font-bold mb-3 text-indigo-300">Trade Disruption</h3>
+                    <p class="text-sm text-gray-300">Disrupted trade networks made economic recovery difficult and slowed continental rehabilitation.</p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⚡</div>
+                    <h3 class="text-xl font-bold mb-3 text-red-300">Radical Movements</h3>
+                    <p class="text-sm text-gray-300">Rise of extremist political movements due to widespread dissatisfaction with existing governments.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-700">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">The European Economic Crisis</h3>
+                <p class="text-gray-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+                    The aftermath of World War I left Europe in economic devastation. Nations struggled with unprecedented debt, destroyed infrastructure, and millions of displaced workers. The interconnected crises of unemployment, inflation, and food shortages created a perfect storm of instability that would reshape the political and social landscape of the continent for decades to come.
+                </p>
+            </div>
+        </section>
+
+        <!-- Allied Positions Section -->
+        <section id="positions" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Allies' Positions on Germany's Economic Recovery
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- France & Britain -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🇫🇷🇬🇧</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-blue-300">France & Britain</h3>
+                            <p class="text-gray-400">The Hardliners</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-4 text-red-400 text-xl">Punitive Approach</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p class="text-gray-300">Germany must pay <strong>full reparations</strong> to cover all war damages and reconstruction costs</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p class="text-gray-300">Germany should remain <strong>economically weak</strong> to prevent future military threats</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p class="text-gray-300">Priority on <strong>security concerns</strong> over economic stability</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-red-900 bg-opacity-20 p-4 rounded-lg border border-red-700">
+                        <p class="text-sm text-gray-300"><strong>Rationale:</strong> France especially, having suffered massive destruction on its territory, prioritized revenge and security over Germany's economic rehabilitation.</p>
+                    </div>
+                </div>
+
+                <!-- USA -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🇺🇸</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-green-300">United States</h3>
+                            <p class="text-gray-400">The Pragmatist</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-4 text-green-400 text-xl">Lenient Approach</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p class="text-gray-300">Favored <strong>lenient terms</strong> to allow Germany's economic recovery</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p class="text-gray-300">Introduced the <strong>Dawes Plan (1924)</strong> to restructure Germany's debt</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p class="text-gray-300">Later implemented the <strong>Young Plan (1929)</strong> for further relief</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-green-900 bg-opacity-20 p-4 rounded-lg border border-green-700">
+                        <p class="text-sm text-gray-300"><strong>Rationale:</strong> The US recognized that a stable, prosperous Germany was essential for European economic recovery and preventing the spread of communism.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Italy -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">🇮🇹</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-300">Italy</h3>
+                            <p class="text-gray-400">The Mediator</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl">
+                        <h4 class="font-bold mb-3 text-purple-400">Moderate Position</h4>
+                        <p class="text-gray-300">Supported <strong>moderate reparations</strong> to maintain European balance of power and prevent either German dominance or complete economic collapse.</p>
+                    </div>
+                </div>
+
+                <!-- League of Nations -->
+                <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">🏛️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-indigo-300">League of Nations</h3>
+                            <p class="text-gray-400">The Arbitrator</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl">
+                        <h4 class="font-bold mb-3 text-indigo-400">Diplomatic Approach</h4>
+                        <p class="text-gray-300">Encouraged <strong>negotiation and compromise</strong> between allies on economic recovery, seeking solutions that balanced justice with stability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Germany's Challenges Section -->
+        <section id="germany" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">
+                Germany's Reparations Crisis
+            </h2>
+
+            <!-- Challenges Grid -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">The Challenges</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-4xl mb-3 text-center">💸</div>
+                        <h4 class="text-lg font-bold mb-2 text-red-300">Financial Overwhelm</h4>
+                        <p class="text-sm text-gray-300">Reparations were financially crushing, far beyond Germany's ability to pay without destroying its economy.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-4xl mb-3 text-center">🏭</div>
+                        <h4 class="text-lg font-bold mb-2 text-orange-300">Industrial Losses</h4>
+                        <p class="text-sm text-gray-300">Loss of crucial industrial regions like the Ruhr Valley to France crippled production capacity.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="text-4xl mb-3 text-center">📉</div>
+                        <h4 class="text-lg font-bold mb-2 text-yellow-300">Mass Joblessness</h4>
+                        <p class="text-sm text-gray-300">Severe unemployment due to economic instability left millions without work or income.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="text-4xl mb-3 text-center">💵</div>
+                        <h4 class="text-lg font-bold mb-2 text-green-300">Hyperinflation</h4>
+                        <p class="text-sm text-gray-300">Catastrophic hyperinflation in the early 1920s rendered currency virtually worthless.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-4xl mb-3 text-center">😡</div>
+                        <h4 class="text-lg font-bold mb-2 text-blue-300">Public Unrest</h4>
+                        <p class="text-sm text-gray-300">Widespread dissatisfaction and political instability threatened the Weimar Republic.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-4xl mb-3 text-center">⏰</div>
+                        <h4 class="text-lg font-bold mb-2 text-purple-300">Payment Deadlines</h4>
+                        <p class="text-sm text-gray-300">Constant difficulty meeting reparations deadlines, leading to penalties and occupation.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                        <div class="text-4xl mb-3 text-center">⚠️</div>
+                        <h4 class="text-lg font-bold mb-2 text-pink-300">International Tension</h4>
+                        <p class="text-sm text-gray-300">Germany's inability to pay created diplomatic crises and strained relations with Allies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solutions -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Resolution of Challenges</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Dawes Plan -->
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-green-500 border-opacity-30">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center mr-4 text-3xl">📊</div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-green-300">Dawes Plan</h4>
+                                <p class="text-gray-400">1924</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="text-xl mr-3">✓</div>
+                                <p class="text-gray-300"><strong>US Loans:</strong> American financial assistance helped Germany rebuild industries and infrastructure</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-xl mr-3">✓</div>
+                                <p class="text-gray-300"><strong>Reduced Payments:</strong> Reparations were reduced and spread over a longer, more manageable period</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-xl mr-3">✓</div>
+                                <p class="text-gray-300"><strong>Economic Stabilization:</strong> Helped end hyperinflation and restore confidence in the German economy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Young Plan -->
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-blue-500 border-opacity-30">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mr-4 text-3xl">📈</div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-blue-300">Young Plan</h4>
+                                <p class="text-gray-400">1929</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="text-xl mr-3">✓</div>
+                                <p class="text-gray-300"><strong>Further Reductions:</strong> Reparations were reduced even more significantly</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-xl mr-3">✓</div>
+                                <p class="text-gray-300"><strong>Extended Timeline:</strong> Payment schedule stretched to 59 years, ending in 1988</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-xl mr-3">✓</div>
+                                <p class="text-gray-300"><strong>Allied Withdrawal:</strong> Led to earlier withdrawal of Allied occupation forces from German territory</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-green-900 bg-opacity-20 p-6 rounded-xl border border-green-700">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4">🔍</div>
+                        <div>
+                            <h5 class="font-bold text-lg mb-2 text-green-400">International Oversight</h5>
+                            <p class="text-gray-300">Both plans included international supervision to ensure reparations did not destabilize Germany further, balancing Allied demands with German economic capacity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Japan Economy Section -->
+        <section id="japan" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Impact of WWI on the Japanese Economy
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Wartime Boom -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📈</div>
+                        <h3 class="text-3xl font-bold text-green-300">Wartime Economic Boom</h3>
+                        <p class="text-gray-400">1914-1918</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <p class="text-gray-300">Economic slowdown caused <strong>unemployment and social tensions</strong></p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <p class="text-gray-300">Trade restrictions and protectionism <strong>limited export opportunities</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Economic Transformation -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Economic Transformation</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-yellow-500 border-opacity-30">
+                        <div class="text-4xl mb-4 text-center">🏙️</div>
+                        <h4 class="text-xl font-bold mb-3 text-yellow-300">Industrial Growth</h4>
+                        <p class="text-sm text-gray-300">Japanese industrial sector experienced significant growth, though agricultural areas lagged behind in development.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-blue-500 border-opacity-30">
+                        <div class="text-4xl mb-4 text-center">🚶</div>
+                        <h4 class="text-xl font-bold mb-3 text-blue-300">Urban Migration</h4>
+                        <p class="text-sm text-gray-300">Massive increase in urban migration as rural workers sought opportunities in growing cities and factories.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-red-500 border-opacity-30">
+                        <div class="text-4xl mb-4 text-center">⚔️</div>
+                        <h4 class="text-xl font-bold mb-3 text-red-300">Labor Unrest</h4>
+                        <p class="text-sm text-gray-300">Rising labor movements and strikes as workers demanded better conditions and wages.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Government Response -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <div class="flex items-center mb-6">
+                    <div class="text-5xl mr-4">🏛️</div>
+                    <h3 class="text-3xl font-bold text-indigo-300">Government Intervention</h3>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        The Japanese government increased intervention in the economy to stabilize growth and manage the transition from wartime boom to peacetime challenges. This included supporting key industries, managing trade policies, and attempting to balance rapid industrialization with social stability.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asia for Asians Section -->
+        <section id="asia" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                Japan and "Asia for Asians"
+            </h2>
+
+            <!-- Philosophy Overview -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌏</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">The Philosophy</h3>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+                    "Asia for Asians" was a political and economic philosophy promoted by Japan to unite Asia under Japanese leadership. It advocated for Asian independence from Western colonial powers while positioning Japan as the natural leader of a pan-Asian movement.
+                </p>
+            </div>
+
+            <!-- Motivations -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-orange-400">Motivations Behind the Philosophy</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mr-4 text-2xl">💰</div>
+                            <h4 class="text-xl font-bold text-red-300">Economic Challenges</h4>
+                        </div>
+                        <p class="text-gray-300">Japan and neighboring countries faced severe economic difficulties, resource shortages, and limited access to raw materials needed for industrial growth.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-2xl">🏭</div>
+                            <h4 class="text-xl font-bold text-orange-300">Industrial Leadership</h4>
+                        </div>
+                        <p class="text-gray-300">Japan's position as the most industrialized and modernized Asian nation gave it confidence to lead regional development.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-2xl">⚔️</div>
+                            <h4 class="text-xl font-bold text-yellow-300">Militant Nationalism</h4>
+                        </div>
+                        <p class="text-gray-300">Rise of militant and nationalist forces within Japan advocating for aggressive expansion and regional dominance.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mr-4 text-2xl">🌍</div>
+                            <h4 class="text-xl font-bold text-green-300">Imitating Western Powers</h4>
+                        </div>
+                        <p class="text-gray-300">Desire to emulate Western imperial powers, especially US dominance in the Americas, by creating a Japanese sphere of influence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Was Used -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">How the Philosophy Was Used to Justify Expansion</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <div class="text-4xl mb-3 text-center">🗺️</div>
+                        <h4 class="text-lg font-bold mb-3 text-red-300">Expansionist Policies</h4>
+                        <p class="text-sm text-gray-300">Justified territorial expansion into China, Korea, and Southeast Asia as "liberating" Asia from Western colonialism.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500">
+                        <div class="text-4xl mb-3 text-center">⚔️</div>
+                        <h4 class="text-lg font-bold mb-3 text-orange-300">Military Interventions</h4>
+                        <p class="text-sm text-gray-300">Used to rationalize military invasions and establishment of puppet states and colonies throughout Asia.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <div class="text-4xl mb-3 text-center">💼</div>
+                        <h4 class="text-lg font-bold mb-3 text-yellow-300">Economic Exploitation</h4>
+                        <p class="text-sm text-gray-300">Masked economic exploitation of occupied territories, extracting resources to fuel Japan's industrial machine.</p>
+                    </div>
+                </div>
+
+                <div class="bg-red-900 bg-opacity-20 p-6 rounded-xl border border-red-700">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">⚠️</div>
+                        <div>
+                            <h5 class="font-bold text-xl mb-3 text-red-400">The Reality</h5>
+                            <p class="text-gray-300 leading-relaxed">
+                                While promoted as Asian liberation from Western imperialism, "Asia for Asians" was ultimately a cover for Japanese imperialism. Rather than creating equality among Asian nations, it established Japan as a colonial power that exploited its neighbors just as Western powers had done. The Greater East Asia Co-Prosperity Sphere, based on this philosophy, brought occupation, forced labor, and resource extraction to much of Asia during World War II.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('conditions');
+    </script>
+</body>
+</html>

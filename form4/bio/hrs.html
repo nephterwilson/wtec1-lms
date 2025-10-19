@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Respiratory System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        .breathe-animation {
+            animation: breathe 3s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s;
+        }
+        .shimmer:hover::before {
+            left: 100%;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6 breathe-animation">
+                <div class="text-7xl mb-4">🫁</div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Human Respiratory System
+            </h1>
+            <p class="text-2xl text-gray-300 mb-3">Understanding How We Breathe</p>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">Explore the mechanisms of breathing, gaseous exchange, and factors affecting respiration</p>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('overview')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg font-semibold">
+                    Overview
+                </button>
+                <button onclick="showSection('factors')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg font-semibold">
+                    Factors Affecting Breathing
+                </button>
+                <button onclick="showSection('gaseous')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg font-semibold">
+                    Gaseous Exchange
+                </button>
+                <button onclick="showSection('adaptations')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg font-semibold">
+                    Adaptations
+                </button>
+                <button onclick="showSection('experiment')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg font-semibold">
+                    Experiment
+                </button>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                What is Breathing?
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="shimmer bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start">
+                        <div class="text-6xl mr-6 flex-shrink-0 pulse-animation">💨</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-cyan-300 mb-4">Breathing Process</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                                Breathing involves the <strong>intake and expulsion of air</strong> from the lungs, allowing oxygen to enter the body and carbon dioxide to be removed.
+                            </p>
+                            <p class="text-gray-400 text-sm">
+                                This vital process ensures our cells receive the oxygen needed for energy production through cellular respiration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start">
+                        <div class="text-6xl mr-6 flex-shrink-0">🧠</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-blue-300 mb-4">Control Center</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                                The <strong class="text-blue-400">medulla oblongata</strong> in the brain regulates the basic rhythm of breathing and controls the diaphragm and intercostal muscles.
+                            </p>
+                            <p class="text-gray-400 text-sm">
+                                This ensures automatic breathing without conscious effort, adjusting to our body's needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 mb-8">
+                <h3 class="text-3xl font-bold text-center text-indigo-300 mb-6">Factors Influencing Breathing</h3>
+                <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🌡️</div>
+                        <p class="text-gray-300 font-semibold">Temperature</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">❤️</div>
+                        <p class="text-gray-300 font-semibold">Health</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🏃</div>
+                        <p class="text-gray-300 font-semibold">Exercise</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">😰</div>
+                        <p class="text-gray-300 font-semibold">Emotions</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">👴</div>
+                        <p class="text-gray-300 font-semibold">Age</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold text-center text-purple-300 mb-6">Importance of Gaseous Exchange</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-purple-900 bg-opacity-40 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-4">⚡</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Provides Energy</h4>
+                        <p class="text-gray-300 text-sm">Oxygen enables cellular respiration to produce ATP for energy</p>
+                    </div>
+                    <div class="bg-purple-900 bg-opacity-40 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-4">🔄</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Removes CO₂</h4>
+                        <p class="text-gray-300 text-sm">Eliminates toxic carbon dioxide waste from metabolism</p>
+                    </div>
+                    <div class="bg-purple-900 bg-opacity-40 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-4">💨</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Supplies O₂</h4>
+                        <p class="text-gray-300 text-sm">Delivers essential oxygen to every cell in the body</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Factors Affecting Breathing Section -->
+        <section id="factors" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Factors Affecting Breathing Rate
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Physical Exercise -->
+                <div class="shimmer bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">🏃‍♂️</div>
+                        <h3 class="text-2xl font-bold text-green-300">Physical Exercise</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">📈</span>
+                            <p class="text-gray-300"><strong>Increases respiration rate</strong></p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">💨</span>
+                            <p class="text-gray-300">More CO₂ produced during muscle activity</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">🫁</span>
+                            <p class="text-gray-300">Higher demand for O₂ to produce energy</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg mt-4">
+                            <p class="text-sm text-gray-300"><strong>Why?</strong> Muscles need more energy (ATP) from glucose and oxygen during exercise</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Excitement and Fear -->
+                <div class="shimmer bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">😱</div>
+                        <h3 class="text-2xl font-bold text-red-300">Excitement & Fear</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">💉</span>
+                            <p class="text-gray-300"><strong>Adrenaline release</strong> from adrenal glands</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">⚡</span>
+                            <p class="text-gray-300">Increases breathing rate rapidly</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">🏃</span>
+                            <p class="text-gray-300">Prepares body for "fight or flight" response</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg mt-4">
+                            <p class="text-sm text-gray-300"><strong>Why?</strong> Body prepares for quick action by increasing oxygen supply</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elevated CO2 -->
+                <div class="shimmer bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">📊</div>
+                        <h3 class="text-2xl font-bold text-orange-300">Elevated CO₂ Levels</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">🧠</span>
+                            <p class="text-gray-300"><strong>Stimulates medulla oblongata</strong> in the brain</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">📈</span>
+                            <p class="text-gray-300">Increases respiration rate immediately</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">🔄</span>
+                            <p class="text-gray-300">Removes excess CO₂ from blood</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-3 rounded-lg mt-4">
+                            <p class="text-sm text-gray-300"><strong>Why?</strong> High CO₂ makes blood acidic; body responds to restore balance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lower CO2 -->
+                <div class="shimmer bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">📉</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Lower CO₂ Levels</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">😌</span>
+                            <p class="text-gray-300"><strong>Reduces breathing rate</strong></p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">✅</span>
+                            <p class="text-gray-300">More O₂ reaches cells efficiently</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">⚖️</span>
+                            <p class="text-gray-300">Body maintains homeostasis</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg mt-4">
+                            <p class="text-sm text-gray-300"><strong>Why?</strong> Less CO₂ means body doesn't need to breathe as quickly</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brain Control -->
+                <div class="shimmer bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">🧠</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Brain & Nervous System</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">🎛️</span>
+                            <p class="text-gray-300"><strong>Medulla oblongata</strong> controls breathing rhythm</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">💪</span>
+                            <p class="text-gray-300">Controls diaphragm and intercostal muscles</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">🤖</span>
+                            <p class="text-gray-300">Works automatically without conscious thought</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg mt-4">
+                            <p class="text-sm text-gray-300"><strong>Function:</strong> Maintains continuous, automatic breathing for survival</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise Effects -->
+                <div class="shimmer bg-gradient-to-br from-teal-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-teal-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-6xl mb-3">💪</div>
+                        <h3 class="text-2xl font-bold text-teal-300">Exercise Effects</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">🔋</span>
+                            <p class="text-gray-300">Muscles need more <strong>energy (ATP)</strong></p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">🍬</span>
+                            <p class="text-gray-300">Requires more O₂ and glucose (C₆H₁₂O₆)</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-3">💨</span>
+                            <p class="text-gray-300">CO₂ produced as byproduct</p>
+                        </div>
+                        <div class="bg-teal-900 bg-opacity-30 p-3 rounded-lg mt-4">
+                            <p class="text-sm text-gray-300"><strong>Result:</strong> Breathing rate increases to meet oxygen demands</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+             <!-- Gaseous Exchange Section -->
+
+        <section id="gaseous" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Gaseous Exchange
+            </h2>
+
+            <!-- In Lungs -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold text-center text-purple-300 mb-6">Gaseous Exchange in Lungs</h3>
+                <p class="text-gray-300 text-center text-lg mb-8">Occurs in the <strong class="text-purple-400">alveoli</strong> through <strong class="text-purple-400">diffusion</strong></p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="text-5xl mr-4 breathe-animation">🫁</div>
+                            <h4 class="text-2xl font-bold text-cyan-300">Oxygen Intake</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <p class="text-gray-300">• O₂ from <strong>inhaled air</strong> diffuses into blood</p>
+                            <p class="text-gray-300">• Moves from <strong>high concentration</strong> (alveoli) to <strong>low concentration</strong> (blood)</p>
+                            <p class="text-gray-300">• Binds to <strong class="text-red-400">haemoglobin</strong> in red blood cells</p>
+                            <p class="text-gray-300">• Transported to body tissues</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="text-5xl mr-4">💨</div>
+                            <h4 class="text-2xl font-bold text-orange-300">Carbon Dioxide Removal</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <p class="text-gray-300">• CO₂ from <strong>blood</strong> diffuses into lungs</p>
+                            <p class="text-gray-300">• Moves from <strong>high concentration</strong> (blood) to <strong>low concentration</strong> (alveoli)</p>
+                            <p class="text-gray-300">• Released from blood into air sacs</p>
+                            <p class="text-gray-300">• <strong class="text-orange-400">Exhaled</strong> out of the body</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-purple-900 bg-opacity-30 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-5xl mr-4">🔴</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-red-300 mb-3">Role of Haemoglobin</h4>
+                            <p class="text-gray-300 mb-2">Haemoglobin is a protein found in red blood cells with a <strong>high affinity for oxygen</strong>.</p>
+                            <p class="text-gray-300">It picks up oxygen in the lungs and delivers it to tissue cells throughout the body, then returns to pick up more oxygen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In Tissues -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                <h3 class="text-3xl font-bold text-center text-pink-300 mb-6">Gaseous Exchange in Tissues</h3>
+                <p class="text-gray-300 text-center text-lg mb-8">Exchange occurs between <strong class="text-pink-400">blood capillaries</strong> and <strong class="text-pink-400">tissue cells</strong></p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="text-5xl mr-4">💧</div>
+                            <h4 class="text-2xl font-bold text-green-300">Oxygen Delivery</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <p class="text-gray-300">• O₂ diffuses from <strong>capillaries</strong> into <strong>tissue fluid</strong></p>
+                            <p class="text-gray-300">• Moves from <strong>high concentration</strong> (blood) to <strong>low concentration</strong> (tissues)</p>
+                            <p class="text-gray-300">• Enters cells for <strong class="text-green-400">cellular respiration</strong></p>
+                            <p class="text-gray-300">• Used to produce energy (ATP)</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="text-5xl mr-4">🔄</div>
+                            <h4 class="text-2xl font-bold text-red-300">CO₂ Collection</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <p class="text-gray-300">• CO₂ diffuses from <strong>tissue fluid</strong> into <strong>blood</strong></p>
+                            <p class="text-gray-300">• Moves from <strong>high concentration</strong> (tissues) to <strong>low concentration</strong> (blood)</p>
+                            <p class="text-gray-300">• Carried as <strong class="text-red-400">H₂CO₃</strong> (carbonic acid)</p>
+                            <p class="text-gray-300">• Transported back to lungs for removal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-pink-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold text-pink-300 mb-3 text-center">The Continuous Cycle</h4>
+                    <div class="flex justify-center items-center space-x-4 text-center flex-wrap">
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg m-2">
+                            <p class="text-gray-300 text-sm">🫁 <strong>Lungs</strong><br/>Pick up O₂<br/>Release CO₂</p>
+                        </div>
+                        <div class="text-3xl text-pink-400">→</div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg m-2">
+                            <p class="text-gray-300 text-sm">🩸 <strong>Blood</strong><br/>Transport O₂<br/>Collect CO₂</p>
+                        </div>
+                        <div class="text-3xl text-pink-400">→</div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg m-2">
+                            <p class="text-gray-300 text-sm">💪 <strong>Tissues</strong><br/>Use O₂<br/>Produce CO₂</p>
+                        </div>
+                        <div class="text-3xl text-pink-400">→</div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg m-2">
+                            <p class="text-gray-300 text-sm">🔄 <strong>Repeat</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adaptations Section -->
+        <section id="adaptations" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                Adaptations of Respiratory Structures
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <h3 class="text-3xl font-bold text-center text-pink-300 mb-6">General Respiratory Adaptations</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-4 float-animation">💧</div>
+                        <h4 class="text-xl font-bold text-cyan-300 mb-3">Wide Moist Surface</h4>
+                        <p class="text-sm text-gray-300">Facilitates easy dissolution and diffusion of gases</p>
+                    </div>
+
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-4">🩸</div>
+                        <h4 class="text-xl font-bold text-red-300 mb-3">Dense Blood Capillaries</h4>
+                        <p class="text-sm text-gray-300">Network transports O₂ and CO₂ efficiently</p>
+                    </div>
+
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-4">🔴</div>
+                        <h4 class="text-xl font-bold text-red-400 mb-3">Haemoglobin</h4>
+                        <p class="text-sm text-gray-300">High affinity for O₂, delivers to tissue cells</p>
+                    </div>
+
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-4 breathe-animation">🌬️</div>
+                        <h4 class="text-xl font-bold text-blue-300 mb-3">Ventilation System</h4>
+                        <p class="text-sm text-gray-300">Inhales and exhales air into and out of lungs</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold text-center text-red-300 mb-6">Specific Lung Adaptations</h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Alveoli -->
+                <div class="shimmer bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🫧</div>
+                        <h4 class="text-2xl font-bold text-purple-300">Numerous Alveoli</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Structure:</strong> Millions of tiny air sacs</p>
+                        <p class="text-gray-300 mb-3"><strong>Function:</strong> Provide huge surface area for gas exchange</p>
+                        <p class="text-sm text-gray-400"><strong>Benefit:</strong> Maximizes efficiency of O₂ and CO₂ diffusion</p>
+                    </div>
+                </div>
+
+                <!-- Thin Epithelium -->
+                <div class="shimmer bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">📏</div>
+                        <h4 class="text-2xl font-bold text-blue-300">Thin Epithelium</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Structure:</strong> Single cell layer between alveoli and capillaries</p>
+                        <p class="text-gray-300 mb-3"><strong>Function:</strong> Very short diffusion distance</p>
+                        <p class="text-sm text-gray-400"><strong>Benefit:</strong> Enables faster gas exchange</p>
+                    </div>
+                </div>
+
+                <!-- Mucous Membrane -->
+                <div class="shimmer bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🌡️</div>
+                        <h4 class="text-2xl font-bold text-green-300">Mucous Membrane</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Structure:</strong> Moist lining in airways</p>
+                        <p class="text-gray-300 mb-3"><strong>Function:</strong> Warms and moistens inhaled air</p>
+                        <p class="text-sm text-gray-400"><strong>Benefit:</strong> Protects delicate lung tissue from dry, cold air</p>
+                    </div>
+                </div>
+
+                <!-- Epiglottis -->
+                <div class="shimmer bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🚪</div>
+                        <h4 class="text-2xl font-bold text-yellow-300">Epiglottis</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Structure:</strong> Flap of cartilage</p>
+                        <p class="text-gray-300 mb-3"><strong>Function:</strong> Covers trachea during swallowing</p>
+                        <p class="text-sm text-gray-400"><strong>Benefit:</strong> Prevents food and particles from entering airways</p>
+                    </div>
+                </div>
+
+                <!-- Mucus-Secreting Cells -->
+                <div class="shimmer bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🛡️</div>
+                        <h4 class="text-2xl font-bold text-orange-300">Mucus-Secreting Cells</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Structure:</strong> Goblet cells in airway lining</p>
+                        <p class="text-gray-300 mb-3"><strong>Function:</strong> Produce sticky mucus</p>
+                        <p class="text-sm text-gray-400"><strong>Benefit:</strong> Traps dust, pathogens, and harmful particles</p>
+                    </div>
+                </div>
+
+                <!-- Cilia -->
+                <div class="shimmer bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🧹</div>
+                        <h4 class="text-2xl font-bold text-pink-300">Cilia</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Structure:</strong> Tiny hair-like projections</p>
+                        <p class="text-gray-300 mb-3"><strong>Function:</strong> Sweeping action moves mucus upward</p>
+                        <p class="text-sm text-gray-400"><strong>Benefit:</strong> Removes trapped particles from respiratory tract</p>
+                    </div>
+                </div>
+
+                <!-- Spongy Air Sacs -->
+                <div class="shimmer bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🧽</div>
+                        <h4 class="text-2xl font-bold text-cyan-300">Spongy Air Sacs</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Structure:</strong> Elastic, flexible tissue</p>
+                        <p class="text-gray-300 mb-3"><strong>Function:</strong> Can expand and contract easily</p>
+                        <p class="text-sm text-gray-400"><strong>Benefit:</strong> Increases O₂ retention and lung capacity</p>
+                    </div>
+                </div>
+
+                <!-- Blood Capillaries -->
+                <div class="shimmer bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">🩸</div>
+                        <h4 class="text-2xl font-bold text-red-300">Dense Capillary Network</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Structure:</strong> Extensive network of tiny blood vessels</p>
+                        <p class="text-gray-300 mb-3"><strong>Function:</strong> Surrounds each alveolus</p>
+                        <p class="text-sm text-gray-400"><strong>Benefit:</strong> Efficient gas exchange and rapid diffusion</p>
+                    </div>
+                </div>
+
+                <!-- Summary Card -->
+                <div class="shimmer bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-5xl mr-4">✨</div>
+                        <h4 class="text-2xl font-bold text-indigo-300">Perfect Design</h4>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-3"><strong>Combined Effect:</strong> All adaptations work together</p>
+                        <p class="text-gray-300 mb-3"><strong>Result:</strong> Highly efficient respiratory system</p>
+                        <p class="text-sm text-gray-400"><strong>Outcome:</strong> Optimal oxygen delivery to entire body</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiment Section -->
+        <section id="experiment" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Experiment: Measuring Breathing Rate
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6 flex-shrink-0">🔬</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-orange-300">Investigating Exercise Effects on Breathing</h3>
+                        <p class="text-gray-400 text-lg">Compare breathing rate before and after physical activity</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-green-400">🎯 AIM</h4>
+                        <p class="text-gray-300">To measure and compare the breathing rate before and after physical activity</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-blue-400">🧰 MATERIALS</h4>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li>• Stopwatch or timer</li>
+                            <li>• Chair or seat</li>
+                            <li>• A quiet area for resting</li>
+                            <li>• A space for running in place (clear floor space)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">📋 PROCEDURE</h4>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-green-900 bg-opacity-30 p-5 rounded-xl border-l-4 border-green-500">
+                            <h5 class="text-lg font-bold text-green-300 mb-3">Part 1: Resting Measurement</h5>
+                            <ol class="text-gray-300 space-y-2 ml-6 list-decimal text-sm">
+                                <li><strong>Sit calmly:</strong> Sit comfortably in a chair or seat in a quiet area</li>
+                                <li><strong>Rest period:</strong> Ensure you are at rest and calm for at least 5 minutes</li>
+                                <li><strong>Measure:</strong> Use the stopwatch to measure the number of breaths (inhalation AND exhalation count as ONE breath) for one minute</li>
+                                <li><strong>Record:</strong> Write down the number as the <strong>resting breathing rate</strong></li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-orange-900 bg-opacity-30 p-5 rounded-xl border-l-4 border-orange-500">
+                            <h5 class="text-lg font-bold text-orange-300 mb-3">Part 2: Physical Activity</h5>
+                            <ol class="text-gray-300 space-y-2 ml-6 list-decimal text-sm">
+                                <li><strong>Stand up:</strong> Prepare to run in place in a clear space</li>
+                                <li><strong>Exercise:</strong> Run in place for 5 minutes at a moderate pace</li>
+                                <li><strong>Maintain pace:</strong> Keep the activity consistent throughout</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-blue-900 bg-opacity-30 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h5 class="text-lg font-bold text-blue-300 mb-3">Part 3: Post-Exercise Measurement</h5>
+                            <ol class="text-gray-300 space-y-2 ml-6 list-decimal text-sm">
+                                <li><strong>Sit immediately:</strong> After running, return to the chair and sit down right away</li>
+                                <li><strong>Brief recovery:</strong> Allow yourself to rest for at least 1 minute</li>
+                                <li><strong>Measure again:</strong> Count the number of breaths for one minute using the stopwatch</li>
+                                <li><strong>Record:</strong> Write down this number as the <strong>post-exercise breathing rate</strong></li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-purple-900 bg-opacity-30 p-5 rounded-xl border-l-4 border-purple-500">
+                            <h5 class="text-lg font-bold text-purple-300 mb-3">Part 4: Analysis</h5>
+                            <ol class="text-gray-300 space-y-2 ml-6 list-decimal text-sm">
+                                <li><strong>Compare rates:</strong> Compare the resting breathing rate with the post-exercise rate</li>
+                                <li><strong>Analyze results:</strong> Observe and note the difference</li>
+                                <li><strong>Draw conclusions:</strong> Explain why the breathing rate changed</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-cyan-400">👁️ OBSERVATIONS</h4>
+                        <div class="space-y-4">
+                            <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg">
+                                <p class="text-gray-300 font-semibold mb-2">🪑 Resting Phase:</p>
+                                <p class="text-sm text-gray-400">Breathing rate should be <strong>lower and regular</strong></p>
+                                <p class="text-sm text-gray-400">Typical range: 12-20 breaths per minute</p>
+                            </div>
+                            <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                                <p class="text-gray-300 font-semibold mb-2">🏃 After Exercise:</p>
+                                <p class="text-sm text-gray-400">Breathing rate should be <strong>significantly higher</strong></p>
+                                <p class="text-sm text-gray-400">Typical range: 30-60 breaths per minute</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-4 text-red-400">✅ CONCLUSION</h4>
+                        <div class="space-y-3">
+                            <p class="text-gray-300">• The experiment demonstrates a clear <strong>increase in breathing rate</strong> after exercise</p>
+                            <p class="text-gray-300">• This shows the body's response to <strong>increased oxygen demand</strong></p>
+                            <p class="text-gray-300">• Muscles require more <strong>O₂ and glucose</strong> during activity</p>
+                            <p class="text-gray-300">• More <strong>CO₂ is produced</strong> as a byproduct, stimulating faster breathing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-900 to-red-900 bg-opacity-40 p-6 rounded-xl border-l-4 border-orange-500">
+                    <h4 class="text-xl font-bold text-orange-300 mb-3">📊 Sample Data Table</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-gray-300">
+                            <thead class="bg-slate-950 bg-opacity-60">
+                                <tr>
+                                    <th class="p-3 text-left">Measurement</th>
+                                    <th class="p-3 text-center">Breaths per Minute</th>
+                                    <th class="p-3 text-center">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-gray-700">
+                                    <td class="p-3">Resting Rate</td>
+                                    <td class="p-3 text-center font-mono">15</td>
+                                    <td class="p-3 text-center text-green-400">Normal ✓</td>
+                                </tr>
+                                <tr class="border-t border-gray-700">
+                                    <td class="p-3">Post-Exercise Rate</td>
+                                    <td class="p-3 text-center font-mono">42</td>
+                                    <td class="p-3 text-center text-orange-400">Elevated ↑</td>
+                                </tr>
+                                <tr class="border-t border-gray-700 bg-slate-950 bg-opacity-40">
+                                    <td class="p-3 font-bold">Increase</td>
+                                    <td class="p-3 text-center font-mono font-bold">+27</td>
+                                    <td class="p-3 text-center text-red-400 font-bold">180% ↑↑</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-indigo-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold text-indigo-300 mb-3">🧪 Scientific Explanation</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <p><strong>1. Energy Demand:</strong> During exercise, muscles contract repeatedly and need ATP (energy)</p>
+                        <p><strong>2. Cellular Respiration:</strong> Glucose (C₆H₁₂O₆) + Oxygen (O₂) → Energy (ATP) + CO₂ + H₂O</p>
+                        <p><strong>3. Oxygen Supply:</strong> More O₂ needed, so breathing rate increases to bring in more air</p>
+                        <p><strong>4. CO₂ Removal:</strong> Increased CO₂ in blood stimulates medulla oblongata to increase breathing</p>
+                        <p><strong>5. Homeostasis:</strong> Body works to maintain balance between O₂ supply and CO₂ removal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 pb-8">
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-lg mb-2 breathe-animation">🫁 Understanding Human Respiration 🫁</p>
+                <p class="text-sm">A comprehensive guide to breathing, gaseous exchange, and respiratory adaptations</p>
+                <div class="mt-4 text-xs text-gray-500">
+                    <p>Remember: Breathing is automatic, but understanding it empowers you to appreciate your body's amazing capabilities!</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Show overview section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('overview');
+        });
+    </script>
+</body>
+</html>
+        

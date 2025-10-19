@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseases of the Respiratory System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s;
+        }
+        .shimmer:hover::before {
+            left: 100%;
+        }
+        .warning-pulse {
+            animation: warningPulse 2s ease-in-out infinite;
+        }
+        @keyframes warningPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-red-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6 pulse-animation">
+                <div class="text-7xl mb-4">🏥</div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                Respiratory System Diseases
+            </h1>
+            <p class="text-2xl text-gray-300 mb-3">Understanding Common Respiratory Conditions</p>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">Learn about causes, symptoms, and prevention of respiratory diseases</p>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('overview')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg font-semibold">
+                    Overview
+                </button>
+                <button onclick="showSection('asthma')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg font-semibold">
+                    Asthma
+                </button>
+                <button onclick="showSection('bronchitis')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg font-semibold">
+                    Bronchitis
+                </button>
+                <button onclick="showSection('tuberculosis')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg font-semibold">
+                    Tuberculosis
+                </button>
+                <button onclick="showSection('cancer')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg font-semibold">
+                    Lung Cancer
+                </button>
+                <button onclick="showSection('co-poisoning')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 rounded-xl transition shadow-lg font-semibold">
+                    CO Poisoning
+                </button>
+                <button onclick="showSection('smoking')" class="px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 rounded-xl transition shadow-lg font-semibold">
+                    Smoking Effects
+                </button>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Common Respiratory Diseases
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover cursor-pointer" onclick="showSection('asthma')">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">😮‍💨</div>
+                        <h3 class="text-2xl font-bold text-blue-300 mb-3">Asthma</h3>
+                        <p class="text-gray-300 text-sm">Constriction of airways causing breathing difficulty</p>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover cursor-pointer" onclick="showSection('bronchitis')">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🤧</div>
+                        <h3 class="text-2xl font-bold text-orange-300 mb-3">Bronchitis</h3>
+                        <p class="text-gray-300 text-sm">Inflammation of bronchial tubes with mucus buildup</p>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover cursor-pointer" onclick="showSection('tuberculosis')">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🦠</div>
+                        <h3 class="text-2xl font-bold text-purple-300 mb-3">Tuberculosis</h3>
+                        <p class="text-gray-300 text-sm">Bacterial infection affecting lungs and other organs</p>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover cursor-pointer" onclick="showSection('cancer')">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🎗️</div>
+                        <h3 class="text-2xl font-bold text-pink-300 mb-3">Lung Cancer</h3>
+                        <p class="text-gray-300 text-sm">Tumor formation in alveoli from abnormal cell growth</p>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover cursor-pointer" onclick="showSection('co-poisoning')">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">☠️</div>
+                        <h3 class="text-2xl font-bold text-yellow-300 mb-3">CO Poisoning</h3>
+                        <p class="text-gray-300 text-sm">Dangerous gas preventing oxygen delivery to tissues</p>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-gray-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-gray-500 card-hover cursor-pointer" onclick="showSection('smoking')">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🚬</div>
+                        <h3 class="text-2xl font-bold text-gray-300 mb-3">Smoking Effects</h3>
+                        <p class="text-gray-300 text-sm">Multiple system damage from tobacco use</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 warning-pulse">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">⚠️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-red-300 mb-4">Important Health Notice</h3>
+                        <p class="text-gray-300 text-lg mb-3">Respiratory diseases can be serious and life-threatening if left untreated. Early detection and proper medical care are crucial for successful treatment and recovery.</p>
+                        <p class="text-gray-400">If you experience persistent respiratory symptoms, consult a healthcare professional immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asthma Section -->
+        <section id="asthma" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Asthma
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="flex items-start mb-6">
+                    <div class="text-6xl mr-6 flex-shrink-0">😮‍💨</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-300 mb-4">What is Asthma?</h3>
+                        <p class="text-gray-300 text-lg">Asthma is a chronic respiratory condition that causes the <strong class="text-blue-400">bronchi and bronchioles to constrict</strong>, leading to significant difficulty in breathing. The airways become narrowed, making it hard for air to flow in and out of the lungs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <h3 class="text-2xl font-bold text-blue-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🔬</span>
+                        Causes
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <p class="text-gray-300 mb-4">Often triggered by an <strong>allergic response</strong> to various substances:</p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">💨</span>
+                                <span>Dust particles in the air</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🌸</span>
+                                <span>Pollen grains from plants</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🧴</span>
+                                <span>Chemical sprays and aerosols</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🌿</span>
+                                <span>Grass and outdoor allergens</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🦟</span>
+                                <span>Dust mites and their waste</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🩺</span>
+                        Signs & Symptoms
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-4">
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-cyan-300 mb-2">🎵 Wheezing Sound in Chest</p>
+                            <p class="text-sm text-gray-300">Characteristic whistling or squeaky sound when breathing, especially during exhalation</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-cyan-300 mb-2">😫 Feeling Exhausted</p>
+                            <p class="text-sm text-gray-300">Chronic fatigue due to low oxygen levels in the blood and tissues</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-cyan-300 mb-2">💨 Shortness of Breath</p>
+                            <p class="text-sm text-gray-300">Difficulty breathing and feeling like you can't get enough air</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-cyan-300 mb-2">😰 Chest Tightness</p>
+                            <p class="text-sm text-gray-300">Feeling of pressure or constriction in the chest area</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <h3 class="text-2xl font-bold text-blue-300 mb-4 flex items-center">
+                    <span class="text-4xl mr-3">💊</span>
+                    Management & Prevention
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="text-lg font-bold text-blue-300 mb-3">Treatment Options</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Use prescribed inhalers regularly</li>
+                            <li>• Keep rescue inhaler accessible</li>
+                            <li>• Follow doctor's medication plan</li>
+                            <li>• Monitor breathing regularly</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="text-lg font-bold text-blue-300 mb-3">Prevention Strategies</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Avoid known allergen triggers</li>
+                            <li>• Keep indoor spaces clean and dust-free</li>
+                            <li>• Use air purifiers if possible</li>
+                            <li>• Stay away from smoke and strong odors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bronchitis Section -->
+        <section id="bronchitis" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Bronchitis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="flex items-start mb-6">
+                    <div class="text-6xl mr-6 flex-shrink-0">🤧</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-orange-300 mb-4">What is Bronchitis?</h3>
+                        <p class="text-gray-300 text-lg">Bronchitis is an <strong class="text-orange-400">inflammation of the bronchial tubes</strong> that carry air to and from the lungs. This condition leads to swelling and irritation of the airways, making breathing difficult.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <h3 class="text-2xl font-bold text-orange-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🦠</span>
+                        Causes & Mechanism
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-4">
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-orange-300 mb-2">Primary Cause</p>
+                            <p class="text-sm text-gray-300"><strong>Mucus buildup</strong> in the bronchial tubes damages the delicate cilia (tiny hair-like structures)</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-orange-300 mb-2">Progressive Damage</p>
+                            <p class="text-sm text-gray-300">The damaged cilia cannot effectively clear mucus, leading to more accumulation and persistent irritation</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-orange-300 mb-2">Result</p>
+                            <p class="text-sm text-gray-300">Airways become inflamed and narrowed, triggering persistent coughing as the body tries to clear the obstruction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <h3 class="text-2xl font-bold text-red-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">⚕️</span>
+                        Signs & Symptoms
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-4">
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">🤧 Persistent Cough</p>
+                            <p class="text-sm text-gray-300">Chronic coughing that lasts for weeks or months, often worse in the morning</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">💧 Mucus Production</p>
+                            <p class="text-sm text-gray-300">Production of thick, discolored mucus (white, yellow, or green) that is coughed up</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">😮‍💨 Breathing Difficulty</p>
+                            <p class="text-sm text-gray-300">Shortness of breath and wheezing, especially during physical activity</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">🤒 Chest Discomfort</p>
+                            <p class="text-sm text-gray-300">Chest tightness and discomfort from constant coughing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">⏱️</span>
+                        Types of Bronchitis
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="text-lg font-bold text-yellow-300 mb-2">Acute Bronchitis</h4>
+                            <p class="text-gray-300 text-sm">Short-term inflammation lasting 1-3 weeks, often following a cold or flu</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="text-lg font-bold text-yellow-300 mb-2">Chronic Bronchitis</h4>
+                            <p class="text-gray-300 text-sm">Long-term condition lasting months or years, often caused by smoking or air pollution</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold text-green-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🛡️</span>
+                        Prevention & Care
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• Avoid smoking and secondhand smoke</li>
+                            <li>• Stay away from air pollutants</li>
+                            <li>• Wash hands frequently to prevent infections</li>
+                            <li>• Stay hydrated to thin mucus</li>
+                            <li>• Use a humidifier to moisten air</li>
+                            <li>• Get adequate rest during recovery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tuberculosis Section -->
+        <section id="tuberculosis" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Pulmonary Tuberculosis (TB)
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="flex items-start mb-6">
+                    <div class="text-6xl mr-6 flex-shrink-0">🦠</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-purple-300 mb-4">What is Tuberculosis?</h3>
+                        <p class="text-gray-300 text-lg">Tuberculosis (TB) is a serious <strong class="text-purple-400">bacterial infection</strong> that primarily affects the lungs but can spread to other organs including the brain, spine, and kidneys. It is one of the world's deadliest infectious diseases.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <h3 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🔬</span>
+                        Cause & Transmission
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-4">
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-purple-300 mb-2">Causative Agent</p>
+                            <p class="text-sm text-gray-300">Caused by the bacterium <strong>Mycobacterium tuberculosis</strong>, a slow-growing organism</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-purple-300 mb-2">How It Spreads</p>
+                            <p class="text-sm text-gray-300">Transmitted through <strong>airborne droplets</strong> when an infected person coughs, sneezes, speaks, or spits</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-purple-300 mb-2">Contagious Nature</p>
+                            <p class="text-sm text-gray-300">Highly contagious when in close contact with infected individuals in poorly ventilated spaces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <h3 class="text-2xl font-bold text-pink-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">⚠️</span>
+                        High-Risk Groups
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-3">
+                        <div class="flex items-start bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                            <span class="text-2xl mr-3">👴</span>
+                            <div>
+                                <p class="font-bold text-pink-300">Elderly People</p>
+                                <p class="text-xs text-gray-400">Weakened immune system with age</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                            <span class="text-2xl mr-3">👶</span>
+                            <div>
+                                <p class="font-bold text-pink-300">Infants & Young Children</p>
+                                <p class="text-xs text-gray-400">Developing immune systems</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                            <span class="text-2xl mr-3">🩺</span>
+                            <div>
+                                <p class="font-bold text-pink-300">Immunocompromised Individuals</p>
+                                <p class="text-xs text-gray-400">HIV/AIDS patients, cancer patients, transplant recipients</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                            <span class="text-2xl mr-3">💊</span>
+                            <div>
+                                <p class="font-bold text-pink-300">Malnourished Individuals</p>
+                                <p class="text-xs text-gray-400">Poor nutrition weakens immunity</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <h3 class="text-2xl font-bold text-red-300 mb-6 flex items-center">
+                    <span class="text-4xl mr-3">🩺</span>
+                    Signs & Symptoms
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🤒</div>
+                        <h4 class="text-lg font-bold text-red-300 mb-2">Fever</h4>
+                        <p class="text-sm text-gray-300">Persistent low-grade fever, especially in evenings</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">😷</div>
+                        <h4 class="text-lg font-bold text-red-300 mb-2">Persistent Cough</h4>
+                        <p class="text-sm text-gray-300">Cough lasting more than 3 weeks, sometimes with blood</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">😫</div>
+                        <h4 class="text-lg font-bold text-red-300 mb-2">Fatigue</h4>
+                        <p class="text-sm text-gray-300">Extreme tiredness and weakness</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">⚖️</div>
+                        <h4 class="text-lg font-bold text-red-300 mb-2">Weight Loss</h4>
+                        <p class="text-sm text-gray-300">Unintentional weight loss and loss of appetite</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">💔</div>
+                        <h4 class="text-lg font-bold text-red-300 mb-2">Chest Pain</h4>
+                        <p class="text-sm text-gray-300">Pain in chest when breathing or coughing</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">😮‍💨</div>
+                        <h4 class="text-lg font-bold text-red-300 mb-2">Difficulty Breathing</h4>
+                        <p class="text-sm text-gray-300">Shortness of breath and labored breathing</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-2xl font-bold text-green-300 mb-4 flex items-center">
+                    <span class="text-4xl mr-3">💊</span>
+                    Treatment & Prevention
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="text-lg font-bold text-green-300 mb-3">Treatment</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Long-term antibiotic therapy (6-9 months)</li>
+                            <li>• Combination of multiple antibiotics</li>
+                            <li>• Must complete full course to prevent resistance</li>
+                            <li>• Regular medical monitoring required</li>
+                            <li>• Isolation during infectious stage</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="text-lg font-bold text-green-300 mb-3">Prevention</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• BCG vaccination for children</li>
+                            <li>• Avoid close contact with TB patients</li>
+                            <li>• Ensure good ventilation in living spaces</li>
+                            <li>• Maintain strong immune system</li>
+                            <li>• Early detection through screening</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lung Cancer Section -->
+        <section id="cancer" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                Lung Cancer
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="flex items-start mb-6">
+                    <div class="text-6xl mr-6 flex-shrink-0">🎗️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-pink-300 mb-4">What is Lung Cancer?</h3>
+                        <p class="text-gray-300 text-lg">Lung cancer occurs when <strong class="text-pink-400">tumors form in the alveoli</strong> (air sacs) due to <strong class="text-pink-400">abnormal cell mitosis</strong>. These cancerous cells divide uncontrollably, forming masses that interfere with normal lung function.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <h3 class="text-2xl font-bold text-pink-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🚬</span>
+                        Primary Cause
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-4">
+                        <div class="bg-pink-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-pink-300 mb-2">Tobacco Smoke</p>
+                            <p class="text-sm text-gray-300">The leading cause of lung cancer. <strong>Tar from tobacco smoke</strong> contains carcinogens that stimulate abnormal cell growth</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-pink-300 mb-2">How Tar Damages Lungs</p>
+                            <p class="text-sm text-gray-300">Tar deposits in alveoli, damaging DNA and triggering uncontrolled cell division</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-pink-300 mb-2">Other Risk Factors</p>
+                            <ul class="text-xs text-gray-300 space-y-1 mt-2">
+                                <li>• Secondhand smoke exposure</li>
+                                <li>• Radon gas</li>
+                                <li>• Asbestos and air pollution</li>
+                                <li>• Family history</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <h3 class="text-2xl font-bold text-red-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">⚕️</span>
+                        Signs & Symptoms
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-3">
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">😷 Persistent Cough</p>
+                            <p class="text-sm text-gray-300">Chronic cough that doesn't go away, may worsen over time, sometimes with blood</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">💔 Chest Pain</p>
+                            <p class="text-sm text-gray-300">Deep chest pain that worsens with breathing, coughing, or laughing</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">😮‍💨 Difficulty Breathing</p>
+                            <p class="text-sm text-gray-300">Shortness of breath and wheezing as tumors block airways</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">Additional Symptoms</p>
+                            <ul class="text-xs text-gray-300 space-y-1 mt-2">
+                                <li>• Weight loss and loss of appetite</li>
+                                <li>• Fatigue and weakness</li>
+                                <li>• Hoarseness of voice</li>
+                                <li>• Recurring lung infections</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 warning-pulse">
+                <h3 class="text-2xl font-bold text-orange-300 mb-4 flex items-center">
+                    <span class="text-4xl mr-3">⚠️</span>
+                    Prevention & Early Detection
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="text-lg font-bold text-orange-300 mb-3">Prevention Strategies</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• <strong>Never start smoking</strong> or quit immediately</li>
+                            <li>• Avoid secondhand smoke exposure</li>
+                            <li>• Test home for radon gas</li>
+                            <li>• Use protective equipment at work</li>
+                            <li>• Maintain healthy diet and exercise</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="text-lg font-bold text-orange-300 mb-3">Early Detection</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Regular health screenings for high-risk individuals</li>
+                            <li>• Chest X-rays and CT scans</li>
+                            <li>• Report persistent symptoms immediately</li>
+                            <li>• Annual check-ups for smokers/ex-smokers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CO Poisoning Section -->
+        <section id="co-poisoning" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">
+                Carbon Monoxide (CO) Poisoning
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8 warning-pulse">
+                <div class="flex items-start mb-6">
+                    <div class="text-6xl mr-6 flex-shrink-0">☠️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-yellow-300 mb-4">What is CO Poisoning?</h3>
+                        <p class="text-gray-300 text-lg">Carbon monoxide poisoning is caused by inhalation of <strong class="text-yellow-400">carbon monoxide (CO)</strong>, a colorless, odorless, and tasteless <strong class="text-red-400">poisonous gas</strong>. It's called the "silent killer" because you can't see, taste, or smell it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <h3 class="text-2xl font-bold text-yellow-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🔥</span>
+                        Common Sources
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-3">
+                        <div class="flex items-start bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                            <span class="text-2xl mr-3">🪵</span>
+                            <div>
+                                <p class="font-bold text-yellow-300">Burning Charcoal</p>
+                                <p class="text-xs text-gray-400">Especially in poorly ventilated spaces</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                            <span class="text-2xl mr-3">🚗</span>
+                            <div>
+                                <p class="font-bold text-yellow-300">Running Engines</p>
+                                <p class="text-xs text-gray-400">Cars, generators in enclosed areas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                            <span class="text-2xl mr-3">🏠</span>
+                            <div>
+                                <p class="font-bold text-yellow-300">Faulty Heating Systems</p>
+                                <p class="text-xs text-gray-400">Gas heaters, furnaces, stoves</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                            <span class="text-2xl mr-3">🔥</span>
+                            <div>
+                                <p class="font-bold text-yellow-300">Other Combustion</p>
+                                <p class="text-xs text-gray-400">Kerosene heaters, gas appliances</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <h3 class="text-2xl font-bold text-red-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">⚗️</span>
+                        How CO Affects the Body
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl space-y-4">
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">Formation of Carboxyhemoglobin</p>
+                            <p class="text-sm text-gray-300">CO binds to hemoglobin 200 times more strongly than oxygen, forming <strong>carboxyhemoglobin</strong></p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">Oxygen Blockage</p>
+                            <p class="text-sm text-gray-300">Prevents oxygen from dissociating easily and being delivered to tissues</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="font-bold text-red-300 mb-2">Reduced Oxygen Supply</p>
+                            <p class="text-sm text-gray-300">Tissues, including the brain, receive insufficient oxygen, leading to cell damage and death</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <h3 class="text-2xl font-bold text-orange-300 mb-6 flex items-center">
+                    <span class="text-4xl mr-3">🚨</span>
+                    Signs & Symptoms
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🤕</div>
+                        <h4 class="text-lg font-bold text-orange-300 mb-2">Headache</h4>
+                        <p class="text-sm text-gray-300">Dull, throbbing headache, often the first symptom</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🤢</div>
+                        <h4 class="text-lg font-bold text-orange-300 mb-2">Nausea & Vomiting</h4>
+                        <p class="text-sm text-gray-300">Feeling sick and vomiting</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">👂</div>
+                        <h4 class="text-lg font-bold text-orange-300 mb-2">Loss of Hearing</h4>
+                        <p class="text-sm text-gray-300">Temporary or permanent hearing impairment</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">💔</div>
+                        <h4 class="text-lg font-bold text-orange-300 mb-2">Cardiac Arrest</h4>
+                        <p class="text-sm text-gray-300">Heart failure in severe cases</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">😫</div>
+                        <h4 class="text-lg font-bold text-orange-300 mb-2">Weakness</h4>
+                        <p class="text-sm text-gray-300">Extreme fatigue and muscle weakness</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">👁️</div>
+                        <h4 class="text-lg font-bold text-orange-300 mb-2">Blurred Vision</h4>
+                        <p class="text-sm text-gray-300">Difficulty seeing clearly</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold text-green-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🏥</span>
+                        First Aid for CO Poisoning
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="text-lg font-bold text-green-300 mb-3">If Mildly Affected:</h4>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>• <strong>Stay calm</strong> and act quickly</li>
+                                <li>• <strong>Immediately leave the area</strong> and get fresh air</li>
+                                <li>• <strong>Turn off the source</strong> of CO if safe to do so</li>
+                                <li>• Open windows and doors for ventilation</li>
+                                <li>• Rest in fresh air until symptoms subside</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="text-lg font-bold text-red-300 mb-3">If Severely Affected:</h4>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>• <strong>Move the victim</strong> to an open area immediately</li>
+                                <li>• <strong>Administer artificial resuscitation</strong> if necessary (CPR)</li>
+                                <li>• <strong>Call for medical help</strong> immediately (emergency services)</li>
+                                <li>• Keep victim warm and comfortable</li>
+                                <li>• Do not leave victim alone</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-300 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🛡️</span>
+                        Prevention Strategies
+                    </h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">📢</span>
+                                <div>
+                                    <p class="font-bold">General Awareness</p>
+                                    <p class="text-xs text-gray-400">Educate family about CO dangers</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🌬️</span>
+                                <div>
+                                    <p class="font-bold">Proper Ventilation</p>
+                                    <p class="text-xs text-gray-400">Ensure adequate airflow in all spaces</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🔔</span>
+                                <div>
+                                    <p class="font-bold">Install CO Detectors</p>
+                                    <p class="text-xs text-gray-400">Use monitoring devices in your home</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🩺</span>
+                                <div>
+                                    <p class="font-bold">Seek Medical Help</p>
+                                    <p class="text-xs text-gray-400">Get checked if experiencing symptoms</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🚫</span>
+                                <div>
+                                    <p class="font-bold">Avoid Burning Fuels Indoors</p>
+                                    <p class="text-xs text-gray-400">Never use in poorly ventilated areas</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🔧</span>
+                                <div>
+                                    <p class="font-bold">Regular Maintenance</p>
+                                    <p class="text-xs text-gray-400">Service heating systems and appliances annually</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smoking Effects Section -->
+        <section id="smoking" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-gray-400 to-red-400 bg-clip-text text-transparent">
+                Effects of Smoking
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-gray-500 mb-8 warning-pulse">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🚬</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-300 mb-4">The Devastating Impact of Smoking</h3>
+                        <p class="text-gray-300 text-lg">Smoking is one of the leading causes of preventable death worldwide. It affects multiple body systems, causing severe damage to the respiratory system, circulatory system, and immune system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects on Respiratory System -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <h3 class="text-3xl font-bold text-red-300 mb-6 flex items-center">
+                    <span class="text-5xl mr-4">🫁</span>
+                    Effects on the Respiratory System
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">😖</div>
+                        <h4 class="text-xl font-bold text-red-300 mb-3">Irritation of the Trachea</h4>
+                        <p class="text-gray-300 text-sm">Smoke irritates and inflames the windpipe, causing discomfort and chronic coughing</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">📉</div>
+                        <h4 class="text-xl font-bold text-red-300 mb-3">Reduced Lung Function</h4>
+                        <p class="text-gray-300 text-sm">Lung capacity decreases, making breathing difficult and reducing oxygen intake</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🧹</div>
+                        <h4 class="text-xl font-bold text-red-300 mb-3">Impaired Lung Clearance</h4>
+                        <p class="text-gray-300 text-sm">Damages cilia, preventing effective removal of mucus and foreign particles</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">💥</div>
+                        <h4 class="text-xl font-bold text-red-300 mb-3">Damage to Air Sacs</h4>
+                        <p class="text-gray-300 text-sm">Destroys alveoli, leading to conditions like emphysema and chronic bronchitis</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects on Circulatory System -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold text-purple-300 mb-6 flex items-center">
+                    <span class="text-5xl mr-4">❤️</span>
+                    Effects on the Circulatory System
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">📈</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Elevated Blood Pressure</h4>
+                        <p class="text-gray-300 text-sm">Increases blood pressure and heart rate, putting strain on the cardiovascular system</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🥶</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Constricted Blood Vessels</h4>
+                        <p class="text-gray-300 text-sm">Tightening of blood vessels in the skin, reducing circulation</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🚫</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Reduced Oxygen Transport</h4>
+                        <p class="text-gray-300 text-sm">Constriction reduces oxygen delivery to tissues and organs</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🩸</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Blood Clotting Risk</h4>
+                        <p class="text-gray-300 text-sm">Increased risk of dangerous blood clots forming</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">💔</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Artery Damage</h4>
+                        <p class="text-gray-300 text-sm">Damages the lining of arteries, leading to atherosclerosis</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">⚠️</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Stroke & Heart Attack</h4>
+                        <p class="text-gray-300 text-sm">Significantly increased risk of stroke and heart attack</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects on Immune System -->
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <h3 class="text-3xl font-bold text-orange-300 mb-6 flex items-center">
+                    <span class="text-5xl mr-4">🛡️</span>
+                    Impact on the Immune System
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🦠</div>
+                        <h4 class="text-xl font-bold text-orange-300 mb-3">Increased Susceptibility</h4>
+                        <p class="text-gray-300 text-sm">Weakened immune system makes you more vulnerable to infections and diseases</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">😷</div>
+                        <h4 class="text-xl font-bold text-orange-300 mb-3">Chronic Respiratory Diseases</h4>
+                        <p class="text-gray-300 text-sm">Long-lasting respiratory conditions that persist even after quitting</p>
+                    </div>
+                    <div class="shimmer bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-3">🍊</div>
+                        <h4 class="text-xl font-bold text-orange-300 mb-3">Low Vitamin C Levels</h4>
+                        <p class="text-gray-300 text-sm">Depletes vitamin C in the blood, further weakening immune defenses</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Long-term Effects -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <h3 class="text-2xl font-bold text-red-300 mb-6 text-center">Other Serious Health Consequences</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🎗️</div>
+                        <p class="text-gray-300 font-semibold">Various Cancers</p>
+                        <p class="text-xs text-gray-400 mt-2">Lung, throat, mouth, esophagus</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🦷</div>
+                        <p class="text-gray-300 font-semibold">Dental Problems</p>
+                        <p class="text-xs text-gray-400 mt-2">Gum disease, tooth decay</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">👁️</div>
+                        <p class="text-gray-300 font-semibold">Vision Loss</p>
+                        <p class="text-xs text-gray-400 mt-2">Cataracts, macular degeneration</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🦴</div>
+                        <p class="text-gray-300 font-semibold">Bone Weakness</p>
+                        <p class="text-xs text-gray-400 mt-2">Osteoporosis, fractures</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🤰</div>
+                        <p class="text-gray-300 font-semibold">Pregnancy Complications</p>
+                        <p class="text-xs text-gray-400 mt-2">Low birth weight, premature birth</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🧬</div>
+                        <p class="text-gray-300 font-semibold">DNA Damage</p>
+                        <p class="text-xs text-gray-400 mt-2">Genetic mutations</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">👃</div>
+                        <p class="text-gray-300 font-semibold">Smell & Taste</p>
+                        <p class="text-xs text-gray-400 mt-2">Reduced senses</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">⏳</div>
+                        <p class="text-gray-300 font-semibold">Premature Aging</p>
+                        <p class="text-xs text-gray-400 mt-2">Wrinkles, skin damage</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quitting Benefits -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-3xl font-bold text-green-300 mb-6 flex items-center">
+                    <span class="text-5xl mr-4">✅</span>
+                    Benefits of Quitting Smoking
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="text-lg font-bold text-green-300 mb-3">Immediate Benefits (Within Days)</h4>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>• Heart rate and blood pressure drop</li>
+                                <li>• Carbon monoxide levels normalize</li>
+                                <li>• Breathing becomes easier</li>
+                                <li>• Sense of taste and smell improve</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="text-lg font-bold text-green-300 mb-3">Short-term Benefits (Weeks to Months)</h4>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>• Lung function increases</li>
+                                <li>• Coughing and shortness of breath decrease</li>
+                                <li>• Circulation improves</li>
+                                <li>• Energy levels increase</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="text-lg font-bold text-green-300 mb-3">Long-term Benefits (Years)</h4>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>• Risk of heart disease drops by 50% after 1 year</li>
+                                <li>• Stroke risk returns to normal after 5-15 years</li>
+                                <li>• Lung cancer risk drops by 50% after 10 years</li>
+                                <li>• Life expectancy significantly increases</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="text-lg font-bold text-green-300 mb-3">Additional Benefits</h4>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>• Save money from not buying cigarettes</li>
+                                <li>• Protect family from secondhand smoke</li>
+                                <li>• Better physical fitness</li>
+                                <li>• Improved appearance (skin, teeth)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-green-900 bg-opacity-30 p-6 rounded-xl text-center">
+                    <p class="text-xl font-bold text-green-300 mb-2">It's Never Too Late to Quit!</p>
+                    <p class="text-gray-300">Your body begins to heal the moment you stop smoking. Seek support from healthcare professionals, support groups, or quitlines.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 pb-8">
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-lg mb-2 pulse-animation">🏥 Respiratory Health Awareness 🏥</p>
+                <p class="text-sm">Understanding respiratory diseases helps in prevention and early treatment</p>
+                <div class="mt-4 text-xs text-gray-500">
+                    <p>⚠️ If you experience persistent respiratory symptoms, consult a healthcare professional immediately</p>
+                    <p class="mt-2">Prevention is always better than cure - protect your lungs!</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Show overview section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('overview');
+        });
+    </script>
+</body>
+</html>

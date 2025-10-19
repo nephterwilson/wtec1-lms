@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Depression & Economic Crisis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">📉</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-red-400 to-purple-400 bg-clip-text text-transparent">
+                The Great Depression
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">From Boom to Bust: America's Economic Crisis</p>
+            <p class="text-lg text-gray-400">1920s-1930s - The Roaring Twenties to Economic Collapse</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('roaring')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 rounded-xl transition shadow-lg">
+                    Roaring Twenties
+                </button>
+                <button onclick="showSection('causes')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Causes of Depression
+                </button>
+                <button onclick="showSection('impact')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Global Impact
+                </button>
+                <button onclick="showSection('newdeal')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    The New Deal
+                </button>
+            </div>
+        </header>
+
+        <!-- Roaring Twenties Section -->
+        <section id="roaring" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                The Roaring Twenties: Economic Boom in the USA
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🎉</div>
+                    <h3 class="text-3xl font-bold text-yellow-300 mb-4">The Era of Prosperity</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        The early 1920s marked an unprecedented period of economic boom in the United States, characterized by rapid growth, technological innovation, and a consumer revolution that transformed American society.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏭</div>
+                    <h3 class="text-xl font-bold mb-3 text-yellow-300">Industrial Growth</h3>
+                    <p class="text-sm text-gray-300">Rapid industrial expansion with mass production techniques revolutionizing manufacturing.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🚗</div>
+                    <h3 class="text-xl font-bold mb-3 text-orange-300">Consumer Goods</h3>
+                    <p class="text-sm text-gray-300">Explosive growth in automobiles and household appliances transformed daily life.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⚡</div>
+                    <h3 class="text-xl font-bold mb-3 text-red-300">Innovation</h3>
+                    <p class="text-sm text-gray-300">Technological breakthroughs like electricity and assembly lines boosted productivity.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📈</div>
+                    <h3 class="text-xl font-bold mb-3 text-pink-300">Stock Market Boom</h3>
+                    <p class="text-sm text-gray-300">Massive expansion of stock market investments created wealth for many Americans.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏙️</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">Urbanization</h3>
+                    <p class="text-sm text-gray-300">Rise of cities and urban culture as people moved from farms to factories.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">💳</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Credit Culture</h3>
+                    <p class="text-sm text-gray-300">Increase in credit and installment buying made goods accessible to more people.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🛍️</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">Consumer Society</h3>
+                    <p class="text-sm text-gray-300">Emergence of consumer culture with advertising and mass marketing.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🤝</div>
+                    <h3 class="text-xl font-bold mb-3 text-indigo-300">Free Enterprise</h3>
+                    <p class="text-sm text-gray-300">Moderate government regulation encouraged business growth and entrepreneurship.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-yellow-900 to-orange-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-yellow-300">The American Dream in Action</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The Roaring Twenties represented the peak of American optimism. New technologies like radio, cinema, and automobiles transformed how people lived, worked, and entertained themselves. The stock market seemed to offer unlimited wealth, and credit made luxury goods accessible to the middle class. However, beneath this prosperity lurked dangerous economic imbalances that would soon trigger catastrophe.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Causes Section -->
+        <section id="causes" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Causes of the Great Depression (1929 onwards)
+            </h2>
+
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⚠️</div>
+                    <h3 class="text-3xl font-bold text-red-300 mb-4">The Perfect Storm</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        Multiple interconnected economic factors combined to trigger the worst economic crisis in modern history.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🌍</div>
+                        <h3 class="text-xl font-bold text-blue-300">Slow European Recovery</h3>
+                    </div>
+                    <p class="text-gray-300">Europe's sluggish post-WWI economic recovery reduced international trade opportunities and demand for American goods.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🌾</div>
+                        <h3 class="text-xl font-bold text-green-300">Agricultural Crisis</h3>
+                    </div>
+                    <p class="text-gray-300">Massive overproduction led to falling crop prices, devastating farmers and rural economies across America.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💰</div>
+                        <h3 class="text-xl font-bold text-purple-300">Wealth Inequality</h3>
+                    </div>
+                    <p class="text-gray-300">Extreme concentration of wealth in few hands limited consumer purchasing power and economic stability.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">📊</div>
+                        <h3 class="text-xl font-bold text-red-300">Stock Speculation</h3>
+                    </div>
+                    <p class="text-gray-300">Reckless stock market speculation and grossly inflated prices created an unsustainable bubble ready to burst.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🏦</div>
+                        <h3 class="text-xl font-bold text-yellow-300">Bank Failures</h3>
+                    </div>
+                    <p class="text-gray-300">Widespread bank collapses due to risky loans and inadequate regulation wiped out savings and destroyed trust.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🚧</div>
+                        <h3 class="text-xl font-bold text-orange-300">High Tariffs</h3>
+                    </div>
+                    <p class="text-gray-300">Smoot-Hawley Tariff and other protectionist policies strangled international trade and deepened the crisis globally.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🏭</div>
+                        <h3 class="text-xl font-bold text-pink-300">Industrial Decline</h3>
+                    </div>
+                    <p class="text-gray-300">Sharp decline in industrial production led to massive layoffs, creating a vicious cycle of reduced demand.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💳</div>
+                        <h3 class="text-xl font-bold text-indigo-300">Credit Collapse</h3>
+                    </div>
+                    <p class="text-gray-300">International credit systems collapsed, freezing global finance and halting economic activity worldwide.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-red-900 to-orange-900 rounded-2xl p-8 shadow-2xl border border-red-600">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">💥</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-red-300">The Crash of 1929</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            On October 29, 1929—"Black Tuesday"—the stock market crashed spectacularly. Billions of dollars in wealth vanished overnight. Panicked investors sold shares frantically, but found no buyers. The crash didn't cause the Depression alone, but it exposed the underlying weaknesses in the economy and triggered a catastrophic chain reaction.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            What followed was a decade-long economic nightmare. Banks failed by the thousands. Factories closed. Unemployment soared. The crisis spread globally, affecting every industrialized nation and plunging the world into unprecedented hardship.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section id="impact" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Impact of the Great Depression on USA & Europe
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Economic Devastation -->
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">💔</div>
+                        <h3 class="text-3xl font-bold text-red-300">Economic Devastation</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Financial Collapse</h4>
+                            <p class="text-sm text-gray-300">Closure of thousands of banks and industries causing massive financial losses for millions.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <h4 class="font-bold mb-2 text-orange-400">Mass Unemployment</h4>
+                            <p class="text-sm text-gray-300">Unemployment soared to record levels—25% in the USA, even higher in some European nations.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <h4 class="font-bold mb-2 text-yellow-400">Wage Collapse</h4>
+                            <p class="text-sm text-gray-300">Severe wage reductions and inflation dramatically decreased living standards for working families.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Trade Breakdown</h4>
+                            <p class="text-sm text-gray-300">Complete collapse of international trade, devastating European economies dependent on exports.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Crisis -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">😢</div>
+                        <h3 class="text-3xl font-bold text-purple-300">Social Crisis</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400">Extreme Poverty</h4>
+                            <p class="text-sm text-gray-300">Dramatic rise in poverty and homelessness as families lost homes, farms, and savings.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <h4 class="font-bold mb-2 text-pink-400">Political Instability</h4>
+                            <p class="text-sm text-gray-300">Increased political turmoil and rise of radical leaders promising simple solutions to complex problems.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2 text-blue-400">Protectionism</h4>
+                            <p class="text-sm text-gray-300">Governments introduced protectionist policies that worsened the global crisis instead of solving it.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                            <h4 class="font-bold mb-2 text-indigo-400">Social Unrest</h4>
+                            <p class="text-sm text-gray-300">Strikes, protests, and demonstrations became common as desperate people demanded action.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Human Cost -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">The Human Cost</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🏚️</div>
+                        <h4 class="font-bold text-lg mb-2 text-yellow-400">Hoovervilles</h4>
+                        <p class="text-sm text-gray-300">Shantytowns of homeless people sprang up in cities across America, named mockingly after President Hoover.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🍞</div>
+                        <h4 class="font-bold text-lg mb-2 text-orange-400">Breadlines</h4>
+                        <p class="text-sm text-gray-300">Long queues for free food became common sights as hunger stalked both cities and rural areas.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🌪️</div>
+                        <h4 class="font-bold text-lg mb-2 text-red-400">Dust Bowl</h4>
+                        <p class="text-sm text-gray-300">Severe drought combined with economic crisis forced thousands of farmers to abandon their land.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Deal Section -->
+        <section id="newdeal" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                The New Deal: Roosevelt's Response
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="text-6xl mr-6">👨‍💼</div>
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-green-300">President Franklin D. Roosevelt</h3>
+                        <p class="text-gray-400 text-lg">Introduced the New Deal to revive the American economy</p>
+                    </div>
+                </div>
+                <div class="bg-green-900 bg-opacity-20 p-6 rounded-xl border border-green-700">
+                    <p class="text-gray-300 text-lg text-center leading-relaxed">
+                        "The only thing we have to fear is fear itself." With these famous words, FDR launched an unprecedented program of government intervention to save capitalism and restore hope to millions of desperate Americans.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <!-- Relief -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🤝</div>
+                        <h3 class="text-2xl font-bold text-blue-300">RELIEF</h3>
+                        <p class="text-gray-400 text-sm">Immediate Help</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-blue-400">Job Programs</h4>
+                            <p class="text-sm text-gray-300">Created millions of jobs for unemployed workers through public works projects.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-blue-400">Emergency Aid</h4>
+                            <p class="text-sm text-gray-300">Provided direct assistance to those in desperate need of food and shelter.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recovery -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📈</div>
+                        <h3 class="text-2xl font-bold text-green-300">RECOVERY</h3>
+                        <p class="text-gray-400 text-sm">Economic Revival</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-green-400">Industry Support</h4>
+                            <p class="text-sm text-gray-300">Programs to help industries restart production and restore economic activity.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-green-400">Agricultural Aid</h4>
+                            <p class="text-sm text-gray-300">Support for farmers to stabilize prices and prevent further rural collapse.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reform -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚖️</div>
+                        <h3 class="text-2xl font-bold text-purple-300">REFORM</h3>
+                        <p class="text-gray-400 text-sm">Systemic Change</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-purple-400">Banking Regulation</h4>
+                            <p class="text-sm text-gray-300">New rules to prevent bank failures and protect depositors' savings.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-purple-400">Social Security</h4>
+                            <p class="text-sm text-gray-300">Created safety net for elderly, disabled, and unemployed Americans.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-purple-400">Labor Rights</h4>
+                            <p class="text-sm text-gray-300">Strengthened workers' rights to organize and bargain collectively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infrastructure Projects -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-yellow-400">Infrastructure Projects</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🛣️</div>
+                        <h4 class="font-bold text-lg mb-2 text-yellow-300">Roads</h4>
+                        <p class="text-sm text-gray-300">Thousands of miles of highways and roads built across America.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🌊</div>
+                        <h4 class="font-bold text-lg mb-2 text-blue-300">Dams</h4>
+                        <p class="text-sm text-gray-300">Massive dam projects provided electricity and flood control.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🏫</div>
+                        <h4 class="font-bold text-lg mb-2 text-green-300">Schools</h4>
+                        <p class="text-sm text-gray-300">New schools and educational facilities constructed nationwide.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🏛️</div>
+                        <h4 class="font-bold text-lg mb-2 text-purple-300">Public Buildings</h4>
+                        <p class="text-sm text-gray-300">Post offices, courthouses, and civic buildings across the country.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goals and Achievements -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-3">🎯</div>
+                        <h3 class="text-2xl font-bold text-indigo-300">Primary Goals</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                            <p class="text-gray-300"><strong>Stabilize Financial System:</strong> Restore confidence in banks and prevent future collapses</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                            <p class="text-gray-300"><strong>Restore Public Confidence:</strong> Give Americans hope that recovery was possible</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                            <p class="text-gray-300"><strong>Create Jobs:</strong> Put millions of unemployed Americans back to work</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                            <p class="text-gray-300"><strong>Protect Citizens:</strong> Establish safety nets to prevent future suffering</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-3">🌟</div>
+                        <h3 class="text-2xl font-bold text-green-300">Achievements</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                            <p class="text-gray-300"><strong>Reduced Unemployment:</strong> Created millions of jobs through federal programs</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                            <p class="text-gray-300"><strong>Revived Production:</strong> Industries began recovering and output increased</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                            <p class="text-gray-300"><strong>Promoted Growth:</strong> Laid foundation for post-WWII economic expansion</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                            <p class="text-gray-300"><strong>Restored Hope:</strong> Americans regained faith in their government and future</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legacy -->
+            <div class="mt-8 bg-gradient-to-r from-blue-900 to-green-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🏆</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-blue-300">The New Deal's Lasting Legacy</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            While the New Deal didn't completely end the Great Depression (World War II ultimately did that), it fundamentally transformed America. It established the principle that government has a responsibility to protect citizens from economic catastrophe.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            Programs like Social Security remain cornerstones of American life today. Banking regulations prevented another collapse until they were weakened decades later. Labor rights strengthened the middle class and created broadly shared prosperity.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Most importantly, the New Deal gave Americans hope during their darkest hour. It proved that democratic governments could respond effectively to crisis without resorting to dictatorship—a crucial lesson as fascism spread across Europe.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Timeline -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-purple-400 bg-clip-text text-transparent">
+                Timeline: From Boom to Recovery
+            </h3>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="bg-yellow-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1920s
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-yellow-300">The Roaring Twenties</h4>
+                        <p class="text-gray-300">Economic boom, mass production, consumer culture, stock market speculation</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-red-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1929
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-red-300">The Crash</h4>
+                        <p class="text-gray-300">Stock market collapse in October; beginning of the Great Depression</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-purple-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1930s
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-purple-300">The Depression Deepens</h4>
+                        <p class="text-gray-300">Mass unemployment, bank failures, poverty, global economic crisis</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-green-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1933
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-green-300">The New Deal Begins</h4>
+                        <p class="text-gray-300">FDR inaugurated; launches massive government programs to combat Depression</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-blue-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        Late 1930s
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-blue-300">Gradual Recovery</h4>
+                        <p class="text-gray-300">Slow economic improvement, though full recovery awaits World War II</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('roaring');
+    </script>
+</body>
+</html>
