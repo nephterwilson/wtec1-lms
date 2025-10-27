@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-green-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">♻️</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Waste Management
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Sustainable Solutions for a Cleaner Environment</p>
+            <p class="text-lg text-gray-400">Reduce, Reuse, Recycle</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('classification')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Classification
+                </button>
+                <button onclick="showSection('sources')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 rounded-xl transition shadow-lg">
+                    Sources
+                </button>
+                <button onclick="showSection('disposal')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Treatment & Disposal
+                </button>
+                <button onclick="showSection('recycling')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Recycling
+                </button>
+            </div>
+        </header>
+
+        <!-- Classification Section -->
+        <section id="classification" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Classification of Wastes
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🗑️</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">What is Waste?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Waste refers to unwanted materials produced by human activities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Classification by Physical State -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-emerald-400">Classification Based on Physical State</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-amber-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-amber-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">📦</div>
+                        <h4 class="text-xl font-bold mb-3 text-amber-300 text-center">Solid Wastes</h4>
+                        <p class="text-sm text-gray-300 text-center">Non-liquid, non-gaseous materials, such as food scraps, paper, and plastics.</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">💧</div>
+                        <h4 class="text-xl font-bold mb-3 text-blue-300 text-center">Liquid Wastes</h4>
+                        <p class="text-sm text-gray-300 text-center">Waste in liquid form, including sewage and wastewater.</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-gray-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-gray-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">💨</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-300 text-center">Gaseous Wastes</h4>
+                        <p class="text-sm text-gray-300 text-center">Emissions and gases released from industrial processes.</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🫗</div>
+                        <h4 class="text-xl font-bold mb-3 text-purple-300 text-center">Sludge Wastes</h4>
+                        <p class="text-sm text-gray-300 text-center">Semi-solid waste, often produced from wastewater treatment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classification by Degradability -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-teal-400">Classification Based on Degradability</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🍃</div>
+                            <h4 class="text-2xl font-bold text-green-300">Biodegradable Wastes</h4>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <p class="text-gray-300 mb-4">Materials that can decay relatively quickly due to microbial action.</p>
+                            <div class="space-y-2">
+                                <p class="text-sm text-gray-400"><strong>Examples:</strong></p>
+                                <p class="text-sm text-gray-400">• Food scraps</p>
+                                <p class="text-sm text-gray-400">• Yard waste</p>
+                                <p class="text-sm text-gray-400">• Paper products</p>
+                                <p class="text-sm text-gray-400">• Plant materials</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🚫</div>
+                            <h4 class="text-2xl font-bold text-red-300">Non-Biodegradable Wastes</h4>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <p class="text-gray-300 mb-4">Materials that do not decompose naturally.</p>
+                            <div class="space-y-2">
+                                <p class="text-sm text-gray-400"><strong>Examples:</strong></p>
+                                <p class="text-sm text-gray-400">• Plastics</p>
+                                <p class="text-sm text-gray-400">• Glass</p>
+                                <p class="text-sm text-gray-400">• Metals</p>
+                                <p class="text-sm text-gray-400">• Synthetic materials</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sources Section -->
+        <section id="sources" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Sources of Wastes
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Domestic Sources -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏠</div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-300 text-center">Domestic Sources</h3>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>• Food leftovers</p>
+                        <p>• Plastics</p>
+                        <p>• Metals</p>
+                        <p>• Untreated sewage</p>
+                        <p>• Expired medications</p>
+                    </div>
+                </div>
+
+                <!-- Industrial Sources -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏭</div>
+                    <h3 class="text-xl font-bold mb-4 text-red-300 text-center">Industrial Sources</h3>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>• Used oil</p>
+                        <p>• Toxic gases</p>
+                        <p>• Metals</p>
+                        <p>• Plastics</p>
+                        <p>• Chemical waste</p>
+                    </div>
+                </div>
+
+                <!-- Agricultural Sources -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🌾</div>
+                    <h3 class="text-xl font-bold mb-4 text-green-300 text-center">Agricultural Sources</h3>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>• Plant remains</p>
+                        <p>• Excess pesticides</p>
+                        <p>• Herbicides</p>
+                        <p>• Weedicides</p>
+                        <p>• Animal waste</p>
+                    </div>
+                </div>
+
+                <!-- Medical Sources -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏥</div>
+                    <h3 class="text-xl font-bold mb-4 text-blue-300 text-center">Medical Sources</h3>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>• Plastics</p>
+                        <p>• Glassware</p>
+                        <p>• Expired drugs</p>
+                        <p>• Used syringes</p>
+                        <p>• Needles</p>
+                    </div>
+                </div>
+
+                <!-- Laboratory Sources -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔬</div>
+                    <h3 class="text-xl font-bold mb-4 text-cyan-300 text-center">Laboratory Sources</h3>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>• Expired chemicals</p>
+                        <p>• Broken glassware</p>
+                        <p>• Contaminated materials</p>
+                        <p>• Lab equipment</p>
+                        <p>• Test samples</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disposal Section -->
+        <section id="disposal" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Ways of Treating and Disposing Waste
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Open Burning -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🔥</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-red-300">Open Burning</h3>
+                            <p class="text-sm text-gray-300 mb-2">Incineration of waste materials in open areas.</p>
+                            <p class="text-xs text-red-400">⚠️ Discouraged due to air pollution</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Incineration -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">♨️</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-orange-300">Incineration</h3>
+                            <p class="text-sm text-gray-300 mb-2">Controlled burning of waste in incinerators.</p>
+                            <p class="text-xs text-green-400">✓ Reduces volume and emissions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dump Sites -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🗑️</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-yellow-300">Dump Sites</h3>
+                            <p class="text-sm text-gray-300 mb-2">Uncontrolled disposal areas for waste.</p>
+                            <p class="text-xs text-red-400">⚠️ Leads to air and water pollution</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sanitary Landfills -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🏗️</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-green-300">Sanitary Landfills</h3>
+                            <p class="text-sm text-gray-300 mb-2">Burying solid waste in layered, compacted forms.</p>
+                            <p class="text-xs text-green-400">✓ Designed to minimize environmental impact</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Composting -->
+                <div class="shimmer-card bg-gradient-to-br from-emerald-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-emerald-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🌱</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-emerald-300">Composting</h3>
+                            <p class="text-sm text-gray-300 mb-2">Aerobic decomposition of organic waste.</p>
+                            <p class="text-xs text-green-400">✓ Creates nutrient-rich compost for agriculture</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recycling -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">♻️</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-blue-300">Recycling/Re-use</h3>
+                            <p class="text-sm text-gray-300 mb-2">Reprocessing materials to prevent waste.</p>
+                            <p class="text-xs text-green-400">✓ Example: Used bottles for storage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minimizing Waste -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Ways of Minimizing Waste</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">♻️</div>
+                            <h4 class="text-xl font-bold text-blue-300">Recycling</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Processing materials for reuse.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🔄</div>
+                            <h4 class="text-xl font-bold text-green-300">Reusing</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Finding new uses for discarded items.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-900 to-slate-900 p-6 rounded-xl border border-purple-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">📉</div>
+                            <h4 class="text-xl font-bold text-purple-300">Reduction at Source</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Decreasing waste generation by using fewer materials.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recycling Section -->
+        <section id="recycling" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Recycling of Metals and Plastics
+            </h2>
+
+            <!-- Recycling Process -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔄</div>
+                    <h3 class="text-3xl font-bold text-blue-300">Recycling Process</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-purple-900 to-slate-900 p-6 rounded-xl border border-purple-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">1️⃣</div>
+                            <h4 class="text-xl font-bold text-purple-300">Collection</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Gathering recyclable materials from waste disposal sites.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">2️⃣</div>
+                            <h4 class="text-xl font-bold text-blue-300">Sorting</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Organizing materials by type, color, and manufacturing method.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cyan-900 to-slate-900 p-6 rounded-xl border border-cyan-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">3️⃣</div>
+                            <h4 class="text-xl font-bold text-cyan-300">Cleaning</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Removing impurities from recyclable materials.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">4️⃣</div>
+                            <h4 class="text-xl font-bold text-green-300">Resizing</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Shredding materials into smaller pieces for easier processing.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-6 rounded-xl border border-yellow-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">5️⃣</div>
+                            <h4 class="text-xl font-bold text-yellow-300">Identification</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Testing particles for quality and classification.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-orange-900 to-slate-900 p-6 rounded-xl border border-orange-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">6️⃣</div>
+                            <h4 class="text-xl font-bold text-orange-300">Compounding</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Melting and reshaping materials into pellets for new products.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Importance of Recycling -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌍</div>
+                    <h3 class="text-3xl font-bold text-green-300">Importance of Recycling Metals and Plastics</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-emerald-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-emerald-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">🌲</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-emerald-300">Preservation of Natural Resources</h4>
+                                <p class="text-sm text-gray-300">Reduces the depletion of raw materials and conserves natural resources for future generations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">🌫️</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-blue-300">Reduction of Emissions</h4>
+                                <p class="text-sm text-gray-300">Lowers greenhouse gas emissions associated with manufacturing new products.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">📈</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-yellow-300">Economic Development</h4>
+                                <p class="text-sm text-gray-300">Saves costs on mining and processing, allowing funds to be directed to other development programs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">💰</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-purple-300">Cost Savings</h4>
+                                <p class="text-sm text-gray-300">Generally lower costs for recycled materials compared to producing new materials from scratch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Key Takeaways
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🗑️</div>
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-2">Waste Classification</h4>
+                            <p class="text-gray-300 text-sm">Wastes are classified by physical state (solid, liquid, gas, sludge) and degradability (biodegradable vs non-biodegradable).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🏠</div>
+                        <div>
+                            <h4 class="font-bold text-yellow-400 mb-2">Multiple Sources</h4>
+                            <p class="text-gray-300 text-sm">Waste comes from domestic, industrial, agricultural, medical, and laboratory sources.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🔥</div>
+                        <div>
+                            <h4 class="font-bold text-orange-400 mb-2">Disposal Methods</h4>
+                            <p class="text-gray-300 text-sm">Various methods include incineration, landfills, composting, and recycling - each with environmental considerations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">♻️</div>
+                        <div>
+                            <h4 class="font-bold text-blue-400 mb-2">Recycling Process</h4>
+                            <p class="text-gray-300 text-sm">Six-step process: collection, sorting, cleaning, resizing, identification, and compounding.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">📉</div>
+                        <div>
+                            <h4 class="font-bold text-purple-400 mb-2">Waste Minimization</h4>
+                            <p class="text-gray-300 text-sm">The 3 Rs: Reduce, Reuse, Recycle - essential strategies for sustainable waste management.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🌍</div>
+                        <div>
+                            <h4 class="font-bold text-emerald-400 mb-2">Environmental Benefits</h4>
+                            <p class="text-gray-300 text-sm">Recycling preserves natural resources, reduces emissions, saves costs, and supports economic development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-green-900 to-emerald-900 rounded-xl p-6 border border-green-600">
+                <div class="flex items-center justify-center">
+                    <div class="text-5xl mr-4">🌱</div>
+                    <div class="text-center">
+                        <p class="text-xl font-bold text-green-300 mb-2">Remember: Every Small Action Counts!</p>
+                        <p class="text-gray-300">Proper waste management today ensures a cleaner, healthier environment for future generations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('classification');
+    </script>
+</body>
+</html>

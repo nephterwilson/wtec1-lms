@@ -1,0 +1,793 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acids and Bases - Chemistry Lesson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">⚗️</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Acids and Bases
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding Chemical Behavior and Reactions</p>
+            <p class="text-lg text-gray-400">The Brønsted-Lowry Theory and Beyond</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('theory')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Brønsted-Lowry Theory
+                </button>
+                <button onclick="showSection('conjugate')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Conjugate Pairs
+                </button>
+                <button onclick="showSection('strength')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Strength & Conductivity
+                </button>
+                <button onclick="showSection('oxides')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Oxides
+                </button>
+                <button onclick="showSection('salts')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Salts & Precipitation
+                </button>
+            </div>
+        </header>
+
+        <!-- Brønsted-Lowry Theory Section -->
+        <section id="theory" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                The Brønsted-Lowry Theory of Acids and Bases
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Definition</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Developed by Johannes Brønsted and Thomas Lowry, this theory defines acids and bases based on their ability to donate or accept protons (H⁺).
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Acid -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔴</div>
+                        <h3 class="text-3xl font-bold text-red-300">ACID</h3>
+                        <p class="text-gray-400 text-xl">Proton Donor</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold mb-3 text-red-400 text-lg">Example:</h4>
+                        <div class="bg-slate-900 rounded-lg p-4 font-mono text-center">
+                            <p class="text-white text-lg">HCl → H⁺ + Cl⁻</p>
+                        </div>
+                        <p class="text-gray-300 mt-4 text-center">Hydrochloric acid donates a proton</p>
+                    </div>
+                </div>
+
+                <!-- Base -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔵</div>
+                        <h3 class="text-3xl font-bold text-blue-300">BASE</h3>
+                        <p class="text-gray-400 text-xl">Proton Acceptor</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold mb-3 text-blue-400 text-lg">Example:</h4>
+                        <div class="bg-slate-900 rounded-lg p-4 font-mono text-center">
+                            <p class="text-white text-lg">H₂O + H⁺ → H₃O⁺</p>
+                        </div>
+                        <p class="text-gray-300 mt-4 text-center">Water accepts a proton</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overall Reaction -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-2xl font-bold mb-6 text-center text-purple-300">Overall Acid-Base Reaction</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="bg-slate-900 rounded-lg p-6 font-mono text-center text-2xl">
+                        <p class="text-white">HCl + H₂O → H₃O⁺ + Cl⁻</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mt-6">
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="text-red-300 font-bold">HCl = Acid</p>
+                            <p class="text-gray-400 text-sm">(Proton Donor)</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="text-blue-300 font-bold">H₂O = Base</p>
+                            <p class="text-gray-400 text-sm">(Proton Acceptor)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hydronium Ion Formation -->
+            <div class="bg-gradient-to-r from-cyan-900 to-blue-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">💧</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-cyan-300">Formation of the Hydronium Ion (H₃O⁺)</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            When an acid dissolves in water, it donates protons (H⁺), which are accepted by water molecules, resulting in the formation of <span class="text-cyan-400 font-bold">hydronium ions (H₃O⁺)</span>. This is why aqueous acid solutions conduct electricity and have characteristic acidic properties.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conjugate Pairs Section -->
+        <section id="conjugate" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Conjugate Acids and Conjugate Bases
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔄</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Key Concept</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        A <span class="text-blue-400 font-bold">conjugate acid</span> is formed when a base gains a proton. A <span class="text-purple-400 font-bold">conjugate base</span> is formed when an acid loses a proton.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Example 1 -->
+            <div class="mb-8 bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-2xl font-bold text-indigo-300 mb-6">Example 1</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <div class="bg-slate-900 rounded-lg p-4 font-mono text-center text-xl mb-6">
+                        <p class="text-white">CH₃COOH + HCl → CH₃COOH₂⁺ + Cl⁻</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-3">
+                            <div class="bg-blue-900 bg-opacity-40 p-4 rounded-lg">
+                                <p class="font-bold text-blue-300 mb-1">Base:</p>
+                                <p class="text-white text-lg">CH₃COOH</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg">
+                                <p class="font-bold text-red-300 mb-1">Acid:</p>
+                                <p class="text-white text-lg">HCl</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="bg-cyan-900 bg-opacity-40 p-4 rounded-lg">
+                                <p class="font-bold text-cyan-300 mb-1">Conjugate Acid:</p>
+                                <p class="text-white text-lg">CH₃COOH₂⁺</p>
+                            </div>
+                            <div class="bg-purple-900 bg-opacity-40 p-4 rounded-lg">
+                                <p class="font-bold text-purple-300 mb-1">Conjugate Base:</p>
+                                <p class="text-white text-lg">Cl⁻</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <!-- Example 2 -->
+<div class="mb-8 bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+  <h3 class="text-2xl font-bold text-purple-300 mb-6">Example 2</h3>
+  <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+    <div class="bg-slate-900 rounded-lg p-4 font-mono text-center text-xl mb-6">
+      <p class="text-white">HNO₃ + H₂SO₄ → H₂NO₃⁺ + HSO₄⁻</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-3">
+        <div class="bg-blue-900 bg-opacity-40 p-4 rounded-lg">
+          <p class="font-bold text-blue-300 mb-1">Base:</p>
+          <p class="text-white text-lg">HNO₃</p>
+        </div>
+        <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg">
+          <p class="font-bold text-red-300 mb-1">Acid:</p>
+          <p class="text-white text-lg">H₂SO₄</p>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="bg-cyan-900 bg-opacity-40 p-4 rounded-lg">
+          <p class="font-bold text-cyan-300 mb-1">Conjugate Acid:</p>
+          <p class="text-white text-lg">H₂NO₃⁺</p>
+        </div>
+        <div class="bg-purple-900 bg-opacity-40 p-4 rounded-lg">
+          <p class="font-bold text-purple-300 mb-1">Conjugate Base:</p>
+          <p class="text-white text-lg">HSO₄⁻</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+            <!-- Example 3 -->
+            <div class="mb-8 bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                <h3 class="text-2xl font-bold text-pink-300 mb-6">Example 3</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <div class="bg-slate-900 rounded-lg p-4 font-mono text-center text-xl mb-6">
+                        <p class="text-white">HCl + HF → Cl⁻ + H₂F⁺</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-3">
+                            <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg">
+                                <p class="font-bold text-red-300 mb-1">Acid:</p>
+                                <p class="text-white text-lg">HCl</p>
+                            </div>
+                            <div class="bg-blue-900 bg-opacity-40 p-4 rounded-lg">
+                                <p class="font-bold text-blue-300 mb-1">Base:</p>
+                                <p class="text-white text-lg">HF</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="bg-purple-900 bg-opacity-40 p-4 rounded-lg">
+                                <p class="font-bold text-purple-300 mb-1">Conjugate Base:</p>
+                                <p class="text-white text-lg">Cl⁻</p>
+                            </div>
+                            <div class="bg-cyan-900 bg-opacity-40 p-4 rounded-lg">
+                                <p class="font-bold text-cyan-300 mb-1">Conjugate Acid:</p>
+                                <p class="text-white text-lg">H₂F⁺</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conjugate Acid-Base Pairs -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-cyan-300">Conjugate Acid-Base Pairs</h3>
+                <p class="text-gray-300 text-lg mb-6 text-center">A conjugate acid-base pair consists of two species related by the gain or loss of a proton (H⁺).</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="bg-slate-900 rounded-lg p-4 font-mono text-center mb-4">
+                            <p class="text-white text-lg">NH₃ + H₂O → NH₄⁺ + OH⁻</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg text-center">
+                                <p class="text-blue-300 font-bold">Pair 1: NH₄⁺/NH₃</p>
+                            </div>
+                            <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg text-center">
+                                <p class="text-purple-300 font-bold">Pair 2: H₂O/OH⁻</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="bg-slate-900 rounded-lg p-4 font-mono text-center mb-4">
+                            <p class="text-white text-lg">HNO₃ + H₂SO₄ → HNO₃⁺ + HSO₄⁻</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg text-center">
+                                <p class="text-blue-300 font-bold">Pair 1: H₂SO₄/HSO₄⁻</p>
+                            </div>
+                            <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg text-center">
+                                <p class="text-purple-300 font-bold">Pair 2: HNO₃⁺/HNO₃</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="bg-slate-900 rounded-lg p-4 font-mono text-center mb-4">
+                            <p class="text-white text-lg">CH₃COOH + H₂O → CH₃COO⁻ + H₃O⁺</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg text-center">
+                                <p class="text-blue-300 font-bold">Pair 1: CH₃COOH/CH₃COO⁻</p>
+                            </div>
+                            <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg text-center">
+                                <p class="text-purple-300 font-bold">Pair 2: H₃O⁺/H₂O</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strength & Conductivity Section -->
+        <section id="strength" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Strength of Acids and Bases
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Strong Acids -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚡</div>
+                        <h3 class="text-3xl font-bold text-red-300">Strong Acids</h3>
+                        <p class="text-gray-400 text-lg">Completely ionize in water</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-3 text-red-400">Examples:</h4>
+                        <div class="space-y-2">
+                            <p class="text-white text-lg">• HCl (Hydrochloric acid)</p>
+                            <p class="text-white text-lg">• H₂SO₄ (Sulfuric acid)</p>
+                            <p class="text-white text-lg">• HNO₃ (Nitric acid)</p>
+                        </div>
+                    </div>
+                    <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                        <p class="text-gray-300 text-center">Produce many hydrogen ions → High conductivity</p>
+                    </div>
+                </div>
+
+                <!-- Weak Acids -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">💫</div>
+                        <h3 class="text-3xl font-bold text-orange-300">Weak Acids</h3>
+                        <p class="text-gray-400 text-lg">Partially ionize in water</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-3 text-orange-400">Examples:</h4>
+                        <div class="space-y-2">
+                            <p class="text-white text-lg">• CH₃COOH (Ethanoic acid)</p>
+                            <p class="text-white text-lg">• H₂CO₃ (Carbonic acid)</p>
+                        </div>
+                    </div>
+                    <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                        <p class="text-gray-300 text-center">Produce fewer hydrogen ions → Low conductivity</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conductivity Experiment -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-300">Determining Strength Using Conductivity</h3>
+                <div class="bg-purple-900 bg-opacity-20 p-6 rounded-xl mb-6">
+                    <p class="text-gray-300 text-lg text-center leading-relaxed">
+                        Acids and bases conduct electricity due to ionization in water. Strong acids and bases have <span class="text-purple-400 font-bold">higher conductivity</span> than weak ones because they ionize completely.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-cyan-300 mb-4">Materials Needed</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <p>• Beaker</p>
+                            <p>• 2 Carbon rods (electrodes)</p>
+                            <p>• 2 Cells (battery)</p>
+                            <p>• Connecting wires</p>
+                            <p>• Distilled water</p>
+                            <p>• Ammeter</p>
+                            <p>• Solutions: Ethanoic acid, HCl, NaOH, Ammonia</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-300 mb-4">Procedure</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p><span class="text-green-400 font-bold">1.</span> Pour 50 ml of solution into beaker</p>
+                            <p><span class="text-green-400 font-bold">2.</span> Set up the apparatus</p>
+                            <p><span class="text-green-400 font-bold">3.</span> Close switch and record ammeter reading</p>
+                            <p><span class="text-green-400 font-bold">4.</span> Rinse beaker and electrodes</p>
+                            <p><span class="text-green-400 font-bold">5.</span> Repeat with other solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <h4 class="text-xl font-bold text-yellow-300 mb-4 text-center">Expected Results</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-gray-300">
+                            <thead class="bg-slate-900">
+                                <tr>
+                                    <th class="p-3 text-left">Solution</th>
+                                    <th class="p-3 text-left">Type</th>
+                                    <th class="p-3 text-left">Conductivity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-slate-700">
+                                    <td class="p-3">Hydrochloric acid</td>
+                                    <td class="p-3 text-red-400">Strong acid</td>
+                                    <td class="p-3 text-green-400">High</td>
+                                </tr>
+                                <tr class="border-t border-slate-700">
+                                    <td class="p-3">Ethanoic acid</td>
+                                    <td class="p-3 text-orange-400">Weak acid</td>
+                                    <td class="p-3 text-yellow-400">Low</td>
+                                </tr>
+                                <tr class="border-t border-slate-700">
+                                    <td class="p-3">Sodium hydroxide</td>
+                                    <td class="p-3 text-blue-400">Strong base</td>
+                                    <td class="p-3 text-green-400">High</td>
+                                </tr>
+                                <tr class="border-t border-slate-700">
+                                    <td class="p-3">Ammonia</td>
+                                    <td class="p-3 text-purple-400">Weak base</td>
+                                    <td class="p-3 text-yellow-400">Low</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg">
+                    <h4 class="font-bold text-green-300 mb-2">Conclusion:</h4>
+                    <p class="text-gray-300">The solution with the highest ammeter reading is the strong acid or base, while the one with the lowest reading is the weak acid or base.</p>
+                </div>
+            </div>
+
+            <!-- Control Variables -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-2xl font-bold mb-6 text-center text-blue-300">Control Variables During Conductivity Measurements</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg flex items-center">
+                        <div class="text-3xl mr-4">🌡️</div>
+                        <p class="text-gray-300">Temperature of the solution</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg flex items-center">
+                        <div class="text-3xl mr-4">📏</div>
+                        <p class="text-gray-300">Electrode surface area</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg flex items-center">
+                        <div class="text-3xl mr-4">↔️</div>
+                        <p class="text-gray-300">Electrode spacing</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg flex items-center">
+                        <div class="text-3xl mr-4">💧</div>
+                        <p class="text-gray-300">Concentration of the solution</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strength vs Concentration -->
+            <div class="bg-gradient-to-r from-pink-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-pink-300">Difference Between Strength and Concentration</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-5xl mb-4 text-center">💪</div>
+                        <h4 class="text-2xl font-bold text-pink-300 mb-3 text-center">Strength</h4>
+                        <p class="text-gray-300 leading-relaxed">Indicates how easily an acid or base ionizes to produce ions (hydrogen ions for acids, hydroxide ions for bases).</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-5xl mb-4 text-center">📊</div>
+                        <h4 class="text-2xl font-bold text-purple-300 mb-3 text-center">Concentration</h4>
+                        <p class="text-gray-300 leading-relaxed">Refers to the proportion of solute (acid or base) in the solution compared to the solvent (water).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oxides Section -->
+        <section id="oxides" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                Oxides: Chemical Compounds
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⚛️</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">What Are Oxides?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        Oxides are compounds that contain oxygen and another element. They can be classified into three main types based on their chemical properties.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Basic Oxides -->
+            <div class="mb-8 shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🔵</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-300">1. Basic Oxides</h3>
+                        <p class="text-gray-400 text-lg">Produced when oxygen reacts with metals</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">MgO</p>
+                        <p class="text-gray-400 text-sm">Magnesium oxide</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">FeO</p>
+                        <p class="text-gray-400 text-sm">Iron(II) oxide</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">CuO</p>
+                        <p class="text-gray-400 text-sm">Copper(II) oxide</p>
+                    </div>
+                </div>
+
+                <div class="bg-blue-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="font-bold text-blue-300 mb-3">Characteristics:</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>• Typically ionic in nature</p>
+                        <p>• Most dissolve in water to form alkalis, while some are insoluble</p>
+                        <p>• Can neutralize acids</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acidic Oxides -->
+            <div class="mb-8 shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🔴</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-red-300">2. Acidic Oxides</h3>
+                        <p class="text-gray-400 text-lg">Produced when oxygen reacts with non-metals</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">CO₂</p>
+                        <p class="text-gray-400 text-sm">Carbon dioxide</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">SO₂</p>
+                        <p class="text-gray-400 text-sm">Sulfur dioxide</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">P₂O₅</p>
+                        <p class="text-gray-400 text-sm">Phosphorus pentoxide</p>
+                    </div>
+                </div>
+
+                <div class="bg-red-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="font-bold text-red-300 mb-3">Characteristics:</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>• Form acidic solutions when dissolved in water</p>
+                        <p>• Turn blue litmus paper red</p>
+                        <p>• React with bases to form salts and water</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amphoteric Oxides -->
+            <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🟣</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-purple-300">3. Amphoteric Oxides</h3>
+                        <p class="text-gray-400 text-lg">Have both acidic and basic properties</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">Al₂O₃</p>
+                        <p class="text-gray-400 text-sm">Aluminium oxide</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">ZnO</p>
+                        <p class="text-gray-400 text-sm">Zinc oxide</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl text-center">
+                        <p class="text-white text-lg font-mono">PbO</p>
+                        <p class="text-gray-400 text-sm">Lead(II) oxide</p>
+                    </div>
+                </div>
+
+                <div class="bg-purple-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="font-bold text-purple-300 mb-3">Characteristics:</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>• React with both acids and bases</p>
+                        <p>• Form salts and water in both types of reactions</p>
+                        <p>• Show dual chemical behavior</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pH Regulation -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-300">Ways of Regulating pH in Different Environments</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-5xl mb-4 text-center">🫃</div>
+                        <h4 class="text-xl font-bold text-green-300 mb-3 text-center">The Human Digestive System</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p><span class="text-green-400 font-bold">Role:</span> Hydrochloric acid aids in protein digestion</p>
+                            <p><span class="text-red-400 font-bold">Problem:</span> Excess acid can cause discomfort</p>
+                            <p><span class="text-blue-400 font-bold">Solution:</span> Antacids (e.g., magnesium hydroxide) neutralize excess acid</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-5xl mb-4 text-center">🌾</div>
+                        <h4 class="text-xl font-bold text-green-300 mb-3 text-center">Soil and Water Acidity</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p><span class="text-red-400 font-bold">Problem:</span> Fertilizers increase soil acidity; acidic gases make water acidic</p>
+                            <p><span class="text-blue-400 font-bold">Solution:</span> Adding lime (calcium hydroxide) helps neutralize acidity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Salts & Precipitation Section -->
+        <section id="salts" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
+                Salts and Precipitation Reactions
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🧂</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">What Are Salts?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        Salts are formed when the hydrogen ion of an acid is replaced by a metal or ammonium radical.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold mb-6 text-center text-cyan-300">Ways of Preparing Salts</h3>
+
+            <!-- Method 1 -->
+            <div class="mb-6 shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                <h4 class="text-xl font-bold text-blue-300 mb-4">1. Reaction of an Acid with a Soluble Base (Alkali)</h4>
+                <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-3">
+                    <p class="text-gray-300 mb-2"><span class="font-bold">Method:</span> Titration is used for reactive metals like sodium or potassium</p>
+                    <div class="bg-slate-900 rounded-lg p-3 font-mono text-center">
+                        <p class="text-white">HCl(aq) + NaOH(aq) → NaCl(aq) + H₂O(l)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Method 2 -->
+            <div class="mb-6 shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                <h4 class="text-xl font-bold text-green-300 mb-4">2. Reaction of an Acid with a Metal</h4>
+                <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-3">
+                    <p class="text-gray-300 mb-2"><span class="font-bold">Method:</span> Used for less reactive metals (e.g., Mg, Zn)</p>
+                    <div class="bg-slate-900 rounded-lg p-3 font-mono text-center">
+                        <p class="text-white">Mg(s) + 2HNO₃(aq) → Mg(NO₃)₂(aq) + H₂(g)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Method 3 -->
+            <div class="mb-6 shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                <h4 class="text-xl font-bold text-purple-300 mb-4">3. Reaction of an Acid with a Carbonate</h4>
+                <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-3">
+                    <p class="text-gray-300 mb-2"><span class="font-bold">Method:</span> Any metal carbonate can react with an acid</p>
+                    <div class="bg-slate-900 rounded-lg p-3 font-mono text-center">
+                        <p class="text-white">CuCO₃(s) + 2HNO₃(aq) → Cu(NO₃)₂(aq) + CO₂(g) + H₂O(l)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Method 4 -->
+            <div class="mb-6 shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                <h4 class="text-xl font-bold text-red-300 mb-4">4. Reaction of an Acid with an Insoluble Base</h4>
+                <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-3">
+                    <p class="text-gray-300 mb-2"><span class="font-bold">Method:</span> For unreactive metals (e.g., Pb, Cu), neutralization occurs with metal oxides</p>
+                    <div class="bg-slate-900 rounded-lg p-3 font-mono text-center">
+                        <p class="text-white">H₂SO₄(aq) + CuO(s) → CuSO₄(aq) + H₂O(l)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Method 5 -->
+            <div class="mb-8 shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                <h4 class="text-xl font-bold text-cyan-300 mb-4">5. Precipitation</h4>
+                <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-3">
+                    <p class="text-gray-300 mb-2"><span class="font-bold">Method:</span> Mixing two soluble solutions to form an insoluble salt</p>
+                    <div class="bg-slate-900 rounded-lg p-3 font-mono text-center">
+                        <p class="text-white">BaCl₂(aq) + Na₂SO₄(aq) → BaSO₄(s) + 2NaCl(aq)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solubility Rules -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-yellow-300">Solubility Rules</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-green-500">
+                        <p class="text-gray-300">✓ All K, Na, and NH₄ salts are <span class="text-green-400 font-bold">soluble</span></p>
+                    </div>
+                    <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-green-500">
+                        <p class="text-gray-300">✓ All nitrates and hydrogen carbonates are <span class="text-green-400 font-bold">soluble</span></p>
+                    </div>
+                    <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-gray-300">⚠ Most sulfates are soluble, except PbSO₄ and BaSO₄; CaSO₄ is <span class="text-yellow-400 font-bold">sparingly soluble</span></p>
+                    </div>
+                    <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-gray-300">⚠ Most chlorides are soluble, except AgCl and PbCl₂ (soluble only in hot water)</p>
+                    </div>
+                    <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-red-500">
+                        <p class="text-gray-300">✗ Most carbonates are <span class="text-red-400 font-bold">insoluble</span>, except K, Na, and NH₄ carbonates</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-300">Applications of Precipitation Reactions</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-5xl mb-3 text-center">💧</div>
+                        <h4 class="font-bold text-cyan-300 mb-2 text-center">Water Treatment</h4>
+                        <p class="text-sm text-gray-300">Sodium carbonate precipitates toxic cations as insoluble carbonates, which are filtered out. Also softens hard water.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-5xl mb-3 text-center">🏭</div>
+                        <h4 class="font-bold text-green-300 mb-2 text-center">Industrial Effluents</h4>
+                        <p class="text-sm text-gray-300">Removes toxic ions from liquid wastes through precipitation, sedimentation, or filtration.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-5xl mb-3 text-center">🌱</div>
+                        <h4 class="font-bold text-yellow-300 mb-2 text-center">Soil Remediation</h4>
+                        <p class="text-sm text-gray-300">Immobilizes heavy metals in contaminated soils by forming insoluble compounds.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-5xl mb-3 text-center">🔬</div>
+                        <h4 class="font-bold text-blue-300 mb-2 text-center">Laboratory Analysis</h4>
+                        <p class="text-sm text-gray-300">Used to determine concentration of specific ions. Example: AgNO₃ + Cl⁻ → AgCl (white precipitate).</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-5xl mb-3 text-center">💊</div>
+                        <h4 class="font-bold text-pink-300 mb-2 text-center">Medicine</h4>
+                        <p class="text-sm text-gray-300">Used in drug formulation and delivery. Insoluble drug compounds control medication release rates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('theory');
+    </script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermal Expansion - Gases & Applications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-cyan-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🌬️</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Thermal Expansion
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Gases, Anomalous Water Behavior & Applications</p>
+            <p class="text-lg text-gray-400">Advanced Concepts in Thermal Physics</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('gases')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Expansion in Gases
+                </button>
+                <button onclick="showSection('water')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Anomalous Water
+                </button>
+                <button onclick="showSection('applications')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Applications
+                </button>
+            </div>
+        </header>
+
+        <!-- Gases Section -->
+        <section id="gases" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Thermal Expansion in Gases
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💨</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Gas Expansion</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Gases expand more than liquids and solids when heated due to their widely spaced molecules. They also contract when cooled.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🌬️</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyan-300 text-center">Basic Behavior</h3>
+                    <p class="text-sm text-gray-300 text-center">Gases expand when heated and contract when cooled.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📏</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300 text-center">Maximum Expansion</h3>
+                    <p class="text-sm text-gray-300 text-center">Gases expand more than liquids and solids.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🧪</div>
+                    <h3 class="text-xl font-bold mb-3 text-indigo-300 text-center">Molecular Motion</h3>
+                    <p class="text-sm text-gray-300 text-center">Gas molecules move freely and rapidly, increasing the volume when heated.</p>
+                </div>
+            </div>
+
+            <!-- Investigation -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-purple-300">Investigation: Expansion of Gases</h3>
+                    <p class="text-gray-400 text-lg mt-2">An experiment using a glass flask and balloon setup to observe gas expansion when heated.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-3">🎯</div>
+                            <h4 class="text-2xl font-bold text-green-300">Aim</h4>
+                        </div>
+                        <p class="text-gray-300 ml-12">To demonstrate thermal expansion in gases.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-3">🧪</div>
+                            <h4 class="text-2xl font-bold text-blue-300">Apparatus</h4>
+                        </div>
+                        <ul class="space-y-2 ml-12 text-gray-300">
+                            <li>• Thin glass flask</li>
+                            <li>• Rubber stopper</li>
+                            <li>• Long narrow glass tube</li>
+                            <li>• Balloon</li>
+                            <li>• Water bath and heater</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500">
+                    <div class="flex items-center mb-4">
+                        <div class="text-4xl mr-3">🔬</div>
+                        <h4 class="text-2xl font-bold text-orange-300">Procedure</h4>
+                    </div>
+                    <ol class="space-y-3 ml-12 text-gray-300">
+                        <li>1. Tie a balloon to the mouth of a thin glass flask tightly.</li>
+                        <li>2. Immerse the flask into a hot water bath placed on a tripod stand.</li>
+                        <li>3. Heat the water bath gently and observe the balloon.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500">
+                    <div class="flex items-center mb-4">
+                        <div class="text-4xl mr-3">👁️</div>
+                        <h4 class="text-2xl font-bold text-yellow-300">Observation</h4>
+                    </div>
+                    <p class="text-gray-300 ml-12">The balloon inflates and bulges as the flask is heated.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="text-4xl mr-3">🧠</div>
+                        <h4 class="text-2xl font-bold text-purple-300">Discussion</h4>
+                    </div>
+                    <ul class="space-y-2 ml-12 text-gray-300">
+                        <li>• Heating the flask causes the air inside to gain energy and expand.</li>
+                        <li>• This increases the volume of air, inflating the balloon.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 mb-8">
+                <div class="flex items-center mb-4">
+                    <div class="text-4xl mr-3">✅</div>
+                    <h4 class="text-2xl font-bold text-green-300">Conclusion</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Gases expand when heated and contract when cooled.</p>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🧬</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-blue-300">Molecular Explanation</h4>
+                        <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+                            <p>• Gas molecules are far apart with very weak intermolecular forces.</p>
+                            <p>• They move randomly and freely in all directions.</p>
+                            <p>• When heated, molecular kinetic energy increases significantly.</p>
+                            <p>• This causes more frequent and forceful collisions, increasing volume.</p>
+                            <p>• Equal volumes of gas expand equally under the same conditions. <span class="text-cyan-400">(Charles's Law 🌡️)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Water Section -->
+        <section id="water" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Anomalous Expansion of Water
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💧</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Unusual Expansion of Water</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Unlike most liquids that expand steadily when heated, water behaves unusually between 0°C and 4°C.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">💧</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300 text-center">Normal Liquids</h3>
+                    <p class="text-sm text-gray-300 text-center">Most liquids expand steadily on heating.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">❄️</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyan-300 text-center">0°C to 4°C</h3>
+                    <p class="text-sm text-gray-300 text-center">Water's temperature rises from 0°C to 4°C without increasing in volume.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📈</div>
+                    <h3 class="text-xl font-bold mb-3 text-indigo-300 text-center">Above 4°C</h3>
+                    <p class="text-sm text-gray-300 text-center">Above 4°C, water expands normally like other liquids.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⚖️</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300 text-center">Maximum Density</h3>
+                    <p class="text-sm text-gray-300 text-center">A fixed mass of water has minimum volume and maximum density at 4°C.</p>
+                </div>
+            </div>
+
+            <!-- Graph -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-3xl font-bold text-cyan-300">Graphical Representation</h3>
+                    <p class="text-gray-400 text-lg mt-2">The graph of water volume against temperature shows a minimum volume at 4°C, corresponding to maximum density.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold mb-2 text-blue-400">📉 0°C to 4°C</h4>
+                        <p class="text-sm text-gray-300">Volume decreases from 0°C to 4°C.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-2 text-green-400">📈 After 4°C</h4>
+                        <p class="text-sm text-gray-300">Volume increases after 4°C.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-2 text-purple-400">⚖️ Maximum Density</h4>
+                        <p class="text-sm text-gray-300">Density is highest at 4°C.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-cyan-400">Effects of Anomalous Expansion of Water</h3>
+                <p class="text-center text-gray-400 mb-8 text-lg">The unusual behavior of water has important environmental and practical consequences.</p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🐟</div>
+                            <h4 class="text-2xl font-bold text-green-300">Survival of Aquatic Life</h4>
+                        </div>
+                        <div class="space-y-3 text-gray-300">
+                            <p>• Water is densest at 4°C, so colder or warmer water is less dense.</p>
+                            <p>• Ice (frozen water) is less dense and floats on water bodies.</p>
+                            <p>• This insulation keeps bottom water liquid, allowing aquatic organisms to survive in winter.</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🚰</div>
+                            <h4 class="text-2xl font-bold text-red-300">Bursting of Water Pipes</h4>
+                        </div>
+                        <div class="space-y-3 text-gray-300">
+                            <p>• Water expands when freezing below 4°C.</p>
+                            <p>• Expansion increases volume, exerting pressure on pipes causing them to burst.</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🪨</div>
+                            <h4 class="text-2xl font-bold text-orange-300">Weathering of Rocks</h4>
+                        </div>
+                        <div class="space-y-3 text-gray-300">
+                            <p>• Water freezing in rock cracks expands.</p>
+                            <p>• Expansion widens cracks causing rocks to break apart over time (freeze-thaw weathering).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Applications of Thermal Expansion
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔧</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Practical Applications</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Thermal expansion principles are applied in numerous everyday situations and engineering solutions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Electric Wires -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">⚡</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-yellow-300">Loose Fitting of Electric Wires</h3>
+                            <p class="text-gray-300 mb-3">Electric wires are loosely fitted to allow room for expansion during cold seasons, preventing breakage due to thermal expansion.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p>• Loose fitting accommodates expansion.</p>
+                                <p>• Prevents wires from breaking during temperature changes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stuck Tumblers -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🥤</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-orange-300">Separating Stuck Tumblers/Glasses</h3>
+                            <p class="text-gray-300 mb-3">Stuck tumblers can be separated by heating the outer tumbler with hot water and cooling the inner tumbler with cold water.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p>• Outer tumbler expands when heated.</p>
+                                <p>• Inner tumbler contracts when cooled.</p>
+                                <p>• This difference allows easy separation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tooth Filling -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🦷</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-blue-300">Tooth Fitting</h3>
+                            <p class="text-gray-300 mb-3">Materials used to fill tooth cavities should have similar thermal expansion properties as teeth to ensure they expand and contract equally.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p>• Matching thermal expansion prevents cracks.</p>
+                                <p>• Ensures durability of the filling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottle Caps -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🍶</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-green-300">Removing Tightly Screwed Covers</h3>
+                            <p class="text-gray-300 mb-3">A tightly screwed bottle cap can be removed by cooling the bottle and heating the cap, causing contraction and expansion respectively.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p>• Bottle contracts when cooled.</p>
+                                <p>• Cap expands when heated.</p>
+                                <p>• This makes unscrewing easier.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invar Alloys -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">📏</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-purple-300">Use of Alloys</h3>
+                            <p class="text-gray-300 mb-3">Tape measures used by surveyors are made from an alloy called invar, which has a negligible change in length with temperature variations.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p>• Invar alloy has very low thermal expansion.</p>
+                                <p>• Ensures accurate measurements despite temperature changes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Railway Tracks -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🚂</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-red-300">Gaps in Railway Tracks</h3>
+                            <p class="text-gray-300 mb-3">Gaps are left between railway bars to allow room for expansion during hot weather, preventing track deformation.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p>• Expansion gaps prevent bending or buckling of tracks.</p>
+                                <p>• Allows safe operation despite temperature changes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bridge Rollers -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🏗️</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-cyan-300">Rollers on Bridges</h3>
+                            <p class="text-gray-300 mb-3">Steel and concrete bridges are supported on rollers to accommodate expansion and contraction due to temperature changes.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p>• Rollers allow movement of bridge ends.</p>
+                                <p>• Prevents structural damage from thermal expansion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fence Gaps -->
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🧱</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-indigo-300">Expansion Gaps in Fences</h3>
+                            <p class="text-gray-300 mb-3">Small gaps are left during fence construction to allow walls to expand during high temperature periods without cracking.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p>• Gaps accommodate thermal expansion.</p>
+                                <p>• Prevents structural damage in fences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shrink Fitting -->
+            <div class="bg-gradient-to-r from-pink-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🔩</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-pink-300">Shrink Fitting</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            A mechanical joint technique where one part is expanded (heated) and the other contracted (cooled) to fit tightly together; upon returning to normal temperature, they form a strong bond.
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                                <p class="text-gray-300"><span class="text-red-400 text-2xl">🔧</span> One part expands when heated.</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                                <p class="text-gray-300"><span class="text-cyan-400 text-2xl">❄️</span> The other contracts when cooled.</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                                <p class="text-gray-300"><span class="text-green-400 text-2xl">🔩</span> Tight fit achieved as parts return to normal temperature.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('gases');
+    </script>
+</body>
+</html>

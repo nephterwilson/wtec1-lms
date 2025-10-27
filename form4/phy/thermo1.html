@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermal Expansion - Lesson Notes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-orange-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🌡️</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 bg-clip-text text-transparent">
+                Thermal Expansion
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding Heat, Temperature & Matter</p>
+            <p class="text-lg text-gray-400">Physics of Expansion and Contraction</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('overview')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-red-700 hover:from-orange-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Overview
+                </button>
+                <button onclick="showSection('solids')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Expansion in Solids
+                </button>
+                <button onclick="showSection('liquids')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Expansion in Liquids
+                </button>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                What is Thermal Expansion?
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔥</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-4">Definition</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Thermal expansion refers to the increase in size (volume, area, or length) of a substance when its temperature increases.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🌡️</div>
+                    <h3 class="text-xl font-bold mb-3 text-red-300 text-center">Heating</h3>
+                    <p class="text-sm text-gray-300 text-center">When heated, substances expand.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">❄️</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300 text-center">Cooling</h3>
+                    <p class="text-sm text-gray-300 text-center">When cooled, substances contract.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔄</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300 text-center">Contraction</h3>
+                    <p class="text-sm text-gray-300 text-center">Contraction is the opposite of expansion.</p>
+                </div>
+            </div>
+
+            <!-- Temperature -->
+            <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🌡️</div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-4 text-yellow-300">Temperature</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            Temperature is a measure of how hot or cold a body is. It is related to the motion of particles in a substance.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                                <p class="text-gray-300"><span class="text-yellow-400">🧪</span> Defined as the average kinetic energy of molecules.</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                                <p class="text-gray-300"><span class="text-yellow-400">📐</span> Measured in degrees Celsius (°C) or Kelvin (K) — SI unit is Kelvin (K).</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                                <p class="text-gray-300"><span class="text-yellow-400">⚛️</span> According to the kinetic theory, particles of matter are always in motion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heat -->
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🔥</div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-4 text-orange-300">Heat</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            Heat is a form of energy that transfers from a hotter object to a cooler one.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                                <p class="text-gray-300"><span class="text-orange-400">🔥</span> Heat flows from high temperature to low temperature.</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                                <p class="text-gray-300"><span class="text-orange-400">🧮</span> SI unit of heat is joule (J).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solids Section -->
+        <section id="solids" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Thermal Expansion in Solids
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔩</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Expansion in Solids</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        When solids are heated, they expand in various dimensions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📏</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300 text-center">Length</h3>
+                    <p class="text-sm text-gray-300 text-center">Increase in length</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📐</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyan-300 text-center">Area</h3>
+                    <p class="text-sm text-gray-300 text-center">Increase in area</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📦</div>
+                    <h3 class="text-xl font-bold mb-3 text-teal-300 text-center">Volume</h3>
+                    <p class="text-sm text-gray-300 text-center">Increase in volume</p>
+                </div>
+            </div>
+
+            <!-- Investigation -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-indigo-300">Investigation: Expansion and Contraction in Solids</h3>
+                    <p class="text-gray-400 text-lg mt-2">A practical experiment to demonstrate thermal expansion and contraction using a bar breaker setup.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Aim & Apparatus -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-3">🎯</div>
+                            <h4 class="text-2xl font-bold text-green-300">Aim</h4>
+                        </div>
+                        <p class="text-gray-300 ml-12">To observe expansion and contraction in a solid using the cast iron bar breaker.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-3">🧪</div>
+                            <h4 class="text-2xl font-bold text-blue-300">Apparatus</h4>
+                        </div>
+                        <ul class="space-y-2 ml-12 text-gray-300">
+                            <li>• Cast iron bar breaker</li>
+                            <li>• Two Bunsen burners</li>
+                            <li>• Thin cast iron rod</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Case 1 -->
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500">
+                    <div class="text-center mb-4">
+                        <h4 class="text-2xl font-bold text-red-300">Case 1: Heating</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2 text-orange-400">🔬 Procedure</h5>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Fix the steel bar in the frame and insert the cast iron rod through its hole.</li>
+                                <li>• Clamp the bar tightly and observe.</li>
+                                <li>• Heat the bar using two Bunsen burners.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2 text-yellow-400">👁️ Observation</h5>
+                            <p class="text-sm text-gray-300">Upon heating, the bar expands and breaks the cast iron rod with a loud sound.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500">
+                    <div class="text-center mb-4">
+                        <h4 class="text-2xl font-bold text-blue-300">Case 2: Cooling</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2 text-cyan-400">🔬 Procedure</h5>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• First heat the steel bar.</li>
+                                <li>• Then insert and clamp the cast iron rod.</li>
+                                <li>• Allow the bar to cool and observe.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2 text-green-400">👁️ Observation</h5>
+                            <p class="text-sm text-gray-300">Upon cooling, the bar contracts and breaks the cast iron rod.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discussion & Conclusion -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500">
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2 text-purple-400">🧠 Discussion</h5>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Expansion pushes the rod against the frame, causing breakage.</li>
+                                <li>• Contraction pulls the rod, also causing breakage.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2 text-green-400">✅ Conclusion</h5>
+                            <p class="text-sm text-gray-300">Solids expand when heated and contract when cooled.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Liquids Section -->
+        <section id="liquids" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Thermal Expansion in Liquids
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💧</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Expansion in Liquids</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed mb-4">
+                        Liquids also expand when heated and contract when cooled. Their expansion is more noticeable than in solids.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">💧</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyan-300 text-center">Basic Behavior</h3>
+                    <p class="text-sm text-gray-300 text-center">Liquids expand when heated and contract when cooled.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📈</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300 text-center">Greater Expansion</h3>
+                    <p class="text-sm text-gray-300 text-center">Liquids expand more than solids when heated.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🧲</div>
+                    <h3 class="text-xl font-bold mb-3 text-indigo-300 text-center">Molecular Forces</h3>
+                    <p class="text-sm text-gray-300 text-center">Liquids have weaker intermolecular forces than solids, making expansion easier.</p>
+                </div>
+            </div>
+
+            <!-- Investigation -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-purple-300">Investigation: Thermal Expansion in Liquids</h3>
+                    <p class="text-gray-400 text-lg mt-2">An experiment to observe and compare expansion of different liquids when heated using a water bath setup.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 mb-8">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-3">🎯</div>
+                            <h4 class="text-2xl font-bold text-green-300">Aim</h4>
+                        </div>
+                        <p class="text-gray-300 ml-12">To demonstrate thermal expansion in liquids.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-3">🧪</div>
+                            <h4 class="text-2xl font-bold text-blue-300">Apparatus</h4>
+                        </div>
+                        <ul class="space-y-1 ml-12 text-gray-300 text-sm">
+                            <li>• Water bath</li>
+                            <li>• Paraffin, Alcohol, Water</li>
+                            <li>• Heater</li>
+                            <li>• 3 similar test tubes with fitted capillary tubes through corks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 mb-8">
+                <div class="flex items-center mb-4">
+                    <div class="text-4xl mr-3">🔬</div>
+                    <h4 class="text-2xl font-bold text-orange-300">Procedure</h4>
+                </div>
+                <ol class="space-y-3 ml-12 text-gray-300">
+                    <li>1. Label three test tubes as A (alcohol), B (paraffin), and C (water).</li>
+                    <li>2. Fill each test tube with its respective liquid and cork tightly.</li>
+                    <li>3. Heat water using a heater until it reaches boiling point, then pour into the water bath.</li>
+                    <li>4. Tie the three test tubes together and place them in the water bath.</li>
+                    <li>5. Stir the water to distribute heat evenly around the test tubes.</li>
+                    <li>6. Observe the liquid levels in the capillary tubes after 3 minutes.</li>
+                </ol>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500">
+                    <div class="flex items-center mb-4">
+                        <div class="text-4xl mr-3">👁️</div>
+                        <h4 class="text-2xl font-bold text-yellow-300">Observation</h4>
+                    </div>
+                    <ul class="space-y-3 ml-12 text-gray-300">
+                        <li>• Liquid levels fall slightly at first, then rise steadily up the capillary tubes.</li>
+                        <li>• Alcohol rises highest, followed by paraffin, and water rises the least.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="text-4xl mr-3">🧠</div>
+                        <h4 class="text-2xl font-bold text-purple-300">Discussion</h4>
+                    </div>
+                    <ul class="space-y-3 ml-12 text-gray-300">
+                        <li>• Test tubes expand first, causing initial drop in liquid levels.</li>
+                        <li>• Once liquids receive heat, they expand and rise in the tubes.</li>
+                        <li>• Alcohol expands most due to weakest intermolecular forces.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 mb-8">
+                <div class="flex items-center mb-4">
+                    <div class="text-4xl mr-3">✅</div>
+                    <h4 class="text-2xl font-bold text-green-300">Conclusion</h4>
+                </div>
+                <ul class="space-y-3 ml-12 text-gray-300">
+                    <li>• Liquids expand when heated and contract when cooled.</li>
+                    <li>• Different liquids expand by different amounts when heated.</li>
+                </ul>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🧬</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-blue-300">Molecular Explanation</h4>
+                        <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+                            <p>• Liquid molecules are loosely packed and can move freely.</p>
+                            <p>• Weaker molecular forces allow easier expansion.</p>
+                            <p>• Heating increases molecular speed and collisions, pushing them further apart.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('overview');
+    </script>
+</body>
+</html>
