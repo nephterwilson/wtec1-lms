@@ -1,0 +1,553 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mathematics Paper II — Section 1: Irrational Numbers</title>
+  <meta name="description" content="MSCE Maths Paper II practice — Section 1: Irrational Numbers." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-lg bg-gray-900 text-white grid place-items-center font-bold">II</div>
+        <div>
+          <h1 class="text-xl font-semibold leading-tight">Mathematics Paper II</h1>
+          <p class="text-sm text-gray-500">Section 1 · Irrational Numbers</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="expandAll" class="px-3 py-2 text-sm rounded-md border border-gray-300 hover:bg-gray-100">Expand all</button>
+        <button id="collapseAll" class="px-3 py-2 text-sm rounded-md border border-gray-300 hover:bg-gray-100">Collapse all</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Controls -->
+  <section class="max-w-5xl mx-auto px-4 py-4">
+    <div class="flex flex-col md:flex-row md:items-center gap-3">
+      <label for="search" class="sr-only">Search questions</label>
+      <input id="search" type="text" placeholder="Search questions (e.g., rationalize, √, simplify)…"
+             class="w-full md:flex-1 rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900/20">
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-gray-500">Total:</span>
+        <span id="countBadge" class="inline-flex items-center justify-center text-xs font-medium bg-gray-200 text-gray-800 rounded-full h-6 px-3">10</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Question List -->
+  <main class="max-w-5xl mx-auto px-4 pb-16">
+    <ol class="space-y-4" id="questionList">
+      <!-- Q1 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="5" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q1</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">5 marks</span>
+          </div>
+          <p class="mt-2">
+            a. Without using a calculator or four‑figure tables, simplify
+            <span class="whitespace-nowrap">(3√5 − √2)/(2√5 + 3√2)</span>,
+            leaving your answer with a rational denominator.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700">
+              <!-- Write solution here -->
+            </div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q2 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="6" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q2</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">6 marks</span>
+          </div>
+          <p class="mt-2">
+            a. Simplify <span class="whitespace-nowrap">(3√2 + 1)/(√3 + √6)</span> without using four‑figure tables or a calculator.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q3 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q3</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">4 marks</span>
+          </div>
+          <p class="mt-2">
+            b. Without using a calculator or a four‑figure table, simplify
+            <span class="whitespace-nowrap">(5 + √3)/(√7 + √5)</span>, leaving your answer with a rational denominator.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q4 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q4</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">4 marks</span>
+          </div>
+          <p class="mt-2">
+            a. Given that <span class="whitespace-nowrap">x = 9</span>, <span class="whitespace-nowrap">y = 4</span> and <span class="whitespace-nowrap">z = 3</span>,
+            evaluate <span class="whitespace-nowrap">√((5y² + y⁰)/(x z⁴))</span>.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q5 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q5</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">4 marks</span>
+          </div>
+          <p class="mt-2">
+            a. Simplify <span class="whitespace-nowrap">(√(n³) − √(9n))/√n</span> in its simplest form.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q6 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q6</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">4 marks</span>
+          </div>
+          <p class="mt-2">
+            b. Without using a calculator or four‑figure tables, simplify
+            <span class="whitespace-nowrap">√98 · (15√6) / (−√2)</span> to its simplest form.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q7 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="3" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q7</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">3 marks</span>
+          </div>
+          <p class="mt-2">
+            a. Simplify <span class="whitespace-nowrap">(2 − √7)(2 + √7)</span> without using a calculator or four‑figure tables.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q8 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q8</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">4 marks</span>
+          </div>
+          <p class="mt-2">
+            a. Simplify <span class="whitespace-nowrap">(√2 + √3)(√8 − √12)</span> without using a calculator and four‑figure table.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q9 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="5" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q9</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">5 marks</span>
+          </div>
+          <p class="mt-2">
+            b. Express <span class="whitespace-nowrap">(√3 + 1)/(√3 − 1)</span> with a rational denominator in its simplest form.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+
+      <!-- Q10 -->
+      <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="irrational-numbers">
+        <div class="p-4 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="font-semibold">Q10</h2>
+            <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1 whitespace-nowrap">4 marks</span>
+          </div>
+          <p class="mt-2">
+            b. Express <span class="whitespace-nowrap">1/(3√2 − 3)</span> with a rational denominator in its simplest form.
+          </p>
+          <details class="mt-3 group">
+            <summary class="cursor-pointer text-sm text-gray-700 hover:text-gray-900">Add solution / teacher notes</summary>
+            <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+          </details>
+        </div>
+      </li>
+    </ol>
+
+    <!-- Section 2 -->
+<section id="section-2" class="max-w-5xl mx-auto px-4 pb-16">
+  <h2 class="text-lg font-semibold mb-4">Section 2 · Exponential and Logarithmic Functions</h2>
+  <ol class="space-y-4">
+    <!-- Q1 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q1</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">4 marks</span>
+        </div>
+        <p class="mt-2">
+          Given that log<sub>a</sub>c = 0.4475, evaluate log<sub>a</sub>(a²/c).
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q2 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q2</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">4 marks</span>
+        </div>
+        <p class="mt-2">
+          Without using four-figure tables or a calculator evaluate log<sub>a</sub>2 − log<sub>a</sub>6 + log<sub>a</sub>3.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q3 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="5" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q3</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">5 marks</span>
+        </div>
+        <p class="mt-2">
+          Given that log<sub>y</sub>864 − log<sub>y</sub>6 = 2, find the value of y.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q4 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="7" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q4</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">7 marks</span>
+        </div>
+        <p class="mt-2">
+          Solve the equation 2<sup>2a</sup> − 5(2<sup>a</sup>) + 4 = 0.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q5 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="3" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q5</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">3 marks</span>
+        </div>
+        <p class="mt-2">
+          Given that log<sub>10</sub>5 = 0.6990, without using a calculator or tables, evaluate log<sub>10</sub>2.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q6 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="5" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q6</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">5 marks</span>
+        </div>
+        <p class="mt-2">
+          Solve the equation log<sub>7</sub>343 = 2x − 5.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q7 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="7" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q7</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">7 marks</span>
+        </div>
+        <p class="mt-2">
+          Simplify (4<sup>x</sup> × 8<sup>x−1</sup>) / 32<sup>x</sup>.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q8 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="4" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q8</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">4 marks</span>
+        </div>
+        <p class="mt-2">
+          Evaluate 2 log<sub>a</sub>a + 3 log<sub>a</sub>1 + log<sub>2</sub>√2.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q9 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="5" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q9</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">5 marks</span>
+        </div>
+        <p class="mt-2">
+          Solve for x if (2<sup>x</sup>)² − 9(2<sup>x</sup>) + 8 = 0.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q10 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="5" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q10</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">5 marks</span>
+        </div>
+        <p class="mt-2">
+          Solve the equation log<sub>9</sub>(27<sup>k</sup>) = k + 1.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+
+    <!-- Q11 -->
+    <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="3" data-topic="exp-log">
+      <div class="p-4 md:p-5">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold">Q11</h3>
+          <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">3 marks</span>
+        </div>
+        <p class="mt-2">
+          Calculate the value of x if 10<sup>x</sup> = 0.01.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+          <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+        </details>
+      </div>
+    </li>
+  </ol>
+</section>
+<!-- Section 5: Progressions -->
+<section>
+  <h2 class="text-2xl font-bold text-blue-700 mb-4">5. Progressions</h2>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>The second term of an arithmetic progression (AP) is 7 and the 10<sup>th</sup> term is 39. Calculate the common difference of the AP. (3 marks)</li>
+
+    <li>Given that 1st term of an AP is -8 and the 11th term is 22, calculate the 7th term. (5 marks)</li>
+
+    <li>The first term of an arithmetic progression is 5 and the last term is 43. If the sum of the terms is 480, calculate the number of terms. (3 marks)</li>
+
+    <li>The last term in an arithmetic progression (AP) 2, 5, 8, … is 296. Calculate the number of terms. (4 marks)</li>
+
+    <li>The second term of a geometric progression is -6 and the fourth term is -54. Calculate the common ratio, given that it is negative. (5 marks)</li>
+
+    <li>The first term of a geometric progression is 81, and the common ratio is 1/3, calculate the fourth term. (4 marks)</li>
+
+    <li>The sum of the first n terms of a geometric progression, GP, is 2<sup>(n+1)</sup> − 1. Calculate: 
+      <br>(i) the first term of the GP
+      <br>(ii) the common ratio of the GP. (7 marks)
+    </li>
+
+    <li>The ratio of the 2nd term to the 7th term of an arithmetic progression is 1:3 and their sum is 20. Calculate the sum of the first 10 terms of the progression. (10 marks)</li>
+
+    <li>The sum of terms of an arithmetic progression is (5n<sup>2</sup>+3n)/2, calculate the first two terms of the arithmetic progression. (5 marks)</li>
+
+    <li>Figure 7 shows the display of new types of bricks laid down on a table. On the 1st table there are 2 bricks, on the 2nd table there are 4 bricks, on the 3rd table there are 8 bricks and so on. If on the nth table there are 1024 bricks, calculate the value of n. (6 marks)</li>
+  </ul>
+</section>
+
+<!-- Section 6: Variations -->
+<section>
+  <h2 class="text-2xl font-bold text-blue-700 mb-4">6. Variations</h2>
+  <ul class="list-disc pl-5 space-y-2">
+    <li>The quantity q is partly constant and partly varies as p<sup>3</sup>.
+    When q = 5, p = 1 and when q = 26, p = 2. Find q when p = -2. (8 marks)</li>
+
+    <li>A quantity a is the sum of two parts, one of which is constant while the other varies inversely as the square of n. When n = 1, a = -1 and when n = 2, a = 2. Find the value of a when n = 4. (8 marks)</li>
+
+    <li>The time, T, taken for students to finish discussing a topic in a group is partly constant and partly varies as the number of students in the group. A group of 5 students takes 120 minutes while a group of 9 students takes 180 minutes. Calculate the time a group of 12 students can take to finish discussing the topic. (7 marks)</li>
+
+    <li>A variable y is partly constant and partly varies as x. When x = 5, y = 4 and when x = 9, y = 8. Find y when x = 1. (8 marks)</li>
+
+    <li>x varies directly as y and inversely as the square of n. If x = 15, y = 24 and n = 4, calculate the value of n when x = 8 and y = 20. (7 marks)</li>
+
+    <li>The bus fare per passenger (F) is partly constant and partly inversely proportional to the number (n) of passengers. The fare per passenger for 40 passengers is K240, and for 50 passengers is K200. Calculate the fare per passenger when there are 100 passengers. (9 marks)</li>
+
+    <li>A quantity P varies directly as q and inversely as (q<sup>2</sup> + 1). When P = 1, q = 2. Express P in terms of q only. (5 marks)</li>
+
+    <li>The cost (C) for an international call from Malawi to Europe partly varies inversely as time (t), and partly as the square of the time.
+    A one-minute call costs K120 and a two-minute call costs K200. Find the cost of a five-minute call. (8 marks)</li>
+
+    <li>A quantity q is the difference between two parts. The first part is constant and the second part varies inversely as the square of p. If q = 1 when p = 2 and q = 6 when p = 3, find the positive value of p when q = 9. (10 marks)</li>
+
+    <li>Given that y is partly constant and partly varies as x, and y = -3 when x = 3 and y = 22 when x = -2, calculate the value of y when x = 2. (5 marks)</li>
+  </ul>
+</section>
+
+  </main>
+
+  <!-- Footer / Next Sections Placeholder -->
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="max-w-5xl mx-auto px-4 py-8 text-sm text-gray-600">
+      <p class="font-medium">Room for expansion:</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Add Section 2–N as separate pages or tabs.</li>
+        <li>Attach official marking schemes inside each “Add solution” block.</li>
+        <li>Wire up “Export to PDF” when needed (A4 print CSS friendly).</li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Minimal JS: search + expand/collapse -->
+  <script>
+    const qs = (s, el = document) => el.querySelector(s);
+    const qsa = (s, el = document) => [...el.querySelectorAll(s)];
+
+    const list = qs('#questionList');
+    const search = qs('#search');
+    const countBadge = qs('#countBadge');
+    const expandAllBtn = qs('#expandAll');
+    const collapseAllBtn = qs('#collapseAll');
+
+    function updateCount() {
+      const visible = qsa('li', list).filter(li => !li.classList.contains('hidden')).length;
+      countBadge.textContent = visible;
+    }
+
+    function filterQuestions(term) {
+      const t = term.toLowerCase().trim();
+      qsa('li', list).forEach(li => {
+        const text = li.innerText.toLowerCase();
+        li.classList.toggle('hidden', t && !text.includes(t));
+      });
+      updateCount();
+    }
+
+    search.addEventListener('input', (e) => filterQuestions(e.target.value));
+
+    expandAllBtn.addEventListener('click', () => {
+      qsa('details', list).forEach(d => d.open = true);
+    });
+
+    collapseAllBtn.addEventListener('click', () => {
+      qsa('details', list).forEach(d => d.open = false);
+    });
+
+    // Initialize count
+    updateCount();
+  </script>
+
+  <!--
+    === HOW TO ADD MORE SECTIONS ===
+    Duplicate the <main> block for Section 2, change the heading in the header or add a tab/nav.
+    Each <li> is a question card. Keep years out of display; use comments if you need to track them.
+    Example template:
+
+    <section id="section-2" class="max-w-5xl mx-auto px-4 py-8">
+      <h2 class="text-lg font-semibold">Section 2 · [Topic Name]</h2>
+      <ol class="space-y-4 mt-4">
+        <li class="bg-white rounded-lg border border-gray-200 shadow-sm" data-marks="X" data-topic="[topic-slug]">
+          <div class="p-4 md:p-5">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-semibold">Q#</h3>
+              <span class="text-xs bg-gray-900 text-white rounded-full px-2 py-1">X marks</span>
+            </div>
+            <p class="mt-2">Question text…</p>
+            <details class="mt-3">
+              <summary class="cursor-pointer text-sm text-gray-700">Add solution / teacher notes</summary>
+              <div class="mt-2 p-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-700"></div>
+            </details>
+          </div>
+        </li>
+      </ol>
+    </section>
+  -->
+</body>
+</html>

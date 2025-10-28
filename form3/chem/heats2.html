@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Heats of Reaction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .energy-arrow-up {
+            background: linear-gradient(to top, #ef4444, #f97316);
+        }
+        .energy-arrow-down {
+            background: linear-gradient(to bottom, #10b981, #059669);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8 shadow-2xl">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold text-center mb-4 animate-fade-in">
+                Chapter 6: Heats of Reaction
+            </h1>
+            <p class="text-xl text-center opacity-90">Understanding Energy Changes in Chemical Reactions</p>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-8 max-w-6xl">
+        <!-- Navigation -->
+        <nav class="bg-white rounded-xl shadow-lg p-4 mb-8 sticky top-4 z-10 hidden sm:block">
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="#types" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">Types of Reactions</a>
+    <a href="#experiment" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">Experiment</a>
+    <a href="#equations" class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors">Thermo-chemical Equations</a>
+    <a href="#diagrams" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">Energy Diagrams</a>
+    <a href="#bond-energies" class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors">Bond Energies</a>
+  </div>
+</nav>
+
+
+        <!-- Types of Reactions Section -->
+        <section id="types" class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">
+                    Types of Reactions in Relation to Heat Changes
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Exothermic -->
+                    <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 border-l-4 border-red-500">
+                        <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                            🔥 Exothermic Reactions
+                        </h3>
+                        <p class="text-gray-700 mb-4">
+                            A chemical reaction that <span class="font-semibold text-red-600">releases heat energy</span> from the system to the surroundings. The reaction mixture and its surroundings get hotter.
+                        </p>
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-semibold text-red-600 mb-2">Examples:</h4>
+                            <ul class="space-y-1 text-gray-700">
+                                <li>• Combustion</li>
+                                <li>• Neutralization reactions</li>
+                                <li>• Rusting</li>
+                                <li>• Dehydration of sucrose by sulphuric acid</li>
+                                <li>• Reaction between sodium hydroxide and water</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Endothermic -->
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border-l-4 border-blue-500">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+                            ❄️ Endothermic Reactions
+                        </h3>
+                        <p class="text-gray-700 mb-4">
+                            A chemical reaction that <span class="font-semibold text-blue-600">takes in heat energy</span> from the surroundings. The reaction container feels colder.
+                        </p>
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-600 mb-2">Examples:</h4>
+                            <ul class="space-y-1 text-gray-700">
+                                <li>• Photosynthesis</li>
+                                <li>• Dissolution of salts in water (e.g. Ammonium nitrate)</li>
+                                <li>• Evaporation of liquid water</li>
+                                <li>• Melting of ice cubes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiment Section -->
+        <section id="experiment" class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-green-500 pb-2">
+                    🧪 Investigating Temperature Changes
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-4">Experiment Details</h3>
+                        
+                        <div class="bg-green-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-semibold text-green-800 mb-3">🎯 Aim</h4>
+                            <p class="text-gray-700">To describe the temperature changes involved in exothermic and endothermic reactions.</p>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-semibold text-blue-800 mb-3">🧰 Materials</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• 2 test tubes in a rack</li>
+                                <li>• Measuring cylinder</li>
+                                <li>• Thermometer</li>
+                                <li>• Spatula</li>
+                                <li>• Tap water</li>
+                                <li>• Ammonium chloride (NH₄Cl)</li>
+                                <li>• Sodium hydroxide pellets (NaOH)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-purple-800 mb-3">📋 Procedure</h4>
+                            <ol class="text-gray-700 space-y-2">
+                                <li><span class="font-semibold">1.</span> Pour 5 cm³ of water into each test tube</li>
+                                <li><span class="font-semibold">2.</span> Measure initial temperature of water in each test tube</li>
+                                <li><span class="font-semibold">3.</span> Add half spatula of NH₄Cl in one test tube and shake gently</li>
+                                <li><span class="font-semibold">4.</span> Measure temperature of ammonium chloride solution</li>
+                                <li><span class="font-semibold">5.</span> Repeat steps 3-4 using NaOH pellets</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-4">📊 Results Table</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-4 py-3 border-b font-semibold text-gray-700">Solution</th>
+                                        <th class="px-4 py-3 border-b font-semibold text-gray-700">Initial Temp (°C)</th>
+                                        <th class="px-4 py-3 border-b font-semibold text-gray-700">Final Temp (°C)</th>
+                                        <th class="px-4 py-3 border-b font-semibold text-gray-700">Temperature Change (°C)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="px-4 py-3 font-medium">Ammonium chloride (NH₄Cl)</td>
+                                        <td class="px-4 py-3 text-center">_____</td>
+                                        <td class="px-4 py-3 text-center">_____</td>
+                                        <td class="px-4 py-3 text-center">_____</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-medium">Sodium hydroxide (NaOH)</td>
+                                        <td class="px-4 py-3 text-center">_____</td>
+                                        <td class="px-4 py-3 text-center">_____</td>
+                                        <td class="px-4 py-3 text-center">_____</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-6 space-y-4">
+                            <div class="bg-blue-100 rounded-lg p-4 border-l-4 border-blue-500">
+                                <h4 class="font-semibold text-blue-800 mb-2">🔍 Observations</h4>
+                                <p class="text-gray-700 text-sm mb-2">
+                                    <span class="font-semibold">NH₄Cl:</span> Temperature decreased, test tube felt cold
+                                </p>
+                                <p class="text-gray-700 text-sm">
+                                    <span class="font-semibold">NaOH:</span> Temperature increased, test tube felt hot
+                                </p>
+                            </div>
+
+                            <div class="bg-yellow-100 rounded-lg p-4 border-l-4 border-yellow-500">
+                                <h4 class="font-semibold text-yellow-800 mb-2">💡 Conclusion</h4>
+                                <p class="text-gray-700 text-sm mb-2">
+                                    • NH₄Cl dissolution: <span class="font-semibold text-blue-600">Endothermic</span> (ΔT negative)
+                                </p>
+                                <p class="text-gray-700 text-sm">
+                                    • NaOH dissolution: <span class="font-semibold text-red-600">Exothermic</span> (ΔT positive)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thermo-chemical Equations Section -->
+        <section id="equations" class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-purple-500 pb-2">
+                    ⚖️ Thermo-chemical Equations
+                </h2>
+
+                <div class="grid lg:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-purple-700 mb-3">Definition</h3>
+                        <p class="text-gray-700 text-sm">
+                            A balanced equation that includes physical states of all reactants and products and the enthalpy change.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-indigo-700 mb-3">Enthalpy (H)</h3>
+                        <p class="text-gray-700 text-sm">
+                            The energy stored in the bonds of a substance. Measured in kilojoules (kJ).
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cyan-50 to-teal-50 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-cyan-700 mb-3">Enthalpy Change (ΔH)</h3>
+                        <p class="text-gray-700 text-sm">
+                            The change in energy from reactants to products. Also called heat of reaction.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">📚 Key Rules</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-red-100 rounded-lg p-4 border-l-4 border-red-500">
+                            <p class="text-red-700 font-semibold">Exothermic: ΔH is negative (-)</p>
+                        </div>
+                        <div class="bg-blue-100 rounded-lg p-4 border-l-4 border-blue-500">
+                            <p class="text-blue-700 font-semibold">Endothermic: ΔH is positive (+)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-800 mb-4">📝 Examples</h3>
+                <div class="space-y-4">
+                    <div class="bg-red-50 rounded-lg p-6 border border-red-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Exothermic</span>
+                            <span class="text-red-600 font-bold">ΔH = -57 kJ/mol</span>
+                        </div>
+                        <p class="font-mono text-gray-700 bg-white p-3 rounded border">
+                            NaOH(aq) + HCl(aq) → NaCl(aq) + H₂O(l)
+                        </p>
+                    </div>
+                    
+                    <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Endothermic</span>
+                            <span class="text-blue-600 font-bold">ΔH = +575 kJ/mol</span>
+                        </div>
+                        <p class="font-mono text-gray-700 bg-white p-3 rounded border">
+                            H₂O(l) → 2H₂(g) + O₂(g)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Energy Level Diagrams Section -->
+        <section id="diagrams" class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-red-500 pb-2">
+                    📈 Energy Level Diagrams
+                </h2>
+                
+                <p class="text-gray-700 mb-8">
+                    Energy level diagrams show energy changes involving reactants and products during chemical reactions.
+                </p>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Exothermic Diagram -->
+                    <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Exothermic Reaction</h3>
+                        <div class="relative bg-white rounded-lg p-6 h-64">
+                            <svg class="w-full h-full" viewBox="0 0 300 200">
+                                <!-- Y-axis -->
+                                <line x1="30" y1="20" x2="30" y2="180" stroke="#374151" stroke-width="2"/>
+                                <!-- X-axis -->
+                                <line x1="30" y1="180" x2="270" y2="180" stroke="#374151" stroke-width="2"/>
+                                
+                                <!-- Reactants level -->
+                                <line x1="50" y1="60" x2="120" y2="60" stroke="#ef4444" stroke-width="4"/>
+                                <text x="85" y="50" text-anchor="middle" class="fill-red-600 text-sm font-semibold">Reactants</text>
+                                
+                                <!-- Products level -->
+                                <line x1="180" y1="120" x2="250" y2="120" stroke="#10b981" stroke-width="4"/>
+                                <text x="215" y="110" text-anchor="middle" class="fill-green-600 text-sm font-semibold">Products</text>
+                                
+                                <!-- Energy arrow -->
+                                <path d="M 120 60 Q 150 80 180 120" stroke="#f59e0b" stroke-width="3" fill="none"/>
+                                <polygon points="175,115 180,120 175,125 185,120" fill="#f59e0b"/>
+                                
+                                <!-- ΔH arrow -->
+                                <line x1="260" y1="60" x2="260" y2="120" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,5"/>
+                                <polygon points="255,65 260,60 265,65" fill="#dc2626"/>
+                                <text x="275" y="90" class="fill-red-600 text-sm font-semibold">ΔH (-)</text>
+                                
+                                <!-- Labels -->
+                                <text x="35" y="15" class="fill-gray-600 text-sm">Energy</text>
+                                <text x="150" y="195" class="fill-gray-600 text-sm" text-anchor="middle">Reaction Progress</text>
+                            </svg>
+                        </div>
+                        <p class="text-center text-sm text-red-600 mt-2">Energy decreases → Heat released</p>
+                    </div>
+
+                    <!-- Endothermic Diagram -->
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-blue-700 mb-4 text-center">Endothermic Reaction</h3>
+                        <div class="relative bg-white rounded-lg p-6 h-64">
+                            <svg class="w-full h-full" viewBox="0 0 300 200">
+                                <!-- Y-axis -->
+                                <line x1="30" y1="20" x2="30" y2="180" stroke="#374151" stroke-width="2"/>
+                                <!-- X-axis -->
+                                <line x1="30" y1="180" x2="270" y2="180" stroke="#374151" stroke-width="2"/>
+                                
+                                <!-- Reactants level -->
+                                <line x1="50" y1="120" x2="120" y2="120" stroke="#ef4444" stroke-width="4"/>
+                                <text x="85" y="135" text-anchor="middle" class="fill-red-600 text-sm font-semibold">Reactants</text>
+                                
+                                <!-- Products level -->
+                                <line x1="180" y1="60" x2="250" y2="60" stroke="#10b981" stroke-width="4"/>
+                                <text x="215" y="50" text-anchor="middle" class="fill-green-600 text-sm font-semibold">Products</text>
+                                
+                                <!-- Energy arrow -->
+                                <path d="M 120 120 Q 150 100 180 60" stroke="#f59e0b" stroke-width="3" fill="none"/>
+                                <polygon points="175,65 180,60 175,55 185,60" fill="#f59e0b"/>
+                                
+                                <!-- ΔH arrow -->
+                                <line x1="260" y1="120" x2="260" y2="60" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,5"/>
+                                <polygon points="255,65 260,60 265,65" fill="#2563eb"/>
+                                <text x="275" y="90" class="fill-blue-600 text-sm font-semibold">ΔH (+)</text>
+                                
+                                <!-- Labels -->
+                                <text x="35" y="15" class="fill-gray-600 text-sm">Energy</text>
+                                <text x="150" y="195" class="fill-gray-600 text-sm" text-anchor="middle">Reaction Progress</text>
+                            </svg>
+                        </div>
+                        <p class="text-center text-sm text-blue-600 mt-2">Energy increases → Heat absorbed</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Example -->
+                <div class="mt-8 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-purple-700 mb-4">📝 Worked Examples</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-red-500">
+                            <p class="font-mono text-sm mb-2">H₂(g) + Cl₂(g) → 2HCl(aq), ΔH = -92 kJ/mol</p>
+                            <p class="text-red-600 font-semibold">Exothermic (ΔH negative)</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                            <p class="font-mono text-sm mb-2">NH₄NO₃(s) + H₂O(l) → NH₄⁺(aq) + NO₃⁻(aq), ΔH = +28.1 kJ/mol</p>
+                            <p class="text-blue-600 font-semibold">Endothermic (ΔH positive)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bond Energies Section -->
+        <section id="bond-energies" class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-yellow-500 pb-2">
+                    🔗 Bond Energies
+                </h2>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div>
+                        <div class="bg-yellow-50 rounded-xl p-6 mb-6">
+                            <h3 class="text-xl font-bold text-yellow-700 mb-3">Definition</h3>
+                            <p class="text-gray-700">
+                                Bond energy is the amount of energy required to break one mole of chemical bonds in a molecular element or compound. Unit: kJ/mol
+                            </p>
+                        </div>
+
+                        <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
+                            <h4 class="bg-gray-100 px-4 py-3 font-bold text-gray-800">Bond Energy Table</h4>
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left font-semibold">Chemical Bond</th>
+                                        <th class="px-4 py-2 text-left font-semibold">Bond Energy (kJ/mol)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr><td class="px-4 py-2 font-mono">H–H</td><td class="px-4 py-2">436</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-4 py-2 font-mono">O=O</td><td class="px-4 py-2">498</td></tr>
+                                    <tr><td class="px-4 py-2 font-mono">O–H</td><td class="px-4 py-2">464</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-4 py-2 font-mono">C–H</td><td class="px-4 py-2">413</td></tr>
+                                    <tr><td class="px-4 py-2 font-mono">C–C</td><td class="px-4 py-2">346</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-4 py-2 font-mono">Cl–Cl</td><td class="px-4 py-2">242</td></tr>
+                                    <tr><td class="px-4 py-2 font-mono">C=O</td><td class="px-4 py-2">805</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="space-y-6">
+                            <div class="bg-red-100 rounded-xl p-6 border-l-4 border-red-500">
+                                <h4 class="text-lg font-bold text-red-700 mb-3">🔨 Bond Breaking</h4>
+                                <p class="text-gray-700">
+                                    Requires energy to separate atoms against attractive forces.
+                                    <span class="font-semibold text-red-600">Bond breaking is endothermic.</span>
+                                </p>
+                            </div>
+                            
+                            <div class="bg-green-100 rounded-xl p-6 border-l-4 border-green-500">
+                                <h4 class="text-lg font-bold text-green-700 mb-3">🔧 Bond Formation</h4>
+                                <p class="text-gray-700">
+                                    Releases energy when new bonds are formed.
+                                    <span class="font-semibold text-green-600">Bond formation is exothermic.</span>
+                                </p>
+                            </div>
+
+                            <div class="bg-purple-100 rounded-xl p-6 border-l-4 border-purple-500">
+                                <h4 class="text-lg font-bold text-purple-700 mb-3">🧮 Calculation Formula</h4>
+                                <div class="bg-white rounded p-4 font-mono text-center">
+                                    <p class="text-lg font-bold text-purple-600">
+                                        ΔH = Energy to break bonds - Energy from bond formation
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Worked Example Section -->
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-orange-500 pb-2">
+                    🧮 Worked Example: Methane Combustion
+                </h2>
+
+                <div class="bg-orange-50 rounded-xl p-6 mb-6">
+                    <h3 class="text-lg font-bold text-orange-700 mb-3">Reaction Equation</h3>
+                    <p class="font-mono text-lg bg-white p-4 rounded border text-center">
+                        CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Bond Breaking Calculations -->
+                    <div class="bg-red-50 rounded-xl p-6">
+                        <h4 class="text-lg font-bold text-red-700 mb-4">🔨 Energy Required to Break Bonds</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-lg p-4 border border-red-200">
+                                <p class="font-semibold text-red-600 mb-2">Breaking 4 C–H bonds in methane:</p>
+                                <p class="font-mono">4 × 413 kJ = 1,652 kJ</p>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg p-4 border border-red-200">
+                                <p class="font-semibold text-red-600 mb-2">Breaking 2 O=O bonds in oxygen:</p>
+                                <p class="font-mono">2 × 498 kJ = 996 kJ</p>
+                            </div>
+                            
+                            <div class="bg-red-200 rounded-lg p-4 border-2 border-red-400">
+                                <p class="font-semibold text-red-800 mb-2">Total energy required:</p>
+                                <p class="font-mono text-lg">(1,652 + 996) kJ = 2,648 kJ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bond Formation Calculations -->
+                    <div class="bg-green-50 rounded-xl p-6">
+                        <h4 class="text-lg font-bold text-green-700 mb-4">🔧 Energy Released from Bond Formation</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-lg p-4 border border-green-200">
+                                <p class="font-semibold text-green-600 mb-2">Making 2 C=O bonds in CO₂:</p>
+                                <p class="font-mono">2 × 805 kJ = 1,610 kJ</p>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg p-4 border border-green-200">
+                                <p class="font-semibold text-green-600 mb-2">Making 4 O–H bonds in water:</p>
+                                <p class="font-mono">4 × 464 kJ = 1,856 kJ</p>
+                            </div>
+                            
+                            <div class="bg-green-200 rounded-lg p-4 border-2 border-green-400">
+                                <p class="font-semibold text-green-800 mb-2">Total energy released:</p>
+                                <p class="font-mono text-lg">(1,610 + 1,856) kJ = 3,466 kJ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Calculation -->
+                <div class="mt-8 bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-6">
+                    <h4 class="text-xl font-bold text-purple-700 mb-4 text-center">⚡ Overall Energy Change</h4>
+                    <div class="bg-white rounded-lg p-6 text-center">
+                        <p class="text-lg mb-4">ΔH = Energy to break bonds - Energy from bond formation</p>
+                        <p class="text-xl font-mono mb-4">ΔH = 2,648 - 3,466 = <span class="text-red-600 font-bold">-818 kJ</span></p>
+                        <div class="bg-red-100 rounded-lg p-4 inline-block">
+                            <p class="text-red-700 font-bold">
+                                ✅ The reaction is EXOTHERMIC (ΔH is negative)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Temperature Calculator -->
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-indigo-500 pb-2">
+                    🧮 Interactive Temperature Change Calculator
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-indigo-50 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-indigo-700 mb-4">Calculate ΔT</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Initial Temperature (°C)</label>
+                                <input type="number" id="initialTemp" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., 25">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Final Temperature (°C)</label>
+                                <input type="number" id="finalTemp" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., 30">
+                            </div>
+                            <button onclick="calculateTempChange()" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold">
+                                Calculate ΔT
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-gray-700 mb-4">Results</h3>
+                        <div id="results" class="space-y-4">
+                            <div class="bg-white rounded-lg p-4 border-2 border-dashed border-gray-300 text-center text-gray-500">
+                                Enter values and click calculate to see results
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="mb-12">
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white">
+                <h2 class="text-3xl font-bold mb-6 text-center">📚 Key Takeaways</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-effect rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-3">🔥</div>
+                        <h3 class="font-bold mb-2">Exothermic</h3>
+                        <p class="text-sm opacity-90">Releases heat<br/>ΔH negative<br/>Temperature increases</p>
+                    </div>
+                    
+                    <div class="glass-effect rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-3">❄️</div>
+                        <h3 class="font-bold mb-2">Endothermic</h3>
+                        <p class="text-sm opacity-90">Absorbs heat<br/>ΔH positive<br/>Temperature decreases</p>
+                    </div>
+                    
+                    <div class="glass-effect rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-3">🔨</div>
+                        <h3 class="font-bold mb-2">Bond Breaking</h3>
+                        <p class="text-sm opacity-90">Requires energy<br/>Endothermic process</p>
+                    </div>
+                    
+                    <div class="glass-effect rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-3">🔧</div>
+                        <h3 class="font-bold mb-2">Bond Formation</h3>
+                        <p class="text-sm opacity-90">Releases energy<br/>Exothermic process</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg font-semibold mb-2">Chapter 6: Heats of Reaction</p>
+            <p class="text-gray-400">Understanding Energy Changes in Chemical Reactions</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Temperature change calculator
+        function calculateTempChange() {
+            const initialTemp = parseFloat(document.getElementById('initialTemp').value);
+            const finalTemp = parseFloat(document.getElementById('finalTemp').value);
+            const resultsDiv = document.getElementById('results');
+            
+            if (isNaN(initialTemp) || isNaN(finalTemp)) {
+                resultsDiv.innerHTML = `
+                    <div class="bg-red-100 border border-red-300 rounded-lg p-4 text-red-700 text-center">
+                        Please enter valid numbers for both temperatures
+                    </div>
+                `;
+                return;
+            }
+            
+            const deltaT = finalTemp - initialTemp;
+            const reactionType = deltaT > 0 ? 'Exothermic' : deltaT < 0 ? 'Endothermic' : 'No change';
+            const colorClass = deltaT > 0 ? 'text-red-600 bg-red-100 border-red-300' : deltaT < 0 ? 'text-blue-600 bg-blue-100 border-blue-300' : 'text-gray-600 bg-gray-100 border-gray-300';
+            
+            resultsDiv.innerHTML = `
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-4 border-2 border-gray-200">
+                        <p class="text-lg font-semibold text-gray-800 mb-2">Temperature Change (ΔT)</p>
+                        <p class="text-3xl font-mono font-bold text-gray-900">${deltaT.toFixed(1)}°C</p>
+                    </div>
+                    
+                    <div class="${colorClass} rounded-lg p-4 border-2">
+                        <p class="font-bold text-lg">${reactionType} Reaction</p>
+                        <p class="text-sm mt-1">
+                            ${deltaT > 0 ? 'Heat was released (temperature increased)' : 
+                              deltaT < 0 ? 'Heat was absorbed (temperature decreased)' : 
+                              'No heat change occurred'}
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg p-4">
+                        <p class="text-sm text-gray-700">
+                            <span class="font-semibold">Formula:</span> ΔT = T<sub>final</sub> - T<sub>initial</sub><br/>
+                            <span class="font-semibold">Calculation:</span> ${finalTemp} - ${initialTemp} = ${deltaT.toFixed(1)}°C
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.bg-white').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '';
+            });
+        });
+
+        // Interactive bond energy visualization
+        function highlightBond(bondType) {
+            // This could be expanded to show interactive bond diagrams
+            console.log(`Highlighting ${bondType} bond`);
+        }
+    </script>
+</body>
+</html>

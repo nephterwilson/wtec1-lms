@@ -1,0 +1,720 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Introduction to Chemistry – LMS Lesson</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="color-scheme" content="light" />
+  <style>
+    /* Page enhancements */
+    html { scroll-behavior: smooth; }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.6); }
+    .gradient-bg { background: radial-gradient(1200px 600px at 10% 0%, #c7d2fe40, transparent 50%), radial-gradient(1000px 500px at 90% 10%, #a7f3d040, transparent 55%), linear-gradient(180deg, #f8fafc, #eef2ff); }
+    .shadow-soft { box-shadow: 0 10px 30px rgba(2,6,23,0.08); }
+    .sticky-notice { position: sticky; top: 1rem; }
+    .callout { border-left-width: 6px; }
+    .toc a.active { color: #4f46e5; font-weight: 600; }
+    /* Print-friendly */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; }
+      .card { box-shadow: none !important; border: 1px solid #e5e7eb; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .9em; }
+    }
+  </style>
+</head>
+<body class="gradient-bg text-slate-800">
+  <!-- Header / Nav -->
+<header class="sticky top-0 z-50 bg-white/70 glass border-b border-slate-200/70">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 h-auto sm:h-16 py-2 sm:py-0">
+      
+      <!-- Left: Icon + Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-indigo-600 grid place-items-center text-white font-bold">Ch</div>
+        <div>
+          <p class="text-xs text-slate-500 leading-none">Form 1 • Chemistry</p>
+          <h1 class="text-sm sm:text-base font-semibold">Introduction to Chemistry</h1>
+        </div>
+      </div>
+
+      <!-- Right: Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-2 no-print">
+        <button id="printBtn" class="inline-flex items-center gap-2 rounded-2xl px-3 py-2 text-xs sm:text-sm bg-slate-900 text-white hover:bg-slate-700 shadow-soft">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/>
+          </svg>
+          Print / Save PDF
+        </button>
+
+        <button id="expandAll" class="inline-flex items-center gap-2 rounded-2xl px-3 py-2 text-xs sm:text-sm border border-slate-300 hover:bg-slate-50">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          Expand all
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Hero / Summary -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <aside class="lg:col-span-1">
+          <nav class="toc sticky-notice glass border border-slate-200/70 rounded-2xl p-4 shadow-soft">
+            <p class="text-xs uppercase tracking-wide text-slate-500 mb-3">On this page</p>
+            <ul class="space-y-2 text-sm" id="tocList">
+              <li><a href="#what-is-science" class="hover:text-indigo-600">What is Science?</a></li>
+              <li><a href="#what-is-chemistry" class="hover:text-indigo-600">What is Chemistry?</a></li>
+              <li><a href="#branches" class="hover:text-indigo-600">Six Branches of Chemistry</a></li>
+              <li><a href="#importance" class="hover:text-indigo-600">Importance in Everyday Life</a></li>
+              <li><a href="#applications" class="hover:text-indigo-600">Where Chemistry is Applied</a></li>
+              <li><a href="#careers" class="hover:text-indigo-600">Careers</a></li>
+              <li><a href="#lab" class="hover:text-indigo-600">Laboratory & Safety</a></li>
+              <li><a href="#apparatus" class="hover:text-indigo-600">Laboratory Apparatus</a></li>
+              <li><a href="#measuring" class="hover:text-indigo-600">Measuring Physical Quantities</a></li>
+              <li><a href="#hazards" class="hover:text-indigo-600">Hazard Symbols</a></li>
+              <li><a href="#si-units" class="hover:text-indigo-600">SI Units</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main class="lg:col-span-3 space-y-6">
+          <!-- Intro card -->
+          <article class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between gap-4">
+              <h2 class="text-2xl font-bold">Introduction to Chemistry</h2>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100" onclick="copySectionLink('top')">Copy link</button>
+            </div>
+            <p class="mt-3 leading-7">Welcome! In this lesson you’ll explore what science is, define chemistry, review its main branches, and see how it powers everyday life in Malawi and beyond. You’ll also learn key safety rules, common apparatus, how to measure physical quantities, and the meaning of hazard symbols.</p>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="rounded-2xl bg-emerald-50 border border-emerald-200 p-4 callout"><p class="text-sm"><span class="font-semibold">Lesson goals:</span> Define science & chemistry; name 6 branches; apply lab safety.</p></div>
+              <div class="rounded-2xl bg-sky-50 border border-sky-200 p-4 callout"><p class="text-sm"><span class="font-semibold">Time:</span> 50–60 minutes</p></div>
+              <div class="rounded-2xl bg-amber-50 border border-amber-200 p-4 callout"><p class="text-sm"><span class="font-semibold">Assessment:</span> Exit ticket + quick quiz</p></div>
+            </div>
+          </article>
+
+          <!-- What is Science -->
+          <section id="what-is-science" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">What is Science?</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('what-is-science')">Copy link</button>
+            </div>
+            <p class="mt-2">Science is the <span class="font-semibold">systematic study of nature</span>, the changes involved, and the reasons for those changes.</p>
+          </section>
+
+          <!-- What is Chemistry -->
+          <section id="what-is-chemistry" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">What is Chemistry?</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('what-is-chemistry')">Copy link</button>
+            </div>
+            <p class="mt-2">Chemistry is the study of the <span class="font-semibold">structure, composition, and behavior of substances</span> under various conditions.</p>
+          </section>
+
+          <!-- Branches -->
+          <section id="branches" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">Six Branches of Chemistry</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('branches')">Copy link</button>
+            </div>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="rounded-2xl border p-4">
+                <h4 class="font-semibold">Analytical Chemistry</h4>
+                <p class="text-sm mt-1">Separation, identification, and quantification of chemical compositions.</p>
+              </div>
+              <div class="rounded-2xl border p-4">
+                <h4 class="font-semibold">Industrial Chemistry</h4>
+                <p class="text-sm mt-1">Applying physical & chemical processes to convert raw materials into products.</p>
+              </div>
+              <div class="rounded-2xl border p-4">
+                <h4 class="font-semibold">Organic Chemistry</h4>
+                <p class="text-sm mt-1">Study of carbon, its compounds, oxides, and carbonates.</p>
+              </div>
+              <div class="rounded-2xl border p-4">
+                <h4 class="font-semibold">Inorganic Chemistry</h4>
+                <p class="text-sm mt-1">Materials of non‑biological origin.</p>
+              </div>
+              <div class="rounded-2xl border p-4">
+                <h4 class="font-semibold">Physical Chemistry</h4>
+                <p class="text-sm mt-1">How compounds and their constituents interact and react.</p>
+              </div>
+              <div class="rounded-2xl border p-4">
+                <h4 class="font-semibold">Environmental Chemistry</h4>
+                <p class="text-sm mt-1">Chemical processes in the environment, especially due to human activity.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Importance -->
+          <section id="importance" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">Importance of Chemistry in Everyday Life</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('importance')">Copy link</button>
+            </div>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="rounded-2xl border p-4 callout border-emerald-300 bg-emerald-50">
+                <h4 class="font-semibold">Water Treatment</h4>
+                <p class="text-sm">Chemical processes purify water to make it safe for consumption.</p>
+              </div>
+              <div class="rounded-2xl border p-4 callout border-amber-300 bg-amber-50">
+                <h4 class="font-semibold">Cooking</h4>
+                <p class="text-sm">Preparing <em>nsima</em> or brewing tea involves chemical reactions.</p>
+              </div>
+              <div class="rounded-2xl border p-4 callout border-sky-300 bg-sky-50">
+                <h4 class="font-semibold">Pharmaceuticals</h4>
+                <p class="text-sm">Development and manufacturing of medicines.</p>
+              </div>
+              <div class="rounded-2xl border p-4 callout border-fuchsia-300 bg-fuchsia-50">
+                <h4 class="font-semibold">Food Industry</h4>
+                <p class="text-sm">Refining sugar with lime; baking powder to make bread rise.</p>
+              </div>
+              <div class="rounded-2xl border p-4 callout border-indigo-300 bg-indigo-50">
+                <h4 class="font-semibold">Soap & Detergents</h4>
+                <p class="text-sm">Creating effective cleaning products.</p>
+              </div>
+              <div class="rounded-2xl border p-4 callout border-rose-300 bg-rose-50">
+                <h4 class="font-semibold">Pesticides</h4>
+                <p class="text-sm">Developing agricultural chemicals.</p>
+              </div>
+              <div class="rounded-2xl border p-4 callout border-lime-300 bg-lime-50">
+                <h4 class="font-semibold">Oil Refining</h4>
+                <p class="text-sm">Distillation breaks crude oil into components.</p>
+              </div>
+              <div class="rounded-2xl border p-4 callout border-slate-300 bg-slate-50">
+                <h4 class="font-semibold">Innovation</h4>
+                <p class="text-sm">Chemistry drives new ideas and technologies.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Applications -->
+          <section id="applications" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">Areas Where Chemistry is Applied</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('applications')">Copy link</button>
+            </div>
+            <ul class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+              <li class="rounded-xl border p-3">Pharmaceutical companies</li>
+              <li class="rounded-xl border p-3">Food & beverage companies</li>
+              <li class="rounded-xl border p-3">Oil manufacturing & refining</li>
+              <li class="rounded-xl border p-3">Fertilizer & pesticide companies</li>
+              <li class="rounded-xl border p-3">Water purification & supply</li>
+              <li class="rounded-xl border p-3">Mining industries</li>
+            </ul>
+          </section>
+
+          <!-- Careers -->
+          <section id="careers" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">Careers Related to Chemistry</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('careers')">Copy link</button>
+            </div>
+            <div class="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-sm">
+              <span class="rounded-full px-3 py-1 border bg-white">Chemistry Teacher</span>
+              <span class="rounded-full px-3 py-1 border bg-white">Medical Nurse</span>
+              <span class="rounded-full px-3 py-1 border bg-white">Medical Doctor</span>
+              <span class="rounded-full px-3 py-1 border bg-white">Veterinary Officer</span>
+              <span class="rounded-full px-3 py-1 border bg-white">Pharmacist</span>
+              <span class="rounded-full px-3 py-1 border bg-white">Chemical Engineer</span>
+            </div>
+          </section>
+
+          <!-- Lab & Safety -->
+          <section id="lab" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft space-y-4">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">Laboratory & Safety</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('lab')">Copy link</button>
+            </div>
+            <p><span class="font-semibold">Laboratory:</span> A space where scientific experiments, particularly in chemistry, are conducted.</p>
+            <p><span class="font-semibold">Safety rules</span> keep the lab safe for people, chemicals, and apparatus.</p>
+
+            <details class="rounded-2xl border p-4 group">
+              <summary class="cursor-pointer font-semibold">Why follow lab safety rules?</summary>
+              <ul class="mt-2 list-disc list-inside text-sm space-y-1">
+                <li>Prevents damage to materials, chemicals, and the laboratory.</li>
+                <li>Prevents injuries and fatalities.</li>
+              </ul>
+            </details>
+
+            <details class="rounded-2xl border p-4 group">
+              <summary class="cursor-pointer font-semibold">Key laboratory safety rules</summary>
+              <ul class="mt-2 list-disc list-inside text-sm space-y-1">
+                <li>Do not enter without permission.</li>
+                <li>Avoid running, scrambling, or unnecessary movement.</li>
+                <li>Never eat, drink, or smell chemicals.</li>
+                <li>Switch off all equipment when not in use.</li>
+                <li>Handle flammable substances with care.</li>
+                <li>Clean all materials after use and wash hands before leaving.</li>
+              </ul>
+            </details>
+
+            <details class="rounded-2xl border p-4 group">
+              <summary class="cursor-pointer font-semibold">How to protect yourself in the lab</summary>
+              <ul class="mt-2 list-disc list-inside text-sm space-y-1">
+                <li>Wear a lab coat, goggles, and gloves.</li>
+                <li>Use proper holders for hot objects.</li>
+                <li>Work in open spaces or fume chambers for irritating gases.</li>
+              </ul>
+            </details>
+          </section>
+
+          <!-- Apparatus -->
+          <section id="apparatus" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">Examples of Laboratory Apparatus</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('apparatus')">Copy link</button>
+            </div>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul class="list-disc list-inside space-y-1 text-sm">
+                <li>Measuring Cylinder – Measures liquid volumes.</li>
+                <li>Burette – Measures small, accurate volumes of liquids.</li>
+                <li>Pipette – Transfers small volumes of liquids.</li>
+                <li>Volumetric Flasks – Prepares accurate liquid volumes.</li>
+                <li>Beam Balance – Measures the mass of substances.</li>
+                <li>Thermometer – Measures temperature.</li>
+                <li>Stopwatch – Measures time durations.</li>
+                <li>Beakers – Holds and heats liquids.</li>
+                <li>Flasks – Holds liquids for heating or reactions.</li>
+                <li>Evaporating Dish – Recovers dissolved solids.</li>
+              </ul>
+              <ul class="list-disc list-inside space-y-1 text-sm">
+                <li>Spatula – Scoops small quantities of solids.</li>
+                <li>Tongs – Holds hot crucibles.</li>
+                <li>Tripod Stand – Supports apparatus during heating.</li>
+                <li>Wire Gauze – Supports beakers during boiling.</li>
+                <li>Stand and Clamp – Holds laboratory apparatus.</li>
+                <li>Liebig Condenser – Cools vapors during distillation.</li>
+                <li>Funnels: Thistle, Dropping, Separating, Filter.</li>
+                <li>Heating Apparatus – e.g., Bunsen burner, spirit lamp.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Measuring Physical Quantities -->
+          <section id="measuring" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft space-y-4">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">Measuring Physical Quantities</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('measuring')">Copy link</button>
+            </div>
+
+            <div class="rounded-2xl border p-4">
+              <h4 class="font-semibold">a. Measuring Mass – Triple Beam Balance</h4>
+              <ol class="list-decimal list-inside text-sm mt-2 space-y-1">
+                <li>Place the balance on a flat surface, away from wind.</li>
+                <li>Set all the masses to zero.</li>
+                <li>Adjust the zeroing screw until the pointer aligns at zero.</li>
+                <li>Place the object on the pan.</li>
+                <li>Move the 100 g mass until the beam topples, then move it back one step.</li>
+                <li>Repeat with the 10 g mass, then the 1 g mass.</li>
+                <li>Read the mass by adding the values. <em>Example:</em> 300 g + 40 g + 5 g = <span class="font-semibold">345 g</span>.</li>
+              </ol>
+            </div>
+
+            <div class="rounded-2xl border p-4">
+              <h4 class="font-semibold">b. Measuring Volume – Measuring Cylinder</h4>
+              <p class="text-sm mt-1">Sizes include 25 ml, 50 ml, 100 ml, 500 ml, and 1000 ml.</p>
+              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                <li>Read at the <span class="font-semibold">bottom of the meniscus</span>.</li>
+                <li>View at <span class="font-semibold">eye level</span> to avoid parallax error.</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border p-4">
+              <h4 class="font-semibold">c. Measuring Temperature – Liquid‑in‑glass Thermometer</h4>
+              <p class="text-sm mt-1">A sealed glass tube with mercury or alcohol that expands when heated.</p>
+              <ol class="list-decimal list-inside text-sm mt-1 space-y-1">
+                <li>Place the bulb below the liquid’s surface.</li>
+                <li>Wait until the liquid stops expanding.</li>
+                <li>Read where the top of the liquid column sits on the scale.</li>
+              </ol>
+            </div>
+
+            <div class="rounded-2xl border p-4">
+              <h4 class="font-semibold">d. Measuring Time – Digital Stopwatch</h4>
+              <ol class="list-decimal list-inside text-sm mt-1 space-y-1">
+                <li>Press the start/stop button to begin.</li>
+                <li>Press again to stop.</li>
+                <li>Use reset to return to zero.</li>
+              </ol>
+              <p class="text-sm mt-1"><em>Reading time:</em> minutes:seconds:hundredths. Example: <span class="font-mono">11:14:01</span> = 11 min, 14 s, 01 hundredth.</p>
+            </div>
+          </section>
+
+          <!-- Hazard Symbols -->
+          <section id="hazards" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft space-y-4">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">Hazard Symbols</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('hazards')">Copy link</button>
+            </div>
+            <p>Symbols on containers warn users about potential dangers.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3 rounded-2xl border p-4">
+                <span class="text-2xl">💥</span>
+                <div>
+                  <h4 class="font-semibold">Explosive Material</h4>
+                  <p class="text-sm">Can detonate unexpectedly. Handle with extreme care and follow instructions.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-2xl border p-4">
+                <span class="text-2xl">☠️</span>
+                <div>
+                  <h4 class="font-semibold">Toxic</h4>
+                  <p class="text-sm">Poisonous; can cause death. If it contacts skin, wash thoroughly with water.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-2xl border p-4">
+                <span class="text-2xl">🧯</span>
+                <div>
+                  <h4 class="font-semibold">Oxidizing</h4>
+                  <p class="text-sm">Can intensify fire or cause substances to combust in presence of oxidizers.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-2xl border p-4">
+                <span class="text-2xl">⚠️</span>
+                <div>
+                  <h4 class="font-semibold">Irritant</h4>
+                  <p class="text-sm">Harmful to skin or health. Avoid contact and inhalation; risky for asthma sufferers.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SI Units -->
+          <section id="si-units" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft space-y-4">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold">SI Units</h3>
+              <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('si-units')">Copy link</button>
+            </div>
+            <p>SI (<em>Système International d'Unités</em>) are internationally accepted units used by scientists. Quantities are meaningless without appropriate units.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="rounded-2xl border p-4">
+                <h4 class="font-semibold">Basic (Fundamental) Quantities</h4>
+                <p class="text-sm mt-1">Cannot be defined in terms of other quantities; units are not combinations of other units.</p>
+                <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+                  <li>Length: metre (<span class="font-mono">m</span>)</li>
+                  <li>Mass: kilogram (<span class="font-mono">kg</span>)</li>
+                  <li>Time: second (<span class="font-mono">s</span>)</li>
+                  <li>Temperature: kelvin (<span class="font-mono">K</span>)</li>
+                </ul>
+              </div>
+              <div class="rounded-2xl border p-4">
+                <h4 class="font-semibold">Derived Quantities</h4>
+                <p class="text-sm mt-1">Defined from basic quantities; units combine two or more base units.</p>
+                <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+                  <li>Area: square metre (<span class="font-mono">m²</span>)</li>
+                  <li>Density: kilogram per cubic metre (<span class="font-mono">kg/m³</span>)</li>
+                  <li>Concentration: mole per cubic metre (<span class="font-mono">mol/m³</span>)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="scientific-investigation" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft space-y-4">
+  <!-- Header Row -->
+  <div class="flex items-start justify-between">
+    <h3 class="text-xl font-semibold">Scientific Investigation</h3>
+    <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100"
+      onclick="copySectionLink('scientific-investigation')">Copy link</button>
+  </div>
+
+  <!-- Intro -->
+  <p>
+    A scientific investigation is a systematic process used by scientists to find solutions to problems or answers to questions.  
+    It can lead to new discoveries or confirm existing knowledge. In earlier times, investigations were less systematic due to a lack of advanced equipment.
+  </p>
+
+  <!-- Two-column layout for steps -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Left Column -->
+    <div class="rounded-2xl border p-4">
+      <h4 class="font-semibold">1. Identify the Problem</h4>
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+        <li>Identify and clearly state the problem to be investigated.</li>
+        <li>Convert the problem into questions to guide the research.</li>
+        <li>Develop a research topic based on these questions.</li>
+      </ul>
+
+      <h4 class="font-semibold mt-4">2. State the Hypothesis</h4>
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+        <li>A hypothesis is a guessed answer to a problem.</li>
+        <li>It is a proposed explanation or prediction based on available information.</li>
+        <li>It must be testable through experiments or observation.</li>
+      </ul>
+
+      <h4 class="font-semibold mt-4">3. Test the Hypothesis</h4>
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+        <li>Design an experiment to test the hypothesis.</li>
+        <li>Select appropriate materials and methods.</li>
+        <li>Ensure the experiment is fair and repeatable.</li>
+        <li>The aim is to verify whether the hypothesis is true or false.</li>
+      </ul>
+    </div>
+
+    <!-- Right Column -->
+    <div class="rounded-2xl border p-4">
+      <h4 class="font-semibold">4. Record and Analyze Data</h4>
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+        <li>Record all findings during the experiment accurately.</li>
+        <li>Present data using tables, pie charts, bar charts, histograms, and graphs.</li>
+        <li>Analyze the data to see if the results support or reject the hypothesis.</li>
+      </ul>
+
+      <h4 class="font-semibold mt-4">5. Draw Conclusion</h4>
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+        <li>Accept the hypothesis if supported by the results.</li>
+        <li>Reject the hypothesis if results are contrary to expectations.</li>
+        <li>Explain the reasons for the conclusion reached.</li>
+      </ul>
+
+      <h4 class="font-semibold mt-4">6. Formulation of Theory</h4>
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+        <li>If a hypothesis is repeatedly supported by experiments, it may contribute to the development of a scientific theory.</li>
+        <li>A scientific theory explains a set of related observations and is widely accepted by the scientific community.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Closing note -->
+  <div class="rounded-2xl border p-4 bg-slate-50 text-sm">
+    <p>
+      <strong>Note:</strong> Scientific investigation is an ongoing process. Even established theories may be modified if new evidence emerges.
+    </p>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="flex flex-col gap-6">
+    
+    <!-- Unit Title -->
+    <div>
+      <p class="text-sm text-slate-500 leading-none mb-1">UNIT 2</p>
+      <h2 class="text-xl font-bold">Essential Mathematical Skills in Chemistry</h2>
+    </div>
+
+    <!-- 1. Standard Form -->
+    <div class="bg-white p-5 rounded-2xl shadow border border-slate-200">
+      <h3 class="text-lg font-semibold mb-2">1. Expressing Numbers in Standard Form</h3>
+      <p class="mb-3">Standard form (scientific notation) is a method for writing very large or small numbers. It consists of:</p>
+      <ul class="list-disc pl-6 mb-3">
+        <li>A number between 1 and 10.</li>
+        <li>A power of 10.</li>
+      </ul>
+      <h4 class="font-semibold">a. Expressing Large Numbers</h4>
+      <p class="mb-2">Move the decimal point from left to right; the power of 10 will be positive.</p>
+      <ul class="pl-6 list-disc">
+        <li>4500 = 4.5 × 10³</li>
+        <li>67,413 = 6.7413 × 10⁴</li>
+        <li>300,000,000 = 3.0 × 10⁸</li>
+      </ul>
+      <h4 class="font-semibold mt-4">b. Expressing Small Numbers</h4>
+      <p class="mb-2">Move the decimal point from right to left; the power of 10 will be negative.</p>
+      <ul class="pl-6 list-disc">
+        <li>0.00067 = 6.7 × 10⁻⁴</li>
+        <li>0.00145 = 1.45 × 10⁻³</li>
+        <li>0.335 = 3.35 × 10⁻¹</li>
+      </ul>
+    </div>
+
+    <!-- 2. Significant Figures -->
+    <div class="bg-white p-5 rounded-2xl shadow border border-slate-200">
+      <h3 class="text-lg font-semibold mb-2">2. Significant Figures</h3>
+      <p>Significant figures are digits that reflect the precision of a number.</p>
+      <h4 class="font-semibold mt-3">Guidelines:</h4>
+      <ul class="list-disc pl-6 mb-3">
+        <li>All non-zero digits are significant.</li>
+        <li>Zeros between non-zero digits are significant.</li>
+        <li>Leading zeros are not significant.</li>
+        <li>Trailing zeros after a decimal point are significant.</li>
+        <li>In whole numbers without a decimal, the least significant figure is the rightmost non-zero digit.</li>
+      </ul>
+      <h4 class="font-semibold">Examples:</h4>
+      <ul class="list-disc pl-6">
+        <li>6753 → 4 significant figures</li>
+        <li>40072 → 5 significant figures</li>
+        <li>0.0089 → 2 significant figures</li>
+        <li>9.0 → 2 significant figures</li>
+      </ul>
+      <h4 class="font-semibold mt-4">Rounding:</h4>
+      <ul class="list-disc pl-6">
+        <li>14.628 → 14.63 (4 s.f.)</li>
+        <li>15.473 → 15.47 (4 s.f.)</li>
+      </ul>
+    </div>
+
+    <!-- 3. Expressing Results -->
+    <div class="bg-white p-5 rounded-2xl shadow border border-slate-200">
+      <h3 class="text-lg font-semibold mb-2">3. Expressing Results with Significant Figures</h3>
+      <p>The result of operations should reflect the least number of significant figures from the inputs.</p>
+      <h4 class="font-semibold mt-3">Examples:</h4>
+      <ul class="list-disc pl-6">
+        <li><strong>Addition/Subtraction:</strong> 2345 + 7800 + 934,456 = 940,000 (2 s.f.)</li>
+        <li><strong>Multiplication/Division:</strong> (2.467 × 465) ÷ 2.7 = 420 (2 s.f.)</li>
+      </ul>
+    </div>
+
+    <!-- 4. Accuracy vs Precision -->
+    <div class="bg-white p-5 rounded-2xl shadow border border-slate-200">
+      <h3 class="text-lg font-semibold mb-2">4. Accuracy vs. Precision</h3>
+      <p><strong>Accuracy:</strong> How close a measurement is to the actual value.</p>
+      <p><strong>Precision:</strong> How close multiple measurements are to each other.</p>
+      <p class="mt-2">Example: 30.01g, 30.02g, 30.03g → both accurate (close to 30.0g) and precise (close to each other).</p>
+    </div>
+
+    <!-- 5. Graphs in Chemistry -->
+    <div class="bg-white p-5 rounded-2xl shadow border border-slate-200">
+      <h3 class="text-lg font-semibold mb-2">5. Graphs in Chemistry</h3>
+      <p>Graphs visually represent experimental data.</p>
+
+      <h4 class="font-semibold mt-3">a. Line Graphs</h4>
+      <ul class="list-disc pl-6">
+        <li>Data points connected by lines.</li>
+        <li>Includes title, axes, scale, and origin.</li>
+      </ul>
+
+      <h4 class="font-semibold mt-3">b. Bar Graphs</h4>
+      <ul class="list-disc pl-6">
+        <li>Bars to compare categories (vertical/horizontal).</li>
+      </ul>
+
+      <h4 class="font-semibold mt-3">c. Pie Charts</h4>
+      <ul class="list-disc pl-6">
+        <li>Proportions of a whole as circle segments.</li>
+      </ul>
+
+      <h4 class="font-semibold mt-4">Advantages & Disadvantages:</h4>
+      <p class="mt-2"><strong>Line Graphs</strong>: Good for trends, but can be cluttered.</p>
+      <p><strong>Bar Graphs</strong>: Good for comparisons, not for continuous data.</p>
+      <p><strong>Pie Charts</strong>: Good for percentages, but poor for large datasets.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="composition-matter" class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft mb-6">
+  <div class="flex items-start justify-between">
+    <h3 class="text-xl font-semibold">UNIT 3: Composition and Classification of Matter</h3>
+    <button class="no-print text-xs px-3 py-1.5 rounded-full bg-slate-50 text-slate-700 border hover:bg-slate-100" onclick="copySectionLink('composition-matter')">Copy link</button>
+  </div>
+
+  <p class="mt-4">Matter is defined as anything that has mass and occupies space.</p>
+
+  <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+    
+    <!-- States of Matter -->
+    <div class="rounded-2xl border p-4 callout border-indigo-300 bg-indigo-50">
+      <h4 class="font-semibold">States of Matter</h4>
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+        <li><strong>Solids:</strong> Particles tightly packed, definite shape & volume, do not flow, difficult to compress.</li>
+        <li><strong>Liquids:</strong> Particles close but irregular, flow easily, indefinite shape, definite volume, difficult to compress.</li>
+        <li><strong>Gases:</strong> Particles far apart, move randomly, indefinite shape & volume, can be compressed, flow easily.</li>
+      </ul>
+    </div>
+
+    <!-- Particulate Nature -->
+    <div class="rounded-2xl border p-4 callout border-emerald-300 bg-emerald-50">
+      <h4 class="font-semibold">The Particulate Nature of Matter</h4>
+      <p class="text-sm mt-1">Matter is made up of small particles called molecules, which are composed of atoms, the smallest units of matter.</p>
+      <p class="text-sm mt-1"><strong>Atom:</strong> The smallest particle of matter.</p>
+    </div>
+
+    <!-- Diffusion -->
+    <div class="rounded-2xl border p-4 callout border-sky-300 bg-sky-50">
+      <h4 class="font-semibold">Diffusion</h4>
+      <p class="text-sm mt-1">Movement of particles from higher to lower concentration. Fastest in gases, slow or nonexistent in solids.</p>
+      <p class="text-sm mt-1"><strong>Investigating Diffusion in Liquids:</strong> Use beaker, water, potassium permanganate crystals, and thistle funnel. Pour water without shaking; observe purple spread.</p>
+      <p class="text-sm mt-1"><strong>Examples:</strong> Smelling food, dissolving sugar, coffee grains spreading, scent from clothes.</p>
+    </div>
+
+    <!-- Elements -->
+    <div class="rounded-2xl border p-4 callout border-rose-300 bg-rose-50">
+      <h4 class="font-semibold">Elements</h4>
+      <p class="text-sm mt-1">Substances that cannot be broken down chemically. Composed of only one type of atom.</p>
+      <p class="text-sm mt-1"><strong>Types:</strong> Single atoms (noble gases), Molecular form (O₂ for oxygen).</p>
+      <p class="text-sm mt-1"><strong>Discovered Elements:</strong> 115 total; 99 naturally occurring, 24 artificially created.</p>
+    </div>
+
+    <!-- First Twenty Elements -->
+    <div class="rounded-2xl border p-4 callout border-fuchsia-300 bg-fuchsia-50">
+      <h4 class="font-semibold">First Twenty Elements</h4>
+      <p class="text-sm mt-1">Hydrogen, Helium, Lithium, Beryllium, Boron, Carbon, Nitrogen, Oxygen, Fluorine, Neon, Sodium, Magnesium, Aluminum, Silicon, Phosphorus, Sulfur, Chlorine, Argon, Potassium, Calcium.</p>
+    </div>
+
+    <!-- Chemical Symbols -->
+    <div class="rounded-2xl border p-4 callout border-lime-300 bg-lime-50">
+      <h4 class="font-semibold">Chemical Symbols</h4>
+      <p class="text-sm mt-1">Shorthand for elements. One or two letters, first capitalized. Example: Hydrogen (H), Helium (He), Sodium (Na).</p>
+      <p class="text-sm mt-1"><strong>Latin-Based Symbols:</strong> Sodium - Natrium (Na), Potassium - Kalium (K), Copper - Cuprum (Cu), Iron - Ferrum (Fe), Silver - Argentum (Ag), Lead - Plumbum (Pb), Gold - Aurum (Au), Mercury - Hydrargyrum (Hg).</p>
+    </div>
+
+  </div>
+</section>
+
+
+          <!-- Exit Ticket -->
+          <section class="card rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-xl font-semibold">Exit Ticket</h3>
+            <ol class="list-decimal list-inside text-sm mt-2 space-y-1">
+              <li>Define chemistry in one sentence.</li>
+              <li>Name any three laboratory safety rules.</li>
+              <li>Which instrument measures time in hundredths of a second?</li>
+            </ol>
+          </section>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-8 py-8 text-center text-sm text-slate-500">
+    © <span id="year"></span> Your LMS • Science Department
+  </footer>
+
+  <!-- Floating back-to-top -->
+  <a href="#top" class="no-print fixed bottom-5 right-5 rounded-full bg-indigo-600 text-white px-4 py-3 shadow-soft hover:bg-indigo-500" title="Back to top">↑</a>
+
+  <script>
+    // Print button
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy section link helper
+    function copySectionLink(id) {
+      const url = new URL(window.location);
+      url.hash = id === 'top' ? '' : id;
+      navigator.clipboard.writeText(url.toString());
+      const btns = document.querySelectorAll('button');
+      btns.forEach(b => { if (b.innerText.includes('Copy link')) { b.disabled = true; setTimeout(() => b.disabled = false, 800); }});
+    }
+    window.copySectionLink = copySectionLink;
+
+    // Scroll spy for TOC
+    const headings = Array.from(document.querySelectorAll('section[id]'));
+    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector('.toc a[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    headings.forEach(h => observer.observe(h));
+
+    // Expand all <details>
+    document.getElementById('expandAll').addEventListener('click', () => {
+      document.querySelectorAll('details').forEach(d => d.open = true);
+    });
+  </script>
+</body>
+</html>
