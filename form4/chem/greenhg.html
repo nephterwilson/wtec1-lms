@@ -1,0 +1,659 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Gases & Ozone Layer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-red-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🌍</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                Greenhouse Gases & Ozone Layer
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding Climate Change and Atmospheric Protection</p>
+            <p class="text-lg text-gray-400">Our Planet's Delicate Balance</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('disasters')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Natural Disasters
+                </button>
+                <button onclick="showSection('greenhouse')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Greenhouse Effect
+                </button>
+                <button onclick="showSection('standards')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Air Quality Standards
+                </button>
+                <button onclick="showSection('ozone')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Ozone Layer
+                </button>
+            </div>
+        </header>
+
+        <!-- Natural Disasters Section -->
+        <section id="disasters" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                Natural Disasters
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚠️</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-4">Definition</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Natural disasters are sudden, extreme events resulting from environmental factors that can cause injury and property damage.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Types of Natural Disasters -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-yellow-400">Common Examples</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">☀️</div>
+                        <h4 class="text-lg font-bold text-yellow-300 text-center">Droughts</h4>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-gray-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-gray-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🌪️</div>
+                        <h4 class="text-lg font-bold text-gray-300 text-center">Windstorms</h4>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-amber-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-amber-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🌋</div>
+                        <h4 class="text-lg font-bold text-amber-300 text-center">Earthquakes</h4>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🔥</div>
+                        <h4 class="text-lg font-bold text-red-300 text-center">Wildfires</h4>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🌊</div>
+                        <h4 class="text-lg font-bold text-blue-300 text-center">Floods</h4>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🌀</div>
+                        <h4 class="text-lg font-bold text-cyan-300 text-center">Hurricanes</h4>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">⛈️</div>
+                        <h4 class="text-lg font-bold text-purple-300 text-center">Thunderstorms</h4>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🌋</div>
+                        <h4 class="text-lg font-bold text-orange-300 text-center">Volcanic Eruptions</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Human Impact -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">Impact of Human Activities on Natural Disasters</h3>
+                <p class="text-center text-gray-400 mb-6">Human actions significantly influence the occurrence and severity of natural disasters, particularly floods.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-3 text-green-400">🌳 Deforestation</h4>
+                        <p class="text-sm text-gray-300">Removing trees and vegetation leads to bare land, increasing erosion and making water flow faster across hard surfaces like concrete.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold mb-3 text-blue-400">🏙️ Urban Development</h4>
+                        <p class="text-sm text-gray-300">Expansion of urban areas disrupts natural waterways, altering the landscape and increasing flood risk.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500">
+                        <h4 class="font-bold mb-3 text-cyan-400">🦆 Destruction of Wetlands</h4>
+                        <p class="text-sm text-gray-300">Wetlands play a crucial role in absorbing excess water. Their destruction can lead to severe flooding during heavy rainfall.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold mb-3 text-yellow-400">🌾 Agriculture</h4>
+                        <p class="text-sm text-gray-300">Large-scale agricultural practices can deplete topsoil and weaken vegetation, reducing land's ability to absorb water and protect against flooding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-orange-400">Effects of Natural and Human Activities on the Atmosphere</h3>
+                
+                <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-red-500 text-center">
+                        <div class="text-4xl mb-2">🏚️</div>
+                        <p class="text-sm text-gray-300">Destruction of buildings</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-purple-500 text-center">
+                        <div class="text-4xl mb-2">💀</div>
+                        <p class="text-sm text-gray-300">Loss of life</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-amber-500 text-center">
+                        <div class="text-4xl mb-2">🏔️</div>
+                        <p class="text-sm text-gray-300">Altered landscapes</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-green-500 text-center">
+                        <div class="text-4xl mb-2">🌿</div>
+                        <p class="text-sm text-gray-300">Damage to vegetation</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-orange-500 text-center">
+                        <div class="text-4xl mb-2">🌡️</div>
+                        <p class="text-sm text-gray-300">Global warming</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Greenhouse Section -->
+        <section id="greenhouse" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Greenhouse Gases & Global Warming
+            </h2>
+
+            <!-- Definition -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🏭</div>
+                    <h3 class="text-3xl font-bold text-red-300 mb-4">Greenhouse Gases</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Greenhouse gases are atmospheric components that trap heat, contributing to global temperature rise.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Key Greenhouse Gases -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-orange-400">Key Greenhouse Gases</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-gray-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-gray-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">💨</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-300 text-center">Carbon Dioxide</h4>
+                        <p class="text-center text-sm text-gray-400 mb-3">(CO₂)</p>
+                        <p class="text-sm text-gray-300">From combustion, respiration, fermentation, decomposition</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🔥</div>
+                        <h4 class="text-xl font-bold mb-2 text-blue-300 text-center">Methane</h4>
+                        <p class="text-center text-sm text-gray-400 mb-3">(CH₄)</p>
+                        <p class="text-sm text-gray-300">From natural gas, wetlands, oceans, termites</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">⚡</div>
+                        <h4 class="text-xl font-bold mb-2 text-yellow-300 text-center">Nitrogen Oxides</h4>
+                        <p class="text-center text-sm text-gray-400 mb-3">(NO, NO₂)</p>
+                        <p class="text-sm text-gray-300">From lightning and fossil fuel combustion</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🏭</div>
+                        <h4 class="text-xl font-bold mb-2 text-orange-300 text-center">Sulphur Dioxide</h4>
+                        <p class="text-center text-sm text-gray-400 mb-3">(SO₂)</p>
+                        <p class="text-sm text-gray-300">From power plants and metal ore extraction</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Warming -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌡️</div>
+                    <h3 class="text-3xl font-bold text-red-300">Global Warming</h3>
+                    <p class="text-gray-300 text-lg mt-2">The ongoing increase in Earth's average temperature due to the accumulation of greenhouse gases.</p>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-2xl font-bold text-orange-400 mb-4 text-center">Mechanism of Greenhouse Effect</h4>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border border-yellow-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">☀️</div>
+                                <p class="font-bold text-yellow-400">Step 1</p>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">The sun emits energy as light and UV rays.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border border-orange-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">🌍</div>
+                                <p class="font-bold text-orange-400">Step 2</p>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Energy warms the Earth, which reflects some as heat.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border border-blue-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">🌌</div>
+                                <p class="font-bold text-blue-400">Step 3</p>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Some heat escapes into space.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border border-red-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">♨️</div>
+                                <p class="font-bold text-red-400">Step 4</p>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Greenhouse gases absorb and re-radiate heat, warming Earth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mitigation -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Mitigating Global Warming</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">☀️</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-yellow-300">Renewable Energy</h4>
+                                <p class="text-sm text-gray-300">Utilize solar, wind, and hydroelectric power to reduce reliance on fossil fuels.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">🚗</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-blue-300">Catalytic Converters</h4>
+                                <p class="text-sm text-gray-300">Install in automobiles to reduce exhaust emissions before they enter the atmosphere.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">🌳</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-green-300">Afforestation</h4>
+                                <p class="text-sm text-gray-300">Plant trees to absorb carbon dioxide and combat deforestation, enhancing carbon sequestration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards Section -->
+        <section id="standards" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Air Quality Standards
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📋</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">International Standards</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        International air quality standards, largely based on guidelines from the World Health Organization (WHO), aim to limit gas emissions and ensure cleaner air. In Malawi, the Malawi Bureau of Standards (MBS) has published specific guidelines.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ambient Air Quality Standards -->
+            <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-cyan-400">Ambient Air Quality Standards in Malawi</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-gray-500">
+                        <h4 class="font-bold mb-2 text-gray-400">Suspended Particulate Matter</h4>
+                        <p class="text-sm text-gray-300">25 µg/m³ (1 day)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-2 text-red-400">Carbon Monoxide</h4>
+                        <p class="text-sm text-gray-300">9 ppm (8 hours)</p>
+                        <p class="text-sm text-gray-300">35 ppm (1 hour)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold mb-2 text-yellow-400">Sulphur Dioxide</h4>
+                        <p class="text-sm text-gray-300">0.20 ppm (1 hour)</p>
+                        <p class="text-sm text-gray-300">0.08 ppm (1 day)</p>
+                        <p class="text-sm text-gray-300">0.02 ppm (1 year)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                        <h4 class="font-bold mb-2 text-orange-400">Nitrogen Dioxide</h4>
+                        <p class="text-sm text-gray-300">0.3 ppm (1 year)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold mb-2 text-blue-400">Ozone</h4>
+                        <p class="text-sm text-gray-300">0.12 ppm (1 hour)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-2 text-purple-400">Lead</h4>
+                        <p class="text-sm text-gray-300">0.50 µg/m³ (1 year)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-2 text-green-400">Photochemical Oxidants</h4>
+                        <p class="text-sm text-gray-300">0.10 ppm (1 hour)</p>
+                        <p class="text-sm text-gray-300">0.08 ppm (4 hours)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motor Vehicle Standards -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-400">Motor Vehicle Air Quality Standards in Malawi</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-2 text-green-400">Hydrocarbons</h4>
+                        <p class="text-sm text-gray-300">160 µg/m³ (3 hours)</p>
+                        <p class="text-sm text-gray-400">Typical high: 6 ppm</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-2 text-red-400">Carbon Monoxide</h4>
+                        <p class="text-sm text-gray-300">10 µg/m³ (8 hours)</p>
+                        <p class="text-sm text-gray-400">Typical high: 40 ppm</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold mb-2 text-yellow-400">Nitrogen Dioxide</h4>
+                        <p class="text-sm text-gray-300">100 µg/m³ (1 year)</p>
+                        <p class="text-sm text-gray-400">Typical high: 0.1 ppm</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold mb-2 text-blue-400">Oxidants</h4>
+                        <p class="text-sm text-gray-300">160 µg/m³ (1 hour)</p>
+                        <p class="text-sm text-gray-400">Typical high: 0.6 ppm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ozone Section -->
+        <section id="ozone" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                The Ozone Layer
+            </h2>
+
+            <!-- Definition -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🛡️</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">What is the Ozone Layer?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        The ozone layer is a region in the Earth's stratosphere, located approximately 20 to 30 km above the surface, that absorbs most of the sun's harmful ultraviolet (UV) radiation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Importance -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Importance of the Ozone Layer</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">☀️</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-cyan-400">Protection Against UV Rays</h4>
+                                <p class="text-sm text-gray-300">The ozone layer absorbs 93% to 99% of UV light, which can be harmful to living organisms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-3 text-red-400">⚠️ Health Risks from UV Exposure</h4>
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>• Skin cancer</p>
+                            <p>• Damage to crops</p>
+                            <p>• Harm to aquatic life</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Depletion -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">Depletion of the Ozone Layer</h3>
+                
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-6">
+                    <p class="text-gray-300 text-lg mb-4">
+                        <strong class="text-red-400">Chlorofluorocarbons (CFCs)</strong> are the primary agents responsible for ozone layer depletion.
+                    </p>
+                    <p class="text-gray-300">Common sources of CFCs include coolants, foams, and aerosol products.</p>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="text-2xl font-bold text-orange-400 mb-4">How CFCs Cause Ozone Depletion</h4>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-5 rounded-xl border border-yellow-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">1️⃣</div>
+                                <h5 class="font-bold text-yellow-400">Release of CFCs</h5>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">When products are used, CFCs are released into the atmosphere.</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-orange-900 to-slate-900 p-5 rounded-xl border border-orange-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">2️⃣</div>
+                                <h5 class="font-bold text-orange-400">Chlorine Release</h5>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">UV radiation triggers reactions that release chlorine atoms.</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-red-900 to-slate-900 p-5 rounded-xl border border-red-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">3️⃣</div>
+                                <h5 class="font-bold text-red-400">Ozone Destruction</h5>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Chlorine reacts with ozone, breaking it down.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-900 bg-opacity-30 p-6 rounded-xl border border-orange-700">
+                    <h4 class="text-xl font-bold text-orange-400 mb-3">Chemical Reactions Involved</h4>
+                    <div class="space-y-3 font-mono text-gray-300">
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <p class="text-sm">O₃ → O₂ + [O]</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg">
+                            <p class="text-sm">O₃ + [O] → 2 O₂</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-4">These reactions diminish the ozone layer's ability to shield the Earth from UV radiation.</p>
+                </div>
+            </div>
+
+            <!-- Problems -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Problems Associated with Ozone Layer Depletion</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Health Effects -->
+                    <div>
+                        <h4 class="text-2xl font-bold text-red-400 mb-4">🏥 Health Effects</h4>
+                        <div class="space-y-3">
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-red-500">
+                                <p class="text-sm text-gray-300">Increased risk of skin cancer</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-orange-500">
+                                <p class="text-sm text-gray-300">Cataract formation</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-yellow-500">
+                                <p class="text-sm text-gray-300">Weakened immune system</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-amber-500">
+                                <p class="text-sm text-gray-300">Premature skin aging</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-pink-500">
+                                <p class="text-sm text-gray-300">Respiratory issues (difficulty breathing, chest pain)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Environmental Impact -->
+                    <div>
+                        <h4 class="text-2xl font-bold text-green-400 mb-4">🌍 Environmental Impact</h4>
+                        <div class="space-y-3">
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-green-500">
+                                <p class="text-sm text-gray-300">Decline in amphibian populations, affecting their life cycles</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-emerald-500">
+                                <p class="text-sm text-gray-300">Disruption of food chains and biogeochemical cycles</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-teal-500">
+                                <p class="text-sm text-gray-300">Alteration of physiological processes in plants</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-red-900 bg-opacity-30 p-6 rounded-xl border border-red-700 text-center">
+                    <p class="text-lg text-red-300 font-bold">⚠️ Addressing ozone layer depletion is critical to protecting human health and preserving ecosystems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Key Takeaways
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">⚠️</div>
+                        <div>
+                            <h4 class="font-bold text-orange-400 mb-2">Natural Disasters</h4>
+                            <p class="text-gray-300 text-sm">Human activities like deforestation, urbanization, and wetland destruction significantly increase disaster severity, particularly floods.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🏭</div>
+                        <div>
+                            <h4 class="font-bold text-red-400 mb-2">Greenhouse Gases</h4>
+                            <p class="text-gray-300 text-sm">CO₂, CH₄, NO₂, and SO₂ trap heat in the atmosphere, causing global warming through the greenhouse effect.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🌡️</div>
+                        <div>
+                            <h4 class="font-bold text-yellow-400 mb-2">Global Warming Solutions</h4>
+                            <p class="text-gray-300 text-sm">Renewable energy, catalytic converters, and afforestation can help mitigate climate change.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">📋</div>
+                        <div>
+                            <h4 class="font-bold text-blue-400 mb-2">Air Quality Standards</h4>
+                            <p class="text-gray-300 text-sm">WHO guidelines and Malawi's MBS standards regulate pollutant emissions to protect public health.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🛡️</div>
+                        <div>
+                            <h4 class="font-bold text-cyan-400 mb-2">Ozone Layer Protection</h4>
+                            <p class="text-gray-300 text-sm">The ozone layer absorbs 93-99% of harmful UV radiation, protecting life on Earth.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">☠️</div>
+                        <div>
+                            <h4 class="font-bold text-purple-400 mb-2">CFC Damage</h4>
+                            <p class="text-gray-300 text-sm">CFCs from coolants and aerosols release chlorine that destroys ozone, increasing UV exposure and health risks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-red-900 to-orange-900 rounded-xl p-6 border border-red-600">
+                <div class="flex items-center justify-center">
+                    <div class="text-5xl mr-4">🌍</div>
+                    <div class="text-center">
+                        <p class="text-xl font-bold text-orange-300 mb-2">Our Actions Matter!</p>
+                        <p class="text-gray-300">Protecting the atmosphere and ozone layer is essential for the survival of all life on Earth. Every effort counts in combating climate change.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('disasters');
+    </script>
+</body>
+</html>

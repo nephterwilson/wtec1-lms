@@ -1,0 +1,695 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrolysis - Chemistry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">⚡</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Electrolysis
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Decomposition of Compounds Using Electrical Energy</p>
+            <p class="text-lg text-gray-400">Understanding Electrochemical Cells and Reactions</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('basics')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Basic Concepts
+                </button>
+                <button onclick="showSection('molten')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Molten Compounds
+                </button>
+                <button onclick="showSection('aqueous')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Aqueous Solutions
+                </button>
+                <button onclick="showSection('applications')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Applications
+                </button>
+            </div>
+        </header>
+
+        <!-- Basics Section -->
+        <section id="basics" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Basic Concepts of Electrolysis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔋</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Definition of Electrolysis</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Electrolysis is the decomposition of a compound in molten or aqueous state using electrical energy. It is carried out in an electrochemical cell.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Key Points -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⚡</div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-300 text-center">Uses Electricity</h4>
+                    <p class="text-sm text-gray-300 text-center">Electrolysis decomposes molten or aqueous ionic compounds using electricity.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔄</div>
+                    <h4 class="text-xl font-bold mb-3 text-purple-300 text-center">Ion Movement</h4>
+                    <p class="text-sm text-gray-300 text-center">Ions must be free to move for electrolysis to occur.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🧪</div>
+                    <h4 class="text-xl font-bold mb-3 text-pink-300 text-center">Compound Types</h4>
+                    <p class="text-sm text-gray-300 text-center">Works for ionic compounds and covalent compounds that ionize in water.</p>
+                </div>
+            </div>
+
+            <!-- Components -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-400">Components of an Electrochemical Cell</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">🔋</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-yellow-400">Dry Cells</h4>
+                                <p class="text-sm text-gray-300">Provide direct current for the electrolysis process.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">📊</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-blue-400">Ammeter/Bulb</h4>
+                                <p class="text-sm text-gray-300">Indicates current flow during electrolysis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">🔌</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-purple-400">Electrodes</h4>
+                                <p class="text-sm text-gray-300">Graphite rods serve as anode (+) and cathode (-).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">💧</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-green-400">Electrolyte</h4>
+                                <p class="text-sm text-gray-300">Conducts electricity and decomposes during electrolysis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">➕</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-red-400">Anode</h4>
+                                <p class="text-sm text-gray-300">Positive electrode connected to positive terminal.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">➖</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-cyan-400">Cathode</h4>
+                                <p class="text-sm text-gray-300">Negative electrode connected to negative terminal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Molten Section -->
+        <section id="molten" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Electrolysis of Molten Ionic Compounds
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔥</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Example: Electrolysis of Molten Lead Bromide</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Lead ions (Pb²⁺) move to cathode and bromide ions (Br⁻) move to anode, producing lead metal and bromine gas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Cathode -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">➖</div>
+                        <h3 class="text-2xl font-bold text-cyan-300">At the Cathode (Negative)</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-cyan-400">Process: Reduction</h4>
+                            <p class="text-sm text-gray-300 mb-3">Pb²⁺ ions gain electrons</p>
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg border border-cyan-700">
+                                <p class="text-sm font-mono text-cyan-300">Pb²⁺ + 2e⁻ → Pb</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Product:</h4>
+                            <p class="text-sm text-gray-300">Lead metal is produced</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anode -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">➕</div>
+                        <h3 class="text-2xl font-bold text-red-300">At the Anode (Positive)</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-red-400">Process: Oxidation</h4>
+                            <p class="text-sm text-gray-300 mb-3">Br⁻ ions lose electrons</p>
+                            <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg border border-red-700">
+                                <p class="text-sm font-mono text-red-300">2Br⁻ → Br₂ + 2e⁻</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-orange-400">Product:</h4>
+                            <p class="text-sm text-gray-300">Bromine gas is produced</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overall Equation -->
+            <div class="bg-gradient-to-r from-purple-900 to-pink-900 rounded-2xl p-8 shadow-2xl border border-purple-600">
+                <h3 class="text-2xl font-bold mb-4 text-center text-purple-300">Overall Equation</h3>
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center">
+                    <p class="text-xl font-mono text-purple-300 mb-4">Pb²⁺ + 2Br⁻ → Pb + Br₂</p>
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div class="text-left">
+                            <p class="text-cyan-400 font-bold mb-2">✓ Metal at Cathode</p>
+                            <p class="text-sm text-gray-300">Lead metal produced at negative electrode</p>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-red-400 font-bold mb-2">✓ Non-metal at Anode</p>
+                            <p class="text-sm text-gray-300">Bromine gas produced at positive electrode</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Writing Half-Equations -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Writing Half-Equations for Electrode Reactions</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-2 text-green-400">Steps:</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>1. Identify ions and products</li>
+                            <li>2. Positive ions go to cathode</li>
+                            <li>3. Negative ions go to anode</li>
+                            <li>4. Use correct elemental symbols (e.g., Cl₂ not Cl)</li>
+                            <li>5. Balance electrons to match charges</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-3 text-purple-400">Example: Molten Magnesium Chloride</h4>
+                        <div class="space-y-3">
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg border border-cyan-700">
+                                <p class="text-xs text-gray-400 mb-1">Cathode:</p>
+                                <p class="text-sm font-mono text-cyan-300">Mg²⁺ + 2e⁻ → Mg (l)</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg border border-red-700">
+                                <p class="text-xs text-gray-400 mb-1">Anode:</p>
+                                <p class="text-sm font-mono text-red-300">2Cl⁻ → Cl₂ (g) + 2e⁻</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aqueous Section -->
+        <section id="aqueous" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                Electrolysis of Aqueous Ionic Compounds
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💧</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">Preferential Discharge</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        In aqueous solutions, water also ionizes, so H⁺ and OH⁻ ions compete with other ions for discharge at electrodes. Discharge depends on reactivity and ion concentration.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Discharge Rules -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">➖</div>
+                        <h3 class="text-xl font-bold text-cyan-300">At Cathode (Negative)</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-sm text-gray-300"><strong class="text-blue-400">If metal MORE reactive than hydrogen:</strong></p>
+                            <p class="text-sm text-gray-300">H⁺ ions discharge → Hydrogen gas formed</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-sm text-gray-300"><strong class="text-purple-400">If metal LESS reactive than hydrogen:</strong></p>
+                            <p class="text-sm text-gray-300">Metal ions discharge → Metal formed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">➕</div>
+                        <h3 class="text-xl font-bold text-red-300">At Anode (Positive)</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-yellow-500">
+                            <p class="text-sm text-gray-300"><strong class="text-yellow-400">If halide ions present (Cl⁻, Br⁻, I⁻):</strong></p>
+                            <p class="text-sm text-gray-300">Halide ions discharge → Halogen gas formed</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-sm text-gray-300"><strong class="text-orange-400">If NO halide ions present:</strong></p>
+                            <p class="text-sm text-gray-300">OH⁻ ions discharge → Oxygen gas formed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brine Electrolysis -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Electrolysis of Brine (Concentrated NaCl Solution)</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-cyan-500">
+                        <div class="text-center mb-3">
+                            <div class="text-4xl mb-2">➖</div>
+                            <h4 class="font-bold text-cyan-400">Cathode</h4>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg border border-cyan-700 mb-3">
+                            <p class="text-sm font-mono text-cyan-300">2H⁺ + 2e⁻ → H₂ (g)</p>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Hydrogen gas formed</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-red-500">
+                        <div class="text-center mb-3">
+                            <div class="text-4xl mb-2">➕</div>
+                            <h4 class="font-bold text-red-400">Anode</h4>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg border border-red-700 mb-3">
+                            <p class="text-sm font-mono text-red-300">2Cl⁻ → Cl₂ (g) + 2e⁻</p>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Chlorine gas formed</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-green-500">
+                        <div class="text-center mb-3">
+                            <div class="text-4xl mb-2">💧</div>
+                            <h4 class="font-bold text-green-400">Solution</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center mb-2">Na⁺ and OH⁻ ions remain</p>
+                        <p class="text-sm text-green-400 text-center font-bold">Forms NaOH (Sodium Hydroxide)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dilute NaCl -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Electrolysis of Dilute Sodium Chloride</h3>
+                <p class="text-center text-gray-400 mb-6">In dilute solution, different products are formed (essentially electrolysis of water)</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500">
+                        <h4 class="font-bold mb-3 text-cyan-400">Cathode Reaction:</h4>
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg border border-cyan-700">
+                            <p class="text-sm font-mono text-cyan-300">4H⁺ + 4e⁻ → 2H₂ (g)</p>
+                        </div>
+                        <p class="text-sm text-gray-300 mt-2">Hydrogen gas formed</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500">
+                        <h4 class="font-bold mb-3 text-orange-400">Anode Reaction:</h4>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg border border-orange-700">
+                            <p class="text-sm font-mono text-orange-300">4OH⁻ → O₂ (g) + 2H₂O + 4e⁻</p>
+                        </div>
+                        <p class="text-sm text-gray-300 mt-2">Oxygen gas formed (not chlorine)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects of Electrodes -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-400">Effects of Electrodes on Electrolysis</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-gray-900 to-slate-900 p-6 rounded-xl border border-gray-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">⚫</div>
+                            <h4 class="text-xl font-bold text-gray-300">Inert Electrodes</h4>
+                            <p class="text-sm text-gray-400">(Graphite, Platinum)</p>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">Do not react; only allow current flow.</p>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-2">Example: CuSO₄ with inert electrodes</p>
+                            <p class="text-sm text-gray-300">• Cathode: Cu²⁺ → Cu (copper deposits)</p>
+                            <p class="text-sm text-gray-300">• Anode: OH⁻ → O₂ (oxygen gas)</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-orange-900 to-slate-900 p-6 rounded-xl border border-orange-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🟤</div>
+                            <h4 class="text-xl font-bold text-orange-300">Copper Electrodes</h4>
+                            <p class="text-sm text-gray-400">(Reactive)</p>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">Anode participates in reaction.</p>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-2">Example: CuSO₄ with copper electrodes</p>
+                            <p class="text-sm text-gray-300">• Anode: Cu → Cu²⁺ (anode dissolves)</p>
+                            <p class="text-sm text-gray-300">• Cathode: Cu²⁺ → Cu (copper deposits)</p>
+                            <p class="text-sm text-green-400 mt-2">Solution color remains unchanged</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Uses of Electrolysis
+            </h2>
+
+            <!-- Extraction of Metals -->
+            <div class="bg-gradient-to-br from-amber-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-amber-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⛏️</div>
+                    <h3 class="text-3xl font-bold text-amber-300">Extraction of Metals</h3>
+                    <p class="text-gray-300 text-lg mt-2">Less reactive metals are extracted by dipping a more reactive metal into their aqueous compound, causing displacement.</p>
+                </div>
+                
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                    <h4 class="font-bold mb-3 text-yellow-400">Example Reaction:</h4>
+                    <div class="bg-amber-900 bg-opacity-30 p-4 rounded-lg border border-amber-700">
+                        <p class="text-lg font-mono text-amber-300 text-center">Fe (s) + CuSO₄ (aq) → Cu (s) + FeSO₄ (aq)</p>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-3 text-center">Iron displaces copper from copper sulfate solution</p>
+                </div>
+            </div>
+
+            <!-- Purification of Metals -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">✨</div>
+                    <h3 class="text-3xl font-bold text-blue-300">Purification of Metals</h3>
+                    <p class="text-gray-300 text-lg mt-2">Impure metal anode dissolves, pure metal deposits at cathode; impurities settle at bottom.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-3 text-red-400">Anode Reaction (Dissolves):</h4>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border border-red-700">
+                            <p class="text-sm font-mono text-red-300">Cu (s) → Cu²⁺ (aq) + 2e⁻</p>
+                        </div>
+                        <p class="text-sm text-gray-300 mt-2">Impure copper dissolves from anode</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500">
+                        <h4 class="font-bold mb-3 text-cyan-400">Cathode Reaction (Deposits):</h4>
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg border border-cyan-700">
+                            <p class="text-sm font-mono text-cyan-300">Cu²⁺ (aq) + 2e⁻ → Cu (s)</p>
+                        </div>
+                        <p class="text-sm text-gray-300 mt-2">Pure copper deposits at cathode</p>
+                    </div>
+                </div>
+
+                <div class="mt-4 bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-700 text-center">
+                    <p class="text-green-400 font-bold">✓ Impurities settle at the bottom as sludge</p>
+                </div>
+            </div>
+
+            <!-- Electroplating -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🎨</div>
+                    <h3 class="text-3xl font-bold text-purple-300">Electroplating</h3>
+                    <p class="text-gray-300 text-lg mt-2">Coating a metal with a thin layer of another metal using electrolysis to improve appearance, prevent corrosion, or increase size/strength.</p>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="text-2xl font-bold text-pink-400 mb-4 text-center">Electroplating Process</h4>
+                    
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-5 rounded-xl border border-blue-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">1️⃣</div>
+                                <h5 class="font-bold text-blue-400">Clean</h5>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Clean the metal to be plated</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-purple-900 to-slate-900 p-5 rounded-xl border border-purple-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">2️⃣</div>
+                                <h5 class="font-bold text-purple-400">Choose</h5>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Choose electrolyte with desired metal ions</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-pink-900 to-slate-900 p-5 rounded-xl border border-pink-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">3️⃣</div>
+                                <h5 class="font-bold text-pink-400">Connect</h5>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Metal to be plated is cathode (-)</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-orange-900 to-slate-900 p-5 rounded-xl border border-orange-500">
+                            <div class="text-center mb-3">
+                                <div class="text-4xl mb-2">4️⃣</div>
+                                <h5 class="font-bold text-orange-400">Plate</h5>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Coating metal is anode (+)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border border-purple-700">
+                    <h4 class="font-bold mb-4 text-purple-400 text-center">Example: Electroplating Iron with Copper</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border border-red-700">
+                            <p class="text-sm text-gray-400 mb-2">At Anode (Copper):</p>
+                            <p class="text-sm font-mono text-red-300">Cu → Cu²⁺ + 2e⁻</p>
+                            <p class="text-xs text-gray-400 mt-2">Copper anode dissolves</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg border border-cyan-700">
+                            <p class="text-sm text-gray-400 mb-2">At Cathode (Iron):</p>
+                            <p class="text-sm font-mono text-cyan-300">Cu²⁺ + 2e⁻ → Cu</p>
+                            <p class="text-xs text-gray-400 mt-2">Copper deposits on iron</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications and Benefits -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Applications and Benefits of Electroplating</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">💍</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-pink-300">Makes Objects Attractive</h4>
+                                <p class="text-sm text-gray-300">Silver-plated jewelry and decorative items have enhanced appearance and value.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">🛡️</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-blue-300">Protects from Corrosion</h4>
+                                <p class="text-sm text-gray-300">Chromium-plated steel bumpers resist rust and weather damage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">💪</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-yellow-300">Increases Size/Strength</h4>
+                                <p class="text-sm text-gray-300">Layering metals can increase thickness and mechanical strength.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">⚙️</div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-2 text-orange-300">Industrial Applications</h4>
+                                <p class="text-sm text-gray-300">Used for extracting and purifying metals like copper for electrical applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Key Takeaways
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">⚡</div>
+                        <div>
+                            <h4 class="font-bold text-blue-400 mb-2">Electrolysis Basics</h4>
+                            <p class="text-gray-300 text-sm">Decomposition of compounds using electrical energy requires free-moving ions in molten or aqueous state.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🔋</div>
+                        <div>
+                            <h4 class="font-bold text-purple-400 mb-2">Electrode Reactions</h4>
+                            <p class="text-gray-300 text-sm">Reduction occurs at cathode (gaining electrons), oxidation at anode (losing electrons).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">💧</div>
+                        <div>
+                            <h4 class="font-bold text-pink-400 mb-2">Preferential Discharge</h4>
+                            <p class="text-gray-300 text-sm">In aqueous solutions, ion reactivity and concentration determine which ions discharge at electrodes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">⛏️</div>
+                        <div>
+                            <h4 class="font-bold text-amber-400 mb-2">Metal Extraction</h4>
+                            <p class="text-gray-300 text-sm">Electrolysis is used to extract less reactive metals from their compounds.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">✨</div>
+                        <div>
+                            <h4 class="font-bold text-cyan-400 mb-2">Metal Purification</h4>
+                            <p class="text-gray-300 text-sm">Impure metal dissolves at anode; pure metal deposits at cathode.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🎨</div>
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-2">Electroplating</h4>
+                            <p class="text-gray-300 text-sm">Coating metals improves appearance, prevents corrosion, and increases strength.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-blue-900 to-purple-900 rounded-xl p-6 border border-blue-600">
+                <div class="flex items-center justify-center">
+                    <div class="text-5xl mr-4">⚡</div>
+                    <div class="text-center">
+                        <p class="text-xl font-bold text-blue-300 mb-2">Remember the Flow!</p>
+                        <p class="text-gray-300">Electrons flow from negative to positive, but positive ions move to cathode and negative ions to anode.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('basics');
+    </script>
+</body>
+</html>

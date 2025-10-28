@@ -1,0 +1,807 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxidising & Reducing Agents - Chemistry Lesson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🔬</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Oxidising & Reducing Agents
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Reactivity of Metals and Displacement Reactions</p>
+            <p class="text-lg text-gray-400">The Electrochemical Series</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('agents')" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 rounded-xl transition shadow-lg">
+                    Agents
+                </button>
+                <button onclick="showSection('examples')" class="px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-xl transition shadow-lg">
+                    Examples
+                </button>
+                <button onclick="showSection('reactivity')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Reactivity
+                </button>
+                <button onclick="showSection('displacement')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Displacement
+                </button>
+                <button onclick="showSection('series')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Electrochemical Series
+                </button>
+                <button onclick="showSection('experiment')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Experiment
+                </button>
+            </div>
+        </header>
+
+        <!-- Agents Section -->
+        <section id="agents" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Oxidising Agents and Reducing Agents
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-emerald-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚛️</div>
+                    <h3 class="text-3xl font-bold text-emerald-300 mb-4">Key Concept</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Oxidising and reducing agents are reactants in redox reactions. An <span class="text-emerald-400 font-bold">oxidising agent</span> causes oxidation by accepting electrons and is itself reduced. A <span class="text-teal-400 font-bold">reducing agent</span> causes reduction by donating electrons and is itself oxidised.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Oxidising Agent -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔵</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Oxidising Agent</h3>
+                        <p class="text-gray-400 text-lg">Electron Acceptor</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl space-y-4">
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-bold text-blue-300 mb-2">What it does:</h4>
+                            <p class="text-gray-300">• Accepts electrons from another substance</p>
+                            <p class="text-gray-300">• Causes oxidation in another substance</p>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4">
+                            <h4 class="font-bold text-blue-300 mb-2">What happens to it:</h4>
+                            <p class="text-gray-300 text-center">Is <span class="text-blue-400 font-bold">REDUCED</span></p>
+                            <p class="text-gray-400 text-sm text-center">(Gains electrons)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reducing Agent -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🟠</div>
+                        <h3 class="text-3xl font-bold text-orange-300">Reducing Agent</h3>
+                        <p class="text-gray-400 text-lg">Electron Donor</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl space-y-4">
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-bold text-orange-300 mb-2">What it does:</h4>
+                            <p class="text-gray-300">• Donates electrons to another substance</p>
+                            <p class="text-gray-300">• Causes reduction in another substance</p>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4">
+                            <h4 class="font-bold text-orange-300 mb-2">What happens to it:</h4>
+                            <p class="text-gray-300 text-center">Is <span class="text-orange-400 font-bold">OXIDISED</span></p>
+                            <p class="text-gray-400 text-sm text-center">(Loses electrons)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-emerald-900 to-teal-900 rounded-2xl p-8 shadow-2xl border border-emerald-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-emerald-300">Remember</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-3">
+                            <span class="text-blue-400 font-bold">Oxidising agent</span> → Accepts electrons → Gets reduced
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            <span class="text-orange-400 font-bold">Reducing agent</span> → Donates electrons → Gets oxidised
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section id="examples" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Examples of Oxidising and Reducing Agents
+            </h2>
+
+            <!-- Example 1 -->
+            <div class="mb-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <h3 class="text-2xl font-bold text-cyan-300 mb-6">Example 1: Copper and Silver Ions</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="bg-slate-900 rounded-lg p-4 font-mono text-center mb-6">
+                        <p class="text-white text-xl">Cu(s) + 2Ag⁺(aq) → Cu²⁺(aq) + 2Ag(s)</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-slate-900 rounded-lg p-4">
+                            <p class="text-orange-400 font-bold mb-3">Oxidation Half Equation:</p>
+                            <p class="text-white text-lg text-center">Cu(s) → Cu²⁺(aq) + 2e⁻</p>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4">
+                            <p class="text-blue-400 font-bold mb-3">Reduction Half Equation:</p>
+                            <p class="text-white text-lg text-center">2Ag⁺(aq) + 2e⁻ → 2Ag(s)</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-bold text-orange-300 mb-2">Reducing Agent:</h4>
+                            <p class="text-white text-lg mb-2">Cu(s)</p>
+                            <p class="text-gray-400 text-sm">Charge increases from 0 to +2</p>
+                            <p class="text-gray-400 text-sm">(Loses electrons - oxidised)</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-bold text-blue-300 mb-2">Oxidising Agent:</h4>
+                            <p class="text-white text-lg mb-2">Ag⁺(aq)</p>
+                            <p class="text-gray-400 text-sm">Charge decreases from +1 to 0</p>
+                            <p class="text-gray-400 text-sm">(Gains electrons - reduced)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 2 -->
+            <div class="mb-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-2xl font-bold text-green-300 mb-6">Example 2: Chlorine and Bromide Ions</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="bg-slate-900 rounded-lg p-4 font-mono text-center mb-6">
+                        <p class="text-white text-xl">Cl₂(aq) + 2Br⁻(aq) → 2Cl⁻(aq) + Br₂(aq)</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-slate-900 rounded-lg p-4">
+                            <p class="text-orange-400 font-bold mb-3">Oxidation Half Equation:</p>
+                            <p class="text-white text-lg text-center">2Br⁻(aq) → Br₂(aq) + 2e⁻</p>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4">
+                            <p class="text-blue-400 font-bold mb-3">Reduction Half Equation:</p>
+                            <p class="text-white text-lg text-center">Cl₂(aq) + 2e⁻ → 2Cl⁻(aq)</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-bold text-orange-300 mb-2">Reducing Agent:</h4>
+                            <p class="text-white text-lg">Br⁻(aq)</p>
+                            <p class="text-gray-400 text-sm">(Loses electrons)</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-bold text-blue-300 mb-2">Oxidising Agent:</h4>
+                            <p class="text-white text-lg">Cl₂(aq)</p>
+                            <p class="text-gray-400 text-sm">(Gains electrons)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 3 -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-2xl font-bold text-purple-300 mb-6">Example 3: Zinc and Lead Nitrate</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="bg-slate-900 rounded-lg p-4 font-mono text-center mb-6">
+                        <p class="text-white text-xl">Zn(s) + Pb(NO₃)₂ → Zn(NO₃)₂ + Pb(s)</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-slate-900 rounded-lg p-4">
+                            <p class="text-orange-400 font-bold mb-3">Oxidation Half Equation:</p>
+                            <p class="text-white text-lg text-center">Zn(s) → Zn²⁺ + 2e⁻</p>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4">
+                            <p class="text-blue-400 font-bold mb-3">Reduction Half Equation:</p>
+                            <p class="text-white text-lg text-center">Pb²⁺(aq) + 2e⁻ → Pb(s)</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-bold text-orange-300 mb-2">Reducing Agent:</h4>
+                            <p class="text-white text-lg">Zn(s)</p>
+                            <p class="text-gray-400 text-sm">(Loses electrons)</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-bold text-blue-300 mb-2">Oxidising Agent:</h4>
+                            <p class="text-white text-lg">Pb²⁺(aq)</p>
+                            <p class="text-gray-400 text-sm">(Gains electrons)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reactivity Section -->
+        <section id="reactivity" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Order of Reactivity of Metals
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📊</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Determining Reactivity</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        The order of reactivity of metals is based on reactions with water, acids, and displacement reactions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">💧</div>
+                        <h3 class="text-xl font-bold text-blue-300">Reactions with Water</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm text-center">Produce basic solutions or oxides and hydrogen gas</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🧪</div>
+                        <h3 class="text-xl font-bold text-green-300">Reactions with Acids</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm text-center">Produce salt solutions and hydrogen gas</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🔄</div>
+                        <h3 class="text-xl font-bold text-purple-300">Displacement Reactions</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm text-center">One metal displaces another from solution</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-cyan-900 to-blue-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <h3 class="text-2xl font-bold mb-6 text-center text-cyan-300">Reactivity Series</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between bg-red-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Potassium (K)</span>
+                            <span class="text-red-400 text-sm">Most Reactive</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-orange-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Sodium (Na)</span>
+                            <span class="text-orange-400 text-sm">↑</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-yellow-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Calcium (Ca)</span>
+                            <span class="text-yellow-400 text-sm">↑</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-green-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Magnesium (Mg)</span>
+                            <span class="text-green-400 text-sm">↑</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-cyan-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Aluminium (Al)</span>
+                            <span class="text-cyan-400 text-sm">Increasing</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-blue-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Zinc (Zn)</span>
+                            <span class="text-blue-400 text-sm">Reactivity</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-indigo-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Iron (Fe)</span>
+                            <span class="text-indigo-400 text-sm">↓</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-purple-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Lead (Pb)</span>
+                            <span class="text-purple-400 text-sm">↓</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-pink-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Copper (Cu)</span>
+                            <span class="text-pink-400 text-sm">↓</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-gray-900 bg-opacity-40 p-4 rounded-lg">
+                            <span class="text-white font-bold">Silver (Ag)</span>
+                            <span class="text-gray-400 text-sm">↓</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-900 p-4 rounded-lg border-2 border-slate-600">
+                            <span class="text-white font-bold">Gold (Au)</span>
+                            <span class="text-slate-400 text-sm">Least Reactive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Displacement Section -->
+        <section id="displacement" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Displacement Reactions of Metals
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔀</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">What is a Displacement Reaction?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        A metal displacement reaction occurs when a metal in solid form displaces another metal from its aqueous solution. A <span class="text-blue-400 font-bold">more reactive metal</span> can displace a <span class="text-purple-400 font-bold">less reactive metal</span> from its compound.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Example: Iron and Copper Sulfate -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <h3 class="text-3xl font-bold text-cyan-300 mb-6">Example: Iron and Copper(II) Sulfate</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-cyan-300 mb-4">Observation:</h4>
+                        <div class="space-y-3">
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-cyan-400 mr-2">•</span>
+                                <p class="text-gray-300">Iron dissolves</p>
+                            </div>
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-cyan-400 mr-2">•</span>
+                                <p class="text-gray-300">Copper deposits on iron</p>
+                            </div>
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-cyan-400 mr-2">•</span>
+                                <p class="text-gray-300">Solution color changes from blue to pale green</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-300 mb-4">Explanation:</h4>
+                        <div class="space-y-3">
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-orange-400 font-bold mb-1">Oxidation:</p>
+                                <p class="text-gray-300 text-sm">Iron oxidised to Fe²⁺</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-blue-400 font-bold mb-1">Reduction:</p>
+                                <p class="text-gray-300 text-sm">Copper ions reduced to copper metal</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-green-400 font-bold mb-1">Conclusion:</p>
+                                <p class="text-gray-300 text-sm">Iron is more reactive than copper</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="bg-slate-900 rounded-lg p-4 font-mono text-center">
+                        <p class="text-white text-xl">Fe(s) + CuSO₄(aq) → FeSO₄(aq) + Cu(s)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Displacement Series -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold text-purple-300 mb-6 text-center">Displacement Series (Activity Series)</h3>
+                <div class="bg-purple-900 bg-opacity-20 p-6 rounded-xl mb-6">
+                    <p class="text-gray-300 text-lg text-center leading-relaxed">
+                        The displacement series arranges metals by chemical reactivity, showing which metals can displace others from solution.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">⬆️</div>
+                        <h4 class="font-bold text-red-300 mb-2 text-center">Most Reactive</h4>
+                        <p class="text-gray-300 text-sm text-center">At the top of the series</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">🔄</div>
+                        <h4 class="font-bold text-yellow-300 mb-2 text-center">Can Displace</h4>
+                        <p class="text-gray-300 text-sm text-center">Metals high in series displace those below</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">💪</div>
+                        <h4 class="font-bold text-green-300 mb-2 text-center">Reducing Agents</h4>
+                        <p class="text-gray-300 text-sm text-center">High reactivity = strong reducing agents</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Electrochemical Series Section -->
+        <section id="series" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                The Electrochemical Series
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">What is the Electrochemical Series?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        The electrochemical series lists half equations showing metals' tendency to donate electrons and predicts displacement reactions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Key Rules -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">✅</div>
+                    <h3 class="text-xl font-bold text-green-300 mb-3 text-center">Reaction Occurs</h3>
+                    <p class="text-gray-300 text-center">Elements <span class="text-green-400 font-bold">above</span> can displace ions of those <span class="text-green-400 font-bold">below</span> from solution</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">❌</div>
+                    <h3 class="text-xl font-bold text-red-300 mb-3 text-center">No Reaction</h3>
+                    <p class="text-gray-300 text-center">Elements <span class="text-red-400 font-bold">below</span> cannot displace ions of those <span class="text-red-400 font-bold">above</span></p>
+                </div>
+            </div>
+
+            <!-- Electrochemical Series Table -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <h3 class="text-2xl font-bold text-cyan-300 mb-6 text-center">Electrochemical Series (Half Equations)</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="space-y-2">
+                        <div class="bg-gradient-to-r from-red-900 to-red-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">K(s) - e⁻ → K⁺(aq)</p>
+                            <p class="text-red-300 text-xs text-center mt-1">Most reactive / Strongest reducing agent</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-orange-900 to-orange-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Na(s) - e⁻ → Na⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-yellow-900 to-yellow-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Ca(s) - 2e⁻ → Ca²⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-green-900 to-green-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Mg(s) - 2e⁻ → Mg²⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-emerald-900 to-emerald-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Al(s) - 3e⁻ → Al³⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-teal-900 to-teal-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Zn(s) - 2e⁻ → Zn²⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-cyan-900 to-cyan-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Fe(s) - 2e⁻ → Fe²⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-900 to-blue-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Sn(s) - 2e⁻ → Sn²⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-indigo-900 to-indigo-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Pb(s) - 2e⁻ → Pb²⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-purple-900 to-purple-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Cu(s) - 2e⁻ → Cu²⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-pink-900 to-pink-800 p-4 rounded-lg">
+                            <p class="text-white font-mono text-center">Ag(s) - e⁻ → Ag⁺(aq)</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-slate-900 to-slate-800 p-4 rounded-lg border-2 border-slate-600">
+                            <p class="text-white font-mono text-center">Au(s) - 3e⁻ → Au³⁺(aq)</p>
+                            <p class="text-slate-300 text-xs text-center mt-1">Least reactive / Weakest reducing agent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Positions and Importance -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                <h3 class="text-3xl font-bold text-yellow-300 mb-6 text-center">Importance of Positions in the Series</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">✅</div>
+                        <h4 class="font-bold text-green-300 mb-3 text-center">Reaction Occurs If:</h4>
+                        <p class="text-gray-300 text-center">Metal atom is <span class="text-green-400 font-bold">HIGHER</span> than the metal ion in solution</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">❌</div>
+                        <h4 class="font-bold text-red-300 mb-3 text-center">No Reaction If:</h4>
+                        <p class="text-gray-300 text-center">Metal atom is <span class="text-red-400 font-bold">LOWER</span> than the metal ion in solution</p>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="font-bold text-yellow-300 mb-4 text-center">Reaction Rate</h4>
+                    <p class="text-gray-300 mb-4 text-center">
+                        <span class="text-yellow-400 font-bold">Greater difference</span> in position = <span class="text-yellow-400 font-bold">Faster reaction</span>
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <p class="text-green-400 font-bold mb-2 text-center">Fast Reaction</p>
+                            <p class="text-gray-300 text-sm text-center">Zn + CuSO₄</p>
+                            <p class="text-gray-400 text-xs text-center">(Large difference in series)</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <p class="text-orange-400 font-bold mb-2 text-center">Slow Reaction</p>
+                            <p class="text-gray-300 text-sm text-center">Sn + CuSO₄</p>
+                            <p class="text-gray-400 text-xs text-center">(Small difference in series)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiment Section -->
+        <section id="experiment" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                Experiment: Investigating Displacement Reactions
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">Aim</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        To observe displacement reactions using copper, zinc, iron, and magnesium metals and their sulphate solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Materials -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-2xl font-bold text-blue-300 mb-4">Materials Needed</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                        <h4 class="font-bold text-cyan-300 mb-3">Metals:</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <p>• Copper (Cu)</p>
+                            <p>• Zinc (Zn)</p>
+                            <p>• Iron (Fe)</p>
+                            <p>• Magnesium (Mg)</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                        <h4 class="font-bold text-cyan-300 mb-3">Solutions:</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <p>• Copper sulphate (CuSO₄)</p>
+                            <p>• Zinc sulphate (ZnSO₄)</p>
+                            <p>• Iron sulphate (FeSO₄)</p>
+                            <p>• Magnesium sulphate (MgSO₄)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mt-4">
+                    <h4 class="font-bold text-cyan-300 mb-3">Equipment:</h4>
+                    <p class="text-gray-300">• 16 beakers • Sandpaper • Measuring cylinder</p>
+                </div>
+            </div>
+
+            <!-- Procedure -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 mb-8">
+                <h3 class="text-2xl font-bold text-green-300 mb-4">Procedure</h3>
+                <div class="space-y-3">
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl flex items-start">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-sm font-bold">1</div>
+                        <p class="text-gray-300">Pour 2 cm³ of copper sulphate solution into four beakers</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl flex items-start">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-sm font-bold">2</div>
+                        <p class="text-gray-300">Clean each metal (Cu, Zn, Fe, Mg) with sandpaper</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl flex items-start">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-sm font-bold">3</div>
+                        <p class="text-gray-300">Place each metal into separate beakers with copper sulphate</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl flex items-start">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-sm font-bold">4</div>
+                        <p class="text-gray-300">Record observations: reaction or no reaction</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl flex items-start">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-sm font-bold">5</div>
+                        <p class="text-gray-300">Repeat steps 1-4 with zinc sulphate, iron sulphate, and magnesium sulphate</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl flex items-start">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0 text-sm font-bold">6</div>
+                        <p class="text-gray-300">Use results to order metals by increasing reactivity</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Table -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-2xl font-bold text-purple-300 mb-4 text-center">Expected Results Table</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-gray-300">
+                        <thead class="bg-slate-900">
+                            <tr>
+                                <th class="p-3 text-left">Metal</th>
+                                <th class="p-3 text-center">CuSO₄</th>
+                                <th class="p-3 text-center">ZnSO₄</th>
+                                <th class="p-3 text-center">FeSO₄</th>
+                                <th class="p-3 text-center">MgSO₄</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-slate-700">
+                                <td class="p-3 font-bold">Copper (Cu)</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                            </tr>
+                            <tr class="border-t border-slate-700 bg-slate-900 bg-opacity-30">
+                                <td class="p-3 font-bold">Zinc (Zn)</td>
+                                <td class="p-3 text-center text-green-400">✓ Reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                            </tr>
+                            <tr class="border-t border-slate-700">
+                                <td class="p-3 font-bold">Iron (Fe)</td>
+                                <td class="p-3 text-center text-green-400">✓ Reaction</td>
+                                <td class="p-3 text-center text-green-400">✓ Reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                            </tr>
+                            <tr class="border-t border-slate-700 bg-slate-900 bg-opacity-30">
+                                <td class="p-3 font-bold">Magnesium (Mg)</td>
+                                <td class="p-3 text-center text-green-400">✓ Reaction</td>
+                                <td class="p-3 text-center text-green-400">✓ Reaction</td>
+                                <td class="p-3 text-center text-green-400">✓ Reaction</td>
+                                <td class="p-3 text-center text-red-400">✗ No reaction</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Analysis -->
+            <div class="bg-gradient-to-r from-yellow-900 to-orange-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                <h3 class="text-3xl font-bold text-yellow-300 mb-6 text-center">Analysis & Conclusion</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-yellow-300 mb-4">Hint:</h4>
+                        <p class="text-gray-300 mb-3">• The metal reacting with <span class="text-green-400 font-bold">all solutions</span> is the <span class="text-green-400 font-bold">most reactive</span></p>
+                        <p class="text-gray-300">• The metal reacting with <span class="text-red-400 font-bold">no solutions</span> is the <span class="text-red-400 font-bold">least reactive</span></p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-orange-300 mb-4">Order of Reactivity:</h4>
+                        <div class="space-y-2">
+                            <div class="bg-green-900 bg-opacity-40 p-3 rounded-lg text-center">
+                                <p class="text-green-400 font-bold">Magnesium (Most Reactive)</p>
+                            </div>
+                            <div class="bg-yellow-900 bg-opacity-40 p-3 rounded-lg text-center">
+                                <p class="text-yellow-400 font-bold">Iron</p>
+                            </div>
+                            <div class="bg-orange-900 bg-opacity-40 p-3 rounded-lg text-center">
+                                <p class="text-orange-400 font-bold">Zinc</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-40 p-3 rounded-lg text-center">
+                                <p class="text-red-400 font-bold">Copper (Least Reactive)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-emerald-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Key Takeaways
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">🔵</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-blue-300 mb-2">Oxidising Agent</h4>
+                            <p class="text-gray-300 text-sm">• Accepts electrons</p>
+                            <p class="text-gray-300 text-sm">• Gets reduced</p>
+                            <p class="text-gray-300 text-sm">• Causes oxidation in others</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">🟠</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-orange-300 mb-2">Reducing Agent</h4>
+                            <p class="text-gray-300 text-sm">• Donates electrons</p>
+                            <p class="text-gray-300 text-sm">• Gets oxidised</p>
+                            <p class="text-gray-300 text-sm">• Causes reduction in others</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">📊</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-purple-300 mb-2">Reactivity Series</h4>
+                            <p class="text-gray-300 text-sm">• More reactive = higher in series</p>
+                            <p class="text-gray-300 text-sm">• Can displace metals below</p>
+                            <p class="text-gray-300 text-sm">• Cannot displace metals above</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">⚡</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-green-300 mb-2">Displacement</h4>
+                            <p class="text-gray-300 text-sm">• More reactive displaces less reactive</p>
+                            <p class="text-gray-300 text-sm">• Greater difference = faster reaction</p>
+                            <p class="text-gray-300 text-sm">• Used to determine reactivity order</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('agents');
+    </script>
+</body>
+</html>
