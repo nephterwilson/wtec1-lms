@@ -1,3 +1,627 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isomerism - Organic Chemistry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🔬</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Isomerism
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Same Formula, Different Structure</p>
+            <p class="text-lg text-gray-400">Understanding Structural Variations in Organic Compounds</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('basics')" class="px-6 py-3 bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 rounded-xl transition shadow-lg">
+                    Basic Concepts
+                </button>
+                <button onclick="showSection('types')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Types of Isomerism
+                </button>
+                <button onclick="showSection('alkanes')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Alkanes & Alkenes
+                </button>
+                <button onclick="showSection('functional')" class="px-6 py-3 bg-gradient-to-r from-fuchsia-600 to-fuchsia-700 hover:from-fuchsia-700 hover:to-fuchsia-800 rounded-xl transition shadow-lg">
+                    Functional Groups
+                </button>
+            </div>
+        </header>
+
+        <!-- Basics Section -->
+        <section id="basics" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
+                Basic Concepts of Isomerism
+            </h2>
+
+            <!-- Isomers Definition -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-violet-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🧬</div>
+                    <h3 class="text-3xl font-bold text-violet-300 mb-4">Isomers</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Isomers are compounds having the same molecular formula but different structural formulae.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Conformers -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔄</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Conformers</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed mb-4">
+                        Conformations are compounds that differ from each other by rotation of a single bond in the molecule.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-3 text-purple-400">Key Characteristics:</h4>
+                        <p class="text-sm text-gray-300 mb-2">• Same molecular formula</p>
+                        <p class="text-sm text-gray-300 mb-2">• Same structural formula</p>
+                        <p class="text-sm text-gray-300">• Differ in shape due to bending, twisting, or turning of C–C bonds</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-pink-500">
+                        <h4 class="font-bold mb-3 text-pink-400">Important Note:</h4>
+                        <p class="text-sm text-gray-300">Bending or twisting C–C bonds does not change the molecular structure.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Identifying Isomers or Conformers -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-pink-400">Identifying Isomers or Conformers</h3>
+                <p class="text-center text-gray-400 mb-6">To decide if structures are isomers or conformers, check for branches or junctions:</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-5 rounded-xl border border-blue-500">
+                        <div class="text-center mb-3">
+                            <div class="text-4xl mb-2">1️⃣</div>
+                            <h4 class="font-bold text-blue-400">Carbon Skeleton</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Work out the carbon skeleton to understand structure</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-900 to-slate-900 p-5 rounded-xl border border-purple-500">
+                        <div class="text-center mb-3">
+                            <div class="text-4xl mb-2">2️⃣</div>
+                            <h4 class="font-bold text-purple-400">Parent Chain</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Choose and number longest carbon chain</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-pink-900 to-slate-900 p-5 rounded-xl border border-pink-500">
+                        <div class="text-center mb-3">
+                            <div class="text-4xl mb-2">3️⃣</div>
+                            <h4 class="font-bold text-pink-400">Name Compounds</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Isomers have different names; conformers have same name</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-900 to-slate-900 p-5 rounded-xl border border-green-500">
+                        <div class="text-center mb-3">
+                            <div class="text-4xl mb-2">✓</div>
+                            <h4 class="font-bold text-green-400">Conformations</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">No junctions and same names (e.g., normal hexane)</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-orange-900 to-slate-900 p-5 rounded-xl border border-orange-500">
+                        <div class="text-center mb-3">
+                            <div class="text-4xl mb-2">✓</div>
+                            <h4 class="font-bold text-orange-400">Isomers</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Different structural formulae and different names</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types Section -->
+        <section id="types" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Types of Structural Isomerism
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📊</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Two Main Types</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        There are two types of structural isomerism: chain isomerism and position isomerism.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Chain Isomerism -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔗</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Chain Isomerism</h3>
+                    </div>
+                    
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-3 text-blue-400">Definition:</h4>
+                        <p class="text-gray-300 mb-4">Difference in how carbon atoms connect (different carbon skeleton).</p>
+                        
+                        <h4 class="font-bold mb-3 text-cyan-400">Example:</h4>
+                        <p class="text-sm text-gray-300 mb-2">Butane (C₄H₁₀) has two chain isomers:</p>
+                        <div class="space-y-2 mt-3">
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg border border-blue-700">
+                                <p class="text-sm text-blue-300 font-mono">n-butane: C-C-C-C</p>
+                            </div>
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg border border-blue-700">
+                                <p class="text-sm text-blue-300 font-mono">2-methylpropane: C-C(C)-C</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border border-blue-700">
+                        <p class="text-sm text-gray-300"><strong class="text-blue-400">Key Point:</strong> Different carbon backbone arrangement</p>
+                    </div>
+                </div>
+
+                <!-- Position Isomerism -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📍</div>
+                        <h3 class="text-2xl font-bold text-pink-300">Position Isomerism</h3>
+                    </div>
+                    
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold mb-3 text-pink-400">Definition:</h4>
+                        <p class="text-gray-300 mb-4">Difference in position of a functional group within the molecule.</p>
+                        
+                        <h4 class="font-bold mb-3 text-fuchsia-400">Example:</h4>
+                        <p class="text-sm text-gray-300 mb-2">Propan-1-ol and propan-2-ol (C₃H₇OH):</p>
+                        <div class="space-y-2 mt-3">
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg border border-pink-700">
+                                <p class="text-sm text-pink-300 font-mono">propan-1-ol: C-C-C-OH</p>
+                            </div>
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg border border-pink-700">
+                                <p class="text-sm text-pink-300 font-mono">propan-2-ol: C-C(OH)-C</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-pink-900 bg-opacity-30 p-4 rounded-lg border border-pink-700">
+                        <p class="text-sm text-gray-300"><strong class="text-pink-400">Key Point:</strong> Same carbon backbone, different functional group position</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alkanes & Alkenes Section -->
+        <section id="alkanes" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-fuchsia-400 bg-clip-text text-transparent">
+                Naming Isomers: Alkanes & Alkenes
+            </h2>
+
+            <!-- Alkanes -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⛓️</div>
+                    <h3 class="text-3xl font-bold text-green-300">Rules for Naming Isomers of Alkanes</h3>
+                    <p class="text-gray-400 mt-2">Alkanes show only chain isomerism</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                        <div class="text-3xl mb-2">1️⃣</div>
+                        <h4 class="font-bold mb-2 text-green-400">Carbon Skeleton</h4>
+                        <p class="text-sm text-gray-300">Write the carbon skeleton (e.g., C₅H₁₂)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-emerald-500">
+                        <div class="text-3xl mb-2">2️⃣</div>
+                        <h4 class="font-bold mb-2 text-emerald-400">Number Chain</h4>
+                        <p class="text-sm text-gray-300">Number parent chain starting nearest first branch</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-teal-500">
+                        <div class="text-3xl mb-2">3️⃣</div>
+                        <h4 class="font-bold mb-2 text-teal-400">Base Name</h4>
+                        <p class="text-sm text-gray-300">Count carbon atoms to assign base name</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-lime-500">
+                        <div class="text-3xl mb-2">4️⃣</div>
+                        <h4 class="font-bold mb-2 text-lime-400">Alkyl Groups</h4>
+                        <p class="text-sm text-gray-300">Name attached groups (methyl, ethyl, propyl, butyl)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                        <div class="text-3xl mb-2">5️⃣</div>
+                        <h4 class="font-bold mb-2 text-yellow-400">Straight Chain</h4>
+                        <p class="text-sm text-gray-300">Use prefix 'n-' for normal (no branches)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                        <div class="text-3xl mb-2">6️⃣</div>
+                        <h4 class="font-bold mb-2 text-orange-400">Final Name</h4>
+                        <p class="text-sm text-gray-300">State positions of branches (numbers before alkyl names)</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-green-900 bg-opacity-30 p-6 rounded-xl border border-green-700">
+                    <h4 class="font-bold mb-3 text-green-400">Prefixes for Multiple Groups:</h4>
+                    <p class="text-sm text-gray-300">Use di-, tri-, tetra- for multiple identical alkyl groups</p>
+                    <p class="text-xs text-gray-400 mt-2">Example: 2,2-dimethylpropane has two methyl groups on carbon 2</p>
+                </div>
+            </div>
+
+            <!-- Alkenes -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔗</div>
+                    <h3 class="text-3xl font-bold text-blue-300">Rules for Naming Isomers of Alkenes</h3>
+                    <p class="text-gray-400 mt-2">Alkenes show both chain and position isomerism due to C=C double bond</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                        <div class="text-3xl mb-2">1️⃣</div>
+                        <h4 class="font-bold mb-2 text-blue-400">Carbon Skeleton</h4>
+                        <p class="text-sm text-gray-300">Write the carbon skeleton (e.g., C₅H₁₀)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                        <div class="text-3xl mb-2">2️⃣</div>
+                        <h4 class="font-bold mb-2 text-cyan-400">Number Chain</h4>
+                        <p class="text-sm text-gray-300">Number starting nearest functional group</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                        <div class="text-3xl mb-2">3️⃣</div>
+                        <h4 class="font-bold mb-2 text-indigo-400">Base Name</h4>
+                        <p class="text-sm text-gray-300">Count carbons for base name</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                        <div class="text-3xl mb-2">4️⃣</div>
+                        <h4 class="font-bold mb-2 text-purple-400">Double Bond Position</h4>
+                        <p class="text-sm text-gray-300">Indicate position of C=C by lowest number before '-ene'</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-blue-900 bg-opacity-30 p-6 rounded-xl border border-blue-700">
+                    <h4 class="font-bold mb-3 text-blue-400">Example:</h4>
+                    <p class="text-sm text-gray-300 mb-2">Pentene (C₅H₁₀) can have isomers like:</p>
+                    <div class="grid md:grid-cols-2 gap-3 mt-3">
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-cyan-300 font-mono">pent-1-ene</p>
+                            <p class="text-xs text-gray-400">Double bond at carbon 1</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-cyan-300 font-mono">pent-2-ene</p>
+                            <p class="text-xs text-gray-400">Double bond at carbon 2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Functional Groups Section -->
+        <section id="functional" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-fuchsia-400 to-purple-400 bg-clip-text text-transparent">
+                Naming Isomers with Functional Groups
+            </h2>
+
+            <!-- Alkanols -->
+            <div class="bg-gradient-to-br from-amber-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-amber-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🍺</div>
+                    <h3 class="text-3xl font-bold text-amber-300">Rules for Naming Isomers of Alkanols</h3>
+                    <p class="text-gray-400 mt-2">Alkanols contain –OH group and show chain and position isomerism</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-yellow-500 text-center">
+                        <div class="text-3xl mb-2">1️⃣</div>
+                        <p class="text-sm text-gray-300">Draw straight chain carbon skeleton</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-orange-500 text-center">
+                        <div class="text-3xl mb-2">2️⃣</div>
+                        <p class="text-sm text-gray-300">Place functional group and branches</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-red-500 text-center">
+                        <div class="text-3xl mb-2">3️⃣</div>
+                        <p class="text-sm text-gray-300">Number so carbon with –OH has lowest number</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-amber-500 text-center">
+                        <div class="text-3xl mb-2">4️⃣</div>
+                        <p class="text-sm text-gray-300">Indicate position of –OH before '-ol'</p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-900 bg-opacity-30 p-5 rounded-xl border border-amber-700">
+                    <h4 class="font-bold mb-3 text-amber-400">Example: Pentanol (C₅H₁₁OH)</h4>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg text-center">
+                            <p class="text-sm text-yellow-300 font-mono">pentan-1-ol</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg text-center">
+                            <p class="text-sm text-yellow-300 font-mono">pentan-2-ol</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg text-center">
+                            <p class="text-sm text-yellow-300 font-mono">pentan-3-ol</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alkanals -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🧪</div>
+                    <h3 class="text-3xl font-bold text-red-300">Rules for Naming Isomers of Alkanals</h3>
+                    <p class="text-gray-400 mt-2">Alkanals have carbonyl group (-CHO) at the end - only chain isomerism</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                    <p class="text-gray-300 mb-4"><strong class="text-red-400">Important:</strong> Alkanals do not show position isomerism due to the fixed position of the carbonyl group at the end of the molecule.</p>
+                </div>
+
+                <div class="bg-red-900 bg-opacity-30 p-5 rounded-xl border border-red-700">
+                    <h4 class="font-bold mb-3 text-red-400">Examples:</h4>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-gray-400 mb-1">Butanal (C₃H₇CHO):</p>
+                            <p class="text-sm text-red-300 font-mono">C₃H₇CHO variations show chain isomerism</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-gray-400 mb-1">Pentanal (C₄H₉CHO):</p>
+                            <p class="text-sm text-red-300 font-mono">C₄H₉CHO variations show chain isomerism</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alkanones -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚗️</div>
+                    <h3 class="text-3xl font-bold text-purple-300">Rules for Naming Isomers of Alkanones</h3>
+                    <p class="text-gray-400 mt-2">Alkanones have carbonyl group (-CO-) - show both chain and position isomerism</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                    <p class="text-gray-300"><strong class="text-purple-400">Key Difference:</strong> Unlike alkanals, the carbonyl group can be located at different positions in the molecule.</p>
+                    <p class="text-gray-300 mt-2">Position of the carbonyl group is indicated by the carbon number placed before '-one'.</p>
+                </div>
+
+                <div class="bg-purple-900 bg-opacity-30 p-5 rounded-xl border border-purple-700">
+                    <h4 class="font-bold mb-3 text-purple-400">Example: Pentanone (C₅H₁₀O)</h4>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-purple-300 font-mono">pentan-2-one</p>
+                            <p class="text-xs text-gray-400">Carbonyl at carbon 2</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-purple-300 font-mono">pentan-3-one</p>
+                            <p class="text-xs text-gray-400">Carbonyl at carbon 3</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3">Plus chain isomers with different carbon skeletons</p>
+                </div>
+            </div>
+
+            <!-- Alkanoic Acids -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🧴</div>
+                    <h3 class="text-3xl font-bold text-green-300">Rules for Naming Isomers of Alkanoic Acids</h3>
+                    <p class="text-gray-400 mt-2">Alkanoic acids contain carboxyl group (-COOH) - only chain isomerism</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                    <p class="text-gray-300 mb-4"><strong class="text-green-400">Important:</strong> The functional group is fixed at the end of the molecule, so no position isomerism occurs.</p>
+                </div>
+
+                <div class="bg-green-900 bg-opacity-30 p-5 rounded-xl border border-green-700">
+                    <h4 class="font-bold mb-3 text-green-400">Example: Pentanoic Acid (C₄H₉COOH)</h4>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-300 font-mono">pentanoic acid</p>
+                            <p class="text-xs text-gray-400">Straight chain with -COOH at end</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-300 font-mono">2-methylbutanoic acid</p>
+                            <p class="text-xs text-gray-400">Branched chain isomer</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-300 font-mono">3-methylbutanoic acid</p>
+                            <p class="text-xs text-gray-400">Another branched chain isomer</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3">All show chain isomerism only - COOH group always at carbon 1</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-violet-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
+                Summary: Isomerism in Different Compounds
+            </h3>
+            
+            <div class="overflow-x-auto mb-8">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b-2 border-violet-500">
+                            <th class="p-4 text-violet-300 font-bold">Compound Type</th>
+                            <th class="p-4 text-green-300 font-bold">Chain Isomerism</th>
+                            <th class="p-4 text-pink-300 font-bold">Position Isomerism</th>
+                            <th class="p-4 text-blue-300 font-bold">Functional Group</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-700">
+                            <td class="p-4 text-yellow-400 font-bold">Alkanes</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-red-400">✗ No</td>
+                            <td class="p-4 text-gray-300">None</td>
+                        </tr>
+                        <tr class="border-b border-slate-700">
+                            <td class="p-4 text-blue-400 font-bold">Alkenes</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-gray-300">C=C</td>
+                        </tr>
+                        <tr class="border-b border-slate-700">
+                            <td class="p-4 text-amber-400 font-bold">Alkanols</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-gray-300">-OH</td>
+                        </tr>
+                        <tr class="border-b border-slate-700">
+                            <td class="p-4 text-red-400 font-bold">Alkanals</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-red-400">✗ No</td>
+                            <td class="p-4 text-gray-300">-CHO (at end)</td>
+                        </tr>
+                        <tr class="border-b border-slate-700">
+                            <td class="p-4 text-purple-400 font-bold">Alkanones</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-gray-300">-CO- (internal)</td>
+                        </tr>
+                        <tr class="border-b border-slate-700">
+                            <td class="p-4 text-green-400 font-bold">Alkanoic Acids</td>
+                            <td class="p-4 text-green-400">✓ Yes</td>
+                            <td class="p-4 text-red-400">✗ No</td>
+                            <td class="p-4 text-gray-300">-COOH (at end)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🧬</div>
+                        <div>
+                            <h4 class="font-bold text-violet-400 mb-2">Isomers vs Conformers</h4>
+                            <p class="text-gray-300 text-sm">Isomers have different structural formulae and names; conformers differ only in shape due to bond rotation.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🔗</div>
+                        <div>
+                            <h4 class="font-bold text-blue-400 mb-2">Chain Isomerism</h4>
+                            <p class="text-gray-300 text-sm">Different arrangement of carbon atoms in the skeleton - all organic compounds can show this.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">📍</div>
+                        <div>
+                            <h4 class="font-bold text-pink-400 mb-2">Position Isomerism</h4>
+                            <p class="text-gray-300 text-sm">Different position of functional group - only possible when functional group can move (alkenes, alkanols, alkanones).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">⚠️</div>
+                        <div>
+                            <h4 class="font-bold text-red-400 mb-2">Fixed Functional Groups</h4>
+                            <p class="text-gray-300 text-sm">Alkanals and alkanoic acids have functional groups fixed at the end - no position isomerism possible.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🔢</div>
+                        <div>
+                            <h4 class="font-bold text-purple-400 mb-2">Numbering Rules</h4>
+                            <p class="text-gray-300 text-sm">Always number the parent chain to give the functional group or first branch the lowest possible number.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">📝</div>
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-2">Systematic Naming</h4>
+                            <p class="text-gray-300 text-sm">Use prefixes (di-, tri-, tetra-) for multiple identical groups and always state position numbers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-violet-900 to-purple-900 rounded-xl p-6 border border-violet-600">
+                <div class="flex items-center justify-center">
+                    <div class="text-5xl mr-4">🔬</div>
+                    <div class="text-center">
+                        <p class="text-xl font-bold text-violet-300 mb-2">Master the Patterns!</p>
+                        <p class="text-gray-300">Understanding isomerism is key to naming and identifying organic compounds correctly. Practice drawing and naming different isomers to build your skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('basics');
+    </script>
+</body>
+</html>
