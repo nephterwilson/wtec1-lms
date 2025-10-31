@@ -1,0 +1,965 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electromagnetism - Physics Lesson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🧲</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Electromagnetism
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Electricity, Magnetism, and Their Interaction</p>
+            <p class="text-lg text-gray-400">From Domains to Generators and Transformers</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('domains')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Magnetic Domains
+                </button>
+                <button onclick="showSection('electromagnets')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Electromagnets
+                </button>
+                <button onclick="showSection('fields')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Magnetic Fields
+                </button>
+                <button onclick="showSection('force')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Force & Motion
+                </button>
+                <button onclick="showSection('induction')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Induction
+                </button>
+                <button onclick="showSection('devices')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Generators & Transformers
+                </button>
+            </div>
+        </header>
+
+        <!-- Magnetic Domains Section -->
+        <section id="domains" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Magnetic Domain Theory
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <h3 class="text-2xl font-bold text-orange-300 mb-6 text-center">Key Principles</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-orange-300 mb-4">Force Direction</h4>
+                        <div class="space-y-3">
+                            <div class="bg-orange-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-orange-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Force is perpendicular to both field and current</p>
+                            </div>
+                            <div class="bg-orange-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-orange-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Force is greatest when conductor is at 90° to magnetic field</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-yellow-300 mb-4">Fleming's Left-Hand Rule</h4>
+                        <div class="space-y-3">
+                            <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-yellow-400 font-bold">👍 Thumb</p>
+                                <p class="text-gray-300 text-sm">Force (motion)</p>
+                            </div>
+                            <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-yellow-400 font-bold">☝️ First Finger</p>
+                                <p class="text-gray-300 text-sm">Magnetic field</p>
+                            </div>
+                            <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-yellow-400 font-bold">✌️ Second Finger</p>
+                                <p class="text-gray-300 text-sm">Current</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-red-900 to-orange-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">✋</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-red-300">How to Use Fleming's Left-Hand Rule</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Hold your left hand with the thumb, first finger, and second finger at right angles to each other. Point the <span class="text-yellow-400 font-bold">first finger</span> in the direction of the magnetic field (N to S), the <span class="text-green-400 font-bold">second finger</span> in the direction of current, and your <span class="text-red-400 font-bold">thumb</span> will point in the direction of motion (force).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Induction Section -->
+        <section id="induction" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                Electromagnetic Induction
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-4">Generating Electricity from Motion</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Electromagnetic induction is the production of <span class="text-orange-400 font-bold">current in a conductor</span> moving in a <span class="text-orange-400 font-bold">magnetic field</span>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔌</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Method 1</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 text-center leading-relaxed">
+                            Move <span class="text-blue-400 font-bold">conductor</span> through magnetic field → current induced
+                        </p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🧲</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Method 2</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 text-center leading-relaxed">
+                            Move <span class="text-purple-400 font-bold">magnet</span> through a coil → current induced
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experiment -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <h3 class="text-3xl font-bold text-green-300 mb-6 text-center">🧪 Demonstration Experiment</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-300 mb-4 text-center">Setup</h4>
+                        <div class="space-y-2">
+                            <p class="text-gray-300 text-sm">• Coil of wire</p>
+                            <p class="text-gray-300 text-sm">• Galvanometer</p>
+                            <p class="text-gray-300 text-sm">• Bar magnet</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-yellow-300 mb-4 text-center">Action</h4>
+                        <div class="space-y-2">
+                            <p class="text-gray-300 text-sm">• Move magnet toward coil</p>
+                            <p class="text-gray-300 text-sm">• Move magnet away from coil</p>
+                            <p class="text-gray-300 text-sm">• Keep magnet stationary</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-cyan-300 mb-4 text-center">Observation</h4>
+                        <div class="space-y-2">
+                            <p class="text-gray-300 text-sm">• Needle deflects during movement</p>
+                            <p class="text-gray-300 text-sm">• Direction changes with magnet direction</p>
+                            <p class="text-gray-300 text-sm">• No deflection when stationary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faraday's Laws -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-3xl font-bold text-blue-300 mb-6 text-center">Faraday's Laws of Electromagnetic Induction</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-2xl font-bold">1</div>
+                            <h4 class="text-xl font-bold text-blue-300">First Law</h4>
+                        </div>
+                        <p class="text-gray-300">An EMF is induced when <span class="text-blue-400 font-bold">magnetic flux</span> through a coil <span class="text-blue-400 font-bold">changes</span>.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-2xl font-bold">2</div>
+                            <h4 class="text-xl font-bold text-purple-300">Second Law</h4>
+                        </div>
+                        <p class="text-gray-300">The EMF is proportional to the <span class="text-purple-400 font-bold">rate of change</span> of flux.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lenz's Law -->
+            <div class="bg-gradient-to-r from-orange-900 to-red-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🔄</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-orange-300">Lenz's Law</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            Induced current flows in a direction that <span class="text-orange-400 font-bold">opposes the change</span> that caused it.
+                        </p>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-orange-400 font-bold mb-2">Conservation of Energy</p>
+                            <p class="text-gray-300">This obeys the principle of conservation of energy - energy cannot be created or destroyed, only transformed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Devices Section -->
+        <section id="devices" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Generators & Transformers
+            </h2>
+
+            <!-- Generators -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚙️</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Generators</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Generators convert <span class="text-green-400 font-bold">mechanical energy</span> into <span class="text-green-400 font-bold">electrical energy</span> through electromagnetic induction.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- AC Generator -->
+                    <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🔄</div>
+                            <h4 class="text-2xl font-bold text-cyan-300">AC Generator</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-cyan-500">
+                                <p class="text-cyan-400 font-bold mb-2">Output:</p>
+                                <p class="text-gray-300 text-sm">Produces <span class="font-bold">alternating current</span></p>
+                            </div>
+                            <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-cyan-500">
+                                <p class="text-cyan-400 font-bold mb-2">Mechanism:</p>
+                                <p class="text-gray-300 text-sm">Uses rotating coil in magnetic field</p>
+                            </div>
+                            <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-cyan-500">
+                                <p class="text-cyan-400 font-bold mb-2">Current:</p>
+                                <p class="text-gray-300 text-sm">Direction changes periodically</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DC Generator -->
+                    <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🔁</div>
+                            <h4 class="text-2xl font-bold text-green-300">DC Generator</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-green-500">
+                                <p class="text-green-400 font-bold mb-2">Output:</p>
+                                <p class="text-gray-300 text-sm">Produces <span class="font-bold">direct current</span></p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-green-500">
+                                <p class="text-green-400 font-bold mb-2">Mechanism:</p>
+                                <p class="text-gray-300 text-sm">Uses a commutator to maintain direction</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-green-500">
+                                <p class="text-green-400 font-bold mb-2">Current:</p>
+                                <p class="text-gray-300 text-sm">Flows in one direction only</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transformers -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔌</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Transformers</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Transformers change the <span class="text-blue-400 font-bold">voltage of alternating current</span> using electromagnetic induction.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <!-- Step-Up Transformer -->
+                    <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🔺</div>
+                            <h4 class="text-2xl font-bold text-red-300">Step-Up Transformer</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-red-500">
+                                <p class="text-red-400 font-bold mb-2">Function:</p>
+                                <p class="text-gray-300 text-sm">Increases voltage</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-red-500">
+                                <p class="text-red-400 font-bold mb-2">Design:</p>
+                                <p class="text-gray-300 text-sm">Secondary coil has <span class="font-bold">more turns</span> than primary</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-red-500">
+                                <p class="text-red-400 font-bold mb-2">Use:</p>
+                                <p class="text-gray-300 text-sm">Power transmission over long distances</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step-Down Transformer -->
+                    <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🔻</div>
+                            <h4 class="text-2xl font-bold text-blue-300">Step-Down Transformer</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500">
+                                <p class="text-blue-400 font-bold mb-2">Function:</p>
+                                <p class="text-gray-300 text-sm">Decreases voltage</p>
+                            </div>
+                            <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500">
+                                <p class="text-blue-400 font-bold mb-2">Design:</p>
+                                <p class="text-gray-300 text-sm">Secondary coil has <span class="font-bold">fewer turns</span> than primary</p>
+                            </div>
+                            <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500">
+                                <p class="text-blue-400 font-bold mb-2">Use:</p>
+                                <p class="text-gray-300 text-sm">Safe voltage for homes and devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformer Formula -->
+                <div class="bg-purple-900 bg-opacity-30 p-6 rounded-xl border-2 border-purple-500">
+                    <h4 class="text-2xl font-bold text-purple-300 mb-4 text-center">Transformer Equation</h4>
+                    <div class="bg-slate-900 rounded-lg p-6 font-mono text-center text-2xl mb-4">
+                        <p class="text-white">Vs/Vp = Ns/Np</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-gray-300">
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <p><span class="text-purple-400 font-bold">Vs</span> = Secondary voltage</p>
+                            <p><span class="text-purple-400 font-bold">Vp</span> = Primary voltage</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg">
+                            <p><span class="text-purple-400 font-bold">Ns</span> = Secondary turns</p>
+                            <p><span class="text-purple-400 font-bold">Np</span> = Primary turns</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notes -->
+            <div class="bg-gradient-to-r from-yellow-900 to-orange-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                <h3 class="text-2xl font-bold text-yellow-300 mb-6 text-center">⚠️ Important Notes</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4">🔌</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-yellow-300 mb-2">AC Only</h4>
+                                <p class="text-gray-300">Transformers only work with <span class="text-yellow-400 font-bold">AC current</span>, not DC</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4">⚡</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-orange-300 mb-2">Efficiency</h4>
+                                <p class="text-gray-300">Power is ideally conserved, but real efficiency < 100% due to losses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Key Takeaways: Electromagnetism
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">🧲</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-blue-300 mb-2">Domains</h4>
+                            <p class="text-gray-300 text-sm">• Tiny aligned regions</p>
+                            <p class="text-gray-300 text-sm">• Random = unmagnetized</p>
+                            <p class="text-gray-300 text-sm">• Aligned = magnetized</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">⚡</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-purple-300 mb-2">Electromagnets</h4>
+                            <p class="text-gray-300 text-sm">• Current creates field</p>
+                            <p class="text-gray-300 text-sm">• Temporary magnets</p>
+                            <p class="text-gray-300 text-sm">• Controllable strength</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">🌀</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-pink-300 mb-2">Fields</h4>
+                            <p class="text-gray-300 text-sm">• Straight wire: circles</p>
+                            <p class="text-gray-300 text-sm">• Loop: stronger center</p>
+                            <p class="text-gray-300 text-sm">• Solenoid: uniform field</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">💫</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-red-300 mb-2">Motor Effect</h4>
+                            <p class="text-gray-300 text-sm">• Current + field = force</p>
+                            <p class="text-gray-300 text-sm">• Fleming's left-hand rule</p>
+                            <p class="text-gray-300 text-sm">• Basis of electric motors</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">⚡</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-orange-300 mb-2">Induction</h4>
+                            <p class="text-gray-300 text-sm">• Motion creates current</p>
+                            <p class="text-gray-300 text-sm">• Faraday's laws</p>
+                            <p class="text-gray-300 text-sm">• Lenz's law</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">⚙️</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-green-300 mb-2">Devices</h4>
+                            <p class="text-gray-300 text-sm">• Generators: AC & DC</p>
+                            <p class="text-gray-300 text-sm">• Transformers: step up/down</p>
+                            <p class="text-gray-300 text-sm">• Vs/Vp = Ns/Np</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center py-8">
+            <div class="bg-gradient-to-r from-blue-900 to-purple-900 rounded-2xl p-6 shadow-2xl border border-blue-500">
+                <div class="text-5xl mb-4">⚡🧲</div>
+                <p class="text-2xl font-bold text-blue-300 mb-3">Electromagnetism Powers Our Modern World</p>
+                <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                    From electric motors to power generation, electromagnetic principles are fundamental to modern technology. Understanding these concepts opens doors to countless innovations in physics and engineering.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('domains');
+    </script>
+</body>
+</html>-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🧲</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Understanding Magnetism at the Atomic Level</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        The domain theory explains magnetism at the atomic level. It states that magnetic materials contain tiny regions called <span class="text-blue-400 font-bold">domains</span>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔹</div>
+                        <h3 class="text-2xl font-bold text-blue-300">What is a Domain?</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 text-center leading-relaxed">
+                            A domain is a <span class="text-blue-400 font-bold">small region</span> in which atomic magnets (dipoles) align in the <span class="text-blue-400 font-bold">same direction</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔄</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Random vs Aligned</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 text-center leading-relaxed">
+                            In an <span class="text-red-400 font-bold">unmagnetized</span> material, domains are randomly arranged. When <span class="text-green-400 font-bold">magnetized</span>, they align in the same direction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Unmagnetized Material -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <h3 class="text-2xl font-bold text-red-300 mb-6 text-center">Unmagnetized Material</h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl">
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">↗️</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">↙️</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">↖️</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">↘️</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">↗️</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">↙️</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-center mt-4">Domains point in random directions</p>
+                    </div>
+                </div>
+
+                <!-- Magnetized Material -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold text-green-300 mb-6 text-center">Magnetized Material</h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl">
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-green-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">→</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">→</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">→</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">→</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">→</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-40 p-4 rounded-lg text-center">
+                                <p class="text-2xl">→</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-center mt-4">Domains aligned in same direction</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-blue-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">💪</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-blue-300">Magnet Strength</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            <span class="text-blue-400 font-bold">Stronger magnets</span> have more domains aligned in the same direction. The more domains that align, the stronger the magnetic field produced by the material.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Electromagnets Section -->
+        <section id="electromagnets" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Electromagnetism & Electromagnets
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">What is Electromagnetism?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Electromagnetism is the production of a <span class="text-purple-400 font-bold">magnetic field</span> due to <span class="text-purple-400 font-bold">electric current</span> in a conductor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔌</div>
+                    <h3 class="text-xl font-bold text-blue-300 mb-3 text-center">Current ON</h3>
+                    <p class="text-gray-300 text-sm text-center">A current-carrying conductor produces a magnetic field around it</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔴</div>
+                    <h3 class="text-xl font-bold text-red-300 mb-3 text-center">Current OFF</h3>
+                    <p class="text-gray-300 text-sm text-center">The magnetic field disappears when current is switched off</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🧲</div>
+                    <h3 class="text-xl font-bold text-green-300 mb-3 text-center">Applications</h3>
+                    <p class="text-gray-300 text-sm text-center">Used to make electromagnets for various devices</p>
+                </div>
+            </div>
+
+            <!-- Electromagnets -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <h3 class="text-3xl font-bold text-pink-300 mb-6 text-center">Electromagnets</h3>
+                <div class="bg-pink-900 bg-opacity-20 p-6 rounded-xl mb-6">
+                    <p class="text-gray-300 text-lg text-center leading-relaxed">
+                        An electromagnet is a <span class="text-pink-400 font-bold">temporary magnet</span> created by passing current through a coil wound around a <span class="text-pink-400 font-bold">soft iron core</span>.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-pink-300 mb-4">How It Works</h4>
+                        <div class="space-y-3">
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-pink-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Soft iron becomes magnetized when current flows through the coil</p>
+                            </div>
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-pink-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Magnetic field disappears when current is switched off</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-300 mb-4">Applications</h4>
+                        <div class="space-y-3">
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-green-400 mr-2">🔔</span>
+                                <p class="text-gray-300 text-sm">Electric bells</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-green-400 mr-2">🔌</span>
+                                <p class="text-gray-300 text-sm">Relays and switches</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-green-400 mr-2">🏗️</span>
+                                <p class="text-gray-300 text-sm">Electromagnetic cranes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Magnetic Fields Section -->
+        <section id="fields" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                Magnetic Field Around Conductors
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌀</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">Field Patterns</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Magnetic fields are formed around conductors carrying current. The field pattern depends on the conductor's shape.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Straight Wire -->
+            <div class="mb-8 bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">📏</div>
+                    <h3 class="text-3xl font-bold text-blue-300">Straight Wire</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-blue-300 mb-4">Field Pattern</h4>
+                        <p class="text-gray-300 mb-4">Magnetic field forms <span class="text-blue-400 font-bold">concentric circles</span> around the wire.</p>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-gray-300 text-sm">✋ <span class="font-bold">Right-Hand Grip Rule:</span></p>
+                            <p class="text-gray-300 text-sm">Thumb = current direction</p>
+                            <p class="text-gray-300 text-sm">Fingers = field direction</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-cyan-300 mb-4">Experiment Observations</h4>
+                        <div class="space-y-2">
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-cyan-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Iron filings form concentric circles</p>
+                            </div>
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-cyan-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Field strength decreases with distance</p>
+                            </div>
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-cyan-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Field lies in plane perpendicular to wire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Circular Loop -->
+            <div class="mb-8 bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">⭕</div>
+                    <h3 class="text-3xl font-bold text-purple-300">Circular Loop</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-purple-300 mb-4">Field Pattern</h4>
+                        <p class="text-gray-300 mb-4">Magnetic field <span class="text-purple-400 font-bold">strengthens at the center</span> of the loop.</p>
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-gray-300 text-sm">✋ <span class="font-bold">Right-Hand Grip Rule:</span></p>
+                            <p class="text-gray-300 text-sm">Thumb = magnetic field</p>
+                            <p class="text-gray-300 text-sm">Fingers = current direction</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-pink-300 mb-4">Experiment</h4>
+                        <div class="space-y-2">
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-pink-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Pass wire through cardboard forming loop</p>
+                            </div>
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-pink-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Connect to DC source and sprinkle filings</p>
+                            </div>
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-pink-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Field lines form closed loops around wire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solenoid -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🌀</div>
+                    <h3 class="text-3xl font-bold text-green-300">Solenoid</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-300 mb-4">Field Pattern</h4>
+                        <p class="text-gray-300 mb-4">Multiple loops form a <span class="text-green-400 font-bold">strong, uniform</span> magnetic field inside the coil.</p>
+                        <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-green-400 font-bold mb-2">Field Strength ∝</p>
+                            <p class="text-gray-300 text-sm">Number of turns × Current</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-yellow-300 mb-4">Observations</h4>
+                        <div class="space-y-2">
+                            <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-yellow-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Field is uniform inside solenoid</p>
+                            </div>
+                            <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-yellow-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Iron filings align along field lines</p>
+                            </div>
+                            <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-yellow-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Filings denser inside coil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Force & Motion Section -->
+        <section id="force" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Force on a Current-Carrying Conductor
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💫</div>
+                    <h3 class="text-3xl font-bold text-red-300 mb-4">The Motor Effect</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        A conductor placed in a magnetic field experiences a <span class="text-red-400 font-bold">force</span> when current passes through it.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔴</div>
+                        <h3 class="text-2xl font-bold text-red-300">No Current</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 text-center text-lg">No Force</p>
+                        <p class="text-gray-400 text-center text-sm mt-2">Conductor remains stationary</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚡</div>
+                        <h3 class="text-2xl font-bold text-green-300">Current ON</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 text-center text-lg">Force Applied</p>
+                        <p class="text-gray-400 text-center text-sm mt-2">Conductor experiences motion</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electromagnets Section -->
+        <section id="electromagnets" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Electromagnetism & Electromagnets
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">What is Electromagnetism?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Electromagnetism is the production of a <span class="text-purple-400 font-bold">magnetic field</span> due to <span class="text-purple-400 font-bold">electric current</span> in a conductor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔌</div>
+                    <h3 class="text-xl font-bold text-blue-300 mb-3 text-center">Current ON</h3>
+                    <p class="text-gray-300 text-sm text-center">A current-carrying conductor produces a magnetic field around it</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔴</div>
+                    <h3 class="text-xl font-bold text-red-300 mb-3 text-center">Current OFF</h3>
+                    <p class="text-gray-300 text-sm text-center">The magnetic field disappears when current is switched off</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🧲</div>
+                    <h3 class="text-xl font-bold text-green-300 mb-3 text-center">Applications</h3>
+                    <p class="text-gray-300 text-sm text-center">Used to make electromagnets for various devices</p>
+                </div>
+            </div>
+
+            <!-- Electromagnets -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                <h3 class="text-3xl font-bold text-pink-300 mb-6 text-center">Electromagnets</h3>
+                <div class="bg-pink-900 bg-opacity-20 p-6 rounded-xl mb-6">
+                    <p class="text-gray-300 text-lg text-center leading-relaxed">
+                        An electromagnet is a <span class="text-pink-400 font-bold">temporary magnet</span> created by passing current through a coil wound around a <span class="text-pink-400 font-bold">soft iron core</span>.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-pink-300 mb-4">How It Works</h4>
+                        <div class="space-y-3">
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-pink-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Soft iron becomes magnetized when current flows through the coil</p>
+                            </div>
+                            <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-pink-400 mr-2">•</span>
+                                <p class="text-gray-300 text-sm">Magnetic field disappears when current is switched off</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-300 mb-4">Applications</h4>
+                        <div class="space-y-3">
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-green-400 mr-2">🔔</span>
+                                <p class="text-gray-300 text-sm">Electric bells</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-green-400 mr-2">🔌</span>
+                                <p class="text-gray-300 text-sm">Relays and switches</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-green-400 mr-2">🏗️</span>
+                                <p class="text-gray-300 text-sm">Electromagnetic cranes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

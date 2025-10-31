@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Preservation & Heritage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🏛️</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-purple-400 bg-clip-text text-transparent">
+                Cultural Preservation & Heritage
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Protecting Our Past, Enriching Our Future</p>
+            <p class="text-lg text-gray-400">Safeguarding Identity Through Generations</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('intro')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 rounded-xl transition shadow-lg">
+                    Introduction
+                </button>
+                <button onclick="showSection('strategies')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Preservation Strategies
+                </button>
+                <button onclick="showSection('importance')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Importance & Challenges
+                </button>
+                <button onclick="showSection('influences')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Cultural Influences
+                </button>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="intro" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Understanding Cultural Heritage & Preservation
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌍</div>
+                    <h3 class="text-3xl font-bold text-yellow-300 mb-4">The Foundation of Identity</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Culture defines who we are as communities and nations. It encompasses the traditions, beliefs, artifacts, and practices inherited from our ancestors and shapes how we live today.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Cultural Heritage -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🏺</div>
+                        <h3 class="text-3xl font-bold text-purple-300">Cultural Heritage</h3>
+                        <p class="text-purple-200 text-sm mb-4">The Inherited Legacy</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400">What It Is</h4>
+                            <p class="text-sm text-gray-300">The legacy of physical artifacts and intangible attributes inherited from past generations.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <h4 class="font-bold mb-2 text-pink-400">Nature</h4>
+                            <p class="text-sm text-gray-300">Passive - existing legacy that has been passed down through time.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                            <h4 class="font-bold mb-2 text-indigo-400">Examples</h4>
+                            <p class="text-sm text-gray-300">Museums, traditional dances, folk tales, monuments, sacred beliefs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultural Preservation -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🛡️</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Cultural Preservation</h3>
+                        <p class="text-blue-200 text-sm mb-4">The Active Process</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2 text-blue-400">What It Is</h4>
+                            <p class="text-sm text-gray-300">The process of actively protecting, maintaining, and passing on cultural heritage.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <h4 class="font-bold mb-2 text-cyan-400">Nature</h4>
+                            <p class="text-sm text-gray-300">Active - ongoing efforts to safeguard culture for future generations.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-teal-500">
+                            <h4 class="font-bold mb-2 text-teal-400">Examples</h4>
+                            <p class="text-sm text-gray-300">Documenting stories, protecting sites, teaching culture in schools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-yellow-900 to-orange-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-yellow-300">Key Distinction</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Cultural Heritage is what we inherit—the traditions, artifacts, and beliefs of our ancestors. Cultural Preservation is what we do—the active effort to protect, maintain, and pass on these treasures so they don't disappear. Heritage is the legacy; preservation is the responsibility.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategies Section -->
+        <section id="strategies" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Strategies for Preserving Culture
+            </h2>
+
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🎯</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Multiple Approaches, One Goal</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        Preserving culture requires diverse methods that protect both tangible and intangible heritage, ensuring traditions remain alive for future generations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🏛️</div>
+                        <h3 class="text-xl font-bold text-yellow-300">Cultural Heritage Sites</h3>
+                    </div>
+                    <p class="text-gray-300">Maintaining and protecting museums, historical monuments, and sacred places that hold cultural significance. These physical locations serve as repositories of collective memory and identity.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">📚</div>
+                        <h3 class="text-xl font-bold text-blue-300">Stories and Folk Tales</h3>
+                    </div>
+                    <p class="text-gray-300">Recording and retelling traditional stories orally or in writing to keep history and morals alive. Stories transmit wisdom, values, and cultural knowledge across generations.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💃</div>
+                        <h3 class="text-xl font-bold text-green-300">Traditional Dances and Music</h3>
+                    </div>
+                    <p class="text-gray-300">Organizing cultural festivals and events to perform and pass on traditional dances and songs. These artistic expressions embody cultural identity and community spirit.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">📖</div>
+                        <h3 class="text-xl font-bold text-purple-300">Books and Curriculum</h3>
+                    </div>
+                    <p class="text-gray-300">Including cultural history and values in school syllabuses to educate young generations. Education ensures cultural continuity and understanding among youth.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🙏</div>
+                        <h3 class="text-xl font-bold text-orange-300">Beliefs and Practices</h3>
+                    </div>
+                    <p class="text-gray-300">Encouraging the practice of rituals, ceremonies, and customs within communities. These practices connect people to their heritage and strengthen social bonds.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">👑</div>
+                        <h3 class="text-xl font-bold text-red-300">Traditional Leadership</h3>
+                    </div>
+                    <p class="text-gray-300">Maintenance of traditional chains of command—respecting and supporting traditional leadership and governance systems that uphold cultural norms and values.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🌟</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-indigo-300">Integrated Approach</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Effective cultural preservation requires using all these strategies together. Physical sites preserve tangible heritage, while stories, dances, and education keep intangible culture alive. Traditional leadership and religious practices maintain social structures, while modern curriculum ensures young people understand their roots. Together, these methods create a comprehensive system of cultural protection.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Importance & Challenges Section -->
+        <section id="importance" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Importance & Challenges of Preservation
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Importance -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">✨</div>
+                        <h3 class="text-3xl font-bold text-green-300">Why Preserve Culture?</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Identity</h4>
+                            <p class="text-sm text-gray-300">Culture gives individuals and communities a sense of belonging and pride in their heritage.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-emerald-500">
+                            <h4 class="font-bold mb-2 text-emerald-400">Culture Sustenance</h4>
+                            <p class="text-sm text-gray-300">It helps keep traditions, languages, and values alive over time.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-teal-500">
+                            <h4 class="font-bold mb-2 text-teal-400">Generational Transfer</h4>
+                            <p class="text-sm text-gray-300">Preserved culture ensures that young people learn about their history, morals, and social norms.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <h4 class="font-bold mb-2 text-cyan-400">Social Cohesion</h4>
+                            <p class="text-sm text-gray-300">Shared culture unites people and promotes peace and mutual understanding.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚠️</div>
+                        <h3 class="text-3xl font-bold text-red-300">Constraints Faced</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Modernization</h4>
+                            <p class="text-sm text-gray-300">Rapid technological and social changes may lead to the loss of traditional ways.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <h4 class="font-bold mb-2 text-orange-400">Media Influence</h4>
+                            <p class="text-sm text-gray-300">Global media often promotes foreign cultures, overshadowing local customs.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <h4 class="font-bold mb-2 text-yellow-400">Generational Gaps</h4>
+                            <p class="text-sm text-gray-300">Changes in ideologies between generations—younger people may resist traditional practices seen as outdated.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <h4 class="font-bold mb-2 text-pink-400">Need for Change</h4>
+                            <p class="text-sm text-gray-300">Societal development sometimes requires adapting or changing cultural practices.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400">Lack of Resources</h4>
+                            <p class="text-sm text-gray-300">Limited funding or support for cultural projects and institutions can hinder preservation efforts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Culture and Development -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Culture and Development: The Delicate Balance</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🎯</div>
+                        <h4 class="font-bold text-lg mb-2 text-blue-400">Culture Influences Development</h4>
+                        <p class="text-sm text-gray-300">Cultural values and social norms shape how communities approach economic growth, education, and governance.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">⚖️</div>
+                        <h4 class="font-bold text-lg mb-2 text-orange-400">Development Affects Culture</h4>
+                        <p class="text-sm text-gray-300">Modern infrastructure and technology can change lifestyles and sometimes threaten traditional culture.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🌱</div>
+                        <h4 class="font-bold text-lg mb-2 text-green-400">Balanced Development</h4>
+                        <p class="text-sm text-gray-300">Sustainable development respects and incorporates cultural heritage, ensuring progress doesn't destroy identity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malawi Case Study -->
+            <div class="bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl p-8 shadow-2xl border border-green-400">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🇲🇼</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-white">Case Study: Malawi</h4>
+                        <p class="text-white text-lg leading-relaxed mb-4">
+                            In Malawi, cultural festivals like the <strong>Gule Wamkulu dance</strong> promote tourism and community pride, contributing to economic development while preserving heritage. These performances attract visitors, generate income, and keep ancient traditions alive.
+                        </p>
+                        <p class="text-white text-lg leading-relaxed">
+                            Traditional leadership structures help maintain social order and cultural practices, supporting community development. Chiefs and elders play crucial roles in conflict resolution, land management, and preserving customary laws that have governed communities for generations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Influences Section -->
+        <section id="influences" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Impact of Western and Eastern Cultures
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌐</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Cultural Exchange and Influence</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Throughout history, Western and Eastern cultures have significantly influenced African societies, bringing both opportunities and challenges to traditional ways of life.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Western Influence -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌍</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Western Influence</h3>
+                        <p class="text-blue-200 text-sm mb-4">Europe & North America</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2 text-blue-400 flex items-center">
+                                <span class="mr-2">📚</span> Education Systems
+                            </h4>
+                            <p class="text-sm text-gray-300">Introduction of Western education systems and languages like English.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-cyan-500">
+                            <h4 class="font-bold mb-2 text-cyan-400 flex items-center">
+                                <span class="mr-2">👔</span> Dress Styles
+                            </h4>
+                            <p class="text-sm text-gray-300">Changes in dress styles, moving from traditional clothes to Western fashion.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-teal-500">
+                            <h4 class="font-bold mb-2 text-teal-400 flex items-center">
+                                <span class="mr-2">✝️</span> Christianity
+                            </h4>
+                            <p class="text-sm text-gray-300">Adoption of Western religious beliefs, especially Christianity through missionaries.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-indigo-500">
+                            <h4 class="font-bold mb-2 text-indigo-400 flex items-center">
+                                <span class="mr-2">💻</span> Technology
+                            </h4>
+                            <p class="text-sm text-gray-300">Modern technology and lifestyles influencing communication and work.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400 flex items-center">
+                                <span class="mr-2">🏙️</span> Urbanization
+                            </h4>
+                            <p class="text-sm text-gray-300">Urbanization and modernization affecting traditional community life.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eastern Influence -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌏</div>
+                        <h3 class="text-3xl font-bold text-purple-300">Eastern Influence</h3>
+                        <p class="text-purple-200 text-sm mb-4">Asia & Middle East</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400 flex items-center">
+                                <span class="mr-2">☪️</span> Islam
+                            </h4>
+                            <p class="text-sm text-gray-300">Spread of Islam through trade and migration, particularly in East Africa.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-pink-500">
+                            <h4 class="font-bold mb-2 text-pink-400 flex items-center">
+                                <span class="mr-2">🧘</span> Philosophies
+                            </h4>
+                            <p class="text-sm text-gray-300">Introduction of Eastern philosophies and practices in some communities.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400 flex items-center">
+                                <span class="mr-2">🎨</span> Art & Cuisine
+                            </h4>
+                            <p class="text-sm text-gray-300">Influence on art, cuisine, and traditional medicine in certain regions.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-orange-500">
+                            <h4 class="font-bold mb-2 text-orange-400 flex items-center">
+                                <span class="mr-2">🗣️</span> Swahili Culture
+                            </h4>
+                            <p class="text-sm text-gray-300">The Swahili culture shows strong Eastern (Arab/Islamic) influence blending with African traditions.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl border-l-4 border-yellow-500">
+                            <h4 class="font-bold mb-2 text-yellow-400 flex items-center">
+                                <span class="mr-2">💊</span> Traditional Medicine
+                            </h4>
+                            <p class="text-sm text-gray-300">Eastern approaches to traditional medicine and healing practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Studies -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-400">Cultural Blending: Case Studies</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🇲🇼</div>
+                        <h4 class="font-bold text-lg mb-2 text-green-400">Malawi</h4>
+                        <p class="text-sm text-gray-300">Christianity (introduced by Western missionaries) is predominant, influencing holidays, education, and social norms.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🌊</div>
+                        <h4 class="font-bold text-lg mb-2 text-blue-400">East Africa</h4>
+                        <p class="text-sm text-gray-300">The Swahili culture shows strong Eastern (Arab/Islamic) influence, blending with African traditions in language, trade, and customs.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🏙️</div>
+                        <h4 class="font-bold text-lg mb-2 text-purple-400">Urban Centers</h4>
+                        <p class="text-sm text-gray-300">Western and Eastern cultural elements combine with local culture, creating unique hybrid lifestyles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Religions Section -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-yellow-400">Major Religions in Malawi & Africa</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">✝️</div>
+                            <h3 class="text-xl font-bold mb-3 text-blue-300">Christianity</h3>
+                            <p class="text-sm text-gray-300">The largest religion in Malawi, introduced by Western missionaries during colonial period.</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">☪️</div>
+                            <h3 class="text-xl font-bold mb-3 text-green-300">Islam</h3>
+                            <p class="text-sm text-gray-300">Widely practiced especially in southern regions of Malawi and East Africa, introduced through Arab traders.</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">🌳</div>
+                            <h3 class="text-xl font-bold mb-3 text-orange-300">Traditional Religions</h3>
+                            <p class="text-sm text-gray-300">Focus on ancestral worship, spirits, and nature-based beliefs rooted in African heritage.</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">🕉️</div>
+                            <h3 class="text-xl font-bold mb-3 text-purple-300">Other Religions</h3>
+                            <p class="text-sm text-gray-300">Hinduism, Buddhism, and other faiths mainly through immigration and globalization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Culture and Religion Relationship -->
+            <div class="bg-gradient-to-r from-indigo-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🔗</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-indigo-300">Influence of Culture on Religion</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                                <p class="text-gray-300"><strong>Culture Shapes Religious Practices:</strong> How people worship, dress during ceremonies, and celebrate religious holidays often reflect cultural traditions.</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                                <p class="text-gray-300"><strong>Religion Reflects Culture:</strong> Religious beliefs are adapted to fit cultural values and social structures. For example, ancestor veneration is common in African traditional religions and sometimes incorporated into Christianity or Islam locally.</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                                <p class="text-gray-300"><strong>Cultural Integration:</strong> In Malawi, Christian weddings often incorporate traditional dances and attire. Islamic practices in East Africa include cultural elements such as Swahili language and dress.</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                                <p class="text-gray-300"><strong>Social Influence:</strong> Traditional African religions often influence moral codes and community laws even among non-practitioners, showing how deeply culture and religion intertwine.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cultures in Malawi -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                    Cultural Diversity in Malawi
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🎭</div>
+                        <h4 class="text-lg font-bold mb-2 text-yellow-400">Chewa</h4>
+                        <p class="text-sm text-gray-300">Unique traditions including Gule Wamkulu masked dances</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🥁</div>
+                        <h4 class="text-lg font-bold mb-2 text-blue-400">Tumbuka</h4>
+                        <p class="text-sm text-gray-300">Rich oral traditions and distinctive language</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">📿</div>
+                        <h4 class="text-lg font-bold mb-2 text-green-400">Yao</h4>
+                        <p class="text-sm text-gray-300">Strong Islamic influence and trading heritage</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🌾</div>
+                        <h4 class="text-lg font-bold mb-2 text-purple-400">Lomwe</h4>
+                        <p class="text-sm text-gray-300">Agricultural traditions and unique customs</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">⚔️</div>
+                        <h4 class="text-lg font-bold mb-2 text-red-400">Ngoni</h4>
+                        <p class="text-sm text-gray-300">Warrior traditions and ceremonial practices</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🏞️</div>
+                        <h4 class="text-lg font-bold mb-2 text-orange-400">Sena</h4>
+                        <p class="text-sm text-gray-300">Riverine culture and fishing traditions</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🎪</div>
+                        <h4 class="text-lg font-bold mb-2 text-pink-400">Others</h4>
+                        <p class="text-sm text-gray-300">Many more ethnic groups with diverse customs</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl text-center card-hover">
+                        <div class="text-4xl mb-3">🌍</div>
+                        <h4 class="text-lg font-bold mb-2 text-indigo-400">African Cultures</h4>
+                        <p class="text-sm text-gray-300">Yoruba, Zulu, Maasai, Ashanti, and more</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-center text-lg">Each culture has unique languages, traditions, dances, and customs that contribute to Malawi's rich cultural tapestry.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Key Takeaways: Cultural Preservation
+            </h3>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="bg-yellow-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-yellow-300">Heritage vs Preservation</h4>
+                        <p class="text-gray-300">Heritage is the passive legacy we inherit; preservation is the active process of protecting it.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        2
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-purple-300">Multiple Strategies</h4>
+                        <p class="text-gray-300">Effective preservation uses diverse methods: heritage sites, storytelling, education, festivals, and traditional leadership.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        3
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-green-300">Critical Importance</h4>
+                        <p class="text-gray-300">Culture provides identity, sustains traditions, enables generational transfer, and promotes social cohesion.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        4
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-red-300">Modern Challenges</h4>
+                        <p class="text-gray-300">Modernization, media influence, generational gaps, and resource limitations threaten cultural preservation.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        5
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-blue-300">Cultural Exchange</h4>
+                        <p class="text-gray-300">Western and Eastern cultures have significantly influenced African societies, creating unique cultural blends while challenging traditional practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('intro');
+    </script>
+</body>
+</html>

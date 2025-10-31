@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Losses & Environmental Impact - Physics Lesson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-amber-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">⚡</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                Power Losses & Environmental Impact
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding Energy Efficiency and Power Generation</p>
+            <p class="text-lg text-gray-400">Transformers, Transmission, and Environmental Effects</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('transformer-losses')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 rounded-xl transition shadow-lg">
+                    Transformer Losses
+                </button>
+                <button onclick="showSection('reducing-losses')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Reducing Losses
+                </button>
+                <button onclick="showSection('transmission')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Transmission
+                </button>
+                <button onclick="showSection('environment')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Environmental Impact
+                </button>
+            </div>
+        </header>
+
+        <!-- Transformer Losses Section -->
+        <section id="transformer-losses" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Power Losses in Transformers
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔋</div>
+                    <h3 class="text-3xl font-bold text-yellow-300 mb-4">What is Power Loss?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Power loss in transformers, also known as <span class="text-yellow-400 font-bold">leakage flux</span>, reduces efficiency. These losses are mainly due to resistance in the windings and imperfections in magnetic coupling.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Resistance of Windings -->
+            <div class="mb-8 shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🔌</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-orange-300">Resistance of Windings</h3>
+                        <p class="text-gray-400 text-lg">Heat Loss in Copper Wires</p>
+                    </div>
+                </div>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="space-y-4">
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-orange-500 flex items-start">
+                            <span class="text-orange-400 text-2xl mr-3">•</span>
+                            <p class="text-gray-300">Copper wires have electrical resistance</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-orange-500 flex items-start">
+                            <span class="text-orange-400 text-2xl mr-3">•</span>
+                            <p class="text-gray-300">Current flowing through them produces heat</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-orange-500 flex items-start">
+                            <span class="text-orange-400 text-2xl mr-3">•</span>
+                            <p class="text-gray-300">This results in energy being lost as <span class="text-orange-400 font-bold">thermal energy</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leakage Flux -->
+            <div class="mb-8 shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🧲</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-purple-300">Leakage Flux</h3>
+                        <p class="text-gray-400 text-lg">Incomplete Magnetic Coupling</p>
+                    </div>
+                </div>
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="space-y-4">
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-purple-500 flex items-start">
+                            <span class="text-purple-400 text-2xl mr-3">•</span>
+                            <p class="text-gray-300">Not all magnetic field lines from the primary coil link with the secondary coil</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-purple-500 flex items-start">
+                            <span class="text-purple-400 text-2xl mr-3">•</span>
+                            <p class="text-gray-300">Often due to <span class="text-purple-400 font-bold">air gaps</span> or <span class="text-purple-400 font-bold">poor core design</span></p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-purple-500 flex items-start">
+                            <span class="text-purple-400 text-2xl mr-3">•</span>
+                            <p class="text-gray-300">Leads to reduced efficiency and power transfer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core (Iron) Losses -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🧱</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-red-300">Core (Iron) Losses</h3>
+                        <p class="text-gray-400 text-lg">Losses in the Magnetic Core</p>
+                    </div>
+                </div>
+                <div class="bg-red-900 bg-opacity-20 p-6 rounded-xl mb-6">
+                    <p class="text-gray-300 text-center">These occur in the magnetic core of the transformer and are divided into two main types:</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Hysteresis Losses -->
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-red-300 mb-4">A. Hysteresis Losses</h4>
+                        <div class="space-y-3">
+                            <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-red-400 mr-2">→</span>
+                                <p class="text-gray-300 text-sm">Caused by continuous magnetization and demagnetization of the core</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-red-400 mr-2">→</span>
+                                <p class="text-gray-300 text-sm">Energy is lost as heat in the process</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eddy Current Losses -->
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-orange-300 mb-4">B. Eddy Current Losses</h4>
+                        <div class="space-y-3">
+                            <div class="bg-orange-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-orange-400 mr-2">→</span>
+                                <p class="text-gray-300 text-sm">Changing magnetic fields induce currents in the iron core</p>
+                            </div>
+                            <div class="bg-orange-900 bg-opacity-30 p-3 rounded-lg flex items-start">
+                                <span class="text-orange-400 mr-2">→</span>
+                                <p class="text-gray-300 text-sm">These currents cause the core to heat up and waste energy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reducing Losses Section -->
+        <section id="reducing-losses" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Methods of Reducing Transformer Losses
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔧</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-4">Engineering Solutions</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Several engineering practices can minimize power losses in transformers and improve efficiency.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Method 1 -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">✅</div>
+                        <h3 class="text-2xl font-bold text-green-300">Improved Magnetic Coupling</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 leading-relaxed">
+                            <span class="text-green-400 font-bold">Wind the secondary coil directly over the primary coil</span> for stronger magnetic coupling and reduced leakage flux
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Method 2 -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">✅</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Soft Iron Cores</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 leading-relaxed">
+                            Use <span class="text-blue-400 font-bold">soft iron cores</span> that are easily magnetized and demagnetized to <span class="text-blue-400 font-bold">reduce hysteresis losses</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Method 3 -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">✅</div>
+                        <h3 class="text-2xl font-bold text-yellow-300">Low-Resistance Wires</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 leading-relaxed">
+                            Employ <span class="text-yellow-400 font-bold">low-resistance copper wires</span> to reduce heat loss from electrical resistance in the windings
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Method 4 -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">✅</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Laminated Core</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 leading-relaxed">
+                            Construct the core with <span class="text-purple-400 font-bold">laminated and insulated sheets</span> to reduce eddy current losses
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-orange-900 to-red-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-orange-300">Key Principle</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            By implementing these methods, transformer efficiency can be improved from typical values of 95-98% to even higher levels, saving energy and reducing operational costs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transmission Section -->
+        <section id="transmission" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
+                Power Losses in Transmission Lines
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔌</div>
+                    <h3 class="text-3xl font-bold text-red-300 mb-4">Transmission Challenges</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        When electric power travels over long distances, it faces resistance which leads to energy loss as heat.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Causes -->
+            <div class="mb-8 bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">⚡</div>
+                    <h3 class="text-3xl font-bold text-red-300">Causes of Transmission Losses</h3>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-5xl mb-4 text-center">📏</div>
+                        <h4 class="font-bold text-red-300 mb-3 text-center">Long Distances</h4>
+                        <p class="text-gray-300 text-sm text-center">Long transmission distances increase total resistance in the lines</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-5xl mb-4 text-center">⚡</div>
+                        <h4 class="font-bold text-orange-300 mb-3 text-center">High Current</h4>
+                        <p class="text-gray-300 text-sm text-center">Low voltage requires high current, which increases loss (P = I²R)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-5xl mb-4 text-center">🔥</div>
+                        <h4 class="font-bold text-yellow-300 mb-3 text-center">Heat Dissipation</h4>
+                        <p class="text-gray-300 text-sm text-center">Resistance in wires causes power to be dissipated as heat</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Methods to Reduce -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🔧</div>
+                    <h3 class="text-3xl font-bold text-green-300">Methods to Reduce Transmission Losses</h3>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">⬆️</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-blue-300 mb-2">High Voltage Transmission</h4>
+                                <p class="text-gray-300">Transmit electricity at <span class="text-blue-400 font-bold">high voltage</span> to reduce current. Since P = I²R, lower current significantly reduces power loss.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">🔌</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-purple-300 mb-2">Quality Conductors</h4>
+                                <p class="text-gray-300">Use <span class="text-purple-400 font-bold">thick and high-quality conductors</span> with low resistance to minimize energy dissipation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-5xl mr-4 flex-shrink-0">🔄</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-green-300 mb-2">Transformer System</h4>
+                                <p class="text-gray-300"><span class="text-green-400 font-bold">Step up voltage</span> before transmission and <span class="text-green-400 font-bold">step down</span> before distribution using transformers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-green-900 bg-opacity-30 p-6 rounded-xl border-l-4 border-green-500">
+                    <h4 class="font-bold text-green-300 mb-3 text-lg">Formula: Power Loss</h4>
+                    <div class="bg-slate-900 rounded-lg p-4 font-mono text-center text-xl">
+                        <p class="text-white">P = I²R</p>
+                    </div>
+                    <p class="text-gray-300 mt-3 text-center">Where P = power loss, I = current, R = resistance</p>
+                    <p class="text-green-400 mt-2 text-center font-bold">Reducing current (I) has a squared effect on reducing power loss!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Environment Section -->
+        <section id="environment" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Environmental Impact of Power Generation
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌍</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Power and the Environment</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Electricity production and transmission can affect the environment in various ways, depending on the energy source used.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- High Water Use -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">💧</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-blue-300">High Water Use</h3>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="space-y-3">
+                            <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500 flex items-start">
+                                <span class="text-blue-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Thermal and hydroelectric power plants use large volumes of water</p>
+                            </div>
+                            <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-blue-500 flex items-start">
+                                <span class="text-blue-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">This may cause shortages, especially during dry seasons</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CO2 Emissions -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🌍</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-red-300">Carbon Dioxide (CO₂) Emissions</h3>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="space-y-3">
+                            <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-red-500 flex items-start">
+                                <span class="text-red-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Fossil fuels like coal, oil, and gas release CO₂ when burned</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-red-500 flex items-start">
+                                <span class="text-red-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Major contributor to <span class="text-red-400 font-bold">greenhouse effect</span> and <span class="text-red-400 font-bold">global warming</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radioactive Leaks -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">☢️</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-yellow-300">Radioactive Leaks</h3>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="space-y-3">
+                            <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-yellow-500 flex items-start">
+                                <span class="text-yellow-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Nuclear power uses radioactive uranium</p>
+                            </div>
+                            <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-yellow-500 flex items-start">
+                                <span class="text-yellow-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Accidents or poor disposal can lead to <span class="text-yellow-400 font-bold">environmental contamination</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toxic Waste -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🗑️</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-purple-300">Toxic Waste Disposal</h3>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="space-y-3">
+                            <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-purple-500 flex items-start">
+                                <span class="text-purple-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Power plants may produce hazardous by-products</p>
+                            </div>
+                            <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-purple-500 flex items-start">
+                                <span class="text-purple-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Improper handling can harm <span class="text-purple-400 font-bold">ecosystems and health</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Displacement of Flora and Fauna -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🌿</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-green-300">Displacement of Flora and Fauna</h3>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="space-y-3">
+                            <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-green-500 flex items-start">
+                                <span class="text-green-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Construction of dams, power stations, or transmission lines can destroy natural habitats</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-green-500 flex items-start">
+                                <span class="text-green-400 text-xl mr-3">•</span>
+                                <p class="text-gray-300">Leads to <span class="text-green-400 font-bold">displacement of people and animals</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <h3 class="text-3xl font-bold text-cyan-300 mb-6 text-center">Environmental Impact by Power Source</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-gray-300">
+                        <thead class="bg-slate-900">
+                            <tr>
+                                <th class="p-4 text-left">Power Source</th>
+                                <th class="p-4 text-center">CO₂ Emissions</th>
+                                <th class="p-4 text-center">Water Usage</th>
+                                <th class="p-4 text-center">Land Impact</th>
+                                <th class="p-4 text-center">Waste</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-slate-700">
+                                <td class="p-4 font-bold">Coal</td>
+                                <td class="p-4 text-center text-red-400">Very High</td>
+                                <td class="p-4 text-center text-orange-400">High</td>
+                                <td class="p-4 text-center text-yellow-400">Medium</td>
+                                <td class="p-4 text-center text-red-400">High (ash)</td>
+                            </tr>
+                            <tr class="border-t border-slate-700 bg-slate-900 bg-opacity-30">
+                                <td class="p-4 font-bold">Natural Gas</td>
+                                <td class="p-4 text-center text-orange-400">High</td>
+                                <td class="p-4 text-center text-yellow-400">Medium</td>
+                                <td class="p-4 text-center text-green-400">Low</td>
+                                <td class="p-4 text-center text-green-400">Low</td>
+                            </tr>
+                            <tr class="border-t border-slate-700">
+                                <td class="p-4 font-bold">Nuclear</td>
+                                <td class="p-4 text-center text-green-400">Very Low</td>
+                                <td class="p-4 text-center text-red-400">Very High</td>
+                                <td class="p-4 text-center text-yellow-400">Medium</td>
+                                <td class="p-4 text-center text-red-400">Radioactive</td>
+                            </tr>
+                            <tr class="border-t border-slate-700 bg-slate-900 bg-opacity-30">
+                                <td class="p-4 font-bold">Hydroelectric</td>
+                                <td class="p-4 text-center text-green-400">Very Low</td>
+                                <td class="p-4 text-center text-red-400">Very High</td>
+                                <td class="p-4 text-center text-red-400">Very High</td>
+                                <td class="p-4 text-center text-green-400">None</td>
+                            </tr>
+                            <tr class="border-t border-slate-700">
+                                <td class="p-4 font-bold">Solar</td>
+                                <td class="p-4 text-center text-green-400">Very Low</td>
+                                <td class="p-4 text-center text-green-400">Low</td>
+                                <td class="p-4 text-center text-yellow-400">Medium</td>
+                                <td class="p-4 text-center text-yellow-400">Panel disposal</td>
+                            </tr>
+                            <tr class="border-t border-slate-700 bg-slate-900 bg-opacity-30">
+                                <td class="p-4 font-bold">Wind</td>
+                                <td class="p-4 text-center text-green-400">Very Low</td>
+                                <td class="p-4 text-center text-green-400">Very Low</td>
+                                <td class="p-4 text-center text-yellow-400">Medium</td>
+                                <td class="p-4 text-center text-green-400">Minimal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Key Takeaways
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">🔋</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-yellow-300 mb-2">Transformer Losses</h4>
+                            <p class="text-gray-300 text-sm">• Resistance losses (I²R)</p>
+                            <p class="text-gray-300 text-sm">• Leakage flux</p>
+                            <p class="text-gray-300 text-sm">• Hysteresis losses</p>
+                            <p class="text-gray-300 text-sm">• Eddy current losses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">🔧</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-orange-300 mb-2">Reducing Losses</h4>
+                            <p class="text-gray-300 text-sm">• Better magnetic coupling</p>
+                            <p class="text-gray-300 text-sm">• Soft iron cores</p>
+                            <p class="text-gray-300 text-sm">• Low-resistance wires</p>
+                            <p class="text-gray-300 text-sm">• Laminated cores</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">⚡</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-red-300 mb-2">Transmission</h4>
+                            <p class="text-gray-300 text-sm">• Power loss = I²R</p>
+                            <p class="text-gray-300 text-sm">• High voltage reduces current</p>
+                            <p class="text-gray-300 text-sm">• Step up/step down transformers</p>
+                            <p class="text-gray-300 text-sm">• Quality conductors minimize loss</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-4xl mr-4">🌍</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-green-300 mb-2">Environmental Impact</h4>
+                            <p class="text-gray-300 text-sm">• Water usage concerns</p>
+                            <p class="text-gray-300 text-sm">• CO₂ emissions from fossil fuels</p>
+                            <p class="text-gray-300 text-sm">• Radioactive waste from nuclear</p>
+                            <p class="text-gray-300 text-sm">• Habitat displacement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-yellow-900 to-orange-900 rounded-xl p-6 border-l-4 border-yellow-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-4 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-yellow-300 mb-3">The Future of Power</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            Balancing efficient power transmission with environmental sustainability is crucial for the future. Renewable energy sources like solar and wind, combined with improved transmission technologies and energy storage, offer a path toward cleaner, more efficient power generation and distribution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('transformer-losses');
+    </script>
+</body>
+</html>

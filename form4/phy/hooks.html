@@ -1,0 +1,588 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hooke's Law</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .spring-bounce {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.8); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 spring-bounce">🔧</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent">
+                Hooke's Law
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Force and Extension in Elastic Materials</p>
+            <p class="text-lg text-gray-400">Understanding Elasticity and Spring Behavior</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('intro')" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 rounded-xl transition shadow-lg">
+                    Introduction
+                </button>
+                <button onclick="showSection('experiment')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Experiment
+                </button>
+                <button onclick="showSection('applications')" class="px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-xl transition shadow-lg">
+                    Applications
+                </button>
+                <button onclick="showSection('springs')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Spring Systems
+                </button>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="intro" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
+                Introduction to Hooke's Law
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-emerald-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📐</div>
+                    <h3 class="text-3xl font-bold text-emerald-300 mb-4">What is Hooke's Law?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Hooke's Law describes the relationship between the force applied to an elastic object and the extension produced. It is a fundamental concept in elasticity and mechanics.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-emerald-900 bg-opacity-30 p-4 rounded-lg border border-emerald-700 text-center">
+                        <p class="text-sm text-gray-300">Named after <strong class="text-emerald-400">Robert Hooke</strong></p>
+                        <p class="text-xs text-gray-400 mt-1">17th-century physicist</p>
+                    </div>
+                    <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-700 text-center">
+                        <p class="text-sm text-gray-300">Applies to <strong class="text-green-400">springs</strong></p>
+                        <p class="text-xs text-gray-400 mt-1">and other elastic materials</p>
+                    </div>
+                    <div class="bg-teal-900 bg-opacity-30 p-4 rounded-lg border border-teal-700 text-center">
+                        <p class="text-sm text-gray-300"><strong class="text-teal-400">Linear relationship</strong></p>
+                        <p class="text-xs text-gray-400 mt-1">within elastic limit</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formula -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Definition and Formula</h3>
+                <p class="text-center text-gray-300 mb-6 text-lg">
+                    Hooke's Law states that the extension of an elastic material is directly proportional to the force applied, provided the elastic limit is not exceeded.
+                </p>
+                
+                <div class="bg-slate-950 bg-opacity-50 p-8 rounded-xl mb-6">
+                    <p class="text-center text-4xl font-mono text-green-300 mb-6">F = kx</p>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <p class="text-2xl text-blue-400 font-bold mb-2">F</p>
+                            <p class="text-sm text-gray-300">Force applied</p>
+                            <p class="text-xs text-gray-400">(Newtons, N)</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl text-purple-400 font-bold mb-2">k</p>
+                            <p class="text-sm text-gray-300">Spring constant</p>
+                            <p class="text-xs text-gray-400">(N/m)</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl text-pink-400 font-bold mb-2">x</p>
+                            <p class="text-sm text-gray-300">Extension/compression</p>
+                            <p class="text-xs text-gray-400">(meters, m)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-700 text-center">
+                    <p class="text-yellow-400 font-bold">⚠️ Applies only within the elastic limit of the material</p>
+                </div>
+            </div>
+
+            <!-- Key Concepts -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-teal-400">Key Concepts</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🔄</div>
+                        <h4 class="text-xl font-bold text-blue-300 text-center mb-3">Elasticity</h4>
+                        <p class="text-sm text-gray-300 text-center">Ability of a material to return to its original shape after deformation</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">↕️</div>
+                        <h4 class="text-xl font-bold text-purple-300 text-center mb-3">Extension</h4>
+                        <p class="text-sm text-gray-300 text-center">Increase in length when a force is applied</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">⚠️</div>
+                        <h4 class="text-xl font-bold text-red-300 text-center mb-3">Elastic Limit</h4>
+                        <p class="text-sm text-gray-300 text-center">Maximum force beyond which permanent deformation occurs</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">💪</div>
+                        <h4 class="text-xl font-bold text-green-300 text-center mb-3">Spring Constant (k)</h4>
+                        <p class="text-sm text-gray-300 text-center">A measure of stiffness; higher k = stiffer spring</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiment Section -->
+        <section id="experiment" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">
+                Experimental Verification
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-green-300">Verifying Hooke's Law</h3>
+                    <p class="text-gray-400 text-lg mt-2">A simple experiment can demonstrate the validity of Hooke's Law using a spring and weights.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Aim & Apparatus -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-3">🎯</div>
+                            <h4 class="text-2xl font-bold text-blue-300">Aim</h4>
+                        </div>
+                        <p class="text-gray-300 ml-12">To verify Hooke's Law</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-3">🧪</div>
+                            <h4 class="text-2xl font-bold text-cyan-300">Apparatus</h4>
+                        </div>
+                        <ul class="space-y-2 ml-12 text-gray-300 text-sm">
+                            <li>• Retort stand</li>
+                            <li>• Spring</li>
+                            <li>• Weights</li>
+                            <li>• Meter rule</li>
+                            <li>• Clamp</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Procedure -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="text-4xl mr-3">📋</div>
+                        <h4 class="text-2xl font-bold text-purple-300">Procedure</h4>
+                    </div>
+                    <ol class="space-y-3 ml-12 text-gray-300 text-sm">
+                        <li>1. Suspend a spring from a fixed point</li>
+                        <li>2. Measure its original length (unloaded)</li>
+                        <li>3. Add weights gradually and record the new length each time</li>
+                        <li>4. Calculate extension and corresponding force (F = mg)</li>
+                        <li>5. Plot a graph of force (y-axis) vs extension (x-axis)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Observation -->
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500">
+                    <div class="flex items-center mb-4">
+                        <div class="text-4xl mr-3">👁️</div>
+                        <h4 class="text-2xl font-bold text-yellow-300">Observation</h4>
+                    </div>
+                    <div class="space-y-3 ml-12 text-gray-300 text-sm">
+                        <p>• Graph is a straight line through the origin, showing F ∝ x</p>
+                        <p>• Beyond a certain point, the spring no longer obeys the law (elastic limit)</p>
+                    </div>
+                </div>
+
+                <!-- Conclusion -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="text-4xl mr-3">✅</div>
+                        <h4 class="text-2xl font-bold text-green-300">Conclusion</h4>
+                    </div>
+                    <p class="text-gray-300 ml-12 text-sm">Hooke's Law is valid up to the elastic limit of the material</p>
+                </div>
+            </div>
+
+            <!-- Elastic vs Plastic -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-orange-400">Elastic vs Plastic Deformation</h3>
+                <p class="text-center text-gray-400 mb-6">Materials behave differently under force depending on the magnitude of the applied force.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🔄</div>
+                            <h4 class="text-xl font-bold text-green-300">Elastic Deformation</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Temporary change in shape; material returns to original form once force is removed</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-red-900 to-slate-900 p-6 rounded-xl border border-red-500">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">⚠️</div>
+                            <h4 class="text-xl font-bold text-red-300">Plastic Deformation</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Permanent change in shape; occurs if force exceeds elastic limit</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Worked Example -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-400">Worked Example</h3>
+                
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                    <h4 class="font-bold mb-3 text-indigo-300">Problem:</h4>
+                    <p class="text-gray-300 mb-4">A spring stretches by 0.05 m when a force of 10 N is applied. Find the spring constant.</p>
+                    
+                    <div class="bg-indigo-900 bg-opacity-30 p-4 rounded-lg border border-indigo-700 mb-4">
+                        <p class="text-sm text-gray-400 mb-2">Using F = kx ⇒ k = F / x</p>
+                        <p class="text-lg text-indigo-300 font-mono">k = 10 N / 0.05 m = 200 N/m</p>
+                    </div>
+                    
+                    <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-700">
+                        <p class="text-green-400 font-bold">Answer: Spring constant is 200 N/m</p>
+                    </div>
+                </div>
+
+                <div class="bg-purple-900 bg-opacity-30 p-6 rounded-xl border border-purple-700">
+                    <h4 class="font-bold mb-3 text-purple-400">Practice Questions:</h4>
+                    <ol class="space-y-2 text-sm text-gray-300">
+                        <li>1. A force of 15 N causes a spring to extend by 0.03 m. Calculate the spring constant.</li>
+                        <li>2. A spring with a spring constant of 50 N/m is stretched by 0.1 m. What is the force applied?</li>
+                        <li>3. State two limitations of Hooke's Law.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Applications and Limitations
+            </h2>
+
+            <!-- Applications -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔧</div>
+                    <h3 class="text-3xl font-bold text-teal-300">Applications of Hooke's Law</h3>
+                    <p class="text-gray-400 text-lg mt-2">Hooke's Law has many practical applications across science and engineering.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🚗</div>
+                        <h4 class="text-lg font-bold text-blue-300 text-center mb-2">Vehicle Suspension</h4>
+                        <p class="text-sm text-gray-300 text-center">Absorbs shocks and provides smooth ride</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">⚖️</div>
+                        <h4 class="text-lg font-bold text-purple-300 text-center mb-2">Spring Balances</h4>
+                        <p class="text-sm text-gray-300 text-center">Force measurement devices</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🤸</div>
+                        <h4 class="text-lg font-bold text-pink-300 text-center mb-2">Trampolines</h4>
+                        <p class="text-sm text-gray-300 text-center">Designing trampolines and mattresses</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">📊</div>
+                        <h4 class="text-lg font-bold text-green-300 text-center mb-2">Weighing Machines</h4>
+                        <p class="text-sm text-gray-300 text-center">Mechanical sensors and scales</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Limitations -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚠️</div>
+                    <h3 class="text-3xl font-bold text-red-300">Limitations of Hooke's Law</h3>
+                    <p class="text-gray-400 text-lg mt-2">Hooke's Law does not apply universally.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-3 text-red-400">Elastic Limit</h4>
+                        <p class="text-sm text-gray-300">Only valid within the elastic limit</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500">
+                        <h4 class="font-bold mb-3 text-orange-400">Material Type</h4>
+                        <p class="text-sm text-gray-300">Not suitable for materials like rubber or polymers with non-linear extension</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold mb-3 text-yellow-400">Deformation Size</h4>
+                        <p class="text-sm text-gray-300">Only applicable to small deformations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Springs Section -->
+        <section id="springs" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Springs in Series and Parallel
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔗</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Spring Arrangements</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Springs behave differently when arranged in series or parallel.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Series -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">➖➖</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Springs in Series</h3>
+                        <p class="text-sm text-gray-400 mt-2">Connected end-to-end</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2 text-blue-400">Formula:</h4>
+                            <p class="text-lg font-mono text-blue-300 text-center">1/k_total = 1/k₁ + 1/k₂ + ...</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <h4 class="font-bold mb-2 text-cyan-400">Characteristics:</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Same force acts on all springs</li>
+                                <li>• Total extension is the sum of individual extensions</li>
+                                <li>• System becomes softer</li>
+                                <li>• k_total decreases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parallel -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">║║</div>
+                        <h3 class="text-2xl font-bold text-green-300">Springs in Parallel</h3>
+                        <p class="text-sm text-gray-400 mt-2">Connected side by side</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Formula:</h4>
+                            <p class="text-lg font-mono text-green-300 text-center">k_total = k₁ + k₂ + ...</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-emerald-500">
+                            <h4 class="font-bold mb-2 text-emerald-400">Characteristics:</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Force is shared among springs</li>
+                                <li>• Extension is the same across all springs</li>
+                                <li>• System becomes stiffer</li>
+                                <li>• k_total increases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Comparison -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Summary: Series vs Parallel</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b-2 border-purple-500">
+                                <th class="p-4 text-purple-300 font-bold">Aspect</th>
+                                <th class="p-4 text-blue-300 font-bold">Series (➖➖)</th>
+                                <th class="p-4 text-green-300 font-bold">Parallel (║║)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-700">
+                                <td class="p-4 text-yellow-400 font-bold">Spring Constant</td>
+                                <td class="p-4 text-gray-300">Decreases (1/k_total = Σ1/k)</td>
+                                <td class="p-4 text-gray-300">Increases (k_total = Σk)</td>
+                            </tr>
+                            <tr class="border-b border-slate-700">
+                                <td class="p-4 text-yellow-400 font-bold">System Stiffness</td>
+                                <td class="p-4 text-gray-300">Becomes softer</td>
+                                <td class="p-4 text-gray-300">Becomes stiffer</td>
+                            </tr>
+                            <tr class="border-b border-slate-700">
+                                <td class="p-4 text-yellow-400 font-bold">Force Distribution</td>
+                                <td class="p-4 text-gray-300">Same force on all springs</td>
+                                <td class="p-4 text-gray-300">Force shared among springs</td>
+                            </tr>
+                            <tr class="border-b border-slate-700">
+                                <td class="p-4 text-yellow-400 font-bold">Extension</td>
+                                <td class="p-4 text-gray-300">Sum of individual extensions</td>
+                                <td class="p-4 text-gray-300">Same extension for all springs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-900 bg-opacity-30 p-5 rounded-xl border border-blue-700">
+                        <p class="text-center text-blue-300"><strong>Series:</strong> More flexible, larger total extension</p>
+                    </div>
+                    <div class="bg-green-900 bg-opacity-30 p-5 rounded-xl border border-green-700">
+                        <p class="text-center text-green-300"><strong>Parallel:</strong> More rigid, smaller extension</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-emerald-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
+                Key Takeaways
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">📐</div>
+                        <div>
+                            <h4 class="font-bold text-emerald-400 mb-2">Hooke's Law Formula</h4>
+                            <p class="text-gray-300 text-sm">F = kx describes the linear relationship between force and extension within the elastic limit.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">💪</div>
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-2">Spring Constant</h4>
+                            <p class="text-gray-300 text-sm">Higher k means stiffer spring; measures resistance to deformation (units: N/m).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">⚠️</div>
+                        <div>
+                            <h4 class="font-bold text-red-400 mb-2">Elastic Limit</h4>
+                            <p class="text-gray-300 text-sm">Beyond this point, material undergoes plastic deformation and won't return to original shape.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🔬</div>
+                        <div>
+                            <h4 class="font-bold text-blue-400 mb-2">Experimental Verification</h4>
+                            <p class="text-gray-300 text-sm">Graph of force vs extension yields a straight line through origin, confirming F ∝ x.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🔗</div>
+                        <div>
+                            <h4 class="font-bold text-purple-400 mb-2">Spring Combinations</h4>
+                            <p class="text-gray-300 text-sm">Series: softer (1/k_total = Σ1/k); Parallel: stiffer (k_total = Σk).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🚗</div>
+                        <div>
+                            <h4 class="font-bold text-teal-400 mb-2">Real Applications</h4>
+                            <p class="text-gray-300 text-sm">Vehicle suspension, spring balances, trampolines, and weighing machines all use Hooke's Law.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-emerald-900 to-green-900 rounded-xl p-6 border border-emerald-600">
+                <div class="flex items-center justify-center">
+                    <div class="text-5xl mr-4 spring-bounce">🔧</div>
+                    <div class="text-center">
+                        <p class="text-xl font-bold text-emerald-300 mb-2">Remember!</p>
+                        <div class="grid md:grid-cols-3 gap-4 mt-4">
+                            <p class="text-gray-300 font-mono text-sm">F = kx</p>
+                            <p class="text-gray-300 font-mono text-sm">k = F/x</p>
+                            <p class="text-gray-300 font-mono text-sm">x = F/k</p>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-3">Valid only within elastic limit!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('intro');
+    </script>
+</body>
+</html>

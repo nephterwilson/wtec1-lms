@@ -1,0 +1,605 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniform Circular Motion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .rotate {
+            animation: rotate 4s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 rotate">🔄</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                Uniform Circular Motion
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Motion Along a Circular Path at Constant Speed</p>
+            <p class="text-lg text-gray-400">Understanding Centripetal Forces and Applications</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('basics')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Basic Concepts
+                </button>
+                <button onclick="showSection('angular')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Angular Motion
+                </button>
+                <button onclick="showSection('centripetal')" class="px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-xl transition shadow-lg">
+                    Centripetal Force
+                </button>
+                <button onclick="showSection('applications')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Applications
+                </button>
+            </div>
+        </header>
+
+        <!-- Basics Section -->
+        <section id="basics" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Understanding Circular Motion
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⭕</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">What is Circular Motion?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Circular motion occurs when an object moves along a circular path. If the speed remains constant throughout the motion, it is called uniform circular motion.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Key Concepts -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔵</div>
+                        <h4 class="text-2xl font-bold text-blue-300">Circular Motion</h4>
+                    </div>
+                    <p class="text-gray-300 text-center">Movement along a circular path.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔄</div>
+                        <h4 class="text-2xl font-bold text-cyan-300">Uniform Circular Motion</h4>
+                    </div>
+                    <p class="text-gray-300 text-center mb-3">Movement at constant speed along a circular path, though direction continuously changes.</p>
+                    <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg border border-cyan-700">
+                        <p class="text-sm text-cyan-400 text-center"><strong>Key Feature:</strong> Velocity changes due to direction change, even if speed is constant.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Examples -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-teal-400">Examples of Circular Motion</h3>
+                <p class="text-center text-gray-400 mb-6">Real-world examples where circular motion occurs</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🌍</div>
+                        <h4 class="text-lg font-bold text-indigo-300 text-center mb-2">Satellite Orbiting</h4>
+                        <p class="text-sm text-gray-300 text-center">Artificial satellite orbiting Earth</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🪢</div>
+                        <h4 class="text-lg font-bold text-purple-300 text-center mb-2">Stone on Rope</h4>
+                        <p class="text-sm text-gray-300 text-center">Stone tied to a rope being spun in a circle</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🏎️</div>
+                        <h4 class="text-lg font-bold text-pink-300 text-center mb-2">Car Cornering</h4>
+                        <p class="text-sm text-gray-300 text-center">Car turning a corner on a racetrack</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🔬</div>
+                        <h4 class="text-lg font-bold text-red-300 text-center mb-2">Electron Motion</h4>
+                        <p class="text-sm text-gray-300 text-center">Electron moving in a magnetic field</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">⚙️</div>
+                        <h4 class="text-lg font-bold text-orange-300 text-center mb-2">Rotating Gears</h4>
+                        <p class="text-sm text-gray-300 text-center">Gears rotating in machinery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Angular Section -->
+        <section id="angular" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                Angular Displacement and Angular Velocity
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌀</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Rotational Equivalents</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Angular quantities describe the rotational equivalent of displacement and velocity.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Angular Displacement -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Angular Displacement (θ)</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold mb-3 text-blue-400">Definition:</h4>
+                        <p class="text-gray-300 mb-4">Angle moved through by an object in circular motion.</p>
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg border border-blue-700">
+                            <p class="text-sm text-blue-300"><strong>Measured in:</strong> radians (rad)</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500">
+                        <h4 class="font-bold mb-3 text-cyan-400">Measurement Units:</h4>
+                        <div class="space-y-2">
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg border border-cyan-700">
+                                <p class="text-sm text-cyan-300">1 revolution = 360° = 2π radians</p>
+                            </div>
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg border border-cyan-700">
+                                <p class="text-sm text-cyan-300">180° = π radians</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-blue-900 bg-opacity-30 p-6 rounded-xl border border-blue-700">
+                    <h4 class="font-bold mb-3 text-blue-400">Relationship with Arc Length:</h4>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-lg text-center">
+                        <p class="text-xl font-mono text-blue-300 mb-2">θ = s / r</p>
+                        <p class="text-sm text-gray-400">Where s = arc length, r = radius</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Angular Velocity -->
+            <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-teal-400">Angular Velocity (ω)</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-teal-500">
+                        <h4 class="font-bold mb-3 text-teal-400">Definition:</h4>
+                        <p class="text-gray-300 mb-4">Rate of change of angular displacement.</p>
+                        <div class="bg-teal-900 bg-opacity-30 p-4 rounded-lg border border-teal-700 text-center">
+                            <p class="text-xl font-mono text-teal-300 mb-2">ω = θ / t</p>
+                            <p class="text-sm text-gray-400">Unit: rad/s</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-3 text-green-400">Key Points:</h4>
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>• Measures how fast an object rotates</p>
+                            <p>• Independent of the radius</p>
+                            <p>• All points on a rotating object have the same ω</p>
+                            <p>• Higher ω means faster rotation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tangential Velocity -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Tangential (Linear) Velocity and Angular Velocity</h3>
+                
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-6">
+                    <p class="text-gray-300 text-lg text-center mb-4">Tangential velocity is the linear speed of an object moving in a circular path.</p>
+                    <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg border border-purple-700 text-center">
+                        <p class="text-2xl font-mono text-purple-300 mb-2">v = ω × r</p>
+                        <p class="text-sm text-gray-400">Tangential velocity = Angular velocity × radius</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-2 text-purple-400">Direction</h4>
+                        <p class="text-sm text-gray-300">Tangential velocity is always directed along the tangent to the circle.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                        <h4 class="font-bold mb-2 text-pink-400">Acceleration</h4>
+                        <p class="text-sm text-gray-300">Even at constant speed, the object accelerates due to direction change.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-fuchsia-500">
+                        <h4 class="font-bold mb-2 text-fuchsia-400">Centripetal</h4>
+                        <p class="text-sm text-gray-300">Acceleration directed toward the center (centripetal).</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-purple-900 bg-opacity-30 p-5 rounded-xl border border-purple-700">
+                    <h4 class="font-bold mb-3 text-purple-400 text-center">Summary:</h4>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <p class="text-sm text-gray-300 text-center">✓ Constant speed, changing direction</p>
+                        <p class="text-sm text-gray-300 text-center">✓ Acceleration toward center</p>
+                        <p class="text-sm text-gray-300 text-center">✓ Object doesn't move closer to center</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Centripetal Section -->
+        <section id="centripetal" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-teal-400 to-green-400 bg-clip-text text-transparent">
+                Centripetal Force
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🎯</div>
+                    <h3 class="text-3xl font-bold text-teal-300 mb-4">The Inward Force</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Centripetal force is the inward force required to keep an object moving in a circular path.
+                    </p>
+                </div>
+                <div class="bg-teal-900 bg-opacity-30 p-5 rounded-xl border border-teal-700 mt-6">
+                    <p class="text-center text-gray-300">Without this force, the object would move in a straight line (Newton's First Law).</p>
+                </div>
+            </div>
+
+            <!-- Examples of Centripetal Force -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Examples of Centripetal Force Sources</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🚗</div>
+                        <h4 class="text-xl font-bold text-blue-300 text-center mb-3">Car Turning</h4>
+                        <p class="text-sm text-gray-300 text-center">Friction between tires and road provides the centripetal force.</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🪢</div>
+                        <h4 class="text-xl font-bold text-purple-300 text-center mb-3">Spinning Ball</h4>
+                        <p class="text-sm text-gray-300 text-center">Tension in the string provides the centripetal force.</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🌍</div>
+                        <h4 class="text-xl font-bold text-orange-300 text-center mb-3">Earth Orbiting Sun</h4>
+                        <p class="text-sm text-gray-300 text-center">Gravity provides the centripetal force.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Factors and Formulas -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-red-400">Factors Increasing Centripetal Force</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <div class="flex items-center mb-2">
+                                <div class="text-3xl mr-3">⬆️</div>
+                                <h4 class="font-bold text-red-400">Increased Mass (m)</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">Heavier objects require more force to maintain circular motion.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <div class="flex items-center mb-2">
+                                <div class="text-3xl mr-3">⚡</div>
+                                <h4 class="font-bold text-orange-400">Increased Speed (v)</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">Faster objects need more force to change direction.</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <div class="flex items-center mb-2">
+                                <div class="text-3xl mr-3">⬇️</div>
+                                <h4 class="font-bold text-yellow-400">Decreased Radius (r)</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">Tighter curves require more force.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-green-400">Formulas</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-green-700">
+                            <h4 class="font-bold mb-3 text-green-400 text-center">Centripetal Acceleration:</h4>
+                            <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg text-center">
+                                <p class="text-2xl font-mono text-green-300 mb-2">a<sub>c</sub> = v² / r</p>
+                                <p class="text-sm text-gray-400">Acceleration toward the center</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-emerald-700">
+                            <h4 class="font-bold mb-3 text-emerald-400 text-center">Centripetal Force:</h4>
+                            <div class="bg-emerald-900 bg-opacity-30 p-4 rounded-lg text-center">
+                                <p class="text-2xl font-mono text-emerald-300 mb-2">F<sub>c</sub> = mv² / r</p>
+                                <p class="text-sm text-gray-400">Force required for circular motion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Applications of Uniform Circular Motion
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🌐</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Real-World Applications</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Circular motion has many real-world and technological applications.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Car Negotiating Corner -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🚗</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-blue-300 mb-3">1. Car Negotiating a Corner</h4>
+                            <div class="space-y-2 text-sm text-gray-300">
+                                <p>• Normal force balances weight</p>
+                                <p>• Friction provides centripetal force: F<sub>c</sub> = F<sub>s</sub></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banked Road -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🏁</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-cyan-300 mb-3">2. Car on a Banked Road</h4>
+                            <div class="space-y-2 text-sm text-gray-300">
+                                <p>• Banking angle reduces reliance on friction</p>
+                                <p>• Allows safer turns at high speeds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aircraft Banking -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">✈️</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-purple-300 mb-3">3. Aircraft Banking</h4>
+                            <div class="space-y-2 text-sm text-gray-300">
+                                <p>• Wings are tilted to generate horizontal lift</p>
+                                <p>• Vertical lift balances weight</p>
+                                <p>• Horizontal component provides F<sub>c</sub></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Planets in Orbit -->
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🪐</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-indigo-300 mb-3">4. Planets in Orbit</h4>
+                            <div class="space-y-2 text-sm text-gray-300">
+                                <p>• Gravity provides centripetal force</p>
+                                <p>• Planets move in near-circular orbits</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roads and Cornering -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🛣️</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-pink-300 mb-3">5. Roads and Cornering</h4>
+                            <div class="space-y-2 text-sm text-gray-300">
+                                <p>• Banking improves cornering stability</p>
+                                <p>• Reduces risk of skidding or rolling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spin Dryer -->
+                <div class="shimmer-card bg-gradient-to-br from-teal-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-teal-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="text-5xl mr-4 flex-shrink-0">🌀</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-teal-300 mb-3">6. Spin Dryer (Washing Machine)</h4>
+                            <div class="space-y-2 text-sm text-gray-300">
+                                <p>• Clothes are pressed against the drum wall</p>
+                                <p>• Water is forced out due to centripetal motion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centrifuge - Featured Application -->
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🧪</div>
+                    <h3 class="text-3xl font-bold text-orange-300">7. Centrifuge</h3>
+                    <p class="text-gray-400 text-lg mt-2">Advanced Application in Science and Industry</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold mb-3 text-yellow-400">How It Works:</h4>
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>• Used to separate liquids or solids by density</p>
+                            <p>• Denser substances move outward</p>
+                            <p>• Rapid rotation creates strong centripetal acceleration</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500">
+                        <h4 class="font-bold mb-3 text-orange-400">Applications:</h4>
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>🍽️ Food processing (cream separation)</p>
+                            <p>🏥 Medical labs (blood component separation)</p>
+                            <p>🚀 Astronaut training (simulating high G-forces)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-900 bg-opacity-30 p-5 rounded-xl border border-orange-700">
+                    <p class="text-center text-gray-300">
+                        <strong class="text-orange-400">Key Principle:</strong> Objects experience an outward force (from their perspective) while the centripetal force keeps them moving in a circle. This creates separation based on density and mass.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Key Takeaways
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">⭕</div>
+                        <div>
+                            <h4 class="font-bold text-blue-400 mb-2">Uniform Circular Motion</h4>
+                            <p class="text-gray-300 text-sm">Constant speed along a circular path, but velocity changes due to continuous direction change.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🌀</div>
+                        <div>
+                            <h4 class="font-bold text-cyan-400 mb-2">Angular Quantities</h4>
+                            <p class="text-gray-300 text-sm">Angular displacement (θ) in radians and angular velocity (ω = θ/t) describe rotational motion.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🔄</div>
+                        <div>
+                            <h4 class="font-bold text-teal-400 mb-2">Tangential Velocity</h4>
+                            <p class="text-gray-300 text-sm">Related to angular velocity by v = ωr, directed along the tangent to the circle.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🎯</div>
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-2">Centripetal Force</h4>
+                            <p class="text-gray-300 text-sm">Inward force (F<sub>c</sub> = mv²/r) required to maintain circular motion, provided by friction, tension, or gravity.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">📊</div>
+                        <div>
+                            <h4 class="font-bold text-purple-400 mb-2">Force Factors</h4>
+                            <p class="text-gray-300 text-sm">Centripetal force increases with mass and speed, decreases with larger radius.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🌐</div>
+                        <div>
+                            <h4 class="font-bold text-orange-400 mb-2">Real Applications</h4>
+                            <p class="text-gray-300 text-sm">From planetary orbits to washing machines and centrifuges, circular motion is everywhere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-blue-900 to-cyan-900 rounded-xl p-6 border border-blue-600">
+                <div class="flex items-center justify-center">
+                    <div class="text-5xl mr-4 rotate">🔄</div>
+                    <div class="text-center">
+                        <p class="text-xl font-bold text-blue-300 mb-2">Remember the Key Equations!</p>
+                        <div class="grid md:grid-cols-3 gap-4 mt-4">
+                            <p class="text-gray-300 font-mono text-sm">v = ωr</p>
+                            <p class="text-gray-300 font-mono text-sm">a<sub>c</sub> = v²/r</p>
+                            <p class="text-gray-300 font-mono text-sm">F<sub>c</sub> = mv²/r</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('basics');
+    </script>
+</body>
+</html>
