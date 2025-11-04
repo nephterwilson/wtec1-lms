@@ -1,0 +1,620 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing for Water, Ions, and Gases - Chemistry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">⚗️</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                Testing for Water, Ions, and Gases
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Qualitative Analysis Techniques</p>
+            <p class="text-lg text-gray-400">MSCE Chemistry Notes</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('cations')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Testing Cations
+                </button>
+                <button onclick="showSection('anions')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Testing Anions
+                </button>
+                <button onclick="showSection('gases')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Testing Gases
+                </button>
+                <button onclick="showSection('water')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Testing Water
+                </button>
+            </div>
+        </header>
+
+        <!-- Testing Cations Section -->
+        <section id="cations" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Testing for Ions
+            </h2>
+
+            <!-- Introduction -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚛️</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">What are Ions?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        <strong class="text-blue-400">Ions</strong> are charged atoms. <strong class="text-green-400">Cations</strong> are positively charged, while <strong class="text-red-400">Anions</strong> are negatively charged.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Testing Aqueous Cations -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-cyan-400">Testing Aqueous Cations</h3>
+                <p class="text-center text-gray-300 mb-8 text-lg">Common Cations: Ca²⁺, Al³⁺, Zn²⁺, Cu²⁺, Fe²⁺, Fe³⁺</p>
+
+                <!-- Using Sodium Hydroxide -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🧪</div>
+                        <h4 class="text-2xl font-bold text-blue-300 mb-2">Using Aqueous Sodium Hydroxide (NaOH)</h4>
+                        <p class="text-blue-200">Add a few drops of NaOH to the cation solution</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500 card-hover">
+                            <h5 class="font-bold text-blue-400 text-lg mb-3 text-center">Copper (Cu²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-blue-600 rounded-lg text-white font-semibold">Blue Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500 card-hover">
+                            <h5 class="font-bold text-green-400 text-lg mb-3 text-center">Iron(II) (Fe²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-green-600 rounded-lg text-white font-semibold">Pale Green Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-500 card-hover">
+                            <h5 class="font-bold text-gray-400 text-lg mb-3 text-center">Aluminium (Al³⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-gray-400 rounded-lg text-black font-semibold">White Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Dissolves in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-400 card-hover">
+                            <h5 class="font-bold text-gray-300 text-lg mb-3 text-center">Magnesium (Mg²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-gray-300 rounded-lg text-black font-semibold">White Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-300 card-hover">
+                            <h5 class="font-bold text-gray-300 text-lg mb-3 text-center">Calcium (Ca²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-gray-200 rounded-lg text-black font-semibold">White Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-slate-400 card-hover">
+                            <h5 class="font-bold text-slate-300 text-lg mb-3 text-center">Zinc (Zn²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-slate-300 rounded-lg text-black font-semibold">White Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Dissolves in excess</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Using Ammonia -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🧬</div>
+                        <h4 class="text-2xl font-bold text-purple-300 mb-2">Using Aqueous Ammonia (NH₃)</h4>
+                        <p class="text-purple-200">Add a few drops of ammonia to the cation solution</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-400 card-hover">
+                            <h5 class="font-bold text-gray-300 text-lg mb-3 text-center">Calcium (Ca²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-gray-200 rounded-lg text-black font-semibold">White Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-500 card-hover">
+                            <h5 class="font-bold text-gray-400 text-lg mb-3 text-center">Aluminium (Al³⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-gray-400 rounded-lg text-black font-semibold">White Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-slate-400 card-hover">
+                            <h5 class="font-bold text-slate-300 text-lg mb-3 text-center">Zinc (Zn²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-slate-300 rounded-lg text-black font-semibold">White Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Dissolves in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500 card-hover">
+                            <h5 class="font-bold text-blue-400 text-lg mb-3 text-center">Copper (Cu²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-blue-600 rounded-lg text-white font-semibold">Blue Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Dissolves in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500 card-hover">
+                            <h5 class="font-bold text-green-400 text-lg mb-3 text-center">Iron(II) (Fe²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-green-700 rounded-lg text-white font-semibold">Green Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-600 card-hover">
+                            <h5 class="font-bold text-red-400 text-lg mb-3 text-center">Iron(III) (Fe³⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-red-800 rounded-lg text-white font-semibold">Red-Brown Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+
+                        <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-600 card-hover">
+                            <h5 class="font-bold text-gray-400 text-lg mb-3 text-center">Lead (Pb²⁺)</h5>
+                            <div class="text-center mb-3">
+                                <div class="inline-block px-4 py-2 bg-gray-500 rounded-lg text-white font-semibold">White Precipitate</div>
+                            </div>
+                            <p class="text-sm text-gray-300 text-center">Insoluble in excess</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing Anions Section -->
+        <section id="anions" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Testing for Anions
+            </h2>
+
+            <p class="text-center text-gray-300 mb-8 text-lg">Common Anions: Sulphates, Halides, Nitrates</p>
+
+            <!-- Testing for Sulphates -->
+            <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-5xl mb-4">🟡</div>
+                    <h3 class="text-3xl font-bold text-yellow-300 mb-4">Testing for Sulphate Ions (SO₄²⁻)</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-yellow-400 mb-4">📋 Procedure</h4>
+                        <ol class="text-gray-300 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2 font-bold">1.</span>
+                                <span>Add dilute hydrochloric acid to the solution</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2 font-bold">2.</span>
+                                <span>Add barium chloride solution</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-400 mb-4">👁️ Observation</h4>
+                        <div class="text-center">
+                            <div class="inline-block px-6 py-4 bg-gray-200 rounded-lg text-black font-bold text-lg mb-3">
+                                White Precipitate
+                            </div>
+                            <p class="text-gray-300">Indicates presence of sulphate ions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testing for Halides -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-5xl mb-4">🔮</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Testing for Halide Ions</h3>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <h4 class="text-xl font-bold text-purple-400 mb-4">📋 Procedure</h4>
+                    <ol class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2 font-bold">1.</span>
+                            <span>Add dilute nitric acid to the solution</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2 font-bold">2.</span>
+                            <span>Add dilute silver nitrate solution</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500 card-hover">
+                        <h5 class="font-bold text-blue-400 text-lg mb-3 text-center">Fluoride (F⁻)</h5>
+                        <div class="text-center mb-3">
+                            <div class="inline-block px-4 py-2 bg-slate-700 rounded-lg text-white font-semibold">No Precipitate</div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-300 card-hover">
+                        <h5 class="font-bold text-gray-300 text-lg mb-3 text-center">Chloride (Cl⁻)</h5>
+                        <div class="text-center mb-3">
+                            <div class="inline-block px-4 py-2 bg-gray-100 rounded-lg text-black font-semibold">White Precipitate</div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-400 card-hover">
+                        <h5 class="font-bold text-yellow-400 text-lg mb-3 text-center">Bromide (Br⁻)</h5>
+                        <div class="text-center mb-3">
+                            <div class="inline-block px-4 py-2 bg-yellow-200 rounded-lg text-black font-semibold">Pale Yellow Precipitate</div>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500 card-hover">
+                        <h5 class="font-bold text-yellow-500 text-lg mb-3 text-center">Iodide (I⁻)</h5>
+                        <div class="text-center mb-3">
+                            <div class="inline-block px-4 py-2 bg-yellow-400 rounded-lg text-black font-semibold">Yellow Precipitate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testing for Nitrates -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 aired-2xl p-8 shadow-2xl border border-red-500">
+                <div class="text-center mb-6">
+                    <div class="text-5xl mb-4">💥</div>
+                    <h3 class="text-3xl font-bold text-red-300 mb-4">Testing for Nitrate Ions (NO₃⁻)</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-red-400 mb-4">📋 Procedure</h4>
+                        <ol class="text-gray-300 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2 font-bold">1.</span>
+                                <span>Add aqueous sodium hydroxide to the nitrate solution</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2 font-bold">2.</span>
+                                <span>Introduce aluminum foil into the mixture</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2 font-bold">3.</span>
+                                <span>Warm gently</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-400 mb-4">👁️ Observation</h4>
+                        <div class="space-y-3">
+                            <p class="text-gray-300">If nitrate ions are present:</p>
+                            <div class="bg-green-900 bg-opacity-40 p-4 rounded-lg border-l-4 border-green-400">
+                                <p class="text-green-300 font-semibold mb-2">Ammonia gas (NH₃) is released</p>
+                                <p class="text-sm text-gray-300">Damp red litmus paper turns blue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing Gases Section -->
+        <section id="gases" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Testing for Gases
+            </h2>
+
+            <p class="text-center text-gray-300 mb-8 text-lg">Commonly Tested Gases: NH₃, CO₂, H₂, Cl₂, O₂, SO₂</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Ammonia -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">💨</div>
+                        <h3 class="text-2xl font-bold text-blue-300 mb-2">Ammonia (NH₃)</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-4">
+                        <h4 class="font-bold text-blue-400 mb-2">Method:</h4>
+                        <p class="text-sm text-gray-300">Introduce damp red litmus paper into the gas jar</p>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-40 p-4 rounded-xl border-l-4 border-blue-400">
+                        <h4 class="font-bold text-blue-300 mb-2">Observation:</h4>
+                        <p class="text-sm text-gray-300">Damp red litmus paper turns <strong class="text-blue-400">blue</strong></p>
+                    </div>
+                </div>
+
+                <!-- Carbon Dioxide -->
+                <div class="shimmer-card bg-gradient-to-br from-gray-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-gray-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">☁️</div>
+                        <h3 class="text-2xl font-bold text-gray-300 mb-2">Carbon Dioxide (CO₂)</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-4">
+                        <h4 class="font-bold text-gray-400 mb-2">Method:</h4>
+                        <p class="text-sm text-gray-300">Bubble the gas through lime water (calcium hydroxide solution)</p>
+                    </div>
+                    <div class="bg-gray-800 bg-opacity-40 p-4 rounded-xl border-l-4 border-gray-400">
+                        <h4 class="font-bold text-gray-300 mb-2">Observation:</h4>
+                        <p class="text-sm text-gray-300">Lime water turns <strong class="text-gray-300">milky</strong></p>
+                    </div>
+                </div>
+
+                <!-- Hydrogen -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🔥</div>
+                        <h3 class="text-2xl font-bold text-red-300 mb-2">Hydrogen (H₂)</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-4">
+                        <h4 class="font-bold text-red-400 mb-2">Method:</h4>
+                        <p class="text-sm text-gray-300">Introduce a burning splint at the mouth of the gas jar</p>
+                    </div>
+                    <div class="bg-red-900 bg-opacity-40 p-4 rounded-xl border-l-4 border-red-400">
+                        <h4 class="font-bold text-red-300 mb-2">Observation:</h4>
+                        <p class="text-sm text-gray-300">A <strong class="text-red-400">'pop' sound</strong> is heard</p>
+                    </div>
+                </div>
+
+                <!-- Chlorine -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🟢</div>
+                        <h3 class="text-2xl font-bold text-green-300 mb-2">Chlorine (Cl₂)</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-4">
+                        <h4 class="font-bold text-green-400 mb-2">Method:</h4>
+                        <p class="text-sm text-gray-300">Hold damp blue litmus paper at the mouth of the test tube</p>
+                    </div>
+                    <div class="bg-green-900 bg-opacity-40 p-4 rounded-xl border-l-4 border-green-400">
+                        <h4 class="font-bold text-green-300 mb-2">Observation:</h4>
+                        <p class="text-sm text-gray-300">Damp blue litmus paper gets <strong class="text-green-400">bleached</strong></p>
+                    </div>
+                </div>
+
+                <!-- Oxygen -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🔆</div>
+                        <h3 class="text-2xl font-bold text-orange-300 mb-2">Oxygen (O₂)</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-4">
+                        <h4 class="font-bold text-orange-400 mb-2">Method:</h4>
+                        <p class="text-sm text-gray-300">Introduce a glowing splint into the gas jar</p>
+                    </div>
+                    <div class="bg-orange-900 bg-opacity-40 p-4 rounded-xl border-l-4 border-orange-400">
+                        <h4 class="font-bold text-orange-300 mb-2">Observation:</h4>
+                        <p class="text-sm text-gray-300">The glowing splint <strong class="text-orange-400">relights</strong> (bursts into flames)</p>
+                    </div>
+                </div>
+
+                <!-- Sulphur Dioxide -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🟣</div>
+                        <h3 class="text-2xl font-bold text-purple-300 mb-2">Sulphur Dioxide (SO₂)</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl mb-4">
+                        <h4 class="font-bold text-purple-400 mb-2">Method:</h4>
+                        <p class="text-sm text-gray-300">Bubble the gas through acidified potassium dichromate (VII) solution</p>
+                    </div>
+                    <div class="bg-purple-900 bg-opacity-40 p-4 rounded-xl border-l-4 border-purple-400">
+                        <h4 class="font-bold text-purple-300 mb-2">Observation:</h4>
+                        <p class="text-sm text-gray-300">Solution changes from <strong class="text-purple-400">purple to colorless</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing Water Section -->
+        <section id="water" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Testing for the Presence of Water
+            </h2>
+
+            <!-- Introduction -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💧</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Chemical Tests for Water</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Use <strong class="text-cyan-400">anhydrous copper (II) sulphate</strong> or <strong class="text-blue-400">anhydrous cobalt (II) chloride</strong> to detect water
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Copper Sulphate Test -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚪</div>
+                        <h3 class="text-2xl font-bold text-blue-300 mb-2">Anhydrous Copper (II) Sulphate</h3>
+                        <p class="text-blue-200 text-sm">(CuSO₄)</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Before -->
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-300">
+                            <h4 class="text-xl font-bold text-gray-300 mb-3">Before Adding Water</h4>
+                            <div class="text-center">
+                                <div class="inline-block px-8 py-4 bg-gray-200 rounded-lg text-black font-bold text-lg mb-2">
+                                    WHITE
+                                </div>
+                                <p class="text-sm text-gray-300">Anhydrous state</p>
+                            </div>
+                        </div>
+
+                        <!-- After -->
+                        <div class="bg-blue-900 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-400">
+                            <h4 class="text-xl font-bold text-blue-300 mb-3">After Adding Water</h4>
+                            <div class="text-center">
+                                <div class="inline-block px-8 py-4 bg-blue-500 rounded-lg text-white font-bold text-lg mb-2">
+                                    BLUE
+                                </div>
+                                <p class="text-sm text-gray-300">Indicates presence of water</p>
+                            </div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="text-center">
+                            <div class="inline-block bg-slate-800 px-6 py-3 rounded-lg">
+                                <p class="text-gray-300 font-semibold">White → Blue = Water Present ✓</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cobalt Chloride Test -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔵</div>
+                        <h3 class="text-2xl font-bold text-pink-300 mb-2">Anhydrous Cobalt (II) Chloride</h3>
+                        <p class="text-pink-200 text-sm">(CoCl₂)</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Before -->
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-400">
+                            <h4 class="text-xl font-bold text-blue-300 mb-3">Before Adding Water</h4>
+                            <div class="text-center">
+                                <div class="inline-block px-8 py-4 bg-blue-600 rounded-lg text-white font-bold text-lg mb-2">
+                                    BLUE
+                                </div>
+                                <p class="text-sm text-gray-300">Anhydrous state</p>
+                            </div>
+                        </div>
+
+                        <!-- After -->
+                        <div class="bg-pink-900 bg-opacity-60 p-6 rounded-xl border-l-4 border-pink-400">
+                            <h4 class="text-xl font-bold text-pink-300 mb-3">After Adding Water</h4>
+                            <div class="text-center">
+                                <div class="inline-block px-8 py-4 bg-pink-500 rounded-lg text-white font-bold text-lg mb-2">
+                                    PINK
+                                </div>
+                                <p class="text-sm text-gray-300">Confirms presence of water</p>
+                            </div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="text-center">
+                            <div class="inline-block bg-slate-800 px-6 py-3 rounded-lg">
+                                <p class="text-gray-300 font-semibold">Blue → Pink = Water Present ✓</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Box -->
+            <div class="mt-8 bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">📝</div>
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-4">Quick Summary</h3>
+                    <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-cyan-400 font-bold mb-2">CuSO₄ Test</p>
+                            <p class="text-sm text-gray-300">White → Blue</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-pink-400 font-bold mb-2">CoCl₂ Test</p>
+                            <p class="text-sm text-gray-300">Blue → Pink</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 border-t border-gray-700 pt-8">
+            <p class="text-sm">MSCE Chemistry Notes - Testing for Water, Ions, and Gases</p>
+            <p class="text-xs mt-2">Master qualitative analysis techniques ⚗️</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show selected section with fade-in animation
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.remove('hidden');
+            selectedSection.classList.add('fade-in');
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show first section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('cations');
+        });
+    </script>
+</body>
+</html>

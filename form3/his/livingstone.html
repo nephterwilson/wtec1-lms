@@ -1,0 +1,639 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Missionary Factor in Malawi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">⛪</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-green-400 to-yellow-400 bg-clip-text text-transparent">
+                The Missionary Factor in Malawi
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">David Livingstone & the Opening of Central Africa</p>
+            <p class="text-lg text-gray-400">1813-1873 - Explorer, Missionary, and Pioneer</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('objectives')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Objectives
+                </button>
+                <button onclick="showSection('strategies')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Strategies
+                </button>
+                <button onclick="showSection('journey1')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    First Journey
+                </button>
+                <button onclick="showSection('journey2')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Second Journey
+                </button>
+                <button onclick="showSection('journey3')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Third Journey
+                </button>
+            </div>
+        </header>
+
+        <!-- Objectives Section -->
+        <section id="objectives" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Objectives of David Livingstone's Missionary Work
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🎯</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Scottish Missionary & Explorer</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        David Livingstone (1813-1873) was a Scottish missionary and explorer whose work in Central Africa transformed the continent. His mission combined faith, commerce, and education to combat slavery and bring positive change.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">✝️</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Spread Christianity</h3>
+                    <p class="text-sm text-gray-300">Teach people across Central Africa about the Christian faith and establish lasting religious communities.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🤝</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">Promote Legitimate Trade</h3>
+                    <p class="text-sm text-gray-300">Encourage trade in goods and resources instead of the brutal and inhumane slave trade.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">📚</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">Introduce Western Education</h3>
+                    <p class="text-sm text-gray-300">Build schools and teach reading, writing, and arithmetic to empower local communities.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⛓️‍💥</div>
+                    <h3 class="text-xl font-bold mb-3 text-red-300">Fight the Slave Trade</h3>
+                    <p class="text-sm text-gray-300">Expose the cruelty of slavery and encourage lawful commerce to replace this evil practice.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-blue-900 to-cyan-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-blue-300">The Three C's Mission</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Livingstone believed that Christianity, Commerce, and Civilization were interconnected forces that could transform Africa. By introducing legitimate trade and education alongside the Christian gospel, he hoped to end the slave trade and bring lasting prosperity to the people of Central Africa. His vision was revolutionary for its time, recognizing that economic development and spiritual transformation must work together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategies Section -->
+        <section id="strategies" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Strategies to Open Central Africa for Missionary Work
+            </h2>
+
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🗺️</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Opening the Interior</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        Livingstone used multiple strategic approaches to prepare Central Africa for missionary work and expose the continent to European audiences.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">📖</div>
+                        <h3 class="text-xl font-bold text-blue-300">Writings and Books</h3>
+                    </div>
+                    <p class="text-gray-300">Documented his travels and the people of Africa in detailed publications that encouraged Europeans to support missionary work and understand the continent.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🧭</div>
+                        <h3 class="text-xl font-bold text-green-300">Explorations & Expeditions</h3>
+                    </div>
+                    <p class="text-gray-300">Traveled widely across Central Africa to map rivers, lakes, and trade routes, making the unknown interior accessible to future missionaries.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">⛪</div>
+                        <h3 class="text-xl font-bold text-purple-300">Opening Mission Stations</h3>
+                    </div>
+                    <p class="text-gray-300">Established early mission stations like Mabotsa and Kolobeng where pioneering missionary work could begin and expand throughout the region.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎤</div>
+                        <h3 class="text-xl font-bold text-orange-300">Public Lectures & Speeches</h3>
+                    </div>
+                    <p class="text-gray-300">Informed audiences across Europe about Africa's needs, the slave trade's horrors, and opportunities for missionary work and legitimate commerce.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">👑</div>
+                        <h3 class="text-xl font-bold text-red-300">Meetings with Local Chiefs</h3>
+                    </div>
+                    <p class="text-gray-300">Negotiated access and protection for missionaries by building relationships with African leaders and securing safe passage through their territories.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-yellow-400">The Challenge of the African Interior</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🚫</div>
+                        <h4 class="font-bold text-lg mb-2 text-red-400">No Roads</h4>
+                        <p class="text-sm text-gray-300">The interior had no established roads or infrastructure for European travel.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🌊</div>
+                        <h4 class="font-bold text-lg mb-2 text-blue-400">Unnavigable Rivers</h4>
+                        <p class="text-sm text-gray-300">Waterfalls, cataracts, and rapids made river travel extremely difficult and dangerous.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🌳</div>
+                        <h4 class="font-bold text-lg mb-2 text-green-400">Dense Forests</h4>
+                        <p class="text-sm text-gray-300">Thick jungle vegetation obscured paths and made exploration incredibly challenging.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- First Journey Section -->
+        <section id="journey1" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                First Journey (1852-1856)
+            </h2>
+
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="text-6xl mr-6">🛶</div>
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-purple-300">Exploring the Zambezi River</h3>
+                        <p class="text-gray-400 text-lg">The quest for a western trade route</p>
+                    </div>
+                </div>
+                <div class="bg-purple-900 bg-opacity-20 p-6 rounded-xl border border-purple-700">
+                    <p class="text-gray-300 text-lg text-center leading-relaxed">
+                        Livingstone's first major expedition aimed to explore the mighty Zambezi River and find a navigable trade route to the west coast of Africa, opening new possibilities for commerce and missionary work.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🗺️</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Journey Highlights</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2 text-blue-400">Linyati Capital</h4>
+                            <p class="text-sm text-gray-300">Sailed to Linyati, capital of the Kololo people, where he witnessed the devastating impact of the slave trade firsthand.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">To Luanda</h4>
+                            <p class="text-sm text-gray-300">Explored westward towards Luanda hoping to establish a western trade route. Chief Sekeletu provided 27 porters for support.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400">Return to England</h4>
+                            <p class="text-sm text-gray-300">Returned to England in 1855 and wrote "Missionary Travels and Researches in South Africa," documenting his discoveries.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚠️</div>
+                        <h3 class="text-3xl font-bold text-red-300">Challenges Faced</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2 text-blue-400">Heavy Rains</h4>
+                            <p class="text-sm text-gray-300">Torrential rainfall made travel difficult and slowed progress significantly.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Dense Forest</h4>
+                            <p class="text-sm text-gray-300">Thick jungle vegetation obscured paths and presented constant obstacles.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <h4 class="font-bold mb-2 text-yellow-400">Fever</h4>
+                            <p class="text-sm text-gray-300">Suffered from malaria and other tropical fevers throughout the expedition.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Dysentery</h4>
+                            <p class="text-sm text-gray-300">Battled dysentery and other debilitating illnesses in the harsh environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-900 to-blue-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">🎓</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-green-300">Impact and Legacy</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            Upon returning to England, Livingstone gave powerful public lectures that captivated audiences with tales of African exploration and the horrors of the slave trade. His passionate appeals for others to continue his work resonated deeply with Victorian society.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The direct result of his advocacy was the formation of the <strong class="text-green-400">Universities Mission to Central Africa (UMCA)</strong>, which would carry on missionary work in the regions he had opened. His writings and speeches transformed European understanding of Central Africa and sparked a new era of missionary activity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Second Journey Section -->
+        <section id="journey2" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                Second Journey (1858-1864)
+            </h2>
+
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="text-6xl mr-6">🚢</div>
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-orange-300">Testing the Zambezi's Navigability</h3>
+                        <p class="text-gray-400 text-lg">Funded by the British Government</p>
+                    </div>
+                </div>
+                <div class="bg-orange-900 bg-opacity-20 p-6 rounded-xl border border-orange-700">
+                    <p class="text-gray-300 text-lg text-center leading-relaxed">
+                        After resigning from the London Missionary Society in 1857, Livingstone embarked on a government-funded expedition to test whether the Zambezi River could serve as a practical highway into the African interior.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🏞️</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Quelimane (1858)</h3>
+                    <p class="text-sm text-gray-300">Reached Quelimane and explored Lake Chilwa, mapping important water bodies in the region.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🌊</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">Lake Malawi (1859)</h3>
+                    <p class="text-sm text-gray-300">Explored western Lake Malawi, reaching Nkhata Bay and documenting this vast inland sea.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">⛪</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">UMCA Missionaries</h3>
+                    <p class="text-sm text-gray-300">Met with Universities Mission to Central Africa missionaries arriving to continue the work.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">Witnessing the Slave Trade</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-4">⛓️</div>
+                            <h4 class="text-xl font-bold text-red-300">Yao Slave Trade</h4>
+                        </div>
+                        <p class="text-gray-300">Witnessed the brutal Yao slave trade operations, documenting the suffering and cruelty for European audiences.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-4">⚔️</div>
+                            <h4 class="text-xl font-bold text-orange-300">Ngoni Raids</h4>
+                        </div>
+                        <p class="text-gray-300">Observed devastating Ngoni raids that disrupted communities and fueled the slave trade networks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-3">💔</div>
+                        <h3 class="text-2xl font-bold text-yellow-300">Personal Tragedy</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">•</div>
+                            <p class="text-gray-300">Mary Moffat, Livingstone's wife, arrived with UMCA missionaries to support the mission.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">•</div>
+                            <p class="text-gray-300">Tragically, Mary died in 1862, leaving Livingstone devastated and more determined than ever.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-3">😞</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Disappointments</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">•</div>
+                            <p class="text-gray-300">Explored the Ruvuma River seeking alternative routes into the interior.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">•</div>
+                            <p class="text-gray-300">Disappointed when UMCA missionaries withdrew to Zanzibar due to the harsh conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-blue-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">📚</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-blue-300">Return to England (1864)</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Livingstone returned to England in 1864 and published <strong class="text-blue-400">"Narratives of an Expedition to Zambezi and its Tributaries."</strong> Despite the personal losses and setbacks, the expedition had revealed much about Central Africa's geography, peoples, and the ongoing tragedy of the slave trade. His detailed accounts continued to inspire missionary and humanitarian efforts across the continent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Third Journey Section -->
+        <section id="journey3" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
+                Third Journey (1866-1873)
+            </h2>
+
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="text-6xl mr-6">🔍</div>
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-red-300">The Search for the Nile's Source</h3>
+                        <p class="text-gray-400 text-lg">A Quest Funded by Personal Resources</p>
+                    </div>
+                </div>
+                <div class="bg-red-900 bg-opacity-20 p-6 rounded-xl border border-red-700">
+                    <p class="text-gray-300 text-lg text-center leading-relaxed">
+                        Without government support, Livingstone embarked on his final and most challenging expedition using personal money and support from friends. His goal: to solve one of geography's greatest mysteries—the source of the Nile River.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🗺️</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Explorations</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2 text-blue-400">Lakes Bangweulu & Mweru</h4>
+                            <p class="text-sm text-gray-300">Explored these major lakes, mapping previously unknown regions of Central Africa.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Meeting Stanley (1871)</h4>
+                            <p class="text-sm text-gray-300">With Swahili explorer Mohammad Bogharid, met journalist Henry Morton Stanley at Ujiji—the famous "Dr. Livingstone, I presume?" encounter.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400">Northern Lake Tanganyika</h4>
+                            <p class="text-sm text-gray-300">Explored the northern reaches of Lake Tanganyika searching for the Nile's origins.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <h4 class="font-bold mb-2 text-red-400">Unfulfilled Quest</h4>
+                            <p class="text-sm text-gray-300">Despite exhaustive efforts, did not find the true source of the Nile River.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚰️</div>
+                        <h3 class="text-3xl font-bold text-red-300">Death & Legacy</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <h4 class="font-bold mb-2 text-yellow-400">May 1, 1873</h4>
+                            <p class="text-sm text-gray-300">Died at Chitambo village in present-day Zambia, worn out by illness and exhaustion.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <h4 class="font-bold mb-2 text-orange-400">Faithful Companions</h4>
+                            <p class="text-sm text-gray-300">His loyal servants Susi, Chuma, and Jacob Wainwright carried his body across Africa to the coast.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Journey to Bagamoyo</h4>
+                            <p class="text-sm text-gray-300">His body was transported to Bagamoyo on the coast, then shipped back to England.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400">Westminster Abbey (1874)</h4>
+                            <p class="text-sm text-gray-300">Buried with honor at Westminster Abbey, recognition of his contributions to exploration and humanity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-yellow-400">The Historic Stanley-Livingstone Meeting</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-6xl mb-3">📰</div>
+                            <h4 class="text-xl font-bold text-blue-300">Henry Morton Stanley</h4>
+                        </div>
+                        <p class="text-gray-300 text-center">Welsh-American journalist sent by the New York Herald to find the "lost" explorer David Livingstone in the heart of Africa.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-6xl mb-3">🤝</div>
+                            <h4 class="text-xl font-bold text-green-300">Ujiji, 1871</h4>
+                        </div>
+                        <p class="text-gray-300 text-center">The famous greeting "Dr. Livingstone, I presume?" became one of the most iconic phrases in exploration history.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-900 to-pink-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">❤️</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-purple-300">An Extraordinary Act of Loyalty</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            When Livingstone died in a remote African village, his faithful companions—Susi, Chuma, and Jacob Wainwright—performed an extraordinary act of devotion. They removed and buried his heart in Africa (the continent he loved), then preserved his body and carried it over 1,500 miles to the coast.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            This nine-month journey through hostile territory and difficult terrain demonstrated the profound respect and affection these African men had for Livingstone. Their dedication ensured that Livingstone received a hero's burial at Westminster Abbey, securing his place in history and bringing closure to his family. This remarkable story highlights the genuine relationships Livingstone built with African people during his travels.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Timeline -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+                Timeline: Livingstone's Missionary Journeys
+            </h3>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="bg-blue-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1813
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-blue-300">Birth in Scotland</h4>
+                        <p class="text-gray-300">David Livingstone born; would become one of history's greatest explorers and missionaries.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-purple-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1852-56
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-purple-300">First Journey</h4>
+                        <p class="text-gray-300">Explored Zambezi River, traveled to Luanda, witnessed slave trade, returned to publish findings.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-orange-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1858-64
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-orange-300">Second Journey</h4>
+                        <p class="text-gray-300">Government-funded expedition; explored Lake Malawi; wife Mary died; documented slave trade.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-red-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1866-73
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-red-300">Third Journey</h4>
+                        <p class="text-gray-300">Searched for Nile's source; met Stanley at Ujiji (1871); died at Chitambo village (1873).</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-green-600 text-white rounded-full w-24 h-24 flex items-center justify-center text-xl font-bold mr-6 flex-shrink-0">
+                        1874
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-green-300">Westminster Abbey</h4>
+                        <p class="text-gray-300">Body returned to England; buried with honors at Westminster Abbey, cementing his legacy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Legacy Section -->
+        <div class="mt-12 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+            <div class="text-center mb-8">
+                <div class="text-7xl mb-4">🌟</div>
+                <h3 class="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-pink-400 bg-clip-text text-transparent">
+                    Livingstone's Enduring Legacy
+                </h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4">🗺️</div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-300">Geographic Discovery</h4>
+                    <p class="text-gray-300">Mapped vast regions of Central Africa, opening the interior to the outside world.</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4">⛓️‍💥</div>
+                    <h4 class="text-xl font-bold mb-3 text-red-300">Anti-Slavery Advocate</h4>
+                    <p class="text-gray-300">Exposed the horrors of the slave trade, helping to build momentum for its abolition.</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4">⛪</div>
+                    <h4 class="text-xl font-bold mb-3 text-green-300">Missionary Pioneer</h4>
+                    <p class="text-gray-300">Opened Central Africa to Christian missionary work that continues to this day.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-slate-900 to-slate-800 p-8 rounded-xl border border-yellow-500">
+                <p class="text-gray-300 text-lg text-center leading-relaxed italic">
+                    "I am prepared to go anywhere, provided it be forward."
+                </p>
+                <p class="text-gray-400 text-center mt-2">— David Livingstone</p>
+            </div>
+
+            <div class="mt-8 text-center">
+                <p class="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+                    David Livingstone's life embodied courage, perseverance, and dedication to humanitarian ideals. Though he never found the source of the Nile, his explorations transformed European understanding of Africa. His tireless advocacy against slavery and his compassionate relationships with African peoples set him apart from many of his contemporaries. Today, Livingstone is remembered not just as an explorer, but as a champion of human dignity whose work helped shape the course of African history.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('objectives');
+    </script>
+</body>
+</html>

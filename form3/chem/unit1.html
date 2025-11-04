@@ -1,0 +1,651 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimental Techniques - Chemistry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🧪</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
+                Experimental Techniques
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Chemistry Laboratory Skills</p>
+            <p class="text-lg text-gray-400">MSCE Chemistry Notes</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('waste')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Chemical Waste
+                </button>
+                <button onclick="showSection('investigation')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Scientific Investigation
+                </button>
+                <button onclick="showSection('purity')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Purity Tests
+                </button>
+                <button onclick="showSection('experiments')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Experiments
+                </button>
+            </div>
+        </header>
+
+        <!-- Chemical Waste Section -->
+        <section id="waste" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Chemical Waste
+            </h2>
+
+            <!-- Definition -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚠️</div>
+                    <h3 class="text-3xl font-bold text-red-300 mb-4">What is Chemical Waste?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed mb-4">
+                        Chemical waste refers to <strong class="text-red-400">unwanted or expired materials</strong> resulting from chemical reactions.
+                    </p>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Proper disposal is crucial to avoid harm to people and the environment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Examples -->
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-orange-400">Examples of Chemical Waste</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500 card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🧴</div>
+                            <h4 class="font-bold text-red-400 text-lg mb-2">Unused Chemicals</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Acids, alkalis, expired reagents</p>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500 card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🔪</div>
+                            <h4 class="font-bold text-orange-400 text-lg mb-2">Sharp Objects</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Broken glassware, sharp instruments</p>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500 card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🗑️</div>
+                            <h4 class="font-bold text-yellow-400 text-lg mb-2">General Waste</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Plastics, waste papers, rubbers</p>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500 card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">☁️</div>
+                            <h4 class="font-bold text-green-400 text-lg mb-2">Poisonous Gases</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 text-center">Toxic fumes from reactions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disposal Methods -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Safe Disposal Methods</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="text-4xl mr-4 flex-shrink-0">🗑️</div>
+                            <div>
+                                <h4 class="font-bold text-blue-400 text-xl mb-2">Normal Waste Bins</h4>
+                                <p class="text-sm text-gray-300">For non-recyclable plastics, wood, rubber, dirty papers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="text-4xl mr-4 flex-shrink-0">🚨</div>
+                            <div>
+                                <h4 class="font-bold text-red-400 text-xl mb-2">Special Containers</h4>
+                                <p class="text-sm text-gray-300">For sharp objects and hazardous items; must be emptied regularly</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="text-4xl mr-4 flex-shrink-0">💧</div>
+                            <div>
+                                <h4 class="font-bold text-cyan-400 text-xl mb-2">Draining with Water</h4>
+                                <p class="text-sm text-gray-300">For harmless soluble salts and diluted acids/alkalis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="text-4xl mr-4 flex-shrink-0">♻️</div>
+                            <div>
+                                <h4 class="font-bold text-green-400 text-xl mb-2">Recycling</h4>
+                                <p class="text-sm text-gray-300">Unbroken glass, packing waste, paper</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="text-4xl mr-4 flex-shrink-0">🔥</div>
+                            <div>
+                                <h4 class="font-bold text-orange-400 text-xl mb-2">Incineration</h4>
+                                <p class="text-sm text-gray-300">Burning wastes like syringes, organic solvents, and mineral oils in an incinerator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scientific Investigation Section -->
+        <section id="investigation" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Designing Scientific Investigation
+            </h2>
+
+            <!-- Definition -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">What is Scientific Investigation?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        A scientific investigation is a <strong class="text-purple-400">systematic method</strong> used to answer questions about natural phenomena. It involves careful planning and observation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Components -->
+            <div class="space-y-6">
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-2xl font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-3">Problem Identification</h3>
+                            <p class="text-gray-300">Asking questions about the natural world (e.g., causes of rusting)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-2xl font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-300 mb-3">Formulation of a Hypothesis</h3>
+                            <p class="text-gray-300">Guessed answer based on knowledge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-2xl font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-300 mb-3">Experimentation</h3>
+                            <p class="text-gray-300">Series of investigations to test the hypothesis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-2xl font-bold flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300 mb-3">Observation and Data Collection</h3>
+                            <p class="text-gray-300">Accurate recording of observations and measurements</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-2xl font-bold flex-shrink-0">5</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300 mb-3">Interpretation of Data</h3>
+                            <p class="text-gray-300">Explaining observations and trends</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-2xl font-bold flex-shrink-0">6</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-300 mb-3">Conclusion</h3>
+                            <p class="text-gray-300">Confirmation or rejection of the hypothesis; if rejected, formulate a new one</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Purity Tests Section -->
+        <section id="purity" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Purity of a Substance
+            </h2>
+
+            <!-- Definition -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💎</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">What is a Pure Substance?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed mb-4">
+                        A material with <strong class="text-blue-400">constant composition and no impurities</strong>.
+                    </p>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Pure substances have constant composition and properties. Impurities alter physical characteristics like melting and boiling points.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tests for Purity -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-4">🌡️</div>
+                        <h3 class="text-2xl font-bold text-red-300 mb-4">Melting Point</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2">•</span>
+                            <span>A pure substance has a specific melting point</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2">•</span>
+                            <span>Impurities <strong class="text-red-400">lower</strong> the melting point</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2">•</span>
+                            <span>Impurities cause melting over a range</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-4">♨️</div>
+                        <h3 class="text-2xl font-bold text-orange-300 mb-4">Boiling Point</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-orange-400 mr-2">•</span>
+                            <span>A pure substance has a specific boiling point</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-400 mr-2">•</span>
+                            <span>Impurities <strong class="text-orange-400">raise</strong> the boiling point</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-400 mr-2">•</span>
+                            <span>Impurities cause boiling over a range</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-4">📄</div>
+                        <h3 class="text-2xl font-bold text-green-300 mb-4">Paper Chromatography</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span>Separates components in mixtures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span>Identifies purity by number of spots</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">•</span>
+                            <span>One spot = pure, multiple = impure</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiments Section -->
+        <section id="experiments" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Purity Testing Experiments
+            </h2>
+
+            <!-- Experiment 1: Melting Point -->
+            <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-5xl mb-4">🌡️</div>
+                    <h3 class="text-3xl font-bold text-red-300 mb-2">Experiment 1: Melting Point Test</h3>
+                    <p class="text-red-200 text-lg">Determining purity by melting point</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-red-400 mb-4">🎯 Aim</h4>
+                        <p class="text-gray-300">To determine the melting point of a substance and check its purity</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-orange-400 mb-4">🧰 Materials</h4>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li>• Sample of the substance</li>
+                            <li>• Melting point apparatus or heating plate</li>
+                            <li>• Thermometer</li>
+                            <li>• Capillary tubes</li>
+                            <li>• Stopwatch or timer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <h4 class="text-xl font-bold text-yellow-400 mb-4">📋 Procedure</h4>
+                    <ol class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">1.</span>
+                            <span>Fill a capillary tube with a small amount of the substance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">2.</span>
+                            <span>Insert the capillary tube into the melting point apparatus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">3.</span>
+                            <span>Gradually increase the temperature</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">4.</span>
+                            <span>Observe the thermometer as the sample heats</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-400 mb-4">👁️ Observations</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Record the temperature at which the substance completely melts</li>
+                            <li>• Note any color changes or impurities during melting</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-blue-400 mb-4">✅ Conclusion</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Compare with known melting point</li>
+                            <li>• A lower or range of melting points indicates impurities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experiment 2: Boiling Point -->
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-5xl mb-4">♨️</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-2">Experiment 2: Boiling Point Test</h3>
+                    <p class="text-orange-200 text-lg">Checking purity using boiling point</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-orange-400 mb-4">🎯 Aim</h4>
+                        <p class="text-gray-300">To determine the boiling point of a substance and assess its purity</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-yellow-400 mb-4">🧰 Materials</h4>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li>• Sample of the substance</li>
+                            <li>• Boiling point apparatus or heating setup</li>
+                            <li>• Thermometer</li>
+                            <li>• Beaker</li>
+                            <li>• Stopwatch or timer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <h4 class="text-xl font-bold text-yellow-400 mb-4">📋 Procedure</h4>
+                    <ol class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">1.</span>
+                            <span>Place the substance in a beaker and set up the apparatus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">2.</span>
+                            <span>Gradually heat the substance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">3.</span>
+                            <span>Monitor the temperature using a thermometer</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-400 mb-4">👁️ Observations</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Record when the substance begins boiling and remains steady</li>
+                            <h4 class="text-xl font-bold text-green-400 mb-4">👁️ Observations</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Record when the substance begins boiling and remains steady</li>
+                            <li>• Note any visible changes or bubbles</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-blue-400 mb-4">✅ Conclusion</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Compare observed boiling point with known value</li>
+                            <li>• A higher or varied boiling point suggests impurities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experiment 3: Paper Chromatography -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-5xl mb-4">📄</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-2">Experiment 3: Paper Chromatography</h3>
+                    <p class="text-green-200 text-lg">Separating mixture components to test purity</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-400 mb-4">🎯 Aim</h4>
+                        <p class="text-gray-300">To separate the components of a mixture and test for purity using paper chromatography</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-cyan-400 mb-4">🧰 Materials</h4>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li>• Chromatography paper</li>
+                            <li>• Solvent (e.g., water or ethanol)</li>
+                            <li>• Pencil</li>
+                            <li>• Ruler</li>
+                            <li>• Sample of the substance</li>
+                            <li>• Sample of pure substance (if available)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-6">
+                    <h4 class="text-xl font-bold text-yellow-400 mb-4">📋 Procedure</h4>
+                    <ol class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">1.</span>
+                            <span>Draw a baseline about 1 cm from the bottom of the chromatography paper using a pencil</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">2.</span>
+                            <span>Spot the sample on the baseline</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">3.</span>
+                            <span>If available, place a spot of pure substance next to it</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">4.</span>
+                            <span>Dip the bottom of the paper in solvent without touching the spots</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">5.</span>
+                            <span>Allow the solvent to rise and separate the components</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2 font-bold">6.</span>
+                            <span>Remove the paper when the solvent has moved about 3/4 up and mark the solvent front</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-green-400 mb-4">👁️ Observations</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Count and record the number of spots</li>
+                            <li>• Measure distances traveled by each spot and the solvent</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-blue-400 mb-4">✅ Conclusion</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• One spot = pure substance</li>
+                            <li>• Multiple spots = impure</li>
+                            <li>• Compare distances with pure substance to identify components</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rf Values -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="text-center mb-6">
+                    <div class="text-5xl mb-4">📐</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Relative Flow Values (Rf)</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed mb-4">
+                        Rf values are used to interpret results in paper chromatography
+                    </p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl mb-6">
+                    <h4 class="text-2xl font-bold text-cyan-400 mb-4 text-center">Formula</h4>
+                    <div class="text-center">
+                        <div class="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-6 rounded-xl">
+                            <p class="text-3xl font-bold text-white mb-2">Rf = Distance travelled by substance</p>
+                            <p class="text-2xl text-white">──────────────────────────</p>
+                            <p class="text-3xl font-bold text-white mt-2">Distance travelled by solvent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <h4 class="text-xl font-bold text-green-400 mb-3">📊 Characteristic</h4>
+                        <p class="text-gray-300">Rf values are always <strong class="text-green-400">less than 1</strong></p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="text-xl font-bold text-blue-400 mb-3">💎 Pure Substance</h4>
+                        <p class="text-gray-300">Shows <strong class="text-blue-400">one Rf value</strong></p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <h4 class="text-xl font-bold text-red-400 mb-3">⚠️ Impure Substance</h4>
+                        <p class="text-gray-300">Shows <strong class="text-red-400">more than one Rf value</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 border-t border-gray-700 pt-8">
+            <p class="text-sm">MSCE Chemistry Notes - Experimental Techniques</p>
+            <p class="text-xs mt-2">Study smart, experiment safely 🧪</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show selected section with fade-in animation
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.remove('hidden');
+            selectedSection.classList.add('fade-in');
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show first section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('waste');
+        });
+    </script>
+</body>
+</html

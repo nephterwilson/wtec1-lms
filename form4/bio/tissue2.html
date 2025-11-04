@@ -1,0 +1,668 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tissue Respiration - Interactive Lesson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🫁</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Tissue Respiration
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Energy Production at the Cellular Level</p>
+            <p class="text-lg text-gray-400">Understanding How Cells Generate ATP</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('overview')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Overview
+                </button>
+                <button onclick="showSection('types')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Types of Respiration
+                </button>
+                <button onclick="showSection('aerobic')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Aerobic Respiration
+                </button>
+                <button onclick="showSection('anaerobic')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Anaerobic Respiration
+                </button>
+                <button onclick="showSection('comparison')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Comparison
+                </button>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                What is Tissue Respiration?
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Complex Biochemical Process</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Tissue respiration is a complex biochemical process occurring within cells. It involves the breakdown of glucose to release energy, primarily in the form of ATP (adenosine triphosphate) and heat. ATP serves as a readily available form of chemical energy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- External Respiration -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">💨</div>
+                        <h3 class="text-3xl font-bold text-blue-300">External Respiration</h3>
+                        <p class="text-gray-400 text-sm mb-4">Physical Process</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2 text-blue-400">Process</h4>
+                            <p class="text-sm text-gray-300">Involves the exchange of gases (CO₂ and O₂) through diffusion</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <h4 class="font-bold mb-2 text-cyan-400">Location</h4>
+                            <p class="text-sm text-gray-300">Occurs in the alveoli of the lungs</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-sky-500">
+                            <h4 class="font-bold mb-2 text-sky-400">Nature</h4>
+                            <p class="text-sm text-gray-300">Physical process involving gas exchange</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cellular Respiration -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔬</div>
+                        <h3 class="text-3xl font-bold text-purple-300">Cellular Respiration</h3>
+                        <p class="text-gray-400 text-sm mb-4">Chemical Process</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400">Process</h4>
+                            <p class="text-sm text-gray-300">A chemical process that releases energy from glucose breakdown</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <h4 class="font-bold mb-2 text-pink-400">Energy Output</h4>
+                            <p class="text-sm text-gray-300">Produces ATP (adenosine triphosphate) and heat</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-fuchsia-500">
+                            <h4 class="font-bold mb-2 text-fuchsia-400">Location</h4>
+                            <p class="text-sm text-gray-300">Occurs within cells, primarily in mitochondria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Uses of Energy -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Uses of Energy from Cellular Respiration</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">💪</div>
+                        <h4 class="font-bold text-lg mb-2 text-green-400">Muscle Contraction</h4>
+                        <p class="text-sm text-gray-300">Powers peristalsis, breathing, and locomotion</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🧬</div>
+                        <h4 class="font-bold text-lg mb-2 text-blue-400">Synthesis</h4>
+                        <p class="text-sm text-gray-300">Production of enzymes, complex carbohydrates, and hormones</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🔄</div>
+                        <h4 class="font-bold text-lg mb-2 text-purple-400">Active Uptake</h4>
+                        <p class="text-sm text-gray-300">Absorption of nutrients like glucose, ions, and amino acids</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🔥</div>
+                        <h4 class="font-bold text-lg mb-2 text-orange-400">Heat Generation</h4>
+                        <p class="text-sm text-gray-300">Maintains body temperature through heat production</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🫘</div>
+                        <h4 class="font-bold text-lg mb-2 text-yellow-400">Kidney Function</h4>
+                        <p class="text-sm text-gray-300">Active reabsorption of mineral salts in kidneys</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">⚡</div>
+                        <h4 class="font-bold text-lg mb-2 text-cyan-400">ATP Production</h4>
+                        <p class="text-sm text-gray-300">Creates readily available chemical energy for cells</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types Section -->
+        <section id="types" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Types of Tissue Respiration
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Aerobic -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌬️</div>
+                        <h3 class="text-3xl font-bold text-green-300">Aerobic Respiration</h3>
+                        <p class="text-gray-400 text-lg mb-4">With Oxygen</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Conditions</h4>
+                            <p class="text-sm text-gray-300">Takes place in the presence of O₂</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Process</h4>
+                            <p class="text-sm text-gray-300">Complete oxidation of glucose</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Products</h4>
+                            <p class="text-sm text-gray-300">CO₂, H₂O, ATP, and heat</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Energy Yield</h4>
+                            <p class="text-sm text-gray-300">High energy production (approximately 38 ATP molecules)</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-5 rounded-xl border border-green-600">
+                            <h4 class="font-bold mb-2 text-green-300">Equation</h4>
+                            <p class="text-sm text-gray-200 font-mono">C₆H₁₂O₆ + 6O₂ → 6H₂O + 6CO₂ + ATP + Heat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anaerobic -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🚫</div>
+                        <h3 class="text-3xl font-bold text-purple-300">Anaerobic Respiration</h3>
+                        <p class="text-gray-400 text-lg mb-4">Without Oxygen</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-400">Conditions</h4>
+                            <p class="text-sm text-gray-300">Occurs in the absence of O₂</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-400">Process</h4>
+                            <p class="text-sm text-gray-300">Incomplete oxidation of glucose</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-400">Energy Yield</h4>
+                            <p class="text-sm text-gray-300">Low energy production (only 2 ATP molecules)</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-400">Occurrence</h4>
+                            <p class="text-sm text-gray-300 mb-2">• Muscle cells during intense exercise</p>
+                            <p class="text-sm text-gray-300">• Plant tissues when O₂ is low</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-400">Types</h4>
+                            <p class="text-sm text-gray-300 mb-1">• Alcoholic Fermentation</p>
+                            <p class="text-sm text-gray-300">• Lactic Acid Formation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-blue-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-blue-300">Key Difference</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The main distinction between aerobic and anaerobic respiration is the presence or absence of oxygen. Aerobic respiration is far more efficient, producing significantly more ATP per glucose molecule. However, anaerobic respiration serves as a crucial backup system when oxygen is unavailable or insufficient for cellular needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aerobic Section -->
+        <section id="aerobic" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Aerobic Respiration: Maximum Energy Production
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">The Most Efficient Process</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Aerobic respiration is the primary energy-producing pathway in most organisms. It completely oxidizes glucose in the presence of oxygen, yielding the maximum amount of ATP for cellular activities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🫁</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyan-300">Oxygen Required</h3>
+                    <p class="text-sm text-gray-300">Must have adequate oxygen supply for the process to occur efficiently</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔋</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">High Energy Yield</h3>
+                    <p class="text-sm text-gray-300">Produces approximately 38 ATP molecules per glucose molecule</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-emerald-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-emerald-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">✨</div>
+                    <h3 class="text-xl font-bold mb-3 text-emerald-300">Complete Oxidation</h3>
+                    <p class="text-sm text-gray-300">Glucose is fully broken down into carbon dioxide and water</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-300">The Chemical Equation</h3>
+                <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl border border-green-600">
+                    <p class="text-center text-2xl font-mono text-green-200 mb-4">
+                        C₆H₁₂O₆ + 6O₂ → 6H₂O + 6CO₂ + ATP + Heat
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-3">Reactants:</h4>
+                            <p class="text-gray-300 mb-2">• C₆H₁₂O₆ (Glucose)</p>
+                            <p class="text-gray-300">• 6O₂ (Oxygen)</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-3">Products:</h4>
+                            <p class="text-gray-300 mb-2">• 6H₂O (Water)</p>
+                            <p class="text-gray-300 mb-2">• 6CO₂ (Carbon Dioxide)</p>
+                            <p class="text-gray-300 mb-2">• ATP (Energy)</p>
+                            <p class="text-gray-300">• Heat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-300">Location in the Cell</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500">
+                        <div class="text-4xl mb-3">🧪</div>
+                        <h4 class="font-bold text-lg mb-2 text-blue-400">Cytoplasm</h4>
+                        <p class="text-sm text-gray-300">Glycolysis occurs here, breaking glucose into pyruvate and producing small amount of ATP</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <div class="text-4xl mb-3">🔬</div>
+                        <h4 class="font-bold text-lg mb-2 text-green-400">Mitochondria</h4>
+                        <p class="text-sm text-gray-300">Krebs cycle and electron transport chain occur here, producing the majority of ATP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anaerobic Section -->
+        <section id="anaerobic" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Anaerobic Respiration: Energy Without Oxygen
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔴</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Backup Energy System</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Anaerobic respiration allows cells to produce energy when oxygen is unavailable or in short supply. While less efficient than aerobic respiration, it provides crucial energy during intense physical activity or in low-oxygen environments.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Alcoholic Fermentation -->
+                <div class="shimmer-card bg-gradient-to-br from-amber-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-amber-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🍺</div>
+                        <h3 class="text-3xl font-bold text-amber-300">Alcoholic Fermentation</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-amber-400">Process</h4>
+                            <p class="text-sm text-gray-300">Formation of ethanol (alcohol) and carbon dioxide</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-amber-400">Organisms</h4>
+                            <p class="text-sm text-gray-300">Occurs in yeast and some plant tissues</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-amber-400">Applications</h4>
+                            <p class="text-sm text-gray-300">Used in brewing beer, making wine, and baking bread</p>
+                        </div>
+                        <div class="bg-amber-900 bg-opacity-30 p-5 rounded-xl border border-amber-600">
+                            <h4 class="font-bold mb-2 text-amber-300">Equation</h4>
+                            <p class="text-sm text-gray-200 font-mono">C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ + Energy</p>
+                            <p class="text-xs text-gray-400 mt-2">(Glucose → Ethanol + Carbon Dioxide + Energy)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lactic Acid Formation -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">💪</div>
+                        <h3 class="text-3xl font-bold text-red-300">Lactic Acid Formation</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-red-400">Process</h4>
+                            <p class="text-sm text-gray-300">Formation of lactic acid from glucose breakdown</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-red-400">Occurrence</h4>
+                            <p class="text-sm text-gray-300">Happens in muscle cells during intense physical exercise when oxygen demand exceeds supply</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-red-400">Effect</h4>
+                            <p class="text-sm text-gray-300">Causes muscle fatigue and soreness; lactic acid buildup creates burning sensation</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-5 rounded-xl border border-red-600">
+                            <h4 class="font-bold mb-2 text-red-300">Equation</h4>
+                            <p class="text-sm text-gray-200 font-mono">C₆H₁₂O₆ → 2C₃H₆O₃ + Energy</p>
+                            <p class="text-xs text-gray-400 mt-2">(Glucose → Lactic Acid + Energy)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Types of Organisms -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-300">Types of Anaerobic Organisms</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <div class="text-4xl mb-3">🦠</div>
+                        <h4 class="font-bold text-lg mb-3 text-purple-400">Obligate Anaerobes</h4>
+                        <p class="text-gray-300 mb-3">Organisms that can only carry out anaerobic respiration and cannot survive in the presence of oxygen.</p>
+                        <p class="text-sm text-gray-400">Examples: Certain bacteria like Clostridium species</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-pink-500">
+                        <div class="text-4xl mb-3">🔄</div>
+                        <h4 class="font-bold text-lg mb-3 text-pink-400">Facultative Anaerobes</h4>
+                        <p class="text-gray-300 mb-3">Organisms that can perform both aerobic and anaerobic respiration depending on oxygen availability.</p>
+                        <p class="text-sm text-gray-400">Examples: Yeast, E. coli bacteria, human muscle cells</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Energy Comparison -->
+            <div class="bg-gradient-to-r from-purple-900 to-red-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0">⚠️</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-purple-300">Lower Energy Production</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            Anaerobic respiration produces significantly less energy compared to aerobic respiration. While aerobic respiration yields approximately 38 ATP molecules per glucose molecule, anaerobic respiration only produces 2 ATP molecules.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            This inefficiency occurs because glucose is not completely broken down. The end products (ethanol or lactic acid) still contain considerable chemical energy that remains locked and unavailable to the cell.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
+                Aerobic vs Anaerobic Respiration
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚖️</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">Key Differences</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Understanding the distinctions between aerobic and anaerobic respiration is crucial for comprehending cellular energy production and metabolism.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="overflow-x-auto mb-8">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl border border-purple-500">
+                    <div class="grid grid-cols-3 gap-0">
+                        <!-- Header Row -->
+                        <div class="bg-gradient-to-r from-purple-900 to-purple-800 p-6 border-b border-r border-purple-600">
+                            <h3 class="text-xl font-bold text-purple-200 text-center">Feature</h3>
+                        </div>
+                        <div class="bg-gradient-to-r from-green-900 to-green-800 p-6 border-b border-r border-green-600">
+                            <h3 class="text-xl font-bold text-green-200 text-center">Aerobic Respiration</h3>
+                        </div>
+                        <div class="bg-gradient-to-r from-red-900 to-red-800 p-6 border-b border-red-600">
+                            <h3 class="text-xl font-bold text-red-200 text-center">Anaerobic Respiration</h3>
+                        </div>
+
+                        <!-- Oxygen Requirement -->
+                        <div class="bg-slate-950 bg-opacity-40 p-6 border-b border-r border-slate-700">
+                            <p class="font-bold text-purple-300">Oxygen Requirement</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-40 p-6 border-b border-r border-slate-700">
+                            <p class="text-gray-300">Requires O₂ (oxygen present)</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-40 p-6 border-b border-slate-700">
+                            <p class="text-gray-300">Does not require O₂ (oxygen absent)</p>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="bg-slate-950 bg-opacity-60 p-6 border-b border-r border-slate-700">
+                            <p class="font-bold text-purple-300">Location in Cell</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-6 border-b border-r border-slate-700">
+                            <p class="text-gray-300">Cytoplasm and mitochondria</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-6 border-b border-slate-700">
+                            <p class="text-gray-300">Cytoplasm only</p>
+                        </div>
+
+                        <!-- Oxidation -->
+                        <div class="bg-slate-950 bg-opacity-40 p-6 border-b border-r border-slate-700">
+                            <p class="font-bold text-purple-300">Oxidation of Glucose</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-40 p-6 border-b border-r border-slate-700">
+                            <p class="text-gray-300">Complete oxidation</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-40 p-6 border-b border-slate-700">
+                            <p class="text-gray-300">Incomplete oxidation</p>
+                        </div>
+
+                        <!-- Energy Released -->
+                        <div class="bg-slate-950 bg-opacity-60 p-6 border-b border-r border-slate-700">
+                            <p class="font-bold text-purple-300">Energy Released</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-6 border-b border-r border-slate-700">
+                            <p class="text-gray-300">More energy (≈38 ATP)</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-6 border-b border-slate-700">
+                            <p class="text-gray-300">Lower energy (≈2 ATP)</p>
+                        </div>
+
+                        <!-- By-products -->
+                        <div class="bg-slate-950 bg-opacity-40 p-6 border-r border-slate-700">
+                            <p class="font-bold text-purple-300">By-products</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-40 p-6 border-r border-slate-700">
+                            <p class="text-gray-300">CO₂, H₂O, heat</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-40 p-6">
+                            <p class="text-gray-300 mb-2"><strong>Fermentation:</strong> Ethanol, CO₂, heat</p>
+                            <p class="text-gray-300"><strong>Muscle cells:</strong> Lactic acid, heat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Comparison Cards -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">✅</div>
+                        <h3 class="text-3xl font-bold text-green-300">Aerobic Advantages</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">⚡</div>
+                            <p class="text-gray-300">High ATP yield - maximum energy extraction from glucose</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">♻️</div>
+                            <p class="text-gray-300">Clean by-products - CO₂ and water are easily eliminated</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">🎯</div>
+                            <p class="text-gray-300">Efficient process - complete breakdown of glucose molecule</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">⏱️</div>
+                            <p class="text-gray-300">Sustainable - can continue indefinitely with oxygen supply</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚠️</div>
+                        <h3 class="text-3xl font-bold text-red-300">Anaerobic Advantages</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">🚀</div>
+                            <p class="text-gray-300">Rapid energy - produces ATP quickly when needed urgently</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">🫁</div>
+                            <p class="text-gray-300">No oxygen needed - works when oxygen is unavailable</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">💪</div>
+                            <p class="text-gray-300">Emergency backup - enables intense short bursts of activity</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3 flex-shrink-0">⏰</div>
+                            <p class="text-gray-300">Short-term solution - provides energy until oxygen available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-World Applications -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-300">Real-World Applications</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🏃</div>
+                        <h4 class="font-bold text-lg mb-2 text-green-400">Marathon Running</h4>
+                        <p class="text-sm text-gray-300">Long-distance runners rely on aerobic respiration for sustained energy over hours</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🏋️</div>
+                        <h4 class="font-bold text-lg mb-2 text-red-400">Weightlifting</h4>
+                        <p class="text-sm text-gray-300">Short bursts of intense exercise trigger anaerobic respiration in muscles</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center card-hover">
+                        <div class="text-5xl mb-3">🍞</div>
+                        <h4 class="font-bold text-lg mb-2 text-yellow-400">Bread Making</h4>
+                        <p class="text-sm text-gray-300">Yeast uses anaerobic fermentation to produce CO₂ that makes bread rise</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Timeline -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Key Takeaways: Tissue Respiration
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border-l-4 border-cyan-500">
+                    <div class="text-4xl mb-3">🔬</div>
+                    <h4 class="text-lg font-bold mb-2 text-cyan-400">Definition</h4>
+                    <p class="text-sm text-gray-300">Biochemical process breaking down glucose to release ATP and heat energy</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border-l-4 border-green-500">
+                    <div class="text-4xl mb-3">🌬️</div>
+                    <h4 class="text-lg font-bold mb-2 text-green-400">Aerobic</h4>
+                    <p class="text-sm text-gray-300">With oxygen: Complete oxidation producing maximum energy (38 ATP)</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border-l-4 border-purple-500">
+                    <div class="text-4xl mb-3">🚫</div>
+                    <h4 class="text-lg font-bold mb-2 text-purple-400">Anaerobic</h4>
+                    <p class="text-sm text-gray-300">Without oxygen: Incomplete oxidation producing less energy (2 ATP)</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border-l-4 border-pink-500">
+                    <div class="text-4xl mb-3">⚡</div>
+                    <h4 class="text-lg font-bold mb-2 text-pink-400">Purpose</h4>
+                    <p class="text-sm text-gray-300">Powers all cellular activities: movement, synthesis, transport, and heat</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('overview');
+    </script>
+</body>
+</html>

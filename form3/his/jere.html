@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration of the Jere Ngoni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e8e8e8;
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23533483" width="1200" height="400"/><path fill="%23744da9" d="M0 200 Q300 150 600 200 T1200 200 V400 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 5px solid #d4af37;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            color: #d4af37;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: #f0f0f0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        h2 {
+            color: #d4af37;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            color: #ffd700;
+            font-size: 1.6em;
+            margin: 25px 0 15px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .info-card {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 5px solid #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 1.05em;
+        }
+
+        .journey-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 20px 20px 20px 50px;
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .timeline-item:before {
+            content: '⬤';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            color: #d4af37;
+            font-size: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(135deg, #533483, #744da9);
+            color: #d4af37;
+            padding: 18px;
+            text-align: left;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 15px 18px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        tr:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(83, 52, 131, 0.3), rgba(116, 77, 169, 0.3));
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .crisis-box {
+            background: rgba(139, 0, 0, 0.2);
+            border-left: 5px solid #dc143c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        strong {
+            color: #ffd700;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0,0,0,0.3);
+            margin-top: 50px;
+            border-top: 3px solid #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Migration of the Jere Ngoni</h1>
+        <p>The Epic Journey Under Zwangendaba</p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>The Jere Ngoni Under Zwangendaba</h2>
+            
+            <div class="info-card">
+                <h3>Origin & Leadership</h3>
+                <p><strong>Origin:</strong> Northern Zululand</p>
+                <p><strong>Leader:</strong> Zwangendaba, son of Hlatshayo, who had served in Zwide's army. Zwangendaba himself was a commander under Zwide.</p>
+            </div>
+
+            <h3>Composition</h3>
+            <p>The group included Swazi, Tsonga, Nsenga, and Karanga people who were later assimilated into the Ngoni nation.</p>
+
+            <h3>Reasons for Migration</h3>
+            <ol>
+                <li>Instability caused by Shaka's wars (Mfecane period)</li>
+                <li>Desire to establish their own independent kingdom</li>
+                <li>Shortage of land and resources in their homeland</li>
+                <li>Search for cattle and safety from conflict</li>
+                <li>Escape from powerful rulers in South Africa</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>The Migration Journey</h2>
+            
+            <div class="journey-timeline">
+                <div class="timeline-item">
+                    <strong>1819 - Departure</strong><br>
+                    Left Zululand after Zwide's defeat by Shaka's forces
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Early Journey</strong><br>
+                    Passed through Swaziland, attacking Swazi and Tsonga tribes along the way
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Mozambique Entry</strong><br>
+                    Entered Mozambique after crossing the Limpopo River
+                </div>
+
+                <div class="timeline-item">
+                    <strong>1831 - Delagoa Bay</strong><br>
+                    Lived briefly with Soshangane and Nxaba at Delagoa Bay but fought and were defeated
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Zimbabwe Invasion</strong><br>
+                    Moved west into Zimbabwe, destroying Rozwi centres at Khami and Dhlodhlo
+                </div>
+
+                <div class="timeline-item">
+                    <strong>19 November 1835 - Zambezi Crossing</strong><br>
+                    Crossed the Zambezi River near Zumbo (the day M'mbelwa was born - a significant date in Ngoni history)
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Zambia Entry</strong><br>
+                    Attacked the Nsenga of Petauke in Zambia
+                </div>
+
+                <div class="timeline-item">
+                    <strong>19 September 1840 - Malawi Arrival</strong><br>
+                    Entered Malawi at Mabiri, fought the Tumbuka and Chewa peoples
+                </div>
+
+                <div class="timeline-item">
+                    <strong>1844 - Tanzania Movement</strong><br>
+                    Later moved to Ufipa in Tanzania
+                </div>
+
+                <div class="timeline-item">
+                    <strong>1845 - Final Settlement</strong><br>
+                    Settled finally at Mapupo
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>The Succession Crisis After Zwangendaba's Death (1848)</h2>
+            
+            <div class="crisis-box">
+                <h3>What is a Crisis?</h3>
+                <p>A crisis is a serious conflict or struggle for power that threatens stability and can lead to division or violence.</p>
+            </div>
+
+            <h3>What Happened</h3>
+            <ul>
+                <li>Zwangendaba died at Mapupo in 1848</li>
+                <li>He had chosen <strong>M'mbelwa</strong>, the son of a younger wife, as his successor</li>
+                <li>Some elders opposed him and supported <strong>Mpezeni</strong>, the eldest son</li>
+                <li><strong>Ntabeni</strong>, Zwangendaba's brother, became regent (temporary ruler)</li>
+                <li>When Ntabeni declared Mpezeni as heir, supporters of M'mbelwa rebelled</li>
+                <li>This led to the division of the Ngoni into separate groups</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Main Groups of the Jere Ngoni</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Group</th>
+                        <th>Leader</th>
+                        <th>Area Settled</th>
+                        <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mpezeni's Ngoni</strong></td>
+                        <td>Mpezeni</td>
+                        <td>Chipata (Zambia)</td>
+                        <td>Defeated by Bemba who had guns; Mpherembe returned to Malawi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>M'mbelwa's Ngoni</strong></td>
+                        <td>M'mbelwa</td>
+                        <td>Mzimba (Malawi)</td>
+                        <td>Crowned in 1855 at Ng'onga; founded main Ngoni kingdom</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ntabeni/Tuta Ngoni</strong></td>
+                        <td>Ngodoyi (Mpezeni's son)</td>
+                        <td>Lake Victoria (Tanzania)</td>
+                        <td>Known as Gwangara Ngoni</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zulu Gama's Group</strong></td>
+                        <td>Zulu Gama</td>
+                        <td>Songea (Tanzania)</td>
+                        <td>Also called Gwangara Ngoni</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chiwere Ndhlovu's Group</strong></td>
+                        <td>Chiwere Ndhlovu</td>
+                        <td>Dowa (Malawi)</td>
+                        <td>Broke away with sons of Gwaza Jere; settled among Chewa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Mzimba: The Heart of M'mbelwa's Kingdom</h2>
+            
+            <div class="highlight-box">
+                <h3>Why Mzimba Was Chosen</h3>
+                <ul>
+                    <li>Rich grazing land free from tsetse flies</li>
+                    <li>Enough water sources and fertile land for agriculture</li>
+                    <li>Space for settlement and farming activities</li>
+                    <li>Strategic location for defense and control</li>
+                </ul>
+            </div>
+
+            <h3>Mzimba Under the British</h3>
+            <ul>
+                <li>Missionaries advised Harry Johnston not to attack the Ngoni</li>
+                <li>Peaceful negotiations followed between British and Ngoni leaders</li>
+                <li>Mzimba became part of the British Protectorate on <strong>24 October 1904</strong></li>
+                <li><strong>Hector Macdonald</strong> was appointed as the first British resident</li>
+                <li>Ngoni agreed to stop raids and pay taxes to the colonial government</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Jere Ngoni Historical Documentation | Preserving Our Heritage</p>
+    </div>
+</body>
+</html>

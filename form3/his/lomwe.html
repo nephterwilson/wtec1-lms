@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lomwe Migration - Central African History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-green-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🇲🇼</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                19th & 20th Century Immigrants
+            </h1>
+            <h2 class="text-3xl font-bold mb-2 text-green-300">The Lomwe Migration into Central Africa</h2>
+            <p class="text-2xl text-gray-300 mb-2">From Portuguese Mozambique to British Malawi</p>
+            <p class="text-lg text-gray-400">History of Labor Migration and Settlement</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('origin')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Origin & Migration
+                </button>
+                <button onclick="showSection('reasons')" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 rounded-xl transition shadow-lg">
+                    Reasons & Settlement
+                </button>
+                <button onclick="showSection('subgroups')" class="px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-xl transition shadow-lg">
+                    Sub-Groups
+                </button>
+                <button onclick="showSection('impact')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Organisation & Impact
+                </button>
+            </div>
+        </header>
+
+        <!-- Origin Section -->
+        <section id="origin" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Origin and Migration of the Lomwe
+            </h2>
+
+            <!-- Origin -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📍</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Origin of the Lomwe</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-3 text-green-400">Geographic Location:</h4>
+                        <p class="text-gray-300 mb-3">From Northwest Mozambique near Namuli Hill and Upper Lujenda River.</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-emerald-500">
+                        <h4 class="font-bold mb-3 text-emerald-400">Neighbours:</h4>
+                        <p class="text-gray-300">Neighbours of the Yao in Mozambique.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Migration Route -->
+            <div class="bg-gradient-to-br from-emerald-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-emerald-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-emerald-400">Migration into Malawi</h3>
+                
+                <div class="mb-6">
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl mb-4">
+                        <div class="flex items-center mb-4">
+                            <div class="text-4xl mr-4">🚶</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-emerald-300">Migration Pattern</h4>
+                                <p class="text-gray-400">Moved in small family groups, not large organized movements</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-900 bg-opacity-30 p-5 rounded-xl border border-emerald-700 mb-4">
+                        <h4 class="font-bold mb-3 text-emerald-400">Entry Route:</h4>
+                        <p class="text-gray-300">Through Lake Chilwa and Mulanje Mountain</p>
+                    </div>
+
+                    <div class="bg-teal-900 bg-opacity-30 p-5 rounded-xl border border-teal-700">
+                        <h4 class="font-bold mb-3 text-teal-400">Settlement Areas:</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-gray-400 mb-2">First Settlement:</p>
+                                <div class="flex gap-3">
+                                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg text-center flex-1">
+                                        <p class="text-sm text-gray-300">Phalombe</p>
+                                    </div>
+                                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg text-center flex-1">
+                                        <p class="text-sm text-gray-300">Mulanje</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400 mb-2">Later Expansion:</p>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg text-center">
+                                        <p class="text-sm text-gray-300">Thyolo</p>
+                                    </div>
+                                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg text-center">
+                                        <p class="text-sm text-gray-300">Chiradzulu</p>
+                                    </div>
+                                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg text-center">
+                                        <p class="text-sm text-gray-300">Zomba</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reasons Section -->
+        <section id="reasons" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Reasons for Migration & Settlement Choice
+            </h2>
+
+            <!-- Reasons for Migration -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-teal-400">Reasons for Migration</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">⚔️</div>
+                        <h4 class="text-xl font-bold text-red-300 text-center mb-3">Portuguese Oppression</h4>
+                        <p class="text-sm text-gray-300 text-center">Fleeing harsh Portuguese colonial rule in Mozambique.</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">📦</div>
+                        <h4 class="text-xl font-bold text-blue-300 text-center mb-3">Brought as Porters</h4>
+                        <p class="text-sm text-gray-300 text-center">Brought by the British as porters and laborers.</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">☕</div>
+                        <h4 class="text-xl font-bold text-green-300 text-center mb-3">Employment Opportunities</h4>
+                        <p class="text-sm text-gray-300 text-center">Sought employment in tea estates and railways.</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">⚡</div>
+                        <h4 class="text-xl font-bold text-orange-300 text-center mb-3">Conflicts & Instability</h4>
+                        <p class="text-sm text-gray-300 text-center">Conflicts and political instability in Mozambique.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Choice of Settlement -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Why They Chose These Settlement Areas</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">💼</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-green-400">Job Opportunities</h4>
+                                <p class="text-sm text-gray-300">Employment in tea estates and railways in the Shire Highlands.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-cyan-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">🤝</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-cyan-400">Peaceful Relations</h4>
+                                <p class="text-sm text-gray-300">Peaceful coexistence with the Mang'anja people.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4 flex-shrink-0">🛡️</div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-purple-400">British Protection</h4>
+                                <p class="text-sm text-gray-300">Peace and stability under British colonial rule.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-blue-900 bg-opacity-30 p-5 rounded-xl border border-blue-700">
+                    <p class="text-center text-gray-300">
+                        <strong class="text-blue-400">Key Factor:</strong> Unlike the Yao who came as traders, the Lomwe were primarily labor migrants seeking economic opportunities and escaping colonial oppression.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-Groups Section -->
+        <section id="subgroups" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Lomwe Sub-Groups
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">👥</div>
+                    <h3 class="text-3xl font-bold text-teal-300 mb-4">Diverse Sub-Groups</h3>
+                    <p class="text-gray-400 text-lg">Names derived from places of origin or environment</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🌿</div>
+                        <h4 class="text-lg font-bold text-green-300">Mihavani</h4>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-emerald-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-emerald-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🌾</div>
+                        <h4 class="text-lg font-bold text-emerald-300">Nyamwelo</h4>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🌳</div>
+                        <h4 class="text-lg font-bold text-teal-300">Makuwa</h4>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🏞️</div>
+                        <h4 class="text-lg font-bold text-cyan-300">Marenje</h4>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🌄</div>
+                        <h4 class="text-lg font-bold text-blue-300">Lolo</h4>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🌺</div>
+                        <h4 class="text-lg font-bold text-indigo-300">Manyawa</h4>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🏔️</div>
+                        <h4 class="text-lg font-bold text-purple-300">Malokotera</h4>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🌸</div>
+                        <h4 class="text-lg font-bold text-pink-300">Likukhu</h4>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🌻</div>
+                        <h4 class="text-lg font-bold text-orange-300">Maratha</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-teal-900 bg-opacity-30 p-6 rounded-xl border border-teal-700">
+                <p class="text-center text-gray-300">
+                    <strong class="text-teal-400">Note:</strong> And many more sub-groups, each with distinct cultural characteristics derived from their specific places of origin or environmental features of their homeland.
+                </p>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section id="impact" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Socio-Political Organisation & Impact
+            </h2>
+
+            <!-- Socio-Political Organisation -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Socio-Political Organisation</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-3 text-purple-400">Leadership Structure:</h4>
+                        <p class="text-gray-300 text-sm mb-3">No central leader; ruled by village heads and chiefs.</p>
+                        <p class="text-gray-300 text-sm">Society was <strong class="text-purple-400">matrilineal</strong> (inheritance through mother's line).</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-pink-500">
+                        <h4 class="font-bold mb-3 text-pink-400">Traditional Dances:</h4>
+                        <div class="space-y-2">
+                            <div class="bg-purple-900 bg-opacity-30 p-3 rounded border-l-2 border-purple-500">
+                                <p class="text-sm text-gray-300">💃 <strong class="text-purple-300">Tchopa</strong></p>
+                            </div>
+                            <div class="bg-purple-900 bg-opacity-30 p-3 rounded border-l-2 border-pink-500">
+                                <p class="text-sm text-gray-300">🎵 <strong class="text-pink-300">Likwata</strong></p>
+                            </div>
+                            <div class="bg-purple-900 bg-opacity-30 p-3 rounded border-l-2 border-fuchsia-500">
+                                <p class="text-sm text-gray-300">🥁 <strong class="text-fuchsia-300">Jiri</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-cyan-400">Impact on Local Communities</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Negative Impact -->
+                    <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl mb-3">⚠️</div>
+                            <h4 class="text-2xl font-bold text-red-300">Challenges Created</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                            <div class="flex items-start">
+                                <div class="text-3xl mr-4 flex-shrink-0">🏞️</div>
+                                <div>
+                                    <h5 class="font-bold mb-2 text-red-400">Land Problems</h5>
+                                    <p class="text-sm text-gray-300">Worsened land shortages and pressure in the Shire Highlands region.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Positive Impact -->
+                    <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl mb-3">✨</div>
+                            <h4 class="text-2xl font-bold text-green-300">Cultural Contributions</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                            <div class="flex items-start">
+                                <div class="text-3xl mr-4 flex-shrink-0">🗣️</div>
+                                <div>
+                                    <h5 class="font-bold mb-2 text-green-400">Cultural Influence</h5>
+                                    <p class="text-sm text-gray-300 mb-3">Influenced language, customs, and dances of local populations.</p>
+                                    <p class="text-xs text-gray-400">Enriched cultural diversity of Malawi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-cyan-900 bg-opacity-30 p-5 rounded-xl border border-cyan-700">
+                    <p class="text-center text-gray-300">
+                        <strong class="text-cyan-400">Comparison with Yao:</strong> Unlike the Yao who were traders and warriors with significant political impact, the Lomwe were primarily laborers whose main influence was cultural and demographic.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Key Takeaways: The Lomwe Migration
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">📍</div>
+                        <div>
+                            <h4 class="font-bold text-green-400 mb-2">Origin & Migration</h4>
+                            <p class="text-gray-300 text-sm">From Northwest Mozambique (Namuli Hill, Upper Lujenda River), entered through Lake Chilwa and Mulanje Mountain in small family groups.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">⚔️</div>
+                        <div>
+                            <h4 class="font-bold text-red-400 mb-2">Push Factors</h4>
+                            <p class="text-gray-300 text-sm">Portuguese oppression, conflicts, and political instability in Mozambique forced migration.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">💼</div>
+                        <div>
+                            <h4 class="font-bold text-emerald-400 mb-2">Labor Migration</h4>
+                            <p class="text-gray-300 text-sm">Sought employment in tea estates and railways; some brought by British as porters.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">👥</div>
+                        <div>
+                            <h4 class="font-bold text-teal-400 mb-2">Numerous Sub-Groups</h4>
+                            <p class="text-gray-300 text-sm">Mihavani, Nyamwelo, Makuwa, Marenje, Lolo, Manyawa, Malokotera, Likukhu, Maratha, and many more.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">👑</div>
+                        <div>
+                            <h4 class="font-bold text-purple-400 mb-2">Social Structure</h4>
+                            <p class="text-gray-300 text-sm">Matrilineal society with village heads and chiefs; rich cultural traditions including Tchopa, Likwata, and Jiri dances.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 flex-shrink-0">🌍</div>
+                        <div>
+                            <h4 class="font-bold text-cyan-400 mb-2">Mixed Impact</h4>
+                            <p class="text-gray-300 text-sm">Worsened land problems but enriched local culture through language, customs, and dances.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-green-900 to-emerald-900 rounded-xl p-6 border border-green-600">
+                <div class="flex items-center justify-center">
+                    <div class="text-5xl mr-4">🇲🇼</div>
+                    <div class="text-center">
+                        <p class="text-xl font-bold text-green-300 mb-2">Historical Significance</p>
+                        <p class="text-gray-300">The Lomwe migration represents one of the largest labor migrations in Central African history, fundamentally shaping the demographics and economy of southern Malawi, particularly the Shire Highlands region.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('origin');
+    </script>
+</body>
+</html>
