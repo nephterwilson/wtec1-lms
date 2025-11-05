@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertebrates & Invertebrates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🦎</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Animal Classification
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Vertebrates & Invertebrates</p>
+            <p class="text-lg text-gray-400">Understanding the Animal Kingdom</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('intro')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Introduction
+                </button>
+                <button onclick="showSection('invertebrates')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Invertebrates
+                </button>
+                <button onclick="showSection('vertebrates')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Vertebrates
+                </button>
+                <button onclick="showSection('locomotion')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Locomotion
+                </button>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="intro" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Animal Classification Basics
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Two Main Groups</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Animals are classified into two broad groups based on the presence or absence of a backbone.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🦴</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Vertebrates</h3>
+                    </div>
+                    <p class="text-gray-300 text-lg text-center mb-6">Animals WITH a backbone</p>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                        <p class="text-gray-300 mb-4"><strong class="text-blue-300">5 Groups:</strong></p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">🐟</span> Fish</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">🐸</span> Amphibians</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">🦎</span> Reptiles</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">🦅</span> Birds</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">🦁</span> Mammals</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🐛</div>
+                        <h3 class="text-3xl font-bold text-orange-300">Invertebrates</h3>
+                    </div>
+                    <p class="text-gray-300 text-lg text-center mb-6">Animals WITHOUT a backbone</p>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                        <p class="text-gray-300 mb-4"><strong class="text-orange-300">6 Groups:</strong></p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center"><span class="text-orange-400 mr-2">🦗</span> Insects</li>
+                            <li class="flex items-center"><span class="text-orange-400 mr-2">🪱</span> Nematodes</li>
+                            <li class="flex items-center"><span class="text-orange-400 mr-2">🪱</span> Annelids</li>
+                            <li class="flex items-center"><span class="text-orange-400 mr-2">🦀</span> Crustaceans</li>
+                            <li class="flex items-center"><span class="text-orange-400 mr-2">🕷️</span> Arachnids</li>
+                            <li class="flex items-center"><span class="text-orange-400 mr-2">🐌</span> Molluscs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Invertebrates Section -->
+        <section id="invertebrates" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Invertebrates: Animals Without Backbones
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Insects -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl">🦗</div>
+                        <h3 class="text-2xl font-bold text-yellow-300">Insects</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl mb-3">
+                        <h4 class="font-bold text-yellow-400 mb-2">Characteristics:</h4>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Body: Head, thorax, abdomen</li>
+                            <li>• 3 pairs of legs on thorax</li>
+                            <li>• 1 pair of antennae</li>
+                            <li>• Compound eyes</li>
+                        </ul>
+                    </div>
+                    <p class="text-sm text-gray-400"><strong>Examples:</strong> Grasshopper, butterfly, cockroach, bees, wasps</p>
+                </div>
+
+                <!-- Nematodes -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl">🪱</div>
+                        <h3 class="text-2xl font-bold text-red-300">Nematodes</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl mb-3">
+                        <h4 class="font-bold text-red-400 mb-2">Characteristics:</h4>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Soft, cylindrical bodies</li>
+                            <li>• Not segmented</li>
+                            <li>• Sexual & asexual reproduction</li>
+                            <li>• Some are parasitic</li>
+                        </ul>
+                    </div>
+                    <p class="text-sm text-gray-400"><strong>Examples:</strong> Ascaris, hookworms, filarial worms</p>
+                </div>
+
+                <!-- Annelids -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl">🪱</div>
+                        <h3 class="text-2xl font-bold text-green-300">Annelids</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl mb-3">
+                        <h4 class="font-bold text-green-400 mb-2">Characteristics:</h4>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Cylindrical segmented bodies</li>
+                            <li>• Capable of regeneration</li>
+                            <li>• Improve soil aeration</li>
+                        </ul>
+                    </div>
+                    <p class="text-sm text-gray-400"><strong>Examples:</strong> Earthworms, lugworms, leeches</p>
+                </div>
+
+                <!-- Crustaceans -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl">🦀</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Crustaceans</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl mb-3">
+                        <h4 class="font-bold text-blue-400 mb-2">Characteristics:</h4>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Hard exoskeleton</li>
+                            <li>• Cephalothorax & abdomen</li>
+                            <li>• 2 pairs of antennae</li>
+                            <li>• Pincers on first leg pair</li>
+                        </ul>
+                    </div>
+                    <p class="text-sm text-gray-400"><strong>Examples:</strong> Crabs, prawns, lobsters, shrimps</p>
+                </div>
+
+                <!-- Arachnids -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl">🕷️</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Arachnids</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl mb-3">
+                        <h4 class="font-bold text-purple-400 mb-2">Characteristics:</h4>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Cephalothorax & abdomen</li>
+                            <li>• 4 pairs of jointed legs</li>
+                            <li>• No antennae</li>
+                            <li>• Simple eyes in clusters</li>
+                        </ul>
+                    </div>
+                    <p class="text-sm text-gray-400"><strong>Examples:</strong> Spiders, scorpions, ticks, mites</p>
+                </div>
+
+                <!-- Molluscs -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-3xl">🐌</div>
+                        <h3 class="text-2xl font-bold text-pink-300">Molluscs</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl mb-3">
+                        <h4 class="font-bold text-pink-400 mb-2">Characteristics:</h4>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Soft bodies (usually in shell)</li>
+                            <li>• Slimy muscular foot</li>
+                            <li>• Tentacles (feelers)</li>
+                        </ul>
+                    </div>
+                    <p class="text-sm text-gray-400"><strong>Examples:</strong> Snails, slugs, oysters, octopuses</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vertebrates Section -->
+        <section id="vertebrates" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+                Vertebrates: Animals With Backbones
+            </h2>
+
+            <div class="space-y-6">
+                <!-- Fish -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-6xl mb-3">🐟</div>
+                            <h3 class="text-2xl font-bold text-cyan-300">Fish</h3>
+                            <p class="text-sm text-cyan-400 mt-2">Cold-blooded (Ectothermic)</p>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl mb-3">
+                                <h4 class="font-bold text-cyan-400 mb-2">Characteristics:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300">
+                                    <li>• Live in water</li>
+                                    <li>• Covered with scales</li>
+                                    <li>• Breathe with gills</li>
+                                    <li>• External fertilization</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-400"><strong>Examples:</strong> Tilapia, lungfish, mudfish, sharks, eels</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amphibians -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-6xl mb-3">🐸</div>
+                            <h3 class="text-2xl font-bold text-green-300">Amphibians</h3>
+                            <p class="text-sm text-green-400 mt-2">Cold-blooded</p>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl mb-3">
+                                <h4 class="font-bold text-green-400 mb-2">Characteristics:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300">
+                                    <li>• Live on land AND in water</li>
+                                    <li>• Moist skin with mucous glands</li>
+                                    <li>• Breathe through skin & lungs</li>
+                                    <li>• External fertilization (eggs in jelly)</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-400"><strong>Examples:</strong> Frogs, toads, newts, salamanders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reptiles -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-6xl mb-3">🦎</div>
+                            <h3 class="text-2xl font-bold text-yellow-300">Reptiles</h3>
+                            <p class="text-sm text-yellow-400 mt-2">Cold-blooded</p>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl mb-3">
+                                <h4 class="font-bold text-yellow-400 mb-2">Characteristics:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300">
+                                    <li>• Covered in hard scales</li>
+                                    <li>• Breathe with lungs</li>
+                                    <li>• Internal fertilization</li>
+                                    <li>• Eggs buried in sand</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-400"><strong>Examples:</strong> Snakes, turtles, tortoises, crocodiles, lizards</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birds -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-6xl mb-3">🦅</div>
+                            <h3 class="text-2xl font-bold text-blue-300">Birds</h3>
+                            <p class="text-sm text-blue-400 mt-2">Warm-blooded (Endothermic)</p>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl mb-3">
+                                <h4 class="font-bold text-blue-400 mb-2">Characteristics:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300">
+                                    <li>• Covered with feathers</li>
+                                    <li>• Wings as front limbs; beaks for feeding</li>
+                                    <li>• Internal fertilization & egg incubation</li>
+                                    <li>• Legs covered with scales</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-400"><strong>Examples:</strong> Chickens, hawks, sparrows, ostriches, parrots, penguins</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mammals -->
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-6xl mb-3">🦁</div>
+                            <h3 class="text-2xl font-bold text-purple-300">Mammals</h3>
+                            <p class="text-sm text-purple-400 mt-2">Warm-blooded</p>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="bg-slate-950 bg-opacity-50 p-5 rounded-xl mb-3">
+                                <h4 class="font-bold text-purple-400 mb-2">Characteristics:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300">
+                                    <li>• Mammary glands (produce milk)</li>
+                                    <li>• Body covered with hair/fur</li>
+                                    <li>• External ears (pinna)</li>
+                                    <li>• Differentiated teeth</li>
+                                    <li>• Internal fertilization; live birth</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-400"><strong>Examples:</strong> Humans, cats, dogs, cows, whales, bats, kangaroos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locomotion Section -->
+        <section id="locomotion" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Locomotion in Vertebrates
+            </h2>
+
+            <!-- Fish Locomotion -->
+            <div class="mb-8">
+                <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-6">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🐟</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-cyan-300">Fish Locomotion</h3>
+                            <p class="text-gray-400">Movement in water</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h4 class="font-bold text-cyan-400 mb-3 text-lg">Structures Used:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• <strong>Fins:</strong> Essential for movement</li>
+                                <li>• <strong>Swim Bladder:</strong> Buoyancy control</li>
+                                <li>• <strong>Block Muscles:</strong> Provide propulsion</li>
+                                <li>• <strong>Tail:</strong> Powerful thrust</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h4 class="font-bold text-cyan-400 mb-3 text-lg">Body Position Control:</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• <strong>Yawing (sideways):</strong> Median fins</li>
+                                <li>• <strong>Rolling (tilting):</strong> Paired fins</li>
+                                <li>• <strong>Pitching (up/down):</strong> Pectoral fins</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-cyan-900 bg-opacity-30 p-5 rounded-xl border-l-4 border-cyan-500">
+                        <h4 class="font-bold text-cyan-300 mb-2">Swimming Adaptations:</h4>
+                        <p class="text-gray-300 text-sm">Streamlined shape, backward-overlapping scales, mucus layer, flexible vertebral column</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bird Locomotion -->
+            <div class="mb-8">
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-6">
+                    <div class="flex items-center mb-6">
+                        <div class="text-6xl mr-6">🦅</div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-blue-300">Bird Locomotion</h3>
+                            <p class="text-gray-400">Flight mechanisms</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h4 class="font-bold text-blue-400 mb-3 text-lg">Types of Feathers:</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• <strong>Flight Feathers:</strong> Broad, flat; generate lift</li>
+                                <li>• <strong>Down Feathers:</strong> Insulation & heat retention</li>
+                                <li>• <strong>Contour Feathers:</strong> Shape & coloration</li>
+                                <li>• <strong>Filoplume:</strong> Sensory function</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                            <h4 class="font-bold text-blue-400 mb-3 text-lg">Flight Movements:</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• <strong>Flapping:</strong> Downstroke (lift) & upstroke (recovery)</li>
+                                <li>• <strong>Gliding:</strong> Wings spread, slow descent</li>
+                                <li>• <strong>Soaring:</strong> Using air currents for height</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-900 bg-opacity-30 p-5 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-300 mb-2">Flight Adaptations:</h4>
+                        <p class="text-gray-300 text-sm">Streamlined body, powerful pectoral muscles, air sacs, light hollow bones, excellent vision</p>
+                    </div
