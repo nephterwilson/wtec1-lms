@@ -1,0 +1,685 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macbeth - Themes Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.5);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-red-950 to-black min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🎭</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                Themes in Macbeth
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">How Shakespeare Explores Universal Human Struggles</p>
+            <p class="text-lg text-gray-400 italic">The Tragedy of Macbeth by William Shakespeare</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('power')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl transition shadow-lg">
+                    Power & Ambition
+                </button>
+                <button onclick="showSection('violence')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Violence & Death
+                </button>
+                <button onclick="showSection('deception')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Deception & Reality
+                </button>
+                <button onclick="showSection('supernatural')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Fate & Supernatural
+                </button>
+                <button onclick="showSection('emotional')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Emotional Struggles
+                </button>
+            </div>
+        </header>
+
+        <!-- Power & Ambition Section -->
+        <section id="power" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                Power, Ambition & Corruption
+            </h2>
+
+            <!-- Blind Ambition -->
+            <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🎯</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-red-300">Blind Ambition</h3>
+                        <p class="text-gray-400 italic">The Dangerous Hunger for Power</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-3 text-red-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Macbeth's Transformation:</strong> After hearing the witches' prophecy, Macbeth becomes consumed by ambition. He writes to Lady Macbeth, revealing his burning desire for the crown.</p>
+                            <p>→ <strong>Lady Macbeth's Drive:</strong> Even more ambitious than her husband, she calls upon dark spirits to "unsex" her and fill her with cruelty to achieve power.</p>
+                            <p>→ <strong>Murder of Duncan:</strong> Despite Duncan's kindness and Macbeth's initial hesitation, blind ambition drives him to murder his king and benefactor.</p>
+                            <p>→ <strong>Escalating Crimes:</strong> Ambition doesn't stop after becoming king—Macbeth orders the deaths of Banquo, Macduff's family, and anyone he perceives as a threat.</p>
+                            <p>→ <strong>Loss of Humanity:</strong> Ambition strips away Macbeth's morality, honor, and relationships, leaving him isolated and hollow.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-red-800 to-orange-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "I have no spur to prick the sides of my intent, but only vaulting ambition, which o'erleaps itself and falls on the other." — Macbeth recognizes ambition as his only motivation for murder.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corruption of Power -->
+            <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">👑</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-purple-300">The Corruption of Power</h3>
+                        <p class="text-gray-400 italic">"Absolute Power Corrupts Absolutely"</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-3 text-purple-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>From Hero to Tyrant:</strong> Macbeth begins as Scotland's brave defender but becomes a paranoid tyrant after seizing power illegitimately.</p>
+                            <p>→ <strong>Increasing Paranoia:</strong> Power makes Macbeth suspicious of everyone. He sees enemies everywhere and resorts to violence to maintain control.</p>
+                            <p>→ <strong>Loss of Sleep and Peace:</strong> "Macbeth does murder sleep"—power brings no rest, only constant anxiety and guilt.</p>
+                            <p>→ <strong>Destruction of Relationships:</strong> Power corrupts his marriage as he keeps secrets from Lady Macbeth and becomes emotionally distant.</p>
+                            <p>→ <strong>Moral Desensitization:</strong> Each murder becomes easier. By the end, Macbeth feels nothing when his wife dies: "She should have died hereafter."</p>
+                            <p>→ <strong>Scotland Suffers:</strong> Under Macbeth's corrupt rule, Scotland bleeds. The country is described as suffering under tyranny, with people fleeing and living in fear.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-purple-800 to-pink-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o'er." — Macbeth realizes he's too corrupted by power to turn back.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Power Struggle -->
+            <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">⚔️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-orange-300">Power Struggle</h3>
+                        <p class="text-gray-400 italic">The Battle for Scotland's Throne</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500">
+                        <h4 class="font-bold mb-3 text-orange-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Illegitimate vs. Legitimate Rule:</strong> The play contrasts Macbeth's usurped throne with Duncan's rightful kingship and Malcolm's legitimate claim.</p>
+                            <p>→ <strong>Military Conflicts:</strong> The play opens and closes with battles—first against Norway and rebels, finally against Macbeth himself.</p>
+                            <p>→ <strong>Elimination of Rivals:</strong> Macbeth systematically tries to eliminate anyone who threatens his power: Banquo, Fleance, Macduff's family, Malcolm.</p>
+                            <p>→ <strong>Prophecy and Succession:</strong> The witches' prophecy about Banquo's descendants creates power anxiety for Macbeth.</p>
+                            <p>→ <strong>Rebellion Grows:</strong> Scottish nobles gradually turn against Macbeth, joining Malcolm's forces to restore legitimate rule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Struggle for Freedom -->
+            <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🕊️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-yellow-300">Struggle for Freedom</h3>
+                        <p class="text-gray-400 italic">Liberation from Tyranny</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold mb-3 text-yellow-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Scotland Under Oppression:</strong> Scotland is described as suffering, bleeding, and crying under Macbeth's tyrannical rule.</p>
+                            <p>→ <strong>Malcolm's Mission:</strong> Malcolm flees to England but returns leading an army to free Scotland from tyranny.</p>
+                            <p>→ <strong>Noble Rebellion:</strong> Scottish thanes (Lennox, Ross, Angus, Menteith, Caithness) risk their lives joining the fight for freedom.</p>
+                            <p>→ <strong>Macduff's Personal Quest:</strong> Macduff's journey to England and his role in defeating Macbeth represents the fight for justice and freedom.</p>
+                            <p>→ <strong>Restoration of Order:</strong> The play ends with freedom restored—Malcolm becomes rightful king, promising to reward loyal supporters and punish tyrants.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-yellow-800 to-green-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "Fit to govern? No, not to live." — Malcolm describing Macbeth's unfitness to rule, justifying the fight for freedom.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Violence & Death Section -->
+        <section id="violence" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Violence, Death & Brutality
+            </h2>
+
+            <!-- Violence/Brutality -->
+            <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🗡️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-red-300">Violence & Brutality</h3>
+                        <p class="text-gray-400 italic">The Bloody Path to Power</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-3 text-red-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Battlefield Violence:</strong> The play opens with descriptions of Macbeth's brutal prowess in battle—"unseaming" enemies from "nave to chaps."</p>
+                            <p>→ <strong>Duncan's Murder:</strong> The king is stabbed to death while sleeping as a guest—a violation of sacred hospitality and loyalty.</p>
+                            <p>→ <strong>Banquo's Assassination:</strong> Macbeth hires murderers to ambush and kill his best friend in a brutal nighttime attack.</p>
+                            <p>→ <strong>Massacre of Innocents:</strong> Lady Macduff and her children are brutally murdered in one of the play's most disturbing scenes.</p>
+                            <p>→ <strong>Young Siward's Death:</strong> Face-to-face combat resulting in death, showing violence continues until the end.</p>
+                            <p>→ <strong>Macbeth's Beheading:</strong> Macduff enters carrying Macbeth's severed head, completing the cycle of violence.</p>
+                            <p>→ <strong>Blood Imagery:</strong> Constant references to blood symbolize guilt and violence: "Will all great Neptune's ocean wash this blood clean from my hand?"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-red-800 to-orange-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "I am in blood stepped in so far..." — Violence begets more violence in an endless cycle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Death -->
+            <div class="shimmer-card bg-gradient-to-br from-gray-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-gray-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">⚰️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-300">Death</h3>
+                        <p class="text-gray-400 italic">The Ultimate Consequence</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-gray-500">
+                        <h4 class="font-bold mb-3 text-gray-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Omnipresent Threat:</strong> Death haunts every scene—from battles to murders to executions. No character is safe.</p>
+                            <p>→ <strong>Death as Punishment:</strong> The Thane of Cawdor's execution shows death as justice for betrayal.</p>
+                            <p>→ <strong>Murder's Psychological Weight:</strong> After killing Duncan, Macbeth is tormented: "Macbeth does murder sleep."</p>
+                            <p>→ <strong>Banquo's Ghost:</strong> Death doesn't end suffering—the dead return to haunt the living, representing unresolved guilt.</p>
+                            <p>→ <strong>Lady Macbeth's Death:</strong> Dies off-stage (likely suicide), showing how guilt and despair lead to death.</p>
+                            <p>→ <strong>Meaninglessness of Life:</strong> Macbeth's "Tomorrow and tomorrow" speech presents life as brief and meaningless, ending in death.</p>
+                            <p>→ <strong>Death as Liberation:</strong> For some, like Young Siward, death in battle is honorable. Scotland is freed only through Macbeth's death.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-gray-800 to-purple-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "Life's but a walking shadow, a poor player that struts and frets his hour upon the stage, and then is heard no more." — Macbeth's nihilistic view of life and death.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courage -->
+            <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🦁</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-300">Courage</h3>
+                        <p class="text-gray-400 italic">Bravery in Battle and Moral Strength</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold mb-3 text-blue-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Military Courage:</strong> Macbeth is initially praised for his battlefield bravery against Norway and rebels.</p>
+                            <p>→ <strong>Lady Macbeth Questions Manhood:</strong> She manipulates Macbeth by challenging his courage: "Are you a man?"</p>
+                            <p>→ <strong>Macduff's Courage:</strong> Shows moral courage by opposing Macbeth and physical courage by facing him in battle despite personal loss.</p>
+                            <p>→ <strong>Young Siward's Bravery:</strong> Fights Macbeth despite being outmatched, dying honorably with "wounds on the front."</p>
+                            <p>→ <strong>Malcolm's Growth:</strong> Develops from fleeing prince to courageous leader who returns to claim his throne.</p>
+                            <p>→ <strong>Moral Courage:</strong> Banquo shows courage by resisting temptation despite hearing prophecies about his descendants.</p>
+                            <p>→ <strong>Macbeth's Final Stand:</strong> Despite knowing he's doomed, Macbeth fights to the death rather than surrender.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-800 to-indigo-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "I dare do all that may become a man; Who dares do more is none." — Macbeth initially understands true courage before corruption.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deception & Reality Section -->
+        <section id="deception" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Deception, Betrayal & Hidden Truths
+            </h2>
+
+            <!-- Appearance vs Reality -->
+            <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🎭</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-purple-300">Appearance Versus Reality</h3>
+                        <p class="text-gray-400 italic">"Fair is Foul, and Foul is Fair"</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-3 text-purple-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>The Witches' Motto:</strong> "Fair is foul, and foul is fair" establishes that nothing is what it seems from the very beginning.</p>
+                            <p>→ <strong>Duncan's Misjudgment:</strong> Duncan trusts both the traitorous Thane of Cawdor and Macbeth: "There's no art to find the mind's construction in the face."</p>
+                            <p>→ <strong>Macbeth's False Face:</strong> Macbeth appears loyal while plotting murder. Lady Macbeth advises: "Look like the innocent flower, but be the serpent under't."</p>
+                            <p>→ <strong>Equivocation:</strong> The witches' prophecies seem to promise safety but are twisted truths that deceive Macbeth.</p>
+                            <p>→ <strong>Banquo's Ghost:</strong> Only Macbeth can see the ghost, showing the gap between his reality and others' perceptions.</p>
+                            <p>→ <strong>Malcolm's Test:</strong> Malcolm pretends to be corrupt to test Macduff's loyalty, showing appearance can be deliberately deceptive.</p>
+                            <p>→ <strong>Birnam Wood:</strong> The prophecy seems impossible until soldiers camouflage themselves with branches—appearance becomes reality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-purple-800 to-pink-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "False face must hide what the false heart doth know." — Macbeth acknowledging the need to deceive others.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Betrayal -->
+            <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🔪</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-red-300">Betrayal</h3>
+                        <p class="text-gray-400 italic">Breaking Sacred Bonds</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-3 text-red-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Betrayal of King:</strong> Macbeth betrays Duncan, his king, kinsman, and guest—violating multiple sacred bonds.</p>
+                            <p>→ <strong>Betrayal of Friendship:</strong> Macbeth has Banquo, his closest friend and comrade-in-arms, murdered.</p>
+                            <p>→ <strong>Betrayal of Trust:</strong> Duncan completely trusted Macbeth, making the betrayal even more heinous.</p>
+                            <p>→ <strong>Betrayal of Hospitality:</strong> Duncan is murdered while a guest in Macbeth's castle, violating the sacred duty of hosts to protect guests.</p>
+                            <p>→ <strong>Lady Macbeth's Betrayal:</strong> She betrays feminine and maternal ideals, asking to be "unsexed" and capable of dashing out a baby's brains.</p>
+                            <p>→ <strong>Self-Betrayal:</strong> Macbeth betrays his own values and nobility, becoming the opposite of what he once was.</p>
+                            <p>→ <strong>Scotland Betrayed:</strong> As king, Macbeth betrays his duty to protect Scotland, instead bringing tyranny and suffering.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-red-800 to-orange-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "He's here in double trust: First, as I am his kinsman and his subject... then, as his host." — Macbeth acknowledging the multiple betrayals he's about to commit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secrecy -->
+            <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🤫</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-indigo-300">Secrecy</h3>
+                        <p class="text-gray-400 italic">Hidden Plans and Conspiracies</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-indigo-500">
+                        <h4 class="font-bold mb-3 text-indigo-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Secret Plot:</strong> Macbeth and Lady Macbeth secretly plan Duncan's murder, speaking in whispers and hints.</p>
+                            <p>→ <strong>Hidden Prophecies:</strong> Macbeth keeps the witches' prophecies secret initially, then later keeps his continued contact with them from Lady Macbeth.</p>
+                            <p>→ <strong>Secret Murders:</strong> Macbeth hires secret assassins to kill Banquo and attempts to kill Fleance away from public eyes.</p>
+                            <p>→ <strong>Growing Distance:</strong> As secrets multiply, Macbeth and Lady Macbeth grow apart. He keeps his plans from her: "Be innocent of the knowledge, dearest chuck."</p>
+                            <p>→ <strong>Sleepwalking Confession:</strong> Lady Macbeth reveals secrets in her sleep, unable to keep guilt hidden even unconsciously.</p>
+                            <p>→ <strong>Malcolm's Caution:</strong> Malcolm keeps his true nature secret when testing Macduff, showing how secrecy can be protective as well as destructive.</p>
+                            <p>→ <strong>Hidden Rebellion:</strong> Scottish nobles secretly plan rebellion against Macbeth, communicating carefully to avoid detection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-indigo-800 to-purple-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "Stars, hide your fires; Let not light see my black and deep desires." — Macbeth wanting to keep his murderous intentions secret even from heaven.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fate & Supernatural Section -->
+        <section id="supernatural" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-purple-400 bg-clip-text text-transparent">
+                Fate, Superstition & the Supernatural
+            </h2>
+
+            <!-- Fate -->
+            <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🔮</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-purple-300">Fate</h3>
+                        <p class="text-gray-400 italic">Free Will vs. Predestination</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-3 text-purple-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>The Witches' Prophecies:</strong> The witches predict Macbeth will become Thane of Cawdor and King, raising questions about whether these are predictions or commands.</p>
+                            <p>→ <strong>Self-Fulfilling Prophecy:</strong> Macbeth might never have acted without the prophecy. Does he fulfill fate or create it through his choices?</p>
+                            <p>→ <strong>Banquo's Response:</strong> Unlike Macbeth, Banquo hears prophecies but doesn't act on them, suggesting fate requires human cooperation.</p>
+                            <p>→ <strong>Inevitable Doom:</strong> Despite all his efforts, Macbeth cannot escape his prophesied doom—Birnam Wood moves and he faces one "not born of woman."</p>
+                            <p>→ <strong>Macbeth's Belief:</strong> Macbeth increasingly believes he's fated to succeed, becoming overconfident due to the apparitions' prophecies.</p>
+                            <p>→ <strong>The Question of Choice:</strong> The play never fully answers whether Macbeth is fated to murder or chooses to do so freely.</p>
+                            <p>→ <strong>Banquo's Descendants:</strong> The prophecy about Banquo's children becoming kings appears destined to come true despite all Macbeth's efforts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-purple-800 to-indigo-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "If chance will have me king, why, chance may crown me, without my stir." — Macbeth initially considering leaving everything to fate before choosing to act.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Superstition -->
+            <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">🧙‍♀️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-green-300">Superstition</h3>
+                        <p class="text-gray-400 italic">Supernatural Beliefs and Omens</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-3 text-green-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>The Three Witches:</strong> Central supernatural figures who represent evil, chaos, and prophecy—believed in Shakespeare's time to be real.</p>
+                            <p>→ <strong>Unnatural Events:</strong> After Duncan's murder, supernatural occurrences plague Scotland: darkness at noon, horses eating each other, owls killing falcons.</p>
+                            <p>→ <strong>Ghosts and Visions:</strong> Banquo's ghost appears at the banquet; Macbeth sees a floating dagger before murdering Duncan.</p>
+                            <p>→ <strong>Hecate's Involvement:</strong> The goddess of witchcraft personally oversees the deception of Macbeth, showing higher supernatural powers at work.</p>
+                            <p>→ <strong>The Apparitions:</strong> Three mystical visions (armed head, bloody child, crowned child with tree) deliver cryptic prophecies.</p>
+                            <p>→ <strong>Supernatural Protection:</strong> Macbeth believes he's protected by supernatural promises: "none of woman born" can harm him.</p>
+                            <p>→ <strong>Lady Macbeth's Invocation:</strong> She calls upon spirits to "unsex" her and fill her with cruelty, treating supernatural forces as real powers.</p>
+                            <p>→ <strong>Sleepwalking as Supernatural:</strong> Lady Macbeth's sleepwalking and the Doctor's inability to cure her suggests supernatural punishment for sin.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-green-800 to-teal-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "By the pricking of my thumbs, something wicked this way comes." — Witches sensing Macbeth's approach through supernatural means.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emotional Struggles Section -->
+        <section id="emotional" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Emotional & Psychological Struggles
+            </h2>
+
+            <!-- Fear -->
+            <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">😰</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-300">Fear</h3>
+                        <p class="text-gray-400 italic">Paralyzing Terror and Paranoia</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold mb-3 text-blue-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Fear Before Murder:</strong> Macbeth is paralyzed by fear before killing Duncan, seeing visions of a bloody dagger and hearing imaginary voices.</p>
+                            <p>→ <strong>Fear of Discovery:</strong> After the murder, Macbeth and Lady Macbeth are terrified of being caught, jumping at every sound.</p>
+                            <p>→ <strong>Fear of Banquo's Ghost:</strong> Macbeth's terror at seeing Banquo's ghost disrupts the banquet and reveals his guilty conscience.</p>
+                            <p>→ <strong>Paranoid Fear:</strong> Macbeth becomes increasingly paranoid, fearing everyone around him might threaten his power.</p>
+                            <p>→ <strong>Fear Drives Violence:</strong> His fear of the prophecy about Banquo's descendants leads him to attempt murdering them.</p>
+                            <p>→ <strong>Lady Macbeth's Fear:</strong> Her eventual breakdown shows she was always more afraid than she appeared, her bravado masking terror.</p>
+                            <p>→ <strong>Fear of Macduff:</strong> The first apparition warns "Beware Macduff," triggering intense fear that leads to massacring Macduff's family.</p>
+                            <p>→ <strong>Scotland's Fear:</strong> The entire nation lives in fear under Macbeth's tyranny, with people afraid to speak freely or trust anyone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-800 to-indigo-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "Methought I heard a voice cry 'Sleep no more! Macbeth does murder sleep.'" — Fear and guilt destroy Macbeth's peace immediately after Duncan's murder.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insecurity -->
+            <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">😟</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-yellow-300">Insecurity</h3>
+                        <p class="text-gray-400 italic">Doubt and Instability</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold mb-3 text-yellow-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Insecure Kingship:</strong> Macbeth knows his crown is illegitimate, making him fundamentally insecure about his position.</p>
+                            <p>→ <strong>Lady Macbeth's Manipulation:</strong> She exploits Macbeth's insecurity about his manhood to push him toward murder.</p>
+                            <p>→ <strong>No Heir Anxiety:</strong> Macbeth's anguish that Banquo's children will inherit the throne, not his own, reveals deep insecurity about his legacy: "Upon my head they placed a fruitless crown."</p>
+                            <p>→ <strong>Constant Suspicion:</strong> Macbeth's insecurity makes him suspect everyone, seeing threats everywhere even when none exist.</p>
+                            <p>→ <strong>Need for Prophecies:</strong> Macbeth repeatedly seeks the witches for reassurance, showing his fundamental insecurity despite being king.</p>
+                            <p>→ <strong>Cannot Trust Lady Macbeth:</strong> His growing insecurity leads him to keep secrets from his wife, destroying their partnership.</p>
+                            <p>→ <strong>Overcompensation:</strong> Macbeth's increasingly brutal actions stem from insecurity—trying to prove strength while feeling fundamentally weak.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-yellow-800 to-orange-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "To be thus is nothing, but to be safely thus." — Macbeth recognizing that having power means nothing if he's too insecure to enjoy it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desperation -->
+            <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 card-hover mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">😱</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-orange-300">Desperation</h3>
+                        <p class="text-gray-400 italic">Desperate Actions in Crisis</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-orange-500">
+                        <h4 class="font-bold mb-3 text-orange-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Desperate Murder Plot:</strong> Macbeth and Lady Macbeth's decision to murder Duncan shows desperation for power they feel they must seize now or never.</p>
+                            <p>→ <strong>Desperate Cover-ups:</strong> After Duncan's murder, Macbeth desperately kills the guards to prevent questions, acting impulsively.</p>
+                            <p>→ <strong>Killing Macduff's Family:</strong> In desperate paranoia, Macbeth orders the massacre of innocent women and children—a sign of complete desperation.</p>
+                            <p>→ <strong>Lady Macbeth's Breakdown:</strong> Her sleepwalking and obsessive hand-washing show desperate attempts to cope with guilt.</p>
+                            <p>→ <strong>Seeking the Witches:</strong> Macbeth desperately returns to the witches demanding answers about his future.</p>
+                            <p>→ <strong>Macduff's Desperation:</strong> Overwhelmed by grief and rage after his family's murder, Macduff desperately seeks revenge against Macbeth.</p>
+                            <p>→ <strong>Final Battle:</strong> Macbeth fights desperately even after learning the prophecies' true meanings, refusing to surrender.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-orange-800 to-red-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o'er." — Macbeth's desperate realization he's gone too far to turn back.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenge -->
+            <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-6xl mr-6">⚔️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-red-300">Revenge</h3>
+                        <p class="text-gray-400 italic">Justice Through Vengeance</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-red-500">
+                        <h4 class="font-bold mb-3 text-red-400 text-xl">How It's Portrayed:</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <p>→ <strong>Macduff's Quest:</strong> The most prominent revenge arc—Macduff seeks vengeance for the murder of his wife and children.</p>
+                            <p>→ <strong>Personal Confrontation:</strong> Macduff specifically seeks out Macbeth on the battlefield, refusing to fight anyone else until he avenges his family.</p>
+                            <p>→ <strong>Malcolm's Revenge:</strong> Malcolm returns to avenge his father's murder and reclaim his stolen throne.</p>
+                            <p>→ <strong>Scotland's Revenge:</strong> The entire nation turns against Macbeth, seeking collective revenge for his tyranny.</p>
+                            <p>→ <strong>Revenge as Justice:</strong> The play presents Macduff's revenge as righteous—not merely personal vengeance but necessary justice.</p>
+                            <p>→ <strong>Banquo's Ghost:</strong> Can be seen as seeking revenge from beyond death, haunting Macbeth and driving him toward madness.</p>
+                            <p>→ <strong>Beheading Macbeth:</strong> Macduff enters with Macbeth's severed head, completing his revenge in the most graphic way possible.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-red-800 to-pink-800 p-6 rounded-xl">
+                        <p class="text-lg italic text-gray-200">
+                            <strong>Key Quote:</strong> "Macduff was from his mother's womb untimely ripped." — The revelation that allows Macduff to fulfill his revenge against the tyrant.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comprehensive Theme Summary -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-purple-400 bg-clip-text text-transparent">
+                The Interconnected Web of Themes
+            </h3>
+            <div class="bg-slate-950 bg-opacity-60 p-8 rounded-xl mb-6">
+                <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                    <strong class="text-red-400">Macbeth</strong> is a masterpiece of thematic complexity where no theme exists in isolation. Shakespeare weaves these themes together into a rich tapestry that explores the darkest aspects of human nature.
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                    <strong class="text-orange-400">Ambition</strong> leads to <strong class="text-red-400">violence</strong> and <strong class="text-gray-400">betrayal</strong>, which create <strong class="text-blue-400">fear</strong> and <strong class="text-yellow-400">insecurity</strong>. The <strong class="text-purple-400">corruption of power</strong> requires <strong class="text-indigo-400">secrecy</strong> and <strong class="text-pink-400">deception</strong>. <strong class="text-green-400">Superstition</strong> and <strong class="text-purple-400">fate</strong> raise questions about free will, while <strong class="text-orange-400">desperation</strong> drives increasingly brutal actions.
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Ultimately, the themes converge in the final act where <strong class="text-red-400">revenge</strong> and the <strong class="text-yellow-400">struggle for freedom</strong> bring <strong class="text-gray-400">death</strong> to the tyrant, restoring natural order. Through this interconnected exploration of themes, Shakespeare creates a timeless tragedy that continues to resonate with audiences centuries later.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-red-900 to-orange-900 p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-3">⚡</div>
+                    <h4 class="text-xl font-bold mb-2 text-red-300">Universal Themes</h4>
+                    <p class="text-sm text-gray-300">These themes transcend time and culture, speaking to fundamental human experiences and moral questions.</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-900 to-pink-900 p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-3">🎭</div>
+                    <h4 class="text-xl font-bold mb-2 text-purple-300">Dramatic Impact</h4>
+                    <p class="text-sm text-gray-300">Shakespeare doesn't just mention themes—he dramatizes them through action, imagery, and character development.</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-900 to-indigo-900 p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-3">💭</div>
+                    <h4 class="text-xl font-bold mb-2 text-blue-300">Moral Complexity</h4>
+                    <p class="text-sm text-gray-300">The play refuses simple answers, instead exploring the gray areas of morality, choice, and consequence.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Famous Quote Footer -->
+        <div class="mt-8 text-center bg-gradient-to-r from-red-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-red-600">
+            <div class="text-5xl mb-4">📜</div>
+            <blockquote class="text-2xl italic text-gray-300 mb-4">
+                "Fair is foul, and foul is fair:<br>
+                Hover through the fog and filthy air."
+            </blockquote>
+            <p class="text-gray-400 mb-4">— The Witches, Act I Scene 1</p>
+            <p class="text-gray-300 text-lg">
+                The opening lines establish the central theme of appearance versus reality,<br>
+                setting the tone for a play where nothing is as it seems.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('power');
+    </script>
+</body>
+</html>

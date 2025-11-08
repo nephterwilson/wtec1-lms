@@ -1,0 +1,525 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pearl - Characterization of Kino</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">📖</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                The Pearl
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">by John Steinbeck</p>
+            <p class="text-xl text-gray-400">Characterization of Kino</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('intro')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Overview
+                </button>
+                <button onclick="showSection('traits1')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Character Traits I
+                </button>
+                <button onclick="showSection('traits2')" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 rounded-xl transition shadow-lg">
+                    Character Traits II
+                </button>
+                <button onclick="showSection('development')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Character Development
+                </button>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="intro" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                About Kino - The Protagonist
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">👨‍👩‍👦</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Kino: A Complex Character</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Kino is the main protagonist in John Steinbeck's novella "The Pearl." He is a poor pearl diver whose life is transformed when he discovers a magnificent pearl. Through his journey, we witness a character who embodies both admirable qualities and human flaws.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover text-center">
+                    <div class="text-5xl mb-4">💪</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Strengths</h3>
+                    <p class="text-sm text-gray-300">Brave, loving, hardworking, and determined to protect his family</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover text-center">
+                    <div class="text-5xl mb-4">⚖️</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">Complexities</h3>
+                    <p class="text-sm text-gray-300">A multifaceted character who evolves throughout the story</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500 card-hover text-center">
+                    <div class="text-5xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold mb-3 text-indigo-300">Transformation</h3>
+                    <p class="text-sm text-gray-300">His character changes dramatically after finding the pearl</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Traits I Section -->
+        <section id="traits1" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Kino's Character Traits - Part I
+            </h2>
+
+            <div class="space-y-6">
+                <!-- I. Brave/Courageous -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🦁</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">I. Brave / Courageous</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">He is determined to touch the scorpion land, is steady heading towards Juana Coyotito as sleeping.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">He uses his knife, then Kino comes at his house at night.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">He overpowers the three intruders who were pursuing (attacking) them by shooting each of them.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">Although, he was jumping, his crushed Juana to find Juana had Coyotito.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">He is able to realize oysters under water for a full two minutes.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">Despite being attacked, his certainty with his plan of selling the pearl to the capital.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Loving -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">❤️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-pink-300 mb-2">II. Loving</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">He is very much concerned with the illness of his son Coyotito.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">He tries by all means to protect his son as well as his wife from any kind of threat.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">He thinks of having a church marriage on church with Juana.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. Violent -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">⚡</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-300 mb-2">III. Violent</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-gray-300">He reacts violently to the scorpion that comes his son Coyotito.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-gray-300">He blames the Doctor later after refusing to treat his son that he had so much of money.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IV. Skillful -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎯</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-300 mb-2">IV. Skillful</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <p class="text-gray-300">He dives into the water to search for the pearl.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <p class="text-gray-300">He dives into the water with a very heavy stone and basket while searching for the pearl.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V. Thoughtful/Mindful/Sensitive -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🧠</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300 mb-2">V. Thoughtful / Mindful / Sensitive</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">Wraps the pearl with cloth and hides it at the corner of his brush house.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">He changes the places where he keeps his pearl.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Traits II Section -->
+        <section id="traits2" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                Kino's Character Traits - Part II
+            </h2>
+
+            <div class="space-y-6">
+                <!-- VI. Intelligent -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎓</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300 mb-2">VI. Intelligent</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-gray-300">He notices the pearl buyers' ill-motive of avoiding to dive him and leaves them immediately.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VII. Ambitious -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎯</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-300 mb-2">VII. Ambitious</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">He thinks of educating his son begins the many reality from the pearl.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">He pondered of marrying in church using real money.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">He thinks of buying a rifle.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">He thinks of buying new clothes for the whole family.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIII. Suspicious -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🔍</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-300 mb-2">VIII. Suspicious</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <p class="text-gray-300">He sees everyone as an enemy.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <p class="text-gray-300">He doesn't believe his eyesight, the doctor and he tries to treat Coyotito at his brush house.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <p class="text-gray-300">He senses that happens in easy some people will eat, intending they fallen them.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IX. Foolish -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤦</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">IX. Foolish</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">He equates (put up price) his life to the pearl.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">He throws the pearl back to the sea after the death of Coyotito.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- X. Superstitious -->
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🔮</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-indigo-300 mb-2">X. Superstitious</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                            <p class="text-gray-300">He believes in the songs of the family and that of evil.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                            <p class="text-gray-300">He is quite convinced that selling the pearl outside only it's against religion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Development Section -->
+        <section id="development" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
+                Character Development & Final Traits
+            </h2>
+
+            <div class="space-y-6">
+                <!-- XI. Adamant/Stubborn -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🛑</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-300 mb-2">XI. Adamant / Stubborn</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-gray-300">He doesn't listen to his wife when she proposes the discarding (destruction) of the pearl.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-gray-300">He doesn't take the advice of his elder brother concerning the part of the pearl.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- XII. Materialistic -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💎</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300 mb-2">XII. Materialistic</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">He clings to the pearl, although it is bringing a lot of problems to the family.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- XIII. Optimistic -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🌟</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-300 mb-2">XIII. Optimistic</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <p class="text-gray-300">He sees a brighter future after selling the pearl.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- XIV. Resolute/Determined -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💪</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300 mb-2">XIV. Resolute / Determined</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-gray-300">He has made a decision that he will never sell his pearl at a low price.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Box -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">📝</div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4 text-purple-300">Character Summary</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            Kino is a complex character who demonstrates both admirable and flawed traits throughout "The Pearl." His journey from a simple pearl diver to a man consumed by ambition and paranoia showcases Steinbeck's exploration of how material wealth can corrupt even the most well-intentioned individuals.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The pearl, which initially represents hope and opportunity, becomes a symbol of greed, violence, and tragedy. Kino's character arc serves as a cautionary tale about the dangers of materialism and the importance of recognizing what truly matters in life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Traits Overview -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Complete Character Trait List
+            </h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🦁</div>
+                    <p class="font-bold text-red-300">Brave/Courageous</p>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">❤️</div>
+                    <p class="font-bold text-pink-300">Loving</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">⚡</div>
+                    <p class="font-bold text-orange-300">Violent</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🎯</div>
+                    <p class="font-bold text-cyan-300">Skillful</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🧠</div>
+                    <p class="font-bold text-green-300">Thoughtful/Mindful</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🎓</div>
+                    <p class="font-bold text-blue-300">Intelligent</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🎯</div>
+                    <p class="font-bold text-purple-300">Ambitious</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🔍</div>
+                    <p class="font-bold text-yellow-300">Suspicious</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🤦</div>
+                    <p class="font-bold text-red-300">Foolish</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🔮</div>
+                    <p class="font-bold text-indigo-300">Superstitious</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🛑</div>
+                    <p class="font-bold text-orange-300">Adamant/Stubborn</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">💎</div>
+                    <p class="font-bold text-green-300">Materialistic</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">🌟</div>
+                    <p class="font-bold text-cyan-300">Optimistic</p>
+                </div>
+                <div class="bg-slate-950 bg-opacity-50 p-4 rounded-xl text-center">
+                    <div class="text-3xl mb-2">💪</div>
+                    <p class="font-bold text-blue-300">Resolute/Determined</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-400 pb-8">
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-lg mb-2">📚 Study Guide: The Pearl by John Steinbeck</p>
+                <p class="text-sm">Understanding Character Development Through Literature</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section with fade-in animation
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.remove('hidden');
+            selectedSection.classList.add('fade-in');
+            
+            // Scroll to top of section
+            selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Show intro section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('intro');
+        });
+    </script>
+</body>
+</html>
+              

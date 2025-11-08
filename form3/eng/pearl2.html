@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pearl - Other Characters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">📖</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                The Pearl
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">by John Steinbeck</p>
+            <p class="text-xl text-gray-400">Supporting Characters Analysis</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('overview')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Overview
+                </button>
+                <button onclick="showSection('juan-tomas')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Juan Tomás
+                </button>
+                <button onclick="showSection('doctor')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    The Doctor
+                </button>
+                <button onclick="showSection('juana')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Juana
+                </button>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Supporting Characters Overview
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">👥</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Characters That Shape Kino's Journey</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        While Kino is the protagonist of "The Pearl," the supporting characters play crucial roles in developing the story's themes and conflicts. Each character represents different aspects of society and human nature, contributing to the tragic transformation of Kino's life.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover text-center">
+                    <div class="text-5xl mb-4">👨‍👨‍👦</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Juan Tomás</h3>
+                    <p class="text-sm text-gray-300">Kino's brother - the voice of wisdom and family loyalty</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover text-center">
+                    <div class="text-5xl mb-4">⚕️</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">The French Doctor</h3>
+                    <p class="text-sm text-gray-300">A symbol of greed, prejudice, and colonial exploitation</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover text-center">
+                    <div class="text-5xl mb-4">👩</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">Juana</h3>
+                    <p class="text-sm text-gray-300">Kino's wife - strong, intuitive, and devoted to family</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Juan Tomás Section -->
+        <section id="juan-tomas" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Juan Tomás (XV) - Character Analysis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">👨‍👨‍👦</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-300 mb-4">Juan Tomás: The Loyal Brother</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Juan Tomás is Kino's older brother who represents wisdom, caution, and unwavering family loyalty. He is the only family member besides Kino's wife who remains by his side throughout the ordeal with the pearl.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Clever -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🧠</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300 mb-2">Clever</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-gray-300">His daughter's family leave his home place to a different place they are coming in the morning without telling anybody except his brother (Juan Tomás).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The French Doctor Section -->
+        <section id="doctor" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                The French Doctor - Character Analysis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">⚕️</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-green-300 mb-4">The French Doctor: Symbol of Exploitation</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The French doctor represents the colonial exploitation and class divisions in society. He is a corrupt, greedy individual who only cares about money and has no genuine concern for the welfare of the poor indigenous people.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- I. Indifferent -->
+                <div class="shimmer-card bg-gradient-to-br from-gray-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-gray-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">😐</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-300 mb-2">I. Indifferent (Lacking Sympathy)</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-gray-500">
+                            <p class="text-gray-300">He refuses to treat Coyotito despite the dire situation they are in.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Insensitive -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💔</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">II. Insensitive</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">He does even care the pain Coyotito is going through as hell. His work is demonstrated by Coyotito's parents but his interior is on money.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. Racist -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">⚠️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-300 mb-2">III. He is a Racist</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-gray-300">The fact that he is a French and Kino and his family are native Indians, to him a negative attitude towards them.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IV. Selfish -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤲</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-300 mb-2">IV. He is Selfish</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <p class="text-gray-300">He does think out of his honest and totally to Kino but instead uses his servant to pass on information.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V. Greedy for Money -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💰</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300 mb-2">V. He is Greedy for Money</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">When he hears that Kino has gotten the pearl of the world, he forgets his promises that to treat Coyotito so that he can be paid years. He really abandons the woman he is treating, claiming Kino his client.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VI. Indecisive -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤔</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-300 mb-2">VI. Indecisive</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">After first, he declined to treat Coyotito and later on rushes to Kino's house to treat Coyotito.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VII. Materialistic -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💎</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-300 mb-2">VII. He is Materialistic</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <p class="text-gray-300">He treats Coyotito because Kino's socio-economic status has completely changed from poor to rich and hence he feels to pay him.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIII. Pompous -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">👑</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-pink-300 mb-2">VIII. He is Pompous</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">As he is treating Coyotito, he boasts of being so knowledgeable in dealing with scorpion poison.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IX. Trickery -->
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎭</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-indigo-300 mb-2">IX. He is Trickery</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                            <p class="text-gray-300">He gives Coyotito a poisonous capsule (capsule) which will make Coyotito look so sick and later neutralizes it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Juana Section -->
+        <section id="juana" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Juana - Character Analysis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">👩</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-purple-300 mb-4">Juana: The Pillar of Strength</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Juana is Kino's wife, a devoted mother to Coyotito, and the moral compass of the family. She possesses wisdom, intuition, and unwavering loyalty, even as she witnesses the pearl's corrupting influence on her husband.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- I. Loving -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">❤️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-pink-300 mb-2">I. She is Loving</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">Sucks poison on the soft skin behind Coyotito is stung by the scorpion.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">Puts the end of her head shawl into water and bathes with Coyotito's swollen, inflated.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">She refuses to leave Kino alone on the way to the mountains when she is told to do so.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Courageous -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🦁</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">II. Courageous</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">She sails together with Kino in an old canoe when they are searching for a pearl on the sea.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">She tells the husband to go to the doctor with Coyotito upon realizing that the doctor would not come to her.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">She steadies at the canoe as Kino gets into it from the water.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">She paddles the canoe together with Kino a task that is considered to be for men.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">She admits to her husband that she knows the pearl while Kino highly values it, she knows the dire consequences of this action.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. Supportive -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤝</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300 mb-2">III. She is Supportive</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-gray-300">She is by the side of her husband during the time of need.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IV. Caring -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💚</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300 mb-2">IV. She is Caring</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">She plates Coyotito on a blanket in the canoe and covers him to protect from sunlight.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">She remains awake at night guarding him and Coyotito as they sleep.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V. Resourceful -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎯</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-300 mb-2">V. She is Resourceful</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <p class="text-gray-300">She gathers some seaweeds and makes a poultice and applies it on Coyotito's body on the sting.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VI. Superstitious -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🔮</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-300 mb-2">VI. She is Superstitious</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">She believes some powers in the seaweed and hence its utilization.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">She strongly believes that the pearl is evil.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VII. Optimistic (Hopeful) -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🌟</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-300 mb-2">VII. She is Optimistic (Hopeful)</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <p class="text-gray-300">She makes a prayer for divine intervention for Coyotito's illness.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIII. Skillful -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎨</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-300 mb-2">VIII. She is Skillful</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-gray-300">She is able to control the canoe while Kino is in the water searching for the pearl.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IX. Wise -->
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🦉</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-indigo-300 mb-2">IX. She is Wise</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                            <p class="text-gray-300">She encourages the husband to do away with the pearl for it will bring problems to them.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Comparison Section -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Character Traits Summary
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold text-blue-300 mb-4 text-center">Juan Tomás</h4>
+                    <div class="space-y-2 text-center">
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Clever</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold text-green-300 mb-4 text-center">The French Doctor</h4>
+                    <div class="space-y-2 text-center">
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Indifferent</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Insensitive</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Racist</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Selfish</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Greedy for Money</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Indecisive</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Materialistic</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Pompous</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Trickery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold text-purple-300 mb-4 text-center">Juana</h4>
+                    <div class="space-y-2 text-center">
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Loving</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Courageous</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Supportive</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Caring</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Resourceful</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Superstitious</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Optimistic</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Skillful</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-gray-300">Wise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-900 to-pink-900 bg-opacity-50 p-6 rounded-xl">
+                <h4 class="text-2xl font-bold text-pink-300 mb-4 flex items-center justify-center">
+                    <span class="text-4xl mr-3">💡</span>
+                    Key Insights
+                </h4>
+                <div class="space-y-4 text-gray-300">
+                    <p class="leading-relaxed">
+                        <strong class="text-blue-300">Juan Tomás</strong> represents wisdom and family loyalty. As Kino's brother, he is the only one who stands by him despite his reservations about the pearl. His cleverness is shown in how he helps Kino's family secretly.
+                    </p>
+                    <p class="leading-relaxed">
+                        <strong class="text-green-300">The French Doctor</strong> embodies the exploitation and prejudice of the colonial system. His numerous negative traits - from racism to greed to trickery - make him a clear antagonist who represents everything wrong with the social hierarchy.
+                    </p>
+                    <p class="leading-relaxed">
+                        <strong class="text-purple-300">Juana</strong> is the moral center of the story. Despite her husband's obsession with the pearl, she remains loving, supportive, and wise. She recognizes the evil the pearl brings and tries to protect her family, showing strength, courage, and remarkable resourcefulness.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-400 pb-8">
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-lg mb-2">📚 Study Guide: The Pearl by John Steinbeck</p>
+                <p class="text-sm">Character Analysis - Supporting Cast</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section with fade-in animation
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.remove('hidden');
+            selectedSection.classList.add('fade-in');
+            
+            // Scroll to top of section
+            selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Show overview section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('overview');
+        });
+    </script>
+</body>
+</html>

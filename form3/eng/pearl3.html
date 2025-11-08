@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pearl - Additional Characters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">📖</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                The Pearl
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">by John Steinbeck</p>
+            <p class="text-xl text-gray-400">Community & Society Characters</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('overview')" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 rounded-xl transition shadow-lg">
+                    Overview
+                </button>
+                <button onclick="showSection('apolonia')" class="px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-xl transition shadow-lg">
+                    Apolonia
+                </button>
+                <button onclick="showSection('juan-tomas-detailed')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Juan Tomás (Detailed)
+                </button>
+                <button onclick="showSection('priest')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    The Priest
+                </button>
+                <button onclick="showSection('pearl-buyers')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Pearl Buyers
+                </button>
+                <button onclick="showSection('native-indians')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Native Indians
+                </button>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Community Characters Overview
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-emerald-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🏘️</div>
+                    <h3 class="text-3xl font-bold text-emerald-300 mb-4">The Society Around Kino</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Beyond the main characters, Steinbeck presents a rich tapestry of community members who reflect different aspects of society. These characters reveal the exploitation, greed, and prejudice that pervade Kino's world, as well as moments of genuine loyalty and concern.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="shimmer-card bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500 card-hover text-center">
+                    <div class="text-5xl mb-4">👩‍👧‍👦</div>
+                    <h3 class="text-xl font-bold mb-3 text-teal-300">Apolonia</h3>
+                    <p class="text-sm text-gray-300">Juan Tomás's wife - helpful and sympathetic</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover text-center">
+                    <div class="text-5xl mb-4">👨‍👨‍👦</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyan-300">Juan Tomás (Extended)</h3>
+                    <p class="text-sm text-gray-300">Kino's brother with complex characteristics</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover text-center">
+                    <div class="text-5xl mb-4">⛪</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">The Priest</h3>
+                    <p class="text-sm text-gray-300">Religious authority driven by greed</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover text-center">
+                    <div class="text-5xl mb-4">💎</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">The Pearl Buyers</h3>
+                    <p class="text-sm text-gray-300">Manipulative merchants seeking profit</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover text-center">
+                    <div class="text-5xl mb-4">👥</div>
+                    <h3 class="text-xl font-bold mb-3 text-pink-300">Kino's People</h3>
+                    <p class="text-sm text-gray-300">The native community and neighbors</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-emerald-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-emerald-500 card-hover text-center">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold mb-3 text-emerald-300">Social Structure</h3>
+                    <p class="text-sm text-gray-300">Examining society through characters</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apolonia Section -->
+        <section id="apolonia" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Apolonia (4) - Character Analysis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">👩‍👧‍👦</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-teal-300 mb-4">Apolonia: The Supportive Sister-in-Law</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Apolonia is Juan Tomás's wife and Kino's sister-in-law. She demonstrates kindness and support for Kino's family during their time of crisis, showing the importance of family bonds in their community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- I. Helpful -->
+                <div class="shimmer-card bg-gradient-to-br from-teal-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-teal-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤝</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-teal-300 mb-2">I. She is Helpful</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-teal-500">
+                            <p class="text-gray-300">She goes together with Kino's family to look for the doctor to treat Coyotito.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Accompanies -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">👫</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-300 mb-2">II. She Accompanies</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <p class="text-gray-300">She accompanies Kino's family on the search of Coyotito's treatment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. Sympathetic -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💙</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300 mb-2">III. Sympathetic</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-gray-300">She shares at Kino's brush house.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Juan Tomás Detailed Section -->
+        <section id="juan-tomas-detailed" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Juan Tomás (5) - Extended Character Analysis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">👨‍👨‍👦</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-cyan-300 mb-4">Juan Tomás: Expanded Traits</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            A deeper look at Juan Tomás reveals a multifaceted character who balances family loyalty with practical wisdom. His additional traits show his complexity as both a protective brother and a voice of reason.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- I. Helpful -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤲</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-300 mb-2">I. He is Helpful</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <p class="text-gray-300">He goes together with Kino's family to the Doctor in search for Coyotito's treatment.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <p class="text-gray-300">He hides Kino in his house though, he knows it is risky to do so.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Loving -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">❤️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-pink-300 mb-2">II. He is Loving</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">He accompanies Kino and Juana going to the doctor to seek Coyotito's treatment.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">He advises Kino brother not to be cheated by the pearl buyers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. Coward -->
+                <div class="shimmer-card bg-gradient-to-br from-gray-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-gray-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">😰</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-300 mb-2">III. He is a Coward</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-gray-500">
+                            <p class="text-gray-300">Kino's presence at his house terrifies him despite keeping him.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IV. Superstitious -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🔮</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-300 mb-2">IV. Superstitious</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">He believes that there is the devil on the pearl and has to be sold at any cost.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V. Sympathetic -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💙</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300 mb-2">V. He is Sympathetic</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-gray-300">He feels sorry to what his young brother is going through.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VI. Sensitive -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🧠</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300 mb-2">VI. He is Sensitive</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">He advises Kino to leave for the north the following evening for their own safety.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VII. Thoughtful -->
+                <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💭</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-indigo-300 mb-2">VII. He is Thoughtful</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                            <p class="text-gray-300">He tells Kino that he would have sold the pearl for keeping it would invite more problems on him.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Priest Section -->
+        <section id="priest" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                The Priest (6) - Character Analysis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">⛪</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-300 mb-4">The Priest: Religious Authority and Greed</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The priest represents religious authority in the community, but his actions reveal that he, like many others, is more interested in the material benefits the pearl might bring to the church than in genuine spiritual care for Kino's family.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- I. Greedy -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💰</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300 mb-2">I. He is Greedy</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">He visits Kino when he hears his fortune and thinks of church repair through his money.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Selfish -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤲</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-300 mb-2">II. He is Selfish</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <p class="text-gray-300">Through Kino's fortune, he thinks of church repair and not Kino's family wellbeing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pearl Buyers Section -->
+        <section id="pearl-buyers" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                The Pearl Buyers (7) - Character Analysis
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">💎</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-purple-300 mb-4">The Pearl Buyers: Agents of Exploitation</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The pearl buyers represent the corrupt economic system that exploits poor pearl divers. Though they appear to be independent buyers, they work together to deceive Kino and undervalue his magnificent pearl.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- I. Manipulative -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎭</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-300 mb-2">I. Manipulative</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">They agree to buy Kino's pearl at the lowest price.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Greedy/Selfish -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💸</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">II. Greedy and Selfish</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">They consider Kino as someone who doesn't deserve to have a large sum of money, they want to make profits for themselves from Kino's fortune.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. Selfish -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤑</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-300 mb-2">III. They are Selfish</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-gray-300">They want to buy Kino's pearl at the lowest price taking advantage of Kino's poverty.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Native Indians Section -->
+        <section id="native-indians" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
+                Kino's People (8) - The Neighbors/The Native Indians
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">👥</div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-pink-300 mb-4">Kino's People: The Community Response</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The native Indian community represents the collective response to Kino's discovery of the pearl. Their reactions range from creative celebration to bitter jealousy, revealing the complex social dynamics within their community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- I. Creative -->
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🎨</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-pink-300 mb-2">I. They are Creative</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300">They sing everything that happens or existed.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-300 mb-2">Examples of their songs:</p>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1 ml-4">
+                                <li>Song of fishes</li>
+                                <li>Song of the sea in anger</li>
+                                <li>Song of the sea in calm (quiet)</li>
+                                <li>Songs of light during sun and moon</li>
+                                <li>The song of the pearl (that exists)</li>
+                                <li>The song of the pearl that might be</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- II. Sympathetic -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💙</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300 mb-2">II. They are Sympathetic</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-gray-300">They feel sorry for Kino when his hut is burnt down.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <p class="text-gray-300">They flock to Kino's house when Coyotito cries for the second time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- III. Supportive -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🤝</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-300 mb-2">III. They are Supportive</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">They stand together with Kino to sell his pearl.</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <p class="text-gray-300">They escort Kino to the doctor to seek Coyotito's treatment after being stung by a scorpion.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IV. Loving -->
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">❤️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">IV. They are Loving</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <p class="text-gray-300">When Kino gets the Pearl of the World, they celebrate together with him.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V. Respectful -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🙏</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-300 mb-2">V. They are Respectful</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-gray-300">When the Priest comes, they quickly organize themselves to pave a way for him.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VI. Observant -->
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">👀</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-300 mb-2">VI. They are Observant</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                            <p class="text-gray-300">When Kino gets into Pearl buyer's shop they looked closely to monitor the whole process of selling and buying.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VII. Biased -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">⚖️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-300 mb-2">VII. They are Biased</h3>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-gray-300">They fear sudden wealth would drive Kino crazy and turns him into a bad person.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIII. Divided Opinions -->
+               <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-6 shadow-2xl border border-indigo-500 card-hover">
+            <div class="flex items-start mb-4">
+                <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🗣️</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-indigo-300 mb-2">VIII. They have Divided Opinions on</h3>
+                </div>
+            </div>
+            <div class="space-y-5">
+
+                <!-- (a) The use of the Pearl -->
+                <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                    <h4 class="text-xl font-semibold text-indigo-400 mb-2">(a) The Use of the Pearl</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>The first man says he would give it to the Pope.</li>
+                        <li>The second man says he would buy masses for the souls of his family for a thousand years.</li>
+                        <li>The third man says he would distribute it among the poor.</li>
+                    </ul>
+                </div>
+
+                <!-- (b) On the price of the Pearl -->
+                <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                    <h4 class="text-xl font-semibold text-indigo-400 mb-2">(b) On the Price of the Pearl</h4>
+                    <p class="text-gray-300">The people are divided in their opinions about Kino’s rejection of the pearl buyers’ offer:</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                        <li>One group supports the rejection of the lowest price offered to Kino.</li>
+                        <li>The other group faults Kino for refusing the offer.</li>
+                    </ul>
+                </div>
+
+                <!-- Additional Information on the Characters of Pearl Buyers -->
+                <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                    <h4 class="text-xl font-semibold text-indigo-400 mb-2">Additional Information on the Characters of the Pearl Buyers</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li><span class="font-semibold text-indigo-300">(i) They are cooperative:</span> They meet in advance and agree on a price far below the actual value of the pearl.</li>
+                        <li><span class="font-semibold text-indigo-300">(ii) They are consistent:</span> They do not change their decision to buy the pearl at the lowest price, even through bargaining.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        </section>
+
+        <!-- Comprehensive Summary Section -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-emerald-500">
+            <h3 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Complete Character Overview
+            </h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Apolonia Card -->
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border border-teal-500">
+                    <h4 class="text-xl font-bold text-teal-300 mb-4 text-center flex items-center justify-center">
+                        <span class="text-3xl mr-2">👩‍👧‍👦</span>
+                        Apolonia
+                    </h4>
+                    <div class="space-y-2 text-center">
+                        <div class="bg-teal-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Helpful</p>
+                        </div>
+                        <div class="bg-teal-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Accompanies</p>
+                        </div>
+                        <div class="bg-teal-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Sympathetic</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juan Tomás Extended Card -->
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border border-cyan-500">
+                    <h4 class="text-xl font-bold text-cyan-300 mb-4 text-center flex items-center justify-center">
+                        <span class="text-3xl mr-2">👨‍👨‍👦</span>
+                        Juan Tomás
+                    </h4>
+                    <div class="space-y-2 text-center">
+                        <div class="bg-cyan-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Helpful</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Loving</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Coward</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Superstitious</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Sympathetic</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Sensitive</p>
+                        </div>
+                        <div class="bg-cyan-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Thoughtful</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Priest Card -->
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border border-blue-500">
+                    <h4 class="text-xl font-bold text-blue-300 mb-4 text-center flex items-center justify-center">
+                        <span class="text-3xl mr-2">⛪</span>
+                        The Priest
+                    </h4>
+                    <div class="space-y-2 text-center">
+                        <div class="bg-blue-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Greedy</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Selfish</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pearl Buyers Card -->
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border border-purple-500">
+                    <h4 class="text-xl font-bold text-purple-300 mb-4 text-center flex items-center justify-center">
+                        <span class="text-3xl mr-2">💎</span>
+                        Pearl Buyers
+                    </h4>
+                    <div class="space-y-2 text-center">
+                        <div class="bg-purple-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Manipulative</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Greedy & Selfish</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm text-gray-300">Exploitative</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Native Indians Card -->
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl border border-pink-500 md:col-span-2">
+                    <h4 class="text-xl font-bold text-pink-300 mb-4 text-center flex items-center justify-center">
+                        <span class="text-3xl mr-2">👥</span>
+                        Kino's People (Native Indians)
+                    </h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        <div class="bg-pink-900 bg-opacity-30 p-2 rounded-lg text-center">
+                            <p class="text-sm text-gray-300">Creative</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-2 rounded-lg text-center">
+                            <p class="text-sm text-gray-300">Sympathetic</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-2 rounded-lg text-center">
+                            <p class="text-sm text-gray-300">Supportive</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-2 rounded-lg text-center">
+                            <p class="text-sm text-gray-300">Loving</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-2 rounded-lg text-center">
+                            <p class="text-sm text-gray-300">Respectful</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-2 rounded-lg text-center">
+                            <p class="text-sm text-gray-300">Observant</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-2 rounded-lg text-center">
+                            <p class="text-sm text-gray-300">Biased</p>
+                        </div>
+                        <div class="bg-pink-900 bg-opacity-30 p-2 rounded-lg text-center">
+                            <p class="text-sm text-gray-300">Divided Opinions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thematic Analysis -->
+            <div class="bg-gradient-to-r from-emerald-900 to-teal-900 bg-opacity-50 p-6 rounded-xl">
+                <h4 class="text-2xl font-bold text-emerald-300 mb-4 flex items-center justify-center">
+                    <span class="text-4xl mr-3">🎭</span>
+                    Thematic Significance
+                </h4>
+                <div class="space-y-4 text-gray-300">
+                    <p class="leading-relaxed">
+                        <strong class="text-teal-300">Family and Loyalty:</strong> Apolonia and Juan Tomás represent the strength of family bonds. Despite their fears and limitations, they stand by Kino during his darkest hours, offering shelter and support when others turn away.
+                    </p>
+                    <p class="leading-relaxed">
+                        <strong class="text-blue-300">Institutional Greed:</strong> The Priest and the Pearl Buyers embody the exploitation built into the social and economic systems. Both use their positions of authority to take advantage of Kino's discovery, thinking only of their own gain.
+                    </p>
+                    <p class="leading-relaxed">
+                        <strong class="text-purple-300">Economic Exploitation:</strong> The Pearl Buyers' conspiracy to undervalue Kino's pearl reveals the systematic oppression of the indigenous community. Their manipulation shows how the poor are kept poor by those in power.
+                    </p>
+                    <p class="leading-relaxed">
+                        <strong class="text-pink-300">Community Dynamics:</strong> Kino's people display the complexity of community relationships - celebrating together in joy, supporting in crisis, yet also harboring jealousy and judgment. Their mixed reactions mirror the dual nature of human society.
+                    </p>
+                    <p class="leading-relaxed">
+                        <strong class="text-emerald-300">Cultural Identity:</strong> The Native Indians' creative songs and traditions represent their rich cultural heritage, showing that despite poverty and oppression, they maintain their identity and collective spirit through art and music.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-400 pb-8">
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-lg mb-2">📚 Study Guide: The Pearl by John Steinbeck</p>
+                <p class="text-sm">Character Analysis - Community & Society</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section with fade-in animation
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.remove('hidden');
+            selectedSection.classList.add('fade-in');
+            
+            // Scroll to top of section
+            selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Show overview section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('overview');
+        });
+    </script>
+</body>
+</html>
