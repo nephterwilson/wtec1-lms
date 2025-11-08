@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertebrates and Invertebrates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.6s ease-in; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .shimmer-card { position: relative; overflow: hidden; }
+    .shimmer-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    .shimmer-card:hover::before { left: 100%; }
+    .pulse-icon { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:.6;} }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8 max-w-7xl">
+
+    <!-- Header -->
+    <header class="text-center mb-12 fade-in">
+      <div class="inline-block mb-6">
+        <div class="text-6xl mb-4 pulse-icon">🐾</div>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+        Vertebrates and Invertebrates
+      </h1>
+      <p class="text-xl text-gray-300 mb-2">Understanding Animal Classification and Adaptations</p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <button onclick="showSection('intro')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 rounded-xl shadow-lg transition">Introduction</button>
+        <button onclick="showSection('invertebrates')" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 rounded-xl shadow-lg transition">Invertebrates</button>
+        <button onclick="showSection('vertebrates')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 rounded-xl shadow-lg transition">Vertebrates</button>
+        <button onclick="showSection('structure')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 rounded-xl shadow-lg transition">Internal Structure</button>
+        <button onclick="showSection('fish')" class="px-6 py-3 bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-700 hover:to-blue-800 rounded-xl shadow-lg transition">Locomotion in Fish</button>
+        <button onclick="showSection('birds')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-red-700 hover:from-pink-700 hover:to-red-800 rounded-xl shadow-lg transition">Locomotion in Birds</button>
+        <button onclick="showSection('mammals')" class="px-6 py-3 bg-gradient-to-r from-lime-600 to-green-700 hover:from-lime-700 hover:to-green-800 rounded-xl shadow-lg transition">Locomotion in Mammals</button>
+      </div>
+    </header>
+
+    <!-- Introduction -->
+    <section id="intro" class="lesson-section fade-in">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
+        Introduction to Animal Classification
+      </h2>
+      <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-8 rounded-2xl border border-blue-500 shadow-2xl">
+        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+          Animals are classified into two broad groups based on the presence or absence of a backbone.
+        </p>
+        <ul class="text-gray-300 space-y-3 text-lg">
+          <li><strong>Vertebrates:</strong> Animals with a backbone.</li>
+          <li><strong>Invertebrates:</strong> Animals without a backbone.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Invertebrates -->
+    <section id="invertebrates" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+        Invertebrates
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Insects -->
+        <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 p-6 rounded-xl border border-pink-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🐝</div>
+          <h4 class="text-xl font-bold text-pink-300 mb-3">Insects</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Body: Head, thorax, abdomen.</li>
+            <li>• 3 pairs of legs, antennae, compound eyes.</li>
+            <li>• Examples: Grasshopper, butterfly, bees.</li>
+          </ul>
+        </div>
+
+        <!-- Nematodes -->
+        <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 p-6 rounded-xl border border-red-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🪱</div>
+          <h4 class="text-xl font-bold text-red-300 mb-3">Nematodes</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Cylindrical, unsegmented bodies.</li>
+            <li>• Sexual and asexual reproduction.</li>
+            <li>• Examples: Hookworms, filarial worms.</li>
+          </ul>
+        </div>
+
+        <!-- Annelids -->
+        <div class="shimmer-card bg-gradient-to-br from-rose-900 to-slate-900 p-6 rounded-xl border border-rose-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🪳</div>
+          <h4 class="text-xl font-bold text-rose-300 mb-3">Annelids</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Segmented, cylindrical bodies.</li>
+            <li>• Capable of regeneration.</li>
+            <li>• Examples: Earthworm, leech, lugworm.</li>
+          </ul>
+        </div>
+
+        <!-- Crustaceans -->
+        <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 p-6 rounded-xl border border-orange-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🦀</div>
+          <h4 class="text-xl font-bold text-orange-300 mb-3">Crustaceans</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Hard exoskeleton, cephalothorax + abdomen.</li>
+            <li>• Two pairs of antennae, pincers.</li>
+            <li>• Examples: Crab, lobster, shrimp.</li>
+          </ul>
+        </div>
+
+        <!-- Arachnids -->
+        <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 p-6 rounded-xl border border-purple-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🕷️</div>
+          <h4 class="text-xl font-bold text-purple-300 mb-3">Arachnids</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Cephalothorax and abdomen.</li>
+            <li>• Four pairs of legs, no antennae.</li>
+            <li>• Examples: Spiders, ticks, scorpions.</li>
+          </ul>
+        </div>
+
+        <!-- Molluscs -->
+        <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 p-6 rounded-xl border border-indigo-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🐚</div>
+          <h4 class="text-xl font-bold text-indigo-300 mb-3">Molluscs</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Soft bodies, often with shells.</li>
+            <li>• Muscular foot, tentacles.</li>
+            <li>• Examples: Snails, oysters, octopus.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vertebrates -->
+    <section id="vertebrates" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-300 to-lime-300 bg-clip-text text-transparent">
+        Vertebrates
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="shimmer-card bg-gradient-to-br from-teal-900 to-slate-900 p-6 rounded-xl border border-teal-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🐠</div>
+          <h4 class="text-xl font-bold text-teal-300 mb-3">Fish</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Live in water, have scales and gills.</li>
+            <li>• Cold-blooded, external fertilization.</li>
+            <li>• Examples: Tilapia, sharks, lungfish.</li>
+          </ul>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 p-6 rounded-xl border border-cyan-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🐸</div>
+          <h4 class="text-xl font-bold text-cyan-300 mb-3">Amphibians</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Live on land and water.</li>
+            <li>• Moist skin, breathe through lungs/skin.</li>
+            <li>• Examples: Frogs, toads, newts.</li>
+          </ul>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 p-6 rounded-xl border border-yellow-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🐍</div>
+          <h4 class="text-xl font-bold text-yellow-300 mb-3">Reptiles</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Covered in scales, cold-blooded.</li>
+            <li>• Lay eggs, breathe via lungs.</li>
+            <li>• Examples: Snakes, lizards, crocodiles.</li>
+          </ul>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 p-6 rounded-xl border border-pink-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🕊️</div>
+          <h4 class="text-xl font-bold text-pink-300 mb-3">Birds</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Covered in feathers, have wings and beaks.</li>
+            <li>• Warm-blooded, lay eggs.</li>
+            <li>• Examples: Hawks, ostriches, penguins.</li>
+          </ul>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 p-6 rounded-xl border border-red-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🐘</div>
+          <h4 class="text-xl font-bold text-red-300 mb-3">Mammals</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Have fur, mammary glands, live births.</li>
+            <li>• Warm-blooded, internal fertilization.</li>
+            <li>• Examples: Humans, cats, whales.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+        <!-- Internal Structure of Vertebrates -->
+    <section id="structure" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-lime-400 bg-clip-text text-transparent">
+        Internal Structure of Vertebrates
+      </h2>
+
+      <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-8 rounded-2xl border border-yellow-500 shadow-2xl text-gray-300 text-lg leading-relaxed space-y-6">
+        <p>
+          Vertebrates share specialized internal systems that support survival, movement, and vital life processes such as respiration, circulation, and reproduction. Each class of vertebrates has unique structural adaptations suited to its environment and lifestyle.
+        </p>
+
+        <!-- Fish -->
+        <div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-2">🐟 Fish</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Locomotion:</strong> Use fins and a swim bladder for balance and movement in water.</li>
+            <li><strong>Circulation:</strong> Heart with <strong>two chambers</strong> (one atrium, one ventricle) pumps blood in a single circuit.</li>
+            <li><strong>Respiration:</strong> Gills with thin filaments extract oxygen from water efficiently.</li>
+            <li><strong>Reproduction:</strong> Most lay eggs; males release milt to fertilize eggs externally.</li>
+          </ul>
+        </div>
+
+        <!-- Amphibians -->
+        <div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-2">🐸 Amphibians</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Circulation:</strong> Heart with <strong>three chambers</strong> (two auricles, one ventricle).</li>
+            <li><strong>Respiration:</strong> Exchange gases through both <strong>lungs and moist skin</strong>.</li>
+            <li><strong>Adaptation:</strong> Dual life — can live both on land and in water.</li>
+          </ul>
+        </div>
+
+        <!-- Reptiles -->
+        <div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-2">🐍 Reptiles</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Circulation:</strong> Heart with <strong>three chambers</strong> (some species have a partial septum for better blood separation).</li>
+            <li><strong>Respiration:</strong> Use <strong>lungs</strong> for breathing; aquatic reptiles can divert blood flow when underwater.</li>
+            <li><strong>Adaptation:</strong> Scaly skin prevents water loss and allows survival in dry habitats.</li>
+          </ul>
+        </div>
+
+        <!-- Birds -->
+        <div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-2">🦅 Birds</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Locomotion:</strong> <strong>Hollow bones</strong> make the body lightweight for flight.</li>
+            <li><strong>Respiration:</strong> <strong>Lungs and air sacs</strong> ensure a continuous flow of air during flight.</li>
+            <li><strong>Circulation:</strong> <strong>Four-chambered heart</strong> completely separates oxygenated and deoxygenated blood for efficient metabolism.</li>
+          </ul>
+        </div>
+
+        <!-- Mammals -->
+        <div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-2">🦴 Mammals</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Circulation:</strong> <strong>Four-chambered heart</strong> ensures complete separation of blood types for efficient oxygen delivery.</li>
+            <li><strong>Respiration:</strong> Air passes through <strong>nostrils, trachea, bronchi, alveoli</strong>, and a <strong>diaphragm</strong> assists in breathing.</li>
+            <li><strong>Adaptation:</strong> Warm-blooded with complex systems that maintain constant body temperature.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Locomotion in Fish -->
+    <section id="fish" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+        Locomotion in Fish
+      </h2>
+
+      <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-8 rounded-2xl border border-blue-500 shadow-2xl text-gray-300 text-lg leading-relaxed space-y-6">
+        <p>
+          Fish are highly adapted to aquatic movement through specialized body structures and coordinated muscle activity that allow efficient swimming and maneuvering in water.
+        </p>
+
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-2">Structures for Movement</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Fins:</strong> Propel and steer the fish during swimming.</li>
+            <li><strong>Swim bladder:</strong> Regulates buoyancy to maintain desired depth.</li>
+            <li><strong>Block muscles:</strong> Contract rhythmically to generate propulsion waves.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-2">Forward Movement</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Tail muscles on opposite sides contract alternately, producing side-to-side motion that drives the fish forward.</li>
+            <li>Water expelled from the mouth helps to push the fish in the opposite direction, aiding propulsion.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-2">Body Position Control</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Yawing:</strong> Side-to-side swinging of the head and tail is controlled by the dorsal and anal (median) fins.</li>
+            <li><strong>Rolling:</strong> Prevented by paired and median fins working together for stability.</li>
+            <li><strong>Pitching:</strong> Up-and-down body motion controlled by the pectoral (paired) fins.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-2">Other Adaptations for Efficient Swimming</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Fins can spread or flatten to adjust swimming speed and direction.</li>
+            <li>The swim bladder adjusts buoyancy by changing gas volume, allowing the fish to rise or sink easily.</li>
+            <li>A flexible vertebral column allows bending and turning during movement.</li>
+            <li>A streamlined body shape minimizes water resistance and turbulence.</li>
+            <li>Overlapping scales and a mucus-covered skin reduce drag and protect the fish from frictional damage.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+       <!-- Locomotion in Birds -->
+    <section id="birds" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+        Locomotion in Birds
+      </h2>
+
+      <div class="bg-gradient-to-br from-pink-900 to-slate-900 p-8 rounded-2xl border border-pink-500 shadow-2xl text-gray-300 text-lg leading-relaxed space-y-6">
+        <p>
+          Birds use wings, feathers, and body adaptations for flight and other forms of locomotion.
+        </p>
+
+        <div>
+          <h3 class="text-2xl font-bold text-pink-300 mb-2">Feather Functions</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Provide lift, reduce drag, and insulate body.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-pink-300 mb-2">Types of Feathers</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Flight Feathers:</strong> Used for flying and lift generation.</li>
+            <li><strong>Down Feathers:</strong> Provide insulation close to the skin.</li>
+            <li><strong>Contour Feathers:</strong> Give shape and appearance to the body.</li>
+            <li><strong>Filoplume Feathers:</strong> Function in sensory detection.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-pink-300 mb-2">Feather Structure</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Quill:</strong> Attaches the feather to body muscles.</li>
+            <li><strong>Shaft:</strong> Supports the vane and provides strength.</li>
+            <li><strong>Vane:</strong> Contains interlocking barbs and barbules to form a smooth surface for flight.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-pink-300 mb-2">Flight Movements</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Flapping:</strong> Downstroke produces lift; upstroke allows recovery.</li>
+            <li><strong>Gliding:</strong> Wings spread to descend smoothly using gravity and air currents.</li>
+            <li><strong>Soaring:</strong> Uses rising warm air currents to gain height with minimal effort.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-pink-300 mb-2">Flight Adaptations</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Birds have a streamlined body to overcome air resistance and enable smooth forward motion during flight.</li>
+            <li>They possess strong pectoral muscles (especially the <em>pectoralis major</em>) to power the downstroke, providing lift and thrust.</li>
+            <li>Air sacs increase oxygen supply and make the body lighter for sustained flight.</li>
+            <li>Hollow bones reduce body weight while maintaining strength, aiding in flight efficiency.</li>
+            <li>Feathers are lightweight and flexible, reducing drag; flight feathers interlock to form a continuous surface for lift.</li>
+            <li>Sharp vision helps detect obstacles, prey, and navigate during long flights.</li>
+            <li>The <em>keel</em> (extended breastbone) offers a wide surface for flight muscle attachment, boosting wing power.</li>
+            <li>A rigid skeleton with fused bones minimizes movement and provides stability in flight.</li>
+            <li>Birds have a high metabolic rate, producing energy needed for intense flight activity.</li>
+            <li>A four-chambered heart completely separates oxygenated and deoxygenated blood for efficient oxygen delivery to muscles.</li>
+            <li>Lightweight beaks replace heavy jaws and teeth, reducing total weight for easier flight.</li>
+            <li>A well-developed cerebellum and inner ear ensure excellent coordination, balance, and control of movement while flying.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+        <!-- Locomotion in Mammals -->
+    <section id="mammals" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-lime-400 to-green-400 bg-clip-text text-transparent">
+        Locomotion in Mammals
+      </h2>
+
+      <div class="bg-gradient-to-br from-lime-900 to-slate-900 p-8 rounded-2xl border border-lime-500 shadow-2xl text-gray-300 text-lg leading-relaxed space-y-6">
+        <p>
+          Mammals move using limbs adapted for various environments such as land, air, or water.
+        </p>
+
+        <div>
+          <h3 class="text-2xl font-bold text-lime-300 mb-2">Types of Limbs</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Legs:</strong> Used for walking, running, and jumping.</li>
+            <li><strong>Wings (Bats):</strong> Modified forelimbs for flight.</li>
+            <li><strong>Flippers (Whales):</strong> Adapted for swimming in aquatic environments.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-lime-300 mb-2">Limb Structure</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Bones:</strong> Provide structural support and framework for movement.</li>
+            <li><strong>Muscles:</strong> Enable movement by contracting and relaxing.</li>
+            <li><strong>Tendons:</strong> Connect muscles to bones and transfer force efficiently.</li>
+            <li><strong>Ligaments:</strong> Stabilize joints and prevent dislocation during motion.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-lime-300 mb-2">Movement Mechanism</h3>
+          <p>
+            Muscles contract and relax alternately to move bones and propel the body forward. The interaction between muscles, bones, and joints allows smooth, controlled, and coordinated movement.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-lime-300 mb-2">Adaptations for Locomotion</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Mammals have a <strong>rigid skeleton</strong> that provides structural support and serves as a framework for muscle attachment, enabling powerful movement.</li>
+            <li><strong>Antagonistic muscles</strong> (such as biceps and triceps) work in pairs — one contracts while the other relaxes — allowing precise control of limb motion.</li>
+            <li>A <strong>variety of joints</strong> (hinge, pivot, and ball-and-socket) enable a wide range of movement, including bending, rotation, and swinging.</li>
+            <li>The <strong>vertebral column</strong> consists of interlocking bones that provide flexibility and agility, especially during running, climbing, or bending.</li>
+            <li><strong>Tough tendons</strong> connect muscles to bones, ensuring efficient transfer of muscle power for movement without energy loss.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Optional Diagram -->
+    <section id="diagram" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-teal-300 to-blue-300 bg-clip-text text-transparent">
+        Diagram Section (For Live Class)
+      </h2>
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-teal-500 shadow-2xl text-center">
+        <div class="text-6xl mb-4">🦴</div>
+        <p class="text-gray-300 text-lg">[ Insert Vertebrate vs. Invertebrate Diagram Here ]</p>
+        <p class="text-gray-400 mt-2 text-sm">Use this area during class to display, annotate, or demonstrate diagrams live.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.lesson-section').forEach(section => section.classList.add('hidden'));
+      const section = document.getElementById(id);
+      section.classList.remove('hidden');
+      section.classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
+
+         

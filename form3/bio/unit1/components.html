@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components of an Ecosystem - The Physical World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in { animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .card:hover { transform: translateY(-5px); transition: 0.3s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-950 via-emerald-950 to-teal-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <header class="text-center mb-12">
+            <div class="text-6xl mb-4">🌍</div>
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">Components of an Ecosystem</h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding The Physical World</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="show('overview')" class="px-6 py-3 bg-teal-600 hover:bg-teal-700 rounded-xl transition shadow-lg">Overview</button>
+                <button onclick="show('physical')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl transition shadow-lg">Physical Factors</button>
+                <button onclick="show('plants')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl transition shadow-lg">Plant Communities</button>
+                <button onclick="show('animals')" class="px-6 py-3 bg-amber-600 hover:bg-amber-700 rounded-xl transition shadow-lg">Animal Communities</button>
+                <button onclick="show('influences')" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl transition shadow-lg">Physical Influences</button>
+                <button onclick="show('lifeforms')" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-xl transition shadow-lg">Life Forms</button>
+            </div>
+        </header>
+
+        <!-- Overview -->
+        <section id="overview" class="section">
+            <h2 class="text-4xl font-bold mb-8 text-center text-teal-400">Ecosystem Overview</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-teal-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-teal-300 mb-4">The Three Main Components</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto mb-6">Ecosystems are complex systems where living organisms interact with their physical environment. Understanding these components helps us comprehend how life thrives in different habitats.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-blue-500 card">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🌡️</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Physical Factors</h3>
+                        <p class="text-blue-200 text-sm">(Abiotic Components)</p>
+                    </div>
+                    <p class="text-gray-300 text-center">Non-living elements that affect survival, behavior, and distribution of organisms</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-green-500 card">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🌿</div>
+                        <h3 class="text-2xl font-bold text-green-300">Plant Communities</h3>
+                        <p class="text-green-200 text-sm">(Producers)</p>
+                    </div>
+                    <p class="text-gray-300 text-center">Photosynthetic organisms that form the base of food chains</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-amber-500 card">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-3">🦁</div>
+                        <h3 class="text-2xl font-bold text-amber-300">Animal Communities</h3>
+                        <p class="text-amber-200 text-sm">(Consumers & Decomposers)</p>
+                    </div>
+                    <p class="text-gray-300 text-center">Species that depend on plants or other animals for food</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500">
+                <h3 class="text-2xl font-bold text-teal-300 mb-4 text-center">🔄 How Components Interact</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="font-bold text-teal-300 text-lg mb-3">Energy Flow</h4>
+                        <p class="text-gray-300 text-sm">Physical factors like sunlight enable plants to produce energy through photosynthesis. This energy flows through animal communities as they consume plants and each other.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="font-bold text-teal-300 text-lg mb-3">Nutrient Cycling</h4>
+                        <p class="text-gray-300 text-sm">Physical factors like soil and water provide nutrients. Animals and decomposers break down organic matter, returning nutrients to the physical environment for plants to use again.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="font-bold text-teal-300 text-lg mb-3">Habitat Formation</h4>
+                        <p class="text-gray-300 text-sm">Physical factors create the foundation for habitats. Plant communities modify these habitats, providing shelter and food for animal communities.</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                        <h4 class="font-bold text-teal-300 text-lg mb-3">Adaptation & Evolution</h4>
+                        <p class="text-gray-300 text-sm">Physical factors drive natural selection. Both plant and animal communities develop adaptations that allow them to thrive in specific environmental conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Physical Factors -->
+        <section id="physical" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-blue-400">Physical Factors (Abiotic Factors)</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🌡️</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Non-Living Elements</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">Physical factors are the non-living elements in an ecosystem that affect the survival, behavior, and distribution of living organisms.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-amber-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-amber-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-amber-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🏔️</div>
+                        <div>
+                            <h4 class="font-bold text-amber-300 text-xl mb-2">Soil</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Provides essential nutrients for plant growth</li>
+                                <li>• Acts as a habitat for microorganisms and small animals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🌧️</div>
+                        <div>
+                            <h4 class="font-bold text-blue-300 text-xl mb-2">Rainfall</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Supplies water needed for all living organisms to survive</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-cyan-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">💨</div>
+                        <div>
+                            <h4 class="font-bold text-cyan-300 text-xl mb-2">Oxygen Concentration</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Supports respiration in both animals and plants</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-yellow-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">☀️</div>
+                        <div>
+                            <h4 class="font-bold text-yellow-300 text-xl mb-2">Light</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Enables photosynthesis in plants</li>
+                                <li>• Influences animal behavior (feeding, breeding)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">📊</div>
+                        <div>
+                            <h4 class="font-bold text-purple-300 text-xl mb-2">Atmospheric Pressure</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Affects breathing processes</li>
+                                <li>• Influences organism distribution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-teal-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">💧</div>
+                        <div>
+                            <h4 class="font-bold text-teal-300 text-xl mb-2">Humidity</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Impacts water balance in organisms</li>
+                                <li>• Affects transpiration in plants and animals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-700 to-slate-900 rounded-xl p-6 shadow-2xl border border-slate-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-slate-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🌬️</div>
+                        <div>
+                            <h4 class="font-bold text-slate-300 text-xl mb-2">Wind Speed</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Affects seed dispersal</li>
+                                <li>• Influences animal movement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-indigo-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🧂</div>
+                        <div>
+                            <h4 class="font-bold text-indigo-300 text-xl mb-2">Salinity</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Determines organism types that can survive</li>
+                                <li>• Especially important in aquatic habitats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-pink-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🧪</div>
+                        <div>
+                            <h4 class="font-bold text-pink-300 text-xl mb-2">pH (Power of Hydrogen)</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Influences chemical environment</li>
+                                <li>• Affects plant growth and microbial activity</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plant Communities -->
+        <section id="plants" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-green-400">Plant Communities</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🌿</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Primary Producers</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">Plant communities consist of populations of different plant species living and interacting in a specific area. They are the primary producers in ecosystems.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <h3 class="text-2xl font-bold text-green-300 mb-6">🔑 Key Characteristics</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-emerald-500">
+                        <div class="flex items-start">
+                            <div class="bg-emerald-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-xl flex-shrink-0">🦠</div>
+                            <div>
+                                <h4 class="font-bold text-emerald-300 text-lg mb-2">Diverse Photosynthetic Organisms</h4>
+                                <p class="text-gray-300">Include all photosynthetic organisms such as green algae, spirogyra, and plankton in aquatic ecosystems</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-lime-500">
+                        <div class="flex items-start">
+                            <div class="bg-lime-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-xl flex-shrink-0">☀️</div>
+                            <div>
+                                <h4 class="font-bold text-lime-300 text-lg mb-2">Food Production</h4>
+                                <p class="text-gray-300">Use sunlight, carbon dioxide, water, and mineral salts to produce food through photosynthesis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-teal-500">
+                        <div class="flex items-start">
+                            <div class="bg-teal-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-xl flex-shrink-0">⛓️</div>
+                            <div>
+                                <h4 class="font-bold text-teal-300 text-lg mb-2">Foundation of Food Chains</h4>
+                                <p class="text-gray-300">Form the base of food chains by supplying energy to other organisms</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-start">
+                            <div class="bg-green-600 rounded-full w-10 h-10 flex items-center justify-center mr-4 text-xl flex-shrink-0">🏠</div>
+                            <div>
+                                <h4 class="font-bold text-green-300 text-lg mb-2">Habitat & Food Provider</h4>
+                                <p class="text-gray-300">Provide habitats and food for various animal species</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animal Communities -->
+        <section id="animals" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-amber-400">Animal Communities</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-amber-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🦁</div>
+                    <h3 class="text-3xl font-bold text-amber-300 mb-4">Consumers & Decomposers</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">Animal communities are composed of various species of animals that depend on plants or other animals for food, as they cannot produce their own food.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🦌</div>
+                        <div>
+                            <h4 class="font-bold text-green-300 text-xl mb-2">Herbivores</h4>
+                            <p class="text-gray-300 text-sm mb-2">Feed directly on plants</p>
+                            <p class="text-gray-400 text-sm italic">Examples: cows, deer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🦁</div>
+                        <div>
+                            <h4 class="font-bold text-red-300 text-xl mb-2">Carnivores</h4>
+                            <p class="text-gray-300 text-sm mb-2">Feed on other animals</p>
+                            <p class="text-gray-400 text-sm italic">Examples: lions, eagles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-amber-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-amber-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🐻</div>
+                        <div>
+                            <h4 class="font-bold text-amber-300 text-xl mb-2">Omnivores</h4>
+                            <p class="text-gray-300 text-sm mb-2">Consume both plants and animals</p>
+                            <p class="text-gray-400 text-sm italic">Examples: humans, bears</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🪱</div>
+                        <div>
+                            <h4 class="font-bold text-purple-300 text-xl mb-2">Parasites</h4>
+                            <p class="text-gray-300 text-sm mb-2">Live on/inside a host, causing harm</p>
+                            <p class="text-gray-400 text-sm italic">Examples: ticks, tapeworms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-teal-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🍄</div>
+                        <div>
+                            <h4 class="font-bold text-teal-300 text-xl mb-2">Saprophytes/Decomposers</h4>
+                            <p class="text-gray-300 text-sm mb-2">Break down dead organic matter</p>
+                            <p class="text-gray-400 text-sm italic">Examples: bacteria, fungi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🪲</div>
+                        <div>
+                            <h4 class="font-bold text-blue-300 text-xl mb-2">Detritivores</h4>
+                            <p class="text-gray-300 text-sm mb-2">Feed on decomposing material</p>
+                            <p class="text-gray-400 text-sm italic">Examples: beetles, earthworms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-orange-600 rounded-full w-12 h-12 flex items-center justify-center mr-4 text-2xl flex-shrink-0">🦅</div>
+                        <div>
+                            <h4 class="font-bold text-orange-300 text-xl mb-2">Scavengers</h4>
+                            <p class="text-gray-300 text-sm mb-2">Feed on dead animals killed by others</p>
+                            <p class="text-gray-400 text-sm italic">Examples: vultures, hyenas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Physical Influences -->
+        <section id="influences" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-purple-400">Physical Factors Influencing Living Things</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🌊</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Ecosystem-Specific Influences</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">Different abiotic factors vary between aquatic and terrestrial ecosystems, influencing the type of organisms found and their adaptations.</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-gradient-to-br from-amber-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-amber-500">
+                    <h4 class="font-bold text-amber-300 text-xl mb-3 flex items-center">
+                        <span class="text-2xl mr-3">🏔️</span> Soil (Edaphic Factors)
+                    </h4>
+                    <ul class="text-gray-300 space-y-2 ml-10">
+                        <li>• Provides food and shelter for many organisms</li>
+                        <li>• Supports plants by supplying nutrients, water, and physical root support</li>
+                        <li>• Soil fertility affects the amount of food produced in an ecosystem</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500">
+                    <h4 class="font-bold text-yellow-300 text-xl mb-3 flex items-center">
+                        <span class="text-2xl mr-3">☀️</span> Light Intensity
+                    </h4>
+                    <ul class="text-gray-300 space-y-2 ml-10">
+                        <li>• In freshwater ecosystems, light decreases with water depth; shallow areas receive more light</li>
+                        <li>• In tropical savannas, light intensity is generally moderate to high, supporting robust plant growth</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500">
+                    <h4 class="font-bold text-blue-300 text-xl mb-3 flex items-center">
+                        <span class="text-2xl mr-3">💧</span> Water
+                    </h4>
+                    <ul class="text-gray-300 space-y-2 ml-10">
+                        <li>• Freshwater ecosystems have low salt concentration and neutral pH, supporting diverse life</li>
+                        <li>• Tropical savannas experience seasonal variation in water availability</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500">
+                    <h4 class="font-bold text-red-300 text-xl mb-3 flex items-center">
+                        <span class="text-2xl mr-3">🌡️</span> Temperature
+                    </h4>
+                    <ul class="text-gray-300 space-y-2 ml-10">
+                        <li>• Varies with depth in freshwater lakes, warmer near the surface and cooler below</li>
+                        <li>• Tropical ecosystems have relatively stable moderate temperatures influenced by altitude</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500">
+                    <h4 class="font-bold text-pink-300 text-xl mb-3 flex items-center">
+                        <span class="text-2xl mr-3">🧪</span> pH
+                    </h4>
+                    <ul class="text-gray-300 space-y-2 ml-10">
+                        <li>• Freshwater ecosystems mostly have neutral pH, ideal for many organisms</li>
+                        <li>• Tropical ecosystems have varying pH but generally support neutral habitats</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500">
+                    <h4 class="font-bold text-teal-300 text-xl mb-3 flex items-center">
+                        <span class="text-2xl mr-3">💨</span> Humidity
+                    </h4>
+                    <ul class="text-gray-300 space-y-2 ml-10">
+                        <li>• High humidity in freshwater ecosystems due to evaporation</li>
+                        <li>• In tropical savannas, high humidity occurs mainly during rainy seasons</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500">
+                    <h4 class="font-bold text-green-300 text-xl mb-3 flex items-center">
+                        <span class="text-2xl mr-3">⚗️</span> Mineral Salts
+                    </h4>
+                    <ul class="text-gray-300 space-y-2 ml-10">
+                        <li>• Nutrient levels vary by location, often fertile near shores in aquatic systems</li>
+                        <li>• Tropical savannas have fertile soils supporting diverse plants</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500">
+                    <h4 class="font-bold text-cyan-300 text-xl mb-3 flex items-center">
+                        <span class="text-2xl mr-3">💨</span> Oxygen Amount
+                    </h4>
+                    <ul class="text-gray-300 space-y-2 ml-10">
+                        <li>• Oxygen concentration decreases with depth in lakes</li>
+                        <li>• Generally plentiful in tropical savannas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Life Forms -->
+        <section id="lifeforms" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-cyan-400">Life Forms in Aquatic and Terrestrial Ecosystems</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🐠</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Diverse Organisms Across Ecosystems</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">Different ecosystems support distinct plants and animals adapted to their environments.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Aquatic Ecosystems -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-3">🌊</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Aquatic Ecosystems</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold text-blue-300 text-lg mb-3 flex items-center">
+                                <span class="text-xl mr-2">🐠</span> Animal Examples
+                            </h4>
+                            <div class="text-gray-300 text-sm space-y-1">
+                                <p>• Earthworms</p>
+                                <p>• Water insects</p>
+                                <p>• Fish</p>
+                                <p>• Crabs</p>
+                                <p>• Snakes</p>
+                                <p>• Crocodiles</p>
+                                <p>• Hippopotamuses</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold text-green-300 text-lg mb-3 flex items-center">
+                                <span class="text-xl mr-2">🌿</span> Plant Examples
+                            </h4>
+                            <div class="text-gray-300 text-sm space-y-1">
+                                <p>• Plankton</p>
+                                <p>• Reeds</p>
+                                <p>• Water hyacinths</p>
+                                <p>• Water lilies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terrestrial Ecosystems -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-3">🏞️</div>
+                        <h3 class="text-3xl font-bold text-green-300">Terrestrial Ecosystems</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold text-green-300 text-lg mb-3 flex items-center">
+                                <span class="text-xl mr-2">🌍</span> Key Characteristics
+                            </h4>
+                            <div class="text-gray-300 text-sm space-y-2">
+                                <p>• Found on land</p>
+                                <p>• Organisms adapted to rainfall conditions</p>
+                                <p>• Some adapted to dry desert conditions</p>
+                                <p>• Include diverse plants and animals suited to the terrestrial environment</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold text-amber-300 text-lg mb-3 flex items-center">
+                                <span class="text-xl mr-2">🦁</span> Common Adaptations
+                            </h4>
+                            <div class="text-gray-300 text-sm space-y-2">
+                                <p>• Water conservation mechanisms</p>
+                                <p>• Temperature regulation abilities</p>
+                                <p>• Structural adaptations for land life</p>
+                                <p>• Specialized feeding strategies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function show(section) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(sec => {
+                sec.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(section).classList.remove('hidden');
+            document.getElementById(section).classList.add('fade-in');
+            
+            // Scroll to section
+            document.getElementById(section).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Show overview by default
+        show('overview');
+    </script>
+</body>
+</html>

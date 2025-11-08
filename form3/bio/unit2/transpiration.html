@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transpiration in Plants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.6s ease-in; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .shimmer-card { position: relative; overflow: hidden; }
+    .shimmer-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    .shimmer-card:hover::before { left: 100%; }
+    .pulse-icon { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:.6;} }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-950 via-emerald-950 to-slate-950 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8 max-w-7xl">
+
+    <!-- Header -->
+    <header class="text-center mb-12 fade-in">
+      <div class="inline-block mb-6">
+        <div class="text-6xl mb-4 pulse-icon">💨</div>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 via-lime-400 to-emerald-400 bg-clip-text text-transparent">
+        Transpiration in Plants
+      </h1>
+      <p class="text-xl text-gray-300 mb-2">How Plants Lose Water and Maintain Water Balance</p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <button onclick="showSection('definition')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-lime-700 hover:from-green-700 hover:to-lime-800 rounded-xl shadow-lg transition">Definition</button>
+        <button onclick="showSection('stream')" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 rounded-xl shadow-lg transition">Transpiration Stream</button>
+        <button onclick="showSection('forces')" class="px-6 py-3 bg-gradient-to-r from-teal-600 to-green-700 hover:from-teal-700 hover:to-green-800 rounded-xl shadow-lg transition">Forces Involved</button>
+        <button onclick="showSection('pull')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-teal-700 hover:from-cyan-700 hover:to-teal-800 rounded-xl shadow-lg transition">Transpiration Pull</button>
+        <button onclick="showSection('importance')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 rounded-xl shadow-lg transition">Importance</button>
+        <button onclick="showSection('factors')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 rounded-xl shadow-lg transition">Factors</button>
+      </div>
+    </header>
+
+    <!-- Definition Section -->
+    <section id="definition" class="lesson-section fade-in">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-300 to-lime-300 bg-clip-text text-transparent">
+        Definition of Transpiration
+      </h2>
+
+      <div class="bg-gradient-to-br from-green-900 to-slate-900 p-8 rounded-2xl border border-green-500 shadow-2xl">
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          Transpiration is the evaporation of water from plants into the atmosphere, mainly through the leaves. It helps in water regulation, cooling, and nutrient transport.
+        </p>
+
+        <ul class="text-gray-300 space-y-3">
+          <li>• Occurs mainly through stomata on the leaves.</li>
+          <li>• Water is lost in the form of water vapour.</li>
+          <li>• Helps cool the plant and move nutrients upward.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Transpiration Stream -->
+    <section id="stream" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-teal-300 to-green-300 bg-clip-text text-transparent">
+        Transpiration Stream
+      </h2>
+
+      <div class="bg-gradient-to-br from-teal-900 to-slate-900 p-8 rounded-2xl border border-teal-500 shadow-2xl mb-8">
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          The transpiration stream is the continuous flow of water from roots to leaves, driven by evaporation from the aerial parts of the plant.
+        </p>
+
+        <ul class="text-gray-300 space-y-3">
+          <li>• Water is drawn from spongy mesophyll cells after evaporation.</li>
+          <li>• Adjacent cells replace lost water by osmosis from the xylem.</li>
+          <li>• Creates a continuous suction of water upward from the roots.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Forces Contributing -->
+    <section id="forces" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-400 to-lime-300 bg-clip-text text-transparent">
+        Forces Contributing to the Transpiration Stream
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="shimmer-card bg-gradient-to-br from-green-800 to-slate-900 p-6 rounded-xl border border-green-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🌿</div>
+          <h4 class="text-xl font-bold text-green-300 mb-3">Capillarity</h4>
+          <p class="text-sm text-gray-300">Water rises in narrow xylem vessels due to attraction to vessel walls.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-lime-800 to-slate-900 p-6 rounded-xl border border-lime-500 card-hover">
+          <div class="text-5xl mb-4 text-center">💧</div>
+          <h4 class="text-xl font-bold text-lime-300 mb-3">Cohesion & Adhesion</h4>
+          <p class="text-sm text-gray-300">Water molecules stick together and to the xylem walls, forming an unbroken column.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-emerald-800 to-slate-900 p-6 rounded-xl border border-emerald-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🌱</div>
+          <h4 class="text-xl font-bold text-emerald-300 mb-3">Root Pressure</h4>
+          <p class="text-sm text-gray-300">Osmotic pressure in roots pushes water upward into the xylem vessels.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transpiration Pull -->
+    <section id="pull" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-300 to-green-300 bg-clip-text text-transparent">
+        Transpiration Pull
+      </h2>
+
+      <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 border border-cyan-500 shadow-2xl">
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          Transpiration pull is the suction force that draws water upward from roots to leaves, initiated by evaporation from mesophyll cells.
+        </p>
+
+        <ul class="text-gray-300 space-y-3">
+          <li>• Evaporation from leaves creates osmotic movement of water.</li>
+          <li>• Generates negative pressure drawing water up the xylem.</li>
+          <li>• Works with cohesion and adhesion to maintain water flow.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Importance -->
+    <section id="importance" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-300 to-lime-300 bg-clip-text text-transparent">
+        Importance of Transpiration
+      </h2>
+
+      <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-8 rounded-2xl border border-yellow-500 shadow-2xl">
+        <ul class="text-gray-300 space-y-3 text-lg">
+          <li>• Cools the plant by evaporative water loss from leaves.</li>
+          <li>• Distributes mineral salts and nutrients throughout the plant.</li>
+          <li>• Maintains continuous water uptake from the roots.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Factors Affecting Transpiration -->
+    <section id="factors" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+        Factors Affecting the Rate of Transpiration
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-500 card-hover">
+          <h4 class="text-xl font-bold text-blue-300 mb-3">Temperature</h4>
+          <p class="text-sm text-gray-300">Higher temperatures increase evaporation and speed up transpiration.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 p-6 rounded-xl border border-cyan-500 card-hover">
+          <h4 class="text-xl font-bold text-cyan-300 mb-3">Humidity</h4>
+          <p class="text-sm text-gray-300">High humidity slows transpiration, while low humidity increases it.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-sky-900 to-slate-900 p-6 rounded-xl border border-sky-500 card-hover">
+          <h4 class="text-xl font-bold text-sky-300 mb-3">Air Movement</h4>
+          <p class="text-sm text-gray-300">Wind removes moist air near leaves, speeding up water loss.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-lime-900 to-slate-900 p-6 rounded-xl border border-lime-500 card-hover">
+          <h4 class="text-xl font-bold text-lime-300 mb-3">Light Intensity</h4>
+          <p class="text-sm text-gray-300">Bright light opens stomata, increasing water vapour loss.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-emerald-900 to-slate-900 p-6 rounded-xl border border-emerald-500 card-hover">
+          <h4 class="text-xl font-bold text-emerald-300 mb-3">Water Supply</h4>
+          <p class="text-sm text-gray-300">Limited water causes stomatal closure, reducing transpiration.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.lesson-section').forEach(s => s.classList.add('hidden'));
+      const section = document.getElementById(id);
+      section.classList.remove('hidden');
+      section.classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

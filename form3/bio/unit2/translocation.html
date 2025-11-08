@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Translocation and Transport Systems in Plants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.6s ease-in; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .shimmer-card { position: relative; overflow: hidden; }
+    .shimmer-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    .shimmer-card:hover::before { left: 100%; }
+    .pulse-icon { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:.6;} }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-green-950 via-emerald-950 to-slate-950 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8 max-w-7xl">
+
+    <!-- Header -->
+    <header class="text-center mb-12 fade-in">
+      <div class="inline-block mb-6">
+        <div class="text-6xl mb-4 pulse-icon">🌿</div>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 via-lime-400 to-emerald-400 bg-clip-text text-transparent">
+        Translocation and Transport Systems in Plants
+      </h1>
+      <p class="text-xl text-gray-300 mb-2">Understanding How Plants Move Water, Nutrients, and Food</p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <button onclick="showSection('translocation')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-lime-700 hover:from-green-700 hover:to-lime-800 rounded-xl shadow-lg transition">Translocation</button>
+        <button onclick="showSection('transport')" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 rounded-xl shadow-lg transition">Transport Systems</button>
+        <button onclick="showSection('diffusion')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-sky-700 hover:from-blue-700 hover:to-sky-800 rounded-xl shadow-lg transition">Diffusion</button>
+        <button onclick="showSection('osmosis')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-teal-700 hover:from-cyan-700 hover:to-teal-800 rounded-xl shadow-lg transition">Osmosis</button>
+        <button onclick="showSection('active')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 rounded-xl shadow-lg transition">Active Transport</button>
+      </div>
+    </header>
+
+    <!-- Translocation Section -->
+    <section id="translocation" class="lesson-section fade-in">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-300 to-lime-300 bg-clip-text text-transparent">Translocation</h2>
+
+      <div class="bg-gradient-to-br from-green-900 to-slate-900 p-8 rounded-2xl border border-green-500 shadow-2xl mb-8">
+        <div class="text-center mb-6">
+          <div class="text-6xl mb-4">🌾</div>
+          <h3 class="text-3xl font-bold text-green-300 mb-4">Movement of Food in Plants</h3>
+          <p class="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+            Translocation is the movement of manufactured food substances from the leaves to other parts of the plant. It mainly occurs in the phloem, where food passes through sieve tubes using energy supplied by companion cells.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="shimmer-card bg-gradient-to-br from-green-800 to-slate-900 p-6 rounded-xl border border-green-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🍃</div>
+          <h4 class="text-xl font-bold text-green-300 mb-2">Direction of Flow</h4>
+          <p class="text-sm text-gray-300">Food moves from leaves (where it’s made) to growing regions and storage organs like roots and fruits.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-lime-800 to-slate-900 p-6 rounded-xl border border-lime-500 card-hover">
+          <div class="text-5xl mb-4 text-center">⚡</div>
+          <h4 class="text-xl font-bold text-lime-300 mb-2">Energy Use</h4>
+          <p class="text-sm text-gray-300">Active transport by companion cells provides the energy needed to move sugars through phloem.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-emerald-800 to-slate-900 p-6 rounded-xl border border-emerald-500 card-hover">
+          <div class="text-5xl mb-4 text-center">🧪</div>
+          <h4 class="text-xl font-bold text-emerald-300 mb-2">Ringing Experiment</h4>
+          <p class="text-sm text-gray-300">Removing a ring of bark stops downward flow of food, causing swelling above the cut — proving translocation occurs in phloem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transport Systems -->
+    <section id="transport" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Transport Systems in Plants</h2>
+
+      <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-2xl p-8 border border-teal-500 shadow-2xl mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🚰</div>
+          <h3 class="text-3xl font-bold text-teal-300 mb-4">Three Main Processes</h3>
+          <p class="text-gray-300 text-lg">Plants move materials using three key processes: Diffusion, Osmosis, and Active Transport.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-500 card-hover text-center">
+          <div class="text-5xl mb-4">💨</div>
+          <h4 class="text-xl font-bold text-blue-300 mb-2">Diffusion</h4>
+          <p class="text-sm text-gray-300">Movement of particles from high to low concentration without energy use.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 p-6 rounded-xl border border-cyan-500 card-hover text-center">
+          <div class="text-5xl mb-4">💧</div>
+          <h4 class="text-xl font-bold text-cyan-300 mb-2">Osmosis</h4>
+          <p class="text-sm text-gray-300">Water moves through a semi-permeable membrane from high to low water potential.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 p-6 rounded-xl border border-yellow-500 card-hover text-center">
+          <div class="text-5xl mb-4">⚙️</div>
+          <h4 class="text-xl font-bold text-yellow-300 mb-2">Active Transport</h4>
+          <p class="text-sm text-gray-300">Uses energy to move materials against concentration gradients.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diffusion -->
+    <section id="diffusion" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Diffusion</h2>
+
+      <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-8 rounded-2xl border border-blue-500 shadow-2xl mb-8">
+        <p class="text-gray-300 text-lg leading-relaxed">
+          Diffusion is the passive movement of particles from a region of higher concentration to one of lower concentration. It’s essential for many processes such as gas exchange and nutrient movement.
+        </p>
+        <ul class="mt-6 space-y-3 text-gray-300">
+          <li>• Small particles diffuse faster than larger ones.</li>
+          <li>• Higher temperatures increase diffusion rate.</li>
+          <li>• Greater concentration difference increases speed.</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-2xl border border-indigo-500">
+        <h4 class="text-2xl font-bold text-indigo-300 mb-4">Significance of Diffusion</h4>
+        <ul class="text-gray-300 space-y-3">
+          <li>• Movement of food substances within plant cells.</li>
+          <li>• Uptake of oxygen and removal of carbon dioxide.</li>
+          <li>• Enables gas exchange for photosynthesis and respiration.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Osmosis -->
+    <section id="osmosis" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">Osmosis</h2>
+
+      <div class="bg-gradient-to-br from-cyan-900 to-slate-900 p-8 rounded-2xl border border-cyan-500 shadow-2xl mb-8">
+        <p class="text-gray-300 text-lg leading-relaxed">
+          Osmosis is the movement of water from a region of high water concentration to a region of low water concentration through a semi-permeable membrane.
+        </p>
+        <ul class="mt-6 space-y-3 text-gray-300">
+          <li>• Water enters root cells by osmosis.</li>
+          <li>• Maintains turgidity and support in plants.</li>
+          <li>• Guard cells use osmosis to open and close stomata.</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-2xl border border-cyan-600">
+        <h4 class="text-2xl font-bold text-cyan-300 mb-4">Osmotic Potential</h4>
+        <ul class="text-gray-300 space-y-3">
+          <li><strong>Hypertonic:</strong> High solute, low water potential — cells lose water.</li>
+          <li><strong>Hypotonic:</strong> Low solute, high water potential — cells gain water.</li>
+          <li><strong>Isotonic:</strong> Equal solute concentration — no net water movement.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Active Transport -->
+    <section id="active" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">Active Transport</h2>
+
+      <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-8 rounded-2xl border border-yellow-500 shadow-2xl mb-8">
+        <p class="text-gray-300 text-lg leading-relaxed">
+          Active transport is the movement of substances from a region of low concentration to high concentration using energy from respiration.
+        </p>
+        <ul class="mt-6 space-y-3 text-gray-300">
+          <li>• Phloem translocation uses active transport to move sugars.</li>
+          <li>• Roots absorb minerals like nitrates and magnesium.</li>
+          <li>• Enables storage tissues to accumulate nutrients.</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-2xl border border-amber-600">
+        <h4 class="text-2xl font-bold text-amber-300 mb-4">Significance of Active Transport</h4>
+        <ul class="text-gray-300 space-y-3">
+          <li>• Movement of food within the plant.</li>
+          <li>• Absorption of essential mineral salts.</li>
+          <li>• Accumulation of food reserves in storage organs.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.lesson-section').forEach(s => s.classList.add('hidden'));
+      const section = document.getElementById(id);
+      section.classList.remove('hidden');
+      section.classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

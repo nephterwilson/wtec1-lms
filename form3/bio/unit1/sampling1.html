@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Organisms and Their Habitat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in { animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .card:hover { transform: translateY(-5px); transition: 0.3s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-950 via-indigo-950 to-purple-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <header class="text-center mb-12">
+            <div class="text-6xl mb-4">🌍</div>
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-green-400 to-purple-400 bg-clip-text text-transparent">Living Organisms and Their Habitat</h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding Ecology and Ecosystems</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="show('concepts')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl transition shadow-lg">Concepts</button>
+                <button onclick="show('sampling')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl transition shadow-lg">Sampling Methods</button>
+                <button onclick="show('foodchain')" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl transition shadow-lg">Food Chains</button>
+                <button onclick="show('foodweb')" class="px-6 py-3 bg-pink-600 hover:bg-pink-700 rounded-xl transition shadow-lg">Food Webs</button>
+                <button onclick="show('pyramids')" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-xl transition shadow-lg">Food Pyramids</button>
+            </div>
+        </header>
+
+        <!-- Ecological Concepts -->
+        <section id="concepts" class="section">
+            <h2 class="text-4xl font-bold mb-8 text-center text-blue-400">Key Ecological Concepts</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Understanding Ecology</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">Ecology is the study of how living organisms interact with each other and their environment. These interactions form complex systems essential for life on Earth.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card">
+                    <div class="text-5xl mb-4 text-center">🏠</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Habitat</h3>
+                    <p class="text-sm text-gray-300">The natural environment where a particular organism lives</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card">
+                    <div class="text-5xl mb-4 text-center">🌳</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">Ecosystem</h3>
+                    <p class="text-sm text-gray-300">A community of living organisms and their physical environment, interacting as a system</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card">
+                    <div class="text-5xl mb-4 text-center">🎯</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">Niche</h3>
+                    <p class="text-sm text-gray-300">The role or function of an organism in its ecosystem, including how it obtains food</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card">
+                    <div class="text-5xl mb-4 text-center">👥</div>
+                    <h3 class="text-xl font-bold mb-3 text-pink-300">Population</h3>
+                    <p class="text-sm text-gray-300">A group of individuals of the same species living in the same area</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card">
+                    <div class="text-5xl mb-4 text-center">🤝</div>
+                    <h3 class="text-xl font-bold mb-3 text-orange-300">Community</h3>
+                    <p class="text-sm text-gray-300">Different populations of species living together and interacting in the same area</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500 card">
+                    <div class="text-5xl mb-4 text-center">📊</div>
+                    <h3 class="text-xl font-bold mb-3 text-teal-300">Sample</h3>
+                    <p class="text-sm text-gray-300">A small part of a population studied to make conclusions about the whole</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sampling Methods -->
+        <section id="sampling" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-green-400">Sampling Methods for Studying Populations</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔍</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Why Sample?</h3>
+                    <p class="text-gray-300 text-lg">Ecologists use sampling to estimate population sizes without examining every individual. Large samples give more accurate estimates than small samples.</p>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Quadrat Method -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">⬜</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Quadrat Method</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">A square frame (usually 1 m²) placed randomly in study area to count organisms inside it.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold text-green-400 mb-3">Procedure</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• Select study area size</li>
+                                <li>• Randomly place quadrat multiple times</li>
+                                <li>• Count organisms each time</li>
+                                <li>• Calculate average</li>
+                                <li>• Estimate total population by multiplying with total area</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-600 mb-3">
+                                <h4 class="font-bold text-green-400 mb-2">✓ Advantages</h4>
+                                <p class="text-xs text-gray-300">Simple, gives percentage distribution, useful for small or stationary organisms</p>
+                            </div>
+                            <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border border-red-600">
+                                <h4 class="font-bold text-red-400 mb-2">✗ Disadvantages</h4>
+                                <p class="text-xs text-gray-300">Unsuitable for large or mobile organisms; difficult on steep terrain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Line Transect -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">📏</div>
+                        <h3 class="text-3xl font-bold text-purple-300">Line Transect Method</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">Lay a straight line across study area; place quadrats at intervals along line; count organisms inside quadrats.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-600">
+                            <h4 class="font-bold text-green-400 mb-2">✓ Advantages</h4>
+                            <p class="text-sm text-gray-300">Useful for sampling along environmental gradients</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border border-red-600">
+                            <h4 class="font-bold text-red-400 mb-2">✗ Disadvantages</h4>
+                            <p class="text-sm text-gray-300">Limited to sampling points along line; may miss organisms off the transect</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Belt Transect -->
+                <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">📐</div>
+                        <h3 class="text-3xl font-bold text-pink-300">Belt Transect Method</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">Two parallel lines (usually 1 m apart) form a belt; organisms within the belt are counted.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-600">
+                            <h4 class="font-bold text-green-400 mb-2">✓ Advantages</h4>
+                            <p class="text-sm text-gray-300">More comprehensive than line transect due to wider sampling area</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border border-red-600">
+                            <h4 class="font-bold text-red-400 mb-2">✗ Disadvantages</h4>
+                            <p class="text-sm text-gray-300">More time and effort required; unsuitable for mobile organisms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mark-Recapture -->
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">🏷️</div>
+                        <h3 class="text-3xl font-bold text-orange-300">Mark-Recapture Method</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">Used for mobile animals: capture and mark individuals, release, then recapture a sample and count marked vs unmarked.</p>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-orange-400 mb-3">Formula</h4>
+                        <p class="text-orange-300 font-mono text-lg">Population = (Number marked in 1st capture × Total in 2nd capture) ÷ Number marked in 2nd capture</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-600">
+                            <h4 class="font-bold text-green-400 mb-2">✓ Advantages</h4>
+                            <p class="text-sm text-gray-300">Effective for mobile animals, helps study animal distribution</p>
+                        </div>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border border-red-600">
+                            <h4 class="font-bold text-red-400 mb-2">✗ Disadvantages</h4>
+                            <p class="text-sm text-gray-300">Not suitable for plants; may affect animal behavior</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Chain -->
+        <section id="foodchain" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-purple-400">Food Chain</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔗</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Energy Flow in Ecosystems</h3>
+                    <p class="text-gray-300 text-lg">A food chain shows feeding relationships between organisms, illustrating how energy flows in an ecosystem. Arrows indicate the direction of energy flow.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <h3 class="text-2xl font-bold text-green-300 mb-6 text-center">Example Food Chain</h3>
+                <div class="flex items-center justify-center flex-wrap gap-4 text-2xl">
+                    <div class="bg-green-700 px-6 py-3 rounded-lg">🌱 Grass</div>
+                    <div class="text-4xl">→</div>
+                    <div class="bg-lime-700 px-6 py-3 rounded-lg">🦗 Grasshopper</div>
+                    <div class="text-4xl">→</div>
+                    <div class="bg-blue-700 px-6 py-3 rounded-lg">🐦 Bird</div>
+                    <div class="text-4xl">→</div>
+                    <div class="bg-orange-700 px-6 py-3 rounded-lg">🐕 Wild Dog</div>
+                    <div class="text-4xl">→</div>
+                    <div class="bg-red-700 px-6 py-3 rounded-lg">🦡 Mongoose</div>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold mb-6 text-center text-cyan-300">Trophic Levels</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card">
+                    <div class="text-5xl mb-4 text-center">🌿</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300 text-center">Producers</h3>
+                    <p class="text-sm text-gray-300">Organisms like plants that make their own food using sunlight (photosynthesis)</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card">
+                    <div class="text-5xl mb-4 text-center">🦌</div>
+                    <h3 class="text-xl font-bold mb-3 text-orange-300 text-center">Consumers</h3>
+                    <p class="text-sm text-gray-300">Organisms that eat producers or other consumers. Primary eat producers, secondary and tertiary eat other consumers</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card">
+                    <div class="text-5xl mb-4 text-center">🍄</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300 text-center">Decomposers</h3>
+                    <p class="text-sm text-gray-300">Organisms that break down dead material, returning nutrients to the soil</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Web -->
+        <section id="foodweb" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-pink-400">Food Web</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🕸️</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">Complex Feeding Relationships</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">A food web is a complex network of interconnected food chains in a community, showing multiple feeding relationships. It illustrates how species interact at various trophic levels.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-blue-500">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Food Chain</h3>
+                    <div class="text-5xl mb-4 text-center">⛓️</div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>✓ Simple linear path</li>
+                        <li>✓ Shows one feeding relationship</li>
+                        <li>✓ Limited interactions</li>
+                        <li>✓ Easy to understand</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-pink-500">
+                    <h3 class="text-2xl font-bold mb-4 text-pink-300">Food Web</h3>
+                    <div class="text-5xl mb-4 text-center">🕸️</div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>✓ Complex network</li>
+                        <li>✓ Shows multiple feeding relationships</li>
+                        <li>✓ Represents biodiversity</li>
+                        <li>✓ More realistic ecosystem model</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-pink-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                <h3 class="text-2xl font-bold mb-4 text-pink-300">Why Food Webs Matter</h3>
+                <p class="text-gray-300 text-lg leading-relaxed">Food webs are more realistic than simple food chains because they show the complexity of ecosystems. Most organisms eat multiple types of food and are eaten by multiple predators. Understanding food webs helps us predict how changes to one species might affect the entire ecosystem.</p>
+            </div>
+        </section>
+
+        <!-- Food Pyramids -->
+        <section id="pyramids" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-orange-400">Food Pyramids</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔺</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-4">Visualizing Energy and Biomass</h3>
+                    <p class="text-gray-300 text-lg">Food pyramids visually represent energy, biomass, or number of organisms at each trophic level in a food chain.</p>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Pyramid of Numbers -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">🔢</div>
+                        <h3 class="text-3xl font-bold text-blue-300">Pyramid of Numbers</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Shows the number of organisms at each trophic level. Can be upright or inverted depending on organism size.</p>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="space-y-3">
+                            <div class="bg-red-700 p-3 rounded text-center w-1/6 mx-auto">Tertiary Consumers (Few)</div>
+                            <div class="bg-orange-700 p-3 rounded text-center w-2/6 mx-auto">Secondary Consumers (More)</div>
+                            <div class="bg-yellow-700 p-3 rounded text-center w-3/6 mx-auto">Primary Consumers (Many)</div>
+                            <div class="bg-green-700 p-3 rounded text-center w-full">Producers (Most)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pyramid of Biomass -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">⚖️</div>
+                        <h3 class="text-3xl font-bold text-green-300">Pyramid of Biomass</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Shows dry mass of organisms at each trophic level. Always upright since producers have greater biomass.</p>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="space-y-3">
+                            <div class="bg-red-700 p-3 rounded text-center w-1/6 mx-auto">Tertiary (Least biomass)</div>
+                            <div class="bg-orange-700 p-3 rounded text-center w-2/6 mx-auto">Secondary</div>
+                            <div class="bg-yellow-700 p-3 rounded text-center w-3/6 mx-auto">Primary</div>
+                            <div class="bg-green-700 p-3 rounded text-center w-full">Producers (Greatest biomass)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pyramid of Energy -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl mr-4">⚡</div>
+                        <h3 class="text-3xl font-bold text-purple-300">Pyramid of Energy</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Shows energy content at each trophic level in joules or kilocalories. Always upright due to energy loss at each transfer.</p>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="space-y-3">
+                            <div class="bg-red-700 p-3 rounded text-center w-1/6 mx-auto">Tertiary (10 J)</div>
+                            <div class="bg-orange-700 p-3 rounded text-center w-2/6 mx-auto">Secondary (100 J)</div>
+                            <div class="bg-yellow-700 p-3 rounded text-center w-3/6 mx-auto">Primary (1,000 J)</div>
+                            <div class="bg-green-700 p-3 rounded text-center w-full">Producers (10,000 J)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-purple-900 bg-opacity-30 p-4 rounded-lg border border-purple-600">
+                        <p class="text-sm text-purple-300"><strong>Note:</strong> Energy is lost at each trophic level through respiration, excretion, and heat. Only about 10% of energy is transferred to the next level.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-orange-900 to-red-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0">☀️</div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-orange-300">Energy Flow in Ecosystems</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">Energy flows through an ecosystem starting from the sun. Producers capture sunlight and convert it into chemical energy through photosynthesis. Consumers feed on producers and other consumers, transferring energy up the food chain.</p>
+                        <p class="text-gray-300 text-lg leading-relaxed">However, energy is lost at each trophic level through respiration, excretion, and heat. This is why food chains rarely have more than 4-5 levels—there simply isn't enough energy left to support organisms at higher levels. Decomposers play a crucial role by breaking down dead organisms and recycling nutrients back into the ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500">
+            <h3 class="text-3xl font-bold mb-8 text-center text-blue-400">Summary: Key Concepts</h3>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="bg-blue-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">🔬</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-blue-300">Ecology Studies Interactions</h4>
+                        <p class="text-gray-300">Habitat, ecosystem, niche, population, and community are key concepts</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-green-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">📊</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-green-300">Sampling Methods</h4>
+                        <p class="text-gray-300">Quadrat, line transect, belt transect, and mark-recapture methods estimate populations</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-purple-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">🔗</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-purple-300">Food Chains and Webs</h4>
+                        <p class="text-gray-300">Show feeding relationships and energy flow through ecosystems</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-orange-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">🔺</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-orange-300">Food Pyramids</h4>
+                        <p class="text-gray-300">Pyramids of numbers, biomass, and energy show distribution at trophic levels</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        show('concepts');
+    </script>
+</body>
+</html>

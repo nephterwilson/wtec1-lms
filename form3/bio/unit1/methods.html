@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecological Methods for Studying Populations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-950 via-emerald-950 to-cyan-950 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- HEADER -->
+    <header class="text-center mb-12">
+      <div class="text-6xl mb-4">🌿</div>
+      <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+        Ecological Methods for Studying Populations
+      </h1>
+      <p class="text-xl text-gray-300 mb-8">Techniques used by ecologists to estimate population size and distribution</p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <button onclick="show('quadrat')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl shadow-lg transition">Quadrat Method</button>
+        <button onclick="show('line')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg transition">Line Transect</button>
+        <button onclick="show('belt')" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl shadow-lg transition">Belt Transect</button>
+        <button onclick="show('mark')" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-xl shadow-lg transition">Mark-Recapture</button>
+      </div>
+    </header>
+
+    <!-- QUADRAT -->
+    <section id="quadrat" class="section">
+      <h2 class="text-4xl font-bold mb-8 text-center text-green-400">Quadrat Method</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">⬜</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            A quadrat is a square frame, usually 1 m², used to estimate population density of plants or slow-moving animals by counting individuals within the frame.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+          <h3 class="text-2xl font-bold text-green-300 mb-4">Advantages</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li>• Simple and easy to use.</li>
+            <li>• Provides percentage distribution of organisms.</li>
+            <li>• Useful for small or stationary organisms.</li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-red-900 to-slate-900 p-6 rounded-xl border border-red-500">
+          <h3 class="text-2xl font-bold text-red-300 mb-4">Disadvantages</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li>• Not suitable for large plants or mobile animals.</li>
+            <li>• Difficult on steep or uneven terrain.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-slate-900 bg-opacity-50 p-6 rounded-xl border border-green-600">
+        <h3 class="text-2xl font-bold text-green-300 mb-4">Procedure</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Select and measure the total study area.</li>
+          <li>Randomly place the quadrat several times.</li>
+          <li>Count organisms inside each quadrat.</li>
+          <li>Record all counts and repeat 5–10 times.</li>
+          <li>Find the average number per quadrat.</li>
+          <li>Estimate total population = average × total area.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LINE TRANSECT -->
+    <section id="line" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-blue-400">Line Transect Method</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">📏</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            A straight line (transect) is laid across a study area, and quadrats are placed at intervals along it. Often used to study plants along environmental gradients.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-500">
+          <h3 class="text-2xl font-bold text-blue-300 mb-4">Advantages</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li>• Useful for studying species distribution along gradients.</li>
+            <li>• Effective for non-mobile organisms.</li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-red-900 to-slate-900 p-6 rounded-xl border border-red-500">
+          <h3 class="text-2xl font-bold text-red-300 mb-4">Disadvantages</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li>• Limited to points along the transect line.</li>
+            <li>• May miss organisms located off the line.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-slate-900 bg-opacity-50 p-6 rounded-xl border border-blue-600">
+        <h3 class="text-2xl font-bold text-blue-300 mb-4">Procedure</h3>
+        <ul class="list-disc list-inside text-gray-300 text-sm space-y-2">
+          <li>Lay a straight tape or rope across the area.</li>
+          <li>Place quadrats at fixed intervals (e.g., every 1 – 3 m).</li>
+          <li>Count and record organisms inside each quadrat.</li>
+          <li>Repeat sampling for accuracy and calculate averages.</li>
+          <li>Estimate total population using averages and area size.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BELT TRANSECT -->
+    <section id="belt" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-purple-400">Belt Transect Method</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">📐</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Uses two parallel lines about 1 m apart to create a belt. All organisms between them are counted for a broader sample.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-purple-900 to-slate-900 p-6 rounded-xl border border-purple-500">
+          <h3 class="text-2xl font-bold text-purple-300 mb-4">Advantages</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li>• Covers a wider area than a single line transect.</li>
+            <li>• Provides more detailed and accurate data.</li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-red-900 to-slate-900 p-6 rounded-xl border border-red-500">
+          <h3 class="text-2xl font-bold text-red-300 mb-4">Disadvantages</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li>• Time-consuming and requires more effort.</li>
+            <li>• Unsuitable for mobile animals.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-slate-900 bg-opacity-50 p-6 rounded-xl border border-purple-600">
+        <h3 class="text-2xl font-bold text-purple-300 mb-4">Procedure</h3>
+        <ul class="list-disc list-inside text-gray-300 text-sm space-y-2">
+          <li>Set two parallel ropes 1 m apart across the study area.</li>
+          <li>Count all organisms found between the lines.</li>
+          <li>Record totals for each belt area.</li>
+          <li>Repeat in different spots for reliable data.</li>
+          <li>Calculate averages and estimate total population.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MARK RECAPTURE -->
+    <section id="mark" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-orange-400">Mark-Recapture Method</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🏷️</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Used for mobile animals: capture and mark a sample, release them, and later recapture another sample to estimate total population size.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-orange-900 to-slate-900 p-6 rounded-xl border border-orange-500">
+          <h3 class="text-2xl font-bold text-orange-300 mb-4">Advantages</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li>• Effective for mobile species like insects or fish.</li>
+            <li>• Reveals population size and animal movement.</li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-red-900 to-slate-900 p-6 rounded-xl border border-red-500">
+          <h3 class="text-2xl font-bold text-red-300 mb-4">Disadvantages</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li>• Not suitable for plants.</li>
+            <li>• Handling may disturb animals or change behavior.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-slate-900 bg-opacity-50 p-6 rounded-xl border border-orange-600">
+        <h3 class="text-2xl font-bold text-orange-300 mb-4">Procedure</h3>
+        <ul class="list-disc list-inside text-gray-300 text-sm space-y-2">
+          <li>Capture and mark a group of animals harmlessly.</li>
+          <li>Release them to mix back into the population.</li>
+          <li>After some time, recapture a second sample.</li>
+          <li>Count total recaptured and how many are marked.</li>
+          <li>Estimate population using:
+            <span class="block mt-2 text-orange-300 font-mono">N = (M × C) ÷ R</span>
+            <span class="text-xs text-gray-400">where M = marked first, C = total recaptured, R = marked recaptured</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    show('quadrat');
+  </script>
+</body>
+</html>

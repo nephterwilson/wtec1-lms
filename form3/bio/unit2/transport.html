@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transport in Plants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-950 via-emerald-950 to-teal-950 min-h-screen text-white">
+  <div class="container mx-auto px-6 py-10 max-w-7xl">
+    
+    <!-- HEADER -->
+    <header class="text-center mb-12">
+      <div class="text-7xl md:text-8xl mb-4">🌿</div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-r from-green-400 via-lime-400 to-teal-400 bg-clip-text text-transparent">
+        Transport in Plants
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+        Understanding how water, minerals, and food move through plants to support growth and life.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <button onclick="show('intro')" class="px-8 py-4 bg-green-600 hover:bg-green-700 rounded-xl shadow-lg text-lg">Introduction</button>
+        <button onclick="show('need')" class="px-8 py-4 bg-yellow-600 hover:bg-yellow-700 rounded-xl shadow-lg text-lg">Need for Transport</button>
+        <button onclick="show('vascular')" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg text-lg">Vascular Bundles</button>
+        <button onclick="show('xylem')" class="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-xl shadow-lg text-lg">Xylem Tissue</button>
+        <button onclick="show('phloem')" class="px-8 py-4 bg-purple-600 hover:bg-purple-700 rounded-xl shadow-lg text-lg">Phloem Tissue</button>
+        <button onclick="show('differences')" class="px-8 py-4 bg-teal-600 hover:bg-teal-700 rounded-xl shadow-lg text-lg">Xylem vs Phloem</button>
+      </div>
+    </header>
+
+    <!-- INTRODUCTION -->
+    <section id="intro" class="section">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center text-green-400">Introduction to Transport in Plants</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8 text-lg md:text-2xl leading-relaxed text-gray-300">
+        <p class="mb-4">
+          Transport in plants refers to the movement of substances from one part of the plant to another to support vital processes such as photosynthesis, growth, and respiration.
+        </p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Plants make their own food through photosynthesis using carbon dioxide and water.</li>
+          <li>Water and minerals are absorbed from the soil through the roots.</li>
+          <li>Glucose produced in the leaves must be transported to other plant parts for energy and growth.</li>
+          <li>Efficient transport systems are essential because plants are multicellular with organs far apart.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NEED FOR TRANSPORT -->
+    <section id="need" class="section hidden">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center text-yellow-400">Need for a Transport System in Plants</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-yellow-500 text-lg md:text-2xl leading-relaxed text-gray-300">
+        <p class="mb-4">
+          A transport system in plants is vital for movement of substances to sustain life functions:
+        </p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Water and mineral salts from the roots must reach the leaves for photosynthesis.</li>
+          <li>Manufactured food from the leaves must move to roots, stems, and growing regions.</li>
+          <li>Transport maintains water balance and nutrient distribution across the plant.</li>
+          <li>Without transport tissues, plants would die due to lack of supply to distant cells.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VASCULAR BUNDLES -->
+    <section id="vascular" class="section hidden">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center text-blue-400">Vascular Bundles: The Transport Tissues</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 text-lg md:text-2xl leading-relaxed text-gray-300">
+        <p class="mb-4">
+          Vascular bundles are specialized conducting tissues responsible for transporting substances within plants. They consist of two main types:
+        </p>
+        <ul class="list-disc list-inside space-y-2 mb-4">
+          <li><strong>Xylem:</strong> Transports water and mineral salts from roots to leaves.</li>
+          <li><strong>Phloem:</strong> Transports manufactured food from leaves to other parts of the plant.</li>
+        </ul>
+        <p>Vascular bundles run continuously through roots, stems, and leaves, ensuring efficient movement of substances throughout the plant.</p>
+      </div>
+    </section>
+
+    <!-- XYLEM -->
+    <section id="xylem" class="section hidden">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center text-orange-400">Xylem Tissue</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-orange-500 text-lg md:text-2xl leading-relaxed text-gray-300">
+        <p class="mb-4">
+          Xylem is a tissue made mostly of dead cells that form tubes to transport water and minerals upward from roots to leaves.
+        </p>
+
+        <h3 class="text-2xl text-orange-300 font-semibold mb-3">Main Features:</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4">
+          <li>Made of long, hollow, dead cells joined end-to-end forming continuous tubes.</li>
+          <li>Contains two cell types: tracheids (in all plants) and vessel elements (mainly in flowering plants).</li>
+          <li>Walls have <strong>lignin</strong> for strength and support.</li>
+          <li>Walls contain <strong>pits</strong> allowing water to move sideways between cells.</li>
+          <li>Cells lack cytoplasm and nuclei, allowing free water flow.</li>
+          <li>Provides mechanical support to keep the plant upright.</li>
+        </ul>
+
+        <h3 class="text-2xl text-orange-300 font-semibold mb-3">Characteristics of Xylem Tubes</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Composed of dead cells with no cytoplasm or nuclei.</li>
+          <li>Walls made of cellulose and lignin.</li>
+          <li>Contain pits for lateral water movement.</li>
+          <li>Give mechanical strength and rigidity to the plant.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PHLOEM -->
+    <section id="phloem" class="section hidden">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center text-purple-400">Phloem Tissue</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-purple-500 text-lg md:text-2xl leading-relaxed text-gray-300">
+        <p class="mb-4">
+          Phloem is made of living cells that transport food substances, mainly sugars like sucrose, from leaves to other parts of the plant.
+        </p>
+
+        <h3 class="text-2xl text-purple-300 font-semibold mb-3">Main Features:</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4">
+          <li>Consists of <strong>sieve tube elements</strong> and <strong>companion cells</strong>.</li>
+          <li>Sieve tube elements have <strong>perforated cross walls</strong> called sieve plates.</li>
+          <li>Companion cells contain nuclei and organelles to maintain sieve tubes.</li>
+          <li>Phloem walls are not lignified and cells contain cytoplasm.</li>
+          <li>Translocation of food is <strong>bi-directional</strong> (up or down).</li>
+        </ul>
+
+        <h3 class="text-2xl text-purple-300 font-semibold mb-3">Characteristics of Phloem Tubes</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Made of living sieve elements.</li>
+          <li>Contain cytoplasm but no lignin in walls.</li>
+          <li>Sieve plates at ends of sieve tubes allow food movement.</li>
+          <li>Each sieve element has a companion cell for control and energy supply.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DIFFERENCES -->
+    <section id="differences" class="section hidden">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center text-teal-400">Summary of Differences Between Xylem and Phloem</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-teal-500 text-lg md:text-2xl leading-relaxed text-gray-300">
+        <h3 class="text-2xl text-teal-300 font-semibold mb-3">Structural Differences:</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4">
+          <li>Xylem cells are <strong>dead</strong>; phloem cells are <strong>living</strong>.</li>
+          <li>Xylem cells lack nuclei; phloem companion cells contain nuclei.</li>
+          <li>Xylem walls are lignified; phloem walls are not.</li>
+          <li>Xylem has no cross walls; phloem has sieve plates with pores.</li>
+        </ul>
+
+        <h3 class="text-2xl text-teal-300 font-semibold mb-3">Functional Differences:</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Xylem transports <strong>water and minerals upward</strong> from roots to leaves.</li>
+          <li>Phloem transports <strong>manufactured food</strong> from leaves to all plant parts.</li>
+          <li>Xylem provides <strong>mechanical support</strong>; phloem does not.</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      const el = document.getElementById(id);
+      el.classList.remove('hidden');
+      el.classList.add('fade-in');
+      setTimeout(() => el.classList.remove('fade-in'), 600);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    show('intro');
+  </script>
+</body>
+</html>

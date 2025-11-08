@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How a Potometer Works</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.6s ease-in; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .shimmer-card { position: relative; overflow: hidden; }
+    .shimmer-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    .shimmer-card:hover::before { left: 100%; }
+    .pulse-icon { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:.6;} }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-emerald-950 via-green-950 to-slate-950 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8 max-w-7xl">
+
+    <!-- Header -->
+    <header class="text-center mb-12 fade-in">
+      <div class="inline-block mb-6">
+        <div class="text-6xl mb-4 pulse-icon">🌿</div>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 via-lime-400 to-emerald-400 bg-clip-text text-transparent">
+        How a Potometer Works
+      </h1>
+      <p class="text-xl text-gray-300 mb-2">Measuring Water Uptake to Estimate Transpiration Rate</p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <button onclick="showSection('intro')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-lime-700 hover:from-green-700 hover:to-lime-800 rounded-xl shadow-lg transition">Introduction</button>
+        <button onclick="showSection('parts')" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 rounded-xl shadow-lg transition">Parts</button>
+        <button onclick="showSection('principle')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-teal-700 hover:from-cyan-700 hover:to-teal-800 rounded-xl shadow-lg transition">Working Principle</button>
+        <button onclick="showSection('procedure')" class="px-6 py-3 bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 rounded-xl shadow-lg transition">Procedure</button>
+        <button onclick="showSection('precautions')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 rounded-xl shadow-lg transition">Precautions</button>
+        <button onclick="showSection('limitations')" class="px-6 py-3 bg-gradient-to-r from-red-600 to-pink-700 hover:from-red-700 hover:to-pink-800 rounded-xl shadow-lg transition">Limitations</button>
+      </div>
+    </header>
+
+    <!-- Introduction -->
+    <section id="intro" class="lesson-section fade-in">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-300 to-lime-300 bg-clip-text text-transparent">
+        Introduction to the Potometer
+      </h2>
+
+      <div class="bg-gradient-to-br from-green-900 to-slate-900 p-8 rounded-2xl border border-green-500 shadow-2xl">
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          A potometer is an apparatus used to measure the rate of water uptake by a leafy shoot, which indirectly estimates the rate of transpiration. As water evaporates from the leaves, more water is drawn up through the stem, moving an air bubble through a capillary tube.
+        </p>
+
+        <ul class="text-gray-300 space-y-3">
+          <li>• Measures <strong>water uptake</strong> rather than direct transpiration.</li>
+          <li>• Used to study effects of humidity, light, wind, and temperature on transpiration.</li>
+          <li>• Movement of the air bubble provides a visible measure of water uptake rate.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Parts of Potometer -->
+    <section id="parts" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text text-transparent">
+        Parts of a Potometer
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="shimmer-card bg-gradient-to-br from-green-800 to-slate-900 p-6 rounded-xl border border-green-500 card-hover">
+          <h4 class="text-xl font-bold text-green-300 mb-3">Capillary Tube</h4>
+          <p class="text-sm text-gray-300">A thin glass tube containing an air bubble used to measure water uptake rate.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-teal-800 to-slate-900 p-6 rounded-xl border border-teal-500 card-hover">
+          <h4 class="text-xl font-bold text-teal-300 mb-3">Reservoir</h4>
+          <p class="text-sm text-gray-300">Provides additional water and allows the air bubble to be reset.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-lime-800 to-slate-900 p-6 rounded-xl border border-lime-500 card-hover">
+          <h4 class="text-xl font-bold text-lime-300 mb-3">Leafy Shoot</h4>
+          <p class="text-sm text-gray-300">A healthy shoot cut under water and connected to the apparatus to avoid air entry.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-cyan-800 to-slate-900 p-6 rounded-xl border border-cyan-500 card-hover">
+          <h4 class="text-xl font-bold text-cyan-300 mb-3">Rubber Tubing</h4>
+          <p class="text-sm text-gray-300">Used for tight, leak-proof connections between apparatus parts.</p>
+        </div>
+
+        <div class="shimmer-card bg-gradient-to-br from-yellow-800 to-slate-900 p-6 rounded-xl border border-yellow-500 card-hover">
+          <h4 class="text-xl font-bold text-yellow-300 mb-3">Stopper / Seal</h4>
+          <p class="text-sm text-gray-300">Seals joints to prevent air leaks and ensure accurate readings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Principle -->
+    <section id="principle" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-300 to-green-300 bg-clip-text text-transparent">
+        Working Principle of the Potometer
+      </h2>
+
+      <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 border border-cyan-500 shadow-2xl">
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          When transpiration occurs, water loss from leaves creates a negative pressure in the xylem, drawing water upwards. In the potometer, this water movement moves an air bubble through a capillary tube, showing how fast water is taken up.
+        </p>
+
+        <ul class="text-gray-300 space-y-3">
+          <li>• Evaporation creates suction, pulling water from the reservoir through the stem.</li>
+          <li>• The air bubble’s movement in the capillary tube shows the volume of water absorbed.</li>
+          <li>• Distance moved per unit time gives an estimate of transpiration rate.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Procedure -->
+    <section id="procedure" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-yellow-300 to-lime-300 bg-clip-text text-transparent">
+        Using a Potometer – Procedure
+      </h2>
+
+      <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-8 rounded-2xl border border-yellow-500 shadow-2xl">
+        <ol class="list-decimal list-inside space-y-3 text-gray-300 text-lg">
+          <li>Cut the leafy shoot under water to prevent air from entering xylem vessels.</li>
+          <li>Insert the shoot into the potometer and seal tightly with petroleum jelly or rubber stopper.</li>
+          <li>Fill the apparatus with water, leaving only one air bubble for tracking.</li>
+          <li>Introduce the air bubble into the capillary tube and start the timer.</li>
+          <li>Record the distance travelled by the bubble in a fixed time to calculate water uptake rate.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Precautions -->
+    <section id="precautions" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+        Precautions When Using a Potometer
+      </h2>
+
+      <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-8 rounded-2xl border border-blue-500 shadow-2xl">
+        <ul class="text-gray-300 space-y-3 text-lg">
+          <li>• Ensure all connections are airtight to prevent false readings.</li>
+          <li>• Avoid touching leaves to prevent stomatal closure.</li>
+          <li>• Keep environmental conditions constant unless being tested.</li>
+          <li>• Use shoots of the same species and leaf size for consistency.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Limitations -->
+    <section id="limitations" class="lesson-section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
+        Limitations of a Potometer
+      </h2>
+
+      <div class="bg-gradient-to-br from-red-900 to-slate-900 p-8 rounded-2xl border border-red-500 shadow-2xl">
+        <ul class="text-gray-300 space-y-3 text-lg">
+          <li>• Measures <strong>water uptake</strong>, not actual water loss through transpiration.</li>
+          <li>• Some absorbed water is used in photosynthesis or stored in tissues.</li>
+          <li>• Air leaks or poor sealing reduce accuracy of results.</li>
+          <li>• Difficult to standardize stomatal opening and physiological state.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.lesson-section').forEach(s => s.classList.add('hidden'));
+      const section = document.getElementById(id);
+      section.classList.remove('hidden');
+      section.classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

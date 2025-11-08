@@ -1,0 +1,256 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Food Tests Overview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.45s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: translateY(0) } }
+    .card:hover { transform: translateY(-6px); transition: all 0.28s ease; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-950 via-indigo-950 to-purple-950 min-h-screen text-white">
+  <div class="container mx-auto px-6 py-10 max-w-7xl">
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <div class="text-7xl md:text-8xl mb-4">🧪</div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-3 bg-gradient-to-r from-cyan-300 via-green-300 to-blue-300 bg-clip-text text-transparent">
+        Food Tests Overview
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto">
+        Scientific procedures to detect starch, protein, fats and sugars in food — ideal for demonstrations and live online classes.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <button onclick="show('overview')" class="px-6 md:px-8 py-3 md:py-4 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg text-lg md:text-xl">Overview</button>
+        <button onclick="show('starch')" class="px-6 md:px-8 py-3 md:py-4 bg-yellow-600 hover:bg-yellow-700 rounded-xl shadow-lg text-lg md:text-xl">Starch Test</button>
+        <button onclick="show('protein')" class="px-6 md:px-8 py-3 md:py-4 bg-purple-600 hover:bg-purple-700 rounded-xl shadow-lg text-lg md:text-xl">Protein (Biuret)</button>
+        <button onclick="show('fat')" class="px-6 md:px-8 py-3 md:py-4 bg-orange-600 hover:bg-orange-700 rounded-xl shadow-lg text-lg md:text-xl">Fats (Lipids)</button>
+        <button onclick="show('reducing')" class="px-6 md:px-8 py-3 md:py-4 bg-red-600 hover:bg-red-700 rounded-xl shadow-lg text-lg md:text-xl">Reducing Sugars</button>
+        <button onclick="show('nonreducing')" class="px-6 md:px-8 py-3 md:py-4 bg-teal-600 hover:bg-teal-700 rounded-xl shadow-lg text-lg md:text-xl">Non-Reducing Sugars</button>
+        <button onclick="show('summary')" class="px-6 md:px-8 py-3 md:py-4 bg-green-600 hover:bg-green-700 rounded-xl shadow-lg text-lg md:text-xl">Summary</button>
+      </div>
+    </header>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="section">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center text-blue-300">Introduction to Food Tests</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-blue-500 mb-8">
+        <p class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+          Food tests are scientific procedures used to detect the presence or absence of specific nutrients in food samples.
+          These tests help us understand nutritional content and are important in biology and chemistry for nutrition studies,
+          food quality control, and scientific investigations.
+        </p>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <div class="p-4 rounded-lg bg-gradient-to-br from-slate-900 to-slate-800 border border-blue-600">
+            <h3 class="text-xl md:text-2xl font-semibold text-blue-300 mb-3">What food tests detect</h3>
+            <ul class="text-gray-300 text-lg md:text-xl space-y-2">
+              <li>• Starch</li>
+              <li>• Protein</li>
+              <li>• Fats (lipids)</li>
+              <li>• Reducing and non-reducing sugars</li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gradient-to-br from-slate-900 to-slate-800 border border-green-600">
+            <h3 class="text-xl md:text-2xl font-semibold text-green-300 mb-3">How they work</h3>
+            <p class="text-gray-300 text-lg md:text-xl">
+              Simple chemical reactions produce visible color changes or physical reactions that indicate presence/absence of nutrients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STARCH TEST -->
+    <section id="starch" class="section hidden">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center text-yellow-300">1. Starch Test</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-yellow-500 mb-6">
+        <div class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+          <p class="mb-4">
+            This test detects the presence of starch in food using iodine solution (brown).
+          </p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-yellow-300 mb-2">Materials needed</h3>
+          <p class="text-gray-300 text-lg md:text-xl">Food sample, iodine solution (brown), white tile.</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-yellow-300 mt-4 mb-2">Procedure</h3>
+          <ul class="list-disc list-inside text-gray-300 text-lg md:text-xl space-y-2">
+            <li>Chop food into small pieces.</li>
+            <li>Place pieces on a white tile.</li>
+            <li>Add a few drops of iodine solution onto the food.</li>
+            <li>Observe for a color change.</li>
+          </ul>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-yellow-300 mt-4 mb-2">Results</h3>
+          <ul class="text-gray-300 text-lg md:text-xl space-y-2">
+            <li>Presence of starch: iodine turns <strong>dark blue-black</strong>.</li>
+            <li>Absence of starch: iodine remains brown or orange-brown.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTEIN (BIURET) -->
+    <section id="protein" class="section hidden">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center text-purple-300">2. Protein Test (Biuret)</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-purple-500 mb-6">
+        <div class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+          <p class="mb-4">Detects proteins using biuret solution (or NaOH + CuSO₄).</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-purple-300 mb-2">Materials needed</h3>
+          <p class="text-gray-300 text-lg md:text-xl">Food sample, test tubes, biuret solution (blue) or sodium hydroxide and copper sulfate, water.</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-purple-300 mt-4 mb-2">Procedure</h3>
+          <ul class="list-disc list-inside text-gray-300 text-lg md:text-xl space-y-2">
+            <li>Chop food and mix a little with water in a test tube.</li>
+            <li>Add 4–5 drops of biuret solution and observe.</li>
+            <li><em>If biuret is unavailable:</em> add 5 ml NaOH, then 5 ml CuSO₄, mix and observe.</li>
+          </ul>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-purple-300 mt-4 mb-2">Results</h3>
+          <ul class="text-gray-300 text-lg md:text-xl space-y-2">
+            <li>Presence of protein: solution turns <strong>purple</strong>.</li>
+            <li>Absence of protein: solution remains <strong>blue</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FATS -->
+    <section id="fat" class="section hidden">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center text-orange-300">3. Fats (Lipids) Test (Ethanol / Emulsion)</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-orange-500 mb-6">
+        <div class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+          <p class="mb-4">Test for fats by extracting with ethanol and forming an emulsion with water.</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-orange-300 mb-2">Materials</h3>
+          <p class="text-gray-300 text-lg md:text-xl">Food sample, test tubes, ethanol, water.</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-orange-300 mt-4 mb-2">Procedure</h3>
+          <ul class="list-disc list-inside text-gray-300 text-lg md:text-xl space-y-2">
+            <li>Chop food and mix with ethanol in a test tube.</li>
+            <li>Allow solids to settle or filter if needed.</li>
+            <li>Pour some ethanol extract into another test tube containing water.</li>
+          </ul>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-orange-300 mt-4 mb-2">Results</h3>
+          <ul class="text-gray-300 text-lg md:text-xl space-y-2">
+            <li>Presence of fat: a <strong>milky white emulsion</strong> (cloudy) forms.</li>
+            <li>Absence of fat: solution stays clear.</li>
+          </ul>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-orange-300 mt-4 mb-2">Simple classroom check</h3>
+          <p class="text-gray-300 text-lg md:text-xl">Rub food on paper — a greasy, translucent spot indicates the presence of fat.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDUCING SUGARS -->
+    <section id="reducing" class="section hidden">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center text-red-300">4. Test for Reducing Sugars (Benedict's)</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-red-500 mb-6">
+        <div class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+          <p class="mb-4">Detects reducing sugars (e.g., glucose, fructose) using Benedict's solution and heat.</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-red-300 mb-2">Materials</h3>
+          <p class="text-gray-300 text-lg md:text-xl">Food sample, test tubes, Benedict's solution (blue), Bunsen burner or boiling water bath.</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-red-300 mt-4 mb-2">Procedure</h3>
+          <ul class="list-disc list-inside text-gray-300 text-lg md:text-xl space-y-2">
+            <li>Chop/crush food and dissolve in water in a test tube.</li>
+            <li>Add Benedict's solution and mix.</li>
+            <li>Heat the mixture in a boiling water bath for a few minutes.</li>
+          </ul>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-red-300 mt-4 mb-2">Results</h3>
+          <p class="text-gray-300 text-lg md:text-xl">
+            Presence of reducing sugars is shown by color changes from <strong>blue → green → yellow → orange → brick red</strong>
+            depending on concentration. Absence leaves the solution blue.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NON-REDUCING SUGARS -->
+    <section id="nonreducing" class="section hidden">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center text-teal-300">5. Test for Non-Reducing Sugars</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-teal-500 mb-6">
+        <div class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+          <p class="mb-4">Non-reducing sugars (e.g., sucrose) do not change Benedict's solution unless first hydrolysed by acid.</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-teal-300 mb-2">Materials</h3>
+          <p class="text-gray-300 text-lg md:text-xl">Food sample, test tubes, Benedict's solution, dilute HCl, sodium hydrogen carbonate (or NaOH), litmus paper.</p>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-teal-300 mt-4 mb-2">Procedure</h3>
+          <ol class="list-decimal list-inside text-gray-300 text-lg md:text-xl space-y-2">
+            <li>Chop/crush food, dissolve in water in a test tube.</li>
+            <li>Add dilute hydrochloric acid and heat in a boiling water bath (this hydrolyses disaccharides to monosaccharides).</li>
+            <li>Allow to cool, then neutralize with sodium hydrogen carbonate or sodium hydroxide.</li>
+            <li>Use litmus paper to confirm the solution is neutral (no acid remains).</li>
+            <li>Add Benedict's solution and heat again.</li>
+          </ol>
+
+          <h3 class="text-xl md:text-2xl font-semibold text-teal-300 mt-4 mb-2">Results</h3>
+          <p class="text-gray-300 text-lg md:text-xl">
+            If non-reducing sugars were present, hydrolysis produces reducing sugars and you will see an <strong>orange-red precipitate</strong>.
+            If none, the solution remains blue.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section id="summary" class="section hidden">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center text-green-300">Summary</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-green-500 mb-6">
+        <div class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+          <p class="mb-4">
+            Food tests are essential, simple scientific methods used to analyze nutrient composition. Each test relies on a specific reagent and
+            observable change (color or physical reaction) to indicate presence or absence of starch, protein, fats, and sugars.
+          </p>
+
+          <ul class="list-disc list-inside text-gray-300 text-lg md:text-xl space-y-3">
+            <li>Starch test: iodine → <strong>dark blue-black</strong> for starch.</li>
+            <li>Protein (Biuret): biuret → <strong>purple</strong> for protein.</li>
+            <li>Fats: ethanol + water → <strong>milky emulsion</strong>; grease spot on paper.</li>
+            <li>Reducing sugars: Benedict's + heat → <strong>green→brick-red</strong> depending on amount.</li>
+            <li>Non-reducing sugars: hydrolyse with acid first, then Benedict's → <strong>orange-red precipitate</strong>.</li>
+          </ul>
+
+          <p class="mt-6 text-lg md:text-2xl text-gray-300">
+            Practical mastery of these tests supports laboratory experiments and everyday food quality checks—great for classroom demos and live lessons.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      const el = document.getElementById(id);
+      el.classList.remove('hidden');
+      el.classList.add('fade-in');
+      // remove the fade-in class after animation so it can re-trigger on next click
+      setTimeout(() => el.classList.remove('fade-in'), 600);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // default
+    show('overview');
+  </script>
+</body>
+</html>

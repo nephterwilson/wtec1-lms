@@ -1,0 +1,389 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Structure and Function</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in { animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .card:hover { transform: translateY(-5px); transition: 0.3s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-950 via-emerald-950 to-green-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <header class="text-center mb-12">
+            <div class="text-6xl mb-4">🌿</div>
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400 bg-clip-text text-transparent">Plant Structure and Function</h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding How Plants Live and Produce Food</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="show('intro')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl transition shadow-lg">Introduction</button>
+                <button onclick="show('leaf')" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-xl transition shadow-lg">Leaf Structure</button>
+                <button onclick="show('stem')" class="px-6 py-3 bg-lime-600 hover:bg-lime-700 rounded-xl transition shadow-lg">Stem & Root</button>
+                <button onclick="show('adapt')" class="px-6 py-3 bg-teal-600 hover:bg-teal-700 rounded-xl transition shadow-lg">Adaptations</button>
+                <button onclick="show('gas')" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-xl transition shadow-lg">Gas Exchange</button>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section id="intro" class="section">
+            <h2 class="text-4xl font-bold mb-8 text-center text-green-400">Introduction to Plants</h2>
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌱</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Plants: Food Producers</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">Plants are autotrophs that convert inorganic compounds into food through photosynthesis. The leaf is the main site of food production, supporting all life in ecosystems.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-green-500 card">
+                    <div class="text-5xl mb-4 text-center">☀️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-300">Photosynthesis</h3>
+                    <p class="text-gray-300">Plants use sunlight, water, and CO₂ to produce glucose and oxygen in leaves.</p>
+                    <div class="mt-4 bg-slate-950 bg-opacity-60 p-4 rounded-lg">
+                        <p class="text-emerald-300 font-mono text-sm">6CO₂ + 6H₂O + Light → C₆H₁₂O₆ + 6O₂</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-emerald-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-emerald-500 card">
+                    <div class="text-5xl mb-4 text-center">🍃</div>
+                    <h3 class="text-2xl font-bold mb-3 text-emerald-300">The Leaf: Main Food Factory</h3>
+                    <p class="text-gray-300">Leaf structure is perfectly adapted to capture sunlight, absorb CO₂, and produce food efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaf Structure -->
+        <section id="leaf" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-emerald-400">Leaf Structure and Components</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-emerald-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🍂</div>
+                    <h3 class="text-3xl font-bold text-emerald-300 mb-4">External Leaf Anatomy</h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-green-500">
+                        <h4 class="font-bold mb-2 text-green-400 text-lg">Lamina (Blade)</h4>
+                        <p class="text-sm text-gray-300">Flat portion that absorbs sunlight and CO₂</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-emerald-500">
+                        <h4 class="font-bold mb-2 text-emerald-400 text-lg">Petiole (Stalk)</h4>
+                        <p class="text-sm text-gray-300">Attaches leaf to stem, positions it for sunlight</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border-l-4 border-lime-500">
+                        <h4 class="font-bold mb-2 text-lime-400 text-lg">Veins & Midrib</h4>
+                        <p class="text-sm text-gray-300">Xylem and phloem for transport</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold mb-6 text-center text-lime-300">Internal Leaf Structure</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card">
+                    <div class="text-5xl mb-4 text-center">🛡️</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Cuticle</h3>
+                    <p class="text-sm text-gray-300">Waxy layer prevents water loss</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card">
+                    <div class="text-5xl mb-4 text-center">🧱</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-300">Epidermis</h3>
+                    <p class="text-sm text-gray-300">Protective cell layers</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card">
+                    <div class="text-5xl mb-4 text-center">🟢</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">Palisade Mesophyll</h3>
+                    <p class="text-sm text-gray-300">Main photosynthesis site</p>
+                </div>
+                <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500 card">
+                    <div class="text-5xl mb-4 text-center">🫧</div>
+                    <h3 class="text-xl font-bold mb-3 text-teal-300">Spongy Mesophyll</h3>
+                    <p class="text-sm text-gray-300">Air spaces for gas circulation</p>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card">
+                    <div class="text-5xl mb-4 text-center">🚪</div>
+                    <h3 class="text-xl font-bold mb-3 text-yellow-300">Guard Cells</h3>
+                    <p class="text-sm text-gray-300">Control stomata opening</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card">
+                    <div class="text-5xl mb-4 text-center">⭕</div>
+                    <h3 class="text-xl font-bold mb-3 text-orange-300">Stomata</h3>
+                    <p class="text-sm text-gray-300">Pores for gas exchange</p>
+                </div>
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card">
+                    <div class="text-5xl mb-4 text-center">🔬</div>
+                    <h3 class="text-xl font-bold mb-3 text-red-300">Chloroplasts</h3>
+                    <p class="text-sm text-gray-300">Trap light energy</p>
+                </div>
+                <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card">
+                    <div class="text-5xl mb-4 text-center">🚰</div>
+                    <h3 class="text-xl font-bold mb-3 text-pink-300">Vascular Bundles</h3>
+                    <p class="text-sm text-gray-300">Water and food transport</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stem & Root -->
+        <section id="stem" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-lime-400">Internal Structure of Stems and Roots</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gradient-to-br from-lime-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-lime-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌿</div>
+                        <h3 class="text-3xl font-bold text-lime-300">Stem Structure</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">Dicotyledonous Stems</h4>
+                            <p class="text-sm text-gray-300">Vascular bundles arranged in a ring</p>
+                            <div class="mt-2 text-xs text-green-300">Examples: Sunflowers, beans, roses</div>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-lime-500">
+                            <h4 class="font-bold mb-2 text-lime-400">Monocotyledonous Stems</h4>
+                            <p class="text-sm text-gray-300">Vascular bundles scattered throughout</p>
+                            <div class="mt-2 text-xs text-lime-300">Examples: Corn, grasses, palms</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌱</div>
+                        <h3 class="text-3xl font-bold text-teal-300">Root Structure</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                            <h4 class="font-bold mb-2 text-cyan-400">Dicotyledonous Roots</h4>
+                            <p class="text-sm text-gray-300">Xylem occupies center (pith)</p>
+                            <div class="mt-2 text-xs text-cyan-300">Examples: Carrots, turnips, radishes</div>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-teal-500">
+                            <h4 class="font-bold mb-2 text-teal-400">Monocotyledonous Roots</h4>
+                            <p class="text-sm text-gray-300">Vascular bundles in a ring</p>
+                            <div class="mt-2 text-xs text-teal-300">Examples: Onions, grasses, wheat</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-300">Dicots vs Monocots</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-purple-500">
+                                <th class="p-4 text-left text-purple-300">Feature</th>
+                                <th class="p-4 text-left text-green-300">Dicots</th>
+                                <th class="p-4 text-left text-lime-300">Monocots</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-slate-700">
+                                <td class="p-4 font-bold">Stem Bundles</td>
+                                <td class="p-4">Ring arrangement</td>
+                                <td class="p-4">Scattered</td>
+                            </tr>
+                            <tr class="border-b border-slate-700">
+                                <td class="p-4 font-bold">Root Tissue</td>
+                                <td class="p-4">Xylem in center</td>
+                                <td class="p-4">Ring arrangement</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold">Leaf Veins</td>
+                                <td class="p-4">Branched network</td>
+                                <td class="p-4">Parallel</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adaptations -->
+        <section id="adapt" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-teal-400">Leaf Adaptations for Photosynthesis</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card">
+                    <div class="text-5xl mb-4 text-center">📏</div>
+                    <h3 class="text-xl font-bold mb-3 text-yellow-300">Broad, Flat Surface</h3>
+                    <p class="text-sm text-gray-300">Maximizes sunlight absorption area</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card">
+                    <div class="text-5xl mb-4 text-center">📄</div>
+                    <h3 class="text-xl font-bold mb-3 text-orange-300">Thin Lamina</h3>
+                    <p class="text-sm text-gray-300">Reduces light travel distance and enables gas exchange</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card">
+                    <div class="text-5xl mb-4 text-center">🌳</div>
+                    <h3 class="text-xl font-bold mb-3 text-green-300">Branching Veins</h3>
+                    <p class="text-sm text-gray-300">Efficient water and food transport</p>
+                </div>
+                <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-teal-500 card">
+                    <div class="text-5xl mb-4 text-center">⭕</div>
+                    <h3 class="text-xl font-bold mb-3 text-teal-300">Numerous Stomata</h3>
+                    <p class="text-sm text-gray-300">Allow CO₂ in and O₂ out</p>
+                </div>
+                <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card">
+                    <div class="text-5xl mb-4 text-center">💨</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyan-300">Air Spaces</h3>
+                    <p class="text-sm text-gray-300">Facilitate gas circulation</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card">
+                    <div class="text-5xl mb-4 text-center">🟢</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Chloroplasts</h3>
+                    <p class="text-sm text-gray-300">Contain chlorophyll to trap light</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gas Exchange -->
+        <section id="gas" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-cyan-400">Gaseous Exchange in Leaves</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">☀️</div>
+                        <h3 class="text-3xl font-bold text-yellow-300">Daytime (Photosynthesis)</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                            <div class="flex items-center mb-3">
+                                <div class="text-3xl mr-3">⬇️</div>
+                                <h4 class="font-bold text-green-400">CO₂ Diffuses IN</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">Consumed for photosynthesis</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <div class="flex items-center mb-3">
+                                <div class="text-3xl mr-3">⬆️</div>
+                                <h4 class="font-bold text-blue-400">O₂ Diffuses OUT</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">Produced as byproduct</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-600">
+                            <p class="text-xs text-gray-300">6CO₂ + 6H₂O + Light → C₆H₁₂O₆ + 6O₂</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌙</div>
+                        <h3 class="text-3xl font-bold text-indigo-300">Nighttime (Respiration)</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                            <div class="flex items-center mb-3">
+                                <div class="text-3xl mr-3">⬇️</div>
+                                <h4 class="font-bold text-blue-400">O₂ Diffuses IN</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">Used for respiration</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                            <div class="flex items-center mb-3">
+                                <div class="text-3xl mr-3">⬆️</div>
+                                <h4 class="font-bold text-red-400">CO₂ Diffuses OUT</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">Produced as waste</p>
+                        </div>
+                        <div class="bg-indigo-900 bg-opacity-30 p-4 rounded-lg border border-indigo-600">
+                            <p class="text-xs text-gray-300">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Energy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-300">How Stomata Work</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-2">🔓</div>
+                            <h4 class="text-xl font-bold text-green-400">Stomata OPEN</h4>
+                        </div>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>✓ Guard cells absorb water and swell</li>
+                            <li>✓ Stomatal pore opens</li>
+                            <li>✓ Gas exchange occurs freely</li>
+                            <li>✓ Typically during daytime</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-2">🔒</div>
+                            <h4 class="text-xl font-bold text-red-400">Stomata CLOSED</h4>
+                        </div>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>✓ Guard cells lose water and deflate</li>
+                            <li>✓ Stomatal pore closes</li>
+                            <li>✓ Prevents water loss</li>
+                            <li>✓ Typically nighttime or drought</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <div class="mt-12 bg-slate-800 rounded-2xl p-8 shadow-2xl border border-emerald-500">
+            <h3 class="text-3xl font-bold mb-8 text-center text-emerald-400">Summary: Key Concepts</h3>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="bg-green-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">🌱</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-green-300">Plants are Autotrophs</h4>
+                        <p class="text-gray-300">Produce own food through photosynthesis</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-emerald-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">🍃</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-emerald-300">Leaf Structure</h4>
+                        <p class="text-gray-300">Specialized cells for photosynthesis, protection, and transport</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-lime-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">🌿</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-lime-300">Stems and Roots</h4>
+                        <p class="text-gray-300">Dicots and monocots differ in vascular bundle arrangement</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-teal-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">🔬</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-teal-300">Leaf Adaptations</h4>
+                        <p class="text-gray-300">Broad surface, thin lamina, veins, stomata, air spaces, chloroplasts</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-cyan-600 rounded-full w-20 h-20 flex items-center justify-center text-3xl mr-6 flex-shrink-0">💨</div>
+                    <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl flex-1">
+                        <h4 class="text-xl font-bold mb-2 text-cyan-300">Gas Exchange</h4>
+                        <p class="text-gray-300">Day: CO₂ in, O₂ out. Night: O₂ in, CO₂ out</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        show('intro');
+    </script>
+</body>
+</html>

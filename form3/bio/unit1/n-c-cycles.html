@@ -1,0 +1,361 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nitrogen Cycle and The Carbon Cycle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in { animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .card:hover { transform: translateY(-5px); transition: 0.3s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <header class="text-center mb-12">
+            <div class="text-6xl mb-4">🔬</div>
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">The Nitrogen & Carbon Cycles</h1>
+            <p class="text-2xl text-gray-300 mb-2">Deep Dive into Biogeochemical Processes</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="show('nitrogen')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl transition shadow-lg">Nitrogen Cycle</button>
+                <button onclick="show('carbon')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl transition shadow-lg">Carbon Cycle</button>
+            </div>
+        </header>
+
+        <!-- Nitrogen Cycle -->
+        <section id="nitrogen" class="section">
+            <h2 class="text-4xl font-bold mb-8 text-center text-blue-400">The Nitrogen Cycle</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔄</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Nitrogen Movement Through Ecosystems</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">The nitrogen cycle describes how nitrogen moves between the atmosphere, soil, plants, and animals through various biological and physical processes.</p>
+                </div>
+            </div>
+
+            <!-- How Nitrogen Enters the Atmosphere -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-purple-300">⬆️ How Nitrogen Enters the Atmosphere</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-purple-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🦠</div>
+                            <div>
+                                <h4 class="font-bold text-purple-300 text-xl mb-2">Denitrification</h4>
+                                <p class="text-gray-300">Soil bacteria (e.g., Pseudomonas) convert nitrates (NO₃⁻) into nitrogen gas (N₂), releasing it back to the atmosphere</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-pink-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-pink-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🍂</div>
+                            <div>
+                                <h4 class="font-bold text-pink-300 text-xl mb-2">Decomposition</h4>
+                                <p class="text-gray-300">Dead plants and animals decompose, releasing nitrogen compounds that can be converted into atmospheric nitrogen gas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How Nitrogen Moves from Atmosphere to Surfaces -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-blue-300">⬇️ How Nitrogen Moves from Atmosphere to Surfaces</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-green-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🌱</div>
+                            <div>
+                                <h4 class="font-bold text-green-300 text-xl mb-2">Biological Nitrogen Fixation</h4>
+                                <p class="text-gray-300">Nitrogen-fixing bacteria (e.g., Rhizobium in legume root nodules) convert atmospheric nitrogen (N₂) into ammonia (NH₃)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-yellow-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🏭</div>
+                            <div>
+                                <h4 class="font-bold text-yellow-300 text-xl mb-2">Industrial Fixation</h4>
+                                <p class="text-gray-300">Ammonia fertilizers are produced by combining atmospheric nitrogen with hydrogen in factories</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-orange-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">⚡</div>
+                            <div>
+                                <h4 class="font-bold text-orange-300 text-xl mb-2">Lightning Fixation</h4>
+                                <p class="text-gray-300">Lightning converts nitrogen gas into nitrates (NO₃⁻), which enter the soil with rainwater</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-teal-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-teal-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🌿</div>
+                            <div>
+                                <h4 class="font-bold text-teal-300 text-xl mb-2">Assimilation</h4>
+                                <p class="text-gray-300">Plants absorb nitrates and ammonium ions from soil to make proteins and DNA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-amber-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-amber-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">♻️</div>
+                            <div>
+                                <h4 class="font-bold text-amber-300 text-xl mb-2">Ammonification</h4>
+                                <p class="text-gray-300">Decomposers break down dead organisms, converting organic nitrogen into ammonia (NH₃) returned to the soil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-cyan-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🔬</div>
+                            <div>
+                                <h4 class="font-bold text-cyan-300 text-xl mb-2">Nitrification</h4>
+                                <p class="text-gray-300">Soil bacteria convert ammonia first into nitrites (NO₂⁻) by Nitrosomonas, then into nitrates (NO₃⁻) by Nitrobacter, usable by plants</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bacteria Involved -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-indigo-300">🦠 Bacteria Involved and Their Environments</h3>
+                
+                <div class="space-y-6">
+                    <!-- Nitrogen-Fixing Bacteria -->
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-green-500">
+                        <h4 class="text-2xl font-bold text-green-300 mb-4">Nitrogen-Fixing Bacteria</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-400 mb-2">Rhizobium</h5>
+                                <p class="text-gray-300 text-sm">Lives in root nodules of legumes in a symbiotic relationship</p>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-400 mb-2">Azotobacter</h5>
+                                <p class="text-gray-300 text-sm">Free-living in well-aerated soil</p>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-400 mb-2">Clostridium</h5>
+                                <p class="text-gray-300 text-sm">Found in anaerobic (oxygen-poor) soil</p>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-400 mb-2">Frankia</h5>
+                                <p class="text-gray-300 text-sm">Symbiotic in root nodules of non-leguminous plants</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nitrifying Bacteria -->
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-cyan-500">
+                        <h4 class="text-2xl font-bold text-cyan-300 mb-4">Nitrifying Bacteria</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-cyan-400 mb-2">Nitrosomonas</h5>
+                                <p class="text-gray-300 text-sm">Converts ammonia to nitrites in aerobic soil and water</p>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-cyan-400 mb-2">Nitrobacter</h5>
+                                <p class="text-gray-300 text-sm">Converts nitrites to nitrates in aerobic environments</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Denitrifying Bacteria -->
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-purple-500">
+                        <h4 class="text-2xl font-bold text-purple-300 mb-4">Denitrifying Bacteria</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-purple-400 mb-2">Pseudomonas</h5>
+                                <p class="text-gray-300 text-sm">Active in anaerobic soils and water-logged areas</p>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-purple-400 mb-2">Paracoccus</h5>
+                                <p class="text-gray-300 text-sm">Active in anaerobic soils and water-logged areas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decomposers -->
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl border border-amber-500">
+                        <h4 class="text-2xl font-bold text-amber-300 mb-4">Decomposers (Ammonifying Bacteria)</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-amber-400 mb-2">Bacillus</h5>
+                                <p class="text-gray-300 text-sm">Found in soil and decaying organic matter</p>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded-lg">
+                                <h5 class="font-bold text-amber-400 mb-2">Proteus</h5>
+                                <p class="text-gray-300 text-sm">Found in soil and decaying organic matter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carbon Cycle -->
+        <section id="carbon" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-green-400">The Carbon Cycle</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🌍</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Carbon Movement Through Earth's Systems</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">The carbon cycle describes how carbon moves through the atmosphere, living organisms, oceans, and the earth, supporting life and influencing climate.</p>
+                </div>
+            </div>
+
+            <!-- How Carbon Enters the Atmosphere -->
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-orange-300">⬆️ How Carbon Enters the Atmosphere</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">💨</div>
+                            <div>
+                                <h4 class="font-bold text-blue-300 text-xl mb-2">Respiration</h4>
+                                <p class="text-gray-300">Plants, animals, and microorganisms release carbon dioxide (CO₂) during cellular respiration</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-amber-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-amber-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🍂</div>
+                            <div>
+                                <h4 class="font-bold text-amber-300 text-xl mb-2">Decomposition</h4>
+                                <p class="text-gray-300">Decomposers break down dead organisms, releasing CO₂ into the atmosphere</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-red-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🔥</div>
+                            <div>
+                                <h4 class="font-bold text-red-300 text-xl mb-2">Combustion</h4>
+                                <p class="text-gray-300">Burning fossil fuels and biomass releases CO₂</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-orange-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🌋</div>
+                            <div>
+                                <h4 class="font-bold text-orange-300 text-xl mb-2">Volcanic Eruptions</h4>
+                                <p class="text-gray-300">Release carbon gases from deep within the Earth's crust</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How Carbon Moves from Atmosphere to Surfaces -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-green-300">⬇️ How Carbon Moves from Atmosphere to Surfaces</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-emerald-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-emerald-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🌿</div>
+                            <div>
+                                <h4 class="font-bold text-emerald-300 text-xl mb-2">Photosynthesis</h4>
+                                <p class="text-gray-300">Plants, algae, and cyanobacteria absorb atmospheric CO₂ and convert it into glucose using sunlight</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-cyan-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🌊</div>
+                            <div>
+                                <h4 class="font-bold text-cyan-300 text-xl mb-2">Ocean Absorption</h4>
+                                <p class="text-gray-300">Oceans absorb CO₂, which dissolves and forms carbonic acid; marine organisms use carbon to form calcium carbonate shells</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-slate-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-slate-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">⛽</div>
+                            <div>
+                                <h4 class="font-bold text-slate-300 text-xl mb-2">Carbon Storage in Fossil Fuels</h4>
+                                <p class="text-gray-300">Dead plants and animals buried over millions of years form fossil fuels storing carbon underground</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carbon Movement on Land and in Water -->
+            <div class="bg-gradient-to-br from-teal-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-teal-500">
+                <h3 class="text-3xl font-bold mb-6 text-teal-300">🔄 Carbon Movement on Land and in Water</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-lime-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-lime-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🍽️</div>
+                            <div>
+                                <h4 class="font-bold text-lime-300 text-xl mb-2">Feeding</h4>
+                                <p class="text-gray-300">Carbon moves through food chains as animals consume plants and other animals</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-yellow-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🍁</div>
+                            <div>
+                                <h4 class="font-bold text-yellow-300 text-xl mb-2">Decomposition</h4>
+                                <p class="text-gray-300">Dead organisms release carbon back into soil and water</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-stone-500">
+                        <div class="flex items-start mb-2">
+                            <div class="bg-stone-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl flex-shrink-0">🪨</div>
+                            <div>
+                                <h4 class="font-bold text-stone-300 text-xl mb-2">Sedimentation</h4>
+                                <p class="text-gray-300">Carbon in oceans forms sediments that eventually become limestone or other rocks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function show(cycle) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(cycle).classList.remove('hidden');
+            document.getElementById(cycle).classList.add('fade-in');
+            
+            // Scroll to section
+            document.getElementById(cycle).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Show nitrogen cycle by default
+        show('nitrogen');
+    </script>
+</body>
+</html>

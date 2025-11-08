@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Human Interaction with the Environment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-950 via-green-950 to-cyan-950 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- HEADER -->
+    <header class="text-center mb-12">
+      <div class="text-6xl mb-4">🌍</div>
+      <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+        Human Interaction with the Environment
+      </h1>
+      <p class="text-xl text-gray-300 mb-8">
+        How human activities affect and shape the natural world
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <button onclick="show('overview')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl shadow-lg transition">Overview</button>
+        <button onclick="show('land')" class="px-6 py-3 bg-yellow-600 hover:bg-yellow-700 rounded-xl shadow-lg transition">Land Degradation</button>
+        <button onclick="show('pollution')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg transition">Pollution</button>
+        <button onclick="show('climate')" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl shadow-lg transition">Climate Change</button>
+      </div>
+    </header>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="section">
+      <h2 class="text-4xl font-bold mb-8 text-center text-green-400">Overview</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">👣</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Humans manipulate their environment to meet their needs — unlike most organisms that adapt naturally to theirs. These activities have both positive and negative effects.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+        <h3 class="text-2xl font-bold text-green-300 mb-4">Common Human Activities</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Cutting trees for settlement, agriculture, and infrastructure.</li>
+          <li>Using fertilizers and pesticides in farming.</li>
+          <li>Improper disposal of industrial, domestic, and plastic wastes.</li>
+          <li>Expansion of urban areas and industrialization.</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold text-green-300 mt-6 mb-4">Main Environmental Impacts</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Land degradation and soil erosion.</li>
+          <li>Air, water, and soil pollution.</li>
+          <li>Global warming and climate change.</li>
+          <li>Loss of biodiversity through species extinction.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LAND DEGRADATION -->
+    <section id="land" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-yellow-400">Land Degradation</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🌾</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Land degradation is the decline in land productivity, making it less capable of supporting plants and animals.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-6 rounded-xl border border-yellow-500 mb-6">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Causes</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Deforestation and overgrazing.</li>
+          <li>Poor farming methods like over-cultivation.</li>
+          <li>Mining and quarrying that destroy soil layers.</li>
+          <li>Soil erosion washing away nutrient-rich topsoil.</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-yellow-800 to-slate-900 p-6 rounded-xl border border-yellow-500">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Human Factors Behind Land Degradation</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li><strong>Poverty:</strong> People depend on cutting trees for charcoal and income.</li>
+          <li><strong>Illiteracy:</strong> Lack of awareness about environmental conservation.</li>
+          <li><strong>Overpopulation:</strong> High demand for land and resources.</li>
+          <li><strong>Negative Attitudes:</strong> People expect government to handle all environmental issues.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- POLLUTION -->
+    <section id="pollution" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-blue-400">Pollution</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">☣️</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Pollution is the introduction of harmful substances or energy into the environment, causing damage to living organisms and ecosystems.
+          </p>
+        </div>
+      </div>
+
+      <!-- AIR POLLUTION -->
+      <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-500 mb-6">
+        <h3 class="text-2xl font-bold text-blue-300 mb-4">Air Pollution</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Caused by emissions from factories, vehicles, and burning fossil fuels.</li>
+          <li>Releases gases like CO₂, SO₂, NOx, and hydrocarbons.</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-blue-200 mt-4">Effects</h4>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Causes acid rain and damages crops and buildings.</li>
+          <li>Leads to respiratory diseases like bronchitis.</li>
+          <li>Contributes to global warming and ozone depletion.</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-blue-200 mt-4">Control</h4>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Planting trees to absorb carbon dioxide.</li>
+          <li>Using renewable energy sources like solar and biogas.</li>
+        </ul>
+      </div>
+
+      <!-- WATER POLLUTION -->
+      <div class="bg-gradient-to-br from-cyan-900 to-slate-900 p-6 rounded-xl border border-cyan-500 mb-6">
+        <h3 class="text-2xl font-bold text-cyan-300 mb-4">Water Pollution</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Caused by sewage, industrial waste, and oil spills entering water bodies.</li>
+          <li>Leads to oxygen depletion, eutrophication, and aquatic deaths.</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-cyan-200 mt-4">Control</h4>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Treat sewage before discharge into rivers and lakes.</li>
+          <li>Use organic manure and reduce chemical fertilizers.</li>
+        </ul>
+      </div>
+
+      <!-- SOIL POLLUTION -->
+      <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+        <h3 class="text-2xl font-bold text-green-300 mb-4">Soil Pollution</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Caused by chemical pesticides, fertilizers, and poor waste disposal.</li>
+          <li>Degrades soil quality and harms beneficial organisms.</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-green-200 mt-4">Control</h4>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Use biodegradable and eco-friendly pesticides.</li>
+          <li>Recycle and reuse non-biodegradable waste.</li>
+          <li>Practice crop rotation and biological pest control.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CLIMATE CHANGE -->
+    <section id="climate" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-purple-400">Climate Change</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🌦️</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Climate change is the long-term alteration of temperature and weather patterns caused by human actions such as burning fossil fuels and deforestation.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-purple-900 to-slate-900 p-6 rounded-xl border border-purple-500 mb-6">
+        <h3 class="text-2xl font-bold text-purple-300 mb-4">Major Effects</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Floods from heavy rainfall and rising sea levels.</li>
+          <li>Droughts from prolonged dry seasons and higher temperatures.</li>
+          <li>Stormy winds damaging crops and structures.</li>
+          <li>Melting polar ice leading to habitat loss.</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-purple-800 to-slate-900 p-6 rounded-xl border border-purple-500">
+        <h3 class="text-2xl font-bold text-purple-300 mb-4">Mitigation Measures</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Reafforestation to absorb carbon dioxide and prevent erosion.</li>
+          <li>Using renewable energy sources instead of fossil fuels.</li>
+          <li>Growing drought-resistant and high-yield crop varieties.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    show('overview');
+  </script>
+</body>
+</html>

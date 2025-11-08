@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrient Cycles in Aquatic and Terrestrial Ecosystems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in { animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .card:hover { transform: translateY(-5px); transition: 0.3s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-950 via-teal-950 to-cyan-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <header class="text-center mb-12">
+            <div class="text-6xl mb-4">🌍</div>
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Nutrient Cycles in Ecosystems</h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding Essential Biogeochemical Cycles</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="show('nitrogen')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl transition shadow-lg">Nitrogen Cycle</button>
+                <button onclick="show('carbon')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl transition shadow-lg">Carbon Cycle</button>
+                <button onclick="show('water')" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-xl transition shadow-lg">Water Cycle</button>
+            </div>
+        </header>
+
+        <!-- Nitrogen Cycle -->
+        <section id="nitrogen" class="section">
+            <h2 class="text-4xl font-bold mb-8 text-center text-blue-400">Nitrogen Cycle</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⚛️</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Essential for Protein Synthesis</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">Nitrogen is essential for the synthesis of proteins in plants and animals. Although nitrogen gas (N₂) is abundant in the atmosphere, most organisms cannot use it directly due to its chemical inertness. Specialized bacteria convert nitrogen into usable forms for plants and animals.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-blue-300">🔄 Key Processes</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-purple-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-purple-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">⚡</div>
+                            <h4 class="font-bold text-purple-300 text-xl">Nitrogen Fixation</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Conversion of atmospheric nitrogen into ammonium (NH₄⁺) by nitrogen-fixing bacteria and lightning</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-indigo-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-indigo-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">🦠</div>
+                            <h4 class="font-bold text-indigo-300 text-xl">Nitrification</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Ammonium is converted into nitrates (NO₃⁻) by nitrifying bacteria</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-green-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">🌱</div>
+                            <h4 class="font-bold text-green-300 text-xl">Absorption</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Plants absorb nitrates through roots and use them to make proteins</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-yellow-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">🍃</div>
+                            <h4 class="font-bold text-yellow-300 text-xl">Feeding</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Animals obtain nitrogen by consuming plants; nitrogen cycles through the food chain</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-orange-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">🍂</div>
+                            <h4 class="font-bold text-orange-300 text-xl">Ammonification</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Decomposers convert organic nitrogen from dead organisms back into ammonium</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">💨</div>
+                            <h4 class="font-bold text-blue-300 text-xl">Denitrification</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Denitrifying bacteria convert excess soil nitrogen back to atmospheric nitrogen gas (N₂), completing the cycle</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold mb-4 text-green-300">✓ Advantages</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2 text-xl">•</span>
+                            <span>Maintains soil fertility by replenishing nitrogen in usable forms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2 text-xl">•</span>
+                            <span>Supports protein synthesis vital for plant and animal growth</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-red-500">
+                    <h3 class="text-2xl font-bold mb-4 text-red-300">⚠ Challenges</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2 text-xl">•</span>
+                            <span>Excess nitrogen from fertilizers can cause water pollution (eutrophication)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2 text-xl">•</span>
+                            <span>Disruption of nitrogen-fixing bacteria populations affects soil health</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carbon Cycle -->
+        <section id="carbon" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-green-400">Carbon Cycle</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🌿</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">The Backbone of Organic Life</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">The carbon cycle describes how carbon moves through the atmosphere, living organisms, and the earth. It is central to life as carbon forms the backbone of organic molecules.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-green-300">🔄 Key Processes</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-emerald-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-emerald-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">☀️</div>
+                            <h4 class="font-bold text-emerald-300 text-xl">Photosynthesis</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Plants absorb carbon dioxide (CO₂) from the atmosphere and convert it into organic compounds</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-lime-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-lime-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">🦌</div>
+                            <h4 class="font-bold text-lime-300 text-xl">Consumption</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Animals obtain carbon by eating plants or other animals</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-yellow-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">💨</div>
+                            <h4 class="font-bold text-yellow-300 text-xl">Respiration and Decomposition</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Both release CO₂ back to the atmosphere through breathing and decay</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-orange-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-orange-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">⛽</div>
+                            <h4 class="font-bold text-orange-300 text-xl">Fossil Fuels</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Formed from ancient plants and animals; burning fossil fuels releases CO₂</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold mb-4 text-green-300">✓ Advantages</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2 text-xl">•</span>
+                            <span>Regulates atmospheric CO₂ levels, helping maintain climate balance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2 text-xl">•</span>
+                            <span>Supports life by recycling carbon for organic molecule synthesis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-red-500">
+                    <h3 class="text-2xl font-bold mb-4 text-red-300">⚠ Challenges</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2 text-xl">•</span>
+                            <span>Excess CO₂ from fossil fuel burning contributes to global warming</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2 text-xl">•</span>
+                            <span>Deforestation reduces carbon uptake, disrupting the cycle</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Water Cycle -->
+        <section id="water" class="section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center text-cyan-400">Water Cycle (Hydrological Cycle)</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">💧</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Continuous Movement of Water</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">The water cycle is the continuous movement of water between the atmosphere, land, and bodies of water, supporting all forms of life.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-cyan-300">🔄 Key Processes</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-yellow-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">☀️</div>
+                            <h4 class="font-bold text-yellow-300 text-xl">Evaporation</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Water from oceans, lakes, rivers, and organisms evaporates into the atmosphere as vapor</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-slate-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-slate-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">☁️</div>
+                            <h4 class="font-bold text-slate-300 text-xl">Condensation</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Water vapor cools to form clouds</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-blue-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">🌧️</div>
+                            <h4 class="font-bold text-blue-300 text-xl">Precipitation</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Water returns to the earth as rain, snow, or hail</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-green-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">🌍</div>
+                            <h4 class="font-bold text-green-300 text-xl">Infiltration</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Water seeps into soil replenishing groundwater</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl border-l-4 border-cyan-500">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-cyan-600 rounded-full w-10 h-10 flex items-center justify-center mr-3 text-xl">🌊</div>
+                            <h4 class="font-bold text-cyan-300 text-xl">Runoff</h4>
+                        </div>
+                        <p class="text-gray-300 ml-13">Excess water flows over land into rivers and lakes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold mb-4 text-green-300">✓ Advantages</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2 text-xl">•</span>
+                            <span>Distributes water essential for all living organisms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2 text-xl">•</span>
+                            <span>Supports climate regulation and ecosystem health</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-red-500">
+                    <h3 class="text-2xl font-bold mb-4 text-red-300">⚠ Challenges</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2 text-xl">•</span>
+                            <span>Pollution can contaminate water sources throughout the cycle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2 text-xl">•</span>
+                            <span>Deforestation and urbanization disrupt natural water movement</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function show(cycle) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(cycle).classList.remove('hidden');
+            document.getElementById(cycle).classList.add('fade-in');
+            
+            // Scroll to section
+            document.getElementById(cycle).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Show nitrogen cycle by default
+        show('nitrogen');
+    </script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photosynthesis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-950 via-emerald-950 to-teal-950 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- HEADER -->
+    <header class="text-center mb-12">
+      <div class="text-6xl mb-4">🌞</div>
+      <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-lime-400 to-teal-400 bg-clip-text text-transparent">
+        Photosynthesis
+      </h1>
+      <p class="text-xl text-gray-300 mb-8">
+        The process by which green plants make their own food using sunlight, carbon dioxide, and water
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <button onclick="show('overview')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl shadow-lg transition">Overview</button>
+        <button onclick="show('leaf')" class="px-6 py-3 bg-yellow-600 hover:bg-yellow-700 rounded-xl shadow-lg transition">Leaf Structure</button>
+        <button onclick="show('cell')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg transition">Plant Cell</button>
+        <button onclick="show('starch')" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl shadow-lg transition">Starch Test</button>
+        <button onclick="show('adaptations')" class="px-6 py-3 bg-teal-600 hover:bg-teal-700 rounded-xl shadow-lg transition">Leaf Adaptations</button>
+        <button onclick="show('stages')" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-xl shadow-lg transition">Stages</button>
+        <button onclick="show('glucose')" class="px-6 py-3 bg-pink-600 hover:bg-pink-700 rounded-xl shadow-lg transition">Fate of Glucose</button>
+        <button onclick="show('minerals')" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-xl shadow-lg transition">Mineral Elements</button>
+        <button onclick="show('pigments')" class="px-6 py-3 bg-lime-600 hover:bg-lime-700 rounded-xl shadow-lg transition">Pigments</button>
+      </div>
+    </header>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="section">
+      <h2 class="text-4xl font-bold mb-8 text-center text-green-400">Overview of Photosynthesis</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8 text-center">
+        <div class="text-6xl mb-4">🌿</div>
+        <p class="text-lg text-gray-300 mb-4">
+          Photosynthesis is the process by which green plants make their own food using sunlight, carbon dioxide, and water.
+        </p>
+        <p class="text-green-300 font-mono text-lg mb-2">Carbon dioxide + Water → (Light energy, Chlorophyll) → Glucose + Oxygen</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+        <h3 class="text-2xl font-bold text-green-300 mb-4">Importance of Photosynthesis</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Produces oxygen necessary for respiration.</li>
+          <li>Provides food for plants and other organisms.</li>
+          <li>Maintains the carbon dioxide-oxygen balance in the atmosphere.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LEAF STRUCTURE -->
+    <section id="leaf" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-yellow-400">Parts and Functions of a Leaf</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🍃</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            The leaf has several parts, each performing specific functions essential for photosynthesis and plant survival.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-6 rounded-xl border border-yellow-500">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Parts of a Leaf</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li><strong>Lamina:</strong> Flat surface for light absorption.</li>
+            <li><strong>Petiole:</strong> Attaches leaf to stem.</li>
+            <li><strong>Veins:</strong> Transport water (xylem) and food (phloem).</li>
+            <li><strong>Stomata:</strong> Pores for gas exchange.</li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+          <h3 class="text-2xl font-bold text-green-300 mb-4">Functions of a Leaf</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li>Photosynthesis – production of food.</li>
+            <li>Transpiration – water loss for cooling.</li>
+            <li>Gas exchange – oxygen and carbon dioxide diffusion.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-slate-900 bg-opacity-50 p-6 rounded-xl border border-yellow-500">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Internal Structure of a Leaf</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li><strong>Cuticle:</strong> Waxy layer that reduces water loss.</li>
+          <li><strong>Upper Epidermis:</strong> Transparent for light penetration.</li>
+          <li><strong>Palisade Mesophyll:</strong> Packed with chloroplasts for photosynthesis.</li>
+          <li><strong>Spongy Mesophyll:</strong> Has air spaces for gas exchange.</li>
+          <li><strong>Lower Epidermis:</strong> Contains stomata controlled by guard cells.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PLANT CELL -->
+    <section id="cell" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-blue-400">Parts and Functions of a Plant Cell</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8 text-center">
+        <div class="text-6xl mb-4">🧫</div>
+        <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+          Plant cells contain specialized organelles that support photosynthesis and other life processes.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-500">
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li><strong>Cell Wall:</strong> Provides support and structure.</li>
+          <li><strong>Cell Membrane:</strong> Controls movement of substances.</li>
+          <li><strong>Nucleus:</strong> Controls activities, contains DNA.</li>
+          <li><strong>Cytoplasm:</strong> Site of chemical reactions.</li>
+          <li><strong>Chloroplasts:</strong> Contain chlorophyll for photosynthesis.</li>
+          <li><strong>Mitochondria:</strong> Produce energy through respiration.</li>
+          <li><strong>Vacuole:</strong> Stores water, maintains turgidity.</li>
+          <li><strong>Endoplasmic Reticulum:</strong> Synthesizes and transports materials.</li>
+          <li><strong>Golgi Apparatus:</strong> Packages and modifies proteins and lipids.</li>
+          <li><strong>Ribosomes:</strong> Sites of protein synthesis.</li>
+          <li><strong>Plasmodesmata:</strong> Channels for material exchange between cells.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STARCH TEST -->
+    <section id="starch" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-purple-400">Test for Starch in a Leaf</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-purple-500 text-center mb-8">
+        <div class="text-6xl mb-4">🧪</div>
+        <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+          This experiment confirms whether photosynthesis has occurred by testing for starch in leaves.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-purple-900 to-slate-900 p-6 rounded-xl border border-purple-500">
+        <ul class="list-decimal list-inside text-gray-300 space-y-2 text-sm">
+          <li>Boil the leaf in water to kill cells.</li>
+          <li>Boil in alcohol to remove chlorophyll.</li>
+          <li>Rinse in warm water to soften the leaf.</li>
+          <li>Add iodine solution — a blue-black color indicates starch presence.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LEAF ADAPTATIONS -->
+    <section id="adaptations" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-teal-400">Adaptations of Leaves for Photosynthesis</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-teal-500 mb-8 text-center">
+        <div class="text-6xl mb-4">🌿</div>
+        <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+          Leaves have specialized structures to maximize photosynthesis efficiency.
+        </p>
+      </div>
+
+     <div class="bg-gradient-to-br from-teal-900 to-slate-900 p-6 rounded-xl border border-teal-500">
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li>It has chlorophyll that traps sunlight energy for photosynthesis.</li>
+            <li>It has a broad surface area that captures more sunlight.</li>
+            <li>It has a thin blade that allows easy diffusion of gases.</li>
+            <li>It has veins that transport water and minerals and carry food away.</li>
+            <li>It has air spaces that enhance gas exchange within the leaf.</li>
+            <li>It has a transparent cuticle that allows light to pass through.</li>
+            <li>It has stomata that regulate gas exchange and control water loss.</li>
+        </ul>
+        </div>
+
+    </section>
+
+    <!-- STAGES OF PHOTOSYNTHESIS -->
+    <section id="stages" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-orange-400">Stages of Photosynthesis</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8 text-center">
+        <div class="text-6xl mb-4">⚡</div>
+        <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+          Photosynthesis occurs in two main stages: the light-dependent and light-independent (Calvin Cycle) stages.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-orange-900 to-slate-900 p-6 rounded-xl border border-orange-500">
+          <h3 class="text-2xl font-bold text-orange-300 mb-4">Light-Dependent Stage</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li>Occurs in the grana of chloroplasts.</li>
+            <li>Light energy splits water into oxygen, hydrogen ions, and electrons (photolysis).</li>
+            <li>Produces ATP and NADPH for the next stage.</li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-6 rounded-xl border border-yellow-500">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Light-Independent Stage (Calvin Cycle)</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li>Occurs in the chloroplast stroma.</li>
+            <li>Uses ATP and NADPH to convert CO₂ and hydrogen into glucose.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FATE OF GLUCOSE -->
+    <section id="glucose" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-pink-400">Fate of Glucose After Photosynthesis</h2>
+
+      <div class="bg-gradient-to-br from-pink-900 to-slate-900 p-6 rounded-xl border border-pink-500">
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Used in respiration for energy.</li>
+          <li>Stored as starch in roots, leaves, and tubers.</li>
+          <li>Converted into sucrose for transport.</li>
+          <li>Used to form cellulose for cell walls.</li>
+          <li>Converted into lipids for storage in seeds.</li>
+          <li>Combined with nitrates to form proteins.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FATE OF GLUCOSE -->
+<section id="glucose" class="section hidden">
+  <h2 class="text-4xl font-bold mb-8 text-center text-pink-400">Fate of Glucose After Photosynthesis</h2>
+
+  <div class="bg-gradient-to-br from-pink-900 to-slate-900 p-6 rounded-xl border border-pink-500">
+    <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+      <li>
+        Used in respiration for energy — glucose is broken down in cells to release energy required for growth, repair, and other life processes.
+      </li>
+      <li>
+        Stored as starch in roots, leaves, and tubers — excess glucose is converted into starch, an insoluble form, for future use when photosynthesis is not taking place.
+      </li>
+      <li>
+        Converted into sucrose for transport — sucrose, a soluble sugar, is transported through the phloem to other parts of the plant where it is needed.
+      </li>
+      <li>
+        Used to form cellulose for cell walls — glucose molecules are linked together to produce cellulose, which strengthens and supports plant cell walls.
+      </li>
+      <li>
+        Converted into lipids for storage in seeds — glucose can be changed into fats and oils that provide energy reserves for germinating seeds.
+      </li>
+      <li>
+        Combined with nitrates to form proteins — glucose joins with nitrogen compounds from the soil to produce amino acids, which build plant proteins.
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+    <!-- MINERAL ELEMENTS -->
+    <section id="minerals" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-cyan-400">Mineral Elements in Photosynthesis</h2>
+
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8 text-center">
+        <div class="text-6xl mb-4">🧲</div>
+        <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+          Different minerals are essential for photosynthesis and plant health.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-cyan-900 to-slate-900 p-6 rounded-xl border border-cyan-500">
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li><strong>Carbon (C):</strong> Used to form glucose.</li>
+          <li><strong>Potassium (K):</strong> Controls stomata and enzyme activity.</li>
+          <li><strong>Nitrogen (N):</strong> Component of chlorophyll and proteins and amino acids.</li>
+          <li><strong>Phosphorus (P):</strong> Key part of ATP and aids cell division..</li>
+          <li><strong>Oxygen (O):</strong> Released as a by-product.</li>
+          <li><strong>Sulphur (S):</strong> Supports enzyme function.</li>
+          <li><strong>Hydrogen (H):</strong> Combines with CO₂ to make glucose.</li>
+          <li><strong>Magnesium (Mg):</strong> Central atom in chlorophyll.</li>
+          <li><strong>Iron (Fe):</strong> Needed for chlorophyll formation and electron transport.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PIGMENTS -->
+    <section id="pigments" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-lime-400">Types of Pigments in Leaves</h2>
+
+      <div class="bg-gradient-to-br from-lime-900 to-slate-900 p-6 rounded-xl border border-lime-500 mb-8">
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li><strong>Chlorophyll:</strong> Green pigment absorbing blue and red light.</li>
+          <li><strong>Carotene:</strong> Yellow-orange pigment assisting photosynthesis.</li>
+          <li><strong>Xanthophyll:</strong> Yellow pigment helping in light absorption.</li>
+        </ul>
+      </div>
+
+     <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-lime-500">
+        <h3 class="text-2xl font-bold text-lime-300 mb-4 text-center">Activity: Investigating Types of Pigments in Plant Leaves</h3>
+        <p class="text-gray-300 text-sm mb-4">
+            This activity demonstrates how to separate different pigments found in green leaves using the process of chromatography.
+        </p>
+        
+        <h4 class="text-lime-400 font-semibold mb-2">Requirements:</h4>
+        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-4">
+            <li>Fresh green leaves</li>
+            <li>Alcohol (ethanol)</li>
+            <li>Filter paper</li>
+            <li>Tape</li>
+            <li>Beakers (small and large)</li>
+            <li>Mortar and pestle</li>
+            <li>Glass rod</li>
+        </ul>
+
+        <h4 class="text-lime-400 font-semibold mb-2">Procedure:</h4>
+        <ul class="list-decimal list-inside text-gray-300 text-sm space-y-2">
+            <li>Collect fresh green leaves and crush them into small pieces using a mortar and pestle.</li>
+            <li>Place the crushed leaves in a small beaker and add alcohol until it is half full.</li>
+            <li>Place the beaker in a larger water bath and heat gently until the alcohol turns green as pigments dissolve.</li>
+            <li>Remove the beaker and filter the green pigment solution into another clean beaker.</li>
+            <li>Cut a strip of filter paper (about 3 cm × 10 cm) and attach it to a glass rod with tape.</li>
+            <li>Hang the paper strip so that its tip just touches the surface of the pigment solution.</li>
+            <li>Leave it undisturbed for about 30 minutes to allow the pigments to separate along the paper.</li>
+            <li>Observe the different colored bands formed on the filter paper, each representing a different pigment.</li>
+        </ul>
+        </div>
+
+    </section>
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    show('overview');
+  </script>
+</body>
+</html>

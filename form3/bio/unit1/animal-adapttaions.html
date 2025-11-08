@@ -1,0 +1,179 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptations of Plants and Animals to Various Environments</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-950 via-emerald-950 to-cyan-950 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- HEADER -->
+    <header class="text-center mb-12">
+      <div class="text-6xl mb-4">🌱</div>
+      <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+        Adaptations of Plants and Animals to Various Environments
+      </h1>
+      <p class="text-xl text-gray-300 mb-8">
+        How plants and animals adjust to survive in different habitats
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <button onclick="show('mesophytes')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl shadow-lg transition">Mesophytes</button>
+        <button onclick="show('xerophytes')" class="px-6 py-3 bg-yellow-600 hover:bg-yellow-700 rounded-xl shadow-lg transition">Xerophytes</button>
+        <button onclick="show('hydrophytes')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg transition">Hydrophytes</button>
+        <button onclick="show('animals')" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl shadow-lg transition">Adaptations of Animals</button>
+      </div>
+    </header>
+
+    <!-- MESOPHYTES -->
+    <section id="mesophytes" class="section">
+      <h2 class="text-4xl font-bold mb-8 text-center text-green-400">Mesophytes</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🌿</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Mesophytes are plants that grow under average water and temperature conditions, forming grasslands and forests.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-500">
+        <h3 class="text-2xl font-bold text-green-300 mb-4">Adaptations</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Thin leaves for rapid diffusion of gases during photosynthesis.</li>
+          <li>Broad, flat leaf blades for more light and carbon dioxide absorption.</li>
+          <li>Mosaic leaf arrangement ensures maximum sunlight exposure.</li>
+          <li>Stomata on both leaf surfaces for efficient gaseous exchange.</li>
+          <li>Spongy mesophyll layer allows free circulation of gases.</li>
+          <li>Leaves contain chlorophyll for capturing sunlight energy.</li>
+          <li>Thick transparent cuticle reduces water loss.</li>
+          <li>Well-developed root system for water absorption.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- XEROPHYTES -->
+    <section id="xerophytes" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-yellow-400">Xerophytes</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🌵</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Xerophytes are plants that grow in dry environments like deserts. They have special features for conserving water.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-6 rounded-xl border border-yellow-500">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Adaptations</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Extensive root systems for absorbing deep or distant water.</li>
+          <li>Water storage tissues in stems (succulents like cacti and aloe).</li>
+          <li>Thick waxy cuticle and hairy leaves to reduce evaporation.</li>
+          <li>Small leaves and thorny stems minimize surface area and protect from animals.</li>
+          <li>Few stomata to reduce water loss through transpiration.</li>
+          <li>Seeds remain dormant during dry seasons and germinate after rains.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HYDROPHYTES -->
+    <section id="hydrophytes" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-blue-400">Hydrophytes</h2>
+      <div class="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+        <div class="text-center">
+          <div class="text-6xl mb-4">💧</div>
+          <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+            Hydrophytes are plants that live in or near water, such as lilies and reeds. They are adapted to moist or aquatic environments.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-500">
+        <h3 class="text-2xl font-bold text-blue-300 mb-4">Adaptations</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+          <li>Very thin or no cuticle to absorb water and gases directly.</li>
+          <li>Roots mainly anchor plants; absorption occurs through body surfaces.</li>
+          <li>Air spaces in stems and leaves aid buoyancy and gas exchange.</li>
+          <li>Have little xylem; support comes from aerenchyma tissue.</li>
+          <li>Submerged leaves lack stomata, while floating ones have many on upper surfaces.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ANIMALS -->
+    <section id="animals" class="section hidden">
+      <h2 class="text-4xl font-bold mb-8 text-center text-purple-400">Adaptations of Animals</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- CAMEL -->
+        <div class="bg-gradient-to-br from-yellow-900 to-slate-900 p-6 rounded-xl border border-yellow-600">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Camels 🐪</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li>Drink up to 120 litres at once to survive long without water.</li>
+            <li>Store fat in humps for energy and metabolic water.</li>
+            <li>Body temperature fluctuates to minimize sweating.</li>
+            <li>Wide feet prevent sinking in sand.</li>
+            <li>Thick fur protects from heat and cold.</li>
+          </ul>
+        </div>
+
+        <!-- POLAR BEAR -->
+        <div class="bg-gradient-to-br from-blue-900 to-slate-900 p-6 rounded-xl border border-blue-600">
+          <h3 class="text-2xl font-bold text-blue-300 mb-4">Polar Bears 🐻‍❄️</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li>Thick fat layer insulates against freezing temperatures.</li>
+            <li>Black skin under fur retains heat.</li>
+            <li>Hair between paw pads prevents frostbite.</li>
+            <li>Rounded ears reduce heat loss and ice buildup.</li>
+          </ul>
+        </div>
+
+        <!-- GOAT -->
+        <div class="bg-gradient-to-br from-green-900 to-slate-900 p-6 rounded-xl border border-green-600">
+          <h3 class="text-2xl font-bold text-green-300 mb-4">Goats 🐐</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li>Soft inner pads help climb rocky surfaces easily.</li>
+            <li>Strong hind legs aid in jumping and climbing.</li>
+            <li>Rectangular pupils enhance night vision.</li>
+            <li>Four-chambered stomach digests fibrous food efficiently.</li>
+          </ul>
+        </div>
+
+        <!-- SHARK -->
+        <div class="bg-gradient-to-br from-cyan-900 to-slate-900 p-6 rounded-xl border border-cyan-600">
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">Sharks 🦈</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+            <li>Streamlined body reduces drag for fast swimming.</li>
+            <li>Skin covered with denticles for protection.</li>
+            <li>Cartilage skeleton makes them light and flexible.</li>
+            <li>Well-developed senses detect prey and danger.</li>
+            <li>Male sharks use modified fins for internal fertilization.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    show('mesophytes');
+  </script>
+</body>
+</html>
