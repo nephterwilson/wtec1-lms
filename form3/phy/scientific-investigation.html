@@ -1,0 +1,1069 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Investigations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">🔬</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Scientific Investigations
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">The Scientific Method in Action</p>
+            <p class="text-lg text-gray-400">From Hypothesis to Conclusion</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('designing')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Designing
+                </button>
+                <button onclick="showSection('variables')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Variables
+                </button>
+                <button onclick="showSection('conducting')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Conducting
+                </button>
+                <button onclick="showSection('analysis')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Analysis
+                </button>
+                <button onclick="showSection('reporting')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Reporting
+                </button>
+            </div>
+        </header>
+
+        <!-- Designing Section -->
+        <section id="designing" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Designing a Scientific Investigation
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📋</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">The Scientific Method</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        A scientific investigation follows a systematic method to answer a specific question or problem. This structured approach ensures reliable and valid results.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">1️⃣</div>
+                        <h3 class="text-xl font-bold text-blue-300">Identify the Problem</h3>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-3">Formulate a clear research question</p>
+                    <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg">
+                        <p class="text-xs text-gray-400 mb-1">Example:</p>
+                        <p class="text-sm text-blue-300 italic">"What is the effect of voltage on current?"</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">2️⃣</div>
+                        <h3 class="text-xl font-bold text-purple-300">Form a Hypothesis</h3>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-3">Make a testable prediction</p>
+                    <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                        <p class="text-xs text-gray-400 mb-1">Example:</p>
+                        <p class="text-sm text-purple-300 italic">"If voltage increases, then current increases"</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">3️⃣</div>
+                        <h3 class="text-xl font-bold text-pink-300">Decide Data Range</h3>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-3">Determine what and how much data to collect</p>
+                    <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                        <p class="text-xs text-gray-400 mb-1">Consider:</p>
+                        <p class="text-sm text-pink-300">Type, quantity, and range of measurements</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">4️⃣</div>
+                        <h3 class="text-xl font-bold text-cyan-300">Identify Variables</h3>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-3">Classify all factors in the experiment</p>
+                    <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg">
+                        <p class="text-sm text-cyan-300">Independent, dependent, and control variables</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">5️⃣</div>
+                        <h3 class="text-xl font-bold text-green-300">Plan Procedure</h3>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-3">Design step-by-step method</p>
+                    <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                        <p class="text-sm text-green-300">Clear, repeatable instructions</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">6️⃣</div>
+                        <h3 class="text-xl font-bold text-yellow-300">List Materials</h3>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-3">Identify all required equipment</p>
+                    <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                        <p class="text-sm text-yellow-300">Instruments, chemicals, safety equipment</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900 to-purple-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-blue-300">Why Systematic Planning Matters</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            A well-designed investigation ensures that results are reliable, valid, and reproducible. By following the scientific method, researchers can minimize bias, control variables effectively, and draw meaningful conclusions from their data.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Each step builds upon the previous one, creating a logical framework that guides the entire investigation from initial question to final conclusion.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variables Section -->
+        <section id="variables" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Types of Variables
+            </h2>
+
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🎯</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Understanding Variables</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Variables are factors that influence an experiment. They are usually taken from the hypothesis and must be carefully identified and controlled for a fair test.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Independent Variable -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔄</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Independent Variable</h3>
+                        <p class="text-gray-400 text-sm mt-2">The variable YOU change</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-blue-400">Definition</h4>
+                            <p class="text-sm text-gray-300">The factor that is deliberately changed or manipulated by the investigator</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-blue-400">Examples</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Number of cells in a circuit</li>
+                                <li>• Length of wire</li>
+                                <li>• Temperature of water</li>
+                                <li>• Concentration of solution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dependent Variable -->
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📊</div>
+                        <h3 class="text-2xl font-bold text-green-300">Dependent Variable</h3>
+                        <p class="text-gray-400 text-sm mt-2">The variable YOU measure</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Definition</h4>
+                            <p class="text-sm text-gray-300">The factor that changes as a result of the independent variable; what you observe or measure</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Examples</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Voltage reading</li>
+                                <li>• Current flow</li>
+                                <li>• Temperature change</li>
+                                <li>• Resistance value</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Variables -->
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🔒</div>
+                        <h3 class="text-2xl font-bold text-orange-300">Control Variables</h3>
+                        <p class="text-gray-400 text-sm mt-2">Variables YOU keep constant</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-orange-400">Definition</h4>
+                            <p class="text-sm text-gray-300">Factors kept constant throughout the experiment to ensure a fair test</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-orange-400">Examples</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Room temperature</li>
+                                <li>• Type of wire used</li>
+                                <li>• Thickness of wire</li>
+                                <li>• Same resistor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Worked Example -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-300">Worked Example: Voltage and Current Investigation</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-3 text-xl">🔄</div>
+                            <h4 class="font-bold text-xl text-blue-400">Independent</h4>
+                        </div>
+                        <p class="text-gray-300 mb-2"><strong>Variable:</strong> Number of cells</p>
+                        <p class="text-sm text-gray-400">You change this from 1 to 4 cells</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-3 text-xl">📊</div>
+                            <h4 class="font-bold text-xl text-green-400">Dependent</h4>
+                        </div>
+                        <p class="text-gray-300 mb-2"><strong>Variables:</strong> Voltage and Current</p>
+                        <p class="text-sm text-gray-400">You measure these with voltmeter and ammeter</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-3 text-xl">🔒</div>
+                            <h4 class="font-bold text-xl text-orange-400">Control</h4>
+                        </div>
+                        <p class="text-gray-300 mb-2"><strong>Variables:</strong> Temperature, resistance, wire type</p>
+                        <p class="text-sm text-gray-400">Keep these the same throughout</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-indigo-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="font-bold text-lg mb-3 text-indigo-400">Hypothesis</h4>
+                    <p class="text-gray-300 italic">"If the number of cells (independent variable) increases, then the voltage and current (dependent variables) will increase, assuming temperature and resistance (control variables) remain constant."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conducting Section -->
+        <section id="conducting" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                Carrying Out a Scientific Investigation
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">⚗️</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">Conducting Your Experiment</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        After identifying variables and collecting data, conduct the experiment by changing one variable at a time while keeping others constant.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Procedure Steps -->
+                <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500">
+                    <h3 class="text-2xl font-bold mb-6 text-pink-300 text-center">Experimental Procedure</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-lg font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-1">Set Up Equipment</h4>
+                                <p class="text-sm text-gray-300">Arrange all apparatus according to your plan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-lg font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-1">Check Instruments</h4>
+                                <p class="text-sm text-gray-300">Ensure all measuring devices are zeroed and calibrated</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-lg font-bold">3</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-1">Change One Variable</h4>
+                                <p class="text-sm text-gray-300">Alter only the independent variable at a time</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-lg font-bold">4</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-1">Take Measurements</h4>
+                                <p class="text-sm text-gray-300">Use appropriate instruments to measure dependent variables</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-lg font-bold">5</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-1">Record Results</h4>
+                                <p class="text-sm text-gray-300">Document all observations in a data table immediately</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-lg font-bold">6</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-1">Repeat</h4>
+                                <p class="text-sm text-gray-300">Take multiple readings for reliability and accuracy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Table -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-300 text-center">Example: Table of Results</h3>
+                    <p class="text-gray-300 text-center mb-6 text-sm">Investigation: Effect of number of cells on voltage and current</p>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-purple-900 bg-opacity-50">
+                                    <th class="p-3 text-left text-purple-300 font-bold">Number of Cells</th>
+                                    <th class="p-3 text-left text-purple-300 font-bold">Voltage (V)</th>
+                                    <th class="p-3 text-left text-purple-300 font-bold">Current (A)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-700">
+                                    <td class="p-3 text-gray-300">1</td>
+                                    <td class="p-3 text-gray-300">1.5</td>
+                                    <td class="p-3 text-gray-300">0.1</td>
+                                </tr>
+                                <tr class="border-b border-gray-700 bg-slate-950 bg-opacity-30">
+                                    <td class="p-3 text-gray-300">2</td>
+                                    <td class="p-3 text-gray-300">3.0</td>
+                                    <td class="p-3 text-gray-300">0.2</td>
+                                </tr>
+                                <tr class="border-b border-gray-700">
+                                    <td class="p-3 text-gray-300">3</td>
+                                    <td class="p-3 text-gray-300">4.5</td>
+                                    <td class="p-3 text-gray-300">0.3</td>
+                                </tr>
+                                <tr class="bg-slate-950 bg-opacity-30">
+                                    <td class="p-3 text-gray-300">4</td>
+                                    <td class="p-3 text-gray-300">6.0</td>
+                                    <td class="p-3 text-gray-300">0.4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-6 bg-purple-900 bg-opacity-30 p-4 rounded-xl">
+                        <h4 class="font-bold text-purple-400 mb-2">Key Observations</h4>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li>✓ Voltage increases proportionally with cells</li>
+                            <li>✓ Current also increases proportionally</li>
+                            <li>✓ Pattern suggests direct relationship</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Errors and Accuracy -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">Errors and Accuracy</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">👁️</div>
+                        <h4 class="text-xl font-bold mb-3 text-red-300 text-center">Personal Error</h4>
+                        <p class="text-sm text-gray-300 mb-3">Mistakes made by the experimenter</p>
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Example:</p>
+                            <p class="text-sm text-red-300">Parallax error - reading from wrong angle</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🔧</div>
+                        <h4 class="text-xl font-bold mb-3 text-orange-300 text-center">Instrument Error</h4>
+                        <p class="text-sm text-gray-300 mb-3">Problems with measuring tools</p>
+                        <div class="bg-orange-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Example:</p>
+                            <p class="text-sm text-orange-300">Poor resolution or faulty calibration</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">0️⃣</div>
+                        <h4 class="text-xl font-bold mb-3 text-yellow-300 text-center">Zero Error</h4>
+                        <p class="text-sm text-gray-300 mb-3">Instrument doesn't start at zero</p>
+                        <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Example:</p>
+                            <p class="text-sm text-yellow-300">Scale shows 0.1 when nothing is measured</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold mb-6 text-green-300 text-center">Minimizing Errors</h3>
+                    <p class="text-gray-300 text-center mb-6">Reduce errors to improve reliability of results</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <div class="text-4xl mb-3 text-center">🔁</div>
+                            <h4 class="font-bold text-lg mb-2 text-green-400 text-center">Repeat & Average</h4>
+                            <p class="text-sm text-gray-300 text-center">Take multiple readings and calculate the mean to reduce random errors</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <div class="text-4xl mb-3 text-center">👀</div>
+                            <h4 class="font-bold text-lg mb-2 text-cyan-400 text-center">Avoid Parallax</h4>
+                            <p class="text-sm text-gray-300 text-center">Read measurements at eye level, perpendicular to the scale</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <div class="text-4xl mb-3 text-center">✅</div>
+                            <h4 class="font-bold text-lg mb-2 text-blue-400 text-center">Zero Check</h4>
+                            <p class="text-sm text-gray-300 text-center">Ensure all instruments start at zero before taking measurements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Significant Figures -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-2xl font-bold mb-6 text-indigo-300 text-center">Significant Figures</h3>
+                <p class="text-gray-300 text-center mb-6">Calculated results should reflect the precision of the original measurements</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-indigo-400">The Rule</h4>
+                        <p class="text-gray-300 mb-4">Always round results to match the number of significant figures of the least precise measurement in your data</p>
+                        <div class="bg-indigo-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-sm text-gray-400 mb-2">If your data has 2 significant figures:</p>
+                            <p class="text-lg text-indigo-300 font-bold text-center">6.666666 → 6.7</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-purple-400">Examples</h4>
+                        <div class="space-y-3 text-sm text-gray-300">
+                            <p>• 12.3456 (3 s.f.) → <span class="text-purple-300 font-bold">12.3</span></p>
+                            <p>• 0.045678 (2 s.f.) → <span class="text-purple-300 font-bold">0.046</span></p>
+                            <p>• 1234.567 (4 s.f.) → <span class="text-purple-300 font-bold">1235</span></p>
+                            <p>• 9.9999 (2 s.f.) → <span class="text-purple-300 font-bold">10</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section id="analysis" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Data Analysis & Graphing
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📈</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Analyzing Your Results</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        After collecting data, organize it clearly and use graphs to visualize relationships between variables and identify patterns.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Organizing Data -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Collecting and Organizing Data</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                        <h4 class="text-2xl font-bold mb-6 text-blue-300 text-center">Data Table Guidelines</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                                <div>
+                                    <h5 class="font-bold text-blue-400 mb-1">Clear Headers</h5>
+                                    <p class="text-sm text-gray-300">Include quantity names and units in brackets</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                                <div>
+                                    <h5 class="font-bold text-blue-400 mb-1">Independent First</h5>
+                                    <p class="text-sm text-gray-300">Place independent variable in the first column</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                                <div>
+                                    <h5 class="font-bold text-blue-400 mb-1">Consistent Precision</h5>
+                                    <p class="text-sm text-gray-300">Use same decimal places throughout each column</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-3 flex-shrink-0">✓</div>
+                                <div>
+                                    <h5 class="font-bold text-blue-400 mb-1">Neat & Organized</h5>
+                                    <p class="text-sm text-gray-300">Use ruled lines and clear, legible writing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                        <h4 class="text-2xl font-bold mb-6 text-cyan-300 text-center">Sample Data Table</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="bg-cyan-900 bg-opacity-50">
+                                        <th class="p-3 text-left text-cyan-300 font-bold">Length (cm)</th>
+                                        <th class="p-3 text-left text-cyan-300 font-bold">Resistance (Ω)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="p-3 text-gray-300">10.0</td>
+                                        <td class="p-3 text-gray-300">2.0</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 bg-slate-950 bg-opacity-30">
+                                        <td class="p-3 text-gray-300">20.0</td>
+                                        <td class="p-3 text-gray-300">4.0</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700">
+                                        <td class="p-3 text-gray-300">30.0</td>
+                                        <td class="p-3 text-gray-300">6.0</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 bg-slate-950 bg-opacity-30">
+                                        <td class="p-3 text-gray-300">40.0</td>
+                                        <td class="p-3 text-gray-300">8.0</td>
+                                    </tr>
+                                    <tr class="bg-slate-950 bg-opacity-30">
+                                        <td class="p-3 text-gray-300">50.0</td>
+                                        <td class="p-3 text-gray-300">10.0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-4 bg-cyan-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 text-center">Note: Units in headers, consistent decimal places</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plotting Graphs -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Plotting a Graph</h3>
+                
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-6">
+                    <p class="text-gray-300 text-center mb-6 text-lg">Graphs are visual tools to show relationships between variables</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <div class="text-4xl mb-3 text-center">📐</div>
+                            <h4 class="font-bold text-lg mb-3 text-purple-400 text-center">Choose Scale</h4>
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Use most of the graph paper</li>
+                                <li>• Select easy intervals (2, 5, 10)</li>
+                                <li>• Avoid awkward scales like 3 or 7</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <div class="text-4xl mb-3 text-center">🏷️</div>
+                            <h4 class="font-bold text-lg mb-3 text-pink-400 text-center">Label Axes</h4>
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• X-axis: independent variable</li>
+                                <li>• Y-axis: dependent variable</li>
+                                <li>• Include units in brackets</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <div class="text-4xl mb-3 text-center">✏️</div>
+                            <h4 class="font-bold text-lg mb-3 text-blue-400 text-center">Plot & Connect</h4>
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Mark points with small crosses</li>
+                                <li>• Draw line of best fit</li>
+                                <li>• Add clear title</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                    <h4 class="text-2xl font-bold mb-4 text-indigo-300 text-center">Example Graph Structure</h4>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-center text-2xl font-bold text-white mb-6">Voltage against Current</p>
+                        <div class="bg-slate-900 p-8 rounded-lg relative" style="height: 300px;">
+                            <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-500"></div>
+                            <div class="absolute top-0 bottom-0 left-0 w-0.5 bg-gray-500"></div>
+                            <div class="absolute bottom-0 left-12 text-gray-400 text-sm">0</div>
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm">Current (A)</div>
+                            <div class="absolute top-1/2 left-0 transform -translate-y-1/2 -rotate-90 text-gray-400 text-sm">Voltage (V)</div>
+                            <svg class="absolute inset-0" style="width: 100%; height: 100%;">
+                                <line x1="15%" y1="85%" x2="85%" y2="15%" stroke="#8b5cf6" stroke-width="3" />
+                                <circle cx="15%" cy="85%" r="4" fill="#60a5fa" />
+                                <circle cx="30%" cy="70%" r="4" fill="#60a5fa" />
+                                <circle cx="50%" cy="50%" r="4" fill="#60a5fa" />
+                                <circle cx="70%" cy="30%" r="4" fill="#60a5fa" />
+                                <circle cx="85%" cy="15%" r="4" fill="#60a5fa" />
+                            </svg>
+                        </div>
+                        <p class="text-center text-gray-400 text-sm mt-4">Shows linear relationship (direct proportion)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drawing Conclusions -->
+            <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                <h3 class="text-2xl font-bold mb-6 text-green-300 text-center">Drawing Conclusions from Graphs</h3>
+                <p class="text-gray-300 text-center mb-6">Graphs help analyze trends and test hypotheses</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-green-400">What to Look For</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">📈</span>
+                                <div>
+                                    <p class="font-bold text-green-300">Straight line through origin</p>
+                                    <p class="text-sm text-gray-300">Direct proportionality (y ∝ x)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">📊</span>
+                                <div>
+                                    <p class="font-bold text-cyan-300">Straight line not through origin</p>
+                                    <p class="text-sm text-gray-300">Linear relationship (y = mx + c)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">〰️</span>
+                                <div>
+                                    <p class="font-bold text-blue-300">Curved line</p>
+                                    <p class="text-sm text-gray-300">Non-linear relationship</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-blue-400">Handling Outliers</h4>
+                        <p class="text-sm text-gray-300 mb-4">Outliers are data points that don't fit the pattern</p>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg space-y-2 text-sm text-gray-300">
+                            <p>✓ Identify points far from the trend</p>
+                            <p>✓ Check for measurement errors</p>
+                            <p>✓ Exclude when drawing line of best fit</p>
+                            <p>✓ Repeat measurement if possible</p>
+                            <p>✓ Note outliers in your report</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-green-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="font-bold text-xl mb-3 text-green-400 text-center">Example Conclusion</h4>
+                    <p class="text-gray-300 italic text-center">
+                        "The graph shows that voltage and current are directly proportional. As voltage increases, current increases at a constant rate. The straight line through the origin confirms Ohm's Law (V = IR) for a constant resistance. This supports our hypothesis that increasing voltage increases current."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reporting Section -->
+        <section id="reporting" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Communicating & Evaluating Results
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📝</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-4">Scientific Communication</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Scientific findings should be communicated clearly so others can understand, replicate, and build upon your work.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Laboratory Report Structure -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-orange-400">Laboratory Report Structure</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">1</div>
+                            <h4 class="text-xl font-bold text-blue-300">Title & Aim</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">State what you're investigating</p>
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Example:</p>
+                            <p class="text-sm text-blue-300 italic">"To investigate the relationship between wire length and resistance"</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">2</div>
+                            <h4 class="text-xl font-bold text-purple-300">Hypothesis</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">Your testable prediction</p>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Example:</p>
+                            <p class="text-sm text-purple-300 italic">"As wire length increases, resistance increases proportionally"</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-pink-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">3</div>
+                            <h4 class="text-xl font-bold text-pink-300">Variables</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">Identify all variables clearly</p>
+                        <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg text-sm text-gray-300">
+                            <p>• Independent: wire length</p>
+                            <p>• Dependent: resistance</p>
+                            <p>• Control: temperature, thickness</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">4</div>
+                            <h4 class="text-xl font-bold text-cyan-300">Materials & Apparatus</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">List all equipment used</p>
+                        <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg text-sm text-gray-300">
+                            <p>Include: instruments, chemicals, safety equipment, quantities</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">5</div>
+                            <h4 class="text-xl font-bold text-green-300">Procedure</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">Step-by-step method</p>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg text-sm text-gray-300">
+                            <p>Write clearly so others can replicate your experiment</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">6</div>
+                            <h4 class="text-xl font-bold text-yellow-300">Diagram</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">Sketch and label setup</p>
+                        <div class="bg-yellow-900 bg-opacity-30 p-3 rounded-lg text-sm text-gray-300">
+                            <p>Clear, labeled diagram of experimental apparatus</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">7</div>
+                            <h4 class="text-xl font-bold text-orange-300">Data & Graph</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">Present results clearly</p>
+                        <div class="bg-orange-900 bg-opacity-30 p-3 rounded-lg text-sm text-gray-300">
+                            <p>Table of results and appropriate graph with analysis</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">8</div>
+                            <h4 class="text-xl font-bold text-red-300">Conclusion</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">State findings and relate to hypothesis</p>
+                        <div class="bg-red-900 bg-opacity-30 p-3 rounded-lg text-sm text-gray-300">
+                            <p>Was your hypothesis supported? What does data show?</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-indigo-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">9</div>
+                            <h4 class="text-xl font-bold text-indigo-300">Evaluation</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3">Assess reliability and suggest improvements</p>
+                        <div class="bg-indigo-900 bg-opacity-30 p-3 rounded-lg text-sm text-gray-300">
+                            <p>Discuss errors, limitations, and how to improve</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                 <!-- Example Report Summary -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-300">Example Laboratory Report Summary</h3>
+                <p class="text-gray-300 text-center mb-6 text-lg">Investigation: Relationship between wire length and resistance</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-purple-400">Investigation Details</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <div>
+                                <p class="font-bold text-purple-300 mb-1">Aim:</p>
+                                <p class="text-sm">To investigate how wire length affects electrical resistance</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-pink-300 mb-1">Hypothesis:</p>
+                                <p class="text-sm italic">Longer wire will have higher resistance</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-blue-300 mb-1">Independent Variable:</p>
+                                <p class="text-sm">Length of wire (cm)</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-green-300 mb-1">Dependent Variable:</p>
+                                <p class="text-sm">Resistance (Ω)</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-orange-300 mb-1">Control Variables:</p>
+                                <p class="text-sm">Temperature, wire thickness, material</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-cyan-400">Results & Conclusion</h4>
+                        <div class="space-y-3 text-gray-300">
+                            <div>
+                                <p class="font-bold text-cyan-300 mb-1">Graph Shows:</p>
+                                <p class="text-sm">Straight line through origin - direct proportionality</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-yellow-300 mb-1">Pattern Observed:</p>
+                                <p class="text-sm">As length doubles, resistance doubles</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-green-300 mb-1">Conclusion:</p>
+                                <p class="text-sm">Resistance increases linearly with wire length. Hypothesis supported by data.</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-red-300 mb-1">Evaluation:</p>
+                                <p class="text-sm">Results reliable - repeated measurements showed consistency. Could improve by controlling room temperature more precisely.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Evaluation Section -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-red-400">Evaluating Scientific Investigations</h3>
+                <p class="text-gray-300 text-center mb-8 text-lg">Evaluation helps improve future experiments and ensure reliability</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🎯</div>
+                        <h4 class="text-xl font-bold mb-4 text-red-300 text-center">Accuracy</h4>
+                        <p class="text-sm text-gray-300 mb-4 text-center">How close measurements are to the true value</p>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-2">Consider:</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Were there systematic errors?</li>
+                                <li>• Was equipment calibrated?</li>
+                                <li>• Did you minimize parallax?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🔁</div>
+                        <h4 class="text-xl font-bold mb-4 text-orange-300 text-center">Reliability</h4>
+                        <p class="text-sm text-gray-300 mb-4 text-center">Consistency of repeated measurements</p>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-2">Ask yourself:</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Were results consistent?</li>
+                                <li>• Did you repeat measurements?</li>
+                                <li>• Any anomalous results?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">⬆️</div>
+                        <h4 class="text-xl font-bold mb-4 text-yellow-300 text-center">Improvements</h4>
+                        <p class="text-sm text-gray-300 mb-4 text-center">How to enhance the investigation</p>
+                        <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-2">Suggestions:</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Use more precise instruments</li>
+                                <li>• Increase sample size</li>
+                                <li>• Control temperature better</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Precision and Reliability -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-300">Precision and Reliability</h3>
+                <p class="text-gray-300 text-center mb-8 text-lg">Precise and reliable experiments help produce valid conclusions</p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="text-5xl mr-4">🔬</div>
+                            <h4 class="text-2xl font-bold text-indigo-400">Precision</h4>
+                        </div>
+                        <p class="text-gray-300 mb-4">The degree of refinement in measurements</p>
+                        <div class="bg-indigo-900 bg-opacity-30 p-4 rounded-lg space-y-2">
+                            <div class="flex items-start">
+                                <span class="text-indigo-400 mr-2">✓</span>
+                                <p class="text-sm text-gray-300">Use instruments with better resolution (e.g., digital meters vs analog)</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-indigo-400 mr-2">✓</span>
+                                <p class="text-sm text-gray-300">Measure over longer intervals to reduce percentage error</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-indigo-400 mr-2">✓</span>
+                                <p class="text-sm text-gray-300">Use sensitive equipment appropriate for the scale</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="text-5xl mr-4">✅</div>
+                            <h4 class="text-2xl font-bold text-cyan-400">Reliability</h4>
+                        </div>
+                        <p class="text-gray-300 mb-4">The consistency and reproducibility of results</p>
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg space-y-2">
+                            <div class="flex items-start">
+                                <span class="text-cyan-400 mr-2">✓</span>
+                                <p class="text-sm text-gray-300">Repeat measurements multiple times</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-cyan-400 mr-2">✓</span>
+                                <p class="text-sm text-gray-300">Calculate averages to reduce random errors</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-cyan-400 mr-2">✓</span>
+                                <p class="text-sm text-gray-300">Compare results with peers or published data</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-cyan-400 mr-2">✓</span>
+                                <p class="text-sm text-gray-300">Check for consistency in patterns</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-gradient-to-r from-indigo-900 to-purple-900 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-5xl mr-6 flex-shrink-0">💡</div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-3 text-indigo-300">Key Principle</h4>
+                            <p class="text-gray-300 text-lg leading-relaxed">
+                                A good scientific investigation combines both precision (accurate measurements with appropriate instruments) and reliability (consistent, repeatable results). Together, these ensure your conclusions are valid and trustworthy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 py-8 border-t border-gray-700">
+            <p class="text-lg mb-2">Master the Scientific Method</p>
+            <p class="text-sm">From hypothesis to conclusion, follow systematic steps for reliable results</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section with animation
+            const selectedSection = document.getElementById(sectionName);
+            selectedSection.classList.remove('hidden');
+            selectedSection.classList.add('fade-in');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Show designing section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('designing');
+        });
+    </script>
+</body>
+</html>

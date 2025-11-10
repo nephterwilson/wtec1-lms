@@ -1,0 +1,975 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurements & SI Units</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">📏</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Measurements & SI Units
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">The International System of Units</p>
+            <p class="text-lg text-gray-400">Standardizing Scientific Measurements Worldwide</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('intro')" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 rounded-xl transition shadow-lg">
+                    Introduction
+                </button>
+                <button onclick="showSection('base-units')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Base Units
+                </button>
+                <button onclick="showSection('prefixes')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Prefixes
+                </button>
+                <button onclick="showSection('instruments')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Instruments
+                </button>
+                <button onclick="showSection('exercises')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Exercises
+                </button>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="intro" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Introduction to SI Units
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌍</div>
+                    <h3 class="text-3xl font-bold text-cyan-300 mb-4">Global Standardization</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Measurements in science use the International System of Units (SI Units). This system ensures standardization in measuring physical quantities globally, enabling scientists worldwide to communicate and collaborate effectively.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">✅</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyan-300">Consistency</h3>
+                    <p class="text-sm text-gray-300">SI units provide a consistent method of measurement across all scientific disciplines and countries.</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔤</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-300">Unique Symbols</h3>
+                    <p class="text-sm text-gray-300">Each quantity has a base unit with a unique symbol recognized internationally.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-cyan-900 to-blue-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-cyan-300">Why SI Units Matter</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Before the SI system, different countries and regions used various measurement systems, leading to confusion and errors. The SI system eliminates these problems by providing a universal language for measurement. Whether you're in Tokyo, New York, or London, a metre is always a metre, and a kilogram is always a kilogram.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Base Units Section -->
+        <section id="base-units" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Base and Derived SI Units
+            </h2>
+
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⚛️</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">The Foundation of Measurement</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        SI units are classified as base and derived units. Base units are fundamental measurements that cannot be expressed in terms of other units, while derived units are combinations of base units.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">The Seven Base SI Units</h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">📏</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-red-300">Length</h3>
+                            <p class="text-2xl font-bold text-white">metre (m)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Distance between two points in space</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">⚖️</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-300">Mass</h3>
+                            <p class="text-2xl font-bold text-white">kilogram (kg)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Amount of matter in an object</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">⏱️</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-yellow-300">Time</h3>
+                            <p class="text-2xl font-bold text-white">second (s)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Duration of events</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🌡️</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-green-300">Temperature</h3>
+                            <p class="text-2xl font-bold text-white">kelvin (K)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Measure of thermal energy</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">⚡</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-300">Current</h3>
+                            <p class="text-2xl font-bold text-white">ampere (A)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Flow of electric charge</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">🧪</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-300">Amount</h3>
+                            <p class="text-2xl font-bold text-white">mole (mol)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Amount of substance</p>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-3xl flex-shrink-0">💡</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-purple-300">Luminous Intensity</h3>
+                            <p class="text-2xl font-bold text-white">candela (cd)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm">Intensity of light</p>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Derived Units</h3>
+
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <p class="text-gray-300 text-lg mb-6 text-center">
+                    Derived units are formed by combining base units through mathematical operations.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🏃</div>
+                        <h4 class="font-bold text-lg mb-2 text-blue-400">Speed</h4>
+                        <p class="text-2xl font-bold mb-2">m/s</p>
+                        <p class="text-sm text-gray-400">metres per second</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">💪</div>
+                        <h4 class="font-bold text-lg mb-2 text-green-400">Force</h4>
+                        <p class="text-2xl font-bold mb-2">N (Newton)</p>
+                        <p class="text-sm text-gray-400">kg·m/s²</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🌊</div>
+                        <h4 class="font-bold text-lg mb-2 text-purple-400">Pressure</h4>
+                        <p class="text-2xl font-bold mb-2">Pa (Pascal)</p>
+                        <p class="text-sm text-gray-400">N/m² or kg/(m·s²)</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">⚡</div>
+                        <h4 class="font-bold text-lg mb-2 text-yellow-400">Energy</h4>
+                        <p class="text-2xl font-bold mb-2">J (Joule)</p>
+                        <p class="text-sm text-gray-400">N·m or kg·m²/s²</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">🔋</div>
+                        <h4 class="font-bold text-lg mb-2 text-cyan-400">Power</h4>
+                        <p class="text-2xl font-bold mb-2">W (Watt)</p>
+                        <p class="text-sm text-gray-400">J/s or kg·m²/s³</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl text-center">
+                        <div class="text-5xl mb-3">📦</div>
+                        <h4 class="font-bold text-lg mb-2 text-orange-400">Volume</h4>
+                        <p class="text-2xl font-bold mb-2">m³</p>
+                        <p class="text-sm text-gray-400">cubic metres</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prefixes Section -->
+        <section id="prefixes" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                SI Unit Prefixes & Standard Notation
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔢</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Powers of Ten</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Prefixes are used to express very large or small quantities more conveniently. Each prefix has a symbol and represents a power of 10, making it easier to work with extreme values.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Common SI Prefixes</h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-2">📈</div>
+                        <h3 class="text-2xl font-bold text-green-300">giga (G)</h3>
+                        <p class="text-3xl font-bold text-white my-2">10⁹</p>
+                        <p class="text-gray-300">1,000,000,000</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg mt-4">
+                        <p class="text-sm text-gray-400">Example:</p>
+                        <p class="text-sm text-gray-300">1 gigametre = 1 × 10⁹ m</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-2">📊</div>
+                        <h3 class="text-2xl font-bold text-blue-300">mega (M)</h3>
+                        <p class="text-3xl font-bold text-white my-2">10⁶</p>
+                        <p class="text-gray-300">1,000,000</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg mt-4">
+                        <p class="text-sm text-gray-400">Example:</p>
+                        <p class="text-sm text-gray-300">1 megawatt = 1 × 10⁶ W</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-2">📏</div>
+                        <h3 class="text-2xl font-bold text-cyan-300">kilo (k)</h3>
+                        <p class="text-3xl font-bold text-white my-2">10³</p>
+                        <p class="text-gray-300">1,000</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg mt-4">
+                        <p class="text-sm text-gray-400">Example:</p>
+                        <p class="text-sm text-gray-300">1 kilometre = 1000 m</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-2">📉</div>
+                        <h3 class="text-2xl font-bold text-yellow-300">centi (c)</h3>
+                        <p class="text-3xl font-bold text-white my-2">10⁻²</p>
+                        <p class="text-gray-300">0.01</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg mt-4">
+                        <p class="text-sm text-gray-400">Example:</p>
+                        <p class="text-sm text-gray-300">1 centimetre = 0.01 m</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-2">🔬</div>
+                        <h3 class="text-2xl font-bold text-orange-300">milli (m)</h3>
+                        <p class="text-3xl font-bold text-white my-2">10⁻³</p>
+                        <p class="text-gray-300">0.001</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg mt-4">
+                        <p class="text-sm text-gray-400">Example:</p>
+                        <p class="text-sm text-gray-300">1 millimetre = 0.001 m</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-2">🦠</div>
+                        <h3 class="text-2xl font-bold text-red-300">micro (μ)</h3>
+                        <p class="text-3xl font-bold text-white my-2">10⁻⁶</p>
+                        <p class="text-gray-300">0.000001</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg mt-4">
+                        <p class="text-sm text-gray-400">Example:</p>
+                        <p class="text-sm text-gray-300">1 micrometre = 1 × 10⁻⁶ m</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-5xl mb-2">⚛️</div>
+                        <h3 class="text-2xl font-bold text-purple-300">nano (n)</h3>
+                        <p class="text-3xl font-bold text-white my-2">10⁻⁹</p>
+                        <p class="text-gray-300">0.000000001</p>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg mt-4">
+                        <p class="text-sm text-gray-400">Example:</p>
+                        <p class="text-sm text-gray-300">1 nanometre = 1 × 10⁻⁹ m</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-300">Standard Notation (Scientific Notation)</h3>
+                <p class="text-gray-300 text-lg mb-6 text-center max-w-4xl mx-auto">
+                    Standard notation is a way of expressing very large or very small numbers using powers of 10. It's essential for calculations and clear representation of extreme values.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-3 text-green-400">Large Numbers</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <p>1,000,000 = <span class="text-green-300 font-bold">1 × 10⁶</span></p>
+                            <p>5,000 = <span class="text-green-300 font-bold">5 × 10³</span></p>
+                            <p>300,000,000 = <span class="text-green-300 font-bold">3 × 10⁸</span></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-3 text-yellow-400">Small Numbers</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <p>0.001 = <span class="text-yellow-300 font-bold">1 × 10⁻³</span></p>
+                            <p>0.000025 = <span class="text-yellow-300 font-bold">2.5 × 10⁻⁵</span></p>
+                            <p>0.0000001 = <span class="text-yellow-300 font-bold">1 × 10⁻⁷</span></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-3 text-purple-400">Benefits</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>✓ Easier calculations</li>
+                            <li>✓ Clearer representation</li>
+                            <li>✓ Prevents errors</li>
+                            <li>✓ Universal format</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instruments Section -->
+        <section id="instruments" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Measurement Instruments & Techniques
+            </h2>
+
+            <!-- Length Measurement -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Measurement of Length</h3>
+                
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-6">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📏</div>
+                        <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                            Length is measured in metres (m). Different tools are used depending on the required accuracy.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-4 gap-4 mt-6">
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-blue-300">1 km</p>
+                            <p class="text-gray-400 text-sm">= 1000 m</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-blue-300">1 cm</p>
+                            <p class="text-gray-400 text-sm">= 0.01 m (1 × 10⁻²)</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-blue-300">1 mm</p>
+                            <p class="text-gray-400 text-sm">= 0.001 m (1 × 10⁻³)</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-blue-300">1 μm</p>
+                            <p class="text-gray-400 text-sm">= 1 × 10⁻⁶ m</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">📐</div>
+                        <h4 class="text-xl font-bold mb-3 text-blue-300 text-center">Ruler</h4>
+                        <p class="text-sm text-gray-300 mb-3">Basic measuring tool for everyday use</p>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Accuracy:</p>
+                            <p class="text-sm text-white font-bold">± 0.1 cm (1 mm)</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🔧</div>
+                        <h4 class="text-xl font-bold mb-3 text-cyan-300 text-center">Vernier Calipers</h4>
+                        <p class="text-sm text-gray-300 mb-3">Precise measurements of internal/external dimensions</p>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Accuracy:</p>
+                            <p class="text-sm text-white font-bold">± 0.01 cm (0.1 mm)</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-5xl mb-4 text-center">🔬</div>
+                        <h4 class="text-xl font-bold mb-3 text-purple-300 text-center">Micrometer Screw Gauge</h4>
+                        <p class="text-sm text-gray-300 mb-3">Ultra-precise measurements of small objects</p>
+                        <div class="bg-slate-950 bg-opacity-50 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Accuracy:</p>
+                            <p class="text-sm text-white font-bold">± 0.001 cm (0.01 mm)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vernier Calipers -->
+            <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 mb-8">
+                <h4 class="text-2xl font-bold mb-6 text-cyan-300 text-center">Using Vernier Calipers</h4>
+                <p class="text-gray-300 text-lg mb-6 text-center">Vernier calipers measure internal and external dimensions with high accuracy</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">1️⃣</div>
+                        <h5 class="font-bold text-lg mb-3 text-cyan-400 text-center">Read Main Scale</h5>
+                        <p class="text-sm text-gray-300 text-center">Identify the reading on the main scale just before the zero of the Vernier scale</p>
+                        <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-center text-white font-bold">Example: 1.4 cm</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">2️⃣</div>
+                        <h5 class="font-bold text-lg mb-3 text-blue-400 text-center">Find Matching Line</h5>
+                        <p class="text-sm text-gray-300 text-center">Find which Vernier line matches exactly with a main scale line</p>
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-center text-white font-bold">Example: 0.03 cm</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">3️⃣</div>
+                        <h5 class="font-bold text-lg mb-3 text-purple-400 text-center">Add Together</h5>
+                        <p class="text-sm text-gray-300 text-center">Add main scale and Vernier scale readings</p>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-center text-white font-bold">1.4 + 0.03 = 1.43 cm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Micrometer -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-12">
+                <h4 class="text-2xl font-bold mb-6 text-purple-300 text-center">Using a Micrometer Screw Gauge</h4>
+                <p class="text-gray-300 text-lg mb-6 text-center">This tool measures very small dimensions accurately, like wire thickness</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">1️⃣</div>
+                        <h5 class="font-bold text-lg mb-3 text-purple-400 text-center">Main Scale Reading</h5>
+                        <p class="text-sm text-gray-300 text-center">Read the value visible on the main scale (sleeve) in millimetres</p>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-center text-white font-bold">Example: 8 mm</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">2️⃣</div>
+                        <h5 class="font-bold text-lg mb-3 text-pink-400 text-center">Thimble Scale Reading</h5>
+                        <p class="text-sm text-gray-300 text-center">Read the thimble scale value in hundredths of a millimetre</p>
+                        <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-center text-white font-bold">Example: 0.12 mm</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">3️⃣</div>
+                        <h5 class="font-bold text-lg mb-3 text-indigo-400 text-center">Total Reading</h5>
+                        <p class="text-sm text-gray-300 text-center">Add main scale and thimble readings together</p>
+                        <div class="bg-indigo-900 bg-opacity-30 p-3 rounded-lg mt-3">
+                            <p class="text-center text-white font-bold">8 + 0.12 = 8.12 mm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mass Measurement -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold mb-6 text-center text-orange-400">Measurement of Mass</h3>
+                
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-6">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚖️</div>
+                        <p class="text-gray-300 text-lg">Mass is the amount of matter in an object, measured in kilograms (kg)</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-orange-300">1 tonne</p>
+                            <p class="text-gray-400 text-sm">= 1000 kg (1 × 10³)</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-orange-300">1 kg</p>
+                            <p class="text-gray-400 text-sm">Base unit</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-orange-300">1 g</p>
+                            <p class="text-gray-400 text-sm">= 0.001 kg (1 × 10⁻³)</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-orange-300">1 mg</p>
+                            <p class="text-gray-400 text-sm">= 1 × 10⁻⁶ kg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover text-center">
+                        <div class="text-5xl mb-4">⚖️</div>
+                        <h4 class="text-xl font-bold mb-3 text-orange-300">Top Pan Balance</h4>
+                        <p class="text-sm text-gray-300">Digital or mechanical balance for general use</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover text-center">
+                        <div class="text-5xl mb-4">⚗️</div>
+                        <h4 class="text-xl font-bold mb-3 text-red-300">Triple Beam Balance</h4>
+                        <p class="text-sm text-gray-300">Accurate mechanical balance using sliding weights</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Measurement -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold mb-6 text-center text-yellow-400">Measurement of Time</h3>
+                
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500 mb-6">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⏱️</div>
+                        <p class="text-gray-300 text-lg">Time is measured in seconds (s). More precise units are used for shorter durations</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-yellow-300">1 s</p>
+                            <p class="text-gray-400 text-sm">Base unit (second)</p>
+                        </div>
+                        <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-yellow-300">1 ms</p>
+                            <p class="text-gray-400 text-sm">= 0.001 s (1 × 10⁻³)</p>
+                        </div>
+                        <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-yellow-300">1 μs</p>
+                            <p class="text-gray-400 text-sm">= 1 × 10⁻⁶ s</p>
+                        </div>
+                        <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg text-center">
+                            <p class="font-bold text-yellow-300">1 ns</p>
+                            <p class="text-gray-400 text-sm">= 1 × 10⁻⁹ s</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-yellow-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-yellow-500 card-hover text-center">
+                        <div class="text-5xl mb-4">🕐</div>
+                        <h4 class="text-xl font-bold mb-3 text-yellow-300">Clocks & Watches</h4>
+                        <p class="text-sm text-gray-300">For measuring longer time periods</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-orange-500 card-hover text-center">
+                        <div class="text-5xl mb-4">⏱️</div>
+                        <h4 class="text-xl font-bold mb-3 text-orange-300">Stopwatch</h4>
+                        <p class="text-sm text-gray-300">For precise timing of events and experiments</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-red-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-red-500 card-hover text-center">
+                        <div class="text-5xl mb-4">📱</div>
+                        <h4 class="text-xl font-bold mb-3 text-red-300">Digital Timer</h4>
+                        <p class="text-sm text-gray-300">High-precision electronic timing devices</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volume Measurement -->
+            <div>
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Measurement of Volume</h3>
+                
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-6">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📦</div>
+                        <p class="text-gray-300 text-lg mb-4">Volume refers to the space occupied by an object. Base unit is cubic metre (m³)</p>
+                        <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg inline-block">
+                            <p class="text-white font-bold">1 cm³ = 1 × 10⁻⁶ m³</p>
+                            <p class="text-gray-400 text-sm mt-1">1 litre = 1000 cm³ = 1 dm³</p>
+                            <p class="text-gray-400 text-sm">1 cm³ = 1 ml</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <h5 class="font-bold text-lg mb-3 text-green-400 text-center">Regular Block</h5>
+                            <p class="text-sm text-gray-300 text-center mb-3">Volume = length × width × height</p>
+                            <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-center text-white">V = l × w × h</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <h5 class="font-bold text-lg mb-3 text-cyan-400 text-center">Cylinder</h5>
+                            <p class="text-sm text-gray-300 text-center mb-3">Volume = π × radius² × height</p>
+                            <div class="bg-cyan-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-center text-white">V = πr²h</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <h5 class="font-bold text-lg mb-3 text-blue-400 text-center">Irregular Solid</h5>
+                            <p class="text-sm text-gray-300 text-center mb-3">Volume = water displaced</p>
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg">
+                                <p class="text-center text-white text-xs">V = V₂ - V₁</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-green-500 card-hover text-center">
+                        <div class="text-5xl mb-4">🧪</div>
+                        <h4 class="text-xl font-bold mb-3 text-green-300">Measuring Cylinder</h4>
+                        <p class="text-sm text-gray-300">For measuring variable liquid volumes</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-cyan-500 card-hover text-center">
+                        <div class="text-5xl mb-4">💧</div>
+                        <h4 class="text-xl font-bold mb-3 text-cyan-300">Pipette</h4>
+                        <p class="text-sm text-gray-300">For transferring fixed volumes accurately</p>
+                    </div>
+
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-6 shadow-2xl border border-blue-500 card-hover text-center">
+                        <div class="text-5xl mb-4">🔬</div>
+                        <h4 class="text-xl font-bold mb-3 text-blue-300">Burette</h4>
+                        <p class="text-sm text-gray-300">For measuring variable volumes with precision</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercises Section -->
+        <section id="exercises" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Sample Exercises & Practice
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📝</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-4">Test Your Knowledge</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto">
+                        These activities reinforce understanding of instruments and units
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Exercise 1 -->
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">1</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Instrument Selection</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-blue-400">Question:</h4>
+                            <p class="text-gray-300 mb-4">State when you would use:</p>
+                            <p class="text-gray-300 ml-4">(a) Vernier calipers</p>
+                            <p class="text-gray-300 ml-4">(b) Micrometer screw gauge</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-blue-400">Answer:</h4>
+                            <p class="text-gray-300 text-sm mb-2"><strong>(a) Vernier calipers:</strong> When measuring internal or external dimensions requiring accuracy to 0.01 cm, such as the diameter of a pipe or the width of a small object.</p>
+                            <p class="text-gray-300 text-sm"><strong>(b) Micrometer screw gauge:</strong> When measuring very small dimensions requiring accuracy to 0.001 cm, such as wire thickness or the diameter of a ball bearing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 2 -->
+                <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">2</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Using Instruments</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-400">Question:</h4>
+                            <p class="text-gray-300">Explain how to use a Vernier caliper correctly.</p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-400">Answer:</h4>
+                            <p class="text-gray-300 text-sm mb-2">1. Close the jaws gently on the object to be measured</p>
+                            <p class="text-gray-300 text-sm mb-2">2. Read the main scale at the zero mark of the Vernier scale</p>
+                            <p class="text-gray-300 text-sm mb-2">3. Find the Vernier line that aligns with a main scale line</p>
+                            <p class="text-gray-300 text-sm">4. Add the two readings together for the final measurement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 3 -->
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">3</div>
+                        <h3 class="text-2xl font-bold text-green-300">Measuring Thickness</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Question:</h4>
+                            <p class="text-gray-300">Describe how Liz can measure her finger thickness accurately.</p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-green-400">Answer:</h4>
+                            <p class="text-gray-300 text-sm mb-2"><strong>Method 1 (Vernier calipers):</strong> Liz should place her finger between the external jaws of the Vernier calipers, ensuring gentle pressure without compressing the finger. Read the measurement as described above.</p>
+                            <p class="text-gray-300 text-sm"><strong>Method 2 (Micrometer):</strong> For greater accuracy, place the finger between the anvil and spindle of a micrometer screw gauge, taking care not to apply excessive pressure.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 4 -->
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4 text-xl font-bold">4</div>
+                        <h3 class="text-2xl font-bold text-orange-300">Measuring Speed</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-orange-400">Question:</h4>
+                            <p class="text-gray-300">Determine the instruments and quantities needed for measuring an athlete's speed.</p>
+                        </div>
+                        <div class="bg-orange-900 bg-opacity-30 p-5 rounded-xl">
+                            <h4 class="font-bold mb-2 text-orange-400">Answer:</h4>
+                            <p class="text-gray-300 text-sm mb-2"><strong>Instruments needed:</strong></p>
+                            <p class="text-gray-300 text-sm ml-4 mb-2">• Measuring tape or marked track (for distance)</p>
+                            <p class="text-gray-300 text-sm ml-4 mb-3">• Stopwatch (for time)</p>
+                            <p class="text-gray-300 text-sm mb-2"><strong>Quantities measured:</strong></p>
+                            <p class="text-gray-300 text-sm ml-4 mb-2">• Distance (metres)</p>
+                            <p class="text-gray-300 text-sm ml-4 mb-3">• Time (seconds)</p>
+                            <p class="text-gray-300 text-sm"><strong>Calculation:</strong> Speed = Distance ÷ Time (m/s)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversion Practice -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-300">Unit Conversion Practice</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-indigo-400">Length Conversions</h4>
+                        <div class="space-y-3 text-gray-300 text-sm">
+                            <p>• Convert 5 km to metres: <span class="text-indigo-300 font-bold">5000 m</span></p>
+                            <p>• Convert 250 mm to cm: <span class="text-indigo-300 font-bold">25 cm</span></p>
+                            <p>• Convert 3.5 m to cm: <span class="text-indigo-300 font-bold">350 cm</span></p>
+                            <p>• Convert 0.025 m to mm: <span class="text-indigo-300 font-bold">25 mm</span></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-purple-400">Mass Conversions</h4>
+                        <div class="space-y-3 text-gray-300 text-sm">
+                            <p>• Convert 2.5 kg to grams: <span class="text-purple-300 font-bold">2500 g</span></p>
+                            <p>• Convert 500 mg to g: <span class="text-purple-300 font-bold">0.5 g</span></p>
+                            <p>• Convert 3 tonnes to kg: <span class="text-purple-300 font-bold">3000 kg</span></p>
+                            <p>• Convert 750 g to kg: <span class="text-purple-300 font-bold">0.75 kg</span></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-green-400">Volume Conversions</h4>
+                        <div class="space-y-3 text-gray-300 text-sm">
+                            <p>• Convert 2 litres to cm³: <span class="text-green-300 font-bold">2000 cm³</span></p>
+                            <p>• Convert 500 ml to litres: <span class="text-green-300 font-bold">0.5 L</span></p>
+                            <p>• Convert 1.5 L to ml: <span class="text-green-300 font-bold">1500 ml</span></p>
+                            <p>• Convert 250 cm³ to ml: <span class="text-green-300 font-bold">250 ml</span></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4 text-yellow-400">Scientific Notation</h4>
+                        <div class="space-y-3 text-gray-300 text-sm">
+                            <p>• Express 5000 m: <span class="text-yellow-300 font-bold">5 × 10³ m</span></p>
+                            <p>• Express 0.003 s: <span class="text-yellow-300 font-bold">3 × 10⁻³ s</span></p>
+                            <p>• Express 2,500,000 g: <span class="text-yellow-300 font-bold">2.5 × 10⁶ g</span></p>
+                            <p>• Express 0.000025 m: <span class="text-yellow-300 font-bold">2.5 × 10⁻⁵ m</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practical Tips -->
+            <div class="bg-gradient-to-r from-cyan-900 to-blue-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                <div class="flex items-start">
+                    <div class="text-6xl mr-6 flex-shrink-0">💡</div>
+                    <div>
+                        <h4 class="text-3xl font-bold mb-4 text-cyan-300">Practical Tips for Accurate Measurements</h4>
+                        <div class="grid md:grid-cols-2 gap-6 mt-6">
+                            <div>
+                                <h5 class="font-bold text-xl mb-3 text-cyan-400">General Guidelines</h5>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>✓ Always use the most appropriate instrument for the required accuracy</li>
+                                    <li>✓ Check instruments are properly calibrated before use</li>
+                                    <li>✓ Take multiple readings and calculate the average</li>
+                                    <li>✓ Read measurements at eye level to avoid parallax errors</li>
+                                    <li>✓ Handle precision instruments with care</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-xl mb-3 text-blue-400">Common Mistakes to Avoid</h5>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>✗ Not zeroing instruments before use</li>
+                                    <li>✗ Reading scales from an angle (parallax error)</li>
+                                    <li>✗ Using excessive force when closing calipers</li>
+                                    <li>✗ Forgetting to add Vernier scale readings</li>
+                                    <li>✗ Mixing up units in calculations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Reference Card -->
+        <div class="mt-12 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+            <h3 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Quick Reference Guide
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold mb-4 text-cyan-400 text-center">Base Units</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>Length: <span class="text-white font-bold">metre (m)</span></p>
+                        <p>Mass: <span class="text-white font-bold">kilogram (kg)</span></p>
+                        <p>Time: <span class="text-white font-bold">second (s)</span></p>
+                        <p>Temperature: <span class="text-white font-bold">kelvin (K)</span></p>
+                        <p>Current: <span class="text-white font-bold">ampere (A)</span></p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400 text-center">Key Prefixes</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>giga (G): <span class="text-white font-bold">10⁹</span></p>
+                        <p>mega (M): <span class="text-white font-bold">10⁶</span></p>
+                        <p>kilo (k): <span class="text-white font-bold">10³</span></p>
+                        <p>centi (c): <span class="text-white font-bold">10⁻²</span></p>
+                        <p>milli (m): <span class="text-white font-bold">10⁻³</span></p>
+                        <p>micro (μ): <span class="text-white font-bold">10⁻⁶</span></p>
+                        <p>nano (n): <span class="text-white font-bold">10⁻⁹</span></p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-50 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold mb-4 text-green-400 text-center">Instrument Accuracy</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>Ruler: <span class="text-white font-bold">± 0.1 cm</span></p>
+                        <p>Vernier Calipers: <span class="text-white font-bold">± 0.01 cm</span></p>
+                        <p>Micrometer: <span class="text-white font-bold">± 0.001 cm</span></p>
+                        <p>Measuring Cylinder: <span class="text-white font-bold">varies</span></p>
+                        <p>Stopwatch: <span class="text-white font-bold">± 0.01 s</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-blue-900 to-purple-900 p-6 rounded-xl">
+                <p class="text-gray-300 text-center text-lg">
+                    <strong class="text-white">Remember:</strong> Always choose the right instrument for the level of precision required, and express your measurements in the appropriate SI unit with the correct prefix!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        showSection('intro');
+    </script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressure in Physics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .formula-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border: 2px solid rgba(139, 92, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">⚡</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                Pressure in Physics
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Force per Unit Area</p>
+            <p class="text-lg text-gray-400">Understanding Pressure in Solids and Liquids</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('introduction')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Introduction
+                </button>
+                <button onclick="showSection('solids')" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 rounded-xl transition shadow-lg">
+                    Solid Pressure
+                </button>
+                <button onclick="showSection('liquids')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Liquid Pressure
+                </button>
+                <button onclick="showSection('examples')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    Examples
+                </button>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                What is Pressure?
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📐</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Defining Pressure</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed mb-6">
+                        Pressure is the effect created when a force is applied over a surface area. It describes how concentrated a force is over a particular area.
+                    </p>
+                    <div class="inline-block bg-blue-900 bg-opacity-40 px-8 py-4 rounded-xl border border-blue-400">
+                        <p class="text-gray-300 text-xl">
+                            <span class="text-blue-400 font-bold">Pressure:</span> Force per unit area
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formula Card for Solids -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-300">Solid Pressure Formula</h3>
+                
+                <div class="formula-box p-8 rounded-2xl mb-6">
+                    <div class="text-center">
+                        <p class="text-5xl font-bold text-indigo-300 mb-4">P = F / A</p>
+                        <div class="grid md:grid-cols-3 gap-6 mt-6">
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                                <p class="text-indigo-400 font-bold mb-2">P</p>
+                                <p class="text-gray-300 text-sm">Pressure (Pa)</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                                <p class="text-blue-400 font-bold mb-2">F</p>
+                                <p class="text-gray-300 text-sm">Force (N)</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                                <p class="text-purple-400 font-bold mb-2">A</p>
+                                <p class="text-gray-300 text-sm">Area (m²)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formula Card for Liquids -->
+            <div class="bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-300">Liquid Pressure Formula</h3>
+                
+                <div class="formula-box p-8 rounded-2xl mb-6">
+                    <div class="text-center">
+                        <p class="text-5xl font-bold text-purple-300 mb-4">P = ρhg</p>
+                        <div class="grid md:grid-cols-4 gap-6 mt-6">
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                                <p class="text-purple-400 font-bold mb-2">P</p>
+                                <p class="text-gray-300 text-sm">Pressure (Pa)</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                                <p class="text-blue-400 font-bold mb-2">ρ</p>
+                                <p class="text-gray-300 text-sm">Density (kg/m³)</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                                <p class="text-pink-400 font-bold mb-2">h</p>
+                                <p class="text-gray-300 text-sm">Depth (m)</p>
+                            </div>
+                            <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                                <p class="text-indigo-400 font-bold mb-2">g</p>
+                                <p class="text-gray-300 text-sm">Gravity (10 m/s²)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                    <h4 class="font-bold text-xl text-purple-400 mb-4 text-center">Key Points</h4>
+                    <ul class="text-gray-300 space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-3 text-xl">•</span>
+                            <span>Pressure increases with <strong class="text-blue-400">density (ρ)</strong> - denser liquids exert more pressure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-3 text-xl">•</span>
+                            <span>Pressure increases with <strong class="text-pink-400">depth (h)</strong> - deeper locations have higher pressure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-3 text-xl">•</span>
+                            <span>Gravity <strong class="text-indigo-400">(g)</strong> is constant at 10 m/s² for calculations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-3 text-xl">•</span>
+                            <span>Pressure at a given depth is the same in all directions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solid Pressure Section -->
+        <section id="solids" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                Pressure Exerted by Solids
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📦</div>
+                    <h3 class="text-3xl font-bold text-indigo-300 mb-4">Key Principle</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        The same force can exert different pressures depending on the surface area over which it acts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Factors Affecting Pressure -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📏</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Surface Area</h3>
+                    </div>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-blue-400 mb-3">Smaller Area</h4>
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="w-16 h-16 bg-blue-600 rounded"></div>
+                            <div class="mx-4 text-3xl">→</div>
+                            <div class="text-2xl text-blue-300">Greater Pressure</div>
+                        </div>
+                        <p class="text-sm text-gray-400 text-center">Force concentrated over small area</p>
+                    </div>
+
+                    <div class="bg-blue-900 bg-opacity-30 p-6 rounded-xl">
+                        <h4 class="font-bold text-cyan-400 mb-3">Larger Area</h4>
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="w-24 h-24 bg-cyan-600 rounded"></div>
+                            <div class="mx-4 text-3xl">→</div>
+                            <div class="text-2xl text-cyan-300">Less Pressure</div>
+                        </div>
+                        <p class="text-sm text-gray-400 text-center">Force spread over larger area</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">💪</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Force Size</h3>
+                    </div>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-purple-400 mb-3">More Force</h4>
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="text-4xl">⬆️</div>
+                            <div class="mx-4 text-2xl text-purple-300">F ↑</div>
+                            <div class="mx-4 text-3xl">→</div>
+                            <div class="text-2xl text-purple-300">P ↑</div>
+                        </div>
+                        <p class="text-sm text-gray-400 text-center">If area is constant</p>
+                    </div>
+
+                    <div class="bg-purple-900 bg-opacity-30 p-6 rounded-xl">
+                        <h4 class="font-bold text-pink-400 mb-3">Less Force</h4>
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="text-4xl">⬇️</div>
+                            <div class="mx-4 text-2xl text-pink-300">F ↓</div>
+                            <div class="mx-4 text-3xl">→</div>
+                            <div class="text-2xl text-pink-300">P ↓</div>
+                        </div>
+                        <p class="text-sm text-gray-400 text-center">If area is constant</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Life Examples -->
+            <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-orange-300">Daily Life Examples</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🚗</div>
+                            <h4 class="font-bold text-xl text-orange-400">Wide Tyres</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3 text-center">Wider tyres spread weight over larger area</p>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400 text-center">Reduces pressure on soft ground, prevents sinking</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🔨</div>
+                            <h4 class="font-bold text-xl text-red-400">Sharp Nails</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3 text-center">Very small point concentrates force</p>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400 text-center">High pressure at point causes more pain and easily penetrates</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🛏️</div>
+                            <h4 class="font-bold text-xl text-purple-400">Bed of Nails</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3 text-center">Many nails distribute weight</p>
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400 text-center">Large total area means less pressure per nail, less pain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Liquid Pressure Section -->
+        <section id="liquids" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Pressure in Liquids
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💧</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">Liquid Pressure Characteristics</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Liquids exert pressure on the walls and base of containers. This pressure acts in all directions and is caused by the weight of liquid molecules.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Factors -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⬇️</div>
+                        <h3 class="text-2xl font-bold text-blue-300">Depth</h3>
+                    </div>
+                    
+                   <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                   
+                    <div class="bg-gradient-to-b from-blue-400 via-blue-600 to-blue-900 h-48 rounded-lg relative p-4 border-2 border-blue-500">
+                        <!-- Depth markers -->
+                        <div class="absolute top-4 left-4 text-xs text-white/70">0m</div>
+                        <div class="absolute top-1/2 left-4 text-xs text-white/70">5m</div>
+                        <div class="absolute bottom-4 left-4 text-xs text-white/70">10m</div>
+                        
+                        <!-- Pressure labels -->
+                        <div class="absolute top-4 right-4 text-sm text-white bg-blue-500/30 px-2 py-1 rounded">Low P</div>
+                        <div class="absolute top-1/2 right-4 text-sm text-white bg-blue-700/40 px-2 py-1 rounded">Medium P</div>
+                        <div class="absolute bottom-4 right-4 text-sm text-white font-bold bg-blue-900/50 px-2 py-1 rounded">High P</div>
+                        
+                        <!-- Optional: add some bubbles or arrows -->
+                        <div class="absolute bottom-8 left-1/2 text-white text-2xl">↓</div>
+                    </div>
+                    <p class="text-sm text-blue-300 mt-2 text-center">Pressure increases by ~10,000 Pa per meter of depth</p>
+                </div>
+
+                    <div class="bg-blue-900 bg-opacity-30 p-4 rounded-xl">
+                        <p class="text-sm text-gray-300 text-center">More liquid above = more weight = more pressure</p>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚖️</div>
+                        <h3 class="text-2xl font-bold text-purple-300">Density</h3>
+                    </div>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-purple-400 mb-3 text-center">More Dense = More Pressure</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-blue-600 h-32 rounded-lg flex items-center justify-center">
+                                <p class="text-white font-bold">Water</p>
+                            </div>
+                            <div class="bg-gray-600 h-32 rounded-lg flex items-center justify-center">
+                                <p class="text-white font-bold">Mercury</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-2 text-center">
+                            <p class="text-sm text-blue-300">Lower density</p>
+                            <p class="text-sm text-purple-300 font-bold">Higher density</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-900 bg-opacity-30 p-4 rounded-xl">
+                        <p class="text-sm text-gray-300 text-center">Denser liquids have more mass per unit volume</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section id="examples" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                Worked Examples
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🧮</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">Practice Problems</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Apply the pressure formulas to solve real-world problems
+                    </p>
+                </div>
+            </div>
+
+            <!-- Solid Pressure Examples -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-400">Solid Pressure Examples</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <!-- Example 1 -->
+                    <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-blue-500 card-hover">
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-xl text-blue-300 mb-3">Example 1: Finding Pressure</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-blue-400 mb-3">Given:</h5>
+                            <p class="text-gray-300">Weight (Force) = 200 N</p>
+                            <p class="text-gray-300">Area = 2 m²</p>
+                        </div>
+
+                        <div class="bg-blue-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-cyan-400 mb-3">Solution:</h5>
+                            <p class="text-gray-300 mb-2">Use: P = F / A</p>
+                            <p class="text-gray-300 mb-2">P = 200 N / 2 m²</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-center text-2xl font-bold text-blue-300">P = 100 Pa</p>
+                        </div>
+                    </div>
+
+                    <!-- Example 2 -->
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-purple-500 card-hover">
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-xl text-purple-300 mb-3">Example 2: Finding Force</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-purple-400 mb-3">Given:</h5>
+                            <p class="text-gray-300">Pressure = 3 N/cm²</p>
+                            <p class="text-gray-300">Area = 10 cm²</p>
+                        </div>
+
+                        <div class="bg-purple-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-pink-400 mb-3">Solution:</h5>
+                            <p class="text-gray-300 mb-2">Use: F = P × A</p>
+                            <p class="text-gray-300 mb-2">F = 3 N/cm² × 10 cm²</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-center text-2xl font-bold text-purple-300">F = 30 N</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liquid Pressure Examples -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Liquid Pressure Examples</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Example 3 -->
+                    <div class="shimmer-card bg-gradient-to-br from-indigo-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-indigo-500 card-hover">
+                        <div class="bg-indigo-900 bg-opacity-30 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-xl text-indigo-300 mb-3">Example 3: Mercury Pressure</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-indigo-400 mb-3">Given:</h5>
+                            <p class="text-gray-300">Density (ρ) = 13600 kg/m³</p>
+                            <p class="text-gray-300">Depth (h) = 0.1 m</p>
+                            <p class="text-gray-300">Gravity (g) = 10 m/s²</p>
+                        </div>
+
+                        <div class="bg-indigo-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-purple-400 mb-3">Solution:</h5>
+                            <p class="text-gray-300 mb-2">Use: P = ρhg</p>
+                            <p class="text-gray-300 mb-2">P = 13600 × 0.1 × 10</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-center text-2xl font-bold text-indigo-300">P = 13,600 Pa</p>
+                        </div>
+                    </div>
+
+                    <!-- Example 4 -->
+                    <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-pink-500 card-hover">
+                        <div class="bg-pink-900 bg-opacity-30 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-xl text-pink-300 mb-3">Example 4: Finding Depth</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-pink-400 mb-3">Given:</h5>
+                            <p class="text-gray-300">Pressure (P) = 1000 Pa</p>
+                            <p class="text-gray-300">Density (ρ) = 800 kg/m³</p>
+                            <p class="text-gray-300">Gravity (g) = 10 m/s²</p>
+                        </div>
+
+                        <div class="bg-pink-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-purple-400 mb-3">Solution:</h5>
+                            <p class="text-gray-300 mb-2">Use: h = P / (ρg)</p>
+                            <p class="text-gray-300 mb-2">h = 1000 / (800 × 10)</p>
+                            <p class="text-gray-300 mb-2">h = 1000 / 8000</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                            <p class="text-center text-2xl font-bold text-pink-300 mb-2">h = 0.125 m</p>
+                            <p class="text-center text-xl text-gray-400">or 12.5 cm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formula Summary -->
+            <div class="mt-8 bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-300">Formula Summary</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-2xl text-blue-400 mb-4 text-center">Solid Pressure</h4>
+                        <div class="formula-box p-6 rounded-xl">
+                            <p class="text-4xl font-bold text-center text-blue-300 mb-4">P = F / A</p>
+                            <div class="text-center text-gray-300">
+                                <p>P = Pressure (Pa or N/m²)</p>
+                                <p>F = Force (N)</p>
+                                <p>A = Area (m²)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-2xl text-purple-400 mb-4 text-center">Liquid Pressure</h4>
+                        <div class="formula-box p-6 rounded-xl">
+                            <p class="text-4xl font-bold text-center text-purple-300 mb-4">P = ρhg</p>
+                            <div class="text-center text-gray-300">
+                                <p>P = Pressure (Pa)</p>
+                                <p>ρ = Density (kg/m³)</p>
+                                <p>h = Depth (m)</p>
+                                <p>g = Gravity (10 m/s²)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 py-8 border-t border-gray-700">
+            <p class="text-lg mb-2">Master Pressure Calculations</p>
+            <p class="text-sm">Understanding force, area, depth, and density relationships</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section with animation
+            const selectedSection = document.getElementById(sectionName);
+            selectedSection.classList.remove('hidden');
+            selectedSection.classList.add('fade-in');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Show introduction section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('introduction');
+        });
+    </script>
+</body>
+</html>

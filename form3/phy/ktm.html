@@ -1,0 +1,890 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetic Theory of Matter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .particle {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .vibrate {
+            animation: vibrate 0.5s ease-in-out infinite;
+        }
+        @keyframes vibrate {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-2px, -2px); }
+            50% { transform: translate(2px, 2px); }
+            75% { transform: translate(-2px, 2px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-12 fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4 pulse-icon">⚛️</div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                Kinetic Theory of Matter
+            </h1>
+            <p class="text-2xl text-gray-300 mb-2">Understanding Particles in Motion</p>
+            <p class="text-lg text-gray-400">Exploring Solids, Liquids, and Gases</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="showSection('introduction')" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-xl transition shadow-lg">
+                    Introduction
+                </button>
+                <button onclick="showSection('states')" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 rounded-xl transition shadow-lg">
+                    States of Matter
+                </button>
+                <button onclick="showSection('pressure')" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition shadow-lg">
+                    Gas Pressure
+                </button>
+                <button onclick="showSection('temperature')" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl transition shadow-lg">
+                    Temperature
+                </button>
+                <button onclick="showSection('diffusion')" class="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 rounded-xl transition shadow-lg">
+                    Diffusion
+                </button>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="lesson-section">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Introduction to Matter and Kinetic Theory
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌍</div>
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4">What is Matter?</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Matter is anything that occupies space and has mass. Everything around you - from the air you breathe to the chair you sit on - is made of matter.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📚</div>
+                        <h3 class="text-2xl font-bold text-purple-300 mb-4">Definition of Matter</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 text-lg text-center mb-4">
+                            <span class="text-purple-400 font-bold">Matter:</span> Anything that occupies space and has mass
+                        </p>
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-sm text-gray-400 mb-2">Examples:</p>
+                            <ul class="text-gray-300 space-y-1">
+                                <li>• Water, air, rocks</li>
+                                <li>• Plants, animals, buildings</li>
+                                <li>• Books, pencils, food</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">⚡</div>
+                        <h3 class="text-2xl font-bold text-pink-300 mb-4">Kinetic Theory of Matter</h3>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <p class="text-gray-300 text-lg text-center mb-4">
+                            <span class="text-pink-400 font-bold">KTM:</span> Matter consists of molecules in constant motion
+                        </p>
+                        <div class="bg-pink-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-sm text-gray-400 mb-2">Key Principles:</p>
+                            <ul class="text-gray-300 space-y-1">
+                                <li>• All matter is made of tiny particles</li>
+                                <li>• Particles are always moving</li>
+                                <li>• Movement depends on energy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-900 to-pink-900 rounded-2xl p-8 shadow-2xl border border-purple-500">
+                <div class="flex items-start">
+                    <div class="text-5xl mr-6 flex-shrink-0 particle">🔬</div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-purple-300">Understanding Molecular Motion</h4>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                            The Kinetic Theory explains the behavior of matter at the molecular level. Even though we cannot see individual molecules, they are constantly in motion - vibrating, rotating, and moving through space.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The amount and type of motion determines whether matter exists as a solid, liquid, or gas. Understanding this theory helps us explain phenomena like heating, cooling, expansion, and diffusion.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- States of Matter Section -->
+        <section id="states" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                States of Matter
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🧊💧☁️</div>
+                    <h3 class="text-3xl font-bold text-pink-300 mb-4">Three States of Matter</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Matter exists in three main states: solids, liquids, and gases. Each state has distinct properties based on particle arrangement and movement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Three States Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Solids -->
+                <div class="shimmer-card bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🧊</div>
+                        <h3 class="text-2xl font-bold text-blue-300">SOLIDS</h3>
+                    </div>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-blue-400 mb-3">Properties</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Definite shape and volume</li>
+                            <li>• Cannot be compressed</li>
+                            <li>• Low expansion rate</li>
+                            <li>• Strong intermolecular forces</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-blue-400 mb-3">Particle Arrangement</h4>
+                        <div class="grid grid-cols-4 gap-2 mb-3">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full vibrate"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full vibrate" style="animation-delay: 0.1s"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full vibrate" style="animation-delay: 0.2s"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full vibrate" style="animation-delay: 0.3s"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full vibrate" style="animation-delay: 0.4s"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full vibrate" style="animation-delay: 0.5s"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full vibrate" style="animation-delay: 0.6s"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full vibrate" style="animation-delay: 0.7s"></div>
+                        </div>
+                        <p class="text-xs text-gray-400">Regular arrangement</p>
+                        <p class="text-xs text-gray-400">Closely packed</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                        <h4 class="font-bold text-blue-400 mb-2">Motion</h4>
+                        <p class="text-sm text-gray-300">Particles vibrate in fixed positions</p>
+                    </div>
+                </div>
+
+                <!-- Liquids -->
+                <div class="shimmer-card bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">💧</div>
+                        <h3 class="text-2xl font-bold text-cyan-300">LIQUIDS</h3>
+                    </div>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-cyan-400 mb-3">Properties</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Fixed volume, no fixed shape</li>
+                            <li>• Takes shape of container</li>
+                            <li>• Cannot be compressed</li>
+                            <li>• Weaker intermolecular forces</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cyan-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-cyan-400 mb-3">Particle Arrangement</h4>
+                        <div class="grid grid-cols-4 gap-2 mb-3">
+                            <div class="w-8 h-8 bg-cyan-500 rounded-full particle"></div>
+                            <div class="w-8 h-8 bg-cyan-500 rounded-full particle" style="animation-delay: 0.2s"></div>
+                            <div class="w-8 h-8 bg-cyan-500 rounded-full particle" style="animation-delay: 0.4s"></div>
+                            <div class="w-8 h-8 bg-cyan-500 rounded-full particle" style="animation-delay: 0.6s"></div>
+                            <div class="w-8 h-8 bg-cyan-500 rounded-full particle" style="animation-delay: 0.8s"></div>
+                            <div class="w-8 h-8 bg-cyan-500 rounded-full particle" style="animation-delay: 1s"></div>
+                            <div class="w-8 h-8 bg-cyan-500 rounded-full particle" style="animation-delay: 1.2s"></div>
+                            <div class="w-8 h-8 bg-cyan-500 rounded-full particle" style="animation-delay: 1.4s"></div>
+                        </div>
+                        <p class="text-xs text-gray-400">Irregular arrangement</p>
+                        <p class="text-xs text-gray-400">Closely packed</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                        <h4 class="font-bold text-cyan-400 mb-2">Motion</h4>
+                        <p class="text-sm text-gray-300">Particles slide over each other</p>
+                    </div>
+                </div>
+
+                <!-- Gases -->
+                <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-purple-500 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">☁️</div>
+                        <h3 class="text-2xl font-bold text-purple-300">GASES</h3>
+                    </div>
+                    
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-purple-400 mb-3">Properties</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• No definite shape or volume</li>
+                            <li>• Can be compressed</li>
+                            <li>• High expansion rate</li>
+                            <li>• Weak intermolecular forces</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-purple-400 mb-3">Particle Arrangement</h4>
+                        <div class="relative h-32 mb-3">
+                            <div class="w-6 h-6 bg-purple-500 rounded-full absolute top-2 left-4 particle"></div>
+                            <div class="w-6 h-6 bg-purple-500 rounded-full absolute top-16 right-8 particle" style="animation-delay: 0.5s"></div>
+                            <div class="w-6 h-6 bg-purple-500 rounded-full absolute bottom-4 left-12 particle" style="animation-delay: 1s"></div>
+                            <div class="w-6 h-6 bg-purple-500 rounded-full absolute top-8 right-16 particle" style="animation-delay: 1.5s"></div>
+                            <div class="w-6 h-6 bg-purple-500 rounded-full absolute bottom-12 right-4 particle" style="animation-delay: 2s"></div>
+                        </div>
+                        <p class="text-xs text-gray-400">Random arrangement</p>
+                        <p class="text-xs text-gray-400">Far apart</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-4 rounded-xl">
+                        <h4 class="font-bold text-purple-400 mb-2">Motion</h4>
+                        <p class="text-sm text-gray-300">Particles move randomly in all directions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kinetic Theory Explanation -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-300">Particle Arrangement and Kinetic Theory</h3>
+                <p class="text-gray-300 text-center mb-8">The behavior of particles in each state can be explained by the Kinetic Theory of Matter</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">🧊</div>
+                        <h4 class="font-bold text-xl mb-3 text-blue-400 text-center">Solids and KTM</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Molecules in fixed positions</li>
+                            <li>• Strong forces hold them together</li>
+                            <li>• When heated, particles vibrate more</li>
+                            <li>• May transition to liquid state</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">💧</div>
+                        <h4 class="font-bold text-xl mb-3 text-cyan-400 text-center">Liquids and KTM</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Molecules farther apart than solids</li>
+                            <li>• Can move past each other</li>
+                            <li>• Heat causes faster movement</li>
+                            <li>• May transition to gas state</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-4xl mb-3 text-center">☁️</div>
+                        <h4 class="font-bold text-xl mb-3 text-purple-400 text-center">Gases and KTM</h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Molecules in random motion</li>
+                            <li>• Collisions occur frequently</li>
+                            <li>• Collisions create pressure</li>
+                            <li>• Fill entire container</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gas Pressure Section -->
+        <section id="pressure" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Gas Pressure
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">💨</div>
+                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Understanding Gas Pressure</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Gas pressure results from molecules colliding with the walls of their container. The more collisions, the higher the pressure.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-300 text-center">What Causes Gas Pressure?</h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <div class="flex items-start mb-4">
+                            <div class="text-4xl mr-4">🎯</div>
+                            <div>
+                                <h4 class="font-bold text-blue-400 mb-2">Molecular Collisions</h4>
+                                <p class="text-sm text-gray-300">Gas molecules constantly move and collide with container walls</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4">⚡</div>
+                            <div>
+                                <h4 class="font-bold text-cyan-400 mb-2">Force on Walls</h4>
+                                <p class="text-sm text-gray-300">Each collision exerts a tiny force, creating pressure</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 p-4 rounded-xl">
+                        <p class="text-center text-blue-300 font-bold">Pressure = Force per unit area</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-cyan-500">
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-300 text-center">Factors Affecting Gas Pressure</h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4 text-2xl">🌡️</div>
+                                <h4 class="font-bold text-lg text-cyan-400">Temperature</h4>
+                            </div>
+                            <p class="text-sm text-gray-300 mb-2">Higher temperature = More kinetic energy</p>
+                            <p class="text-sm text-gray-400">Molecules move faster → More collisions → Higher pressure</p>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4 text-2xl">📦</div>
+                                <h4 class="font-bold text-lg text-purple-400">Volume</h4>
+                            </div>
+                            <p class="text-sm text-gray-300 mb-2">Smaller volume = Less space</p>
+                            <p class="text-sm text-gray-400">Molecules closer together → More frequent collisions → Higher pressure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experiments -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-green-400">Experiments on Gas Pressure</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Experiment 1 -->
+                    <div class="shimmer-card bg-gradient-to-br from-green-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-green-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl mb-4">🎈</div>
+                            <h4 class="text-2xl font-bold text-green-300">Experiment 1: Investigating Gas Pressure</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-green-400 mb-3">Materials</h5>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Volumetric flask</li>
+                                <li>• Balloon</li>
+                                <li>• Hot water</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-green-400 mb-3">Procedure</h5>
+                            <ol class="text-sm text-gray-300 space-y-2">
+                                <li>1. Tie a balloon on the flask's neck</li>
+                                <li>2. Heat the flask using warm water or your hands</li>
+                                <li>3. Observe what happens to the balloon</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <h5 class="font-bold text-cyan-400 mb-3">Observations</h5>
+                            <p class="text-sm text-gray-300 mb-2">The balloon inflates slightly</p>
+                            <p class="text-xs text-gray-400">Why? Air molecules gain energy and move faster, hitting the balloon walls more frequently and with more force</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity 2 -->
+                    <div class="shimmer-card bg-gradient-to-br from-orange-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-orange-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl mb-4">🚲</div>
+                            <h4 class="text-2xl font-bold text-orange-300">Activity 2: Compressing Air</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-orange-400 mb-3">Materials</h5>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Bicycle pump or syringe</li>
+                                <li>• Your hands</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-orange-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-orange-400 mb-3">Procedure</h5>
+                            <ol class="text-sm text-gray-300 space-y-2">
+                                <li>1. Block the nozzle of the pump/syringe</li>
+                                <li>2. Compress the air by pushing the plunger</li>
+                                <li>3. Feel the barrel temperature</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <h5 class="font-bold text-red-400 mb-3">Observations</h5>
+                            <p class="text-sm text-gray-300 mb-2">The barrel temperature increases</p>
+                            <p class="text-xs text-gray-400">Why? Molecules are forced closer together, colliding more frequently and generating heat energy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Temperature Section -->
+        <section id="temperature" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-400 to-yellow-400 bg-clip-text text-transparent">
+                Temperature and Molecular Motion
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌡️</div>
+                    <h3 class="text-3xl font-bold text-green-300 mb-4">Temperature and Energy</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Heating matter increases the kinetic energy of molecules, making them move faster. Temperature is directly related to the average kinetic energy of particles.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gradient-to-br from-green-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-green-500">
+                    <h3 class="text-2xl font-bold mb-6 text-green-300 text-center">Key Relationship</h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <div class="flex items-center justify-center mb-4">
+                                <div class="text-4xl mr-4">📈</div>
+                                <h4 class="font-bold text-xl text-green-400">Temperature ↑</h4>
+                            </div>
+                            <div class="text-center mb-3">
+                                <div class="text-3xl text-yellow-400">⬇️</div>
+                            </div>
+                            <div class="flex items-center justify-center mb-4">
+                                <div class="text-4xl mr-4">⚡</div>
+                                <h4 class="font-bold text-xl text-yellow-400">Kinetic Energy ↑</h4>
+                            </div>
+                            <div class="text-center mb-3">
+                                <div class="text-3xl text-yellow-400">⬇️</div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="text-4xl mr-4">🏃</div>
+                                <h4 class="font-bold text-xl text-orange-400">Molecular Speed ↑</h4>
+                            </div>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-4 rounded-xl">
+                            <p class="text-center text-gray-300 italic">Raising temperature increases molecular kinetic energy, causing molecules to move faster</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500">
+                    <h3 class="text-2xl font-bold mb-6 text-yellow-300 text-center">Internal Energy</h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-yellow-400 mb-3 text-lg">What is Internal Energy?</h4>
+                        <p class="text-gray-300 mb-4">The total kinetic and potential energy of all molecules in a substance</p>
+                        <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-sm text-gray-300 mb-2">• Increases with temperature</p>
+                            <p class="text-sm text-gray-300 mb-2">• Heat increases molecular vibrations</p>
+                            <p class="text-sm text-gray-300">• Particles move faster and farther apart</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <h4 class="font-bold text-orange-400 mb-3 text-lg">Effect of Heating</h4>
+                        <p class="text-sm text-gray-300">When you heat an object, you transfer energy to its molecules, increasing their motion and the object's internal energy</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Absolute Temperature -->
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-blue-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-blue-300">Absolute Temperature</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">❄️</div>
+                            <h4 class="text-2xl font-bold text-blue-400 mb-3">Absolute Zero</h4>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-5 rounded-lg mb-4">
+                            <p class="text-gray-300 mb-3">The lowest possible temperature where molecular motion stops and internal energy is zero</p>
+                            <div class="text-center">
+                                <p class="text-3xl font-bold text-blue-300 mb-2">0 K</p>
+                                <p class="text-xl text-gray-400">= -273°C</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 text-center">At this temperature, particles have minimum possible energy</p>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">📏</div>
+                            <h4 class="text-2xl font-bold text-cyan-400 mb-3">Temperature Scales</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg">
+                                <h5 class="font-bold text-cyan-400 mb-2">Kelvin (K)</h5>
+                                <p class="text-sm text-gray-300">SI unit of temperature</p>
+                                <p class="text-xs text-gray-400">Starts at absolute zero</p>
+                            </div>
+                            <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg">
+                                <h5 class="font-bold text-purple-400 mb-2">Celsius (°C)</h5>
+                                <p class="text-sm text-gray-300">Common temperature scale</p>
+                                <p class="text-xs text-gray-400">0°C = freezing point of water</p>
+                            </div>
+                            <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-400 mb-2">Conversion</h5>
+                                <p class="text-sm text-gray-300 text-center font-bold">K = °C + 273</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experiments -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-purple-400">Experiments: Temperature and Motion</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Heating Water Experiment -->
+                    <div class="shimmer-card bg-gradient-to-br from-purple-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-purple-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl mb-4">🧪</div>
+                            <h4 class="text-2xl font-bold text-purple-300">Experiment: Heating Water</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-purple-400 mb-3">Materials</h5>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Beaker</li>
+                                <li>• Potassium Permanganate crystals</li>
+                                <li>• Bunsen burner</li>
+                                <li>• Water</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-purple-400 mb-3">Procedure</h5>
+                            <ol class="text-sm text-gray-300 space-y-2">
+                                <li>1. Place potassium permanganate at bottom of beaker with cold water</li>
+                                <li>2. Record time taken to dissolve</li>
+                                <li>3. Repeat with heated water</li>
+                                <li>4. Compare dissolution times</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <h5 class="font-bold text-pink-400 mb-3">Observations</h5>
+                            <p class="text-sm text-gray-300 mb-2">Potassium permanganate dissolves faster in hot water</p>
+                            <p class="text-xs text-gray-400">Explanation: Heating increases molecular motion, causing faster diffusion</p>
+                        </div>
+                    </div>
+
+                    <!-- Heating Candle Wax -->
+                    <div class="shimmer-card bg-gradient-to-br from-pink-900 to-slate-900 rounded-xl p-8 shadow-2xl border border-pink-500 card-hover">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl mb-4">🕯️</div>
+                            <h4 class="text-2xl font-bold text-pink-300">Activity: Heating Candle Wax</h4>
+                        </div>
+                        
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-pink-400 mb-3">Materials</h5>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Candle wax</li>
+                                <li>• Metal tin</li>
+                                <li>• Heat source</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-pink-900 bg-opacity-30 p-6 rounded-xl mb-4">
+                            <h5 class="font-bold text-pink-400 mb-3">Procedure</h5>
+                            <ol class="text-sm text-gray-300 space-y-2">
+                                <li>1. Place wax in metal tin</li>
+                                <li>2. Apply heat gradually</li>
+                                <li>3. Observe changes in state</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                            <h5 class="font-bold text-orange-400 mb-3">Observations</h5>
+                            <p class="text-sm text-gray-300 mb-2">The wax melts from solid to liquid</p>
+                            <p class="text-xs text-gray-400">Explanation: Heat increases molecular motion, weakening intermolecular forces and causing state change</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diffusion Section -->
+        <section id="diffusion" class="lesson-section hidden">
+            <h2 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                Diffusion and Molecular Motion
+            </h2>
+
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500 mb-8">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🌫️</div>
+                    <h3 class="text-3xl font-bold text-orange-300 mb-4">Demonstrating Molecular Motion</h3>
+                    <p class="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+                        Diffusion shows how molecules spread from higher to lower concentration due to constant motion. This process provides direct evidence for the Kinetic Theory of Matter.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gradient-to-br from-orange-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-orange-500">
+                    <h3 class="text-2xl font-bold mb-6 text-orange-300 text-center">What is Diffusion?</h3>
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl mb-4">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">📊</div>
+                        </div>
+                        <p class="text-gray-300 text-lg mb-4 text-center">
+                            <span class="text-orange-400 font-bold">Diffusion:</span> The spreading of substances due to molecular motion
+                        </p>
+                        <div class="bg-orange-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-sm text-gray-300 mb-2"><strong>Key Points:</strong></p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• Molecules move from high to low concentration</li>
+                                <li>• Occurs in gases, liquids, and solids</li>
+                                <li>• Faster at higher temperatures</li>
+                                <li>• Evidence of molecular motion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-red-500">
+                    <h3 class="text-2xl font-bold mb-6 text-red-300 text-center">Why Does Diffusion Occur?</h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <div class="flex items-start">
+                                <div class="text-3xl mr-4">1️⃣</div>
+                                <div>
+                                    <h4 class="font-bold text-red-400 mb-2">Constant Motion</h4>
+                                    <p class="text-sm text-gray-300">Molecules are always moving randomly in all directions</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <div class="flex items-start">
+                                <div class="text-3xl mr-4">2️⃣</div>
+                                <div>
+                                    <h4 class="font-bold text-orange-400 mb-2">Concentration Gradient</h4>
+                                    <p class="text-sm text-gray-300">More molecules in one area spread to areas with fewer molecules</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 bg-opacity-60 p-5 rounded-xl">
+                            <div class="flex items-start">
+                                <div class="text-3xl mr-4">3️⃣</div>
+                                <div>
+                                    <h4 class="font-bold text-yellow-400 mb-2">Net Movement</h4>
+                                    <p class="text-sm text-gray-300">Overall flow from high to low concentration until evenly distributed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bromine Experiment -->
+            <div class="bg-gradient-to-br from-pink-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-pink-500 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center text-pink-300">Experiment: Diffusion of Bromine Gas</h3>
+                <p class="text-gray-300 text-center mb-8">A classic demonstration of molecular motion and diffusion</p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-4xl mb-3">🧪</div>
+                            <h4 class="font-bold text-lg text-pink-400">Materials</h4>
+                        </div>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Glass jar with lid</li>
+                            <li>• Liquid bromine</li>
+                            <li>• Safety equipment</li>
+                            <li>• Fume hood</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-4xl mb-3">⚗️</div>
+                            <h4 class="font-bold text-lg text-purple-400">Procedure</h4>
+                        </div>
+                        <ol class="text-sm text-gray-300 space-y-2">
+                            <li>1. Place small amount of bromine at bottom of jar</li>
+                            <li>2. Seal jar immediately</li>
+                            <li>3. Observe over time</li>
+                            <li>4. Note color distribution</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-slate-950 bg-opacity-60 p-6 rounded-xl">
+                        <div class="text-center mb-4">
+                            <div class="text-4xl mb-3">👁️</div>
+                            <h4 class="font-bold text-lg text-orange-400">Observations</h4>
+                        </div>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Brownish-red fumes appear</li>
+                            <li>• Color spreads upward</li>
+                            <li>• Eventually fills entire jar</li>
+                            <li>• Uniform distribution</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-pink-900 bg-opacity-30 p-6 rounded-xl">
+                    <h4 class="font-bold text-xl mb-4 text-pink-300 text-center">Explanation</h4>
+                    <p class="text-gray-300 text-center text-lg mb-4">
+                        Gaseous bromine diffuses throughout the jar over time. The brownish-red fumes spread evenly, showing that molecules are in constant random motion.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg">
+                            <p class="text-sm text-gray-300"><strong class="text-pink-400">Initial State:</strong> Bromine molecules concentrated at bottom</p>
+                        </div>
+                        <div class="bg-slate-950 bg-opacity-60 p-4 rounded-lg">
+                            <p class="text-sm text-gray-300"><strong class="text-purple-400">Final State:</strong> Molecules evenly distributed throughout jar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Factors Affecting Diffusion -->
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-2xl p-8 shadow-2xl border border-indigo-500">
+                <h3 class="text-3xl font-bold mb-6 text-center text-indigo-300">Factors Affecting Diffusion Rate</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🌡️</div>
+                            <h4 class="font-bold text-xl text-red-400">Temperature</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3 text-center">Higher temperature = Faster diffusion</p>
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400">Molecules move faster with more kinetic energy, spreading more quickly</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">⚖️</div>
+                            <h4 class="font-bold text-xl text-yellow-400">Molecular Mass</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3 text-center">Lighter molecules = Faster diffusion</p>
+                        <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400">Lighter molecules move faster than heavier ones at the same temperature</p>
+                        </div>
+                    </div>
+
+                    <div class="shimmer-card bg-slate-950 bg-opacity-60 p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-5xl mb-3">🌊</div>
+                            <h4 class="font-bold text-xl text-cyan-400">State of Matter</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-3 text-center">Gases > Liquids > Solids</p>
+                        <div class="bg-cyan-900 bg-opacity-30 p-4 rounded-lg">
+                            <p class="text-xs text-gray-400">More space between particles allows faster movement and diffusion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-gradient-to-r from-indigo-900 to-purple-900 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="text-5xl mr-6 flex-shrink-0">💡</div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-3 text-indigo-300">Real-Life Applications</h4>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-3">
+                                Diffusion is essential in many everyday processes:
+                            </p>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• Smell of perfume spreading across a room</li>
+                                <li>• Tea or coffee diffusing in hot water</li>
+                                <li>• Oxygen entering bloodstream in lungs</li>
+                                <li>• Air fresheners dispersing fragrance</li>
+                                <li>• Carbon dioxide leaving blood cells</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 py-8 border-t border-gray-700">
+            <p class="text-lg mb-2">Understanding Matter at the Molecular Level</p>
+            <p class="text-sm">Kinetic Theory explains the behavior of solids, liquids, and gases</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section with animation
+            const selectedSection = document.getElementById(sectionName);
+            selectedSection.classList.remove('hidden');
+            selectedSection.classList.add('fade-in');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Show introduction section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('introduction');
+        });
+    </script>
+</body>
+</html>
