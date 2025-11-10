@@ -1,0 +1,990 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LMS Video Page - Form 4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    
+    .float-animation { animation: float 3s ease-in-out infinite; }
+    .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    .pulse-slow { animation: pulse-slow 2s ease-in-out infinite; }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .video-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: center;
+    }
+    
+    .video-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .category-pill {
+      transition: all 0.3s ease;
+    }
+    
+    .category-pill:hover {
+      transform: scale(1.05);
+    }
+    
+    .loading-skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+    
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;" class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-gray-800">
+
+  <!-- Enhanced Hero Section -->
+  <header class="relative bg-gradient-to-r from-indigo-600 via-purple-700 to-pink-600 text-white py-24 px-6 text-center overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-10 left-10 w-20 h-20 bg-white rounded-full float-animation"></div>
+      <div class="absolute top-32 right-20 w-16 h-16 bg-yellow-300 rounded-full float-animation" style="animation-delay: -1s;"></div>
+      <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-pink-300 rounded-full float-animation" style="animation-delay: -2s;"></div>
+    </div>
+    
+    <div class="relative z-10">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-in-up">
+        <span class="inline-block">Welcome to</span>
+        <span class="inline-block gradient-text">LMS Video Hub</span>
+      </h1>
+      <p class="max-w-3xl mx-auto text-xl md:text-2xl mb-10 fade-in-up opacity-90" style="animation-delay: 0.2s;">
+        🎓 Explore interactive concept videos for Form 4 to boost your understanding and accelerate learning
+      </p>
+      
+      <div class="fade-in-up flex flex-wrap flex-col sm:flex-row gap-4 items-center justify-center" style="animation-delay: 0.4s;">
+        <a href="/form4" 
+           class="inline-flex items-center gap-3 bg-white text-indigo-700 font-bold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+          <span>🏠 Return to LMS </span>
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+
+         <a href="./Live-class" 
+           class="inline-flex items-center gap-3 bg-green-500 text-indigo-700 font-bold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+          <span>🏠 Live Class </span>
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Enhanced Filter Section -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold gradient-text mb-4">Browse by Category</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Filter videos by subject or explore our business solutions</p>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <button onclick="filterVideos('all')" class="category-pill bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl active">
+        🌟 All Videos
+      </button>
+      <button onclick="filterVideos('lms')" class="category-pill bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl border-2 border-indigo-200">
+        🎯 LMS Features
+      </button>
+      <button onclick="filterVideos('education')" class="category-pill bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl border-2 border-indigo-200">
+        📚 Education
+      </button>
+      <button onclick="filterVideos('business')" class="category-pill bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl border-2 border-indigo-200">
+        💼 Business Solutions
+      </button>
+      
+    </div>
+  </section>
+
+
+  <!-- Enhanced Video Grid -->
+  <main class="max-w-7xl mx-auto px-6 pb-16">
+    <section id="videos" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      
+<!-- Enhanced Video Cards -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.1s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/Mmns0Fy_1UA" 
+            title="Wtec1 LMS Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Understand Wtec1 LMS</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Master the fundamental concepts of Wtec1 LMS platform and discover how to navigate efficiently.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐ You are Welcome</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Enhanced Video Cards -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.1s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/uJj7EcI9k1A" 
+            title="Wtec1 LMS Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Wtec1 LMS Login</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Master the fundamental concepts of Wtec1 LMS Login.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐ Login</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Video Cards -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.1s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/IC1-L4K2t70" 
+            title="Wtec1 LMS Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Wtec1 LMS Dashboard</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Master the dashboard of Wtec1 LMS platform and discover how to navigate efficiently.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐ Dashboard</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Video Cards -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.1s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/LNe5SkQha3Y" 
+            title="Wtec1 LMS Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Wtec1 LMS Support</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Master the fundamentals of accessing support while using Wtec1 LMS platform for effective navigation.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐ Support</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Enhanced Video Cards -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.1s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/U2P1_OymVD8" 
+            title="Wtec1 LMS Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Wtec1 LMS Troubleshooting</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+             Learn how to solve basic problems while using Wtec1 LMS platform .
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐Troubleshooting </span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Video Cards -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.1s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/aBx5R8iutZY" 
+            title="Wtec1 LMS Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Wtec1 LMS Usage</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Learn the fundamentals of Wtec1 LMS platform and discover how to benefit most of the platform.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐ Learn to Use</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Video Cards -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.1s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/x0nC98xSj48" 
+            title="Wtec1 LMS Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Wtec1 LMS Exam & Quiz</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Master how to use Quiz and Exams with Wtec1 LMS for better learning.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐ Quiz & Exams</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Video Cards -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.1s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/QsTGGi9VRAI" 
+            title="Wtec1 LMS Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Wtec1 LMS Basics</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Master the fundamental concepts of Wtec1 LMS platform and discover how to navigate efficiently.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐ Beginner</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="lms" style="animation-delay: 0.2s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/zb_5Cd7pH44" 
+            title="How Wtec1 LMS Works" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🎯 LMS</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">How Wtec1 LMS Works</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Strengthen your Wtec1 LMS skills with detailed explanations and practical demonstrations.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⭐ Intermediate</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="education" style="animation-delay: 0.3s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/C4Y3Iuetuws" 
+            title="Chemistry Introduction" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">📚 Education</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Trends in the Periodic Table</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Dive into fundamental Periodic table concepts designed specifically for Form 2 learners.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>🧪 Form 2</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="education" style="animation-delay: 0.7s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/C4Y3Iuetuws" 
+            title="Physics Basics" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">📚 Education</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Physics Fundamentals</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Master fundamental physics concepts designed for Form 1 students with clear examples.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>⚡ Form 1</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="education" style="animation-delay: 0.8s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/C4Y3Iuetuws" 
+            title="Mathematics Concepts" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">📚 Education</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Mathematics Mastery</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Strengthen your mathematical skills with crystal-clear video explanations and examples.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>🔢 General</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="education" style="animation-delay: 0.9s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/C4Y3Iuetuws" 
+            title="Chemistry Advanced" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">📚 Education</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Advanced Chemistry</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Explore advanced chemistry concepts for Form 2 learners with detailed experiments.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>🧪 Form 2</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- try -->
+
+      
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="education" style="animation-delay: 0.9s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/C4Y3Iuetuws" 
+            title="Chemistry Advanced" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">📚 Education</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Biology</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Explore advanced Biology concepts for Form 2 learners with detailed experiments.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>🧪 Form 2</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business section -->
+       
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="business" style="animation-delay: 0.4s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/E_nVKEgY9WI" 
+            title="Stock Taking App" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">💼 Business</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">📦 Stock Taking App</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Discover how we create secure, scalable business platforms for inventory management.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>💼 Business Tool</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="business" style="animation-delay: 0.5s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/HlYY8w1T1zQ" 
+            title="Pharmacy Track App" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">💼 Business</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">💊 Pharmacy Track App</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Learn how our app helps monitor stock, sales, and expiry dates with ease and precision.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>🏥 Healthcare</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col fade-in-up" data-category="business" style="animation-delay: 0.6s;">
+        <div class="relative group">
+          <iframe 
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/eG6IUhQgWlw" 
+            title="Stock Taking App Demo" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div class="absolute top-4 left-4">
+            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">💼 Business</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="text-xl font-bold mb-3 text-gray-800">Stock Management Demo</h4>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Manage your shop's stock easily and track sales in real time with powerful analytics.
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-500">
+              <span>📊 Analytics</span>
+            </div>
+            <div class="text-blue-600 hover:text-blue-800 cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+
+  <!-- Enhanced Footer -->
+  <footer class="bg-gradient-to-r from-gray-900 to-indigo-900 text-white py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+        <div class="fade-in-up" style="animation-delay: 0.2s;">
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-gray-300">
+            <li><a href="#" class="hover:text-white transition">🏠 Home</a></li>
+             <li><a href="#" class="hover:text-white transition">📹 Videos</a></li>
+            <li><a href="https://foundlinkdigital.com/courses" class="hover:text-white transition" target="_blank">📚 Digital Courses</a></li>
+            <li><a href="https://store.wtec1.xyz/apps.html" class="hover:text-white transition" target="_blank">💼 Business Tools</a></li>
+            <li><a href="../contact.html" class="hover:text-white transition">📞 Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="fade-in-up" style="animation-delay: 0.4s;">
+          <h4 class="text-lg font-semibold mb-4">Learning Stats</h4>
+          <div class="space-y-2 text-gray-300">
+            <div class="flex items-center justify-center md:justify-start">
+              <span class="text-2xl font-bold text-indigo-400">9</span>
+              <span class="ml-2">Video Resources</span>
+            </div>
+            <div class="flex items-center justify-center md:justify-start">
+              <span class="text-2xl font-bold text-purple-400">3</span>
+              <span class="ml-2">Categories</span>
+            </div>
+            <div class="flex items-center justify-center md:justify-start">
+              <span class="text-2xl font-bold text-pink-400">∞</span>
+              <span class="ml-2">Learning Opportunities</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+        <p class="text-gray-400">
+          &copy; <span id="year"></span> WTEC1 LMS. All rights reserved. 
+          <span class="pulse-slow">✨ Made with passion for learning</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-xl hover:bg-indigo-700 transition-all duration-300 transform scale-0 hover:scale-110">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Filter functionality
+    function filterVideos(category) {
+      const cards = document.querySelectorAll('.video-card');
+      const buttons = document.querySelectorAll('.category-pill');
+      
+      // Update button styles
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-indigo-600', 'text-white');
+        btn.classList.add('bg-white', 'text-indigo-600', 'border-2', 'border-indigo-200');
+      });
+      
+      event.target.classList.remove('bg-white', 'text-indigo-600', 'border-2', 'border-indigo-200');
+      event.target.classList.add('bg-indigo-600', 'text-white');
+      
+      // Filter cards with animation
+      cards.forEach((card, index) => {
+        const cardCategory = card.getAttribute('data-category');
+        
+        if (category === 'all' || cardCategory === category) {
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          
+          setTimeout(() => {
+            card.style.transition = 'all 0.5s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, index * 100);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(-20px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    }
+
+    // Back to top functionality
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.style.transform = 'scale(1)';
+      } else {
+        backToTopBtn.style.transform = 'scale(0)';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all video cards for scroll animations
+    document.querySelectorAll('.video-card').forEach(card => {
+      observer.observe(card);
+    });
+
+    // Add loading states for videos
+    document.querySelectorAll('iframe').forEach(iframe => {
+      iframe.addEventListener('load', function() {
+        this.style.opacity = '1';
+      });
+      
+      iframe.style.opacity = '0';
+      iframe.style.transition = 'opacity 0.5s ease';
+    });
+
+    // Add hover effects for category pills
+    document.querySelectorAll('.category-pill').forEach(pill => {
+      pill.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05) translateY(-2px)';
+      });
+      
+      pill.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) translateY(0)';
+      });
+    });
+
+    // Enhanced video card interactions
+    document.querySelectorAll('.video-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.querySelector('iframe').style.transform = 'scale(1.02)';
+        this.querySelector('iframe').style.transition = 'transform 0.3s ease';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.querySelector('iframe').style.transform = 'scale(1)';
+      });
+    });
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        // Reset filters
+        filterVideos('all');
+      }
+    });
+
+    // Touch gesture support for mobile
+    let touchStartY = 0;
+    document.addEventListener('touchstart', e => {
+      touchStartY = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchend', e => {
+  const touchEndY = e.changedTouches[0].clientY;
+  const diff = touchStartY - touchEndY;
+  
+  // if (diff > 50) {
+  //   if (window.pageYOffset > 300) {
+  //     backToTopBtn.click();
+  //   }
+  // }
+});
+
+
+    // Progressive loading for better performance
+    const lazyLoad = () => {
+      const images = document.querySelectorAll('iframe[data-src]');
+      images.forEach(img => {
+        if (img.getBoundingClientRect().top < window.innerHeight) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', lazyLoad);
+    window.addEventListener('resize', lazyLoad);
+  </script>
+
+</body>
+</html>
+          <h3 class="text-2xl font-bold mb-4 gradient-text">WTEC1 LMS</h3>
+          <p class="text-gray-600 mb-4">Empowering education through innovative video learning experiences.</p>
+          <div class="flex justify-center md:justify-start space-x-4">
+            <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center hover:bg-indigo-500 transition cursor-pointer">
+              <span class="text-sm font-bold">W</span>
+            </div>
+            <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-500 transition cursor-pointer">
+              <span class="text-sm font-bold">T</span>
+            </div>
+            <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-500 transition cursor-pointer">
+              <span class="text-sm font-bold">E</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fade-in
