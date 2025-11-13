@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1.2 - Temperature Effects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.8); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-animate {
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Decorative Header with Temperature Theme -->
+        <div class="relative bg-white rounded-3xl shadow-2xl mb-8 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-red-600 via-orange-600 to-yellow-600 gradient-animate opacity-90"></div>
+            <div class="relative px-8 py-8 text-white">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <span class="text-6xl mr-4 float-animation">🌡️</span>
+                            <h1 class="text-4xl font-bold">Experiment 1.2</h1>
+                        </div>
+                        <p class="text-xl text-orange-100">Temperature Effects on Reaction Rate</p>
+                    </div>
+                    <div class="hidden md:flex space-x-4">
+                        <div class="text-center pulse-glow bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                            <div class="text-3xl font-bold">0°C</div>
+                            <div class="text-sm">Cold</div>
+                        </div>
+                        <div class="text-center pulse-glow bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                            <div class="text-3xl font-bold">60°C</div>
+                            <div class="text-sm">Hot</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative bg-gradient-to-r from-red-100 to-orange-100 px-8 py-6 border-t-4 border-red-500">
+                <p class="text-lg text-gray-800"><span class="font-bold text-red-700">🎯 Aim:</span> To investigate the effect of temperature on the rate of a reaction</p>
+            </div>
+        </div>
+
+        <!-- Apparatus and Reagents with Temperature Icons -->
+        <div class="bg-white rounded-3xl shadow-2xl mb-8 p-8 border-t-4 border-orange-500">
+            <h2 class="text-3xl font-bold text-orange-800 mb-6 flex items-center">
+                <span class="bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-xl px-4 py-2 mr-4">🧪</span>
+                Apparatus and Reagents
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start bg-orange-50 rounded-xl p-4 hover:bg-orange-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">⚗️</span>
+                        <span class="text-gray-700 pt-1">250 cm³ conical flask</span>
+                    </div>
+                    <div class="flex items-start bg-orange-50 rounded-xl p-4 hover:bg-orange-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">🎀</span>
+                        <span class="text-gray-700 pt-1">Magnesium ribbon</span>
+                    </div>
+                    <div class="flex items-start bg-orange-50 rounded-xl p-4 hover:bg-orange-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">🔌</span>
+                        <span class="text-gray-700 pt-1">A rubber bung with one hole</span>
+                    </div>
+                    <div class="flex items-start bg-orange-50 rounded-xl p-4 hover:bg-orange-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">🔥</span>
+                        <span class="text-gray-700 pt-1">Source of heat (Bunsen burner)</span>
+                    </div>
+                    <div class="flex items-start bg-orange-50 rounded-xl p-4 hover:bg-orange-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">🌡️</span>
+                        <span class="text-gray-700 pt-1">Thermometer (0 – 100°C)</span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start bg-red-50 rounded-xl p-4 hover:bg-red-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">⏱️</span>
+                        <span class="text-gray-700 pt-1">Stopwatch or stop clock</span>
+                    </div>
+                    <div class="flex items-start bg-red-50 rounded-xl p-4 hover:bg-red-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">📄</span>
+                        <span class="text-gray-700 pt-1">Emery paper or sandpaper</span>
+                    </div>
+                    <div class="flex items-start bg-red-50 rounded-xl p-4 hover:bg-red-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">🧪</span>
+                        <span class="text-gray-700 pt-1">Delivery tubes</span>
+                    </div>
+                    <div class="flex items-start bg-red-50 rounded-xl p-4 hover:bg-red-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">💉</span>
+                        <span class="text-gray-700 pt-1">Graduated syringe</span>
+                    </div>
+                    <div class="flex items-start bg-red-50 rounded-xl p-4 hover:bg-red-100 transition transform hover:scale-105">
+                        <span class="text-2xl mr-3">🧴</span>
+                        <span class="text-gray-700 pt-1">0.5 M hydrochloric acid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Procedure with Step Cards -->
+        <div class="bg-white rounded-3xl shadow-2xl mb-8 p-8 border-t-4 border-yellow-500">
+            <h2 class="text-3xl font-bold text-orange-800 mb-6 flex items-center">
+                <span class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-xl px-4 py-2 mr-4">📋</span>
+                Procedure
+            </h2>
+            <div class="space-y-5">
+                <div class="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-lg transition transform hover:scale-105">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-5 flex-shrink-0 shadow-lg">1</span>
+                    <p class="text-gray-700 pt-1">Clean about 8 cm of magnesium ribbon with an emery paper or sandpaper and coil it.</p>
+                </div>
+                
+                <div class="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-lg transition transform hover:scale-105">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-5 flex-shrink-0 shadow-lg">2</span>
+                    <p class="text-gray-700 pt-1">Put 40 cm³ – 50 cm³ of 0.5 M hydrochloric acid into the conical flask.</p>
+                </div>
+                
+                <div class="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-lg transition transform hover:scale-105">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-5 flex-shrink-0 shadow-lg">3</span>
+                    <p class="text-gray-700 pt-1">Arrange the apparatus as in Fig. 1.5 below.</p>
+                </div>
+
+                <!-- Apparatus Diagram with Enhanced Styling -->
+                <div class="mt-8 bg-gradient-to-br from-gray-50 to-orange-50 rounded-2xl p-8 border-2 border-orange-200">
+                    <p class="text-center text-lg font-semibold text-orange-800 mb-6">Fig. 1.5: Apparatus to investigate effect of temperature on reaction rate</p>
+                    <div class="flex justify-center items-end">
+                        <svg class="w-full max-w-2xl" viewBox="0 0 500 300">
+                            <!-- Syringe -->
+                            <rect x="320" y="40" width="140" height="30" fill="#e0e0e0" stroke="#333" stroke-width="2" rx="5"/>
+                            <rect x="450" y="48" width="30" height="14" fill="#999" stroke="#333" stroke-width="2"/>
+                            <text x="390" y="30" font-size="14" fill="#666">Syringe</text>
+                            
+                            <!-- Delivery tube -->
+                            <line x1="320" y1="55" x2="200" y2="55" stroke="#333" stroke-width="3"/>
+                            <line x1="200" y1="55" x2="200" y2="110" stroke="#333" stroke-width="3"/>
+                            <text x="420" y="100" font-size="14" fill="#666">Plunger</text>
+                            
+                            <!-- Rubber bung -->
+                            <ellipse cx="150" cy="110" rx="50" ry="8" fill="#8B4513" stroke="#333" stroke-width="2"/>
+                            <rect x="145" y="102" width="10" height="20" fill="#8B4513" stroke="#333" stroke-width="2"/>
+                            <text x="50" y="90" font-size="14" fill="#666">Rubber bung</text>
+                            
+                            <!-- Flask -->
+                            <path d="M 110 110 L 100 250 L 200 250 L 190 110 Z" fill="none" stroke="#333" stroke-width="3"/>
+                            <ellipse cx="150" cy="110" rx="40" ry="8" fill="none" stroke="#333" stroke-width="3"/>
+                            
+                            <!-- Acid in flask -->
+                            <path d="M 105 180 Q 150 185 195 180 L 198 245 L 102 245 Z" fill="#ffeb99" opacity="0.6"/>
+                            <text x="20" y="160" font-size="14" fill="#666">0.5 M</text>
+                            <text x="10" y="180" font-size="14" fill="#666">hydrochloric acid</text>
+                            
+                            <!-- Magnesium ribbon -->
+                            <ellipse cx="150" cy="220" rx="30" ry="10" fill="#c0c0c0" stroke="#333" stroke-width="2"/>
+                            <text x="210" y="230" font-size="14" fill="#666">Coiled magnesium ribbon</text>
+                            
+                            <!-- Hydrogen gas label -->
+                            <text x="210" y="130" font-size="14" fill="#666" font-weight="bold">Hydrogen gas</text>
+                            <line x1="210" y1="135" x2="180" y2="155" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-lg transition transform hover:scale-105">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-5 flex-shrink-0 shadow-lg">4</span>
+                    <p class="text-gray-700 pt-1">Before the reaction begins, place the rubber bung tightly in the neck of the flask and measure the volume of air displaced on the graduated syringe. Remove the rubber bung, place the plunger at zero on the scale.</p>
+                </div>
+                
+                <div class="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-lg transition transform hover:scale-105">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-5 flex-shrink-0 shadow-lg">5</span>
+                    <p class="text-gray-700 pt-1">Measure and record the temperature of the acid.</p>
+                </div>
+                
+                <div class="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-lg transition transform hover:scale-105">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-5 flex-shrink-0 shadow-lg">6</span>
+                    <div class="text-gray-700 pt-1">
+                        <p>Place the magnesium coil in the flask and insert the rubber bung as quickly as possible.</p>
+                        <div class="mt-2 ml-5">
+                            <p class="font-semibold">• Start the stop watch or stop clock at the same time.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-lg transition transform hover:scale-105">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-5 flex-shrink-0 shadow-lg">7</span>
+                    <div class="text-gray-700 pt-1">
+                        <p>Record the volume of hydrogen gas liberated after every 30 seconds until the reaction is over.</p>
+                        <div class="mt-3 bg-yellow-100 border-l-4 border-yellow-500 p-3 rounded">
+                            <p class="font-semibold text-yellow-800">📝 Note: <span class="font-normal italic">The reaction is over when there is no more effervescence.</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-lg transition transform hover:scale-105">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-5 flex-shrink-0 shadow-lg">8</span>
+                    <p class="text-gray-700 pt-1">Draw and fill Table 1.2 in your notebook.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Table with Temperature Gradients -->
+        <div class="bg-white rounded-3xl shadow-2xl mb-8 p-8 border-t-4 border-red-500">
+            <h2 class="text-3xl font-bold text-red-800 mb-6 flex items-center">
+                <span class="bg-gradient-to-r from-red-400 to-orange-500 text-white rounded-xl px-4 py-2 mr-4">📊</span>
+                Table 1.2: Effect of temperature on reaction rate
+            </h2>
+            <div class="overflow-x-auto rounded-2xl shadow-lg">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gradient-to-r from-red-600 to-orange-600 text-white">
+                            <th class="border border-red-400 px-6 py-4 text-left font-bold">Time taken (in seconds)</th>
+                            <th class="border border-red-400 px-4 py-4">30</th>
+                            <th class="border border-red-400 px-4 py-4">60</th>
+                            <th class="border border-red-400 px-4 py-4">90</th>
+                            <th class="border border-red-400 px-4 py-4">120</th>
+                            <th class="border border-red-400 px-4 py-4">150</th>
+                            <th class="border border-red-400 px-4 py-4">180</th>
+                            <th class="border border-red-400 px-4 py-4">210</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white hover:bg-orange-50 transition">
+                            <td class="border border-gray-300 px-6 py-4 font-semibold bg-orange-50">Volume of hydrogen gas produced (cm³)</td>
+                            <td class="border border-gray-300 px-4 py-4 text-center"></td>
+                            <td class="border border-gray-300 px-4 py-4 text-center"></td>
+                            <td class="border border-gray-300 px-4 py-4 text-center"></td>
+                            <td class="border border-gray-300 px-4 py-4 text-center"></td>
+                            <td class="border border-gray-300 px-4 py-4 text-center"></td>
+                            <td class="border border-gray-300 px-4 py-4 text-center"></td>
+                            <td class="border border-gray-300 px-4 py-4 text-center"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-8 space-y-4">
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-6 border-l-4 border-red-500">
+                    <p class="text-gray-800"><span class="font-bold text-red-700">8.</span> Repeat the experiment using same volume and concentration of acid at 30°C, 40°C, 50°C and 60°C. For every experiment, copy Table 1.2 in your notebook and fill it.</p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-6 border-l-4 border-orange-500">
+                    <p class="text-gray-800"><span class="font-bold text-orange-700">9.</span> Plot a graph of volume of hydrogen produced against time in each experiment on the same axes. Compare your curves with Fig. 1.6.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graph with Temperature Curves -->
+        <div class="bg-white rounded-3xl shadow-2xl mb-8 p-8 border-t-4 border-yellow-500">
+            <h2 class="text-3xl font-bold text-orange-800 mb-6 flex items-center">
+                <span class="bg-gradient-to-r from-yellow-400 to-red-500 text-white rounded-xl px-4 py-2 mr-4">📈</span>
+                Expected Results
+            </h2>
+            <div class="bg-gradient-to-br from-gray-50 to-orange-50 rounded-2xl p-8 border-2 border-orange-200">
+                <p class="text-center text-lg font-semibold text-orange-800 mb-6">Fig. 1.6: A graph of volume of hydrogen gas produced against time</p>
+                <svg class="w-full max-w-3xl mx-auto" viewBox="0 0 600 400">
+                    <!-- Axes -->
+                    <line x1="60" y1="340" x2="560" y2="340" stroke="#333" stroke-width="2"/>
+                    <line x1="60" y1="340" x2="60" y2="40" stroke="#333" stroke-width="2"/>
+                    
+                    <!-- Arrow heads -->
+                    <polygon points="60,35 55,45 65,45" fill="#333"/>
+                    <polygon points="565,340 555,335 555,345" fill="#333"/>
+                    
+                    <!-- Y-axis label -->
+                    <text x="20" y="180" font-size="16" fill="#333" transform="rotate(-90 20 180)">Volume of hydrogen</text>
+                    <text x="20" y="200" font-size="16" fill="#333" transform="rotate(-90 20 180)">produced (cm³)</text>
+                    
+                    <!-- X-axis label -->
+                    <text x="280" y="375" font-size="16" fill="#333">Time (s)</text>
+                    
+                    <!-- Temperature curves (steeper curves for higher temperatures) -->
+                    <!-- 60°C - Steepest, red -->
+                    <path d="M 60 340 Q 150 100 250 80 T 450 75" stroke="#ef4444" stroke-width="3" fill="none" stroke-dasharray="0"/>
+                    <text x="350" y="60" font-size="14" fill="#ef4444" font-weight="bold">60°C</text>
+                    
+                    <!-- 50°C - Orange-red -->
+                    <path d="M 60 340 Q 170 140 270 110 T 470 100" stroke="#f97316" stroke-width="3" fill="none"/>
+                    <text x="390" y="95" font-size="14" fill="#f97316" font-weight="bold">50°C</text>
+                    
+                    <!-- 40°C - Orange -->
+                    <path d="M 60 340 Q 190 180 300 145 T 490 135" stroke="#fb923c" stroke-width="3" fill="none"/>
+                    <text x="420" y="135" font-size="14" fill="#fb923c" font-weight="bold">40°C</text>
+                    
+                    <!-- 30°C - Yellow-orange -->
+                    <path d="M 60 340 Q 210 220 330 185 T 510 175" stroke="#fbbf24" stroke-width="3" fill="none"/>
+                    <text x="440" y="175" font-size="14" fill="#fbbf24" font-weight="bold">30°C</text>
+                    
+                    <!-- Room temperature - Least steep, yellow -->
+                    <path d="M 60 340 Q 240 260 370 225 T 530 215" stroke="#fde047" stroke-width="3" fill="none"/>
+                    <text x="420" y="230" font-size="14" fill="#ca8a04" font-weight="bold">Room temperature</text>
+                </svg>
+                <div class="mt-6 bg-orange-100 rounded-xl p-4">
+                    <p class="text-sm text-orange-800 text-center font-semibold">💡 Notice: Higher temperatures produce steeper curves, showing faster reaction rates!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Study Questions with Decorative Cards -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 border-t-4 border-orange-500">
+            <h2 class="text-3xl font-bold text-orange-800 mb-6 flex items-center">
+                <span class="bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-xl px-4 py-2 mr-4">❓</span>
+                Study Questions
+            </h2>
+            <div class="space-y-5">
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-6 hover:shadow-xl transition transform hover:scale-105 border-l-4 border-red-500">
+                    <p class="text-gray-800 text-lg"><span class="font-bold text-red-700 text-2xl">1.</span> What do you conclude about the relationship between volume of hydrogen gas collected per second and the temperature of the acid?</p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-6 hover:shadow-xl transition transform hover:scale-105 border-l-4 border-orange-500">
+                    <p class="text-gray-800 text-lg"><span class="font-bold text-orange-700 text-2xl">2.</span> How does the volume of hydrogen change with time?</p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-red-50 rounded-2xl p-6 hover:shadow-xl transition transform hover:scale-105 border-l-4 border-yellow-500">
+                    <p class="text-gray-800 text-lg"><span class="font-bold text-yellow-700 text-2xl">3.</span> What is your conclusion on the effect of temperature on rate of reaction?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Footer -->
+        <div class="mt-8 text-center">
+            <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-orange-400 to-red-500 text-white px-8 py-4 rounded-full shadow-lg">
+                <span class="text-2xl">🔥</span>
+                <span class="font-semibold text-lg">Temperature Chemistry Experiment</span>
+                <span class="text-2xl">🌡️</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,276 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1.3 - Surface Area Effect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes bubble {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        .bubble {
+            animation: bubble 2s ease-out infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen">
+    <!-- Header -->
+    <header class="animated-gradient text-white py-8 shadow-2xl">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold text-center mb-2 drop-shadow-lg">Experiment 1.3</h1>
+            <p class="text-2xl text-center opacity-90">Surface Area of Reactants & Reaction Rates</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Aim Section -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8 mb-8 transform hover:scale-105 transition-all duration-300">
+            <div class="flex items-center mb-4">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">🎯</div>
+                <h2 class="text-3xl font-bold text-gray-800">Aim</h2>
+            </div>
+            <p class="text-xl text-gray-700 leading-relaxed">To investigate the effect of surface area of solid reactants on the rate of a reaction</p>
+        </section>
+
+        <!-- Apparatus Section -->
+        <section class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl shadow-2xl p-8 mb-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-white text-indigo-600 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">🔬</div>
+                <h2 class="text-3xl font-bold">Apparatus and Reagents</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all">
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-center"><span class="mr-3">⚖️</span> Electronic balance or suitable balance</li>
+                        <li class="flex items-center"><span class="mr-3">🧪</span> Conical flask</li>
+                        <li class="flex items-center"><span class="mr-3">🧵</span> Cotton wool</li>
+                        <li class="flex items-center"><span class="mr-3">🔍</span> Watch glass</li>
+                    </ul>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all">
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-center"><span class="mr-3">⏱️</span> Stop watch or stop clock</li>
+                        <li class="flex items-center"><span class="mr-3">🪨</span> Marble chips or Calcium Carbonate (CaCO₃)</li>
+                        <li class="flex items-center ml-8"><span class="mr-3">①</span> 2 g fine powder</li>
+                        <li class="flex items-center ml-8"><span class="mr-3">②</span> 2 g small chips</li>
+                        <li class="flex items-center ml-8"><span class="mr-3">③</span> 2 g large chips</li>
+                        <li class="flex items-center"><span class="mr-3">💧</span> 2 M hydrochloric acid</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Procedure Section -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-gradient-to-r from-green-500 to-teal-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">📋</div>
+                <h2 class="text-3xl font-bold text-gray-800">Procedure</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-start p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl hover:shadow-lg transition-all">
+                    <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</span>
+                    <p class="text-gray-700 text-lg">Measure 40 cm³ of 2M hydrochloric acid and transfer into a conical flask.</p>
+                </div>
+                <div class="flex items-start p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl hover:shadow-lg transition-all">
+                    <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</span>
+                    <p class="text-gray-700 text-lg">Weigh 2 grams of fine marble powder on a watch glass.</p>
+                </div>
+                <div class="flex items-start p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl hover:shadow-lg transition-all">
+                    <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</span>
+                    <p class="text-gray-700 text-lg">Put the marble powder into the flask containing hydrochloric acid and immediately place the flask and its contents on the electronic balance as shown in Fig. 1.7. Let the initial balance reading be X.</p>
+                </div>
+                <div class="flex items-start p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl hover:shadow-lg transition-all">
+                    <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</span>
+                    <p class="text-gray-700 text-lg">Leave the set up for sometime to allow the reaction to occur.</p>
+                </div>
+                <div class="flex items-start p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-xl hover:shadow-lg transition-all">
+                    <span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">5</span>
+                    <p class="text-gray-700 text-lg">Draw three tables a, b and c similar to Table 1.3 and record the electronic balance readings after every minute until there is no change in mass.</p>
+                </div>
+                <div class="flex items-start p-4 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl hover:shadow-lg transition-all">
+                    <span class="bg-indigo-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">6</span>
+                    <p class="text-gray-700 text-lg">Repeat the experiment with 2 g of small marble chips. Complete Table 1.3 and finally use 2 g of large marble chips and complete the table.</p>
+                </div>
+                <div class="flex items-start p-4 bg-gradient-to-r from-teal-50 to-green-50 rounded-xl hover:shadow-lg transition-all">
+                    <span class="bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">7</span>
+                    <p class="text-gray-700 text-lg">Plot a graph of loss in mass against time in each experiment on the same axes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagram Section -->
+        <section class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl p-8 mb-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-yellow-500 text-gray-900 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">📐</div>
+                <h2 class="text-3xl font-bold">Experimental Setup</h2>
+            </div>
+            <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-center">
+                <p class="text-xl mb-4 text-yellow-300 font-semibold">Fig. 1.7: Determining loss of mass of calcium carbonate</p>
+                <div class="bg-white/5 rounded-xl p-8 inline-block">
+                    <div class="text-6xl mb-4">🧪</div>
+                    <p class="text-gray-300 mb-2">Cotton wool plug → Gas escape</p>
+                    <p class="text-gray-300 mb-2">Conical flask with 2M HCl</p>
+                    <p class="text-gray-300 mb-2">Marble chips (CaCO₃)</p>
+                    <p class="text-gray-300">⚖️ Electronic balance below</p>
+                </div>
+                <p class="text-sm text-gray-400 mt-6 italic">💡 Cotton wool allows CO₂ gas to escape while preventing acid spray</p>
+            </div>
+        </section>
+
+        <!-- Data Table Section -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-gradient-to-r from-pink-500 to-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">📊</div>
+                <h2 class="text-3xl font-bold text-gray-800">Table 1.3: Effect of Surface Area on Reaction Rate</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gradient-to-r from-pink-500 to-red-500 text-white">
+                            <th class="border border-gray-300 px-6 py-4 text-left text-lg">Time (minutes)</th>
+                            <th class="border border-gray-300 px-6 py-4 text-center">1</th>
+                            <th class="border border-gray-300 px-6 py-4 text-center">2</th>
+                            <th class="border border-gray-300 px-6 py-4 text-center">3</th>
+                            <th class="border border-gray-300 px-6 py-4 text-center">4</th>
+                            <th class="border border-gray-300 px-6 py-4 text-center">5</th>
+                            <th class="border border-gray-300 px-6 py-4 text-center">6</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-pink-50 transition-all">
+                            <td class="border border-gray-300 px-6 py-4 font-semibold">Mass (y) (in g)</td>
+                            <td class="border border-gray-300 px-6 py-4 bg-gray-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-gray-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-gray-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-gray-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-gray-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-gray-50"></td>
+                        </tr>
+                        <tr class="hover:bg-pink-50 transition-all">
+                            <td class="border border-gray-300 px-6 py-4 font-semibold">Loss of mass of marble chips (x - y) g</td>
+                            <td class="border border-gray-300 px-6 py-4 bg-yellow-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-yellow-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-yellow-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-yellow-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-yellow-50"></td>
+                            <td class="border border-gray-300 px-6 py-4 bg-yellow-50"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-gray-600 italic">Calculate the loss in mass i.e. (x - y) g and complete your table.</p>
+        </section>
+
+        <!-- Chemical Equation Section -->
+        <section class="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl shadow-2xl p-8 mb-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-white text-cyan-600 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">⚗️</div>
+                <h2 class="text-3xl font-bold">Chemical Reaction</h2>
+            </div>
+            <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
+                <p class="text-xl mb-6 leading-relaxed">Calcium carbonate reacts with dilute hydrochloric acid to form calcium chloride, water and carbon dioxide.</p>
+                <div class="bg-gray-900 rounded-xl p-6 text-center">
+                    <p class="text-2xl font-mono tracking-wide text-yellow-300">CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) + CO₂(g)</p>
+                </div>
+                <div class="mt-6 space-y-3">
+                    <p class="flex items-start">
+                        <span class="mr-3 text-2xl">💨</span>
+                        <span class="text-lg">The carbon dioxide escapes through the cotton wool to the atmosphere.</span>
+                    </p>
+                    <p class="flex items-start">
+                        <span class="mr-3 text-2xl">🛡️</span>
+                        <span class="text-lg">The cotton wool stops the acid spray from escaping during the chemical reaction.</span>
+                    </p>
+                    <p class="flex items-start">
+                        <span class="mr-3 text-2xl">⚠️</span>
+                        <span class="text-lg">The hydrochloric acid used in this experiment is in excess. Therefore, the reaction stops only when all the marble has been used up.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Questions Section -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">❓</div>
+                <h2 class="text-3xl font-bold text-gray-800">Study Questions</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="p-6 bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl border-l-4 border-orange-500 hover:shadow-lg transition-all">
+                    <p class="font-semibold text-gray-800 mb-2">1. Write the chemical equation for the reaction taking place in the flask.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl border-l-4 border-yellow-500 hover:shadow-lg transition-all">
+                    <p class="font-semibold text-gray-800 mb-2">2. Why does the reaction stop?</p>
+                </div>
+                <div class="p-6 bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl border-l-4 border-green-500 hover:shadow-lg transition-all">
+                    <p class="font-semibold text-gray-800 mb-2">3. What can you conclude from the graph?</p>
+                </div>
+                <div class="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border-l-4 border-blue-500 hover:shadow-lg transition-all">
+                    <p class="font-semibold text-gray-800 mb-2">4. What is the use of cotton wool in the set-up?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Points Section -->
+        <section class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl shadow-2xl p-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-white text-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">💡</div>
+                <h2 class="text-3xl font-bold">Key Learning Points</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all float-animation">
+                    <div class="text-4xl mb-3">🔬</div>
+                    <h3 class="text-xl font-bold mb-2">Surface Area Matters</h3>
+                    <p class="text-white/90">Smaller particles have greater surface area, leading to faster reaction rates</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all float-animation" style="animation-delay: 0.2s">
+                    <div class="text-4xl mb-3">📈</div>
+                    <h3 class="text-xl font-bold mb-2">Rate of Reaction</h3>
+                    <p class="text-white/90">Can be measured by tracking mass loss over time due to CO₂ release</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all float-animation" style="animation-delay: 0.4s">
+                    <div class="text-4xl mb-3">⚖️</div>
+                    <h3 class="text-xl font-bold mb-2">Excess Reagent</h3>
+                    <p class="text-white/90">Acid is in excess to ensure all marble reacts completely</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all float-animation" style="animation-delay: 0.6s">
+                    <div class="text-4xl mb-3">🎯</div>
+                    <h3 class="text-xl font-bold mb-2">Fair Test</h3>
+                    <p class="text-white/90">Use same mass (2g) and acid volume (40cm³) for each trial</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg">🧪 Chemistry Lab Experiment - Surface Area & Reaction Rates</p>
+            <p class="text-gray-400 mt-2">Understanding how particle size affects chemical reactions</p>
+        </div>
+    </footer>
+</body>
+</html>

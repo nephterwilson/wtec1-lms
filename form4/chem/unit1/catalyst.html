@@ -1,0 +1,287 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1.4 - Catalyst Effect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.8); }
+        }
+        @keyframes bubble-up {
+            0% { transform: translateY(0) scale(0.8); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+        }
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        .bubble {
+            animation: bubble-up 3s ease-in-out infinite;
+        }
+        .rotate-slow {
+            animation: rotate-slow 20s linear infinite;
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient {
+            background: linear-gradient(-45deg, #ef4444, #f97316, #eab308, #84cc16);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 min-h-screen">
+    <!-- Header -->
+    <header class="animated-gradient text-white py-8 shadow-2xl">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold text-center mb-2 drop-shadow-lg">Experiment 1.4</h1>
+            <p class="text-2xl text-center opacity-90">Effect of Catalyst on Reaction Rate</p>
+            <p class="text-lg text-center mt-2 opacity-80">Manganese Dioxide & Hydrogen Peroxide Decomposition</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Aim Section -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8 mb-8 transform hover:scale-105 transition-all duration-300">
+            <div class="flex items-center mb-4">
+                <div class="bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">🎯</div>
+                <h2 class="text-3xl font-bold text-gray-800">Aim</h2>
+            </div>
+            <p class="text-xl text-gray-700 leading-relaxed">To investigate the effect of manganese dioxide on rate of decomposition of hydrogen peroxide</p>
+        </section>
+
+        <!-- Apparatus Section -->
+        <section class="bg-gradient-to-r from-red-500 to-orange-600 rounded-3xl shadow-2xl p-8 mb-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-white text-red-600 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">🔬</div>
+                <h2 class="text-3xl font-bold">Apparatus and Reagents</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all">
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-center"><span class="mr-3">🧪</span> Boiling tubes</li>
+                        <li class="flex items-center"><span class="mr-3">🪵</span> Wooden splint</li>
+                        <li class="flex items-center"><span class="mr-3">💧</span> 20 cm³ hydrogen peroxide (H₂O₂)</li>
+                    </ul>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all">
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-center"><span class="mr-3">⚫</span> Manganese dioxide (MnO₂)</li>
+                        <li class="flex items-center"><span class="mr-3">🔺</span> Filter funnel</li>
+                        <li class="flex items-center"><span class="mr-3">📄</span> Filter papers</li>
+                        <li class="flex items-center"><span class="mr-3">🧪</span> Conical flask</li>
+                        <li class="flex items-center"><span class="mr-3">⚖️</span> Weighing balance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Procedure Section -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-gradient-to-r from-yellow-500 to-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">📋</div>
+                <h2 class="text-3xl font-bold text-gray-800">Procedure</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-start p-4 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl hover:shadow-lg transition-all border-l-4 border-orange-500">
+                    <span class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</span>
+                    <p class="text-gray-700 text-lg">Dilute 20 cm³ of hydrogen peroxide using 80 cm³ of distilled water.</p>
+                </div>
+                
+                <div class="flex items-start p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl hover:shadow-lg transition-all border-l-4 border-red-500">
+                    <span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</span>
+                    <div class="flex-1">
+                        <p class="text-gray-700 text-lg mb-2">Put some 20 cm³ of this diluted hydrogen peroxide in a boiling tube. Test whether oxygen is produced from this solution using a glowing splint.</p>
+                        <div class="bg-yellow-100 border-l-4 border-yellow-500 p-3 mt-2 rounded">
+                            <p class="text-gray-800 font-semibold">📝 Record your observation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start p-4 bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl hover:shadow-lg transition-all border-l-4 border-yellow-500">
+                    <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</span>
+                    <div class="flex-1">
+                        <p class="text-gray-700 text-lg mb-2">Put another 20 cm³ of the diluted hydrogen peroxide in another boiling tube. Add about 0.5 g of manganese dioxide in this solution.</p>
+                        <div class="bg-blue-100 border-l-4 border-blue-500 p-3 mt-2 rounded">
+                            <p class="text-gray-800"><span class="font-semibold">❓ What do you observe?</span></p>
+                            <p class="text-gray-700 mt-1">• Test the gas evolved with a glowing splint and record your observation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl hover:shadow-lg transition-all border-l-4 border-green-500">
+                    <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</span>
+                    <div class="flex-1">
+                        <p class="text-gray-700 text-lg">Filter the residue in (3) above using a filter paper of known mass. Wash the black residue (manganese dioxide) on the filter paper by pouring distilled water on it several times. Dry the filter paper. Weigh it after it has dried.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Observation Comparison -->
+        <section class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl shadow-2xl p-8 mb-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-white text-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">🔍</div>
+                <h2 class="text-3xl font-bold">Key Observations</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-3">🐌</span>
+                        <h3 class="text-2xl font-bold">Without Catalyst</h3>
+                    </div>
+                    <p class="text-lg leading-relaxed">Before manganese dioxide is placed into hydrogen peroxide, the solution gives off oxygen <span class="font-bold text-yellow-300">very slowly</span>, not enough to re-light a glowing splint.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all pulse-glow">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-3">⚡</span>
+                        <h3 class="text-2xl font-bold">With Catalyst</h3>
+                    </div>
+                    <p class="text-lg leading-relaxed">When manganese dioxide is added, the reaction becomes <span class="font-bold text-yellow-300">more vigorous</span> and oxygen is obtained much <span class="font-bold text-yellow-300">more quickly</span>. The oxygen is now enough to re-light a glowing splint.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is a Catalyst -->
+        <section class="bg-gradient-to-r from-indigo-600 to-purple-700 rounded-3xl shadow-2xl p-8 mb-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-yellow-400 text-indigo-900 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4 rotate-slow">⚛️</div>
+                <h2 class="text-3xl font-bold">Understanding Catalysts</h2>
+            </div>
+            <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
+                <p class="text-xl leading-relaxed mb-6">The mass of manganese dioxide before and after the experiment is approximately the same. Manganese dioxide, therefore, acts as a <span class="font-bold text-yellow-300 text-2xl">catalyst</span> in this reaction.</p>
+                <div class="bg-yellow-400 text-gray-900 rounded-xl p-6 font-semibold text-lg">
+                    <p class="mb-2">✨ A catalyst:</p>
+                    <ul class="space-y-2 ml-6">
+                        <li>• <span class="font-bold">Increases</span> the rate of the chemical reaction</li>
+                        <li>• Remains <span class="font-bold">chemically unchanged</span> at the end of the reaction</li>
+                        <li>• Is <span class="font-bold">not consumed</span> in the process</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chemical Equation Section -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-gradient-to-r from-green-500 to-teal-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">⚗️</div>
+                <h2 class="text-3xl font-bold text-gray-800">Chemical Reaction</h2>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Word Equation:</h3>
+                <div class="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl p-6 text-center border-2 border-blue-300">
+                    <p class="text-2xl text-gray-800">
+                        <span class="font-bold">Hydrogen peroxide</span>
+                        <span class="mx-4 text-3xl text-red-600">→</span>
+                        <span class="font-bold">water + oxygen</span>
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 italic">manganese oxide (catalyst)</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Chemical Equation:</h3>
+                <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-8 border-2 border-purple-300">
+                    <div class="text-center">
+                        <div class="text-3xl font-mono text-gray-900 mb-2">
+                            2H₂O₂(aq)
+                            <span class="mx-4 text-4xl text-red-600">→</span>
+                            2H₂O(l) + O₂(g)
+                        </div>
+                        <div class="mt-4 text-gray-700">
+                            <div class="inline-block bg-yellow-200 px-4 py-2 rounded-lg border-2 border-yellow-400">
+                                <span class="font-bold">Catalyst: MnO₂(s)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-white rounded-lg p-3 text-center">
+                            <p class="font-semibold text-gray-800">H₂O₂</p>
+                            <p class="text-gray-600">Hydrogen Peroxide</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 text-center">
+                            <p class="font-semibold text-gray-800">H₂O</p>
+                            <p class="text-gray-600">Water</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 text-center">
+                            <p class="font-semibold text-gray-800">O₂</p>
+                            <p class="text-gray-600">Oxygen Gas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Questions Section -->
+        <section class="bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl shadow-2xl p-8 mb-8 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-white text-orange-600 rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">❓</div>
+                <h2 class="text-3xl font-bold">Study Questions</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all border-l-4 border-white">
+                    <p class="text-xl font-semibold mb-2">1. What is the mass of the black solid?</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all border-l-4 border-yellow-300">
+                    <p class="text-xl font-semibold mb-2">2. Did you recover all the original manganese dioxide?</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all border-l-4 border-green-300">
+                    <p class="text-xl font-semibold mb-2">3. What is your conclusion from this experiment?</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all border-l-4 border-blue-300">
+                    <p class="text-xl font-semibold mb-2">4. Write the chemical equation for this reaction.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Learning Points -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">💡</div>
+                <h2 class="text-3xl font-bold text-gray-800">Key Learning Points</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 border-2 border-red-200 hover:shadow-xl transition-all">
+                    <div class="text-5xl mb-4 text-center">🚀</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Speed Up Reactions</h3>
+                    <p class="text-gray-700 text-center">Catalysts dramatically increase the rate of chemical reactions without being consumed</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 border-2 border-green-200 hover:shadow-xl transition-all">
+                    <div class="text-5xl mb-4 text-center">♻️</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Reusable</h3>
+                    <p class="text-gray-700 text-center">The catalyst mass remains the same before and after the reaction - it's not used up</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border-2 border-blue-200 hover:shadow-xl transition-all">
+                    <div class="text-5xl mb-4 text-center">🎭</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Unchanged</h3>
+                    <p class="text-gray-700 text-center">Catalysts remain chemically unchanged throughout the entire reaction process</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg">🧪 Chemistry Lab Experiment - Catalysts & Reaction Rates</p>
+            <p class="text-gray-400 mt-2">Understanding how catalysts speed up chemical reactions</p>
+            <p class="text-sm text-gray-500 mt-4">MnO₂ + H₂O₂ → Faster Decomposition! ⚡</p>
+        </div>
+    </footer>
+</body>
+</html>
